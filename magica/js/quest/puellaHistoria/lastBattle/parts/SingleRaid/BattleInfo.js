@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(e, f, b, k, g, h)
+define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(e, g, b, l, h, k)
 {
   var c;
-  return f.View.extend(
+  return g.View.extend(
   {
     className: "battleInfoWrapperSec",
     events: function()
@@ -36,7 +36,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
     createDom: function()
     {
       b.doc.getElementById("mainSec").appendChild(this.render().el);
-      g.getBaseData(b.getNativeObj())
+      h.getBaseData(b.getNativeObj())
     },
     questStart: function(a)
     {
@@ -46,11 +46,17 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
         var d;
         this && (c = d = this.model);
         c && (d = c);
-        h.startQuest(
+        a = b.PuellaHistoriaLastBattleSingleRaidPrm.sectionInfo;
+        var f = a[0];
+        e.each(a, function(a, b, c)
+        {
+          a.sectionId == d.questBattle.sectionId && (f = a)
+        });
+        k.startQuest(
         {
           pageType: "singleRaid",
           questBattleModel: d,
-          sectionModel: b.PuellaHistoriaLastBattleSingleRaidPrm.sectionInfo,
+          sectionModel: f,
           userQuestAdventureList: b.PuellaHistoriaLastBattleSingleRaidPrm.userQuestAdventureList
         })
       }

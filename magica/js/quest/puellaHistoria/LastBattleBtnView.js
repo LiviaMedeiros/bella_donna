@@ -1,6 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/quest/puellaHistoria/LastBattleBtn.html js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(c, d, b, f, g, e, h)
+define("underscore backbone backboneCommon ajaxControl command text!template/quest/puellaHistoria/LastBattleBtn.html js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(e, f, b, k, l, g, h)
 {
-  return d.View.extend(
+  var c = !1;
+  return f.View.extend(
   {
     events: function()
     {
@@ -10,9 +11,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     },
     initialize: function(a)
     {
-      this.template = c.template(e);
+      this.template = e.template(g);
       this.pageJson = a.pageJson;
-      this.btnModel = this.createModel()
+      this.btnModel = this.createModel(
+      {
+        commonStoryInfo: a.commonStoryInfo,
+        CreateModel: a.CreateModel
+      })
     },
     render: function()
     {
@@ -25,10 +30,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     tapBtn: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || new b.PopupClass(
+      b.isScrolled() || (c ? location.href = "#/PuellaHistoriaSingleRaid" : new b.PopupClass(
       {
         title: "Pillar of Tomorrow",
-        content: "クエストは後日開放となります",
+        content: "開放するための条件<br>「現代神浜編」を全てクリア",
         popupType: "typeC",
         closeBtnText: "閉じる",
         exClass: "puellaHistoriaOpenStoryPop"
@@ -36,11 +41,29 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       {
         $(".puellaHistoriaOpenStoryPop .cancelBtn").removeClass("b_white");
         $(".puellaHistoriaOpenStoryPop .cancelBtn").addClass("b_puellaHistoria")
-      }, null)
+      }, null))
     },
-    createModel: function()
+    createModel: function(a)
     {
-      return {}
+      c = a.CreateModel.isCommonStoryLastAlreadyWatch(
+      {
+        commonStoryInfo: a.commonStoryInfo
+      });
+      a = h.getSingleRaidQuestInfo(
+      {
+        pageJson: this.pageJson
+      });
+      var d = {
+        btnClass: "gray",
+        countClass: "",
+        noClearCount: 0
+      };
+      c && (d.btnClass = "");
+      e.each(a.questInfoList, function(a, b, c)
+      {
+        a.cleared || (d.noClearCount++, d.countClass = "display")
+      });
+      return d
     },
     removeView: function()
     {

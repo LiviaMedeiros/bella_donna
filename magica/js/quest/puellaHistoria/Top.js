@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/quest/puellaHistoria/Top.html text!css/quest/PuellaHistoriaTop.css text!css/quest/QuestCommon.css js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/MirrorPartsView js/quest/puellaHistoria/CommonStoryBtnView js/quest/puellaHistoria/EventDateView js/quest/puellaHistoria/ClearMovieBgHideView js/quest/puellaHistoria/lastBattle/Utility js/quest/puellaHistoria/LastBattleBtnView".split(" "), function(h, n, a, g, e, p, r, t, u, k, v, w, x, y, q, z)
+define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/quest/puellaHistoria/Top.html text!css/quest/PuellaHistoriaTop.css text!css/quest/QuestCommon.css js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/MirrorPartsView js/quest/puellaHistoria/CommonStoryBtnView js/quest/puellaHistoria/EventDateView js/quest/puellaHistoria/ClearMovieBgHideView js/quest/puellaHistoria/lastBattle/Utility js/quest/puellaHistoria/LastBattleBtnView".split(" "), function(h, l, b, k, e, m, n, p, q, g, r, t, u, v, A, w)
 {
-  var d, f, l, b = {},
-    B = n.View.extend(
+  var d, f, c, a = {},
+    y = l.View.extend(
     {
       events: function()
       {
@@ -9,7 +9,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       initialize: function()
       {
-        this.template = h.template(r);
+        this.template = h.template(n);
         this.createDom()
       },
       render: function()
@@ -22,39 +22,41 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       createDom: function()
       {
-        a.content.append(this.render().el);
-        l = k.getPuellaHistoriaInfo(
+        b.content.append(this.render().el);
+        c = g.getPuellaHistoriaInfo(
         {
           puellaHistoriaNum: 99,
           pageJson: d
         });
-        b.clearMovieBgHideView = new y(
+        a.clearMovieBgHideView = new v(
         {});
-        b.mirrorPartsView = new v(
+        a.mirrorPartsView = new r(
         {
           model: f,
-          commonStoryInfo: l,
-          RippleAnimationView: A,
-          ClearMovieBgHideView: b.clearMovieBgHideView,
-          CreateModel: k
+          commonStoryInfo: c,
+          RippleAnimationView: x,
+          ClearMovieBgHideView: a.clearMovieBgHideView,
+          CreateModel: g
         });
-        $("#mirrorSec").append(b.mirrorPartsView.render().el);
-        b.commonStoryBtnView = new w(
+        $("#mirrorSec").append(a.mirrorPartsView.render().el);
+        a.commonStoryBtnView = new t(
         {
-          commonStoryInfo: l
+          commonStoryInfo: c
         });
-        $("#mirrorSec").append(b.commonStoryBtnView.render().el);
-        b.lastBattleBtnView = new z(
+        $("#mirrorSec").append(a.commonStoryBtnView.render().el);
+        a.lastBattleBtnView = new w(
         {
-          pageJson: d
+          pageJson: d,
+          commonStoryInfo: c,
+          CreateModel: g
         });
-        $("#mirrorSec").append(b.lastBattleBtnView.render().el);
-        b.eventDateView = new x(
+        $("#mirrorSec").append(a.lastBattleBtnView.render().el);
+        a.eventDateView = new u(
         {
           pageModel: f
         });
-        $("#mirrorSec").append(b.eventDateView.render().el);
-        a.ready.hide()
+        $("#mirrorSec").append(a.eventDateView.render().el);
+        b.ready.hide()
       },
       removeView: function()
       {
@@ -62,7 +64,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         this.remove()
       }
     }),
-    A = n.View.extend(
+    x = l.View.extend(
     {
       className: "rippleAnimationListWrap",
       initialize: function(a)
@@ -95,69 +97,51 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         {
           $(".rippleAnimationListWrap").remove()
         }, 100);
-        a.tapBlock(!1);
+        b.tapBlock(!1);
         e.stopSur()
       }
     }),
-    C = function()
+    z = function()
     {
-      d = g.getPageJson();
+      d = k.getPageJson();
       var c = function()
-        {
-          a.setStyle(t + u);
-          e.startBgm("bgm21_system02");
-          e.changeBg("web_PuellaHistoria_19094_01.ExportJson");
-          f = k.getModel(
-          {
-            pageJson: d
-          });
-          var c = "";
-          1024 !== a.displayWidth && (c = "iPhoneX");
-          a.ua.ipad && (c = "iPad");
-          b.pageView = new B(
-          {
-            model:
-            {
-              pageJson: d,
-              terminalClass: c
-            }
-          });
-          p.canPlayQuestNum();
-          p.eventTabSwitch(d.eventList);
-          a.setGlobalView();
-          setTimeout(function()
-          {
-            a.tapBlock(!1);
-            a.forceTapBlock(!1)
-          }, 10);
-          b && b.mirrorPartsView && b.mirrorPartsView.isPlayClearMovie && setTimeout(function()
-          {
-            $("#overlapContainer").append(b.clearMovieBgHideView.render().el);
-            b.mirrorPartsView.isPlayClearMovie = !1
-          }, 50)
-        },
-        m = !!localStorage.getItem("watchPuellaHistoriaPrologue");
-      localStorage.getItem("watchPuellaHistoriaEnding") ? c() : q.isJoinEvent(
       {
-        userQuestAdventureList: d.userQuestAdventureList
-      }) ? (m = q.getStoryIdList().event[9].storyId, a.playStory(
+        b.setStyle(p + q);
+        e.startBgm("bgm21_system02");
+        e.changeBg("web_PuellaHistoria_19094_01.ExportJson");
+        f = g.getModel(
+        {
+          pageJson: d
+        });
+        var c = "";
+        1024 !== b.displayWidth && (c = "iPhoneX");
+        b.ua.ipad && (c = "iPad");
+        a.pageView = new y(
+        {
+          model:
+          {
+            pageJson: d,
+            terminalClass: c
+          }
+        });
+        m.canPlayQuestNum();
+        m.eventTabSwitch(d.eventList);
+        b.setGlobalView();
+        setTimeout(function()
+        {
+          b.tapBlock(!1);
+          b.forceTapBlock(!1)
+        }, 10);
+        a && a.mirrorPartsView && a.mirrorPartsView.isPlayClearMovie && setTimeout(function()
+        {
+          $("#overlapContainer").append(a.clearMovieBgHideView.render().el);
+          a.mirrorPartsView.isPlayClearMovie = !1
+        }, 50)
+      };
+      localStorage.getItem("watchPuellaHistoriaPrologue") ? c() : b.playStory(
       {
         cmd: e,
-        ajaxControl: g,
-        storyId: m,
-        callback: function()
-        {
-          localStorage.setItem("watchPuellaHistoriaEnding", "true");
-          c();
-          setTimeout(function()
-          {
-            a.removeClass(a.ready.target, "fadeout")
-          }, 500)
-        }
-      })) : m ? c() : a.playStory(
-      {
-        cmd: e,
-        ajaxControl: g,
+        ajaxControl: k,
         storyId: "103401-1_iTr7I",
         callback: function()
         {
@@ -165,7 +149,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           c();
           setTimeout(function()
           {
-            a.removeClass(a.ready.target, "fadeout")
+            b.removeClass(b.ready.target, "fadeout")
           }, 500)
         }
       })
@@ -201,22 +185,22 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     }],
     fetch: function()
     {
-      g.pageModelGet(this.needModelIdObj, null)
+      k.pageModelGet(this.needModelIdObj, null)
     },
     init: function()
     {
-      a.PuellaHistoriaLastBattleSingleRaidPrm = null;
-      a.PuellaHistoriaLastBattleGroupRaidPrm = null;
-      C()
+      b.PuellaHistoriaLastBattleSingleRaidPrm = null;
+      b.PuellaHistoriaLastBattleGroupRaidPrm = null;
+      z()
     },
-    remove: function(a)
+    remove: function(b)
     {
       f && (f = null);
-      h.each(b, function(a, b, c)
+      h.each(a, function(a, b, c)
       {
         a.removeView && a.removeView()
       });
-      a()
+      b()
     }
   }
 });
