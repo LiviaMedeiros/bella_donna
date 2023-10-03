@@ -1,0 +1,42 @@
+<div id="nativeTouchWrap"></div>
+<div class="adjustSec">
+  <div class="adjustBtn btn sb_gold_01 TE" id="adjustBtn"> 魂と鏡を調整する </div>
+  <div class="overviewSampleBtn btn sb_gold_01 TE" id="overviewSampleBtn"> 概要ポップ </div>
+  <div class="openStorySampleBtn btn sb_gold_01 TE" id="openStorySampleBtn"> 解放ポップ </div>
+  <div class="clearMovieSampleBtn btn sb_gold_01 TE" id="clearMovieSampleBtn"> クリア演出表示 </div>
+</div>
+<script id="adjustPopupTemp" type="text/template"> <div class="title">【魂の器】</div>
+	X座標:<input type="number" class="number" id="soulX">
+	Y座標:<input type="number" class="number" id="soulY">
+	縮尺:<input type="number" class="number" id="soulScale">
+	<br><br>
+	<div class="title">【鏡】</div>
+	初期X座標:<input type="number" class="number" id="startX">
+	初期Y座標:<input type="number" class="number" id="startY">
+	縮尺:<input type="number" class="number" id="mirrorScale">
+	<br><br>
+	鏡の幅:<input type="number" class="number" id="mirrorW">
+	<div class="title">【ipad用】</div>鏡の縦のズレ:<input type="number" class="number" id="mirrorLag">
+	<br><br>
+	※縮尺は「1」が100%になります
+</script>
+<script id="clearCheckPopupTemp" type="text/template"> <div class="title">【魂の器】</div>
+	opened:<input type="number" class="number" id="opened">
+	<br>
+	<div class="title">【鏡:1】</div>
+	state:<input type="number" class="number" id="state_1">
+	isClear:<input type="text" class="text" id="isClear_1">
+	openUp:<input type="number" class="number" id="openUp_1">
+	<br>
+	<div class="title">【鏡:2】</div>
+	state:<input type="number" class="number" id="state_2">
+	isClear:<input type="text" class="text" id="isClear_2">
+	openUp:<input type="number" class="number" id="openUp_2">
+	<br>
+	<div class="title">【鏡:3】</div>
+	state:<input type="number" class="number" id="state_3">
+	isClear:<input type="text" class="text" id="isClear_3">
+	openUp:<input type="number" class="number" id="openUp_3">
+	<br><br>
+	※isClearには「true」「false」を入れてください
+</script>

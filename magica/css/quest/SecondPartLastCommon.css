@@ -1,0 +1,65 @@
+#popupArea #schedulePopup table
+{
+  margin-top: 8px;
+  font-size: 16px;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+#popupArea #schedulePopup table th
+{
+  background: #a77e4a;
+  width: 400px;
+  color: #fff;
+}
+
+#popupArea #schedulePopup table td
+{
+  position: relative;
+  width: 600px;
+  height: 70px;
+  border: 1px solid #a77e4a;
+  padding: 2px 10px 2px 15px;
+  text-align: left;
+}
+
+#popupArea #schedulePopup table td .text
+{
+  width: 510px;
+  line-height: 100%;
+}
+
+#popupArea #schedulePopup table td .rewardList
+{
+  position: absolute;
+  right: 11px;
+  top: 5px;
+  height: 60px;
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  justify-content: right;
+}
+
+#popupArea #schedulePopup table td .rewardList .rewardWrap
+{
+  position: relative;
+  margin-left: 4px;
+}
+
+#popupArea #schedulePopup table td .rewardList .rewardWrap img
+{
+  width: 60px;
+  height: 60px;
+}
+
+#popupArea #schedulePopup table td .rewardList .rewardWrap:after
+{
+  content: "";
+  position: absolute;
+  left: -webkit-calc(50% - 31px);
+  top: -8px;
+  width: 62px;
+  height: 20px;
+  background: url("/magica/resource/image_web/regularEvent/extermination/common/clearanime/txt_reward.png") left top no-repeat;
+  background-size: contain;
+}

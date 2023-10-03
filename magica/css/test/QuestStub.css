@@ -1,0 +1,133 @@
+#QuestStub
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#QuestStub #btnWrap
+{
+  width: 230px;
+  padding: 50px 20px 20px;
+  position: absolute;
+  top: 90px;
+  left: 50px;
+}
+
+#QuestStub #btnWrap h2
+{
+  width: 220px;
+  -webkit-border-radius: 0 10px 0 0;
+}
+
+#QuestStub #btnWrap .b_white
+{
+  opacity: 0;
+}
+
+#QuestStub #btnWrap .btn
+{
+  width: 140px;
+  margin: 0 0 10px;
+  display: block;
+}
+
+#QuestStub #prmWrap
+{
+  width: 684px;
+  height: -webkit-calc(100% - 70px);
+  padding: 23px 20px 10px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
+}
+
+#QuestStub #prmWrap #hiddenWrap
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#QuestStub #prmWrap #hiddenWrap .scrollInner
+{
+  width: 100%;
+  height: 100%;
+  padding: 20px 5px 5px;
+}
+
+#QuestStub #prmWrap #hiddenWrap .scrollInner>.flexBox
+{
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#QuestStub #prmWrap .wrap
+{
+  margin: 0 30px 10px 0;
+}
+
+#QuestStub #prmWrap .pointFrame
+{
+  width: 150px;
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
+  margin: 6px 10px 0 0;
+}
+
+#QuestStub #prmWrap .selectWrap
+{
+  width: 120px;
+  height: 36px;
+  position: relative;
+}
+
+#QuestStub #prmWrap .selectWrap .commonInput
+{
+  margin-top: 2px;
+  width: 100%;
+  min-width: 100%;
+  text-align: right;
+}
+
+#QuestStub #prmWrap .selectWrap select
+{
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  background-color: #ffffff;
+  position: relative;
+  text-align: right;
+  border: 2px solid #b28750;
+  border-radius: 5px;
+  -webkit-appearance: none;
+}
+
+#QuestStub #prmWrap .selectWrap .triangleArrow
+{
+  width: 64px;
+  height: 36px;
+  padding-top: 8px;
+  padding-left: 16px;
+  background: -webkit-linear-gradient(top, #e5b271 0%, #b28750 100%);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  pointer-events: none;
+  border: 2px solid #b28750;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 2px;
+}
+
+#QuestStub #prmWrap .selectWrap .triangleArrow .arrow
+{
+  width: 25px;
+  height: 18px;
+  display: block;
+  position: relative;
+  pointer-events: none;
+}

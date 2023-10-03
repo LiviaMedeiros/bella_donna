@@ -1,0 +1,2154 @@
+/* ArenaResult ---------------------------------------------------------------------------------*/
+#EventArenaMissionResult
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventArenaMissionResult .nodisp
+{
+  display: none;
+}
+
+#EventArenaMissionResult .arenaColor
+{
+  color: #1e2c42;
+}
+
+#EventArenaMissionResult #touchScreen
+{
+  width: 1024px;
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 100000;
+}
+
+#EventArenaMissionResult #stageClearBg
+{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+}
+
+#EventArenaMissionResult #stageClearBg.anim
+{
+  -webkit-animation: stageClearBg 1.44s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap
+{
+  width: 100%;
+  height: 576px;
+  position: absolute;
+  top: -webkit-calc(50% - 288px);
+  left: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#EventArenaMissionResult #stageClearWrap.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scTitle
+{
+  -webkit-animation: scTitle .21s linear .21s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scTitleL
+{
+  -webkit-animation: scTitleL .21s linear .21s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scTitleR
+{
+  -webkit-animation: scTitleR .21s linear .21s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle00
+{
+  -webkit-animation: scCircle00 .87s linear .57s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle01
+{
+  -webkit-animation: scCircle01 1.56s linear .42s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle02
+{
+  -webkit-animation: scCircle02 .87s linear .57s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle05,
+#EventArenaMissionResult #stageClearWrap.anim #scCircle06
+{
+  -webkit-animation: scCircle05 1.29s linear .42s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle07
+{
+  -webkit-animation: scCircle07 1.11s linear .42s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scCircle08
+{
+  -webkit-animation: scCircle08 1.14s linear .57s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #scEfBg01,
+#EventArenaMissionResult #stageClearWrap.anim #scEfBg02,
+#EventArenaMissionResult #stageClearWrap.anim #scEf01,
+#EventArenaMissionResult #stageClearWrap.anim #scEf02,
+#EventArenaMissionResult #stageClearWrap.anim #scStarL,
+#EventArenaMissionResult #stageClearWrap.anim #scStarR
+{
+  -webkit-animation: scStar .21s linear .21s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim .textWrap
+{
+  -webkit-animation: simpleFadeIn .2s linear 1.74s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap.anim #rewardItemIcon
+{
+  -webkit-animation: rewardItemIcon .12s linear .72s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #stageClearWrap .touch_screen
+{
+  width: 242px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/arena/result/touch_screen.png");
+  position: absolute;
+  bottom: 15px;
+  left: -webkit-calc(50% - 121px);
+  opacity: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap .touch_screen.show
+{
+  -webkit-animation: tocuhScreen 1.333s ease 0s infinite normal;
+}
+
+#EventArenaMissionResult #stageClearWrap #scTitle
+{
+  width: 497px;
+  height: 87px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/text_stage_clear.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 174px);
+  left: -webkit-calc(50% - 249px);
+  opacity: 0;
+  z-index: 89;
+}
+
+#EventArenaMissionResult #stageClearWrap #scTitleL,
+#EventArenaMissionResult #stageClearWrap #scTitleR
+{
+  width: 98px;
+  height: 79px;
+  position: absolute;
+  top: -webkit-calc(50% - 169px);
+  opacity: 0;
+  z-index: 90;
+}
+
+#EventArenaMissionResult #stageClearWrap #scTitleL
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_00.png") left top no-repeat;
+  left: -webkit-calc(50% - 323px);
+  opacity: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap #scTitleR
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_01.png") left top no-repeat;
+  left: -webkit-calc(50% + 225px);
+  opacity: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle00
+{
+  width: 754px;
+  height: 705px;
+  background: url("/magica/resource/image_web/page/arena/result/circle_00.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 353px);
+  left: -webkit-calc(50% - 378px);
+  opacity: 0;
+  z-index: 8;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle01
+{
+  width: 754px;
+  height: 705px;
+  background: url("/magica/resource/image_web/page/arena/result/circle_01.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 353px);
+  left: -webkit-calc(50% - 378px);
+  opacity: 0;
+  z-index: 9;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle02
+{
+  width: 754px;
+  height: 705px;
+  background: url("/magica/resource/image_web/page/arena/result/circle_02.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 353px);
+  left: -webkit-calc(50% - 378px);
+  opacity: 0;
+  z-index: 10;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle05
+{
+  width: 217px;
+  height: 218px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/circle_05.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 109px);
+  left: -webkit-calc(50% - 110px);
+  opacity: 0;
+  z-index: 50;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle06
+{
+  width: 170px;
+  height: 170px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/circle_06.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 86px);
+  left: -webkit-calc(50% - 86px);
+  opacity: 0;
+  z-index: 47;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle07
+{
+  width: 754px;
+  height: 705px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/circle_07.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 378px);
+  left: -webkit-calc(50% - 353px);
+  opacity: 0;
+  z-index: 46;
+}
+
+#EventArenaMissionResult #stageClearWrap #scCircle08
+{
+  width: 754px;
+  height: 705px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/circle_08.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 353px);
+  left: -webkit-calc(50% - 377px);
+  opacity: 0;
+  z-index: 45;
+}
+
+#EventArenaMissionResult #stageClearWrap #scEfBg01
+{
+  width: 121px;
+  height: 167px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/ef_bg_reward_01.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 8px);
+  left: -webkit-calc(50% - 301px);
+  opacity: 0;
+  z-index: 99;
+}
+
+#EventArenaMissionResult #stageClearWrap #scEfBg02
+{
+  width: 121px;
+  height: 167px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/ef_bg_reward_02.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 8px);
+  left: -webkit-calc(50% + 179px);
+  opacity: 0;
+  z-index: 99;
+}
+
+#EventArenaMissionResult #stageClearWrap #scEf01
+{
+  width: 148px;
+  height: 83px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/ef_reward_01.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 231px);
+  left: -webkit-calc(50% - 75px);
+  opacity: 0;
+  z-index: 98;
+}
+
+#EventArenaMissionResult #stageClearWrap #scEf02
+{
+  width: 417px;
+  height: 234px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/ef_reward_02.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 102px);
+  left: -webkit-calc(50% - 209px);
+  opacity: 0;
+  z-index: 98;
+}
+
+#EventArenaMissionResult #stageClearWrap #scStarL,
+#EventArenaMissionResult #stageClearWrap #scStarR
+{
+  width: 107px;
+  height: 84px;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 40;
+}
+
+#EventArenaMissionResult #stageClearWrap #scStarL
+{
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/star_01.png") left top no-repeat;
+  top: -webkit-calc(50% - 266px);
+  left: -webkit-calc(50% - 204px);
+  opacity: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap #scStarR
+{
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/star_02.png") left top no-repeat;
+  top: -webkit-calc(50% - 266px);
+  left: -webkit-calc(50% + 96px);
+  opacity: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap .textWrap
+{
+  width: 586px;
+  height: 80px;
+  padding: 13px 0 0;
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/bg_reward_text.png") left top no-repeat;
+  position: absolute;
+  bottom: 77px;
+  left: -webkit-calc(50% - 293px);
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  z-index: 100;
+}
+
+#EventArenaMissionResult #stageClearWrap .textWrap span
+{
+  color: #ff988d;
+  font-size: 16px;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon
+{
+  width: 114px;
+  height: 114px;
+  padding: 7px;
+  background: url("/magica/resource/image_web/page/quest/animation/square_light.png");
+  position: absolute;
+  top: 210px;
+  left: -webkit-calc(50% - 57px);
+  opacity: 0;
+  z-index: 49;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon img
+{
+  width: 100px;
+  height: 100px;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap
+{
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap,
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap *
+{
+  opacity: 1;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap .charaIcon
+{
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap .charaIcon:before
+{
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+  z-index: 100;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap .charaIcon:after
+{
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+  z-index: 80;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap .charaIcon .maskWrap
+{
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+  z-index: 90;
+}
+
+#EventArenaMissionResult #stageClearWrap #rewardItemIcon .imgWrap .charaIcon .maskWrap img
+{
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 30px);
+}
+
+#EventArenaMissionResult #resultTitle
+{
+  width: 428px;
+  height: 54px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/infinite_result_header.png");
+  position: fixed;
+  top: 0;
+  left: -webkit-calc(50% - 214px);
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  -webkit-animation: simpleFadeIn 0.333s linear 1.5s 1 normal;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultTitle.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultTitle.skipAnim
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #enemyBtn
+{
+  width: 212px;
+  height: 182px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_enemy_bg.png");
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: simpleFadeIn 0.333s ease 3.667s 1 normal;
+  opacity: 0;
+  z-index: 100000000000000;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #enemyBtn.skipAnim
+{
+  -webkit-animation: none;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #enemyBtn.canTap
+{
+  pointer-events: auto;
+}
+
+#EventArenaMissionResult #enemyBtn.fadeOut
+{
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+  pointer-events: none;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #enemyBtn.off
+{
+  pointer-events: none;
+}
+
+#EventArenaMissionResult #enemyBtn #enemyClip
+{
+  width: 212px;
+  height: 182px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  -webkit-clip-path: polygon(0px 108px, 88px 0px, 212px 30px, 212px 182px, 27px 182px);
+  -webkit-transform: translateZ(0);
+}
+
+#EventArenaMissionResult #enemyBtn .enemyTitle
+{
+  width: 138px;
+  height: 28px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_enemy_header.png");
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 5;
+}
+
+#EventArenaMissionResult #enemyBtn .enemyImage
+{
+  margin-left: 40px;
+  -webkit-mask: url("/magica/resource/image_web/page/arena/result/result_enemy_mask.png");
+}
+
+#EventArenaMissionResult #enemyBtn .enemyNameRank
+{
+  width: 188px;
+  height: 48px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/infinite_enemy_base.png");
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  z-index: 5;
+}
+
+#EventArenaMissionResult #enemyBtn .enemyNameRank .enemyRank
+{
+  position: absolute;
+  top: -12px;
+  right: 6px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+#EventArenaMissionResult #enemyBtn .enemyNameRank .enemyName
+{
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  font-size: 20px;
+  text-align: right;
+}
+
+#EventArenaMissionResult #mainWrap
+{
+  width: 1024px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+#EventArenaMissionResult #mainWrap.fadeOut
+{
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim
+{
+  opacity: 1;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #rankMark,
+#EventArenaMissionResult #mainWrap.skipAnim #pointsWrap,
+#EventArenaMissionResult #mainWrap.skipAnim #requireWrap
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #flowWrap .touch_screen
+{
+  -webkit-animation: tocuhScreen 1.333s ease 0s infinite normal;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultString.W,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultString.I,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultString.N
+{
+  -webkit-animation: none;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultDeco
+{
+  -webkit-animation: none;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultDeco.winLeft,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultDeco.winRight
+{
+  -webkit-animation: none;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .winCircle0,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .winCircle1,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .winCircle2,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .winCircle3,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .winCircle4,
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultWinAdd
+{
+  -webkit-animation: none;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark .resultWin
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #mainWrap.skipAnim #resultMark.lose
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #mainWrap #flowWrap
+{
+  width: 1024px;
+  height: 576px;
+  position: absolute;
+  top: -webkit-calc(50% - 288px);
+  left: 0;
+}
+
+#EventArenaMissionResult #mainWrap #rankMark
+{
+  width: 74px;
+  height: 90px;
+  padding-top: 28px;
+  background: url("/magica/resource/image_web/page/arena/result/infinite_floor_bg_s.png");
+  position: absolute;
+  top: 90px;
+  left: 476px;
+  text-align: center;
+  -webkit-animation: simpleFadeIn 0.333s linear 2s 1 normal;
+  letter-spacing: -8px;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark
+{
+  width: 362px;
+  height: 86px;
+  position: absolute;
+  top: 94px;
+  left: 331px;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultString
+{
+  width: 107px;
+  height: 96px;
+  position: absolute;
+  top: -5px;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultString.W
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_00.png");
+  left: 78px;
+  -webkit-animation: resultStrW .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultString.I
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_01.png");
+  left: 133px;
+  -webkit-animation: resultStrI .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultString.N
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_02.png");
+  left: 183px;
+  -webkit-animation: resultStrN .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultDeco
+{
+  width: 98px;
+  height: 79px;
+  position: absolute;
+  top: 3.5px;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultDeco.winLeft
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_00.png");
+  left: 5px;
+  -webkit-animation: resultDecoLeft .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultDeco.winRight
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_01.png");
+  right: 7px;
+  -webkit-animation: resultDecoRight .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle0,
+#EventArenaMissionResult #mainWrap #resultMark .winCircle1,
+#EventArenaMissionResult #mainWrap #resultMark .winCircle2,
+#EventArenaMissionResult #mainWrap #resultMark .winCircle3
+{
+  width: 754px;
+  height: 705px;
+  position: absolute;
+  top: -309.5px;
+  left: -196px;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle0
+{
+  background: url("/magica/resource/image_web/page/arena/result/circle_00.png");
+  -webkit-animation: circleFirst .750s linear 2.500s 1 normal;
+  -webkit-animation-fill-mode: backwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle1
+{
+  background: url("/magica/resource/image_web/page/arena/result/circle_01.png");
+  -webkit-animation: circleSecond .750s linear 2.333s 1 normal;
+  -webkit-animation-fill-mode: backwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle2
+{
+  background: url("/magica/resource/image_web/page/arena/result/circle_02.png");
+  -webkit-animation: circleThird .750s linear 2.500s 1 normal;
+  -webkit-animation-fill-mode: backwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle3
+{
+  background: url("/magica/resource/image_web/page/arena/result/circle_03.png");
+  -webkit-animation: circleForth .750s linear 2.500s 1 normal;
+  -webkit-animation-fill-mode: backwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .winCircle4
+{
+  width: 440px;
+  height: 462px;
+  background: url("/magica/resource/image_web/page/arena/result/circle_04.png");
+  position: absolute;
+  top: -188px;
+  left: -39px;
+  -webkit-animation: circleSecond .750s linear 2.333s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: backwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultWin
+{
+  width: 362px;
+  height: 86px;
+  background: url("/magica/resource/image_web/page/arena/result/result_win.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: resultWinMark .417s linear 2.583s 1 normal;
+  opacity: 0;
+  z-index: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark .resultWinAdd
+{
+  width: 357px;
+  height: 96px;
+  background: url("/magica/resource/image_web/page/arena/result/text_win_add.png");
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  -webkit-animation: resultWinAdd .333s linear 2.417s 1 normal;
+  opacity: 0;
+  z-index: 2;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #resultMark.lose
+{
+  background: url("/magica/resource/image_web/page/arena/result/result_lose.png") top center no-repeat;
+  -webkit-animation: simpleFadeIn .25s ease 2.166s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap
+{
+  width: 710px;
+  position: absolute;
+  bottom: 208px;
+  left: -webkit-calc(50% - 355px);
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(1),
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(2),
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(3)
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(1) .icon,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(2) .icon,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(3) .icon
+{
+  -webkit-animation: none;
+  opacity: 1;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(1).clear .effect,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(2).clear .effect,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(3).clear .effect
+{
+  -webkit-animation: none;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(1).clear .bg,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(2).clear .bg,
+#EventArenaMissionResult #mainWrap #missionWrap.skipAnim .mission:nth-child(3).clear .bg
+{
+  -webkit-animation: none;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission
+{
+  width: 250px;
+  height: 200px;
+  position: relative;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(1)
+{
+  -webkit-animation: slideFadeIn 0.2s ease 3.667s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(1) .icon
+{
+  -webkit-animation: iconScale 0.2s ease 4.3s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(1).clear .effect
+{
+  -webkit-animation: effectScale 0.5s ease 4.5s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(1).clear .bg
+{
+  -webkit-animation: brightBg 0.5s ease 4.5s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(2)
+{
+  -webkit-animation: slideFadeIn 0.2s ease 3.967s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(2) .icon
+{
+  -webkit-animation: iconScale 0.2s ease 4.6s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(2).clear .effect
+{
+  -webkit-animation: effectScale 0.5s ease 4.8s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(2).clear .bg
+{
+  -webkit-animation: brightBg 0.5s ease 4.8s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(3)
+{
+  -webkit-animation: slideFadeIn 0.2s ease 4.267s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(3) .icon
+{
+  -webkit-animation: iconScale 0.2s ease 4.9s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(3).clear .effect
+{
+  -webkit-animation: effectScale 0.5s ease 5.1s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:nth-child(3).clear .bg
+{
+  -webkit-animation: brightBg 0.5s ease 5.1s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission:not(:first-child)
+{
+  margin-left: -20px;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .icon,
+#EventArenaMissionResult #mainWrap #missionWrap .mission .effect
+{
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 83px;
+  left: -webkit-calc(50% - 32px);
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .icon
+{
+  z-index: 99;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .effect
+{
+  background: url("/magica/resource/image_web/event/arenaMission/common/result/circle_05.png") left top no-repeat;
+  background-size: 64px 64px;
+  opacity: 0;
+  z-index: 100;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .text
+{
+  width: 186px;
+  max-width: 186px;
+  height: 70px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 24px;
+  left: -webkit-calc(50% - 93px);
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  z-index: 100;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .text p
+{
+  max-width: 180px;
+  word-wrap: break-word;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission .bg
+{
+  width: 250px;
+  height: 132px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission.clear .text p,
+#EventArenaMissionResult #mainWrap #missionWrap .mission.cleared .text p
+{
+  color: #ffffff;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission.clear .bg,
+#EventArenaMissionResult #mainWrap #missionWrap .mission.cleared .bg
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_mission_flame.png");
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission.off .text p
+{
+  color: #949494;
+}
+
+#EventArenaMissionResult #mainWrap #missionWrap .mission.off .bg
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_mission_flame_gray.png");
+}
+
+#EventArenaMissionResult #mainWrap #pointsWrap
+{
+  -webkit-animation: simpleFadeIn 0.333s ease 3.667s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #mainWrap #subInfo
+{
+  width: 580px;
+  height: 40px;
+  position: absolute;
+  top: 192px;
+  left: 222px;
+  text-align: center;
+}
+
+#EventArenaMissionResult #mainWrap #subInfo .consective
+{
+  width: 150px;
+  height: 32px;
+  padding-right: 110px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_streak_base.png") center top no-repeat;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 22px;
+  text-align: right;
+  text-shadow: -1px -1px 1px #ff4f76, 1px -1px 1px #ff4f76, -1px 1px 1px #ff4f76, 1px 1px 1px #ff4f76, -1px -1px #ff4f76, 1px -1px #ff4f76, -1px 1px #ff4f76, 1px 1px #ff4f76, -1px -1px 2px #ff4f76, 1px -1px 2px #ff4f76, -1px 1px 2px #ff4f76, 1px 1px 2px #ff4f76, -1px -1px 2px #ff4f76, 1px -1px 2px #ff4f76, -1px 1px 2px #ff4f76, 1px 1px 2px #ff4f76, -1px -1px 3px #ff4f76, 1px -1px 3px #ff4f76, -1px 1px 3px #ff4f76, 1px 1px 3px #ff4f76;
+}
+
+#EventArenaMissionResult #mainWrap .maxRank
+{
+  width: 562px;
+  height: 30px;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 12%, white 88%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  top: 371px;
+  left: -webkit-calc(50% - 281px);
+  color: #ff4f76;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#EventArenaMissionResult #mainWrap #arenaPoints
+{
+  width: 428px;
+  height: 90px;
+  position: absolute;
+  top: 365px;
+  left: -webkit-calc(50% - 214px);
+}
+
+#EventArenaMissionResult #mainWrap #arenaPoints .getPoint
+{
+  width: 428px;
+  height: 42px;
+  padding-left: 215px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/infinite_pt_bg.png");
+  font-size: 26px;
+  line-height: 42px;
+}
+
+#EventArenaMissionResult #mainWrap #arenaPoints .totalPoint
+{
+  width: 428px;
+  height: 42px;
+  margin-top: 6px;
+  padding-left: 215px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/infinite_sum_bg.png");
+  font-size: 26px;
+  line-height: 42px;
+}
+
+#EventArenaMissionResult #mainWrap #arenaPoints .resultPointMax
+{
+  width: 48px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/arena/infinite_pt_max.png");
+  display: block;
+  position: absolute;
+  right: 6px;
+  bottom: 21px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#EventArenaMissionResult #mainWrap #requireWrap
+{
+  width: 194px;
+  height: 70px;
+  padding: 10px 0 0px 28px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/next_floor_bg.png");
+  position: absolute;
+  top: 385px;
+  right: 191px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#EventArenaMissionResult #mainWrap #requireWrap .requireFirst
+{
+  margin-bottom: 12px;
+}
+
+#EventArenaMissionResult #mainWrap #requireWrap .requireSecond
+{
+  padding-right: 14px;
+  text-align: right;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointTitle,
+#EventArenaMissionResult #mainWrap .resultPointNums
+{
+  width: 572px;
+  height: 30px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 226px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointTitle li,
+#EventArenaMissionResult #mainWrap .resultPointNums li
+{
+  width: 140px;
+  height: 30px;
+  position: relative;
+  color: #ffffff;
+  line-height: 30px;
+  text-align: center;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointTitle
+{
+  top: 465px;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointTitle li
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/square_ftame_b.png") repeat-x;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointNums
+{
+  top: 499px;
+}
+
+#EventArenaMissionResult #mainWrap .resultPointNums li
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/square_ftame_n.png") repeat-x;
+}
+
+#EventArenaMissionResult #mainWrap .getCoinWrap
+{
+  width: 358px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/arena/result/reward_bg.png");
+  position: absolute;
+  top: 490px;
+  left: 333px;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+#EventArenaMissionResult #mainWrap .getCoinWrap img
+{
+  margin-top: -7px;
+  margin-right: 10px;
+}
+
+#EventArenaMissionResult #mainWrap .touch_screen
+{
+  width: 242px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/arena/result/touch_screen.png");
+  position: absolute;
+  bottom: 15px;
+  left: -webkit-calc(50% - 121px);
+  -webkit-animation: tocuhScreen 1.333s ease 5.333s infinite normal;
+  opacity: 0;
+  will-change: transform;
+}
+
+#EventArenaMissionResult #mainWrap .touch_screen.off
+{
+  display: none;
+}
+
+#EventArenaMissionResult #resultMirror
+{
+  width: 996px;
+  height: 986px;
+  position: fixed;
+  top: -webkit-calc(50% - 498px);
+  left: 14px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#EventArenaMissionResult #resultMirror.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorReflec
+{
+  width: 1050px;
+  height: 1050px;
+  position: fixed;
+  top: -webkit-calc(50% - 530px);
+  left: -13px;
+  z-index: 5;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorReflec .reflecMirror
+{
+  width: 822px;
+  height: 822px;
+  position: absolute;
+  top: 114px;
+  left: 114px;
+  overflow: hidden;
+  border-radius: 411px;
+  -webkit-mask: url("/magica/resource/image_web/page/arena/result/reflection_mask.png") no-repeat;
+  -webkit-mask-position: -101px 50%;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorReflec .reflecMirror img
+{
+  position: absolute;
+  top: -500px;
+  left: -100px;
+  -webkit-animation: reflectionMask 5s ease 6.6666s infinite normal;
+  will-change: transform;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorWrap
+{
+  width: 996px;
+  height: 986px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/result_mirror.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: mirrorFadeIn 0.333s linear 0s 1 normal;
+  opacity: 0;
+  z-index: 3;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap
+{
+  width: 818px;
+  height: 818px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 79px;
+  left: 89px;
+  overflow: hidden;
+  border-radius: 409px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .leader
+{
+  width: 264px;
+  height: 822px;
+  margin: 0px;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: cardFadeIn 0.2s ease 0.5s 1 normal;
+  will-change: transform;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(35%, rgba(0, 0, 0, 0.8)), color-stop(55%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .leader img
+{
+  position: absolute;
+  top: 65px;
+  left: -124px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right
+{
+  width: 132px;
+  height: 822px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right img
+{
+  position: absolute;
+  left: -187px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1
+{
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(40%, rgba(0, 0, 0, 0.8)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1 img
+{
+  top: 120px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2
+{
+  -webkit-mask: -webkit-gradient(linear, right top, right bottom, from(rgba(0, 0, 0, 0.8)), color-stop(45%, rgba(0, 0, 0, 0.8)), color-stop(65%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2 img,
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2 img
+{
+  top: 185px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left
+{
+  margin-right: 6px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1
+{
+  -webkit-animation: cardFadeInUp 0.2s ease 0.583s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2
+{
+  -webkit-animation: cardFadeIn 0.2s ease 0.750s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right
+{
+  margin-left: 6px;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1
+{
+  -webkit-animation: cardFadeInUp 0.2s ease 0.666s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2
+{
+  -webkit-animation: cardFadeIn 0.2s ease 0.833s 1 normal;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes iconScale
+{
+  0%
+  {
+    -webkit-transform: scaleX(0) scaleY(2) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1) scaleY(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes effectScale
+{
+  0%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 0;
+  }
+
+  1%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(5) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes simpleFadeIn
+{
+  0%
+  {
+    display: block;
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    display: block;
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes simpleFadeOut
+{
+  0%
+  {
+    display: block;
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    display: none;
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideFadeIn
+{
+  0%
+  {
+    -webkit-transform: translateX(40px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes brightBg
+{
+  0%
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-filter: brightness(100%);
+  }
+
+  50%
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-filter: brightness(130%);
+  }
+
+  100%
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes simpleEndAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+  }
+}
+
+@-webkit-keyframes mirrorFadeIn
+{
+  0%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cardFadeIn
+{
+  0%
+  {
+    -webkit-transform: translateY(-100px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cardFadeInUp
+{
+  0%
+  {
+    -webkit-transform: translateY(100px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrW
+{
+  0%
+  {
+    -webkit-transform: translateX(53px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrI
+{
+  0%
+  {
+    -webkit-transform: translateX(-10px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrN
+{
+  0%
+  {
+    -webkit-transform: translateX(-60px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultDecoLeft
+{
+  0%
+  {
+    -webkit-transform: translateX(129px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultDecoRight
+{
+  0%
+  {
+    -webkit-transform: translateX(-129px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultWinMark
+{
+  0%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.5) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes resultWinAdd
+{
+  0%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 0;
+  }
+
+  25%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.5) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleFirst
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg) translateZ(0);
+    opacity: 1;
+  }
+
+  44%
+  {
+    -webkit-transform: scale(0.6) rotate(10deg) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.6) rotate(15deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleSecond
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(25deg) translateZ(0);
+    opacity: 1;
+  }
+
+  44%
+  {
+    -webkit-transform: scale(1) rotate(65deg) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) rotate(75deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleThird
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg) translateZ(0);
+    opacity: 1;
+  }
+
+  44%
+  {
+    -webkit-transform: scale(1) rotate(30deg) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) rotate(40deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleForth
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg) translateZ(0);
+    opacity: 1;
+  }
+
+  44%
+  {
+    -webkit-transform: scale(0.5) rotate(30deg) translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.5) rotate(45deg) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes tocuhScreen
+{
+  0%
+  {
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+
+  50%
+  {
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes reflectionMask
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0, 0) rotate(-35deg);
+  }
+
+  20%
+  {
+    -webkit-transform: translate(0, 1800px, 0) rotate(-35deg);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 1800px, 0) rotate(-35deg);
+  }
+}
+
+@-webkit-keyframes stageClearBg
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  10%
+  {
+    opacity: 1;
+  }
+
+  90%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scTitle
+{
+  0%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scTitleL
+{
+  0%
+  {
+    -webkit-transform: translateX(323px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scTitleR
+{
+  0%
+  {
+    -webkit-transform: translateX(-323px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scCircle00
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0) rotate(0);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(0.6) translateZ(0) rotate(10deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.6) translateZ(0) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scCircle01
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0) rotate(0);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(40deg);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: scale(1.1) translateZ(0) rotate(50deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.1) translateZ(0) rotate(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scCircle02
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0) rotate(0);
+    opacity: 1;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(30deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.1) translateZ(0) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scCircle05
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0) rotate(0);
+    opacity: 0;
+  }
+
+  20%
+  {
+    -webkit-transform: scale(3) translateZ(0) rotate(20deg);
+  }
+
+  60%
+  {
+    -webkit-transform: scale(5) translateZ(0) rotate(60deg);
+    opacity: 1;
+  }
+
+  80%
+  {
+    -webkit-transform: scale(5) translateZ(0) rotate(80deg);
+    opacity: .1;
+  }
+
+  90%
+  {
+    -webkit-transform: scale(5.1) translateZ(0) rotate(90deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scCircle07
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0) rotate(0);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(27deg);
+  }
+
+  60%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(54deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) translateZ(0) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scCircle08
+{
+  0%
+  {
+    -webkit-transform: scale(0) translateZ(0);
+    opacity: 1;
+  }
+
+  33%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  66%
+  {
+    -webkit-transform: scale(1.7) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.7) translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scStar
+{
+  0%
+  {
+    -webkit-transform: scale(3) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardItemIcon
+{
+  0%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+    opacity: 1;
+  }
+}

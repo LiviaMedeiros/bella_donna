@@ -1,0 +1,518 @@
+#stageClearRewardList
+{
+  width: 884px;
+  height: 440px;
+  position: absolute;
+  top: 59px;
+  left: 42px;
+  overflow: hidden;
+}
+
+#stageClearRewardList .scrollInner
+{
+  padding: 0 0 20px;
+}
+
+#stageClearRewardList .commonFrame3
+{
+  width: 860px;
+  height: 110px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#stageClearRewardList .commonFrame3 .stageName
+{
+  position: absolute;
+  top: 17px;
+  left: 54px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+#stageClearRewardList .commonFrame3 .clearCondition .title,
+#stageClearRewardList .commonFrame3 .openDate .title
+{
+  width: 102px;
+  text-align: left;
+}
+
+#stageClearRewardList .commonFrame3 .clearCondition p,
+#stageClearRewardList .commonFrame3 .openDate p
+{
+  font-size: 18px;
+  line-height: 1;
+}
+
+#stageClearRewardList .commonFrame3 .clearCondition
+{
+  position: absolute;
+  top: 55px;
+  left: 54px;
+}
+
+#stageClearRewardList .commonFrame3 .openDate
+{
+  position: absolute;
+  top: 78px;
+  left: 54px;
+}
+
+#stageClearRewardList .commonFrame3 .index
+{
+  width: 38px;
+  height: 114px;
+  background: #f66a99;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 114px;
+  -webkit-border-radius: 6px 0 0 6px;
+}
+
+#stageClearRewardList .commonFrame3 .reward
+{
+  width: 400px;
+  height: 84px;
+  position: absolute;
+  top: 11px;
+  left: 436px;
+}
+
+#stageClearRewardList .commonFrame3 .reward img
+{
+  width: 84px;
+  height: 84px;
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+#stageClearRewardList .commonFrame3 .reward .title
+{
+  width: 110px;
+  position: absolute;
+  top: 0;
+  left: 74px;
+}
+
+#stageClearRewardList .commonFrame3 .reward .rewardName
+{
+  position: absolute;
+  top: 32px;
+  left: 95px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+#stageClearRewardList .commonFrame3 .reward .quantity
+{
+  position: absolute;
+  top: 58px;
+  left: 95px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+#EventArenaMissionTop
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventArenaMissionTop #helpBtn
+{
+  width: 100px;
+  position: absolute;
+  top: 13px;
+  right: 276px;
+  z-index: 10000;
+}
+
+#EventArenaMissionTop #eventLogo
+{
+  width: 186px;
+  height: 188px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/logo.png") left top no-repeat;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+#EventArenaMissionTop #clearRewardBtn
+{
+  width: 100px;
+  height: 86px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/btn_reward.png") left top no-repeat;
+  position: absolute;
+  top: 238px;
+  left: 43px;
+}
+
+#EventArenaMissionTop #missionLinkBtn
+{
+  width: 100px;
+  height: 86px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/btn_mission.png") left top no-repeat;
+  position: absolute;
+  top: 330px;
+  left: 43px;
+}
+
+#EventArenaMissionTop #eventShopWrap
+{
+  width: 116px;
+  height: 144px;
+  position: absolute;
+  bottom: 14px;
+  left: 35px;
+}
+
+#EventArenaMissionTop #eventShopWrap .itemNumWrap
+{
+  width: 82px;
+  height: 108px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/event_item_bg.png") left top no-repeat;
+  position: absolute;
+  top: 0px;
+  left: 17px;
+  pointer-events: none;
+}
+
+#EventArenaMissionTop #eventShopWrap .itemNumWrap .shopItemImg
+{
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+#EventArenaMissionTop #eventShopWrap .itemNumWrap .numWrap
+{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size: 16px;
+}
+
+#EventArenaMissionTop #eventShopWrap .itemNumWrap .numWrap span
+{
+  font-size: 16px;
+}
+
+#EventArenaMissionTop #eventShopWrap .shopLinkBtn
+{
+  width: 116px;
+  height: 40px;
+  background: url("/magica/resource/image_web/page/quest/week/btn_shop.png") left top no-repeat;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+#EventArenaMissionTop #partyPtWrap
+{
+  width: 520px;
+  height: 112px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/bg_party_pt.png") left top no-repeat;
+  position: absolute;
+  top: 45px;
+  right: 0px;
+}
+
+#EventArenaMissionTop #partyPtWrap .point
+{
+  position: absolute;
+  top: 38px;
+  right: 212px;
+  font-size: 30px;
+  line-height: 46px;
+}
+
+#EventArenaMissionTop #partyPtWrap .point span
+{
+  font-size: 18px;
+}
+
+#EventArenaMissionTop #partyPtWrap .caution
+{
+  position: absolute;
+  right: 6px;
+  bottom: 0px;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+#EventArenaMissionTop #partyPtWrap .missionBtn
+{
+  width: 112px;
+  position: absolute;
+  top: 46px;
+  right: 62px;
+}
+
+#EventArenaMissionTop #stageListWrap
+{
+  width: 520px;
+  height: -webkit-calc(100% - 172px);
+  padding: 0;
+  position: absolute;
+  top: 172px;
+  right: 0px;
+  overflow: hidden;
+}
+
+#EventArenaMissionTop #stageListWrap.first .firstView
+{
+  display: block !important;
+}
+
+#EventArenaMissionTop #stageListWrap.second .secondView
+{
+  display: block !important;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner
+{
+  height: auto !important;
+  min-height: 100%;
+  padding: 48px 14px 180px 0;
+  position: relative;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .clearConditionWrap
+{
+  width: 288px;
+  height: 58px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/bg_clear_condition.png?002") left top no-repeat;
+  position: absolute;
+  top: 0px;
+  left: 94px;
+  z-index: 100;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .clearConditionWrap .point
+{
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .clearRewardTitle
+{
+  width: 78px;
+  height: 42px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/icon_stage_clear.png") left top no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 24px;
+  z-index: 100;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage
+{
+  width: 506px;
+  height: 98px;
+  margin-bottom: 12px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/btn_stage.png") left top no-repeat;
+  position: relative;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .firstView,
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .secondView
+{
+  display: none;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/btn_stage_gray.png") left top no-repeat;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off .firstView
+{
+  display: block !important;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off .stageTitle
+{
+  left: 103px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off .stageTitle,
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off .rewardImg
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: grayscale(100%) brightness(70%);
+  filter: grayscale(100%) brightness(70%);
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage.off .openDate
+{
+  position: absolute;
+  right: 96px;
+  bottom: 1px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageState
+{
+  position: absolute;
+  left: 7px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageState.new
+{
+  width: 84px;
+  height: 21px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/quest_state_new.png") left top no-repeat;
+  top: -6px;
+  -webkit-animation: brightAnim 4s linear 0s infinite normal;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageState.comp
+{
+  width: 96px;
+  height: 18px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/quest_state_comp.png") left top no-repeat;
+  top: -2px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageState.clear
+{
+  width: 60px;
+  height: 18px;
+  background: url("/magica/resource/image_web/event/arenaMission/common/quest_state_clear.png") left top no-repeat;
+  top: -2px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageTitle
+{
+  position: absolute;
+  left: 60px;
+  font-size: 22px;
+  line-height: 98px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .missionTitle
+{
+  width: 210px;
+  height: 24px;
+  padding-left: 24px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/bg_mission.png") left top no-repeat;
+  position: absolute;
+  bottom: 1px;
+  left: 132px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .mission
+{
+  width: 96px;
+  height: 32px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 1px;
+  left: 225px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .mission li
+{
+  width: 32px;
+  height: 32px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/coin_off.png") left top no-repeat;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .mission li.cleared
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/coin_on.png") left top no-repeat;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .missionText
+{
+  position: absolute;
+  top: 12px;
+  left: 60px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .missionText li
+{
+  padding: 0 0 0 30px;
+  position: relative;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .missionText li:before
+{
+  width: 26px;
+  height: 26px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/coin_off.png") left top no-repeat;
+  background-size: 26px 26px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .missionText .cleared:before
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/coin_on.png") left top no-repeat;
+  background-size: 26px 26px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageReward .rewardImg
+{
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#EventArenaMissionTop #stageListWrap .scrollInner .stage .stageReward .getIcon
+{
+  width: 50px;
+  height: 22px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/icon_get.png") left top no-repeat;
+  position: absolute;
+  right: 24px;
+  bottom: 0px;
+}
+
+@-webkit-keyframes brightAnim
+{
+
+  0%,
+  40%,
+  60%,
+  100%
+  {
+    -webkit-transform: translate(0, 0, 0);
+    -webkit-filter: brightness(100%);
+  }
+
+  50%
+  {
+    -webkit-transform: translate(0, 0, 0);
+    -webkit-filter: brightness(300%);
+  }
+}

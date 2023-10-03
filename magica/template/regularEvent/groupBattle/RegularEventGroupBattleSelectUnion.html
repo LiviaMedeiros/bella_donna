@@ -1,0 +1,35 @@
+<div id="RegularEventGroupBattleSelectUnion">
+  <div id="helpBtn" class="se_decide TE" data-eventid="<%= eventMaster.regularEventId %>"></div>
+  <!-- イベントロゴ -->
+  <div id="eventLogo"><img src="/magica/resource/image_web/regularEvent/groupBattle/<%= eventMaster.viewParameterMap.BOSS_ID %>/title_l.png" /></div>
+  <div id="selectUnionCaution"><img src="/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/caution.png" /></div>
+  <!-- 勢力図リスト -->
+  <div id="selectUnionWrap">
+    <div id="unionBtnWrap"></div>
+    <div id="leftArrow" class="changeUnionBtn se_tabs TE"></div>
+    <div id="rightArrow" class="changeUnionBtn se_tabs TE"></div>
+  </div>
+  <!-- 勢力図 -->
+  <div id="unionInfoWrap"></div>
+</div>
+<script type="text/template" id="unionLogoPartsTemp"> <div id="unionLogoWrap">
+		<div id="unionLogoBg"></div>
+		<div id="unionLogo">
+			<img src="/magica/resource/image_web/regularEvent/groupBattle/common/union_logo_l_0<%='<%= union.unionId %\>'%>.png"/>
+		</div>
+		<div id="unionName" class="ts_union_0<%='<%= union.unionId %\>'%>"><%='<%= union.name %\>'%></div>
+	</div>
+	<div id="unionDetailBtn" class="TE"></div>
+</script>
+<script type="text/template" id="selectUnionPartsTemp"> <div id="selectedBtn">
+		<img src="/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_on_chara_0<%='<%= selectedUnion.unionId %\>'%>.png"/>
+		<div id="selectedUnionName" class="mb_white ts_union_0<%='<%= selectedUnion.unionId %\>'%>"><%='<%= selectedUnion.name %\>'%></div>
+	</div>
+
+	<div id="offUnionBtn1" class="offUnionBtn">
+		<img src="/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_off_chara_0<%='<%= union1.unionId %\>'%>.png" />
+	</div>
+	<div id="offUnionBtn2" class="offUnionBtn">
+		<img src="/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_off_chara_0<%='<%= union2.unionId %\>'%>.png" />
+	</div>
+</script>

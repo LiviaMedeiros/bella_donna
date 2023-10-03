@@ -1,0 +1,14 @@
+<script type="text/template" id="birthCheckFirst" class="birthCheckFirst"> 有料アイテムを購入するには年齢認証が必要です。<br><br>
+	1カ月あたりの限度額は15歳以下が5,000<% if(platform != "DMM"){ %>円、16〜17歳<br><% }else{ %>DMMポイント、<br>16〜17歳<% } %>
+	が30,000<% if(platform != "DMM"){ %>円<% }else{ %>DMMポイント<% } %>です。<% if(platform == "DMM"){ %><br><% } %>
+	未成年の方は保護者の同意を得て下さい。<br><br>
+	この登録は1度のみで次回は不要です。<br>
+	また、登録情報は年齢確認以外に使用しません。
+	<span class="btn b_pink se_decide TE" se_decide id="birthCheck"><span class='b_screen'></span>年齢認証へ</span>
+</script>
+<script type="text/template" id="birthInputs" class="birthInputs"> お客様の生年月日を入力してください。<br><br>
+	西暦:&nbsp;<select id="year"></select>&nbsp;年&nbsp;&nbsp;<select id="day"></select>&nbsp;月
+	<div class="btn b_pink se_decide TE" id="birthDecide"><span class='b_screen'></span>登録</div>
+	<div class="birthTriangle1"></div>
+	<div class="birthTriangle2"></div>
+</script>

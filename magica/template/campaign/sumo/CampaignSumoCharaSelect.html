@@ -1,0 +1,11 @@
+<div id="CampaignSumoCharaSelect">
+  <div class="charaList"> <% _.forEach(charaList,function(txt){ %> <div class="chara no<%= txt.charaId %>" data-id="<%= txt.charaId %>">
+      <div class="bg"></div>
+      <img class="icon" src="/magica/resource/image_web/campaign/sumo/chara/chara_<%= txt.charaId<10? '0'+txt.charaId : txt.charaId %>_r.png" alt="" />
+      <img class="name" src="/magica/resource/image_web/campaign/sumo/name/chara_name_<%= txt.charaId<10? '0'+txt.charaId : txt.charaId %>.png" alt="">
+      <div class="selectedIcon"></div>
+    </div> <% }) %> <div class="decideBtn TE se_decide"></div>
+    <div class='arrow right hide se_tabs'></div>
+    <div class='arrow left hide se_tabs'></div>
+  </div>
+</div>

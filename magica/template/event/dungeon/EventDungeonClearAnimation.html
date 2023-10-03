@@ -1,0 +1,108 @@
+<div id="SectionClearAnimation"> <% console.log(this) %> <%
+		var mRewardType	= missionRewardCode.rewardType.toLowerCase();
+		var mItemCode		= missionRewardCode.itemCode.toLowerCase();
+		var mChestColor	= missionRewardCode.chestColor.toLowerCase();
+		var mQuantity		= missionRewardCode.quantity;
+
+		var cRewardType	= clearRewardCode.rewardType.toLowerCase();
+		var cItemCode		= clearRewardCode.itemCode.toLowerCase();
+		var cChestColor	= clearRewardCode.chestColor.toLowerCase();
+		var cQuantity		= clearRewardCode.quantity;
+	%> <div id="whiteOut"></div>
+  <div id="sectionClear_b"></div>
+  <div id="sectionClear_b2" class="sectionAnimation"></div>
+  <div id="sectionClear_s"></div>
+  <div id="sectionClear_base"></div>
+  <div id="sectionClear_light"></div>
+  <div id="itemPetal1"></div>
+  <div id="itemPetal2"></div>
+  <div id="sectionChestLight"></div>
+  <div id="sectionChestOpen" class="sectionAnimation">
+    <img src="/magica/resource/image_web/common/treasure/<%= cChestColor %>_open.png">
+  </div>
+  <div id="sectionChest">
+    <img src="/magica/resource/image_web/common/treasure/<%= cChestColor %>_close.png">
+  </div>
+  <div id="sectionChest2">
+    <img src="/magica/resource/image_web/common/treasure/<%= cChestColor %>_close.png">
+  </div>
+  <!-- アイテム画像 -->
+  <div id="sectionItemIcon"> <%
+			var titleClass = "";
+			if (!firstClear) titleClass = "get";
+		 %> <div id="sectionItemTitle" class="title <%= titleClass %>"></div> <% if(cRewardType == 'live2d' || cRewardType == 'doppel') { %> <div class="imgWrap">
+      <div class="charaIcon">
+        <div class="maskWrap"> <% if(cRewardType == 'live2d') { %> <img data-nativeimgkey='mini_<%= cItemCode + "00" %>_d' data-src='resource/image_native/mini/image/mini_<%= cItemCode + "00" %>_d.png'> <% } else if(cRewardType == 'doppel') { %> <img data-nativeimgkey='mini_<%= cItemCode %>_d' data-src='resource/image_native/mini/image/mini_<%= cItemCode %>_d.png'> <% } %> </div>
+      </div> <% if(cRewardType == 'live2d') { %> <img src='/magica/resource/image_web/item/main/live2d.png' alt=''> <% } else if(cRewardType == 'doppel') { %> <img src='/magica/resource/image_web/item/main/doppel.png' alt=''> <% } %>
+    </div> <% } else if(cRewardType == 'piece') { %> <img src='/magica/resource/image_web/memoria/<%= cItemCode %>.png' alt=''> <% } else if(cRewardType == 'gift') { %> <img data-nativeimgkey='<%= cItemCode %>' data-src='resource/image_native/gift/<%= cItemCode %>.png' alt=''> <% } else if(cRewardType == 'gem') { %> <div class="imgWrap">
+      <img src='/magica/resource/image_web/item/frame/item_frame03.png' alt=''>
+      <img data-nativeimgkey='<%= cItemCode %>' data-src='resource/image_native/chara/<%= cItemCode %>.png' alt=''>
+    </div> <% } else { %> <% var subPath = (cItemCode.indexOf('event_') > -1) ? 'event' : 'main'; %> <% var _cItemCode = (cItemCode.indexOf('event_dungeon') > -1 && cItemCode.indexOf('cure_cp') > -1) ? 'event_dungeon_cure_cp' : cItemCode; %> <img src="/magica/resource/image_web/item/<%= subPath %>/<%= _cItemCode %>.png"> <% } %> <% if(cQuantity) { %> <p class='quantity ts_gold'>×<%= cQuantity %></p> <% } %> </div> <% var mission1 = (missionCleared1) ? 'cleared' : null %> <% var mission2 = (missionCleared2) ? 'cleared' : null %> <% var mission3 = (missionCleared3) ? 'cleared' : null %> <% var areaState = (firstClearedAt) ? 'new' : 'clear' %> <%     areaState = (mission1 && mission2 && mission3) ? 'comp' : areaState %> <div id="resultMissionFrame" class="sectionAnimation">
+    <table class="missionList" border="0">
+      <tr id='resultMissionRow1' class="<%= missionStatus1 %>">
+        <td>
+          <div class='clearIcon'></div>
+        </td>
+        <td width='64'>
+          <p class='star'></p>
+          <div class='clearSprite rolingSprite'></div>
+        </td>
+        <td>
+          <p class="c_white"><%= area.missionDescription1 %></p>
+        </td>
+      </tr>
+      <tr id='resultMissionRow2' class="<%=missionStatus2 %>">
+        <td>
+          <div class='clearIcon'></div>
+        </td>
+        <td width='64'>
+          <p class='star'></p>
+          <div class='clearSprite rolingSprite'></div>
+        </td>
+        <td>
+          <p class="c_white"><%= area.missionDescription2 %></p>
+        </td>
+      </tr>
+      <tr id='resultMissionRow3' class="<%= missionStatus3 %>">
+        <td>
+          <div class='clearIcon'></div>
+        </td>
+        <td width='64'>
+          <p class='star'></p>
+          <div class='clearSprite rolingSprite'></div>
+        </td>
+        <td>
+          <p class="c_white"><%= area.missionDescription3 %></p>
+        </td>
+      </tr>
+    </table>
+    <!-- ミッション報酬 -->
+    <div id="missionItemList">
+      <p class="missionRewardTitle"></p>
+      <!-- 宝箱 -->
+      <div class="maskWrap <%= mChestColor %>"></div>
+      <!-- 報酬アイテム画像 --> <% if(mRewardType === "gift") { %> <img class='itemImg' data-nativeimgkey='<%= mItemCode %>' data-src='resource/image_native/gift/<%= mItemCode %>.png'> <% } else if(mRewardType === "live2d") { %> <div class="charaIcon">
+        <div class="charaMaskWrap">
+          <img data-nativeimgkey='mini_<%= mItemCode %>00_d' data-src='resource/image_native/mini/image/mini_<%= mItemCode %>00_d.png'>
+        </div>
+      </div>
+      <img class='itemImg' src='/magica/resource/image_web/item/main/live2d.png'> <% } else if(mRewardType === "doppel") { %> <div class="charaIcon">
+        <div class="charaMaskWrap">
+          <img data-nativeimgkey='mini_<%= mItemCode %>_d' data-src='resource/image_native/mini/image/mini_<%= mItemCode %>_d.png'>
+        </div>
+      </div>
+      <img class='itemImg' src='/magica/resource/image_web/item/main/doppel.png'> <% } else if(mRewardType === 'piece') { %> <img class="itemImg" src='/magica/resource/image_web/memoria/<%= mItemCode %>.png' alt=''> <% } else if(mRewardType === 'gem') { %> <img class="itemImg gem" data-nativeimgkey='<%= mItemCode %>' data-src='resource/image_native/chara/<%= mItemCode %>.png' alt=''> <% } else { %> <% var subPath = (mItemCode.indexOf('event_') > -1) ? 'event' : 'main'; %> <% var _mItemCode = (mItemCode.indexOf('event_dungeon') > -1 && mItemCode.indexOf('cure_cp') > -1) ? 'event_dungeon_cure_cp' : mItemCode; %> <img class='itemImg' src='/magica/resource/image_web/item/<%= subPath %>/<%= _mItemCode %>.png' alt=""> <% } %> <% if(mQuantity) { %> <div class='rewardNum ts_gold'>×<%= mQuantity %></div> <% } %> <!-- アニメーション系:宝箱開封 -->
+      <div class="effectWrap">
+        <div class="effectCircle"></div>
+        <div class="effectFlash"></div>
+        <div class="effectGlitter"></div>
+      </div>
+    </div>
+  </div>
+  <div id="itemLight" class="rolingSprite"></div>
+  <div id="magicFrameL"></div>
+  <div id="magicFrameR"></div>
+  <div id="clearMask"></div>
+  <div id="clearBgMask"></div>
+  <div id="touchScreen"></div>
+</div>

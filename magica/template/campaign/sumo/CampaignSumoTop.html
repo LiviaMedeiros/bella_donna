@@ -1,0 +1,13 @@
+<div id="CampaignSumoTop">
+  <div class="madoka"></div>
+  <div class="iroha"></div>
+  <div class="plate left"></div>
+  <div class="plate right"></div>
+  <div class="logo"></div> <%
+		var arenaLimit = false;
+		if(gameUser){
+			if(gameUser.toJSON().closeFunctions && gameUser.toJSON().closeFunctions.indexOf("ARENA") > -1) arenaLimit = true;
+		}
+	%> <div class="mirrorsBtn linkBtn TE se_decide <% if(arenaLimit){ %>off<% } %>" data-href="#/ArenaTop"></div>
+  <div class="mainBtn linkBtn TE se_decide" data-href="#/CampaignSumoCharaSelect"></div>
+</div>

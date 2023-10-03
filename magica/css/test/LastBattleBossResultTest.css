@@ -1,0 +1,667 @@
+#LastBattleBossResultTest
+{
+  position: fixed;
+  width: 1024px;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#LastBattleBossResultTest #touchScreen
+{
+  position: fixed;
+  width: 1024px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9;
+  display: none;
+}
+
+#LastBattleBossResultTest #touchScreen.on
+{
+  display: block;
+}
+
+#LastBattleBossResultTest .rippleObjWrap
+{
+  width: 100%;
+  height: 580px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_1
+{
+  width: 611px;
+  height: 619px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_result_circle01.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 0.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_1.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_2
+{
+  width: 455px;
+  height: 461px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_result_circle02.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 0.866s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_2.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_3
+{
+  width: 341px;
+  height: 344px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_result_circle03.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_3.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_4
+{
+  width: 326px;
+  height: 329px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_result_circle04.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_4.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_5
+{
+  width: 239px;
+  height: 242px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_result_circle05.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.466s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .rippleObjWrap .rippleObj_5.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultTitleWrap
+{
+  top: 100px;
+  left: 360px;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .resultTitleWrap .resultTitle
+{
+  width: 322px;
+  height: 34px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_boss_title.png") left top no-repeat;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: scaleX(0);
+  -webkit-animation: resultTitleAnimation 1.0s ease 2.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultTitleWrap .resultTitleBase
+{
+  width: 618px;
+  height: 62px;
+  opacity: 1;
+  top: -50px;
+  left: -120px;
+  position: relative;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_title.png") left top no-repeat;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: scaleY(0);
+  -webkit-animation: resultTitleBaseAnimation 1.4s ease 1.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultTitleWrap .resultTitleDecoLeft
+{
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/icon_boss_title.png") no-repeat;
+  top: -95px;
+  left: -70px;
+  position: relative;
+  width: 41px;
+  height: 29px;
+  scale: 1;
+  opacity: 0;
+  -webkit-animation: resultTitleDecoAnimation 1.2s ease 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultTitleWrap .resultTitleDecoRight
+{
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/icon_boss_title.png") no-repeat;
+  top: -120px;
+  left: 338px;
+  position: relative;
+  width: 41px;
+  height: 29px;
+  scale: 1;
+  opacity: 0;
+  -webkit-animation: resultTitleDecoAnimation 1.2s ease 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultStringWrap
+{
+  top: -20px;
+  position: fixed;
+}
+
+#LastBattleBossResultTest .resultStringWrap .resultString
+{
+  width: 107px;
+  height: 96px;
+  position: absolute;
+  top: 155px;
+  opacity: 1;
+}
+
+#LastBattleBossResultTest .resultStringWrap .resultString.FINISH
+{
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_finish.png") left top no-repeat;
+  width: 442px;
+  left: 290px;
+  opacity: 0;
+  -webkit-animation: resultStringFinishAnimation 0.8s ease 3.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .resultStringWrap .resultStringAdd
+{
+  position: fixed;
+  top: 135px;
+  left: 290px;
+  width: 442px;
+  height: 92px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_finish_efe.png") left top no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-animation: resultStringFinishAddAnimation 0.666s ease-in-out 3.486s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .damageWrap
+{
+  position: fixed;
+  left: 0px;
+}
+
+#LastBattleBossResultTest .damageWrap .damageBase
+{
+  width: 549px;
+  height: 136px;
+  top: 230px;
+  left: 230px;
+  position: relative;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_damage_bg.png") left top no-repeat;
+  -webkit-transform: scaleX(0);
+  -webkit-animation: damageBaseAnimation 0.666s ease-in-out 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .damageWrap .damageText
+{
+  top: 240px;
+  left: 460px;
+  width: 110px;
+  height: 142px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_damage.png") left top no-repeat;
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transform: scaleY(0);
+  -webkit-animation: damageTextAnimation 0.666s ease-in-out 3.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .damageWrap .damageNumWrap
+{
+  top: 265px;
+  left: 290px;
+  width: 450px;
+  height: 142px;
+  position: fixed;
+  color: wheat;
+  text-align: center;
+  font-size: 40px;
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+  -webkit-transform: scaleY(0);
+  -webkit-animation: damageNumAnimation 0.566s ease-in-out 3.566s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .damageWrap .damageNumWrap .damageNumImg
+{
+  margin: 0 -5px;
+}
+
+#LastBattleBossResultTest .damageWrap .damageNumWrap .damageCommaImg
+{
+  margin: 0 -10px;
+}
+
+#LastBattleBossResultTest .damageWrap .damageArrowLeft
+{
+  top: 255px;
+  left: 200px;
+  width: 110px;
+  height: 142px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_damage_arrow.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: damageArrowAnimation 0.666s ease-in-out 3.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .damageWrap .damageArrowRight
+{
+  top: 200px;
+  left: 680px;
+  width: 110px;
+  height: 142px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/efe_damage_arrow.png") left top no-repeat;
+  -webkit-transform: rotate(180deg);
+  opacity: 0;
+  -webkit-animation: damageArrowAnimation 0.666s ease-in-out 3.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardBase
+{
+  top: 400px;
+  left: 130px;
+  width: 760px;
+  height: 82px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/bg_reward_dp.png") left top no-repeat;
+  opacity: 0;
+  -webkit-transform: scaleX(0.6);
+  -webkit-animation: rewardBaseAnimation 0.6s ease-in-out 3.866s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardBeforeBase
+{
+  top: 422px;
+  left: 170px;
+  width: 110px;
+  height: 27px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/bg_dptitle_01.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardBeforeText
+{
+  position: fixed;
+  top: 422px;
+  left: 200px;
+  color: #ffff;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardBeforeNum
+{
+  position: fixed;
+  top: 422px;
+  left: 320px;
+  width: 130px;
+  height: 27px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_dp_num.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardArrow
+{
+  position: fixed;
+  top: 417px;
+  left: 500px;
+  width: 110px;
+  height: 142px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/icon_arrow.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.466s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardAfterBase
+{
+  position: fixed;
+  top: 422px;
+  left: 560px;
+  width: 115px;
+  height: 27px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/bg_dptitle_02.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardAfterText
+{
+  position: fixed;
+  top: 422px;
+  left: 590px;
+  color: #ffff;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .rewardWrap .rewardAfterNum
+{
+  position: fixed;
+  top: 422px;
+  left: 700px;
+  width: 130px;
+  height: 27px;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/text_dp_num.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest #retryBtn
+{
+  top: 500px;
+  left: 860px;
+  width: 240px;
+  height: 57px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/retry.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: retryBtnAnimation 0.666s ease-in-out 5.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleBossResultTest .touch_screen
+{
+  top: 520px;
+  left: 390px;
+  width: 240px;
+  height: 27px;
+  position: fixed;
+  background: url("/magica/resource/image_web/page/quest/puellaHistoriaLastBattle/result/anime/touch.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: touchScreen 0.666s ease 5.066s infinite normal;
+}
+
+@-webkit-keyframes rippleObjScaleAnimation
+{
+  0%
+  {
+    -webkit-transform: rotate(0) scale(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(180deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rippleObjRotateAnimation
+{
+  0%
+  {
+    -webkit-transform: rotate(0);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes resultTitleAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes resultTitleBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes resultTitleDecoAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStringFinishAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStringFinishAddAnimation
+{
+  0%
+  {
+    display: block;
+    opacity: 1;
+  }
+
+  100%
+  {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes damageBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes damageTextAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes damageNumAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes damageArrowAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardFadeAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes retryBtnAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes touchScreen
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}

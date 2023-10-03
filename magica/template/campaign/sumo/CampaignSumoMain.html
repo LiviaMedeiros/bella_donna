@@ -1,0 +1,59 @@
+<div id="CampaignSumoMain"> <% var playerId = playerModel.charaId < 10 ? '0'+playerModel.charaId : playerModel.charaId; %> <% var enemyId =  enemyModel.charaId < 10 ? '0'+enemyModel.charaId : enemyModel.charaId; %> <%
+		var charaChangeId = null
+		if (charaChangeFlag) {
+			charaChangeId = playerModel.charaChangeModel.charaId < 10 ? '0'+playerModel.charaChangeModel.charaId : playerModel.charaChangeModel.charaId;
+		}
+	%> <div id="judgement"></div>
+  <div id="collisionText">
+    <div class="text pos1"></div>
+    <div class="text pos2"></div>
+  </div>
+  <div id="bgRing">
+    <div id="bgHole"></div>
+  </div>
+  <div id="charaWrap">
+    <div id="enemyWrap" class="chara<%= enemyId %>">
+      <img class="icon" src="/magica/resource/image_web/campaign/sumo/chara/chara_<%= enemyId %>_l.png" alt="" />
+    </div>
+    <div id="playerWrap" class="chara<%= playerId %>"> <% if (charaChangeId) { %> <img class="icon" src="/magica/resource/image_web/campaign/sumo/chara/chara_<%= playerId %>_r.png" alt="" />
+      <img class="icon after" src="/magica/resource/image_web/campaign/sumo/chara/chara_<%= charaChangeId %>_r.png" alt="" /> <% } else { %> <img class="icon" src="/magica/resource/image_web/campaign/sumo/chara/chara_<%= playerId %>_r.png" alt="" /> <% } %> <div id="collisionEffect">
+        <div class="toge pos1"></div>
+        <div class="toge pos2"></div>
+      </div>
+    </div>
+  </div>
+  <div id="bgRing2"></div>
+  <div id="bgFrame"></div>
+  <div id='trapIcon'></div>
+  <div id='touchIcon'></div>
+  <div id='touchWrap'></div>
+  <div id='vsCutinWrap' class="cutin"> <% if (charaChangeId) { %> <div class="player">
+      <div class="result">●</div>
+      <img class="name" src="/magica/resource/image_web/campaign/sumo/name/name_<%= charaChangeId %>.png" alt="<%= playerModel.charaChangeModel.name %>" />
+    </div>
+    <div class="player before">
+      <div class="result">●</div>
+      <img class="name" src="/magica/resource/image_web/campaign/sumo/name/name_<%= playerId %>.png" alt="<%= playerModel.name %>" />
+    </div> <% } else { %> <div class="player">
+      <div class="result">●</div>
+      <img class="name" src="/magica/resource/image_web/campaign/sumo/name/name_<%= playerId %>.png" alt="<%= playerModel.name %>" />
+    </div> <% } %> <div class="enemy">
+      <div class="result">●</div>
+      <img class="name" src="/magica/resource/image_web/campaign/sumo/name/name_<%= enemyId %>.png" alt="<%= enemyModel.name %>" />
+    </div>
+  </div>
+  <div id='startCutinWrap' class="cutin">
+    <div class="text1"></div>
+    <div class="text2"></div>
+  </div>
+  <div id="startBtn" class="TE"></div>
+  <div id='resultCutinWrap' class="cutin">
+    <div class="effect"></div>
+    <div class="text"></div>
+    <div id="btnWrap">
+      <div id="toTopBtn" class="linkBtn se_decide TE" data-href="#/CampaignSumoTop"></div>
+      <div id="toCharaSelectBtn" class="linkBtn se_decide TE" data-href="#/CampaignSumoCharaSelect"></div>
+      <div id="retryBtn" class="se_decide TE"></div>
+    </div>
+  </div>
+</div>

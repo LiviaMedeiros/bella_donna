@@ -1,0 +1,313 @@
+#RegularEventExterminationBattleSelect
+{
+  position: relative;
+}
+
+#RegularEventExterminationBattleSelect #logo
+{
+  position: absolute;
+  left: 20px;
+  top: 90px;
+  width: 158px;
+  height: 76px;
+}
+
+#RegularEventExterminationBattleSelect #bossList
+{
+  position: absolute;
+  left: 14px;
+  top: 198px;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap
+{
+  position: relative;
+  width: 190px;
+  height: 90px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .bg
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/bg_map_enemy.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .attribute
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .attribute>div
+{
+  width: 100%;
+  height: 100%;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .enemyImg
+{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 90px;
+  height: 60px;
+  -webkit-mask: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(35%, black), to(black));
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .detailBtn
+{
+  background: green;
+  position: absolute;
+  left: 82px;
+  top: 36px;
+  width: 26px;
+  height: 26px;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .rewardImg
+{
+  background: blue;
+  position: absolute;
+  left: 118px;
+  top: 12px;
+  width: 41px;
+  height: 41px;
+}
+
+#RegularEventExterminationBattleSelect #bossList .bossWrap .difficultyText
+{
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 2px 0px 2px #b28850, -2px 0px 2px #b28850, 0px 2px 2px #b28850, 0px -2px 2px #b28850, 2px 2px 2px #b28850, -2px 2px 2px #b28850, 2px -2px 2px #b28850, -2px -2px 2px #b28850;
+}
+
+#RegularEventExterminationBattleSelect #bossList .lockText
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/bg_top_label.png") left top no-repeat;
+  position: absolute;
+  left: -10px;
+  bottom: -16px;
+  width: 220px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 15px;
+  color: #efe880;
+}
+
+#RegularEventExterminationBattleSelect #bossList.lock .difficulty
+{
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+#RegularEventExterminationBattleSelect #bossList.lock:after
+{
+  content: "";
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/icon_lock.png") left top no-repeat;
+  position: absolute;
+  left: 68px;
+  top: 62px;
+  width: 62px;
+  height: 62px;
+}
+
+#RegularEventExterminationBattleSelect #stageList
+{
+  position: absolute;
+  left: 220px;
+  top: 80px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap
+{
+  position: absolute;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya1
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_01.png") left top no-repeat;
+  position: absolute;
+  width: 460px;
+  height: 241px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya2
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_02.png") left top no-repeat;
+  position: absolute;
+  width: 348px;
+  height: 173px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya3
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_03.png") left top no-repeat;
+  position: absolute;
+  width: 363px;
+  height: 77px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya4
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_04.png") left top no-repeat;
+  position: absolute;
+  width: 343px;
+  height: 70px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya5
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_05.png") left top no-repeat;
+  position: absolute;
+  width: 176px;
+  height: 62px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bg .moya6
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/efe_moya_06.png") left top no-repeat;
+  position: absolute;
+  width: 160px;
+  height: 46px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .bgBoss
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/icon_kekkai_boss.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 142px;
+  height: 40px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .name
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/bg_map_title.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 142px;
+  height: 40px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 2px 0px 2px #4c2140, -2px 0px 2px #4c2140, 0px 2px 2px #4c2140, 0px -2px 2px #4c2140, 2px 2px 2px #4c2140, -2px 2px 2px #4c2140, 2px -2px 2px #4c2140, -2px -2px 2px #4c2140;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .icon
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 170px;
+  height: 173px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap .clearIcon
+{
+  background: url("/magica/resource/image_web/regularEvent/senmetsu/common/bg_map_clear.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 16px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap:nth-child(1)
+{
+  left: 50px;
+  top: 20px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap:nth-child(2)
+{
+  left: 450px;
+  top: 20px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap:nth-child(3)
+{
+  left: 50px;
+  top: 200px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap:nth-child(4)
+{
+  left: 450px;
+  top: 200px;
+}
+
+#RegularEventExterminationBattleSelect #stageList .stageWrap:nth-child(5)
+{
+  left: 220px;
+  top: 50px;
+}
+
+#RegularEventExterminationBattleSelect .caution
+{
+  position: absolute;
+  right: 285px;
+  bottom: 30px;
+  color: #91773e;
+  text-shadow: 2px 0px 2px #fff, -2px 0px 2px #fff, 0px 2px 2px #fff, 0px -2px 2px #fff, 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff;
+}
+
+#RegularEventExterminationBattleSelect #linkFormationtBtn
+{
+  position: absolute;
+  right: 65px;
+  bottom: 13px;
+  width: 200px;
+  font-size: 18px;
+}
+
+#RegularEventExterminationBattleSelect #difficultyList
+{
+  position: absolute;
+  top: -webkit-calc(50% - 85px);
+  text-align: center;
+}
+
+#RegularEventExterminationBattleSelect #scheduleWrap
+{
+  background: rgba(178, 136, 80, 0.5);
+  position: absolute;
+  left: -webkit-calc(50% - 272px);
+  bottom: 23px;
+  width: 544px;
+  height: 59px;
+  border-radius: 10px;
+}
+
+#RegularEventExterminationBattleSelect #scheduleWrap .text
+{
+  padding-left: 30px;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: -1px -1px 1px #950688, 1px -1px 1px #950688, -1px 1px 1px #950688, 1px 1px 1px #950688, -1px -1px #950688, 1px -1px #950688, -1px 1px #950688, 1px 1px #950688, -1px -1px 1px #950688, 1px -1px 1px #950688, -1px 1px 1px #950688, 1px 1px 1px #950688, -1px -1px #950688, 1px -1px #950688, -1px 1px #950688, 1px 1px #950688;
+  line-height: 59px;
+}
+
+#RegularEventExterminationBattleSelect #scheduleWrap #scheduleBtn
+{
+  position: absolute;
+  right: 26px;
+  top: 7px;
+  width: 212px;
+  height: 46px;
+}

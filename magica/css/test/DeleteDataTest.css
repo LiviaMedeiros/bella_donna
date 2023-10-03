@@ -1,0 +1,21 @@
+#ConfigTop
+{
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#ConfigTop #getBtn
+{
+  display: block;
+  margin: 80px 20px 10px;
+}
+
+#ConfigTop .setBtn,
+#ConfigTop #get2Btn
+{
+  display: block;
+  margin: 20px 20px 10px;
+}

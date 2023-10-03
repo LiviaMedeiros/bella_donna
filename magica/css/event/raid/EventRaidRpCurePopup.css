@@ -1,0 +1,155 @@
+#RpCureWrap
+{
+  width: 510px;
+  height: 410px;
+  position: absolute;
+  top: 58px;
+  left: 0;
+}
+
+#RpCureWrap #popupRp
+{
+  width: 284px;
+  height: 54px;
+  background: url("/magica/resource/image_web/event/raid/common/top/rp_base.png") center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0px;
+  left: 108px;
+  font-size: 16px;
+}
+
+#RpCureWrap #popupRp ul.rpPointWrap
+{
+  width: 220px;
+  height: 32px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -7px;
+  left: 70px;
+  width: 170px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+#RpCureWrap #popupRp ul.rpPointWrap li
+{
+  width: 28px;
+  height: 28px;
+  margin-right: 2px;
+  margin-bottom: -10px;
+  background: url("/magica/resource/image_web/event/raid/common/top/rp_icon_null.png") left top no-repeat;
+  background-size: 28px 28px;
+  display: block;
+}
+
+#RpCureWrap #popupRp ul.rpPointWrap li.on
+{
+  background: url("/magica/resource/image_web/event/raid/common/top/rp_icon.png") left top no-repeat;
+  background-size: 28px 28px;
+}
+
+#RpCureWrap #popupRp ul.rpPointWrap li:nth-child(6)
+{
+  margin-left: 15px;
+}
+
+#RpCureWrap #rpImageWrap
+{
+  width: 236px;
+  height: 310px;
+  position: absolute;
+  top: 92px;
+  left: 137px;
+}
+
+#RpCureWrap #rpImageWrap:before
+{
+  width: 78px;
+  height: 78px;
+  background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 18px;
+  left: 79px;
+  content: "";
+}
+
+#RpCureWrap #rpImageWrap .nameWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 118px;
+  left: 0px;
+  font-size: 20px;
+}
+
+#RpCureWrap #rpImageWrap .itemRemain
+{
+  width: 100%;
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#RpCureWrap #rpImageWrap .itemRemain .pointFrame
+{
+  width: 150px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#RpCureWrap #rpImageWrap #decideUse
+{
+  width: 120px;
+  position: absolute;
+  bottom: 20px;
+  left: 57px;
+  font-size: 16px;
+}
+
+#RpCureWrap #rpTextWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#RpCureWrap #rpTextWrap .cureCheck
+{
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#RpCureWrap #cureBtnWrap
+{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+#RpCureWrap #cureBtnWrap .btn
+{
+  margin: 0px 10px;
+}
+
+#RpCureWrap #cureBtnWrap .btn.off
+{
+  pointer-events: none;
+}

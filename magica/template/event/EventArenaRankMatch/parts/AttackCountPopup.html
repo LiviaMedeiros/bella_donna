@@ -1,0 +1,38 @@
+<div class="<%= model.statusClass %>">
+  <div class="canUse">
+    <span class='c_pink'>マギアストーン</span>を<span class='c_pink'><%= model.attackCountInfo.recoverNeedNum %>個</span>使用して<br> ミラーズランクマッチの対戦回数を<span class='c_pink'><%= model.attackCountInfo.numMax %>回</span>回復します。<br> よろしいですか？<br> （本日残り対戦回数 <span class='c_pink'><%= model.attackCountInfo.num %>/<%= model.attackCountInfo.numMax %></span>）<br>
+    <div class="cautionText"> 決定後、すぐにマギアストーンが消費されます。<br> マギアストーンは無償分から先に消費され、決定後のキャンセルはできません。 </div>
+  </div>
+  <div class="canNotUse"> <%= model.canNotUseText %><br> （本日残り対戦回数 <span class='c_pink'><%= model.attackCountInfo.num %>/<%= model.attackCountInfo.numMax %></span>）<br>
+  </div>
+  <div class="moneyNumWrap canUse">
+    <img class='useItemIcon' src="/magica/resource/image_web/page/gacha/item/icon_money_f.png" />
+    <div class='stoneA pointFrame'> 合計 <div class="inner">
+        <span class="num"><%= model.userStone.totalMoney %><span class="remain"><span class="arrow">&#9654;</span><%= model.remainStone.totalMoney %></span></span>
+      </div>
+    </div>
+    <div class='stoneB'> 有償 <div class="inner">
+        <span class="num"><%= model.userStone.userMoney %><span class="remain"><span class="arrow">&#9654;</span><%= model.remainStone.userMoney %></span></span>
+      </div>
+    </div>
+    <div class='stoneC'> 無償 <div class="inner">
+        <span class="num"><%= model.userStone.presentedMoney %><span class="remain"><span class="arrow">&#9654;</span><%= model.remainStone.presentedMoney %></span></span>
+      </div>
+    </div>
+  </div>
+  <div class="moneyNumWrap canNotUse">
+    <img class='useItemIcon' src="/magica/resource/image_web/page/gacha/item/icon_money_f.png" />
+    <div class='stoneA pointFrame'> 合計 <div class="inner">
+        <span class="num"><%= model.userStone.totalMoney %></span>
+      </div>
+    </div>
+    <div class='stoneB'> 有償 <div class="inner">
+        <span class="num"><%= model.userStone.userMoney %></span>
+      </div>
+    </div>
+    <div class='stoneC'> 無償 <div class="inner">
+        <span class="num"><%= model.userStone.presentedMoney %></span>
+      </div>
+    </div>
+  </div>
+</div>

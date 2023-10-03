@@ -1,0 +1,1363 @@
+@charset "UTF-8";
+
+#EventArenaRankMatchResult
+{
+  width: 1090px !important;
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#EventArenaRankMatchResult .arenaColor
+{
+  color: #1e2c42;
+}
+
+#EventArenaRankMatchResult #touchScreen
+{
+  width: 1090px;
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9;
+  display: none;
+}
+
+#EventArenaRankMatchResult #touchScreen.on
+{
+  display: block;
+}
+
+#EventArenaRankMatchResult #resultTitle
+{
+  width: 318px;
+  height: 46px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/rankmatch_result_header.png") left top no-repeat;
+  position: fixed;
+  top: 0;
+  left: 353px;
+  opacity: 1;
+  z-index: 10;
+}
+
+#EventArenaRankMatchResult #resultTitle.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #resultTitle.skipAnim
+{
+  -webkit-animation: none;
+  opacity: 1;
+}
+
+#EventArenaRankMatchResult #resultDate
+{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 332px;
+  background: url("/magica/resource/image_web/page/arena/result/simulate_date_bg.png") left top no-repeat;
+  height: 34px;
+  padding-left: 144px;
+  font-size: 22px;
+  line-height: 34px;
+  opacity: 1;
+  z-index: 10;
+}
+
+#EventArenaRankMatchResult #replayBtn
+{
+  position: absolute;
+  left: 0px;
+  bottom: 16px;
+  width: 242px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/btn_replay_preserve_2.png") center center no-repeat;
+  height: 132px;
+  opacity: 1;
+  z-index: 10;
+}
+
+#EventArenaRankMatchResult #replayBtn.off
+{
+  -webkit-filter: brightness(100%) grayscale(100%);
+  filter: brightness(100%) grayscale(100%);
+}
+
+#EventArenaRankMatchResult #enemyBtn
+{
+  width: 246px;
+  height: 182px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/result_enemy_bg.png") left top no-repeat;
+  position: fixed;
+  right: -44px;
+  bottom: 0;
+  opacity: 1;
+  z-index: 10;
+}
+
+#EventArenaRankMatchResult #enemyBtn.skipAnim
+{
+  -webkit-animation: none;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#EventArenaRankMatchResult #enemyBtn.canTap
+{
+  pointer-events: auto;
+}
+
+#EventArenaRankMatchResult #enemyBtn.fadeOut
+{
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+  -webkit-animation-fill-mode: both;
+  pointer-events: none;
+}
+
+#EventArenaRankMatchResult #enemyBtn #enemyClip
+{
+  width: 212px;
+  height: 182px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  -webkit-clip-path: polygon(0px 108px, 88px 0px, 212px 30px, 212px 182px, 27px 182px);
+  -webkit-transform: translateZ(0);
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyTitle
+{
+  width: 146px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/arena/result/result_enemy_header_a.png") left top no-repeat;
+  line-height: 28px;
+  position: absolute;
+  top: 16px;
+  right: -8px;
+  z-index: 5;
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyTitle:before
+{
+  color: #fff;
+  font-size: 16px;
+  content: "対戦相手";
+  padding-left: 24px;
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyImage
+{
+  margin-left: 40px;
+  -webkit-mask: url("/magica/resource/image_web/page/arena/result/result_enemy_mask.png") left top no-repeat;
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyNameRank
+{
+  width: 212px;
+  height: 48px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/rankmatch_enemy_base.png") left top no-repeat;
+  position: absolute;
+  left: 14px;
+  bottom: 0px;
+  z-index: 5;
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyNameRank .enemyRank
+{
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 22px;
+  text-shadow: 2px 0px 2px #ab3c6b,
+    -2px 0px 2px #ab3c6b,
+    0px 2px 2px #ab3c6b,
+    0px -2px 2px #ab3c6b,
+    2px 2px 2px #ab3c6b,
+    -2px 2px 2px #ab3c6b,
+    2px -2px 2px #ab3c6b,
+    -2px -2px 2px #ab3c6b;
+}
+
+#EventArenaRankMatchResult #enemyBtn .enemyNameRank .enemyName
+{
+  position: absolute;
+  right: 34px;
+  bottom: 0px;
+  font-size: 20px;
+  text-align: right;
+}
+
+#EventArenaRankMatchResult #enemyBtn.ranking .enemyNameRank
+{
+  background: url("/magica/resource/image_web/page/arena/result/ranking_enemy_base_a.png") left top no-repeat;
+}
+
+#EventArenaRankMatchResult #enemyBtn.ranking .enemyNameRank .enemyRank
+{
+  text-shadow: 2px 0px 2px #6845ab,
+    -2px 0px 2px #6845ab,
+    0px 2px 2px #6845ab,
+    0px -2px 2px #6845ab,
+    2px 2px 2px #6845ab,
+    -2px 2px 2px #6845ab,
+    2px -2px 2px #6845ab,
+    -2px -2px 2px #6845ab;
+}
+
+#EventArenaRankMatchResult #mainWrap
+{
+  width: 1090px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+
+#EventArenaRankMatchResult #mainWrap.fadeOut
+{
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #flowWrap
+{
+  width: 1090px;
+  height: 576px;
+  position: absolute;
+  top: -webkit-calc(50% - 288px);
+  left: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark
+{
+  width: 362px;
+  height: 86px;
+  position: absolute;
+  top: 180px;
+  left: 324px;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark.ranking
+{
+  top: 58px;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark.simulate
+{
+  top: 161px;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultString
+{
+  width: 107px;
+  height: 96px;
+  position: absolute;
+  top: -5px;
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultString.W
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_00.png") left top no-repeat;
+  left: 79px;
+  -webkit-animation: resultStrW .25s ease 0.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultString.I
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_01.png") left top no-repeat;
+  left: 134px;
+  -webkit-animation: resultStrI .25s ease 0.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultString.N
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_02.png") left top no-repeat;
+  left: 185px;
+  -webkit-animation: resultStrN .25s ease 0.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultString.lose
+{
+  width: 357px !important;
+  background: url("/magica/resource/image_web/page/arena/result/result_lose.png") top center no-repeat;
+  -webkit-animation: simpleFadeIn .25s ease 0.666s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultDeco
+{
+  width: 98px;
+  height: 79px;
+  position: absolute;
+  top: 3.5px;
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultDeco.winLeft
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_00.png") left top no-repeat;
+  left: 1px;
+  -webkit-animation: resultDecoLeft .25s ease 1s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultDeco.winRight
+{
+  background: url("/magica/resource/image_web/page/arena/result/text_win_deco_01.png") left top no-repeat;
+  right: 3px;
+  -webkit-animation: resultDecoRight .25s ease 1s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultDeco.winBrightTop
+{
+  background: url("/magica/resource/image_web/page/arena/result/result_win_bright.png") left top no-repeat;
+  top: -10px;
+  right: 120px;
+  -webkit-animation: resultDecoBrightTop .55s linear 1s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #resultMark .resultDeco.winBrightBottom
+{
+  background: url("/magica/resource/image_web/page/arena/result/result_win_bright.png") left top no-repeat;
+  top: 40px;
+  left: 35px;
+  -webkit-animation: resultDecoBrightBottom .55s linear 1s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark
+{
+  width: 558px;
+  height: 86px;
+  position: absolute;
+  top: 310px;
+  left: 331px;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpBase
+{
+  width: 666px;
+  height: 94px;
+  opacity: 0;
+  left: -110px;
+  position: relative;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/ranking_base.png") left top no-repeat;
+  -webkit-animation: resultRankUpBaseAnimation 0.333s ease 2s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString
+{
+  width: 107px;
+  height: 33px;
+  position: absolute;
+  top: 5px;
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.R
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_1.png") left top no-repeat;
+  left: 100px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.366s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.A
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_2.png") left top no-repeat;
+  left: 123px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.426s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.N
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_3.png") left top no-repeat;
+  left: 146px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.486s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.K
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_4.png") left top no-repeat;
+  left: 168px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.546s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.U
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_5.png") left top no-repeat;
+  left: 198px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.606s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.P
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_6.png") left top no-repeat;
+  left: 220px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpString.EXCLAMTION
+{
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_7.png") left top no-repeat;
+  left: 240px;
+  -webkit-animation: resultRankUpStringAnimation .15s ease-in-out 2.726s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankUpStringAdd
+{
+  width: 357px;
+  height: 96px;
+  background: url("/magica/resource/image_web/page/arena/result/rankup_text_braight.png") left top no-repeat;
+  position: absolute;
+  top: 5px;
+  left: 100px;
+  -webkit-animation: simpleFadeOut 0.666s ease-in-out 2.986s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankNum
+{
+  opacity: 0;
+  -webkit-animation: resultRankNumAnimation 0.333s ease 3.142s normal;
+  -webkit-animation-fill-mode: forwards;
+  top: -55px;
+  left: -95px;
+  text-align: center;
+  position: relative;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankNum .num
+{
+  margin-left: -5px;
+}
+
+#EventArenaRankMatchResult #mainWrap #rankUpMark .resultRankNum .rank
+{
+  position: relative;
+  top: 12px;
+  font-size: 30px;
+  color: antiquewhite;
+}
+
+#EventArenaRankMatchResult #mainWrap .getCoinWrap
+{
+  width: 358px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/arena/result/reward_bg.png");
+  position: absolute;
+  top: 490px;
+  left: 333px;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+#EventArenaRankMatchResult #mainWrap .getCoinWrap img
+{
+  margin-top: -6px;
+  margin-right: 10px;
+}
+
+#EventArenaRankMatchResult #mainWrap .getCoinWrap .coinNum.bonus
+{
+  text-shadow: 2px 0px 2px #f66a99,
+    -2px 0px 2px #f66a99,
+    0px 2px 2px #f66a99,
+    0px -2px 2px #f66a99,
+    2px 2px 2px #f66a99,
+    -2px 2px 2px #f66a99,
+    2px -2px 2px #f66a99,
+    -2px -2px 2px #f66a99;
+  color: #fff;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward
+{
+  width: 250px;
+  height: 105px;
+  position: absolute;
+  top: 432px;
+  left: 387px;
+  text-align: center;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemWrap
+{
+  width: 105px;
+  height: 105px;
+  display: inline-block;
+  position: relative;
+  margin: 0px 5px;
+  -webkit-animation: getItemAnimation 0.333s ease 4.167s 1 normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: both;
+  z-index: 1;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemWrap img
+{
+  width: 88px;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemWrap .itemNum
+{
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  display: block;
+  font-size: 24px;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemBackRightWrapper
+{
+  position: relative;
+  top: -223px;
+  left: -23px;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation: getItemRightAnimation2 2.0s linear 4.167s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemBackRight
+{
+  background: url("/magica/resource/image_web/page/arena/result/ef_rankup_shine.png");
+  width: 324px;
+  height: 324px;
+  -webkit-animation: getItemRightAnimation12 26s linear 4.167s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemRankupRight1
+{
+  background: url("/magica/resource/image_web/page/arena/result/ef_rankup_kirakira.png") no-repeat;
+  top: -430px;
+  left: 10px;
+  position: relative;
+  opacity: 0;
+  width: 64px;
+  height: 64px;
+  scale: 0.8;
+  -webkit-animation: getItemRankUpRightAnimation 2.0s linear 4.167s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemRankupRight2
+{
+  background: url("/magica/resource/image_web/page/arena/result/ef_rankup_kirakira.png") no-repeat;
+  top: -490px;
+  left: 175px;
+  position: relative;
+  opacity: 0;
+  width: 64px;
+  height: 64px;
+  scale: 0.7;
+  -webkit-animation: getItemRankUpRightAnimation 2.0s linear 4.167s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .getRankMatchReward .itemRankupRight3
+{
+  background: url("/magica/resource/image_web/page/arena/result/ef_rankup_kirakira.png") no-repeat;
+  top: -520px;
+  left: 162px;
+  position: relative;
+  opacity: 0;
+  width: 64px;
+  height: 64px;
+  scale: 0.5;
+  -webkit-animation: getItemRankUpRightAnimation 2.0s linear 4.167s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap
+{
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap.win
+{
+  -webkit-animation: touchScreenTextWrap 0s ease 5.333s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap.win_noneReward
+{
+  -webkit-animation: touchScreenTextWrap 0s ease 4.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap.lose
+{
+  -webkit-animation: touchScreenTextWrap 0s ease 2.333s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap .touch_screen
+{
+  width: 242px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/arena/result/touch_screen.png") left top no-repeat;
+  position: absolute;
+  bottom: 14px;
+  left: 391px;
+  z-index: 9;
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap .touch_screen.win
+{
+  -webkit-animation: touchScreen 1.333s ease 5.333s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap .touch_screen.win_noneReward
+{
+  -webkit-animation: touchScreen 1.333s ease 4.666s infinite normal;
+}
+
+#EventArenaRankMatchResult #mainWrap .touch_screenTextWrap .touch_screen.lose
+{
+  -webkit-animation: touchScreen 1.333s ease 2.333s infinite normal;
+}
+
+#EventArenaRankMatchResult #resultMirror
+{
+  width: 996px;
+  height: 986px;
+  position: fixed;
+  top: -webkit-calc(50% - 493px);
+  left: 14px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#EventArenaRankMatchResult #resultMirror.endAnim
+{
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorReflec
+{
+  width: 1050px;
+  height: 1050px;
+  position: fixed;
+  top: -webkit-calc(50% - 530px);
+  left: -13px;
+  z-index: 5;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorReflec .reflecMirror
+{
+  width: 822px;
+  height: 822px;
+  position: absolute;
+  top: 114px;
+  left: 114px;
+  overflow: hidden;
+  border-radius: 411px;
+  -webkit-mask: url("/magica/resource/image_web/page/arena/result/reflection_mask.png") no-repeat;
+  -webkit-mask-position: -101px 50%;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorReflec .reflecMirror .reflecMirrorImg
+{
+  position: absolute;
+  top: -500px;
+  left: -100px;
+  -webkit-animation: reflectionMask 5s ease 6.6666s infinite normal;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorReflec .reflecMirror .loseBgWrapImg
+{
+  position: absolute;
+  top: -500px;
+  left: -100px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorReflec .loseBgWrap
+{
+  width: 1424px;
+  height: 457px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/result/bg_lose.png") left top no-repeat;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  position: fixed;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorWrap
+{
+  width: 996px;
+  height: 986px;
+  background: url("/magica/resource/image_web/page/arena/result/result_mirror.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 3;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap
+{
+  width: 818px;
+  height: 818px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 79px;
+  left: 89px;
+  overflow: hidden;
+  border-radius: 409px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .leader
+{
+  width: 264px;
+  height: 822px;
+  margin: 0px;
+  position: relative;
+  overflow: hidden;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(35%, rgba(0, 0, 0, 0.8)), color-stop(75%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .leader img
+{
+  position: absolute;
+  top: 195px;
+  left: -98px;
+  width: 460px;
+  height: 460px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right
+{
+  width: 132px;
+  height: 822px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right img
+{
+  position: absolute;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1
+{
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(40%, rgba(0, 0, 0, 0.8)), color-stop(52%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1 img
+{
+  left: -76px;
+  top: 150px;
+  width: 290px;
+  height: 290px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2
+{
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(48%, rgba(0, 0, 0, 0.8)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2 img,
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2 img
+{
+  left: -61px;
+  top: 242px;
+  width: 260px;
+  height: 260px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left
+{
+  margin-right: 6px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1
+{
+  -webkit-animation: cardFadeInUp 0.2s ease 0.583s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2
+{
+  -webkit-animation: cardFadeIn 0.2s ease 0.750s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right
+{
+  margin-left: 6px;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1
+{
+  -webkit-animation: cardFadeInUp 0.2s ease 0.666s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaRankMatchResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2
+{
+  -webkit-animation: cardFadeIn 0.2s ease 0.833s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes simpleFadeIn
+{
+  0%
+  {
+    display: block;
+    opacity: 0;
+  }
+
+  100%
+  {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes simpleFadeOut
+{
+  0%
+  {
+    display: block;
+    opacity: 1;
+  }
+
+  100%
+  {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes simpleEndAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(1);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes mirrorFadeIn
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cardFadeIn
+{
+  0%
+  {
+    -webkit-transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cardFadeInUp
+{
+  0%
+  {
+    -webkit-transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrW
+{
+  0%
+  {
+    -webkit-transform: translateX(20px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrI
+{
+  0%
+  {
+    -webkit-transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStrN
+{
+  0%
+  {
+    -webkit-transform: translateX(-60px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultDecoLeft
+{
+  0%
+  {
+    -webkit-transform: translateX(129px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultDecoRight
+{
+  0%
+  {
+    -webkit-transform: translateX(-129px);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultDecoBrightTop
+{
+  0%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 0;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes resultDecoBrightBottom
+{
+  0%
+  {
+    -webkit-transform: translateX(0px);
+    opacity: 0;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes resultRankUpBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0.8);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultRankUpStringAnimation
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+  }
+
+  80%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes resultRankNumAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes getItemAnimation
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: scale(1.3);
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes getItemRightAnimation
+{
+  0%
+  {
+    -webkit-transform: scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(1) rotate(180deg);
+    opacity: 0.5;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.5) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes getItemRightAnimation12
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  50%
+  {
+    -webkit-transform: rotate(180deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes getItemRightAnimation2
+{
+  0%
+  {
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(0.65);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes getItemRightAnimation3
+{
+  0%
+  {
+    -webkit-transform: scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(0.65) rotate(90deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.8) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes getItemRightAnimation4
+{
+  0%
+  {
+    -webkit-transform: scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+
+  10%
+  {
+    -webkit-transform: scale(0.6);
+  }
+
+  20%
+  {
+    -webkit-transform: scale(0.8);
+  }
+
+  25%
+  {
+    -webkit-transform: rotate(90deg);
+    opacity: 1;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(0.6);
+  }
+
+  40%
+  {
+    -webkit-transform: scale(0.8);
+  }
+
+  50%
+  {
+    -webkit-transform: scale(0.6);
+    -webkit-transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: scale(0.8);
+  }
+
+  70%
+  {
+    -webkit-transform: scale(0.6);
+  }
+
+  75%
+  {
+    -webkit-transform: rotate(270deg);
+    opacity: 1;
+  }
+
+  80%
+  {
+    -webkit-transform: scale(0.8);
+  }
+
+  90%
+  {
+    -webkit-transform: scale(0.6);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.8) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes getItemRankUpRightAnimation
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  50%
+  {
+    opacity: 0.3;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes touchScreenTextWrap
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes touchScreen
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes reflectionMask
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) rotate(-35deg);
+  }
+
+  20%
+  {
+    -webkit-transform: translate(0, 1800px) rotate(-35deg);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 1800px) rotate(-35deg);
+  }
+}
+
+@-webkit-keyframes rankupFlash
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+
+  33%,
+  50%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.2);
+    opacity: 0;
+  }
+}

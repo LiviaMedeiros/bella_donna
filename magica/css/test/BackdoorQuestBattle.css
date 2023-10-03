@@ -1,0 +1,318 @@
+.historyPop #historyScrollWrap
+{
+  height: 322px;
+  margin-top: 5px;
+  overflow-y: hidden;
+}
+
+.historyPop #historyScrollWrap .scrollInner
+{
+  height: auto;
+  min-height: 100%;
+  text-align: left;
+}
+
+.historyPop #historyList li
+{
+  display: inline-block;
+  text-align: right;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.historyPop #historyList li div
+{
+  display: inline-block;
+}
+
+.historyPop #historyList li .sid
+{
+  margin-right: 10px;
+  font-size: 18px;
+  color: #f00;
+}
+
+.historyPop #historyList li .inputBtn
+{
+  right: 0px;
+  bottom: 0;
+  font-size: 16px;
+}
+
+.historyPop #historyList li.read .sid
+{
+  color: #000;
+}
+
+.historyPop #historyDeleteBtn
+{
+  position: absolute;
+  right: 0px;
+  bottom: -10px;
+  font-size: 16px;
+}
+
+.historyPop .caution
+{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.deckSelectPop .popupTextArea
+{
+  vertical-align: top !important;
+  height: 464px !important;
+}
+
+.deckSelectPop #deckWrap
+{
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  text-align: left;
+}
+
+.deckSelectPop #deckWrap .deck
+{
+  width: 402px;
+  position: relative;
+  height: 70px;
+  margin: 0 32px;
+  display: inline-block;
+}
+
+.deckSelectPop #deckWrap .deck.selected
+{
+  background: red;
+}
+
+.deckSelectPop #deckWrap .deck .userCharaIcon
+{
+  display: inline-block;
+  margin: -6px -10px 0 0;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap
+{
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  font-size: 15.65px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap>div
+{
+  display: inline-block;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg
+{
+  width: 34px;
+  height: 34px;
+  padding: 2px;
+  background-color: #4d4462;
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+  border-radius: 5px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner
+{
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  background-color: #736080;
+  position: relative;
+  border-radius: 5px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols
+{
+  width: 8px;
+  height: 8px;
+  background-color: #736080;
+  position: absolute;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.on
+{
+  background-color: #f4e0ca;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation1,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation4,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation7
+{
+  top: 22px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation2,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation5,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation8
+{
+  top: 12px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation3,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation6,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation9
+{
+  top: 2px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation1,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation2,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation3
+{
+  left: 2px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation4,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation5,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation6
+{
+  left: 12px;
+}
+
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation7,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation8,
+.deckSelectPop #deckWrap .deck .formationWrap .formationImg .formationInner .cols.formation9
+{
+  left: 22px;
+}
+
+#BackdoorQuestBattle
+{
+  width: 1024px;
+  height: 100%;
+  padding-top: 90px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+#BackdoorQuestBattle input.commonInput
+{
+  -webkit-user-select: auto !important;
+  -webkit-touch-callout: default !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+#BackdoorQuestBattle input.commonInput.error
+{
+  background: red;
+}
+
+#BackdoorQuestBattle #questStart
+{
+  font-size: 16px;
+  position: absolute;
+  top: 42px;
+  width: 100px;
+  margin: 5px;
+  right: 288px;
+}
+
+#BackdoorQuestBattle #pasteBtn
+{
+  position: absolute;
+  right: 154px;
+  top: 51px;
+  width: 100px;
+  margin: 5px;
+  padding: 0 15px;
+}
+
+#BackdoorQuestBattle #historyBtn
+{
+  position: absolute;
+  right: 32px;
+  top: 51px;
+  width: 100px;
+  margin: 5px;
+  padding: 0 15px;
+}
+
+#BackdoorQuestBattle #deckWrap
+{
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  width: 340px;
+  height: 278px;
+  padding: 5px 24px;
+}
+
+#BackdoorQuestBattle #deckWrap #deckInner .userCharaIcon
+{
+  display: inline-block;
+}
+
+#BackdoorQuestBattle #deckWrap #deckSelectBtn
+{
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  width: 158px;
+  padding: 0 15px;
+}
+
+#BackdoorQuestBattle #deckWrap #deckLinkBtn
+{
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  width: 134px;
+  padding: 0 15px;
+}
+
+#BackdoorQuestBattle #keyBtnWrap
+{
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  width: 448px;
+  height: 278px;
+  padding: 5px 24px;
+}
+
+#BackdoorQuestBattle #keyBtnWrap ul
+{
+  width: 100%;
+}
+
+#BackdoorQuestBattle #keyBtnWrap ul li
+{
+  display: inline-block;
+  margin: 5px 0 25px 11px;
+  padding: 0 15px;
+}
+
+#BackdoorQuestBattle #keyBtnWrap ul li:not(.inputTextBtn)
+{
+  margin: 8px 0px 0 38px;
+  width: 112px;
+}
+
+#BackdoorQuestBattle .commonFrame1
+{
+  width: 80%;
+  height: -webkit-calc(100% - 20px);
+  margin: 0 auto;
+  padding: 60px 30px 30px;
+}
+
+#BackdoorQuestBattle .commonFrame1 .commonInput
+{
+  width: 260px;
+  height: 40px;
+  margin-bottom: 30px;
+}

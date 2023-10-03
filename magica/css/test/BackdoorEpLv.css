@@ -1,0 +1,67 @@
+#BackdoorEpLv
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#BackdoorEpLv #doppelCaution
+{
+  position: absolute;
+  left: 292px;
+  bottom: 110px;
+  font-size: 13px;
+}
+
+#BackdoorEpLv .wrap
+{
+  width: 254px;
+  position: absolute;
+  bottom: 210px;
+  right: 20px;
+  padding-left: 20px;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.65) 0%, white 100%);
+}
+
+#BackdoorEpLv #lvUpBtn
+{
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 90px;
+  left: 10px;
+}
+
+#BackdoorEpLv #doppelBtn
+{
+  position: absolute;
+  bottom: 130px;
+  right: 510px;
+}
+
+#BackdoorEpLv #doppelBtn.off
+{
+  pointer-events: none;
+}
+
+#BackdoorEpLv #doppelBtn .caution
+{
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+}
+
+#BackdoorEpLv #epUpBtn
+{
+  position: absolute;
+  bottom: 130px;
+  right: 20px;
+}
+
+#BackdoorEpLv #storyOpenBtn
+{
+  position: absolute;
+  bottom: 130px;
+  right: 284px;
+}

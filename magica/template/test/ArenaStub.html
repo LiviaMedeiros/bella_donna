@@ -1,0 +1,97 @@
+<div id="QuestStub">
+  <div id="btnWrap" class="commonFrame1">
+    <h2>Quest Stub</h2>
+    <div class="btn b_pink resultBtn" data-result="SUCCESSFUL" data-skip="false">SUCCESSFUL</div>
+    <div class="btn b_blue resultBtn" data-result="FAILED" data-skip="false">FAILED</div>
+    <div class="btn b_white resultBtn" data-result="SUCCESSFUL" data-skip="true">QuestResult SKIP</div>
+  </div>
+  <div id='prmWrap' class="commonFrame1">
+    <h2>戦闘情報 書き換え</h2>
+    <div id='hiddenWrap'>
+      <div class='scrollInner'>
+        <div class="flexBox">
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>アリーナ種別</p>
+            <div class='selectWrap'>
+              <select class="" name="arenaBattleType">
+                <option value="-">変更なし</option>
+                <option value="FREE_RANK">果てなし</option>
+                <option value="SIMULATE">演習</option>
+                <option value="CODE_MATCH">ID対戦</option>
+              </select>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>相手ランク</p>
+            <div class='selectWrap'>
+              <select class="" name="arenaBattleOpponentType">
+                <option value="-">変更なし</option>
+                <option value="HIGHER">格上</option>
+                <option value="SAME">同格</option>
+                <option value="LOWER">格下</option>
+              </select>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>相手チームランク</p>
+            <div class='selectWrap'>
+              <select class="" name="opponentTeamType">
+                <option value="-">変更なし</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+              </select>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>残りHP【%】</p>
+            <div class='selectWrap'>
+              <input name='rateHp' class='commonInput' type="number" value='100'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>クリアTURN数</p>
+            <div class='selectWrap'>
+              <input name='totalTurn' class='commonInput' type="number" value='1'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>コネクト発動回数</p>
+            <div class='selectWrap'>
+              <input name='connectNum' class='commonInput' type="number" value='10'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>スキル発動回数</p>
+            <div class='selectWrap'>
+              <input name='skillNum' class='commonInput' type="number" value='0'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>マギア発動回数</p>
+            <div class='selectWrap'>
+              <input name='magiaNum' class='commonInput' type="number" value='0'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>ドッペル発動回数</p>
+            <div class='selectWrap'>
+              <input name='doppelNum' class='commonInput' type="number" value='0'>
+            </div>
+          </div>
+          <div class='wrap flexBox'>
+            <p class='pointFrame'>チャージ発動時の最大数</p>
+            <div class='selectWrap'>
+              <input name='chargeMax' class='commonInput' type="number" value='0'>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

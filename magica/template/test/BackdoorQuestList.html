@@ -1,0 +1,23 @@
+<div id='BackdoorQuestList'>
+  <div id='scrollOuter'>
+    <div class='scrollInner'></div>
+  </div>
+  <div id="allBtnWrap">
+    <div data-target="purple" class="allBtn btn b_purple TE">全消し</div>
+    <div data-target="blue" class="allBtn btn b_blue TE">全消し</div>
+    <div data-target="pink" class="allBtn btn b_pink TE">全消し</div>
+    <div data-target="green" class="allBtn btn b_green TE">全消し</div>
+    <div data-target="pale" class="allBtn btn b_pale TE">全消し</div>
+    <div data-target="puellaHistoria" class="allBtn btn b_puellaHistoria TE">全消し</div>
+  </div>
+</div>
+<script type="text/template" id="QuestBtn"> <%="<% if(model.questType) { %\>"%>
+		<p class='questType'><%="<%= model.questType %\>"%></p>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.title) { %\>"%>
+		<%="<%= model.title %\>"%>
+	<%="<% } else { %\>"%>
+		<%="<%= model.questBattleId %\>"%>
+	<%="<% } %\>"%>
+</script>

@@ -1,0 +1,19 @@
+<div id="itemList">
+  <div id="itemScrollOuter">
+    <div class="itemScrollInner" id="listSec">
+    </div>
+  </div>
+  <div class="rankSec">
+    <span class="title">順位</span>
+    <span class="num"><%= model.userRank %>位</span>
+  </div>
+</div>
+<div class="textSec"> デイリー報酬を受け取りました。<br> ※受け取ったアイテムは直接付与されています。 </div>
+<!-- アイテム用テンプレート -->
+<script id="itemTemp" type="text/template"> <div class="item">
+  <p class="numWrap c_white">
+    <span class="getNum ts_gold">×<%='<%= model.num %\>'%></span>
+  </p>
+  <img src="<%='<%= model.img %\>'%>" alt="" class="img">
+</div>
+</script>

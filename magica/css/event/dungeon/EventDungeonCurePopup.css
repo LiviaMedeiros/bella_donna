@@ -1,0 +1,143 @@
+#CpCureWrap
+{
+  width: 510px;
+  height: 410px;
+  position: absolute;
+  top: 58px;
+  left: 0;
+}
+
+#CpCureWrap #popupCp
+{
+  width: 284px;
+  height: 54px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cp_base_a.png") center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0px;
+  left: 108px;
+  font-size: 16px;
+}
+
+#CpCureWrap #popupCp ul.cpPointWrap
+{
+  width: 220px;
+  height: 32px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 62px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+#CpCureWrap #popupCp ul.cpPointWrap li
+{
+  width: 40px;
+  height: 40px;
+  margin-right: -2px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cp_icon_null.png") left top no-repeat;
+  display: block;
+}
+
+#CpCureWrap #popupCp ul.cpPointWrap li.on
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cp_icon.png") left top no-repeat;
+}
+
+#CpCureWrap #cpImageWrap
+{
+  width: 236px;
+  height: 310px;
+  position: absolute;
+  top: 92px;
+  left: 137px;
+}
+
+#CpCureWrap #cpImageWrap img
+{
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  top: 18px;
+  left: 79px;
+}
+
+#CpCureWrap #cpImageWrap .nameWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 118px;
+  left: 0px;
+  font-size: 20px;
+}
+
+#CpCureWrap #cpImageWrap .itemRemain
+{
+  width: 100%;
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#CpCureWrap #cpImageWrap .itemRemain .pointFrame
+{
+  width: 150px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#CpCureWrap #cpImageWrap #decideUse
+{
+  width: 120px;
+  position: absolute;
+  bottom: 20px;
+  left: 57px;
+  font-size: 16px;
+}
+
+#CpCureWrap #cpTextWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#CpCureWrap #cpTextWrap .cureCheck
+{
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#CpCureWrap #cureBtnWrap
+{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+#CpCureWrap #cureBtnWrap .btn
+{
+  margin: 0px 10px;
+}
+
+#CpCureWrap #cureBtnWrap .btn.off
+{
+  pointer-events: none;
+}

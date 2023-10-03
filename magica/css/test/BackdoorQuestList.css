@@ -1,0 +1,45 @@
+#BackdoorQuestList #allBtnWrap
+{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+#BackdoorQuestList #allBtnWrap .allBtn
+{
+  display: inline-block;
+}
+
+#BackdoorQuestList #scrollOuter
+{
+  width: 740px;
+  height: -webkit-calc(100% - 60px);
+  position: fixed;
+  top: 60px;
+  left: -webkit-calc(50% - 370px);
+  overflow: hidden;
+}
+
+#BackdoorQuestList #scrollOuter .scrollInner
+{
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+#BackdoorQuestList #scrollOuter .scrollInner .btn
+{
+  min-width: 220px;
+  margin: 0 5px 5px 0;
+  font-size: 16px;
+}
+
+#BackdoorQuestList #scrollOuter .scrollInner .btn .questType
+{
+  position: absolute;
+  left: 12px;
+  top: -17px;
+  font-size: 14px;
+  text-shadow: none;
+}

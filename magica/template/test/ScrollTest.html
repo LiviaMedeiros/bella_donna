@@ -1,0 +1,112 @@
+<div class="ScrollTest" style="margin-top:50px;">
+  <style type="text/css">
+    #scrollTest1,
+    #scrollTest2
+    {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #scrollTest3
+    {
+      width: 300px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 0 auto;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scrollIndicator
+    {
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .scrollIndicator .scrollIndicatorInner
+    {
+      width: 5px;
+      background-color: rgba(0, 0, 0, .3);
+      pointer-events: auto;
+      -webkit-animation: scrollFadeOut .5s linear 0s 1 normal;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    .scrollIndicator .scrollIndicatorInner.onScroll
+    {
+      -webkit-animation: scrollFadeIn .1s linear 0s 1 normal;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    .scrollWrap,
+    .scrollWrap2,
+    .scrollWrap3
+    {
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+    }
+
+    .userMemoriaIcon
+    {
+      margin: 5px 8px 19px 9px;
+      width: 126px;
+      height: 126px;
+      position: relative;
+    }
+
+    @-webkit-keyframes scrollFadeIn
+    {
+      0%
+      {
+        opacity: 0;
+      }
+
+      100%
+      {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes scrollFadeOut
+    {
+      0%
+      {
+        opacity: 1;
+      }
+
+      60%
+      {
+        opacity: 1;
+      }
+
+      100%
+      {
+        opacity: 0;
+      }
+    }
+
+  </style>
+  <h1>ScrollTest</h1>
+  <div style="width:1020px;height:500px;border:1px solid #000;position:fixed;top:70px;left:0px"> 自作スクロール <span class="btn b_white forceScroll TE" data-target-hash="#/first"><span>スクロール1</span></span>
+    <span class="btn b_white forceScroll TE" data-target-hash="#/second"><span>スクロール2</span></span>
+    <span class="btn b_white forceScroll TE" data-target-hash="#/third"><span>スクロール3</span></span>
+    <span class="btn b_white forceScroll TE" data-target-hash="#/fourth"><span>スクロール4</span></span>
+    <div id="scrollTest1">
+      <div class="scrollWrap">
+        <div data-scroll-hash="#/first">1個目</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div data-scroll-hash="#/second">2個目</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div data-scroll-hash="#/third">3個目</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div data-scroll-hash="#/fourth">4個目</div>
+      </div>
+    </div>
+  </div>
+</div>

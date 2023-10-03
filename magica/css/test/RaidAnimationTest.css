@@ -1,0 +1,749 @@
+#RaidAnimationTest
+{
+  padding-top: 80px;
+  padding-left: 60px;
+  position: relative;
+}
+
+/* DoppelMissionAnimation */
+.doppelMissionAnimationDom
+{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.doppelMissionAnimationDom div
+{
+  opacity: 0;
+  will-change: animation;
+}
+
+.doppelMissionAnimationDom.allAnimationFadeOut .animDoms
+{
+  -webkit-animation: .4s allAnimationFadeOut 0s linear 1 normal;
+}
+
+.doppelMissionAnimationDom .animDoms
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 3;
+}
+
+.doppelMissionAnimationDom .animDoms .animTitle
+{
+  width: 564px;
+  height: 82px;
+  position: absolute;
+  top: -webkit-calc(50% - 72px);
+  left: 230px;
+  background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_title.png");
+  -webkit-animation: .25s doppelMissionTitle ease-in-out .167s 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 5;
+}
+
+.doppelMissionAnimationDom .animDoms .animComplete
+{
+  width: 332px;
+  height: 60px;
+  position: absolute;
+  top: -webkit-calc(50% + 32px);
+  left: 346px;
+  background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_complete.png");
+  -webkit-animation: .25s doppelComplete ease-in-out .167s 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 4;
+}
+
+.doppelMissionAnimationDom .animDoms .animMarks
+{
+  z-index: 3;
+  opacity: 1;
+}
+
+.doppelMissionAnimationDom .animDoms .animMarks .animMark,
+.doppelMissionAnimationDom .animDoms .animMarks .animMarkBase
+{
+  width: 396px;
+  height: 396px;
+  position: absolute;
+  top: -webkit-calc(50% - 198px);
+  left: 314px;
+  background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_doppel_mark.png");
+  opacity: 0;
+}
+
+.doppelMissionAnimationDom .animDoms .animMarks .animMark
+{
+  opacity: 0;
+  -webkit-animation: .4s doppelMark .417s 1 normal;
+  -webkit-animation-timing-function: ease-in, ease-out;
+  z-index: 2;
+}
+
+.doppelMissionAnimationDom .animDoms .animMarks .animMarkBase
+{
+  -webkit-animation: .167s animMarkBase linear .0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: .2;
+  z-index: 1;
+}
+
+.doppelMissionAnimationDom #missionClearBg
+{
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearMaskFadeIn linear .0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  z-index: 2;
+}
+
+.doppelMissionAnimationDom #missionClearMaskBg
+{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearBgMaskFadeIn linear .0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  z-index: 1;
+}
+
+@-webkit-keyframes doppelMissionTitle
+{
+  0%
+  {
+    -webkit-transform: translateY(-40px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes doppelComplete
+{
+  0%
+  {
+    -webkit-transform: translateY(40px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes doppelMark
+{
+  0%
+  {
+    -webkit-transform: scaleX(1) scaleY(1);
+    opacity: .8;
+  }
+
+  75%
+  {
+    -webkit-transform: scaleX(1.4) scaleY(1.4);
+    opacity: .2;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1.8) scaleY(1.8);
+    opacity: .0;
+  }
+}
+
+@-webkit-keyframes allAnimationFadeOut
+{
+  0%
+  {
+    -webkit-transform: scaleY(1);
+    opacity: 1;
+  }
+
+  60%,
+  100%
+  {
+    -webkit-transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes animMarkBase
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: .2;
+  }
+}
+
+@-webkit-keyframes clearBgMaskFadeIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: .6;
+  }
+}
+
+/* SingleRaidAnimation */
+.raidAnimationDom
+{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.raidAnimationDom div
+{
+  opacity: 0;
+  will-change: animation;
+}
+
+.raidAnimationDom.allAnimationFadeOut .animDoms
+{
+  -webkit-animation: .4s allAnimationFadeOut 0s linear 1 normal;
+}
+
+.raidAnimationDom .animDoms
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 3;
+}
+
+.raidAnimationDom .animDoms .raidStar01_1,
+.raidAnimationDom .animDoms .raidStar01_2
+{
+  width: 220px;
+  height: 217px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_star_01.png");
+  position: absolute;
+  top: -webkit-calc(50% - 84px);
+  left: 402px;
+}
+
+.raidAnimationDom .animDoms .raidStar01_1
+{
+  -webkit-animation: 1.466s raidMissionFlashStar .87s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 21;
+}
+
+.raidAnimationDom .animDoms .raidStar01_2
+{
+  -webkit-animation: .6s raidMissionStar .2s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 20;
+}
+
+.raidAnimationDom .animDoms .raidStar02
+{
+  width: 202px;
+  height: 202px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_star_02.png");
+  position: absolute;
+  top: -webkit-calc(50% - 70px);
+  left: 411px;
+  -webkit-animation: .8s raidMissionStarTwo .4s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 12;
+}
+
+.raidAnimationDom .animDoms .raidTx01
+{
+  width: 436px;
+  height: 97px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx01.png");
+  position: absolute;
+  top: -webkit-calc(50% - 177px);
+  left: 294px;
+  -webkit-animation: .3s raidTxOne .4s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 16;
+}
+
+.raidAnimationDom .animDoms .raidTx02
+{
+  width: 256px;
+  height: 68px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx02.png");
+  position: absolute;
+  top: -webkit-calc(50% + 131px);
+  left: 383px;
+  -webkit-animation: .13s raidTxTwo 1.07s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 17;
+}
+
+.raidAnimationDom .animDoms .raidTx03
+{
+  width: 73px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx03.png");
+  position: absolute;
+  top: -webkit-calc(50% + 134px);
+  left: 296px;
+  -webkit-animation: .3s raidTxThree 1.07s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 18;
+}
+
+.raidAnimationDom .animDoms .raidTx04
+{
+  width: 73px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx04.png");
+  position: absolute;
+  top: -webkit-calc(50% + 134px);
+  right: 300px;
+  -webkit-animation: .3s raidTxFour 1.07s linear 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 19;
+}
+
+.raidAnimationDom .animDoms .raidFlag01
+{
+  width: 341px;
+  height: 319px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_flag_01_a.png");
+  position: absolute;
+  top: -webkit-calc(50% - 203px);
+  left: 148px;
+  -webkit-animation: .5s raidFlagOne .4s ease 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 14;
+}
+
+.raidAnimationDom .animDoms .raidFlag02
+{
+  width: 341px;
+  height: 319px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_flag_02_a.png");
+  position: absolute;
+  top: -webkit-calc(50% - 203px);
+  right: 152px;
+  -webkit-animation: .5s raidFlagTwo .4s ease 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 15;
+}
+
+.raidAnimationDom .animDoms .raidCircle01
+{
+  width: 217px;
+  height: 218px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/circle_05.png");
+  position: absolute;
+  top: -webkit-calc(50% - 80px);
+  left: 404px;
+  -webkit-animation: .5s circleTwo 1.03s ease 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 22;
+}
+
+.raidAnimationDom .animDoms .raidCircle02
+{
+  width: 170px;
+  height: 170px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/circle_06.png");
+  position: absolute;
+  top: -webkit-calc(50% - 56px);
+  left: 427px;
+  -webkit-animation: .233s circleOneOpacity .167s ease 1 normal, 4.8s circleOneRotate .167s linear infinite normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 13;
+}
+
+.raidAnimationDom .animDoms .raidAnimBg
+{
+  width: 541px;
+  height: 141px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx_bg.png");
+  position: absolute;
+  top: 50%;
+  left: 238px;
+  -webkit-animation: .3s raidTxBg 0.567s ease 1 normal;
+  -webkit-animation-fill-mode: both;
+  z-index: 11;
+}
+
+.raidAnimationDom #missionClearBg
+{
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearMaskFadeIn linear .0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  z-index: 2;
+}
+
+.raidAnimationDom #missionClearMaskBg
+{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearBgMaskFadeIn linear .0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  z-index: 1;
+}
+
+@-webkit-keyframes raidMissionStar
+{
+  0%
+  {
+    -webkit-transform: scaleX(3) scaleY(3);
+    opacity: 0;
+  }
+
+  33%
+  {
+    -webkit-transform: scaleX(2.7) scaleY(2.7);
+    opacity: .2;
+  }
+
+  66%
+  {
+    -webkit-transform: scaleX(0) scaleY(2.5);
+  }
+
+  83%
+  {
+    -webkit-transform: scaleX(0) scaleY(2.5);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidMissionFlashStar
+{
+  0%
+  {
+    -webkit-transform: scale(0, 0);
+    opacity: 0;
+  }
+
+  14%
+  {
+    -webkit-transform: scale(1.5, 1.5);
+    opacity: 1;
+    -webkit-filter: brightness(300%);
+  }
+
+  30%
+  {
+    -webkit-transform: scale(2, 2);
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+
+  66%
+  {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+
+  80%
+  {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+    -webkit-filter: brightness(300%);
+  }
+
+  100%
+  {
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes raidMissionStarTwo
+{
+
+  0%,
+  63%
+  {
+    opacity: 0;
+  }
+
+  38%,
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidFlagOne
+{
+  0%
+  {
+    -webkit-transform: translate3d(671px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidFlagTwo
+{
+  0%
+  {
+    -webkit-transform: translate3d(-671px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes circleOneOpacity
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes circleOneRotate
+{
+  0%
+  {
+    -webkit-transform: scale(2, 2) rotate(0deg);
+  }
+
+  25%
+  {
+    -webkit-transform: scale(2, 2) rotate(90deg);
+  }
+
+  50%
+  {
+    -webkit-transform: scale(2, 2) rotate(180deg);
+  }
+
+  75%
+  {
+    -webkit-transform: scale(2, 2) rotate(270deg);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(2, 2) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circleTwo
+{
+  0%
+  {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+    opacity: 0;
+  }
+
+  26%
+  {
+    -webkit-transform: scale(1, 1) rotate(0deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(3, 3) rotate(60deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleTwoTrans
+{
+  0%
+  {
+    -webkit-transform: scale(1, 1) rotate(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(3, 3) rotate(60deg);
+  }
+}
+
+@-webkit-keyframes clearMaskFadeIn
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes clearBgMaskFadeIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: .6;
+  }
+}
+
+@-webkit-keyframes allAnimationFadeOut
+{
+  0%
+  {
+    -webkit-transform: scaleY(1);
+    opacity: 1;
+  }
+
+  60%,
+  100%
+  {
+    -webkit-transform: scaleY(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes raidTxOne
+{
+  0%
+  {
+    -webkit-transform: scale(2, 2);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxTwo
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxThree
+{
+  0%
+  {
+    -webkit-transform: translate3d(358px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxFour
+{
+  0%
+  {
+    -webkit-transform: translate3d(-358px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxBg
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}

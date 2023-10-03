@@ -1,0 +1,241 @@
+.ts_union_01
+{
+  text-shadow: 0 0 8px #008749, 0 0 8px #008749, 0 0 8px #008749, 0 0 8px #008749;
+}
+
+.ts_union_02
+{
+  text-shadow: 0 0 8px #ff0000, 0 0 8px #ff0000, 0 0 8px #ff0000, 0 0 8px #ff0000;
+}
+
+#RegularEventGroupBattleSelectUnion
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#RegularEventGroupBattleSelectUnion #helpBtn
+{
+  background: url("/magica/resource/image_web/regularEvent/groupBattle/common/top/btn_navi.png") left top no-repeat;
+  position: absolute;
+  left: 705px;
+  top: 12px;
+  width: 103px;
+  height: 38px;
+  z-index: 1000;
+}
+
+#RegularEventGroupBattleSelectUnion #eventLogo
+{
+  position: absolute;
+  left: 0;
+  top: 48px;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionCaution
+{
+  position: absolute;
+  top: 78px;
+  right: 0;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap
+{
+  position: absolute;
+  left: 521px;
+  top: 135px;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap #selectedBtn
+{
+  position: absolute;
+  left: 140px;
+  top: -10px;
+  z-index: 10;
+  -webkit-animation: 0.5s mainBtnShow ease-in 0s 1 forwards;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap #selectedBtn #selectedUnionName
+{
+  background: url("/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_title_bg.png") left top no-repeat;
+  position: absolute;
+  left: -26px;
+  top: 280px;
+  width: 198px;
+  height: 39px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 7px;
+  -webkit-animation: 0.5s unionNameCutin ease-in 0s 1 forwards;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap .offUnionBtn
+{
+  background: url("/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_off_bg.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  width: 128px;
+  height: 376px;
+  z-index: 1;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap .offUnionBtn img
+{
+  position: absolute;
+  left: -19px;
+  top: 27px;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap #offUnionBtn1
+{
+  left: 0;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #unionBtnWrap #offUnionBtn2
+{
+  left: 304px;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap .changeUnionBtn
+{
+  top: 151px;
+  width: 70px;
+  height: 84px;
+  display: block;
+  position: absolute;
+  z-index: 10000;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #leftArrow
+{
+  background: url(/magica/resource/image_web/page/gacha/gacha_arrow_left_a.png) left top no-repeat;
+  left: -75px;
+}
+
+#RegularEventGroupBattleSelectUnion #selectUnionWrap #rightArrow
+{
+  background: url(/magica/resource/image_web/page/gacha/gacha_arrow_right_a.png) left top no-repeat;
+  left: 435px;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap
+{
+  position: absolute;
+  left: 0;
+  top: 265px;
+  width: 290px;
+  height: 290px;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionLogoWrap
+{
+  position: relative;
+  -webkit-animation: 0.4s logoCutin ease-in 0s 1 forwards;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionLogoWrap #unionLogoBg
+{
+  background: url("/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/logo_bg.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  top: 142px;
+  width: 290px;
+  height: 58px;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionLogoWrap #unionLogo
+{
+  position: absolute;
+  left: 62px;
+  top: 0;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionLogoWrap #unionName
+{
+  position: absolute;
+  left: 52px;
+  top: 168px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionDetailBtn
+{
+  background: url("/magica/resource/image_web/regularEvent/groupBattle/common/selectUnion/btn_details.png") left top no-repeat;
+  position: absolute;
+  left: 62px;
+  top: 217px;
+  width: 184px;
+  height: 52px;
+}
+
+#RegularEventGroupBattleSelectUnion #unionInfoWrap #unionDetailBtn.hide
+{
+  display: none;
+}
+
+@-webkit-keyframes logoCutin
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: translateX(-290px);
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes unionNameCutin
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: scaleY(0.3);
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes mainBtnShow
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.05);
+  }
+}
+
+@-webkit-keyframes sunBtnShow
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.95);
+  }
+}

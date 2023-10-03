@@ -1,0 +1,54 @@
+#LastBattleResultTest
+{
+  position: fixed;
+  width: 1024px;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#LastBattleResultTest .backLinkBtn
+{
+  width: 96px;
+  height: 65px;
+  background-image: url("/magica/resource/image_web/common/global/global_back.png");
+  background-repeat: no-repeat;
+  background-position: right 9px;
+  background-size: 89px 43px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 101;
+}
+
+#LastBattleResultTest .TitleWrap
+{
+  position: absolute;
+}
+
+#LastBattleResultTest .TitleWrap .title
+{
+  position: relative;
+  font-size: 30px;
+  top: 10px;
+  left: 100px;
+}
+
+#LastBattleResultTest .btnWrap
+{
+  padding: 190px 260px;
+  text-align: center;
+}
+
+#LastBattleResultTest .btnWrap li
+{
+  margin-bottom: 10px;
+}
+
+#LastBattleResultTest .btnWrap li:nth-child(2)
+{
+  margin-bottom: 30px;
+}

@@ -1,0 +1,419 @@
+#menu
+{
+  display: none;
+}
+
+#EventAccomplishRecovery
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventAccomplishRecovery #recoveryHead
+{
+  width: 984px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/header_cure.png") left top no-repeat;
+  position: absolute;
+  top: 54px;
+  left: -webkit-calc(50% - 492px);
+}
+
+#EventAccomplishRecovery #recoveryHead #sortBtn
+{
+  position: absolute;
+  top: 13px;
+  right: 122px;
+}
+
+#EventAccomplishRecovery #recoveryHead .orderBtn
+{
+  width: 80px;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  right: 37px;
+}
+
+#EventAccomplishRecovery #recoveryHead .orderBtn .touch
+{
+  -webkit-filter: brightness(120%);
+}
+
+#EventAccomplishRecovery #recoveryHead .orderBtn.desc
+{
+  background: url("/magica/resource/image_web/common/filter/btn_memoria_descending.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead .orderBtn.asc
+{
+  background: url("/magica/resource/image_web/common/filter/btn_memoria_ascending.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead .remainRecoveryText
+{
+  position: absolute;
+  top: 20px;
+  left: 322px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText
+{
+  width: 120px;
+  height: 30px;
+  background: #ffffff;
+  position: absolute;
+  top: 15px;
+  left: 190px;
+  -webkit-border-radius: 15px;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num
+{
+  margin-top: 3px;
+  margin-left: -3px;
+  width: 20px;
+  height: 24px;
+  display: block;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num1
+{
+  width: 16px;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num0
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_0.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num1
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_1.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num2
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_2.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num3
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_3.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num4
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_4.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num5
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_5.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num6
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_6.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num7
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_7.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num8
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_8.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .num.num9
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/cure_num_9.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #recoveryHead #remainText .remainMax
+{
+  color: #ff3f72;
+  font-size: 20px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap
+{
+  width: 932px;
+  height: -webkit-calc(100% - 125px);
+  position: absolute;
+  top: 110px;
+  left: -webkit-calc(50% - 466px);
+}
+
+#EventAccomplishRecovery #charaOuterWrap .recoveryCaution
+{
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: -webkit-calc(50% - 25px);
+  left: 0;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+#EventAccomplishRecovery #charaOuterWrap #scrollOuter
+{
+  width: 898px;
+  height: -webkit-calc(100% - 62px);
+  position: absolute;
+  top: 48px;
+  left: 23px;
+  overflow: hidden;
+}
+
+#EventAccomplishRecovery #charaOuterWrap #scrollOuter .scrollInner
+{
+  width: 886px;
+  height: auto;
+  min-height: 100%;
+  padding: 0 0 30px;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+
+#EventAccomplishRecovery #charaOuterWrap h2
+{
+  width: -webkit-calc(100% - 8px);
+  height: 32px;
+  padding-left: 36px;
+  background: -webkit-gradient(linear, left top, right top, from(#f2dbba), color-stop(25%, #f6e5bb), color-stop(100%, white));
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: #a47122;
+  font-size: 18px;
+  line-height: 32px;
+  -webkit-border-radius: 16px 16px 0 0;
+  border-radius: 16px 16px 0 0;
+  z-index: 100;
+}
+
+#EventAccomplishRecovery #charaOuterWrap h2:before
+{
+  width: 14px;
+  height: 14px;
+  background: url("/magica/resource/image_web/common/frame/icon_header_star.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  content: "";
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap
+{
+  width: 290px;
+  height: 114px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/btn_chara_damage.png") left top no-repeat;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .prm
+{
+  display: none;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .userCharaIcon
+{
+  position: absolute;
+  top: 22px;
+  left: 19px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .reviveAtDisp
+{
+  display: none;
+  position: absolute;
+  top: 4px;
+  left: 206px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap
+{
+  position: absolute;
+  top: 30px;
+  left: 106px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dl
+{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dt,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dd
+{
+  height: 16px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dt
+{
+  width: 42px;
+  margin-bottom: 2px;
+  background: #b28750;
+  color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 3px 0 0 3px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dd
+{
+  padding-left: 8px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dd.hp,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap dd.mp
+{
+  padding-left: 4px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge
+{
+  width: 60px;
+  height: 8px;
+  margin: 4px 0 0 4px;
+  background: url("/magica/resource/image_web/event/accomplish/common/deck/bg_gauge.png") left top no-repeat;
+  display: block;
+  position: relative;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner01,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner02,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner01,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner02
+{
+  width: 48px;
+  height: 4px;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner01 .gaugeBg,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner02 .gaugeBg,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner01 .gaugeBg,
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner02 .gaugeBg
+{
+  width: 0%;
+  height: 100%;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner01
+{
+  z-index: 2;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .hpGauge .gaugeInner01 .gaugeBg
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/deck/gauge_hp.png") left bottom repeat-x;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner01
+{
+  z-index: 2;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner01 .gaugeBg
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/deck/gauge_doppel.png") left bottom repeat-x;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner02
+{
+  z-index: 1;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap .statusWrap .mpGauge .gaugeInner02 .gaugeBg
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/deck/gauge_magia.png") left bottom repeat-x;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap:nth-child(3n)
+{
+  margin-right: 0px;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap.comp:before
+{
+  width: 146px;
+  height: 28px;
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/icon_cure_finish.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 43px;
+  left: 83px;
+  content: "";
+  z-index: 100;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap.comp:after
+{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  -webkit-border-radius: 52px 7px 7px 52px;
+  border-radius: 52px 7px 7px 52px;
+  z-index: 10;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap.death
+{
+  background: url("/magica/resource/image_web/event/accomplish/common/recovery/btn_chara_die.png") left top no-repeat;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap.death .reviveAtDisp
+{
+  display: block;
+}
+
+#EventAccomplishRecovery #charaOuterWrap .charaWrap.death:before
+{
+  width: 80px;
+  height: 24px;
+  background: url("/magica/resource/image_web/event/accomplish/common/deck/icon_chara_list_die.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 18px;
+  content: "";
+  z-index: 100;
+}

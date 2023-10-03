@@ -1,0 +1,575 @@
+body.ios #charaListWrap
+{
+  -webkit-transform: translateY(160px) translateZ(0);
+}
+
+#charaListWrap
+{
+  -webkit-transform: translateY(120px);
+  z-index: 100000;
+}
+
+#charaListWrap.open
+{
+  -webkit-animation: card_list_open .1s linear 0s 1 alternate;
+  z-index: 100000;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#charaListWrap .remove
+{
+  display: block !important;
+}
+
+#charaListWrap .remove .att:before
+{
+  width: 80px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/formation/icon_chara_list_quit.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: "";
+  z-index: 100;
+}
+
+#charaListWrap .trainingSelect
+{
+  display: block !important;
+  pointer-events: none;
+}
+
+#charaListWrap .trainingSelect .att:before
+{
+  width: 80px;
+  height: 24px;
+  background: url("/magica/resource/image_web/event/training/common/icon_chara_list_select.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: "";
+  z-index: 100;
+}
+
+#charaListWrap .trainingSelect:before
+{
+  width: 74px;
+  height: 74px;
+  background: -webkit-radial-gradient(50% 50%, cover, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 74px;
+  text-align: center;
+  content: "";
+  -webkit-border-radius: 39px;
+  z-index: 8;
+}
+
+@-webkit-keyframes card_list_open
+{
+  0%
+  {
+    -webkit-transform: translateY(4px);
+    opacity: .6;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#EventTrainingCharaSelect
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventTrainingCharaSelect #eventLogo
+{
+  position: absolute;
+  top: 52px;
+  left: 0;
+}
+
+#EventTrainingCharaSelect #eventLogo img
+{
+  display: block;
+}
+
+#EventTrainingCharaSelect #helpBtn
+{
+  width: 100px;
+  position: absolute;
+  top: 13px;
+  right: 276px;
+  z-index: 10000;
+}
+
+#EventTrainingCharaSelect #archiveBtn
+{
+  width: 120px;
+  position: absolute;
+  top: 13px;
+  right: 144px;
+  z-index: 10000;
+}
+
+#EventTrainingCharaSelect #charaSelectWrap
+{
+  width: 530px;
+  height: 530px;
+  position: absolute;
+  top: -webkit-calc(50% - 263px);
+  right: 40px;
+  z-index: 10;
+}
+
+#EventTrainingCharaSelect #charaSelectWrap .charaOuter
+{
+  width: 100%;
+  height: 412px;
+  margin-top: 28px;
+  padding-top: 86px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventTrainingCharaSelect #charaSelectWrap .btnWrap
+{
+  width: 350px;
+  position: absolute;
+  bottom: -10px;
+  left: -webkit-calc(50% - 175px);
+}
+
+#EventTrainingCharaSelect #charaSelectWrap .btnWrap p
+{
+  width: 100%;
+  height: 28px;
+  margin-bottom: 4px;
+  background: -webkit-linear-gradient(left, rgba(16, 24, 47, 0) 0%, rgba(16, 24, 47, 0.55) 10%, #10182f 50%, rgba(16, 24, 47, 0.55) 90%, rgba(16, 24, 47, 0) 100%);
+  color: #ffffff;
+  line-height: 28px;
+  text-align: center;
+  text-shadow: -1px -1px 2px #3355b6,
+    1px -1px 2px #3355b6,
+    -1px 1px 2px #3355b6,
+    1px 1px 2px #3355b6,
+    -1px -1px 2px #3355b6,
+    1px -1px 2px #3355b6,
+    -1px 1px 2px #3355b6,
+    1px 1px 2px #3355b6;
+}
+
+#EventTrainingCharaSelect #charaSelectWrap .btnWrap .btn
+{
+  width: 177px;
+  margin: 0 auto;
+  display: block;
+}
+
+#EventTrainingCharaSelect .charaSelectBg
+{
+  width: 530px;
+  height: 530px;
+  background: url("/magica/resource/image_web/event/training/common/circle.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 263px);
+  right: 40px;
+  pointer-events: none;
+  opacity: .35;
+  z-index: 1;
+  background-blend-mode: overlay;
+}
+
+#EventTrainingCharaSelect .charaSerif
+{
+  width: 448px;
+  height: 160px;
+  padding: 45px 40px 0 50px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_serif.png") left top no-repeat;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 11px;
+  left: 37px;
+  font-size: 22px;
+  line-height: 1.3;
+  -webkit-border-radius: 10px;
+  z-index: 100;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventTrainingCharaSelect .charaSerif .charaName
+{
+  width: 208px;
+  height: 20px;
+  position: absolute;
+  top: 29px;
+  left: 190px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+#EventTrainingCharaSelect .charaSerif .serifFont
+{
+  width: 358px;
+  display: block;
+  color: #5a5a5a;
+  font-size: 20px;
+  line-height: 1.3;
+  white-space: normal;
+  word-wrap: break-word;
+  text-shadow: 0 0 0;
+}
+
+#EventTrainingCharaSelect .charaWrap
+{
+  width: 142px;
+  height: 100%;
+  margin: 0 11px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 100;
+  -webkit-filter: brightness(100%);
+}
+
+#EventTrainingCharaSelect .charaWrap .prm_charaId
+{
+  display: none;
+}
+
+#EventTrainingCharaSelect .charaWrap.eventChara .bottomBg
+{
+  display: block;
+}
+
+#EventTrainingCharaSelect .charaWrap.eventChara .status
+{
+  display: none;
+}
+
+#EventTrainingCharaSelect .charaWrap.chara1 .headBg
+{
+  background: url("/magica/resource/image_web/event/training/common/chara_header_01.png") left top no-repeat;
+}
+
+#EventTrainingCharaSelect .charaWrap.chara2 .headBg
+{
+  background: url("/magica/resource/image_web/event/training/common/chara_header_02.png") left top no-repeat;
+}
+
+#EventTrainingCharaSelect .charaWrap .headBg
+{
+  width: 152px;
+  height: 152px;
+  position: absolute;
+  top: -86px;
+  left: -5px;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+#EventTrainingCharaSelect .charaWrap .bottomBg
+{
+  width: 142px;
+  height: 132px;
+  background: url("/magica/resource/image_web/event/training/common/chara_footer.png") left top no-repeat;
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#EventTrainingCharaSelect .charaWrap .tapArea
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+}
+
+#EventTrainingCharaSelect .charaWrap.select .bg
+{
+  width: 100%;
+  height: 100%;
+  border-width: 48px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch;
+}
+
+#EventTrainingCharaSelect .charaWrap.select .select
+{
+  width: 146px;
+  height: -webkit-calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  content: "";
+  pointer-events: none;
+  border-width: 40px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/deck_wrap_select.png") 52 stretch;
+  z-index: 1003;
+}
+
+#EventTrainingCharaSelect .charaWrap.on
+{
+  background: -webkit-linear-gradient(bottom, #e9d7c5 0%, #fffdf3 100%);
+  border-radius: 7px 7px 16px 16px;
+}
+
+#EventTrainingCharaSelect .charaWrap.on .maskWrap
+{
+  width: 142px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-mask: url("/magica/resource/image_web/page/formation/bg_deck_wrap_mask_top.png") left top no-repeat, url("/magica/resource/image_web/page/formation/bg_deck_wrap_mask_bottom.png") left bottom no-repeat, -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(0.03, rgba(0, 0, 0, 0)), color-stop(0.03, black), color-stop(0.97, black), color-stop(0.97, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+#EventTrainingCharaSelect .charaWrap.on .bg
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-width: 48px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch;
+  z-index: 10;
+}
+
+#EventTrainingCharaSelect .charaWrap.off
+{
+  background: -webkit-linear-gradient(bottom, #e9d7c5 0%, #fffdf3 100%);
+  border-radius: 7px 7px 25px 25px;
+  -webkit-box-shadow: 0 0 10px 4px #a8a3b9 inset;
+  box-shadow: 0 0 10px 4px #a8a3b9 inset;
+}
+
+#EventTrainingCharaSelect .charaWrap.off .bg
+{
+  width: 100%;
+  height: 100%;
+  border-width: 48px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch;
+}
+
+#EventTrainingCharaSelect .charaWrap.off:after
+{
+  width: 75px;
+  height: 79px;
+  background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_off.png") left bottom no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: -webkit-calc(50% - 60px);
+  left: -webkit-calc(50% - 37px);
+  text-align: center;
+  content: "";
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#EventTrainingCharaSelect .charaWrap .charaImg
+{
+  width: 142px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 71px);
+  pointer-events: none;
+}
+
+#EventTrainingCharaSelect .charaWrap .status
+{
+  width: 138px;
+  height: 178px;
+  padding: 40px 20px 0;
+  background: url("/magica/resource/image_web/page/formation/bg_deck_wrap_status.png") left top no-repeat;
+  position: absolute;
+  bottom: 4px;
+  left: 2px;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epTitle
+{
+  width: 86px;
+  height: 18px;
+  background: url("/magica/resource/image_web/page/questresult/header_eplv.png") left top no-repeat;
+  background-size: 86px 18px;
+  position: absolute;
+  bottom: 24px;
+  left: 8px;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epLevel
+{
+  position: absolute;
+  bottom: 24px;
+  left: 110px;
+  font-size: 15px;
+  line-height: 16px;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap
+{
+  width: 126px;
+  height: 18px;
+  padding: 4px 9px;
+  background: url("/magica/resource/image_web/page/chara/bg_exp_gauge_c.png") left top;
+  background-repeat: no-repeat;
+  background-position: 11px 0;
+  background-size: 104px 18px;
+  position: absolute;
+  bottom: 6px;
+  left: -webkit-calc(50% - 63px);
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap:before,
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap:after
+{
+  width: 16px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: 0;
+  content: "";
+  z-index: 2;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap:before
+{
+  background: url("/magica/resource/image_web/page/chara/bg_exp_gauge_l.png") left top no-repeat;
+  background-size: 16px 18px;
+  left: 0;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap:after
+{
+  background: url("/magica/resource/image_web/page/chara/bg_exp_gauge_r.png") left top no-repeat;
+  background-size: 16px 18px;
+  right: 0;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap .epGaugeInner
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .epGaugeWrap .epGaugeInner .gauge
+{
+  height: 10px;
+  background: url("/magica/resource/image_web/common/chara/eplv_gauge_l.png") left top no-repeat, url("/magica/resource/image_web/common/chara/eplv_gauge_r.png") right top no-repeat, url("/magica/resource/image_web/common/chara/eplv_gauge_c.png") left top repeat-x;
+  background-size: auto 10px, auto 10px, auto 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#EventTrainingCharaSelect .charaWrap .status #rare
+{
+  width: 100%;
+  height: 16px;
+  margin: 5px 0 6px;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#EventTrainingCharaSelect .charaWrap .status #rare span
+{
+  width: 16px;
+  height: 16px;
+}
+
+#EventTrainingCharaSelect .charaWrap .status #level
+{
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .charaStatus
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .charaStatus dt,
+#EventTrainingCharaSelect .charaWrap .status .charaStatus dd
+{
+  font-size: 14px;
+  line-height: 1.1;
+  text-shadow: 0 0;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .charaStatus dt
+{
+  width: 40px;
+}
+
+#EventTrainingCharaSelect .charaWrap .status .charaStatus dd
+{
+  width: 58px;
+  text-align: right;
+}
+
+#EventTrainingCharaSelect .charaWrap .status #attribute
+{
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 4px;
+  left: -webkit-calc(50% - 16px);
+}
+
+#EventTrainingCharaSelect .charaWrap .status #attribute span
+{
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+}

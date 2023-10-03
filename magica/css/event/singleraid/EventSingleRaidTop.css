@@ -1,0 +1,1914 @@
+@charset "UTF-8";
+
+@-webkit-keyframes brightAnim
+{
+
+  0%,
+  40%,
+  60%,
+  100%
+  {
+    -webkit-filter: brightness(100%);
+  }
+
+  50%
+  {
+    -webkit-filter: brightness(300%);
+  }
+}
+
+@-webkit-keyframes areaMissionIcon
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.8);
+    opacity: 0;
+    -webkit-filter: brightness(200%);
+    filter: brightness(200%);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes treasureOpen
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+  }
+
+  20%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+    opacity: 1;
+    -webkit-filter: brightness(200%);
+    filter: brightness(200%);
+  }
+
+  90%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.2);
+    opacity: 1;
+    -webkit-filter: brightness(200%);
+    filter: brightness(200%);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.5);
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes treasureOpenItem
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, -15px, 0) scale(1);
+    opacity: 0;
+  }
+
+  85%
+  {
+    -webkit-transform: translate3d(0, -15px, 0) scale(1);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.openConditionPopup .openConditionDl
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.openConditionPopup .openConditionDl:not(:last-child)
+{
+  margin-bottom: 8px;
+}
+
+.openConditionPopup .openConditionDl dt
+{
+  width: 42px;
+  height: 42px;
+  background: #f66a99;
+  position: relative;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 42px;
+  border-radius: 5px 0 0 5px;
+}
+
+.openConditionPopup .openConditionDl dt .clear
+{
+  width: 52px;
+  height: 16px;
+  background: url("/magica/resource/image_web/event/singleraid/common/icon_condition_clear.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: -16px;
+}
+
+.openConditionPopup .openConditionDl dd
+{
+  width: 506px;
+  height: 42px;
+  padding: 0 14px;
+  background: #ffffff;
+  font-size: 18px;
+  line-height: 38px;
+  text-align: left;
+  border-top: 2px solid #c6a882;
+  border-right: 2px solid #c6a882;
+  border-bottom: 2px solid #c6a882;
+  border-radius: 0 5px 5px 0;
+}
+
+.openConditionPopup #popupInfoDetailTitle
+{
+  margin-bottom: 16px;
+}
+
+.openConditionPopup .popupInner
+{
+  width: 650px !important;
+  height: 500px !important;
+  position: absolute;
+  top: -webkit-calc(50% - 250px) !important;
+  left: -webkit-calc(50% - 325px) !important;
+}
+
+.openConditionPopup .popupInner .popupTextArea
+{
+  height: 242px !important;
+  overflow: inherit !important;
+}
+
+.debugMapBtn
+{
+  margin: 0 5px 10px;
+}
+
+.debugMapBtn.off
+{
+  -webkit-filter: grayscale(100%);
+}
+
+.pageFadein
+{
+  -webkit-animation: common_fade_in .3s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.pageFadeout
+{
+  -webkit-animation: common_fade_out .3s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventSingleRaidTop
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventSingleRaidTop #areaCompleteNum
+{
+  background: url(/magica/resource/image_web/event/singleraid/common/bg_area_comp_a.png) left top no-repeat;
+  width: 276px;
+  height: 46px;
+  position: absolute;
+  top: 56px;
+  right: 0;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  padding-right: 6px;
+}
+
+#EventSingleRaidTop #areaCompleteNum .countNumWrap,
+#EventSingleRaidTop #areaCompleteNum .sla,
+#EventSingleRaidTop #areaCompleteNum .maxCountNumWrap
+{
+  height: 26px;
+}
+
+#EventSingleRaidTop #areaCompleteNum .countNumWrap img,
+#EventSingleRaidTop #areaCompleteNum .sla img,
+#EventSingleRaidTop #areaCompleteNum .maxCountNumWrap img
+{
+  margin-left: -3px;
+  display: block;
+}
+
+#EventSingleRaidTop #areaCompleteNum .countNumWrap,
+#EventSingleRaidTop #areaCompleteNum .maxCountNumWrap
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+#EventSingleRaidTop #mapWrap
+{
+  width: 1424px;
+  height: 105%;
+  padding: 60px 250px 0 220px;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  z-index: 100;
+}
+
+#EventSingleRaidTop #helpBtn
+{
+  width: 100px;
+  position: absolute;
+  top: 13px;
+  right: 276px;
+  z-index: 10000;
+}
+
+#EventSingleRaidTop #archiveBtn
+{
+  width: 120px;
+  position: absolute;
+  top: 13px;
+  right: 144px;
+  z-index: 10000;
+}
+
+#EventSingleRaidTop #scaleChangePlus
+{
+  width: 70px;
+  height: 62px;
+  background: url("/magica/resource/image_web/page/chara/tree/btn_big_on.png") center center no-repeat;
+  position: absolute;
+  right: 70px;
+  bottom: 4px;
+  z-index: 10000;
+  background-size: 80%;
+}
+
+#EventSingleRaidTop #scaleChangePlus.off
+{
+  background: url("/magica/resource/image_web/page/chara/tree/btn_big_off.png") center center no-repeat;
+  background-size: 80%;
+}
+
+#EventSingleRaidTop #scaleChangeMinus
+{
+  width: 70px;
+  height: 62px;
+  background: url("/magica/resource/image_web/page/chara/tree/btn_small_on.png") center center no-repeat;
+  position: absolute;
+  right: 140px;
+  bottom: 4px;
+  z-index: 10000;
+  background-size: 80%;
+}
+
+#EventSingleRaidTop #scaleChangeMinus.off
+{
+  background: url("/magica/resource/image_web/page/chara/tree/btn_small_off.png") center center no-repeat;
+  background-size: 80%;
+}
+
+#EventSingleRaidTop #resetPosition
+{
+  width: 70px;
+  height: 62px;
+  background: url("/magica/resource/image_web/page/chara/tree/btn_navi.png") center center no-repeat;
+  position: absolute;
+  right: 210px;
+  bottom: 4px;
+  z-index: 10000;
+  background-size: 80%;
+}
+
+#EventSingleRaidTop #sectionWrap
+{
+  width: 1024px;
+  height: 100%;
+  display: none;
+  position: relative;
+}
+
+#EventSingleRaidTop #bottomWrap
+{
+  width: 790px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#EventSingleRaidTop #bottomWrap #eventLogo
+{
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+#EventSingleRaidTop #bottomWrap #eventLogo img
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#EventSingleRaidTop #bottomWrap .shopBtn
+{
+  width: 116px;
+  height: 40px;
+  background: url("/magica/resource/image_web/page/quest/week/btn_shop.png") left top no-repeat;
+  position: absolute;
+  bottom: 13px;
+  left: 183px;
+  z-index: 10;
+}
+
+#EventSingleRaidTop #bottomWrap .itemListWrap
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  position: absolute;
+  bottom: 7px;
+  left: 306px;
+  z-index: 10;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventSingleRaidTop #bottomWrap .itemListWrap .itemWrap
+{
+  width: 128px;
+  height: 54px;
+  background: url("/magica/resource/image_web/event/singleraid/common/bg_item_exchange.png") left top no-repeat;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  pointer-events: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventSingleRaidTop #bottomWrap .itemListWrap .itemWrap:not(:last-child)
+{
+  margin-right: 4px;
+}
+
+#EventSingleRaidTop #bottomWrap .itemListWrap .itemWrap img
+{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+
+#EventSingleRaidTop #bottomWrap .itemListWrap .itemWrap .itemNum
+{
+  width: 100%;
+  padding-right: 9px;
+  font-size: 18px;
+  text-align: right;
+}
+
+#EventSingleRaidTop #bottomWrap .bg
+{
+  width: 990px;
+  height: 300px;
+  position: absolute;
+  bottom: -120px;
+  left: -200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#EventSingleRaidTop #itemGaugeWrap
+{
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  width: 48px;
+  height: 452px;
+  z-index: 100;
+}
+
+#EventSingleRaidTop #itemGaugeWrap .gaugeOuterWrap
+{
+  width: 14px;
+  height: 364px;
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+#EventSingleRaidTop #itemGaugeWrap .gaugeInner
+{
+  width: 14px;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: height 0.5s 0s ease-in;
+  -o-transition: height 0.5s 0s ease-in;
+  transition: height 0.5s 0s ease-in;
+}
+
+#EventSingleRaidTop #itemGaugeWrap .gauge
+{
+  width: 14px;
+  height: 364px;
+  display: block;
+}
+
+#EventSingleRaidSelect
+{
+  /* エリアミッションタイトル・通常クエスト */
+  /* ボスクエスト */
+  /* エリアミッションカウント */
+  /* チャレンジクエスト */
+}
+
+#EventSingleRaidSelect .debugArea
+{
+  position: absolute;
+  left: 0;
+  top: 160px;
+}
+
+#EventSingleRaidSelect .colorA
+{
+  color: #fff;
+  text-shadow: -1px -1px 1px #ad2719,
+    1px -1px 1px #ad2719,
+    -1px 1px 1px #ad2719,
+    1px 1px 1px #ad2719,
+    -1px -1px #ad2719,
+    1px -1px #ad2719,
+    -1px 1px #ad2719,
+    1px 1px #ad2719,
+    -1px -1px 2px #ad2719,
+    1px -1px 2px #ad2719,
+    -1px 1px 2px #ad2719,
+    1px 1px 2px #ad2719,
+    -1px -1px 2px #ad2719,
+    1px -1px 2px #ad2719,
+    -1px 1px 2px #ad2719,
+    1px 1px 2px #ad2719,
+    -1px -1px 3px #ad2719,
+    1px -1px 3px #ad2719,
+    -1px 1px 3px #ad2719,
+    1px 1px 3px #ad2719;
+}
+
+#EventSingleRaidSelect .colorB
+{
+  color: #fff;
+  text-shadow: -1px -1px 1px #581081,
+    1px -1px 1px #581081,
+    -1px 1px 1px #581081,
+    1px 1px 1px #581081,
+    -1px -1px #581081,
+    1px -1px #581081,
+    -1px 1px #581081,
+    1px 1px #581081,
+    -1px -1px 2px #581081,
+    1px -1px 2px #581081,
+    -1px 1px 2px #581081,
+    1px 1px 2px #581081,
+    -1px -1px 2px #581081,
+    1px -1px 2px #581081,
+    -1px 1px 2px #581081,
+    1px 1px 2px #581081,
+    -1px -1px 3px #581081,
+    1px -1px 3px #581081,
+    -1px 1px 3px #581081,
+    1px 1px 3px #581081;
+}
+
+#EventSingleRaidSelect .colorC
+{
+  color: #fff;
+  text-shadow: -1px -1px 1px #ad2719,
+    1px -1px 1px #ad2719,
+    -1px 1px 1px #ad2719,
+    1px 1px 1px #ad2719,
+    -1px -1px #ad2719,
+    1px -1px #ad2719,
+    -1px 1px #ad2719,
+    1px 1px #ad2719,
+    -1px -1px 2px #ad2719,
+    1px -1px 2px #ad2719,
+    -1px 1px 2px #ad2719,
+    1px 1px 2px #ad2719,
+    -1px -1px 2px #ad2719,
+    1px -1px 2px #ad2719,
+    -1px 1px 2px #ad2719,
+    1px 1px 2px #ad2719,
+    -1px -1px 3px #ad2719,
+    1px -1px 3px #ad2719,
+    -1px 1px 3px #ad2719,
+    1px 1px 3px #ad2719;
+}
+
+#EventSingleRaidSelect .colorD
+{
+  color: #fff;
+  text-shadow: -1px -1px 1px #126bff,
+    1px -1px 1px #126bff,
+    -1px 1px 1px #126bff,
+    1px 1px 1px #126bff,
+    -1px -1px #126bff,
+    1px -1px #126bff,
+    -1px 1px #126bff,
+    1px 1px #126bff,
+    -1px -1px 2px #126bff,
+    1px -1px 2px #126bff,
+    -1px 1px 2px #126bff,
+    1px 1px 2px #126bff,
+    -1px -1px 2px #126bff,
+    1px -1px 2px #126bff,
+    -1px 1px 2px #126bff,
+    1px 1px 2px #126bff,
+    -1px -1px 3px #126bff,
+    1px -1px 3px #126bff,
+    -1px 1px 3px #126bff,
+    1px 1px 3px #126bff;
+}
+
+#EventSingleRaidSelect #areaMissionWrap
+{
+  width: 741px;
+  height: 112px;
+  position: absolute;
+  top: 75px;
+  right: -200px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_icon_area_mission.png") left top no-repeat;
+  width: 240px;
+  height: 142px;
+  position: absolute;
+  top: -24px;
+  left: -96px;
+  z-index: 10;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState .icon
+{
+  width: 122px;
+  height: 122px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/icon_area_mission_notclear_a.png") left top no-repeat;
+  position: absolute;
+  top: 15px;
+  left: 7px;
+  z-index: 11;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState.clear .icon,
+#EventSingleRaidSelect #areaMissionWrap .missionState.clearAnim .icon
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/icon_area_mission_clear_a.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState.clear .text,
+#EventSingleRaidSelect #areaMissionWrap .missionState.clearAnim .text
+{
+  width: 122px;
+  height: 32px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/icon_area_mission_clear_text_a.png") left top no-repeat;
+  position: absolute;
+  top: 64px;
+  left: 7px;
+  z-index: 12;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState.clear .text
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: brightAnim 4s linear 0s infinite normal;
+  opacity: 1;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState.clearAnim .icon
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: areaMissionIcon .2s linear 0s 1 alternate;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionState.clearAnim .text
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: areaMissionIcon .2s linear .3s 1 alternate, brightAnim 4s linear 0s infinite normal;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .missionTitle
+{
+  position: absolute;
+  top: 23px;
+  left: 54px;
+  color: #ffffff;
+  font-size: 26px;
+  z-index: 100;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .bg
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_area_mission.png") left top no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 78px;
+  left: 256px;
+  font-size: 18px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 1;
+  z-index: 100;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num0,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num1,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num2,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num3,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num4,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num5,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num6,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num7,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num8,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num9,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .sla
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 1;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num0:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num1:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num2:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num3:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num4:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num5:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num6:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num7:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num8:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num9:not(:last-child),
+#EventSingleRaidSelect #areaMissionWrap .countWrap .sla:not(:last-child)
+{
+  margin-right: -2px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num0,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num4,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num6,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num8,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num9
+{
+  width: 18px;
+  height: 26px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num1
+{
+  width: 12px;
+  height: 26px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num2,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num3,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num5,
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num7
+{
+  width: 16px;
+  height: 26px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .sla
+{
+  width: 14px;
+  height: 26px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num0
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_0.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num1
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_1.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num2
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_2.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num3
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_3.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num4
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_4.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num5
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_5.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num6
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_6.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num7
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_7.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num8
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_8.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .num9
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_9.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .countWrap .sla
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_num_diagonal.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap
+{
+  position: absolute;
+  top: -12px;
+  right: 210px;
+  z-index: 100;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap.clearAnim .treasure .itemImg
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: treasureOpenItem 1s linear 0s 1 alternate;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap.clearAnim .treasure .treasureImg
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: treasureOpen 1s linear 0s 1 alternate;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap .treasure
+{
+  position: relative;
+  z-index: 10;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap .treasure:not(:first-child)
+{
+  margin-left: -10px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap .treasure:not(.clear) .itemImg
+{
+  opacity: 0;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap .title
+{
+  width: 116px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission.png") left top no-repeat;
+  position: absolute;
+  top: -4px;
+  left: -webkit-calc(50% - 58px);
+  z-index: 1000;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .rewardWrap .title.clear
+{
+  background: url("/magica/resource/image_web/page/quest/questBattle/complete.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .gaugeWrap
+{
+  width: 196px;
+  height: 20px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_area_mission_gauge.png") left top no-repeat;
+  position: absolute;
+  top: 81px;
+  left: 54px;
+  z-index: 100;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .gaugeWrap .gargeOuterWrap
+{
+  width: 178px;
+  height: 12px;
+  position: absolute;
+  top: 4px;
+  left: 9px;
+}
+
+#EventSingleRaidSelect #areaMissionWrap .gaugeWrap .gaugeInner
+{
+  height: 12px;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventSingleRaidSelect #areaMissionWrap .gaugeWrap .gauge
+{
+  width: 178px;
+  height: 12px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/area_mission_gauge_l.png") left top no-repeat, url("/magica/resource/image_web/event/singleraid/common/quest/area_mission_gauge_r.png") right top no-repeat, url("/magica/resource/image_web/event/singleraid/common/quest/area_mission_gauge_c.png") left top repeat-x;
+  display: block;
+}
+
+#EventSingleRaidSelect .treasure
+{
+  width: 96px;
+  height: 96px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_reward.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect .treasure .title
+{
+  width: 116px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission.png") left top no-repeat;
+  position: absolute;
+  top: -4px;
+  left: -10px;
+}
+
+#EventSingleRaidSelect .treasure .title.clear
+{
+  background: url("/magica/resource/image_web/page/quest/questBattle/complete.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect .treasure .itemImg
+{
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: -webkit-calc(50% - 24px);
+  left: -webkit-calc(50% - 24px);
+  z-index: 10;
+}
+
+#EventSingleRaidSelect .treasure .treasureImg
+{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -webkit-calc(50% - 30px);
+  left: -webkit-calc(50% - 30px);
+  z-index: 11;
+}
+
+#EventSingleRaidSelect #titleWrap
+{
+  position: absolute;
+  top: 66px;
+  left: 0;
+}
+
+#EventSingleRaidSelect #titleWrap.boss .chapter
+{
+  width: 108px;
+}
+
+#EventSingleRaidSelect #titleWrap .chapter
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_title_header.png") left top no-repeat;
+  width: 204px;
+  height: 32px;
+  padding-right: 30px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 32px;
+  padding-left: 12px;
+}
+
+#EventSingleRaidSelect #titleWrap .chapter.hide
+{
+  background: none;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+}
+
+#EventSingleRaidSelect #titleWrap .title
+{
+  width: 318px;
+  height: 42px;
+  padding-right: 20px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_title_a.png") left top no-repeat;
+  font-size: 22px;
+  line-height: 42px;
+  padding-left: 12px;
+}
+
+#EventSingleRaidSelect .charaSerif
+{
+  width: 448px;
+  height: 160px;
+  padding: 45px 40px 0 50px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_serif_2.png") left top no-repeat;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 7px;
+  left: -3px;
+  font-size: 22px;
+  line-height: 1.3;
+  -webkit-border-radius: 10px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#EventSingleRaidSelect .charaSerif .charaName
+{
+  width: 208px;
+  height: 20px;
+  position: absolute;
+  top: 29px;
+  left: 190px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+#EventSingleRaidSelect .charaSerif .serifFont
+{
+  width: 358px;
+  display: block;
+  color: #5a5a5a;
+  font-size: 20px;
+  line-height: 1.3;
+  white-space: normal;
+  word-wrap: break-word;
+  text-shadow: 0 0 0;
+}
+
+#EventSingleRaidSelect #questDetailWrap
+{
+  width: 100%;
+  height: 26px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+}
+
+#EventSingleRaidSelect #questDetailWrap .turn,
+#EventSingleRaidSelect #questDetailWrap .needAp
+{
+  text-align: left;
+}
+
+#EventSingleRaidSelect #questDetailWrap .turn,
+#EventSingleRaidSelect #questDetailWrap .turn span,
+#EventSingleRaidSelect #questDetailWrap .needAp,
+#EventSingleRaidSelect #questDetailWrap .needAp span
+{
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#EventSingleRaidSelect #questDetailWrap .turn
+{
+  width: 148px;
+  height: 24px;
+  padding-left: 15px;
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/point_frame_pink.png") left top no-repeat;
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+
+#EventSingleRaidSelect #questDetailWrap .turn span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+#EventSingleRaidSelect #questDetailWrap .needAp
+{
+  width: 120px;
+  position: absolute;
+  top: 15px;
+  left: 180px;
+}
+
+#EventSingleRaidSelect #questDetailWrap .needAp span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+#EventSingleRaidSelect #questDetailWrap .missionBtn
+{
+  width: 122px;
+  height: 34px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 100;
+}
+
+#EventSingleRaidSelect .memoriaEquip
+{
+  width: 466px;
+  height: 98px;
+  display: none;
+  margin-top: 5px;
+  z-index: 10000;
+}
+
+#EventSingleRaidSelect .memoriaEquip.show
+{
+  display: block;
+}
+
+#EventSingleRaidSelect #questListWrap
+{
+  width: 512px;
+  position: absolute;
+  top: 199px;
+  right: 8px;
+  height: -webkit-calc(100% - 210px);
+  padding: 46px 10px 0 26px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner
+{
+  padding: 15px 0 0;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList
+{
+  width: 454px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .firstView,
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .secondView
+{
+  display: none;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList.first .firstView
+{
+  display: block;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList.second .secondView
+{
+  display: block;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .secondView
+{
+  padding: 15px 0 0 45px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .secondView li
+{
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .secondView li:before
+{
+  width: 20px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_off.png") left top no-repeat;
+  background-size: 20px 20px;
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  content: "";
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .secondView li.cleared:before
+{
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_on.png") left top no-repeat;
+  background-size: 20px 20px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_quest_battle.png") left top no-repeat;
+  width: 406px;
+  height: 88px;
+  margin: 0;
+  position: relative;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest.off
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  pointer-events: none;
+  -webkit-filter: brightness(70%) grayscale(70%);
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest:not(:last-child)
+{
+  margin: 0 0 13px 0;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .questState
+{
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: 26px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .questState.new
+{
+  width: 84px;
+  height: 21px;
+  background: url("/magica/resource/image_web/page/quest/quest_state_new.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .questState.clear
+{
+  width: 60px;
+  height: 18px;
+  background: url("/magica/resource/image_web/page/quest/quest_state_clear.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .questState.comp
+{
+  width: 96px;
+  height: 18px;
+  background: url("/magica/resource/image_web/page/quest/quest_state_comp.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .questTitle
+{
+  margin: 29px 0 0 58px;
+  display: inline-block;
+  font-size: 21px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .mission
+{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 55px;
+  bottom: 25px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .mission li
+{
+  width: 38px;
+  height: 38px;
+  margin: 0 0 0 -5px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_off.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .quest .mission li.cleared
+{
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_on.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .treasure
+{
+  position: absolute;
+  right: -52px;
+  bottom: -6px;
+}
+
+#EventSingleRaidSelect #questListWrap .scrollInner #questLinkList .touchObj
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 368px;
+  height: 88px;
+  z-index: 105;
+}
+
+#EventSingleRaidSelect.typeBoss #areaMissionWrap .countWrap
+{
+  top: 80px;
+}
+
+#EventSingleRaidSelect.typeBoss #areaMissionWrap .gaugeWrap
+{
+  top: 83px;
+}
+
+#EventSingleRaidSelect.typeBoss #areaMissionWrap .gaugeWrap:before
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_hp_a.png") left top no-repeat;
+  width: 36px;
+  height: 34px;
+  display: block;
+  position: absolute;
+  top: -9px;
+  left: -31px;
+  content: "";
+}
+
+#EventSingleRaidSelect.typeBoss #areaMissionWrap .gaugeWrap .gauge
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/boss_gauge_l.png") left top no-repeat, url("/magica/resource/image_web/event/singleraid/common/quest/boss_gauge_r.png") right top no-repeat, url("/magica/resource/image_web/event/singleraid/common/quest/boss_gauge_c.png") left top repeat-x;
+}
+
+#EventSingleRaidSelect.typeBoss #areaMissionWrap .bg
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_area_mission_boss.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect.typeBoss #questListWrap .scrollInner #questLinkList .quest
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_boss_battle.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect.challenge #areaMissionWrap .bg
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_area_mission_challenge.png") left top no-repeat;
+}
+
+#EventSingleRaidSelect.challenge #questListWrap .scrollInner #questLinkList .quest
+{
+  background: url("/magica/resource/image_web/event/singleraid/common/quest/bg_quest_challenge.png") left top no-repeat;
+}
+
+.raidAnimationDom
+{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.raidAnimationDom div
+{
+  opacity: 0;
+  will-change: animation;
+}
+
+.raidAnimationDom.allAnimationFadeOut .animDoms
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .4s allAnimationFadeOut 0s linear 1 normal;
+}
+
+.raidAnimationDom .animDoms
+{
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc((100% - 1024px) / 2);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  z-index: 3;
+}
+
+.raidAnimationDom .animDoms .raidStar01_1,
+.raidAnimationDom .animDoms .raidStar01_2
+{
+  width: 220px;
+  height: 217px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_star_01_a.png");
+  position: absolute;
+  top: -webkit-calc(50% - 84px);
+  left: 402px;
+}
+
+.raidAnimationDom .animDoms .raidStar01_1
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: 1.466s raidMissionFlashStar .87s linear 1 normal;
+  z-index: 21;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidStar01_2
+{
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .6s raidMissionStar .2s linear 1 normal;
+  z-index: 20;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidStar02
+{
+  width: 202px;
+  height: 202px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_star_02_a.png");
+  position: absolute;
+  top: -webkit-calc(50% - 70px);
+  left: 411px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .8s raidMissionStarTwo .4s linear 1 normal;
+  z-index: 12;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidTx01
+{
+  width: 436px;
+  height: 97px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx01_a.png");
+  position: absolute;
+  top: -webkit-calc(50% - 177px);
+  left: 294px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .3s raidTxOne .4s linear 1 normal;
+  z-index: 16;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidTx02
+{
+  width: 256px;
+  height: 68px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx02_a.png");
+  position: absolute;
+  top: -webkit-calc(50% + 131px);
+  left: 383px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .13s raidTxTwo 1.07s linear 1 normal;
+  z-index: 17;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidTx03
+{
+  width: 73px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx03_a.png");
+  position: absolute;
+  top: -webkit-calc(50% + 134px);
+  left: 296px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .3s raidTxThree 1.07s linear 1 normal;
+  z-index: 18;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidTx04
+{
+  width: 73px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_tx04_a.png");
+  position: absolute;
+  top: -webkit-calc(50% + 134px);
+  right: 300px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .3s raidTxFour 1.07s linear 1 normal;
+  z-index: 19;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidFlag01
+{
+  width: 378px;
+  height: 354px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_flag_01_b.png");
+  position: absolute;
+  top: -webkit-calc(50% - 220px);
+  left: 128px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .5s raidFlagOne .4s ease 1 normal;
+  z-index: 14;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidFlag02
+{
+  width: 378px;
+  height: 354px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/raid_mission_flag_02_b.png");
+  position: absolute;
+  top: -webkit-calc(50% - 220px);
+  right: 132px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .5s raidFlagTwo .4s ease 1 normal;
+  z-index: 15;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidCircle01
+{
+  width: 217px;
+  height: 218px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/circle_05.png");
+  position: absolute;
+  top: -webkit-calc(50% - 80px);
+  left: 404px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .5s circleTwo 1.03s ease 1 normal;
+  z-index: 22;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom .animDoms .raidCircle02
+{
+  width: 170px;
+  height: 170px;
+  background: url("/magica/resource/image_web/event/singleraid/common/animation/circle_06.png");
+  position: absolute;
+  top: -webkit-calc(50% - 56px);
+  left: 427px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .233s circleOneOpacity .167s ease 1 normal,
+    4.8s circleOneRotate .167s linear infinite normal;
+  z-index: 13;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom #missionClearBg
+{
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center repeat-x;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .167s clearMaskFadeIn linear .0s 1 normal;
+  opacity: 0;
+  z-index: 2;
+  -webkit-animation-fill-mode: both;
+}
+
+.raidAnimationDom #missionClearMaskBg
+{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: .167s clearBgMaskFadeIn linear .0s 1 normal;
+  opacity: 0;
+  z-index: 1;
+  -webkit-animation-fill-mode: both;
+}
+
+@-webkit-keyframes raidMissionStar
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(3) scaleY(3);
+    opacity: 0;
+  }
+
+  33%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(2.7) scaleY(2.7);
+    opacity: .2;
+  }
+
+  66%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(0) scaleY(2.5);
+  }
+
+  83%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(0) scaleY(2.5);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidMissionFlashStar
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(0, 0);
+    opacity: 0;
+  }
+
+  14%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.5, 1.5);
+    opacity: 1;
+    -webkit-filter: brightness(300%);
+  }
+
+  30%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2);
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+
+  66%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.2, 1.2);
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+
+  80%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+    opacity: 1;
+    -webkit-filter: brightness(300%);
+  }
+
+  100%
+  {
+    opacity: 0;
+    -webkit-filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes raidMissionStarTwo
+{
+
+  0%,
+  63%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  38%,
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidFlagOne
+{
+  0%
+  {
+    -webkit-transform: translate3d(671px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidFlagTwo
+{
+  0%
+  {
+    -webkit-transform: translate3d(-671px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes circleOneOpacity
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes circleOneRotate
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2) rotate(0deg);
+  }
+
+  25%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2) rotate(90deg);
+  }
+
+  50%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2) rotate(180deg);
+  }
+
+  75%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2) rotate(270deg);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circleTwo
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1) rotate(0deg);
+    opacity: 0;
+  }
+
+  26%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1) rotate(0deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(3, 3) rotate(60deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes circleTwoTrans
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1) rotate(0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(3, 3) rotate(60deg);
+  }
+}
+
+@-webkit-keyframes clearMaskFadeIn
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleY(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes clearBgMaskFadeIn
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: .6;
+  }
+}
+
+@-webkit-keyframes allAnimationFadeOut
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleY(1);
+    opacity: 1;
+  }
+
+  60%,
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleY(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes raidTxOne
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(2, 2);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxTwo
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxThree
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) translate3d(358px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxFour
+{
+  0%
+  {
+    -webkit-transform: translate3d(-358px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes raidTxBg
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0) scaleX(1);
+    opacity: 1;
+  }
+}

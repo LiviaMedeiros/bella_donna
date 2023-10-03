@@ -1,0 +1,83 @@
+#TopPage #touchScreen
+{
+  position: absolute;
+  left: 398.5px;
+  bottom: 120px;
+  -webkit-animation: TopPageTouchScreenMotion 0.7s ease-in-out 0s infinite alternate;
+  -webkit-animation-fill-mode: backwards;
+  opacity: 1;
+}
+
+#TopPage #terms
+{
+  font-size: 0px;
+  position: absolute;
+  right: 2px;
+  top: 6px;
+  z-index: 50;
+}
+
+#TopPage #terms a,
+#TopPage #terms span
+{
+  width: 145px;
+  height: 38px;
+  display: block;
+  background: url(../../resource/page/top/top_kiyaku00.png) left top no-repeat;
+}
+
+#TopPage #terms a.hover,
+#TopPage #terms span.hover
+{
+  background-position: left -38px;
+}
+
+#TopPage #copy
+{
+  position: absolute;
+  left: 54px;
+  bottom: 60px;
+  color: #ffffff;
+  z-index: 50;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+#TopPage #app_ver
+{
+  position: absolute;
+  right: 18px;
+  bottom: 38px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 1px 1px 4px #000, -1px 1px 4px #000, 1px -1px 4px #000, -1px -1px 4px #000;
+}
+
+#TopPage #copy
+{
+  position: absolute;
+  left: 10px;
+  bottom: 38px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 4px #000, -1px 1px 4px #000, 1px -1px 4px #000, -1px -1px 4px #000;
+}
+
+@-webkit-keyframes TopPageTouchScreenMotion
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0.2;
+  }
+}

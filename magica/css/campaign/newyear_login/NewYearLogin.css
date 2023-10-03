@@ -1,0 +1,1010 @@
+@charset "UTF-8";
+
+#NewYearLogin
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#NewYearLogin .live2dArea
+{
+  width: 390px;
+  height: -webkit-calc(100% - 60px);
+  position: absolute;
+  bottom: 0px;
+  left: 12px;
+  z-index: 1;
+}
+
+#NewYearLogin #fortuneAnimationWrap
+{
+  width: 100%;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#NewYearLogin #fortuneAnimationWrap.show
+{
+  display: block;
+}
+
+#NewYearLogin #fortuneAnimationWrap .clearLight
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/clear_light.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 256px);
+  top: -webkit-calc(50% - 256px);
+  width: 512px;
+  height: 512px;
+  z-index: 3;
+  -webkit-animation: 1.03333s cpNewYearClearLight linear 1.01667s 1 both;
+}
+
+#NewYearLogin #fortuneAnimationWrap .kuji01
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/kuji_01.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% + 109.6px);
+  top: -webkit-calc(50% - 128.4px);
+  width: 20px;
+  height: 232px;
+  z-index: 3;
+  -webkit-animation: 1.85s cpNewYearKuji01 linear 0.36667s 1 both;
+}
+
+#NewYearLogin #fortuneAnimationWrap .box
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/kuji_box.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 218.5px);
+  top: -webkit-calc(50% - 250px);
+  width: 437px;
+  height: 510px;
+  z-index: 3;
+  -webkit-animation: 1.85s cpNewYearKujiBox linear 0s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap
+{
+  width: 100%;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#NewYearLogin #resultAnimationWrap.show
+{
+  display: block;
+  -webkit-animation: 0.16667s simpleFadeOut linear 2.5s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .circle01
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/circle01.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 170px);
+  top: -webkit-calc(50% - 170px);
+  width: 340px;
+  height: 340px;
+  z-index: 1;
+  -webkit-animation: 0.78333s cpNewYearResultCircle01 linear 0s infinite both;
+}
+
+#NewYearLogin #resultAnimationWrap .circle01.late
+{
+  -webkit-animation: 0.78333s cpNewYearResultCircle01 linear 0.45s infinite both;
+}
+
+#NewYearLogin #resultAnimationWrap .wave01
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/ef_wave.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 249px);
+  top: -webkit-calc(50% - 231.5px);
+  width: 498px;
+  height: 463px;
+  z-index: 1;
+  -webkit-animation: 1.5s cpNewYearResultWave01 linear 0s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .wave01.late
+{
+  -webkit-animation: 1.5s cpNewYearResultWave01 linear 1.2s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .wave02
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/ef_wave_02.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 250px);
+  top: -webkit-calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  z-index: 1;
+  -webkit-animation: 0.98333s cpNewYearResultWave02 linear 0.03333s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .wave02.late
+{
+  -webkit-animation: 0.98333s cpNewYearResultWave02 linear 0.53333s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .flare01
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_flare_01.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 200px);
+  top: -webkit-calc(50% - 200px);
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+#NewYearLogin #resultAnimationWrap .flare03
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_flare_03.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 327px);
+  top: -webkit-calc(50% - 314px);
+  width: 654px;
+  height: 628px;
+  z-index: 1;
+  -webkit-animation: 0.5s cpNewYearResultFlare03_2 linear 0s 1 normal, 2.91667s cpNewYearResultFlare03_1 linear 0s 1 normal;
+}
+
+#NewYearLogin #resultAnimationWrap .flare04
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_flare_04.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 215px);
+  top: -webkit-calc(50% - 219px);
+  width: 430px;
+  height: 438px;
+  z-index: 1;
+  -webkit-animation: 1.45s cpNewYearResultFlare04 linear 0.86667s infinite both;
+}
+
+#NewYearLogin #resultAnimationWrap .flare05
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_flare_05.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 278px);
+  top: -webkit-calc(50% - 276px);
+  width: 556px;
+  height: 552px;
+  z-index: 1;
+  -webkit-animation: 2.91667s cpNewYearResultFlare05 linear 0s 1 both;
+}
+
+#NewYearLogin #resultAnimationWrap .light
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/light.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 389.5px);
+  top: -webkit-calc(50% - 364.5px);
+  width: 779px;
+  height: 729px;
+  z-index: 1;
+  -webkit-animation: 0.81667s cpNewYearResultLight01_1 linear 0s 1 normal, 2.66667s cpNewYearResultLight01_2 linear 0s 1 normal;
+}
+
+#NewYearLogin #resultAnimationWrap .light02
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/light2.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 389.5px);
+  top: -webkit-calc(50% - 364.5px);
+  width: 779px;
+  height: 729px;
+  z-index: 1;
+  -webkit-animation: 0.81667s cpNewYearResultLight02_1 linear 0s 1 normal, 2.66667s cpNewYearResultLight02_2 linear 0s 1 normal;
+}
+
+#NewYearLogin #resultAnimationWrap .textWrap
+{
+  position: absolute;
+  left: 0;
+  top: -webkit-calc(50% - 82.5px);
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+#NewYearLogin #resultAnimationWrap .textWrap .text
+{
+  display: inline-block;
+  width: 165px;
+  height: 163px;
+}
+
+#NewYearLogin #resultAnimationWrap.type0 .effectCircle
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_circle_04.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 201.5px);
+  top: -webkit-calc(50% - 197.5px);
+  width: 403px;
+  height: 395px;
+  z-index: 1;
+}
+
+#NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(1)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_01.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(2)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_02.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(3)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_03.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.41667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.88333s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(4)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_04.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.58333s 1 normal, 0.43333s cpNewYearResultText_2 linear 1.05s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type1 .effectCircle
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_circle_03.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 247.5px);
+  top: -webkit-calc(50% - 235.5px);
+  width: 495px;
+  height: 471px;
+  z-index: 1;
+}
+
+#NewYearLogin #resultAnimationWrap.type1 .textWrap .text
+{
+  display: inline-block;
+  width: 165px;
+  height: 163px;
+}
+
+#NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(1)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_01.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(2)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_02.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(3)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_03.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.41667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.88333s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type2 .effectCircle
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_circle_02.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 170px);
+  top: -webkit-calc(50% - 170px);
+  width: 340px;
+  height: 340px;
+  z-index: 1;
+}
+
+#NewYearLogin #resultAnimationWrap.type2 .textWrap .text
+{
+  display: inline-block;
+  width: 165px;
+  height: 163px;
+}
+
+#NewYearLogin #resultAnimationWrap.type2 .textWrap .text:nth-child(1)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_daikichi_01.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type2 .textWrap .text:nth-child(2)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_daikichi_02.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+}
+
+#NewYearLogin #resultAnimationWrap.type3 .effectCircle
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/effect_circle_01.png") center center;
+  position: absolute;
+  left: -webkit-calc(50% - 170px);
+  top: -webkit-calc(50% - 170px);
+  width: 340px;
+  height: 340px;
+  z-index: 1;
+}
+
+#NewYearLogin #resultAnimationWrap.type3 .textWrap .text:nth-child(1)
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_kichi.png") center center;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.38333s infinite normal;
+}
+
+#NewYearLogin #resultPageWrap
+{
+  display: none;
+}
+
+#NewYearLogin #resultPageWrap.show
+{
+  display: block;
+  opacity: 0;
+  -webkit-animation: 0.16667s simpleFadeIn linear 0s 1 both;
+}
+
+#NewYearLogin #resultPageWrap .charaSerif
+{
+  width: 448px;
+  height: 160px;
+  padding: 45px 40px 0 50px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_serif.png") left top no-repeat;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 7px;
+  left: -3px;
+  font-size: 22px;
+  line-height: 1.3;
+  -webkit-border-radius: 10px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#NewYearLogin #resultPageWrap .charaSerif .charaName
+{
+  width: 208px;
+  height: 20px;
+  position: absolute;
+  top: 29px;
+  left: 190px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+#NewYearLogin #resultPageWrap .charaSerif .serifFont
+{
+  width: 358px;
+  display: block;
+  color: #5a5a5a;
+  font-size: 20px;
+  line-height: 1.3;
+  white-space: normal;
+  word-wrap: break-word;
+  text-shadow: 0 0 0;
+}
+
+#NewYearLogin #resultPageWrap .eventLogo
+{
+  position: absolute;
+  left: 496px;
+  top: 20px;
+}
+
+#NewYearLogin #resultPageWrap .eventLogo .evnetSpan
+{
+  position: absolute;
+  top: 173px;
+  font-size: 14px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  color: #ffff;
+}
+
+#NewYearLogin #resultPageWrap .eventSpan
+{
+  background: blue;
+  position: absolute;
+  left: 568px;
+  top: -webkit-calc(50% - 160px);
+  width: 310px;
+  height: 20px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap
+{
+  position: absolute;
+  left: 486px;
+  bottom: 32px;
+  width: 495px;
+  height: 214px;
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_base.png") left top repeat-y;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap:before
+{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -98px;
+  width: 495px;
+  height: 100px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap:after
+{
+  content: "";
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_bottom.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 495px;
+  height: 24px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .resultTitle
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/luck_top.png") center top no-repeat;
+  margin: 8px auto 0;
+  width: 495px;
+  height: 32px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .resultText
+{
+  margin: 5px auto 0;
+  height: 60px;
+  line-height: 22px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .rewardTitle
+{
+  margin: 20px auto 0;
+  background: url("/magica/resource/image_web/campaign/new_year/common/present_top.png") center top no-repeat;
+  width: 495px;
+  height: 18px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .rewardWrap
+{
+  text-align: center;
+  margin-top: 7px;
+  z-index: 10;
+  position: relative;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .rewardWrap .rewardImg
+{
+  display: inline-block;
+  position: relative;
+  margin: 0px 20px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .rewardWrap .rewardImg img
+{
+  width: 70px;
+  height: 70px;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .rewardWrap .rewardImg .quantity
+{
+  position: absolute;
+  font-size: 20px;
+  right: 4px;
+  bottom: -2px;
+  color: #fff;
+  text-shadow: -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 3px #8a5f29, 1px -1px 3px #8a5f29, -1px 1px 3px #8a5f29, 1px 1px 3px #8a5f29;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .tweetBtn
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/btn_twitter.png") left top no-repeat;
+  position: absolute;
+  right: 45px;
+  bottom: 14px;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap .tweetBtn:before
+{
+  content: "ツイートする";
+  font-size: 14px;
+  position: absolute;
+  left: -webkit-calc(50% - 50px);
+  bottom: -24px;
+  width: 100px;
+  text-align: center;
+  color: #907845;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap.type0:before
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_title_04.png") left top no-repeat;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap.type1:before
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_title_03.png") left top no-repeat;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap.type2:before
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_title_02.png") left top no-repeat;
+}
+
+#NewYearLogin #resultPageWrap .resultWrap.type3:before
+{
+  background: url("/magica/resource/image_web/campaign/new_year/common/box_title_01.png") left top no-repeat;
+}
+
+@-webkit-keyframes cpNewYearClearLight
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg) scale(0);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: rotate(270deg) scale(1.497);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: rotate(288deg) scale(1.798);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg) scale(10);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cpNewYearKuji01
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) rotate(215deg);
+    opacity: 0;
+  }
+
+  6%
+  {
+    -webkit-transform: translate(0, 0) rotate(215deg);
+    opacity: 1;
+  }
+
+  7%
+  {
+    -webkit-transform: translate(8.2px, -6.4px) rotate(215deg);
+    opacity: 1;
+  }
+
+  17%
+  {
+    -webkit-transform: translate(115.4px, 6.6px) rotate(256deg);
+    opacity: 1;
+  }
+
+  63.1%
+  {
+    -webkit-transform: translate(115.4px, 6.6px) rotate(256deg);
+    opacity: 1;
+  }
+
+  72.1%
+  {
+    -webkit-transform: translate(248.4px, 6.6px) rotate(256deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(248.4px, 6.6px) rotate(256deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cpNewYearKujiBox
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scale(0) rotate(23deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  10%
+  {
+    -webkit-transform: translate(0, 0) scale(1.1) rotate(23deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  13.5%
+  {
+    -webkit-transform: translate(0, 0) scale(1) rotate(23deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  20.7%
+  {
+    -webkit-transform: translate(0, 17px) scale(1) rotate(23deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  27.0%
+  {
+    -webkit-transform: translate(0, 2px) scale(1) rotate(23deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  27.9%
+  {
+    -webkit-transform: translate(0, 0) scale(1) rotate(24.7deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  35.1%
+  {
+    -webkit-transform: translate(0, 17px) scale(1) rotate(38deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  70.2%
+  {
+    -webkit-transform: translate(0, 30px) scale(1) rotate(38deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  85.6%
+  {
+    -webkit-transform: translate(0, 30px) scale(1) rotate(38deg);
+    -webkit-filter: brightness(5);
+    filter: brightness(5);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 30px) scale(1) rotate(38deg);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+}
+
+@-webkit-keyframes cpNewYearEffect01
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(-6.2deg);
+  }
+
+  10%
+  {
+    -webkit-transform: scale(0) rotate(-41.1deg);
+  }
+
+  19.4%
+  {
+    -webkit-transform: scale(1) rotate(-76.1deg);
+  }
+
+  76%
+  {
+    -webkit-transform: scale(0.6) rotate(-279.8deg);
+  }
+
+  90.2%
+  {
+    -webkit-transform: scale(1) rotate(-331.2deg);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultCircle01
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  70.2%
+  {
+    -webkit-transform: scale(3) rotate(360deg);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(3) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes cpNewYearResultText_1
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  72.2%
+  {
+    -webkit-transform: scale(1.3);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultText_2
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  23.1%
+  {
+    -webkit-transform: translate(0, -26px);
+  }
+
+  46.2%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultWave01
+{
+  0%
+  {
+    -webkit-transform: scale(0);
+    opacity: 1;
+  }
+
+  71.2%
+  {
+    -webkit-transform: scale(2.967);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes cpNewYearResultWave02
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  71.2%
+  {
+    -webkit-transform: scale(1.883) rotate(391deg);
+    opacity: 1;
+  }
+
+  98.3%
+  {
+    -webkit-transform: scale(2.6) rotate(540deg);
+    opacity: 0.06;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(2.6) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes cpNewYearResultFlare04
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultFlare03_1
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(1843920deg);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultFlare03_2
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cpNewYearResultFlare05
+{
+  0%
+  {
+    -webkit-transform: scale(0) rotate(0deg);
+  }
+
+  19.4%
+  {
+    -webkit-transform: scale(1) rotate(19.4deg);
+  }
+
+  47.4%
+  {
+    -webkit-transform: scale(1.3) rotate(47.4deg);
+  }
+
+  73.1%
+  {
+    -webkit-transform: scale(1) rotate(73.1deg);
+  }
+
+  94.9%
+  {
+    -webkit-transform: scale(1.3) rotate(94.9deg);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.3) rotate(100deg);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultLight01_1
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  61.2%
+  {
+    -webkit-transform: scale(1.6);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultLight01_2
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultLight02_1
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  61.2%
+  {
+    -webkit-transform: scale(1.6);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes cpNewYearResultLight02_2
+{
+  0%
+  {
+    -webkit-transform: rotate(50deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(4320deg);
+  }
+}
+
+@-webkit-keyframes simpleFadeIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes simpleFadeOut
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}

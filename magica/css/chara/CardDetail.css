@@ -1,0 +1,1426 @@
+#cardDetail
+{
+  width: 1024px;
+  height: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#cardDetail .moviePlayBtn
+{
+  width: 72px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/collection/btn_movie.png") left top no-repeat;
+  display: block;
+  position: fixed;
+  bottom: 22px;
+  left: 0;
+  z-index: 100;
+}
+
+#cardDetail .moviePlayBtn.touch
+{
+  -webkit-filter: brightness(120%);
+}
+
+#cardDetail .voicePlayBtn
+{
+  width: 72px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/collection/btn_voice.png") left top no-repeat;
+  display: block;
+  position: fixed;
+  bottom: 82px;
+  left: 0;
+  z-index: 100;
+}
+
+#cardDetail .voicePlayBtn.touch
+{
+  -webkit-filter: brightness(120%);
+}
+
+#cardDetail .thStyle
+{
+  height: 28px;
+  margin-right: 4px;
+  background: #b28750;
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  -webkit-border-radius: 6px 0 0 6px;
+}
+
+#cardDetail .tdStyle
+{
+  height: 28px;
+  margin: 0 4px 0 0;
+  padding: 0 0 0 8px;
+  background: #fff;
+  display: block;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#cardDetail .hiddenWrap
+{
+  width: 640px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#cardDetail .hiddenWrap .scrollInner
+{
+  width: 640px;
+  height: auto;
+  min-height: 100%;
+  overflow: inherit;
+}
+
+#cardDetail .collectionBack
+{
+  width: 92px;
+  height: 43px;
+  background-image: url("/magica/resource/image_web/common/global/global_back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  z-index: 50;
+}
+
+#cardDetail .collectionBack span
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#cardDetail #detailCardName
+{
+  width: 652px;
+  height: 54px;
+  padding: 0 0 0 64px;
+  background: url("/magica/resource/image_web/common/chara/bg_detail_name.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 54px;
+}
+
+#cardDetail #detailCardName .charaName
+{
+  color: #fff;
+  font-size: 26px;
+}
+
+#cardDetail #detailCardName .charaName .title
+{
+  color: #fff;
+  font-size: 16px;
+}
+
+#cardDetail #detailCardName .charaKana
+{
+  width: 230px;
+  height: 24px;
+  background: #fff;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  color: #ef638b;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 12px 0 0 12px;
+}
+
+#cardDetail #detailCardName #att
+{
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 19px;
+}
+
+#cardDetail #detailCardName #att.fire
+{
+  background: url("/magica/resource/image_web/common/chara/att_fire_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardName #att.water
+{
+  background: url("/magica/resource/image_web/common/chara/att_water_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardName #att.timber
+{
+  background: url("/magica/resource/image_web/common/chara/att_timber_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardName #att.light
+{
+  background: url("/magica/resource/image_web/common/chara/att_light_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardName #att.dark
+{
+  background: url("/magica/resource/image_web/common/chara/att_dark_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardName #att.void
+{
+  background: url("/magica/resource/image_web/common/chara/att_void_f.png") left top no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #detailCardImage
+{
+  min-height: 508px;
+  position: absolute;
+  top: -webkit-calc(50% - 227px);
+  left: 58px;
+}
+
+#cardDetail #detailCardImage .zoomImg
+{
+  display: none;
+}
+
+#cardDetail #detailCardImage.hide
+{
+  display: none;
+}
+
+#cardDetail #detailCardImage.zoom
+{
+  width: 1024px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#cardDetail #detailCardImage.zoom .moviePlayBtn,
+#cardDetail #detailCardImage.zoom .voicePlayBtn
+{
+  display: none;
+}
+
+#cardDetail #detailCardImage.zoom .cardImg,
+#cardDetail #detailCardImage.zoom .cardFrame
+{
+  display: none;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg
+{
+  width: 578px;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 440px);
+  left: -webkit-calc(50% - 289px);
+  -webkit-transform: rotate(-90deg) translateZ(0);
+  -moz-transform: rotate(-90deg) translateZ(0);
+  -ms-transform: rotate(-90deg) translateZ(0);
+  -o-transform: rotate(-90deg) translateZ(0);
+  transform: rotate(-90deg) translateZ(0);
+  border: 0;
+  box-shadow: 0 0;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg img
+{
+  width: 578px;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg .zoomProfile
+{
+  position: absolute;
+  bottom: 25px;
+  left: -webkit-calc(50% - 384px);
+  background: rgba(0, 0, 0, 0.5);
+  width: 768px;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg .zoomProfile p
+{
+  padding: 38px 25px;
+  width: 576px;
+  display: none;
+  margin: 0 auto;
+  color: #FFF;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg .zoomProfile.show p
+{
+  display: block;
+}
+
+#cardDetail #detailCardImage.zoom .zoomImg .sb_gold_02
+{
+  position: absolute;
+  bottom: -79px;
+  right: -webkit-calc(50% - 278px);
+}
+
+#cardDetail #detailCardImage .cardFrame
+{
+  width: 334px !important;
+  display: block;
+}
+
+#cardDetail #detailCardImage .cardImg
+{
+  width: 332px !important;
+  margin: 1px 0 0 1px;
+  display: block;
+}
+
+#cardDetail #detailCardImage .cardImg
+{
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: drop-shadow(0 0 2px #ffffe1, 0 0 2px #ffffe1, 0 0 12px #ffffe1, 0 0 12px #ffffe1);
+}
+
+#cardDetail #detailTab
+{
+  width: 594px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 62px;
+  right: 6px;
+  z-index: 10;
+}
+
+#cardDetail #detailTab li
+{
+  min-width: 148px;
+  height: 54px;
+  margin: 0 -8px 0 0;
+  background-size: -webkit-calc(100% - 56px) 100%;
+  position: relative;
+  font-size: 15px;
+  line-height: 54px;
+  z-index: 10;
+}
+
+#cardDetail #detailTab li:before,
+#cardDetail #detailTab li:after
+{
+  width: 29px;
+  height: 54px;
+}
+
+#cardDetail #detailTab li.off
+{
+  pointer-events: none;
+  z-index: 1;
+  -webkit-filter: brightness(50%) grayscale(100%);
+}
+
+#cardDetail #cardDetailWrap
+{
+  width: 640px;
+  height: -webkit-calc(100% - 117px);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.6) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.6) 100%);
+  position: fixed;
+  top: 117px;
+  right: 0;
+  z-index: 5;
+}
+
+#cardDetail #cardDetailWrap #charaStatus,
+#cardDetail #cardDetailWrap #charaSkill,
+#cardDetail #cardDetailWrap #charaVoice,
+#cardDetail #cardDetailWrap #charaProfile,
+#cardDetail #cardDetailWrap #charaMemoria,
+#cardDetail #cardDetailWrap #charaIllust,
+#cardDetail #cardDetailWrap #charaSetting
+{
+  display: none;
+}
+
+#cardDetail #cardDetailWrap.status #charaStatus
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.skill #charaSkill
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.memoria #charaMemoria
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.voice #charaVoice
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.profile #charaProfile
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.setting #charaSetting
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap.illust #charaIllust
+{
+  display: block;
+}
+
+#cardDetail #cardDetailWrap #charaStatus
+{
+  padding: 7px 0 0 52px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .status
+{
+  position: relative;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap
+{
+  width: 310px;
+  margin-bottom: 10px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level
+{
+  margin-bottom: 6px;
+  position: relative;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level .gauge
+{
+  position: absolute;
+  right: 25px;
+  bottom: 7px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level .gauge .expGaugeWrap
+{
+  width: 200px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level .gauge span
+{
+  position: absolute;
+  top: -21px;
+  right: 10px;
+  font-size: 14px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level .gauge .levelMax
+{
+  width: 54px;
+  height: 16px;
+  background: url("/magica/resource/image_web/common/chara/lv_max.png") left top no-repeat;
+  background-size: 54px 16px;
+  position: absolute;
+  top: -17px;
+  right: 10px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .common_line
+{
+  width: 256px;
+  margin: 10px auto;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap #detailLv
+{
+  height: 56px;
+  padding: 4px 0 0 20px;
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap #detailLv .currentLv
+{
+  font-size: 24px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap #detailLv .sla
+{
+  margin-left: -8px;
+  letter-spacing: -8px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap #detailLv .sla,
+#cardDetail #cardDetailWrap #charaStatus .statusWrap #detailLv .maxLv
+{
+  font-size: 18px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .thStyle
+{
+  width: 138px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .level .thStyle
+{
+  width: 72px;
+  height: 56px;
+  line-height: 56px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .type,
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .revision,
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .magiaLv
+{
+  margin-bottom: 2px;
+  position: relative;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .revisionIcon
+{
+  position: absolute;
+  top: 5px;
+  left: 146px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .magiaLvIcon
+{
+  position: absolute;
+  top: 4px;
+  left: 147px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .tdStyle
+{
+  width: 226px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv
+{
+  height: 42px;
+  position: relative;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv span
+{
+  height: 42px;
+  line-height: 42px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv .epExpRequire
+{
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: right;
+  position: absolute;
+  top: 4px;
+  right: 25px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv .epLevelMax
+{
+  width: 54px;
+  height: 16px;
+  background: url("/magica/resource/image_web/common/chara/lv_max.png") left top no-repeat;
+  background-size: 54px 16px;
+  position: absolute;
+  top: 2px;
+  right: 25px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv .gauge
+{
+  position: absolute;
+  left: 155px;
+  bottom: 5px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .statusWrap .epLv .gauge .expGaugeWrap
+{
+  width: 140px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus
+{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .flexBox
+{
+  margin: 2px 0 0;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .flexBox.mt0
+{
+  margin: 0;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .thStyle
+{
+  width: 88px;
+  height: 24px;
+  line-height: 24px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .tdStyle
+{
+  width: 148px;
+  height: 24px;
+  line-height: 24px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .statusTitle
+{
+  margin: 0 0 0 88px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCharaStatus .statusTitle .tdStyle
+{
+  margin-bottom: 2px;
+  background: #ebe1d4;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .flexBox
+{
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize>.flexBox
+{
+  width: 456px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .thStyle
+{
+  width: 114px;
+  height: 64px;
+  line-height: 64px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeStatus
+{
+  width: 148px;
+  height: 24px;
+  margin: 0 4px 2px 0;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeStatus .tdStyle
+{
+  width: 94px;
+  height: 24px;
+  margin: 0;
+  line-height: 24px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeStatus .title.tdStyle
+{
+  width: 54px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  background: #ebe1d4;
+  line-height: 24px;
+  text-align: center;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeCommand
+{
+  width: 148px;
+  height: 38px;
+  margin: 0 4px 0 0;
+  padding: 0 0 0 62px;
+  position: relative;
+  line-height: 38px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeCommand:before
+{
+  width: 38px;
+  height: 38px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  content: '';
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeCommand.accele:before
+{
+  background: url("/magica/resource/image_web/common/chara/command_accele.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeCommand.blast:before
+{
+  background: url("/magica/resource/image_web/common/chara/command_blast.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #popupCustomize .customizeCommand.charge:before
+{
+  background: url("/magica/resource/image_web/common/chara/command_charge.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .composeLinks
+{
+  margin: 17px 0 0;
+  padding: 0 0 0 3px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .composeLinks.off .mb_pink
+{
+  background-color: rgba(0, 0, 0, 0.255);
+  pointer-events: none;
+  -webkit-filter: grayscale(100%) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+  filter: grayscale(100%) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+#cardDetail #cardDetailWrap #charaStatus .composeLinks .mb_pink
+{
+  width: 130px;
+  height: 40px;
+  margin: 0 6px 0 0;
+  line-height: 16px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #cardDetailMiniChara
+{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: -115px;
+  right: -5px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #cardDetailMiniChara img
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: 10;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(11%, black), color-stop(100%, black));
+}
+
+#cardDetail #cardDetailWrap #charaStatus #cardDetailMiniChara .bg
+{
+  width: 148px;
+  height: 72px;
+  background: url("/magica/resource/image_web/page/chara/chara_sheet.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  left: -webkit-calc(50% - 74px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #cardDetailMiniChara #rare
+{
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  pointer-events: none;
+  z-index: 5;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#cardDetail #cardDetailWrap #charaStatus #cardDetailMiniChara #rare span
+{
+  width: 22px;
+  height: 24px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .profileWrap .thStyle
+{
+  width: 134px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  -webkit-border-radius: 0;
+  text-align: left;
+  padding-left: 12px;
+  background: url("/magica/resource/image_web/page/collection/profile_header.png") left top no-repeat;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .profileWrap .commonFrame3
+{
+  width: 564px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  font-size: 16px;
+  padding: 12px 25px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .exProfile1 .thStyle,
+#cardDetail #cardDetailWrap #charaStatus .exProfile2 .thStyle
+{
+  width: 174px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .exProfile1 .tdStyle,
+#cardDetail #cardDetailWrap #charaStatus .exProfile2 .tdStyle
+{
+  width: 390px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .exProfile1
+{
+  margin: 8px 0;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .exProfile2
+{
+  padding-bottom: 30px;
+}
+
+#cardDetail #cardDetailWrap #charaStatus .exProfile2 .flexBox
+{
+  margin-bottom: 2px;
+}
+
+#cardDetail #charaSkill
+{
+  padding: 40px 0 10px 40px;
+}
+
+#cardDetail #charaSkill .commandList
+{
+  padding: 5px 19px 2px 0;
+}
+
+#cardDetail #charaSkill .commandList li
+{
+  width: 73px;
+  height: 73px;
+  margin: 0 0 0 3px;
+}
+
+#cardDetail #charaSkill .common_title_frame
+{
+  position: absolute;
+  top: 8px;
+  left: -32px;
+}
+
+#cardDetail #charaSkill .commonFrame3
+{
+  width: 530px;
+  margin: 2px auto 2px 35px;
+}
+
+#cardDetail #charaSkill .commonFrame3 .img
+{
+  width: 68px;
+  height: 68px;
+  margin: 0 15px 0 0;
+  position: relative;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+#cardDetail #charaSkill .commonFrame3 .img:not(.doppel)
+{
+  background: #e0d2bb;
+}
+
+#cardDetail #charaSkill .commonFrame3 .img img
+{
+  width: 100%;
+  height: 100%;
+}
+
+#cardDetail #charaSkill .commonFrame3 .common_line
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#cardDetail #charaSkill .commonFrame3 .detailWrap
+{
+  width: 310px;
+  position: relative;
+}
+
+#cardDetail #charaSkill .commonFrame3 .detailWrap .name
+{
+  font-size: 17px;
+}
+
+#cardDetail #charaSkill .commonFrame3 .detailWrap .detail
+{
+  margin: 9px 0 0;
+  font-size: 14px;
+}
+
+#cardDetail #charaSkill .commonFrame3 .detailWrap .common_line
+{
+  width: 345px;
+  position: absolute;
+  top: 15px;
+  left: -40px;
+}
+
+#cardDetail #charaSkill .command
+{
+  height: 88px;
+}
+
+#cardDetail #charaSkill .connect,
+#cardDetail #charaSkill .magia
+{
+  padding: 6px 0 6px 117px;
+}
+
+#cardDetail #charaSkill .connect .img
+{
+  margin-top: 4px;
+}
+
+#cardDetail #charaSkill .magia
+{
+  position: relative;
+}
+
+#cardDetail #charaSkill .magia .border
+{
+  width: 412px;
+  height: 2px;
+  background: #e0d2bb;
+  position: absolute;
+  top: 41px;
+  right: -2px;
+}
+
+#cardDetail #charaSkill .magia .magiaLevel
+{
+  margin: 6px 0 22px;
+  font-size: 15px;
+}
+
+#cardDetail #charaSkill .magia .magiaLevel .magiaLvIcon
+{
+  margin-left: 13px;
+}
+
+#cardDetail #charaSkill .magia .magiaLevel .magiaLvIcon li
+{
+  width: 16px;
+  height: 18px;
+}
+
+#cardDetail #charaSkill .doppelDetail
+{
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+#cardDetail #charaSkill .doppelDetail .common_line
+{
+  width: 302px !important;
+}
+
+#cardDetail #charaSkill .doppelDetail .img:not(.doppel):before
+{
+  width: 80px;
+  height: 80px;
+  background: url("/magica/resource/image_web/common/chara/icon_doppel.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  content: '';
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel
+{
+  height: 74px;
+  position: relative;
+  top: 4px;
+  left: -10px;
+  border-radius: 0;
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel:before
+{
+  width: 62px;
+  height: 20px;
+  background: url("/magica/resource/image_web/common/chara/text_doppel.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  content: '';
+  z-index: 100;
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel img
+{
+  width: 68px;
+  height: 105px;
+  position: absolute;
+  top: -18px;
+  left: 9px;
+  z-index: 10;
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel .bg
+{
+  width: 79px;
+  height: 74px;
+  background: url("/magica/resource/image_web/common/chara/frame_doppel.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel #attribute
+{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 17px;
+  left: 17px;
+  z-index: 99;
+}
+
+#cardDetail #charaSkill .doppelDetail .img.doppel #attribute span
+{
+  width: 16px;
+  height: 16px;
+}
+
+#cardDetail #charaSkill .commonFrame3:not(:last-child)
+{
+  margin-bottom: 8px;
+}
+
+#cardDetail #charaMemoria
+{
+  padding: 40px 0 0 24px;
+}
+
+#cardDetail #charaMemoria #equipWrap
+{
+  width: 600px;
+}
+
+#cardDetail #charaMemoria .outerWrap
+{
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#cardDetail #charaMemoria .common_title_frame
+{
+  margin: 10px auto 10px;
+  display: block;
+}
+
+#cardDetail #charaVoice
+{
+  padding: 40px 0 0 40px;
+}
+
+#cardDetail #charaVoice .common_title_frame
+{
+  position: absolute;
+  top: 8px;
+  left: -32px;
+}
+
+#cardDetail #charaVoice .commonFrame3
+{
+  width: 530px;
+  margin: 2px auto 10px 35px;
+  padding-top: 50px;
+}
+
+#cardDetail #charaVoice .commonFrame3.hide
+{
+  display: none;
+}
+
+#cardDetail #charaVoice .voiceBtn
+{
+  height: 52px;
+  margin-right: 26px;
+  margin-bottom: 10px;
+  margin-left: 26px;
+  padding-left: 54px;
+  position: relative;
+  color: #864d16;
+  font-size: 20px;
+  line-height: 48px;
+}
+
+#cardDetail #charaVoice .voiceBtn.current
+{
+  box-shadow: 0 0 0 2px #ff3b81, 0 0 5px #e1c08d inset !important;
+}
+
+#cardDetail #charaVoice .voiceBtn.current:after
+{
+  -webkit-filter: brightness(60%);
+}
+
+#cardDetail #charaVoice .voiceBtn:before,
+#cardDetail #charaVoice .voiceBtn:after
+{
+  display: block;
+  position: absolute;
+  content: '';
+}
+
+#cardDetail #charaVoice .voiceBtn:before
+{
+  width: 34px;
+  height: 28px;
+  background: url("/magica/resource/image_web/common/chara/icon_voice.png") left top no-repeat;
+  top: 10px;
+  left: 10px;
+}
+
+#cardDetail #charaVoice .voiceBtn:after
+{
+  width: 73px;
+  height: 40px;
+  background: url("/magica/resource/image_web/common/btn/btn_voice.png") left top no-repeat;
+  top: 5px;
+  right: 5px;
+}
+
+#cardDetail #charaVoice .voiceBtn.off
+{
+  display: none;
+}
+
+#cardDetail #charaIllust,
+#cardDetail #charaSetting
+{
+  padding: 40px 0 0 40px;
+}
+
+#cardDetail #charaIllust .common_title_frame,
+#cardDetail #charaSetting .common_title_frame
+{
+  position: absolute;
+  top: 8px;
+  left: -32px;
+}
+
+#cardDetail #charaIllust .commonFrame3,
+#cardDetail #charaSetting .commonFrame3
+{
+  width: 530px;
+  margin: 2px auto 15px 35px;
+  padding-top: 54px;
+  padding-bottom: 10px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .live2dChangeBtn,
+#cardDetail #charaSetting .commonFrame3 .live2dChangeBtn
+{
+  width: 472px;
+  height: 52px;
+  margin: 0 auto;
+  padding-left: 52px;
+  font-size: 20px;
+  line-height: 48px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .live2dChangeBtn:not(:last-child),
+#cardDetail #charaSetting .commonFrame3 .live2dChangeBtn:not(:last-child)
+{
+  margin-bottom: 12px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .live2dChangeBtn:before,
+#cardDetail #charaSetting .commonFrame3 .live2dChangeBtn:before
+{
+  width: 32px;
+  height: 32px;
+  background: url("/magica/resource/image_web/common/chara/icon_live2d.png") left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -webkit-calc(50% - 16px);
+  left: 12px;
+  content: '';
+}
+
+#cardDetail #charaIllust .commonFrame3 .live2dChangeBtn.current:after,
+#cardDetail #charaSetting .commonFrame3 .live2dChangeBtn.current:after
+{
+  width: 476px;
+  height: 56px;
+  background: url("/magica/resource/image_web/common/chara/frame_live2d_select.png") left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  content: '';
+}
+
+#cardDetail #charaIllust .commonFrame3.discSetting,
+#cardDetail #charaSetting .commonFrame3.discSetting
+{
+  padding-top: 24px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .mb_pink,
+#cardDetail #charaSetting .commonFrame3 .mb_pink
+{
+  width: 78px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#cardDetail #charaIllust .commonFrame3 .common_line,
+#cardDetail #charaSetting .commonFrame3 .common_line
+{
+  width: 490px;
+  margin: 10px auto;
+}
+
+#cardDetail #charaIllust .commonFrame3 .flexBox,
+#cardDetail #charaSetting .commonFrame3 .flexBox
+{
+  justify-content: center;
+}
+
+#cardDetail #charaIllust .commonFrame3 .miniCharaBtn .mb_pink:not(:last-child),
+#cardDetail #charaSetting .commonFrame3 .miniCharaBtn .mb_pink:not(:last-child)
+{
+  margin-right: 5px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap
+{
+  margin-bottom: 8px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap:not(:last-child),
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap:not(:last-child)
+{
+  margin-right: 15px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon
+{
+  margin-bottom: 10px;
+  width: 82px;
+  height: 82px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon .att,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon .rank,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon .star,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon .bg,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon .att,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon .rank,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon .star,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon .bg,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon .att,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon .rank,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon .star,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon .bg,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon .att,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon .rank,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon .star,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon .bg
+{
+  width: 82px;
+  height: 82px;
+  background-size: 82px 82px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .offIcon img,
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap .userCharaIcon img,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .offIcon img,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap .userCharaIcon img
+{
+  width: 78px;
+  height: 78px;
+}
+
+#cardDetail #charaIllust .commonFrame3 .cardIllustWrap.off .offIcon,
+#cardDetail #charaSetting .commonFrame3 .cardIllustWrap.off .offIcon
+{
+  width: 82px;
+  height: 82px;
+  background: url("/magica/resource/image_web/common/chara/icon_chara_off.png") left top no-repeat;
+  background-size: 82px 82px;
+}
+
+#cardDetail #charaIllust .discPreview,
+#cardDetail #charaSetting .discPreview
+{
+  padding-right: 20px;
+}
+
+#cardDetail #charaIllust .discPreview.flexBox,
+#cardDetail #charaSetting .discPreview.flexBox
+{
+  -webkit-justify-content: flex-end !important;
+  justify-content: flex-end !important;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap,
+#cardDetail #charaSetting .discPreview .discWrap
+{
+  width: 78px;
+  height: 72px;
+  margin-left: 2px;
+  position: relative;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap img,
+#cardDetail #charaSetting .discPreview .discWrap img
+{
+  width: 85px;
+  height: 94px;
+  position: absolute;
+  bottom: -6px;
+  left: -2px;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap .attribute,
+#cardDetail #charaSetting .discPreview .discWrap .attribute
+{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 41px;
+  left: 12px;
+  z-index: 100;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap .discText,
+#cardDetail #charaSetting .discPreview .discWrap .discText
+{
+  z-index: 1000;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.MPUP,
+#cardDetail #charaSetting .discPreview .discWrap.MPUP
+{
+  background: url("/magica/resource/image_web/common/chara/bg_disc_accele.png") center center no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.MPUP .discText,
+#cardDetail #charaSetting .discPreview .discWrap.MPUP .discText
+{
+  width: 109px;
+  height: 36px;
+  background: url("/magica/resource/image_web/common/chara/disc_accele_text.png") center center no-repeat;
+  background-size: 65% 65%;
+  position: absolute;
+  right: -webkit-calc(50% - 58px);
+  bottom: -12px;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_H,
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_V,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_H,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_V
+{
+  background: url("/magica/resource/image_web/common/chara/bg_disc_blast.png") center center no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_H .discText,
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_V .discText,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_H .discText,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_V .discText
+{
+  width: 108px;
+  height: 72px;
+  position: absolute;
+  right: -webkit-calc(50% - 58px);
+  bottom: -31px;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_H .discText,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_H .discText
+{
+  background: url("/magica/resource/image_web/common/chara/disc_blast_h_text.png") center center no-repeat;
+  background-size: 65% 65%;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.RANGE_V .discText,
+#cardDetail #charaSetting .discPreview .discWrap.RANGE_V .discText
+{
+  background: url("/magica/resource/image_web/common/chara/disc_blast_v_text.png") center center no-repeat;
+  background-size: 65% 65%;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.CHARGE,
+#cardDetail #charaSetting .discPreview .discWrap.CHARGE
+{
+  background: url("/magica/resource/image_web/common/chara/bg_disc_charge.png") center center no-repeat;
+  background-size: contain;
+}
+
+#cardDetail #charaIllust .discPreview .discWrap.CHARGE .discText,
+#cardDetail #charaSetting .discPreview .discWrap.CHARGE .discText
+{
+  width: 116px;
+  height: 36px;
+  background: url("/magica/resource/image_web/common/chara/disc_charge_text.png") center center no-repeat;
+  background-size: 65% 65%;
+  position: absolute;
+  right: -webkit-calc(50% - 61px);
+  bottom: -12px;
+}

@@ -1,0 +1,385 @@
+#RewardPopup
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 902;
+}
+
+#RewardPopup .line_up,
+#RewardPopup .line_down
+{
+  position: absolute;
+  left: 0;
+  width: 1024px;
+  height: 6px;
+}
+
+#RewardPopup .line_up
+{
+  background: url("/magica/resource/image_web/event/raid/common/reward/line_up.png") left top no-repeat;
+  top: 48px;
+  -webkit-animation: line-fade-in-u .4s ease-out 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#RewardPopup .line_down
+{
+  background: url("/magica/resource/image_web/event/raid/common/reward/line_down.png") left top no-repeat;
+  bottom: 92px;
+  -webkit-animation: line-fade-in-d .4s ease-out 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#RewardPopup .title
+{
+  -webkit-animation: rewardtitle-fade-in .4s ease-out 0.3s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  position: absolute;
+  left: 401px;
+  top: 63px;
+  opacity: 0;
+}
+
+#RewardPopup .title img
+{
+  position: relative;
+  z-index: 2;
+}
+
+#RewardPopup .title:before
+{
+  content: "";
+  background: url(/magica/resource/image_web/page/quest/animation/section_clear_base.png) left top no-repeat;
+  position: absolute;
+  left: -105px;
+  top: -40px;
+  width: 433px;
+  height: 174px;
+  z-index: 1;
+}
+
+#RewardPopup .title_s
+{
+  -webkit-animation: rewardtitles-fade-in .2s ease-out 0.7s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  background: url("/magica/resource/image_web/event/raid/common/reward/reward_s.png") left top no-repeat;
+  position: absolute;
+  left: 401px;
+  top: 125px;
+  width: 222px;
+  height: 12px;
+  opacity: 0;
+}
+
+#RewardPopup #rewardPopupListWrap
+{
+  position: absolute;
+  left: 80px;
+  top: 148px;
+  width: 864px;
+  height: -webkit-calc(100% - 254px);
+  overflow-y: hidden;
+  display: block;
+}
+
+#RewardPopup #rewardPopupListWrap .scrollInner
+{
+  height: auto;
+  min-height: 100%;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild
+{
+  -webkit-animation: rewardlist-fade-in .4s ease-out 0.5s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  position: relative;
+  width: 864px;
+  height: 138px;
+  margin-bottom: 12px;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, black 10%, black 90%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .header
+{
+  background: url("/magica/resource/image_web/event/raid/common/reward/reward_header_find.png") left top no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 864px;
+  height: 50px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .bossImgWrap
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 324px;
+  height: 138px;
+  overflow: hidden;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .bossImg
+{
+  position: relative;
+  left: 0;
+  top: -20px;
+  width: 324px;
+  height: 186px;
+  background-size: 324px 186px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .badge
+{
+  background: url("/magica/resource/image_web/event/raid/common/top/tag_find.png") left top no-repeat;
+  position: absolute;
+  left: 26px;
+  top: 0;
+  width: 66px;
+  height: 74px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild #attribute
+{
+  position: absolute;
+  left: 244px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .lv
+{
+  position: absolute;
+  left: 290px;
+  top: 10px;
+  font-size: 22px;
+  text-shadow: -1px -1px 1px #ff3866, 1px -1px 1px #ff3866, -1px 1px 1px #ff3866, 1px 1px 1px #ff3866, -1px -1px #ff3866, 1px -1px #ff3866, -1px 1px #ff3866, 1px 1px #ff3866, -1px -1px 2px #ff3866, 1px -1px 2px #ff3866, -1px 1px 2px #ff3866, 1px 1px 2px #ff3866, -1px -1px 2px #ff3866, 1px -1px 2px #ff3866, -1px 1px 2px #ff3866, 1px 1px 2px #ff3866, -1px -1px 3px #ff3866, 1px -1px 3px #ff3866, -1px 1px 3px #ff3866, 1px 1px 3px #ff3866;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .name
+{
+  position: absolute;
+  left: 370px;
+  top: 7px;
+  font-size: 24px;
+  text-shadow: -1px -1px 1px #ff3866, 1px -1px 1px #ff3866, -1px 1px 1px #ff3866, 1px 1px 1px #ff3866, -1px -1px #ff3866, 1px -1px #ff3866, -1px 1px #ff3866, 1px 1px #ff3866, -1px -1px 2px #ff3866, 1px -1px 2px #ff3866, -1px 1px 2px #ff3866, 1px 1px 2px #ff3866, -1px -1px 2px #ff3866, 1px -1px 2px #ff3866, -1px 1px 2px #ff3866, 1px 1px 2px #ff3866, -1px -1px 3px #ff3866, 1px -1px 3px #ff3866, -1px 1px 3px #ff3866, 1px 1px 3px #ff3866;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .rewardWrap
+{
+  top: 72px;
+  z-index: 1000;
+  height: 44px;
+  width: 268px;
+  position: absolute;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .rewardWrap.joinRewardWrap
+{
+  left: 252px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .rewardWrap.discoverRewardWrap
+{
+  left: 552px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .rewardTitle
+{
+  width: 55px;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  padding-top: 4px;
+  margin-left: -10px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .logRewardList
+{
+  position: absolute;
+  left: 62px;
+  top: -6px;
+  height: 44px;
+  width: 248px;
+  text-align: left;
+  z-index: 1000;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .logRewardList li
+{
+  display: inline-block;
+  position: relative;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .logRewardList li.rewardImg
+{
+  text-align: center;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .logRewardList li.rewardImg img
+{
+  width: 58px;
+  height: 58px;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild .logRewardList li.rewardImg .quantity
+{
+  width: 70px;
+  text-align: right;
+  display: block;
+  position: relative;
+  top: -10px;
+  right: 0px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1000;
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29, -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild.RELIEF .header
+{
+  background: url("/magica/resource/image_web/event/raid/common/reward/reward_header_help.png") left top no-repeat;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild.RELIEF .badge
+{
+  background: url("/magica/resource/image_web/event/raid/common/top/tag_help.png") left top no-repeat;
+}
+
+#RewardPopup #rewardPopupListWrap .rewardChild.RELIEF .lv,
+#RewardPopup #rewardPopupListWrap .rewardChild.RELIEF .name
+{
+  text-shadow: -1px -1px 1px #0ab672, 1px -1px 1px #0ab672, -1px 1px 1px #0ab672, 1px 1px 1px #0ab672, -1px -1px #0ab672, 1px -1px #0ab672, -1px 1px #0ab672, 1px 1px #0ab672, -1px -1px 2px #0ab672, 1px -1px 2px #0ab672, -1px 1px 2px #0ab672, 1px 1px 2px #0ab672, -1px -1px 2px #0ab672, 1px -1px 2px #0ab672, -1px 1px 2px #0ab672, 1px 1px 2px #0ab672, -1px -1px 3px #0ab672, 1px -1px 3px #0ab672, -1px 1px 3px #0ab672, 1px 1px 3px #0ab672;
+}
+
+#RewardPopup .closeBtn
+{
+  -webkit-animation: common_fade_in .2s ease-out 0.6s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  position: absolute;
+  left: 417px;
+  bottom: 14px;
+  width: 190px;
+  height: 64px;
+  opacity: 0;
+}
+
+@-webkit-keyframes rewardtitle-fade-in
+{
+  0%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: scaleY(4);
+    transform: scaleY(4);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardtitles-fade-in
+{
+  0%
+  {
+    -webkit-transform: translate3d(20px, 0, 0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardlist-fade-in
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(100%);
+    transform: scaleY(100%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes line-fade-in-u
+{
+  0%
+  {
+    -webkit-transform: translate3d(1024px, 0, 0);
+    transform: translate3d(1024px, 0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+@-webkit-keyframes line-fade-in-d
+{
+  0%
+  {
+    -webkit-transform: translate3d(-1024px, 0, 0);
+    transform: translate3d(-1024px, 0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+@-webkit-keyframes bossListArrow
+{
+  0%
+  {
+    -webkit-transform: translateX(0);
+  }
+
+  15%
+  {
+    -webkit-transform: translateX(5px);
+  }
+
+  30%
+  {
+    -webkit-transform: translateX(0);
+  }
+
+  45%
+  {
+    -webkit-transform: translateX(5px);
+  }
+
+  60%
+  {
+    -webkit-transform: translateX(0);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0);
+  }
+}

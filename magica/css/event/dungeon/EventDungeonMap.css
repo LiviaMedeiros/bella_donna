@@ -1,0 +1,869 @@
+#debugArea
+{
+  width: 100%;
+  height: -webkit-calc(100% - 180px);
+  position: absolute;
+  pointer-events: none;
+  top: 180px;
+  left: 0px;
+  z-index: 2;
+}
+
+#debugArea div
+{
+  pointer-events: auto;
+}
+
+#EventDungeonMap
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventDungeonMap.hide
+{
+  display: none;
+}
+
+#EventDungeonMap #mapInfo
+{
+  display: none;
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_map_info.png");
+  position: absolute;
+  width: 790px;
+  height: 136px;
+  left: -webkit-calc(50% - 395px);
+  top: -webkit-calc(50% - 68px);
+  line-height: 136px;
+  font-size: 36px;
+  text-align: center;
+}
+
+#EventDungeonMap #mapInfo.show
+{
+  display: block;
+  -webkit-animation: 1.2s mapInfoShow linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap #mapWrap
+{
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#EventDungeonMap #dungeonTitleWrap
+{
+  width: 276px;
+  height: 86px;
+  position: absolute;
+  top: 58px;
+  left: 0px;
+}
+
+#EventDungeonMap #dungeonTitleWrap .dungeonName
+{
+  position: absolute;
+  top: 24px;
+  left: 57px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+#EventDungeonMap #dungeonTitleWrap.story .dungeonName
+{
+  text-shadow: #e03d54 2px 0px, #e03d54 -2px 0px, #e03d54 0px -2px, #e03d54 0px 2px, #e03d54 2px 2px, #e03d54 -2px 2px, #e03d54 2px -2px, #e03d54 -2px -2px, #e03d54 1px 2px, #e03d54 -1px 2px, #e03d54 1px -2px, #e03d54 -1px -2px, #e03d54 2px 1px, #e03d54 -2px 1px, #e03d54 2px -1px, #e03d54 -2px -1px;
+}
+
+#EventDungeonMap #dungeonTitleWrap.story .titleBg
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_name_story.png");
+}
+
+#EventDungeonMap #dungeonTitleWrap.challenge .dungeonName
+{
+  text-shadow: #2860c4 2px 0px, #2860c4 -2px 0px, #2860c4 0px -2px, #2860c4 0px 2px, #2860c4 2px 2px, #2860c4 -2px 2px, #2860c4 2px -2px, #2860c4 -2px -2px, #2860c4 1px 2px, #2860c4 -1px 2px, #2860c4 1px -2px, #2860c4 -1px -2px, #2860c4 2px 1px, #2860c4 -2px 1px, #2860c4 2px -1px, #2860c4 -2px -1px;
+}
+
+#EventDungeonMap #dungeonTitleWrap.challenge .titleBg
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_name_challenge.png");
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionBtn
+{
+  width: 112px;
+  position: absolute;
+  bottom: 0;
+  left: 54px;
+  z-index: 2;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap
+{
+  width: 102px;
+  height: 34px;
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+  z-index: 2;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap .star
+{
+  width: 32px;
+  height: 32px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/area_mission_star_gray.png");
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  position: absolute;
+  top: 0;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap .star.on
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/top/area_mission_star.png");
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap .star:nth-of-type(1)
+{
+  left: 0;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap .star:nth-of-type(2)
+{
+  left: 32px;
+}
+
+#EventDungeonMap #dungeonTitleWrap .missionWrap .star:nth-of-type(3)
+{
+  left: 64px;
+}
+
+#EventDungeonMap #dungeonTitleWrap .titleBg
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 322px;
+  height: 70px;
+  z-index: 1;
+}
+
+#EventDungeonMap.uiHide #closeBtn
+{
+  -webkit-animation: .3s bottomUiHide ease-in-out 0s 1 normal,
+    .3s toggleBtnHide linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap.uiHide #bottomWrap
+{
+  -webkit-animation: .3s bottomUiHide ease-in-out 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap.uiHide #openBtn,
+#EventDungeonMap.uiHide #openBtnBg
+{
+  display: block;
+  -webkit-animation: .3s toggleBtnShow linear .3s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap.initial #openBtn,
+#EventDungeonMap.initial #openBtnBg
+{
+  display: block;
+}
+
+#EventDungeonMap.initial #bottomWrap,
+#EventDungeonMap.initial #closeBtn
+{
+  display: none;
+}
+
+#EventDungeonMap #openBtn
+{
+  width: 186px;
+  height: 57px;
+  background: url("/magica/resource/image_web/page/formation/btn_team_change.png") left top no-repeat;
+  font-size: 20px;
+  text-shadow: -1px -1px 2px #ff3359,
+    1px -1px 2px #ff3359,
+    -1px 1px 2px #ff3359,
+    1px 1px 2px #ff3359,
+    -1px -1px 2px #ff3359,
+    1px -1px 2px #ff3359,
+    -1px 1px 2px #ff3359,
+    1px 1px 2px #ff3359;
+  color: #ffffff;
+  line-height: 57px;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: none;
+}
+
+#EventDungeonMap #openBtnBg
+{
+  width: 208px;
+  height: 82px;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_team_open.png") left top no-repeat;
+}
+
+#EventDungeonMap #closeBtn
+{
+  width: 138px;
+  height: 44px;
+  position: absolute;
+  bottom: 216px;
+  right: 15px;
+  background: url("/magica/resource/image_web/event/dungeon/common/btn_close.png") bottom right no-repeat;
+  z-index: 11;
+  -webkit-animation: .3s bottomUiShow ease-in-out 0s 1 normal,
+    .3s toggleBtnShow linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap #resetPosition
+{
+  width: 88px;
+  height: 78px;
+  background: url("/magica/resource/image_web/event/dungeon/common/btn_current_point.png") left top no-repeat;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 11;
+}
+
+#EventDungeonMap #resetPosition .b_screen
+{
+  width: 78px;
+  height: 78px;
+  border-radius: 39px;
+  left: 5px;
+}
+
+#EventDungeonMap #bottomWrap
+{
+  width: 720px;
+  height: 218px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  -webkit-animation: .3s bottomUiShow ease-in-out 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap
+{
+  width: 736px;
+  height: 218px;
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_team_a.png") bottom right no-repeat;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap
+{
+  width: 456px;
+  background: url("/magica/resource/image_web/event/dungeon/common/header_team_main.png") top left no-repeat;
+  left: 33px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap
+{
+  width: 172px;
+  background: url("/magica/resource/image_web/event/dungeon/common/header_team_sub.png") top left no-repeat;
+  left: 517px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap
+{
+  height: 130px;
+  padding-top: 29px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 19px;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap
+{
+  width: 82px;
+  height: 100%;
+  position: relative;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon
+{
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon.retire .overWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon.retire .overWrap
+{
+  display: block;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .overWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .overWrap
+{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 35px;
+  z-index: 9;
+  display: none;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .lv,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .lv
+{
+  z-index: 16;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .att,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .rank,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .star,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon .bg,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .att,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .rank,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .star,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon .bg
+{
+  width: 78px;
+  height: 78px;
+  background-size: 78px 78px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .userCharaIcon img,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .userCharaIcon img
+{
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 38px;
+  z-index: 5;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .blankChara,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .blankChara
+{
+  width: 78px;
+  height: 78px;
+  background: url("/magica/resource/image_web/event/dungeon/common/chara_off.png") top left no-repeat;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_gauge_hp.png") top left no-repeat;
+  bottom: 11px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: nowrap;
+  -ms-flex-flow: nowrap;
+  flex-flow: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap .hpInner,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap .memoriaHp,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap .hpInner,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap .memoriaHp
+{
+  min-width: 0px;
+  max-width: 48px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap .hpInner,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap .hpInner
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/gauge_hp.png") top left repeat-x;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap .memoriaHp,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap .memoriaHp
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/gauge_hp_memoria.png") top left repeat-x;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_gauge_mp.png") top left repeat-x;
+  bottom: 0px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap .mpBox,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap .mpBox
+{
+  position: relative;
+  width: 48px;
+  height: 4px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap .mpBox .mpInner1,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap .mpBox .mpInner2,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap .mpBox .mpInner1,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap .mpBox .mpInner2
+{
+  position: absolute;
+  min-width: 0px;
+  max-width: 48px;
+  height: 4px;
+  top: 0px;
+  left: 0px;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap .mpBox .mpInner1,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap .mpBox .mpInner1
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/gauge_magia.png") top left repeat-x;
+  z-index: 1;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap .mpBox .mpInner2,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap .mpBox .mpInner2
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/gauge_doppel.png") top left repeat-x;
+  z-index: 2;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .hpWrap,
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .mpWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .hpWrap,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .mpWrap
+{
+  width: 82px;
+  height: 12px;
+  padding: 4px 6px 4px 28px;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+#EventDungeonMap #bottomWrap #partyWrap .mainPartyWrap .charaWrap .charaRetire,
+#EventDungeonMap #bottomWrap #partyWrap .subPartyWrap .charaWrap .charaRetire
+{
+  width: 80px;
+  height: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: url("/magica/resource/image_web/event/dungeon/common/icon_chara_list_die.png") bottom right no-repeat;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap
+{
+  width: 730px;
+  height: 60px;
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_status_a.png") bottom right no-repeat;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 3;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnRetire
+{
+  width: 127px;
+  position: absolute;
+  left: 31px;
+  bottom: 7px;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnMember
+{
+  width: 172px;
+  position: absolute;
+  left: 164px;
+  bottom: 7px;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnCure
+{
+  width: 130px;
+  height: 48px;
+  background: url("/magica/resource/image_web/event/dungeon/common/btn_cure.png") top left no-repeat;
+  position: absolute;
+  bottom: 7px;
+  right: 30px;
+  z-index: 3;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnCure.off
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/btn_cure_gray.png") top left no-repeat;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .cureIconWrap
+{
+  width: 230px;
+  height: 45px;
+  position: absolute;
+  bottom: 3px;
+  right: 150px;
+  z-index: 2;
+  background: url("/magica/resource/image_web/event/dungeon/common/cure_base.png") bottom left no-repeat;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .cureIconWrap #cureIcons
+{
+  width: 192 px;
+  height: 40px;
+  position: absolute;
+  bottom: 5px;
+  left: 21px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: nowrap;
+  -ms-flex-flow: nowrap;
+  flex-flow: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .cureIconWrap #cureIcons .cure
+{
+  width: 40px;
+  height: 40px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cure_icon.png") bottom left no-repeat;
+  display: block;
+  margin-left: -2px;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .cureIconWrap #cureIcons .cure.off
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cure_icon_null.png") bottom left no-repeat;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnCureWrap
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnCureWrap .cureMessage
+{
+  position: absolute;
+  left: 28px;
+  bottom: 9px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#EventDungeonMap #bottomWrap .btnWrap .btnCureWrap .cureCancel
+{
+  width: 130px;
+  height: 48px;
+  position: absolute;
+  bottom: 7px;
+  right: 30px;
+  z-index: 3;
+}
+
+#EventDungeonMap #bottomWrap.useCure .btnWrap
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/bg_cure.png") bottom right no-repeat;
+}
+
+#EventDungeonMap #bottomWrap.useCure .btnWrap .btnRetire,
+#EventDungeonMap #bottomWrap.useCure .btnWrap .btnCure,
+#EventDungeonMap #bottomWrap.useCure .btnWrap .btnMember
+{
+  display: none;
+}
+
+#EventDungeonMap #bottomWrap.useCure .btnWrap .btnCureWrap
+{
+  display: block;
+}
+
+#EventDungeonMap #bottomWrap.useCure #partyWrap .mainPartyWrap .charaWrap .userCharaIcon.cantCure .overWrap,
+#EventDungeonMap #bottomWrap.useCure #partyWrap .subPartyWrap .charaWrap .userCharaIcon.cantCure .overWrap
+{
+  display: block;
+}
+
+#EventDungeonMap #bottomWrap.useCure #partyWrap .mainPartyWrap .charaWrap .userCharaIcon.retire .overWrap,
+#EventDungeonMap #bottomWrap.useCure #partyWrap .subPartyWrap .charaWrap .userCharaIcon.retire .overWrap
+{
+  display: none;
+}
+
+.popupContent.missionPop .popupTextArea .missionPopWrap
+{
+  width: 532px;
+  height: 156px;
+  font-size: 22px;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #eddbb8;
+  margin: 0px auto;
+  text-align: left;
+  padding: 18px 40px;
+}
+
+.popupContent.missionPop .popupTextArea .missionPopWrap .mission
+{
+  width: auto;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 47px;
+  position: relative;
+  margin: 2px 0px;
+}
+
+.popupContent.missionPop .popupTextArea .missionPopWrap .mission .star
+{
+  width: 36px;
+  height: 36px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/area_mission_star_gray.png");
+  background-repeat: no-repeat;
+  background-size: 36px 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popupContent.missionPop .popupTextArea .missionPopWrap .mission .star.on
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/top/area_mission_star.png");
+  background-repeat: no-repeat;
+  background-size: 36px 36px;
+}
+
+.popupContent.missionPop .popupTextArea .missionPopWrap .mission .star.on .clear
+{
+  position: absolute;
+  top: 13px;
+  left: -54px;
+  width: 50px;
+  height: 14px;
+  background: url("/magica/resource/image_web/event/dungeon/common/icon_mission_clear.png");
+  background-repeat: no-repeat;
+  background-size: 50px 14px;
+}
+
+.popupContent.retirePop .popupTextArea
+{
+  padding-top: 80px;
+}
+
+.popupContent.retirePop .popupTextArea .retireCaution
+{
+  font-size: 18px;
+  text-align: left;
+  margin-top: 60px;
+  padding-left: 100px;
+}
+
+.popupContent.curePop .popupTextArea .cureName,
+.popupContent.curePopEx .popupTextArea .cureName
+{
+  color: #f66a99;
+}
+
+.popupContent.curePopEx .popupTextArea
+{
+  padding-top: 75px;
+  line-height: 38px;
+}
+
+.popupContent.curePopEx .popupTextArea .cureItemsWrap
+{
+  display: inline-block;
+  width: 258px;
+  height: 54px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cure_base.png") left top no-repeat;
+  margin-top: 56px;
+  position: relative;
+}
+
+.popupContent.curePopEx .popupTextArea .cureItemsWrap .cureList
+{
+  width: 192 px;
+  height: 40px;
+  position: absolute;
+  bottom: 16px;
+  left: 51px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: nowrap;
+  -ms-flex-flow: nowrap;
+  flex-flow: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.popupContent.curePopEx .popupTextArea .cureItemsWrap .cureList .icon
+{
+  width: 40px;
+  height: 40px;
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cure_icon.png") bottom left no-repeat;
+  display: block;
+  margin-left: -2px;
+}
+
+.popupContent.curePopEx .popupTextArea .cureItemsWrap .cureList .icon.off
+{
+  background: url("/magica/resource/image_web/event/dungeon/common/top/cure_icon_null.png") bottom left no-repeat;
+}
+
+@-webkit-keyframes toggleBtnHide
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes toggleBtnShow
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bottomUiHide
+{
+  0%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(262px);
+  }
+}
+
+@-webkit-keyframes bottomUiShow
+{
+  0%
+  {
+    -webkit-transform: translateY(262px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes mapInfoShow
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  20%
+  {
+    opacity: 1;
+  }
+
+  80%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}

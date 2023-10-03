@@ -1,0 +1,240 @@
+#globalMenu #status
+{
+  display: none;
+}
+
+#CampaignSumoTop
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#CampaignSumoTop #helpBtn
+{
+  width: 100px;
+  position: absolute;
+  top: 13px;
+  right: 276px;
+  z-index: 10000;
+}
+
+#CampaignSumoTop #helpBtn.hide
+{
+  display: none;
+}
+
+#CampaignSumoTop .madoka
+{
+  background: url("/magica/resource/image_web/campaign/sumo/top_madoka.png") center top no-repeat;
+  position: absolute;
+  left: 135px;
+  top: -webkit-calc(50% - 290px);
+  width: 384px;
+  height: 580px;
+  -webkit-animation: 4.4s CampaignSumoTopBgChara1 ease 0s infinite normal;
+}
+
+#CampaignSumoTop .iroha
+{
+  background: url("/magica/resource/image_web/campaign/sumo/top_iroha.png") center top no-repeat;
+  position: absolute;
+  right: 204px;
+  top: -webkit-calc(50% - 268px);
+  width: 330px;
+  height: 508px;
+  -webkit-animation: 4.4s CampaignSumoTopBgChara2 ease 0s infinite normal;
+}
+
+#CampaignSumoTop .plate
+{
+  background: url("/magica/resource/image_web/campaign/sumo/top_plate.png") center top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 404px);
+  width: 406px;
+  height: 748px;
+}
+
+#CampaignSumoTop .plate.left
+{
+  left: -200px;
+}
+
+#CampaignSumoTop .plate.right
+{
+  right: -200px;
+  -webkit-transform: scale(-1, 1);
+}
+
+#CampaignSumoTop .logo
+{
+  background: url("/magica/resource/image_web/campaign/sumo/top_logo_b.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 175px);
+  top: -webkit-calc(50% - 10px);
+  width: 330px;
+  height: 146px;
+}
+
+#CampaignSumoTop .mirrorsBtn
+{
+  background: url("/magica/resource/image_web/campaign/sumo/icon_mirrors.png") center top no-repeat;
+  position: absolute;
+  left: 6px;
+  top: -webkit-calc(50% - 100px);
+  width: 352px;
+  height: 352px;
+}
+
+#CampaignSumoTop .mirrorsBtn.touch
+{
+  -webkit-transform: scale(1.05) !important;
+}
+
+#CampaignSumoTop .mirrorsBtn.off
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%) brightness(70%);
+  filter: grayscale(100%) brightness(70%);
+}
+
+#CampaignSumoTop .mainBtn
+{
+  background: url("/magica/resource/image_web/campaign/sumo/icon_sumo.png") center top no-repeat;
+  position: absolute;
+  right: 6px;
+  top: -webkit-calc(50% - 100px);
+  width: 352px;
+  height: 352px;
+}
+
+#CampaignSumoTop .mainBtn.touch
+{
+  -webkit-transform: scale(1.05) !important;
+}
+
+@-webkit-keyframes CampaignSumoTopBgChara1
+{
+  0%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  26.52%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  29.55%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  31.06%
+  {
+    -webkit-transform: translateY(-33px);
+  }
+
+  31.82%
+  {
+    -webkit-transform: translateY(7px);
+  }
+
+  33.33%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  58.33%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  61.36%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  62.88%
+  {
+    -webkit-transform: translateY(-33px);
+  }
+
+  63.64%
+  {
+    -webkit-transform: translateY(7px);
+  }
+
+  65.15%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes CampaignSumoTopBgChara2
+{
+  0%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  16.67%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  18.94%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  20.45%
+  {
+    -webkit-transform: translateY(-33px);
+  }
+
+  21.21%
+  {
+    -webkit-transform: translateY(7px);
+  }
+
+  22.73%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  46.21%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  48.48%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  50%
+  {
+    -webkit-transform: translateY(-33px);
+  }
+
+  50.76%
+  {
+    -webkit-transform: translateY(7px);
+  }
+
+  52.27%
+  {
+    -webkit-transform: translateX(0px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}

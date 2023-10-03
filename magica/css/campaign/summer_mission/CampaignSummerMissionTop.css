@@ -1,0 +1,882 @@
+@charset "UTF-8";
+
+#CampaignSummerMissionList
+{
+  width: 1024px !important;
+  height: 100%;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#CampaignSummerMissionList .live2dArea
+{
+  width: 260px;
+  height: -webkit-calc(100% - 60px);
+  position: absolute;
+  bottom: 0px;
+  left: 12px;
+  z-index: 1;
+}
+
+#CampaignSummerMissionList #campaignTimeArea
+{
+  display: none;
+  position: absolute;
+  top: 84px;
+  left: 666px;
+  width: 200px;
+  height: 60px;
+  z-index: 3;
+  font-size: 15px;
+  color: #168dde;
+  line-height: 1.1em;
+}
+
+#CampaignSummerMissionList #campaignTimeArea #campaignTime
+{
+  color: #168dde;
+}
+
+#CampaignSummerMissionList #nextTimeArea
+{
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 134px;
+  left: 307px;
+  width: 650px;
+  height: 34px;
+  padding: 4px 0 0;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  z-index: 3;
+  -webkit-clip-path: polygon(0% 50%, 4% 0%, 96% 0%, 100% 50%, 96% 100%, 4% 100%);
+  clip-path: polygon(0% 50%, 4% 0%, 96% 0%, 100% 50%, 96% 100%, 4% 100%);
+}
+
+#CampaignSummerMissionList #nextTimeArea.off
+{
+  display: none;
+}
+
+#CampaignSummerMissionList #allReserve
+{
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  top: 81px;
+  right: 57px;
+  line-height: 15px;
+  z-index: 100;
+  -webkit-filter: unset;
+  filter: unset;
+}
+
+#CampaignSummerMissionList #allReserve.off
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#CampaignSummerMissionList #allReserve.hide
+{
+  display: none;
+}
+
+#CampaignSummerMissionList #listWrap
+{
+  width: 712px;
+  height: -webkit-calc(100% - 90px);
+  padding: 59px 7px 5px 18px;
+  position: absolute;
+  top: 70px;
+  left: 276px;
+}
+
+#CampaignSummerMissionList #listWrap.next_add_time
+{
+  padding: 100px 7px 5px 18px !important;
+}
+
+#CampaignSummerMissionList #listWrap:after
+{
+  z-index: 2;
+}
+
+#CampaignSummerMissionList #listWrap .scrollIndicator
+{
+  right: 5px;
+}
+
+#CampaignSummerMissionList #listWrap #missionScrollWrap
+{
+  width: 100%;
+  height: -webkit-calc(100% - 10px);
+  overflow: hidden;
+}
+
+#CampaignSummerMissionList #listWrap #listTitle
+{
+  width: 703px;
+  height: 50px;
+  padding: 5px 0 0 15px;
+  background: url("/magica/resource/image_web/campaign/summer_mission/title_summermission_2.png");
+  background-size: 100% 50px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  color: #ffffff;
+  text-shadow: -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92, -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92;
+  z-index: 1;
+}
+
+#CampaignSummerMissionList #listWrap.clear .wrap
+{
+  display: none;
+}
+
+#CampaignSummerMissionList #listWrap.clear .wrap.clear
+{
+  display: block;
+}
+
+#CampaignSummerMissionList #listWrap.notClear .wrap.clear
+{
+  display: none;
+}
+
+#CampaignSummerMissionList #listWrap #filterWrap
+{
+  width: 150px;
+  position: absolute;
+  top: 10px;
+  right: 120px;
+  z-index: 90;
+}
+
+#CampaignSummerMissionList #listWrap #filterWrap select
+{
+  width: 100%;
+  height: 26px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+  border: 1px solid #b28750;
+  border-radius: 5px;
+  -webkit-appearance: none;
+}
+
+#CampaignSummerMissionList #listWrap #filterWrap .triangleArrow
+{
+  width: 45px;
+  height: 26px;
+  background: -webkit-linear-gradient(top, #e5b271 0%, #b28750 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2px solid #b28750;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 2px;
+}
+
+#CampaignSummerMissionList #listWrap #filterWrap .triangleArrow:before
+{
+  width: 25px;
+  height: 18px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_select_triangle.png");
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  content: "";
+  pointer-events: none;
+  z-index: 3;
+}
+
+#CampaignSummerMissionList #mission1,
+#CampaignSummerMissionList #mission2,
+#CampaignSummerMissionList .limitedWrap
+{
+  width: 664px;
+  height: auto;
+  min-height: 100%;
+  padding-right: 0;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+#CampaignSummerMissionList #mission1 .noMission,
+#CampaignSummerMissionList #mission2 .noMission,
+#CampaignSummerMissionList .limitedWrap .noMission
+{
+  width: 100%;
+  padding-left: 18px;
+  position: absolute;
+  top: -webkit-calc(50% - 10px);
+  left: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+#CampaignSummerMissionList .limitedWrap.on
+{
+  display: block;
+}
+
+#CampaignSummerMissionList #mission1 .missionLimit,
+#CampaignSummerMissionList #mission2 .missionLimit
+{
+  display: none;
+}
+
+#CampaignSummerMissionList #dailyTime
+{
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 166px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: right;
+  z-index: 101;
+}
+
+#CampaignSummerMissionList.mission1 #dailyTime
+{
+  display: block;
+}
+
+#CampaignSummerMissionList #eventTime
+{
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 166px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: right;
+  z-index: 101;
+}
+
+#CampaignSummerMissionList #eventTime.on
+{
+  display: block;
+}
+
+#CampaignSummerMissionList .wrap
+{
+  width: 644px;
+  height: 108px;
+  margin: 10px 0 10px 15px;
+  padding: 20px;
+  position: relative;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap
+{
+  width: 88px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet
+{
+  background: url("/magica/resource/image_web/item/main/item_bg.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase
+{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: absolute;
+  top: -webkit-calc(50% - 25px);
+  left: -webkit-calc(50% - 25px);
+  border-radius: 5px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner
+{
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+  border-radius: 5px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols
+{
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+  position: absolute;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.on
+{
+  background-color: #f4e0ca;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7
+{
+  top: 27px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8
+{
+  top: 15px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  top: 3px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3
+{
+  left: 3px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6
+{
+  left: 15px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8,
+#CampaignSummerMissionList .wrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  left: 27px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.live2d
+{
+  background: url("/magica/resource/image_web/item/main/live2d.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap.doppel
+{
+  background: url("/magica/resource/image_web/item/main/doppel.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .commonItemImg
+{
+  width: 88px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  color: #fff;
+  text-shadow: -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 3px #8a5f29, 1px -1px 3px #8a5f29, -1px 1px 3px #8a5f29, 1px 1px 3px #8a5f29;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .charaIcon
+{
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  bottom: 5px;
+  right: -12px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .charaIcon:before
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 100;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .charaIcon:after
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 80;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .charaIcon .maskWrap
+{
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  z-index: 90;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .charaIcon .maskWrap img
+{
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 30px);
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap
+{
+  left: 10px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .commonItemImg
+{
+  top: 10px;
+}
+
+#CampaignSummerMissionList .wrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  font-size: 20px;
+  right: -5px;
+  bottom: 0;
+  color: #fff;
+}
+
+#CampaignSummerMissionList .wrap .itemDetailPopup
+{
+  background: url(/magica/resource/image_web/common/icon/icon_info.png) right top no-repeat;
+  background-size: 24px 24px;
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 102px;
+  height: 98px;
+  z-index: 100;
+}
+
+#CampaignSummerMissionList .wrap .itemBg
+{
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 94px;
+  height: 94px;
+  border-radius: 8px;
+  background: #ff3b81;
+}
+
+#CampaignSummerMissionList .wrap .missionTitleWrap
+{
+  width: 350px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 110px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+#CampaignSummerMissionList .wrap .missionDescription
+{
+  width: 350px;
+  height: 21px;
+  position: absolute;
+  top: 34px;
+  left: 110px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+#CampaignSummerMissionList .wrap .missionGuageWrap
+{
+  width: 334px;
+  height: 18px;
+  padding-left: 10px;
+  background: url("/magica/resource/image_web/page/chara/bg_exp_gauge_l.png"), url("/magica/resource/image_web/page/chara/bg_exp_gauge_c.png"), url("/magica/resource/image_web/page/chara/bg_exp_gauge_r.png");
+  background-repeat: no-repeat;
+  background-position: 0 0, 15px 0, 318px 0;
+  background-size: 16px 18px, 304px 18px, 16px 18px;
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  font-size: 14px;
+  text-align: left;
+  text-shadow: none;
+}
+
+#CampaignSummerMissionList .wrap .missionGuageWrap .missionGuageInner
+{
+  width: 316px;
+  height: 13px;
+  position: absolute;
+  top: 4px;
+  left: 9px;
+}
+
+#CampaignSummerMissionList .wrap .missionGuageWrap .missionGuageInner .missionGuage
+{
+  height: 10px;
+  background: url("/magica/resource/image_web/page/memoria/memoria_compose_guage.png");
+  background-size: 100% 10px;
+  position: relative;
+  z-index: 100;
+}
+
+#CampaignSummerMissionList .wrap .missionCompleteNum
+{
+  width: 200px;
+  position: absolute;
+  bottom: 28px;
+  left: 180px;
+  text-align: center;
+}
+
+#CampaignSummerMissionList .wrap .missionLimit
+{
+  position: absolute;
+  top: 3px;
+  right: 20px;
+  color: #333333;
+  font-size: 14px;
+  text-shadow: none;
+}
+
+#CampaignSummerMissionList .wrap .missionLimit.noLimit
+{
+  display: none;
+}
+
+#CampaignSummerMissionList .wrap .missionLimit .limitNum
+{
+  color: #333333;
+  text-shadow: none;
+}
+
+#CampaignSummerMissionList .wrap .missionBtn
+{
+  width: 166px;
+  min-width: 166px;
+  position: absolute;
+  top: 23.5px;
+  right: 10px;
+}
+
+#CampaignSummerMissionList .wrap .missionBtn:before
+{
+  width: 166px;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  content: "挑戦する";
+}
+
+#CampaignSummerMissionList .wrap .missionBtn.clear:before
+{
+  content: "受け取る";
+}
+
+#CampaignSummerMissionList .wrap .missionBtn.clear.inactive
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+}
+
+#CampaignSummerMissionList .wrap.clear:before
+{
+  width: 66px;
+  height: 68px;
+  background: url("/magica/resource/image_web/page/mission/mission_clear.png");
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  content: "";
+  z-index: 100;
+}
+
+#popupArea .popupDetail .popupTextArea
+{
+  height: 315px;
+  padding: 0 60px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap
+{
+  width: 100%;
+  padding-top: 20px;
+  height: 290px;
+  border: 2px solid #eddbb8;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap.alignLeft
+{
+  text-align: left;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .scrollInner
+{
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap
+{
+  width: 88px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet
+{
+  background: url("/magica/resource/image_web/item/main/item_bg.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase
+{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: absolute;
+  top: -webkit-calc(50% - 25px);
+  left: -webkit-calc(50% - 25px);
+  border-radius: 5px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner
+{
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+  border-radius: 5px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols
+{
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+  position: absolute;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.on
+{
+  background-color: #f4e0ca;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7
+{
+  top: 27px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8
+{
+  top: 15px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  top: 3px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3
+{
+  left: 3px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6
+{
+  left: 15px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8,
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  left: 27px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.live2d
+{
+  background: url("/magica/resource/image_web/item/main/live2d.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.doppel
+{
+  background: url("/magica/resource/image_web/item/main/doppel.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .commonItemImg
+{
+  width: 88px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  color: #fff;
+  text-shadow: -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 3px #8a5f29, 1px -1px 3px #8a5f29, -1px 1px 3px #8a5f29, 1px 1px 3px #8a5f29;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon
+{
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  bottom: 5px;
+  right: -12px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon:before
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 100;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon:after
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 80;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon .maskWrap
+{
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  z-index: 90;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon .maskWrap img
+{
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 30px);
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap
+{
+  position: relative;
+  display: inline-block;
+  height: 88px;
+  margin: 0 25px 25px;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .commonItemImg
+{
+  position: absolute;
+  left: 0;
+}
+
+#popupArea .popupDetail .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  font-size: 20px;
+  right: -5px;
+  bottom: 0;
+  color: #fff;
+}
+
+#popupArea .popupDetail .detailImg
+{
+  padding-top: 35px;
+}
+
+#popupArea .missionPop .popupTextArea
+{
+  height: 240px !important;
+  font-size: 24px !important;
+  line-height: 42px !important;
+}

@@ -1,0 +1,1346 @@
+#EventArenaMissionStage .arenaColor,
+#arenaConfirm .arenaColor
+{
+  color: #1e2c42;
+}
+
+#missionConf .popupTextArea
+{
+  height: 272px;
+}
+
+#missionConf .mission
+{
+  width: 538px;
+  height: 66px;
+  font-size: 22px;
+  line-height: 62px;
+  margin: 0 auto;
+  position: relative;
+  text-align: left;
+  padding-left: 90px;
+}
+
+#missionConf .mission .icon
+{
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  top: 2px;
+  left: 14px;
+}
+
+#missionConf .mission .icon.off
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/coin_off.png") left top no-repeat;
+  background-size: 58px 58px;
+}
+
+#missionConf .mission .icon.clear
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/result/coin_on.png") left top no-repeat;
+  background-size: 58px 58px;
+}
+
+#missionConf .mission:not(:last-child)
+{
+  margin-bottom: 14px;
+}
+
+#EventArenaMissionStage #missionBtn
+{
+  width: 112px;
+  position: absolute;
+  top: 14px;
+  right: 255px;
+}
+
+#EventArenaMissionStage .bpGuageWrap
+{
+  width: 262px;
+  height: 70px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/bp_base.png") center 5px;
+  background-repeat: no-repeat;
+}
+
+#EventArenaMissionStage .bpGuageWrap#bpGuageTop
+{
+  position: absolute;
+  bottom: 10px;
+  left: 370px;
+}
+
+#EventArenaMissionStage .bpGuageWrap#bpGuageFreeRank,
+#EventArenaMissionStage .bpGuageWrap#bpGuageRanking
+{
+  position: absolute;
+  bottom: 5px;
+  left: 200px;
+}
+
+#EventArenaMissionStage .bpGuageWrap ul.bpPointWrap
+{
+  width: 172px;
+  height: 32px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 52px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+#EventArenaMissionStage .bpGuageWrap ul.bpPointWrap li
+{
+  width: 32px;
+  height: 32px;
+  margin-right: 2px;
+  background: url("/magica/resource/image_web/page/arena/bp_icon_null.png");
+  display: block;
+}
+
+#EventArenaMissionStage .bpGuageWrap ul.bpPointWrap li.on
+{
+  background: url("/magica/resource/image_web/page/arena/bp_icon.png");
+}
+
+#EventArenaMissionStage .bpGuageWrap .bpRemainTime
+{
+  width: 100%;
+  padding-left: 60px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: left;
+}
+
+#EventArenaMissionStage .bpGuageWrap .bpRemainTime.off
+{
+  opacity: 0;
+}
+
+#EventArenaMissionStage .bpGuageWrap .bpPlusBtn
+{
+  width: 52px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/arena/btn_bp_add.png");
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 6px;
+  right: -16px;
+}
+
+#EventArenaMissionStage
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#EventArenaMissionStage .arenaGradationBg
+{
+  width: 1024px;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#EventArenaMissionStage #userInfoWrap
+{
+  width: 524px;
+  height: -webkit-calc(100% - 20px);
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/chara_bg.png") left bottom no-repeat;
+  position: fixed;
+  top: 20px;
+  left: 0px;
+}
+
+#EventArenaMissionStage #userInfoWrap .rankNameWrap
+{
+  width: 214px;
+  height: 70px;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  z-index: 5;
+}
+
+#EventArenaMissionStage #userInfoWrap .rankNameWrap .userRank
+{
+  position: absolute;
+  top: 0;
+  left: 15px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+#EventArenaMissionStage #userInfoWrap .rankNameWrap .userName
+{
+  position: absolute;
+  top: 36px;
+  left: 15px;
+  font-size: 20px;
+}
+
+#EventArenaMissionStage #userInfoWrap .userLeader
+{
+  width: 407px;
+  height: -webkit-calc(100% - 10px);
+  position: absolute;
+  top: 10px;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-mask: -webkit-gradient(linear, left top, right top, from(black), color-stop(80%, black), color-stop(90%, black), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaMissionStage #userInfoWrap .userLeader img
+{
+  width: 900px;
+  position: absolute;
+  top: 0;
+  left: -280px;
+  z-index: 1;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(90%, black), to(rgba(0, 0, 0, 0)));
+}
+
+#EventArenaMissionStage #userInfoWrap .userArenaDeck
+{
+  width: 352px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 148px;
+  left: 20px;
+  z-index: 5;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#EventArenaMissionStage #userInfoWrap .userArenaDeck .deckIcons
+{
+  width: 88px;
+  height: 94px;
+  position: relative;
+}
+
+#EventArenaMissionStage #userInfoWrap .userArenaDeck .deckIcons .deckFrame
+{
+  width: 88px;
+  height: 94px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/member_frame.png");
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+}
+
+#EventArenaMissionStage #userInfoWrap .userArenaDeck .deckIcons img
+{
+  width: 80px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  border-radius: 80px;
+  z-index: 2;
+}
+
+#EventArenaMissionStage #userInfoWrap .userArenaDeck .deckIcons .deckBase
+{
+  width: 88px;
+  height: 94px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/member_base.png");
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#EventArenaMissionStage #userInfoWrap .consectiveWrap
+{
+  width: 230px;
+  height: 62px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/streak_base.png?001") left bottom no-repeat;
+  position: absolute;
+  bottom: 245px;
+  left: 85px;
+  line-height: 32px;
+  z-index: 10;
+}
+
+#EventArenaMissionStage #userInfoWrap .consectiveWrap .numberOfWin
+{
+  height: 28px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 0px 2px #ff3d57,
+    -2px 0px 2px #ff3d57,
+    0px 2px 2px #ff3d57,
+    0px -2px 2px #ff3d57,
+    2px 2px 2px #ff3d57,
+    -2px 2px 2px #ff3d57,
+    2px -2px 2px #ff3d57,
+    -2px -2px 2px #ff3d57;
+}
+
+#EventArenaMissionStage #userInfoWrap .consectiveWrap .numberOfWin .firstNumber
+{
+  color: #ffffff;
+  font-size: 26px;
+}
+
+#EventArenaMissionStage #userInfoWrap .consectiveWrap .bonusPoint
+{
+  margin-top: 5px;
+  text-align: center;
+}
+
+#EventArenaMissionStage .userPointInfo
+{
+  width: 380px;
+  height: 64px;
+  position: fixed;
+  bottom: 82px;
+  left: 0px;
+  z-index: 5;
+}
+
+#EventArenaMissionStage .userPointInfo .teamPower
+{
+  width: 380px;
+  height: 28px;
+  margin-bottom: 8px;
+  padding-left: 172px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/team_pt_base.png");
+  font-size: 20px;
+  line-height: 28px;
+}
+
+#EventArenaMissionStage .userPointInfo .mirrorsPoint
+{
+  width: 380px;
+  height: 28px;
+  margin-bottom: 4px;
+  padding-left: 172px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/infinite_pt_base.png");
+  font-size: 20px;
+  line-height: 28px;
+}
+
+#EventArenaMissionStage .userPointInfo .arenaPoint
+{
+  width: 380px;
+  height: 28px;
+  margin-bottom: 4px;
+  padding-left: 172px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/ranking_pt_base.png");
+  font-size: 20px;
+  line-height: 28px;
+}
+
+#EventArenaMissionStage .userNextPointInfo
+{
+  width: 158px;
+  height: 50px;
+  padding: 5px 8px 0 20px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/next_floor_bg_s.png") left top no-repeat;
+  position: absolute;
+  bottom: 71px;
+  left: 336px;
+  z-index: 6;
+}
+
+#EventArenaMissionStage .userNextPointInfo p
+{
+  font-size: 15px;
+}
+
+#EventArenaMissionStage .userNextPointInfo p.leftPoint
+{
+  margin-top: -1px;
+  text-align: right;
+}
+
+#EventArenaMissionStage .userNextMax
+{
+  width: 48px;
+  height: 20px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/infinite_pt_max.png");
+  display: block;
+  position: absolute;
+  bottom: 87px;
+  left: 327px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+#EventArenaMissionStage .vsMark
+{
+  width: 120px;
+  height: 120px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/infinite_vs.png");
+  position: fixed;
+  top: -webkit-calc(50% - 20px);
+  left: 366px;
+  z-index: 10;
+}
+
+#EventArenaMissionStage .vsMark.ranking
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/ranking_vs.png");
+}
+
+#EventArenaMissionStage #userInfoBottom
+{
+  width: 522px;
+  height: 68px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_select_footer.png") left bottom no-repeat;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
+#EventArenaMissionStage #userInfoBottom .formationBtn
+{
+  width: 182px;
+  height: 52px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/btn_mirrors_formation.png");
+  position: fixed;
+  bottom: 15px;
+  left: 10px;
+}
+
+#EventArenaMissionStage .stageTitle
+{
+  width: 598px;
+  height: 36px;
+  padding-left: 56px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/bg_stage.png");
+  position: fixed;
+  top: -webkit-calc(50% - 210px);
+  right: 0;
+  font-size: 22px;
+  line-height: 36px;
+}
+
+#EventArenaMissionStage #matchingWrap
+{
+  width: 518px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: -webkit-calc(50% - 166px);
+  right: 5px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap:nth-child(1)
+{
+  -webkit-animation: reloadFadeIn .3s ease .1s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap:nth-child(2)
+{
+  -webkit-animation: reloadFadeIn .3s ease 0.2s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap:nth-child(3)
+{
+  -webkit-animation: reloadFadeIn .3s ease 0.3s 1 normal;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: both;
+}
+
+#EventArenaMissionStage #matchingWrap li.nomatch
+{
+  width: 552px;
+  height: 436px;
+  padding-top: 186px;
+  padding-right: 42px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap
+{
+  width: 552px;
+  height: 140px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .enemyRank
+{
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 22px;
+  z-index: 100;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .matchingUserName
+{
+  position: absolute;
+  top: 32px;
+  left: 45px;
+  font-size: 24px;
+  z-index: 100;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .arenaRateing
+{
+  position: absolute;
+  top: 70px;
+  left: 162px;
+  font-size: 18px;
+  z-index: 100;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .nowPoint
+{
+  position: absolute;
+  top: 95px;
+  left: 162px;
+  font-size: 18px;
+  z-index: 100;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .enemyInfoBg
+{
+  width: 284px;
+  height: 48px;
+  position: absolute;
+  top: 72px;
+  left: 30px;
+  z-index: 10;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .difficultWrap
+{
+  width: 82px;
+  height: 30px;
+  position: absolute;
+  top: 9px;
+  right: 2px;
+  z-index: 100;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .difficultWrap.difficulty1
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_lower.png");
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .difficultWrap.difficulty2
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_equal.png");
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .difficultWrap.difficulty3
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_upper.png");
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .matchingLeader
+{
+  width: 272px;
+  height: 124px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  overflow: hidden;
+  z-index: 8;
+  -webkit-mask: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_select_mask.png");
+  -webkit-mask-position: 0px 0px;
+}
+
+#EventArenaMissionStage #matchingWrap li.enemyWrap .matchingLeader img
+{
+  width: 306px;
+  margin-top: -46px;
+}
+
+#EventArenaMissionStage .arenaReloadBtn
+{
+  width: 184px;
+  height: 42px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/btn_change.png");
+  position: absolute;
+  top: -webkit-calc(50% - 216px);
+  right: 25px;
+  z-index: 50;
+}
+
+#EventArenaMissionStage #userInfoWrap .rankNameWrap
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/infinite_player_base.png") left bottom no-repeat;
+}
+
+#EventArenaMissionStage #matchingWrap .enemyInfoBg
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/infinite_enemy_pt.png");
+}
+
+#EventArenaMissionStage #matchingWrap .enemyWrap
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/infinite_enemy_base.png");
+}
+
+#curtain.show
+{
+  -webkit-animation: common_fade_in .2s ease 0s 1 alternate;
+  opacity: 0;
+  will-change: transform;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#arenaConfirm
+{
+  width: 1024px;
+  height: 550px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_enemy_popup.png");
+  position: fixed;
+  top: -webkit-calc(50% - 275px);
+  -webkit-animation: common_fade_in .2s ease 0s 1 alternate;
+  opacity: 0;
+  z-index: 902;
+  will-change: transform;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#arenaConfirm .closeBtn
+{
+  width: 52px;
+  height: 51px;
+  background: url("/magica/resource/image_web/common/popup/popup_close.png") left top no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: -12px;
+  right: 7px;
+  z-index: 100;
+}
+
+#arenaConfirm .formationArrow
+{
+  width: 56px;
+  height: 198px;
+  background: url("/magica/resource/image_web/page/formation_2/formation_arrow_r_a.png");
+  position: absolute;
+  top: 159px;
+  right: 0px;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmFormation
+{
+  width: 440px;
+  height: 410px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_formation_arena_l_a.png");
+  position: absolute;
+  top: 18px;
+  right: 42px;
+}
+
+#arenaConfirm #confirmFormation .formationCols
+{
+  width: 114px;
+  height: 114px;
+  position: absolute;
+}
+
+#arenaConfirm #confirmFormation .formationCols.on
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_formation_ll_on.png");
+}
+
+#arenaConfirm #confirmFormation .formationCols.on .attIcon
+{
+  width: 32px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.on .effective
+{
+  width: 114px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 4px;
+  left: 0px;
+  text-align: center;
+  -webkit-flex-wrap: center;
+  -ms-flex-wrap: center;
+  flex-wrap: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#arenaConfirm #confirmFormation .formationCols.on .effective img
+{
+  width: 50px;
+  height: 17px;
+  margin: 0;
+}
+
+#arenaConfirm #confirmFormation .formationCols.on .userCharaIcon
+{
+  position: absolute;
+  top: 8px;
+  left: 17px;
+  z-index: 5;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col1,
+#arenaConfirm #confirmFormation .formationCols.col2,
+#arenaConfirm #confirmFormation .formationCols.col3
+{
+  left: 285px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col4,
+#arenaConfirm #confirmFormation .formationCols.col5,
+#arenaConfirm #confirmFormation .formationCols.col6
+{
+  left: 164px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col7,
+#arenaConfirm #confirmFormation .formationCols.col8,
+#arenaConfirm #confirmFormation .formationCols.col9
+{
+  left: 44px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col1,
+#arenaConfirm #confirmFormation .formationCols.col4,
+#arenaConfirm #confirmFormation .formationCols.col7
+{
+  top: 29px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col2,
+#arenaConfirm #confirmFormation .formationCols.col5,
+#arenaConfirm #confirmFormation .formationCols.col8
+{
+  top: 149px;
+}
+
+#arenaConfirm #confirmFormation .formationCols.col3,
+#arenaConfirm #confirmFormation .formationCols.col6,
+#arenaConfirm #confirmFormation .formationCols.col9
+{
+  top: 270px;
+}
+
+#arenaConfirm #confirmInfo
+{
+  width: 515px;
+}
+
+#arenaConfirm #confirmInfo .confirmHeader
+{
+  width: 166px;
+  height: 38px;
+  padding-left: 34px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_enemy_header.png") left top no-repeat;
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 38px;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .confirmLvWrap
+{
+  width: 126px;
+  height: 33px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_rank.png") bottom center no-repeat;
+  position: absolute;
+  top: 16px;
+  left: 184px;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .confirmNameWrap
+{
+  position: absolute;
+  top: 54px;
+  left: 235px;
+  font-size: 30px;
+  text-shadow: 3px 0px 3px #ffffff, -3px 0px 3px #ffffff, 0px 3px 3px #ffffff, 0px -3px 3px #ffffff, 3px 3px 3px #ffffff, -3px 3px 3px #ffffff, 3px -3px 3px #ffffff, -3px -3px 3px #ffffff;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .confirmPower
+{
+  height: 38px;
+  padding-left: 176px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/team_pt_header.png") left top no-repeat;
+  position: absolute;
+  top: 140px;
+  left: 184px;
+  font-size: 26px;
+  line-height: 38px;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .confirmPoint
+{
+  height: 38px;
+  padding-left: 176px;
+  position: absolute;
+  top: 186px;
+  left: 184px;
+  font-size: 26px;
+  line-height: 38px;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .confirmBonus
+{
+  position: absolute;
+  top: 112px;
+  left: 280px;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .diffMark
+{
+  width: 82px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 106px;
+  left: 198px;
+  z-index: 100;
+}
+
+#arenaConfirm #confirmInfo .diffMark.diff0
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_lower.png");
+}
+
+#arenaConfirm #confirmInfo .diffMark.diff1
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_equal.png");
+}
+
+#arenaConfirm #confirmInfo .diffMark.diff2
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/matching/enemy_icon_upper.png");
+}
+
+#arenaConfirm #confirmInfo .leaderImage
+{
+  width: 304px;
+  height: 304px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .7;
+  z-index: 1;
+  -webkit-mask: url("/magica/resource/image_web/event/arenaMission/1006/confirm/mask_enemy_detail.png");
+  -webkit-mask-size: 304px 304px;
+}
+
+#arenaConfirm #confirmInfo .leaderImage img
+{
+  width: 304px;
+  position: relative;
+  left: -34px;
+}
+
+#arenaConfirm #confirmInfo .confirmPoint
+{
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/party_pt_header.png") left top no-repeat;
+}
+
+#arenaConfirm #battleStartBtn
+{
+  width: 298px;
+  height: 90px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/btn_battle_start.png");
+  position: absolute;
+  right: 113px;
+  bottom: 17px;
+  z-index: 5;
+}
+
+#arenaConfirm #eventItemWrap
+{
+  width: 596px;
+  height: 308px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_item_use.png");
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  z-index: 1000;
+}
+
+#arenaConfirm #eventItemWrap .title
+{
+  width: 552px;
+  height: 72px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/item_use_header.png");
+  position: absolute;
+  top: -38px;
+  left: 12px;
+  z-index: 1000;
+}
+
+#arenaConfirm #eventItemWrap .nameWrap
+{
+  position: absolute;
+  top: 56px;
+  left: 174px;
+  font-size: 26px;
+  line-height: 1;
+  text-shadow: 3px 0px 3px #ffffff,
+    -3px 0px 3px #ffffff,
+    0px 3px 3px #ffffff,
+    0px -3px 3px #ffffff,
+    3px 3px 3px #ffffff,
+    -3px 3px 3px #ffffff,
+    3px -3px 3px #ffffff,
+    -3px -3px 3px #ffffff;
+  z-index: 100;
+}
+
+#arenaConfirm #eventItemWrap .lvWrap
+{
+  width: 126px;
+  height: 33px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/bg_rank.png") bottom center no-repeat;
+  position: absolute;
+  top: 48px;
+  left: 40px;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+  z-index: 100;
+}
+
+#arenaConfirm #eventItemWrap .power
+{
+  height: 28px;
+  padding-left: 133px;
+  background: url("/magica/resource/image_web/event/arenaMission/1006/confirm/team_pt_header.png") left top no-repeat;
+  background-size: 124px 28px;
+  position: absolute;
+  top: 88px;
+  left: 40px;
+  font-size: 26px;
+  line-height: 28px;
+  z-index: 100;
+}
+
+#arenaConfirm #eventItemWrap .leaderImage
+{
+  width: 228px;
+  height: 228px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  opacity: .7;
+  z-index: 1;
+  -webkit-mask: url("/magica/resource/image_web/event/arenaMission/1006/confirm/mask_player_detail.png");
+  -webkit-mask-size: 228px 228px;
+}
+
+#arenaConfirm #eventItemWrap .leaderImage img
+{
+  width: 228px;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap
+{
+  position: relative;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller
+{
+  position: absolute;
+  top: 136px;
+  left: 46px;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item
+{
+  position: relative;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item:not(:last-child)
+{
+  margin-right: 22px;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item.select:before
+{
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  border: #ff4f76 solid 4px;
+  -webkit-border-radius: 5px;
+  z-index: 1000;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item.select .selectNum
+{
+  display: block;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item.off img
+{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: brightness(80%);
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item img
+{
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item .selectNum
+{
+  width: 34px;
+  height: 34px;
+  background: #ff4f76;
+  display: none;
+  position: absolute;
+  right: -16px;
+  bottom: -31px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 34px;
+  text-align: center;
+  -webkit-border-radius: 17px;
+  z-index: 1000;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .controller .item .itemNum
+{
+  width: 100px;
+  height: 34px;
+  padding-top: 10px;
+  padding-left: 8px;
+  background: #000000;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  -webkit-border-radius: 0 0 5px 5px;
+  z-index: 10;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView
+{
+  position: absolute;
+  top: 132px;
+  left: 402px;
+  z-index: 100;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView .effect
+{
+  width: 132px;
+  height: 26px;
+  display: none;
+  position: relative;
+  font-size: 20px;
+  line-height: 1;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView .effect:not(:last-child)
+{
+  margin-bottom: 4px;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView .effect .text
+{
+  position: absolute;
+  top: 0;
+  left: 58px;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView .effect .text .per
+{
+  position: relative;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .effectView .effect.show
+{
+  display: block;
+}
+
+#arenaConfirm #eventItemWrap #itemUseWrap .cancelBtn
+{
+  width: 102px;
+  position: absolute;
+  top: 232px;
+  right: 76px;
+  z-index: 100;
+}
+
+#BpCureWrap
+{
+  width: 510px;
+  height: 410px;
+  position: absolute;
+  top: 58px;
+  left: 0;
+}
+
+#BpCureWrap #popupBp
+{
+  width: 262px;
+  height: 70px;
+  background-image: url("/magica/resource/image_web/event/arenaMission/1006/bp_base.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0px;
+  left: 122px;
+  font-size: 16px;
+}
+
+#BpCureWrap #popupBp ul.bpPointWrap
+{
+  width: 220px;
+  height: 32px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 52px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+#BpCureWrap #popupBp ul.bpPointWrap li
+{
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  background: url("/magica/resource/image_web/page/arena/bp_icon_null.png");
+  display: block;
+}
+
+#BpCureWrap #popupBp ul.bpPointWrap li.on
+{
+  background: url("/magica/resource/image_web/page/arena/bp_icon.png");
+}
+
+#BpCureWrap #bpImageWrap
+{
+  width: 236px;
+  height: 310px;
+  position: absolute;
+  top: 92px;
+  left: 137px;
+}
+
+#BpCureWrap #bpImageWrap:before
+{
+  width: 78px;
+  height: 78px;
+  background: url("/magica/resource/image_web/item/main/cure_bp.png");
+  background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 18px;
+  left: 79px;
+  content: "";
+}
+
+#BpCureWrap #bpImageWrap .nameWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 118px;
+  left: 0px;
+  font-size: 20px;
+}
+
+#BpCureWrap #bpImageWrap .itemRemain
+{
+  width: 100%;
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#BpCureWrap #bpImageWrap .itemRemain .pointFrame
+{
+  width: 150px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#BpCureWrap #bpImageWrap #decideUse
+{
+  width: 120px;
+  position: absolute;
+  bottom: 20px;
+  left: 57px;
+  font-size: 16px;
+}
+
+#BpCureWrap #bpTextWrap
+{
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#BpCureWrap #bpTextWrap .cureCheck
+{
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#BpCureWrap #cureBtnWrap
+{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
+#BpCureWrap #cureBtnWrap .btn
+{
+  margin: 0px 10px;
+}
+
+#BpCureWrap #cureBtnWrap .btn.off
+{
+  pointer-events: none;
+}
+
+/* conditionPopup */
+.conditionPopup .condition
+{
+  width: 548px;
+  margin: 0px auto;
+}
+
+.conditionPopup .condition dt
+{
+  width: 42px;
+  padding: 3px 0;
+  background-color: #005ec2;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  border: 2px solid #005ec2;
+}
+
+.conditionPopup .condition dd
+{
+  width: 506px;
+  padding: 3px 0 3px 15px;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: left;
+  border-top: 2px solid #c6a882;
+  border-right: 2px solid #c6a882;
+  border-bottom: 2px solid #c6a882;
+}
+
+.bpCureAfter .popupTextArea
+{
+  height: 356px !important;
+}
+
+@-webkit-keyframes reloadFadeIn
+{
+  0%
+  {
+    -webkit-transform: translateX(552px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,40 @@
+#TermsWrap
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#TermsWrap .closeBtn
+{
+  width: 137px;
+  height: 55px;
+  background: url("/magica/resource/image_web/btn/close01.png") left top no-repeat;
+  display: block;
+  position: fixed;
+  top: 14px;
+  left: 27px;
+  z-index: 1;
+}
+
+#TermsWrap #mainWrap
+{
+  width: 1024px;
+  height: 556px;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 100px 82px 50px;
+}
+
+#TermsWrap #mainWrap .termsTitle
+{
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  padding: 0px 0px 30px;
+}

@@ -1,0 +1,405 @@
+@-webkit-keyframes final_fadeIn
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes final_fadeOut
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes final_big_to_small
+{
+  0%
+  {
+    -webkit-transform: scale(2.5);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes final_magic_circle
+{
+
+  0%,
+  50%,
+  100%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+    -webkit-filter: brightness(150%);
+  }
+
+  25%,
+  75%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+    -webkit-filter: brightness(150%);
+  }
+}
+
+@-webkit-keyframes final_left_to_right
+{
+  0%
+  {
+    -webkit-transform: translateX(-1024px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes final_right_to_left
+{
+  0%
+  {
+    -webkit-transform: translateX(1024px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes final_small_left_to_right
+{
+  0%
+  {
+    -webkit-transform: translateX(-600px) rotate(180deg);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes final_small_right_to_left
+{
+  0%
+  {
+    -webkit-transform: translateX(600px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes final_purple_bg
+{
+  0%
+  {
+    -webkit-transform: scale(0, 0);
+  }
+
+  28%
+  {
+    -webkit-transform: scale(3, 1);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes final_rainbow
+{
+  0%
+  {
+    -webkit-filter: brightness(100%);
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+
+  33%,
+  39%
+  {
+    -webkit-filter: brightness(400%);
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+  }
+
+  42%
+  {
+    -webkit-filter: brightness(100%);
+    -webkit-transform: translateZ(0);
+    opacity: 1;
+  }
+
+  66%,
+  100%
+  {
+    -webkit-filter: brightness(100%);
+    -webkit-transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes final_loop_circle
+{
+
+  0%,
+  100%
+  {
+    -webkit-transform: scaleX(1) translateZ(0);
+    -webkit-filter: brightness(150%);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: scaleX(0) translateZ(0);
+    -webkit-filter: brightness(150%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes final_loop_brightness
+{
+
+  0%,
+  100%
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-filter: brightness(100%);
+    opacity: 1;
+  }
+
+  50%
+  {
+    -webkit-transform: translateZ(0);
+    -webkit-filter: brightness(200%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes final_loop_opacity
+{
+
+  0%,
+  100%
+  {
+    opacity: 1;
+  }
+
+  50%
+  {
+    opacity: .6;
+  }
+}
+
+#overlapContainer #whiteOut
+{
+  width: 1024px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+
+#overlapContainer #whiteOut.start
+{
+  -webkit-animation: final_fadeIn 1.5s linear 0s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#overlapContainer #whiteOut.end
+{
+  -webkit-animation: final_fadeOut 1.5s linear 1s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation
+{
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 901;
+}
+
+#finishSceneAnimation div
+{
+  position: absolute;
+  opacity: 0;
+}
+
+#finishSceneAnimation.loop .magicCircle
+{
+  -webkit-animation: final_loop_circle 6s linear 0s infinite alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation.loop .charaSilhouette
+{
+  -webkit-animation: final_loop_brightness 6s linear 0s infinite alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation.loop .bg2
+{
+  -webkit-animation: final_loop_opacity 6s linear 0s infinite alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .leftArrow,
+#finishSceneAnimation .rightArrow
+{
+  width: 76px;
+  height: 65px;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_title01.png");
+  z-index: 100;
+}
+
+#finishSceneAnimation .leftArrow
+{
+  top: -webkit-calc(50% - 33px);
+  left: -webkit-calc(50% - 264px);
+  -webkit-animation: final_fadeIn 0.25s linear 1.916s 1 alternate,
+    final_small_right_to_left 0.25s linear 1.916s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .rightArrow
+{
+  top: -webkit-calc(50% - 31px);
+  right: -webkit-calc(50% - 264px);
+  -webkit-animation: final_fadeIn 0.25s linear 1.916s 1 alternate,
+    final_small_left_to_right 0.25s linear 1.916s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .finalTxt
+{
+  width: 414px;
+  height: 77px;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_title02.png");
+  top: -webkit-calc(50% - 42px);
+  left: -webkit-calc(50% - 207px);
+  z-index: 100;
+  -webkit-animation: final_fadeIn 0.7s linear 1.4166s 1 alternate,
+    final_big_to_small 0.7s linear 1.4166s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .magicCircle
+{
+  width: 511px;
+  height: 513px;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_magic.png");
+  top: -webkit-calc(50% - 257px);
+  left: -webkit-calc(50% - 256px);
+  z-index: 99;
+  -webkit-filter: brightness(150%);
+  -webkit-animation: final_fadeIn 1s linear 0.9166s 1 alternate,
+    final_magic_circle 1s linear 0.9166s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .charaSilhouette
+{
+  width: 688px;
+  height: 491px;
+  top: -webkit-calc(50% - 246px);
+  left: -webkit-calc(50% - 444px);
+  z-index: 97;
+  -webkit-animation: final_fadeIn 1s linear 0.75s 1 alternate,
+    final_big_to_small 1s linear 0.75s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .rainbowEffect
+{
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_niji.png");
+  background-size: 100% 100%;
+  -webkit-animation: final_rainbow 0.75s linear 1.583s 1 alternate;
+  -webkit-animation-fill-mode: both;
+  z-index: 110;
+}
+
+#finishSceneAnimation .bg1left,
+#finishSceneAnimation .bg1right
+{
+  width: 329px;
+  height: 149px;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_bk.png");
+  z-index: 98;
+}
+
+#finishSceneAnimation .bg1left
+{
+  top: -webkit-calc(50% - 129px);
+  left: -webkit-calc(50% - 629px);
+  -webkit-animation: final_fadeIn 0.25s linear 1.4166s 1 alternate,
+    final_right_to_left 0.25s linear 1.4166s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .bg1right
+{
+  top: -webkit-calc(50% - 30px);
+  right: -webkit-calc(50% - 633px);
+  -webkit-animation: final_fadeIn 0.25s linear 1.4166s 1 alternate,
+    final_left_to_right 0.25s linear 1.4166s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .bg2
+{
+  width: 725px;
+  height: 149px;
+  top: -webkit-calc(50% - 79px);
+  left: -webkit-calc(50% - 360px);
+  z-index: 96;
+  opacity: 1;
+  -webkit-animation: final_purple_bg 0.583s linear 1.083s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .bg3
+{
+  width: 1024px;
+  height: 768px;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_bg01.png");
+  z-index: 95;
+  -webkit-animation: final_fadeIn 1.916s linear 0.416s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}
+
+#finishSceneAnimation .bg4
+{
+  width: 1024px;
+  height: 100%;
+  background: url("/magica/resource/image_web/event/storyraid/common/final/evt_story_raid_final_chapter_bg02.png");
+  background-size: 100% 100%;
+  z-index: 94;
+  -webkit-animation: final_fadeIn 1.916s linear 0.416s 1 alternate;
+  -webkit-animation-fill-mode: both;
+}

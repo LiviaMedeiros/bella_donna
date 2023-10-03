@@ -1,0 +1,11 @@
+<% _.forEach(model,function(txt){ %> <% if(txt.userCard[0]) { %> <% var leaderId; %> <% if(txt.questEpisodeUserCardId) { %> <% _.each(txt.userCard,function(cardModel){ %> <% if(cardModel) { %> <% if(cardModel.userCardId == txt.questEpisodeUserCardId) { %> <% leaderId = cardModel.displayCardId; %> <% } %> <% } %> <% }) %> <% } %> <div class="deckSelectDetail se_tabs" data-decktype='<%= txt.deckType %>'>
+  <div class="formationMiniMap"> <% _.forEach(txt.formationSheet.positionArr,function(txt){ %> <span class='pos_<%= txt %>'></span> <% }) %> </div>
+  <div class="charaIcon">
+    <div class="frame"></div>
+    <img class='charaImg' data-nativeimgkey='card_<%= leaderId %>_f' data-src='resource/image_native/card/image/card_<%= leaderId %>_f.png' alt=''>
+    <div class="bg"></div>
+  </div>
+  <p class="deckName ts_gold"><%= txt.name %></p>
+</div> <% } else { %> <div class="deckSelectDetail se_tabs off" data-decktype='<%= txt.deckType %>'>
+  <div class="charaIcon"></div>
+</div> <% } %> <% }) %>

@@ -1,0 +1,86 @@
+<%
+	var eventId		= eventObj.eventId;
+	var isFinalBattle		= status == "FINAL_BATTLE";
+%> <style type='text/css'>
+  #itemInfoWrap
+  {
+    background: url('/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/bg_item_count.png') left top no-repeat;
+  }
+
+  #titleWrap
+  {
+    background: url("/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/bg_title.png") left top no-repeat;
+  }
+
+  .IN_BATTLE #titleWrap .titleImg
+  {
+    background: url("/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/title_inbattle.png") left top no-repeat;
+  }
+
+  .FINAL_BATTLE #titleWrap .titleImg
+  {
+    background: url("/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/title_lastbattle.png") left top no-repeat;
+  }
+
+  #battleInfoWrap .bg
+  {
+    background: url("/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/bg_footer.png") left top no-repeat;
+  }
+
+  #battleInfoWrap #battleStartBtn
+  {
+    background: url("/magica/resource/image_web/event/storyraid/<%= eventId %>/boss/btn_battle.png") left top no-repeat;
+  }
+
+</style>
+<div id='EventStoryRaidBoss' class='<%= status %>'>
+  <div id='helpBtn' class='se_decide TE sb_gold_02' data-eventid="<%= eventId %>">遊び方</div> <% if (window.isBrowser) { %> <ul class="debugArea">
+    <li class="debugBtn TE sb_gold_01" data-mode="PUSH_STORYRAID" data-status="IN_BATTLE">交戦中</li>
+    <li class="debugBtn TE sb_gold_01" data-mode="PUSH_STORYRAID" data-status="FIRST_BATTLE">初回交戦中</li>
+    <li class="debugBtn TE sb_gold_01" data-mode="PUSH_STORYRAID" data-status="FINAL_BATTLE">最終攻撃</li>
+    <li class="debugBtn TE sb_gold_01" data-mode="COMMENT_ANIME">コメントアニメ</li>
+  </ul> <% } %> <div id='itemInfoWrap' class="c_white"> ×<span class='num c_white'><%= itemQuantity %></span>
+  </div>
+  <div id='titleWrap' class="">
+    <div class="titleImg"></div>
+    <p class='chapter'><%= pointModel.point.title %></p>
+  </div>
+  <div id='battleInfoWrap'> <% if (!isFinalBattle) { %> <div id="bonusWrap" class="<% if (commentCount>0) { %>show<% } %>">
+      <div id="bonusArrow"></div>
+      <div id="bonusText"></div>
+      <div id="bonusTitle"></div>
+    </div> <% } %> <div id="needAp" class="needAp">
+      <div class='numWrap'> <% _.forEach(String(section.questBattleList[0].questBattle.ap).split(''),function(txt){ %> <div class='num<%= txt %>'></div> <% }) %> </div>
+    </div>
+    <div id='battleBtnWrap' class="">
+      <div id="battleStartBtn" class="TE se_decide"></div>
+    </div>
+    <div class="bg"></div>
+  </div> <% if (!isFinalBattle) { %> <div id="commentWrap">
+    <div id="commentPopBtn" class="mb_pink TE"><span class="b_screen"></span>コメント</div>
+    <div id="commentTextWrap">
+      <div id="commentText">応援コメントを送ることで、バトル時の攻撃力がアップします！</div>
+    </div>
+    <div class="bg"></div>
+  </div> <% } %> <div id="cutinComment">
+    <div id="cutinCommentBg"></div>
+    <div id="cutinCommentEf"></div>
+    <div id="cutinCommentAtkup"></div>
+    <div id="cutinCommentPoint"></div>
+  </div>
+</div>
+<script type="text/template" id="commentParts"> <div id="commentPopup">
+		<div class="commentContent">
+			同じエリアで戦うプレイヤーに応援コメントを送りましょう！<br>
+			応援コメントを送ることで、バトル時の攻撃力がアップします！<br>
+		</div>
+		<div class="commentCaution c_red">
+			※攻撃力アップは、本エリア内の交戦中バトルのみ有効となり、<br>2回目以降の投稿には適応されません。
+		</div>
+		<input id="commentInput" class="commonFrame3" maxlength="20" readonly="readonly"></input><br>
+		<span class="commentNotis c_red">絵文字は使用できません</span>
+		<div class="textCount"><span id="textCount">0</span>/20文字</div><br>
+		<div class="btn TE se_cancel b_white popupCloseBtn commentCancel"><span class="b_screen"></span>キャンセル</div>
+		<div class="btn TE se_decide b_pink" id="commentDecide"><span class="b_screen"></span>投稿する</div>
+	</div>
+</script>

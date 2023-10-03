@@ -1,0 +1,157 @@
+.resultWrap
+{
+  width: 1024px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.resultWrap .boxRemainWrap
+{
+  width: 258px;
+  height: 28px;
+  background: url("/magica/resource/image_web/campaign/box_gacha/common/box_remain_base.png") left top no-repeat;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -webkit-calc(50% + 201px);
+  right: 0;
+}
+
+.resultWrap .boxRemainWrap .title
+{
+  width: 153px;
+  height: 28px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.resultWrap .boxRemainWrap .remainNum
+{
+  width: 105px;
+  height: 28px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.resultWrap .resultBtnWrap
+{
+  width: 416px;
+  height: 64px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -webkit-calc(50% + 183px);
+  left: -webkit-calc(50% - 208px);
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.resultWrap .resultBtnWrap.singleBtn
+{
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.resultWrap .resultBtnWrap.singleBtn #resultOnceBtn
+{
+  display: none;
+}
+
+.resultWrap .drawItemWrap
+{
+  width: 628px;
+  height: 246px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -webkit-calc(50% - 123px);
+  left: -webkit-calc(50% - 314px);
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.resultWrap .drawItemWrap .drawItem
+{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 46px;
+  position: relative;
+}
+
+.resultWrap .drawItemWrap .drawItem .drawChest
+{
+  width: 128px;
+  height: 120px;
+  position: absolute;
+  left: -14px;
+  top: -20px;
+}
+
+.resultWrap .drawItemWrap .drawItem:not(:nth-child(5n))
+{
+  margin-right: 32px;
+}
+
+.resultWrap .drawItemWrap .drawItem .quantity
+{
+  position: absolute;
+  right: -2px;
+  bottom: -14px;
+  font-size: 20px;
+  z-index: 100;
+}
+
+.resultWrap .drawItemWrap .drawItem .userCharaIcon,
+.resultWrap .drawItemWrap .drawItem .userCharaIcon .att,
+.resultWrap .drawItemWrap .drawItem .userCharaIcon .star,
+.resultWrap .drawItemWrap .drawItem .userCharaIcon .rank,
+.resultWrap .drawItemWrap .drawItem .userCharaIcon .bg
+{
+  width: 100px;
+  height: 100px;
+  background-size: 100px 100px;
+}
+
+.resultWrap .drawItemWrap .drawItem .userCharaIcon img
+{
+  width: 96px;
+  height: 96px;
+  -webkit-border-radius: 49px;
+}
+
+.resultWrap .drawItemWrap .drawItem .pieceImg
+{
+  width: 100px;
+  height: 100px;
+}
+
+.resultWrap.singleDraw .drawItemWrap
+{
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.resultWrap.singleDraw .drawItemWrap .drawItem
+{
+  margin: 0;
+}

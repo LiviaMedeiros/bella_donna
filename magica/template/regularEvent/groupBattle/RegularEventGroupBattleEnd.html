@@ -1,0 +1,19 @@
+<div id="RegularEventGroupBattleEnd">
+  <div id="titleWrap">
+    <div id="endTitle">グループバトル終了</div>
+    <div id="gradeWrap">
+      <p>最終グレード</p>
+      <div id="gradeImg" class="grade<%= eventStatus %>"></div>
+    </div>
+  </div>
+  <div id="rewardWrap">
+    <div id="rewardTitle">到達グレード報酬</div>
+    <div id="rewardList"> <% _.forEach(rewardList,function(txt){ %> <div class="reward">
+        <img class="rewardImg" src="/magica/resource/image_web/common/icon/icon_<%= txt.itemId.toLowerCase() %>.png">
+      </div> <% }) %> </div>
+  </div>
+  <div id="rewardCaution">獲得したアイテムは直接付与されています</div>
+</div>
+<!-- グループバトル参加不可ポップアップ -->
+<script type="text/template" id="groupBattleCondPopTemp">
+</script>

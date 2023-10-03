@@ -1,0 +1,16 @@
+<div id="CreateTestUser">
+  <div class="commonFrame1">
+    <h2>ユーザー作成</h2> <% if(typeof gameUser !== 'undefined') {%> <div class="mainWrap">
+      <p class="c_red">ユーザー作成済です</p>
+      <div class="flexBox">
+        <div data-href="#/MyPage" class="btn b_white linkBtn mb10 se_kettei02">マイページに戻る</div>
+      </div>
+    </div> <%} else {%> <div class="mainWrap">
+      <p class="c_red">ユーザー名を入力してください</p>
+      <input id="userName" class="commonInput" type="text">
+      <div class="flexBox">
+        <div id="UserCreateBtn" class="createBtn btn b_pink se_kettei02">ユーザー作成</div>
+      </div>
+    </div> <%} %>
+  </div>
+</div>

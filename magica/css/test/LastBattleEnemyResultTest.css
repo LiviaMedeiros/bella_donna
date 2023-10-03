@@ -1,0 +1,665 @@
+#LastBattleEnemyResultTest
+{
+  position: fixed;
+  width: 1024px;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#LastBattleEnemyResultTest #touchScreen
+{
+  position: fixed;
+  width: 1024px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9;
+  display: none;
+}
+
+#LastBattleEnemyResultTest #touchScreen.on
+{
+  display: block;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap
+{
+  width: 100%;
+  height: 580px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_1
+{
+  width: 611px;
+  height: 619px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_result_circle01.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 0.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_1.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_2
+{
+  width: 455px;
+  height: 461px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_result_circle02.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 0.866s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_2.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_3
+{
+  width: 341px;
+  height: 344px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_result_circle03.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_3.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_4
+{
+  width: 326px;
+  height: 329px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_result_circle04.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_4.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_5
+{
+  width: 239px;
+  height: 242px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_result_circle05.png") left top no-repeat;
+  -webkit-transform: scale(0);
+  -webkit-animation: rippleObjScaleAnimation 2s linear 1.466s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .rippleObjWrap .rippleObj_5.rotate
+{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -webkit-animation: rippleObjRotateAnimation 3s linear 0s infinite normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultTitleWrap
+{
+  top: 100px;
+  left: 370px;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .resultTitleWrap .resultTitle
+{
+  left: 60px;
+  position: relative;
+  width: 182px;
+  height: 33px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_battle_title.png") left top no-repeat;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: scaleX(0);
+  -webkit-animation: resultTitleAnimation 1.0s ease 2.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultTitleWrap .resultTitleBase
+{
+  width: 618px;
+  height: 62px;
+  opacity: 1;
+  top: -50px;
+  left: -120px;
+  position: relative;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_title.png") left top no-repeat;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: scaleY(0);
+  -webkit-animation: resultTitleBaseAnimation 1.4s ease 1.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultTitleWrap .resultTitleDecoLeft
+{
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/icon_boss_title.png") no-repeat;
+  top: -95px;
+  left: -50px;
+  position: relative;
+  width: 41px;
+  height: 29px;
+  scale: 1;
+  opacity: 0;
+  -webkit-animation: resultTitleDecoAnimation 1.2s ease 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultTitleWrap .resultTitleDecoRight
+{
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/icon_boss_title.png") no-repeat;
+  top: -125px;
+  left: 280px;
+  position: relative;
+  width: 41px;
+  height: 29px;
+  scale: 1;
+  opacity: 0;
+  -webkit-animation: resultTitleDecoAnimation 1.2s ease 2.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultStringWrap
+{
+  top: -20px;
+  position: fixed;
+}
+
+#LastBattleEnemyResultTest .resultStringWrap .resultString
+{
+  width: 107px;
+  height: 96px;
+  position: absolute;
+  top: 155px;
+  opacity: 1;
+}
+
+#LastBattleEnemyResultTest .resultStringWrap .resultString.CLEAR
+{
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_clear.png") left top no-repeat;
+  width: 442px;
+  left: 310px;
+  opacity: 0;
+  -webkit-animation: resultStringFinishAnimation 1.0s ease 3.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .resultStringWrap .resultStringAdd
+{
+  position: fixed;
+  width: 442px;
+  height: 92px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_clear_efe.png") left top no-repeat;
+  top: 135px;
+  left: 310px;
+  z-index: 2;
+  opacity: 0;
+  -webkit-animation: resultStringFinishAddAnimation 0.666s ease-in-out 3.886s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPBase
+{
+  position: fixed;
+  top: 250px;
+  left: 130px;
+  width: 760px;
+  height: 82px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/bg_reward_dp.png") left top no-repeat;
+  opacity: 0;
+  -webkit-transform: scaleX(0.6);
+  -webkit-animation: rewardBaseAnimation 0.6s ease-in-out 3.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPBeforeBase
+{
+  position: fixed;
+  top: 272px;
+  left: 170px;
+  width: 110px;
+  height: 27px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/bg_dptitle_01.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 3.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPBeforeText
+{
+  position: fixed;
+  top: 272px;
+  left: 200px;
+  color: #ffff;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 3.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPBeforeNum
+{
+  position: fixed;
+  top: 272px;
+  left: 310px;
+  width: 130px;
+  height: 27px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_dp_num.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 3.066s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPArrow
+{
+  position: fixed;
+  top: 267px;
+  left: 500px;
+  width: 110px;
+  height: 142px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/icon_arrow.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 3.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPAfterBase
+{
+  position: fixed;
+  top: 272px;
+  left: 560px;
+  width: 115px;
+  height: 27px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/bg_dptitle_02.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPAfterText
+{
+  position: fixed;
+  top: 272px;
+  left: 590px;
+  color: #ffff;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardDPWrap .rewardDPAfterNum
+{
+  position: fixed;
+  top: 272px;
+  left: 700px;
+  width: 130px;
+  height: 27px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_dp_num.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardFadeAnimation 0.466s ease-in-out 4.266s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner
+{
+  top: 320px;
+  left: 130px;
+  position: absolute;
+  height: 120px;
+  width: 760px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox
+{
+  display: inline-block;
+  text-align: center;
+  left: 0px;
+  width: 271px;
+  margin: 0px -45px;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemBaseRhombus
+{
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/bg_reward_item.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardItemBaseRhombusAnimation 0.833s ease 4.866s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemBaseCircle
+{
+  display: inline-block;
+  position: relative;
+  top: -200px;
+  left: 39px;
+  width: 190px;
+  height: 190px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/efe_reward_item.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: rewardItemBaseCircleAnimation 0.333s ease 5.066s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemTitle
+{
+  display: inline-block;
+  position: relative;
+  top: -290px;
+  left: -100px;
+  width: 76px;
+  height: 69px;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/text_reward.png") left top no-repeat;
+  z-index: 2;
+  opacity: 0;
+  -webkit-animation: rewardItemContentAnimation 0.633s ease 5.266s 1 normal;
+  -webkit-animation-fill-mode: both;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemContent
+{
+  display: inline-block;
+  text-align: center;
+  top: -350px;
+  left: 0px;
+  width: 105px;
+  height: 105px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-animation: rewardItemContentAnimation 0.633s ease 5.266s 1 normal;
+  -webkit-animation-fill-mode: both;
+  position: relative;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemContent img
+{
+  width: 88px;
+}
+
+#LastBattleEnemyResultTest .rewardItemWrap .rewardItemInner .rewardItemBox .rewardItemContent .rewardItemNum
+{
+  display: block;
+  font-size: 24px;
+}
+
+#LastBattleEnemyResultTest #retryBtn
+{
+  top: 500px;
+  left: 860px;
+  width: 240px;
+  height: 57px;
+  position: fixed;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/retry.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: retryBtnAnimation 0.666s ease-in-out 5.666s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#LastBattleEnemyResultTest .touch_screen
+{
+  top: 520px;
+  left: 390px;
+  width: 240px;
+  height: 27px;
+  position: fixed;
+  background: url("/magica/resource/image_web/event/lastBattle/_anime/touch.png") left top no-repeat;
+  opacity: 0;
+  -webkit-animation: touchScreen 0.666s ease 5.666s infinite normal;
+}
+
+@-webkit-keyframes rippleObjScaleAnimation
+{
+  0%
+  {
+    -webkit-transform: rotate(0) scale(0);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(180deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rippleObjRotateAnimation
+{
+  0%
+  {
+    -webkit-transform: rotate(0);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes resultTitleAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes resultTitleBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleY(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes resultTitleDecoAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStringFinishAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes resultStringFinishAddAnimation
+{
+  0%
+  {
+    display: block;
+    opacity: 1;
+  }
+
+  100%
+  {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes rewardBaseAnimation
+{
+  0%
+  {
+    -webkit-transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardFadeAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rewardItemBaseRhombusAnimation
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: scale(1.3);
+  }
+
+  20%
+  {
+    opacity: 1;
+    -webkit-transform: scale(1.4);
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes rewardItemBaseCircleAnimation
+{
+  0%
+  {
+    opacity: 0;
+    -webkit-transform: scale(2);
+  }
+
+  100%
+  {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes rewardItemContentAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes retryBtnAnimation
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes touchScreen
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}

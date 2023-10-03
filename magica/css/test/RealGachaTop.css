@@ -1,0 +1,24 @@
+#RealGachaTop
+{
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+
+#RealGachaTop #realGachaBtn
+{
+  width: 286px;
+  height: 134px;
+  padding: 40px 0 0;
+  background: url("/magica/resource/image_web/page/gacha/gacha_btn_pickup.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% + 43px);
+  right: 206px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#RealGachaTop #realGachaBtn .font01
+{
+  font-size: 34px;
+}

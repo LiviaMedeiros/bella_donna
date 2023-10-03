@@ -1,0 +1,1507 @@
+#CampaignSumoMain
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#CampaignSumoMain.shake
+{
+  -webkit-animation: 0.3s CampaignSumoRing linear 0s 1 both;
+}
+
+#CampaignSumoMain #touchWrap
+{
+  position: absolute;
+  left: -200px;
+  top: 0;
+  width: 1424px;
+  height: 105%;
+  padding: 60px 250px 0 220px;
+  z-index: 100;
+}
+
+#CampaignSumoMain #judgement
+{
+  background: url("/magica/resource/image_web/campaign/sumo/gyouji.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 224px);
+  top: -60px;
+  width: 448px;
+  height: 614px;
+}
+
+#CampaignSumoMain #judgement.anim
+{
+  -webkit-animation: 1.1333s CampaignSumoJudgement linear 0.5s infinite both;
+}
+
+#CampaignSumoMain #judgement.madokaWin
+{
+  -webkit-animation: 2s CampaignSumoJudgement_madoka ease-in-out 1s infinite both;
+  animation: 2s CampaignSumoJudgement_madoka ease-in-out 1s infinite both;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+#CampaignSumoMain #collisionText
+{
+  display: none;
+  position: absolute;
+  left: -webkit-calc(50% - 224px);
+  top: 0;
+}
+
+#CampaignSumoMain #collisionText.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #collisionText .text
+{
+  background: url("/magica/resource/image_web/campaign/sumo/text_toge.png") center top no-repeat;
+  position: absolute;
+  width: 128px;
+  height: 86px;
+}
+
+#CampaignSumoMain #collisionText .pos1
+{
+  left: -100px;
+  top: 80px;
+  -webkit-animation: 0.5s CampaignSumoCollisionText1 linear 0s infinite both;
+}
+
+#CampaignSumoMain #collisionText .pos2
+{
+  left: 420px;
+  top: 200px;
+  -webkit-animation: 0.5s CampaignSumoCollisionText2 linear 0.4s infinite both;
+}
+
+#CampaignSumoMain #bgRing
+{
+  background: url("/magica/resource/image_web/campaign/sumo/base_ring.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 545px);
+  bottom: -100px;
+  width: 1090px;
+  height: 360px;
+}
+
+#CampaignSumoMain #bgRing.anim
+{
+  -webkit-animation: 0.633s CampaignSumoRing linear 0s 1 both;
+}
+
+#CampaignSumoMain #bgRing #bgHole
+{
+  position: absolute;
+  left: -webkit-calc(50% - 246px);
+  bottom: 154px;
+  width: 492px;
+  height: 155px;
+  border-radius: 80px;
+}
+
+#CampaignSumoMain #bgRing #bgHole.open
+{
+  background: url("/magica/resource/image_web/campaign/sumo/hole_open.png") center top no-repeat;
+  -webkit-animation: 0.633s CampaignSumoHoleOpen ease-in 0s 1 both;
+}
+
+#CampaignSumoMain #bgRing #bgHole.close
+{
+  -webkit-animation: 1s CampaignSumoHoleClose ease-out 0s 1 both;
+}
+
+#CampaignSumoMain #bgRing2
+{
+  display: none;
+  background: url("/magica/resource/image_web/campaign/sumo/base_ring_2.png") center bottom no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 545px);
+  bottom: -100px;
+  width: 1090px;
+  height: 360px;
+}
+
+#CampaignSumoMain #bgRing2.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #charaWrap
+{
+  height: 100%;
+  transition: -webkit-transform 0.3s 0s ease-in-out;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap
+{
+  position: absolute;
+  left: -webkit-calc(50% + 75px - 100px);
+  bottom: 130px;
+  width: 200px;
+  height: 320px;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap .icon
+{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap .icon.after
+{
+  display: none;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap.anim .icon
+{
+  position: absolute;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap.anim .icon.after
+{
+  display: block;
+  -webkit-animation: 0.5s CampaignSumoCharaChange linear 0s 1 both;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap.move
+{
+  -webkit-animation: 0.1666s CampaignSumoCharaMoveRight linear 0s 1 both;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap.lose
+{
+  -webkit-animation: 0.3s CampaignSumoLosePlayer linear 0s 1 both;
+  -webkit-transform-origin: 50% 80%;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap.chara35
+{
+  width: 440px;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap #collisionEffect
+{
+  display: none;
+  position: absolute;
+  left: -67.5px;
+  top: 40px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#CampaignSumoMain #charaWrap #playerWrap #collisionEffect.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap #collisionEffect .toge
+{
+  background: url("/magica/resource/image_web/campaign/sumo/toge-3.png") center top no-repeat;
+  position: absolute;
+  width: 81px;
+  height: 73px;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap #collisionEffect .toge.pos1
+{
+  left: 0;
+  top: 20px;
+  -webkit-animation: 0.366s CampaignSumoMainCollisionToge linear 0.3s infinite both;
+}
+
+#CampaignSumoMain #charaWrap #playerWrap #collisionEffect .toge.pos2
+{
+  left: 70px;
+  top: 100px;
+  -webkit-animation: 0.366s CampaignSumoMainCollisionToge linear 0.5s infinite both;
+}
+
+#CampaignSumoMain #charaWrap #enemyWrap
+{
+  position: absolute;
+  right: -webkit-calc(50% + 75px - 100px);
+  bottom: 130px;
+  width: 200px;
+  height: 320px;
+}
+
+#CampaignSumoMain #charaWrap #enemyWrap .icon
+{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+#CampaignSumoMain #charaWrap #enemyWrap.move
+{
+  -webkit-animation: 0.1666s CampaignSumoCharaMoveLeft linear 0s 1 both;
+}
+
+#CampaignSumoMain #charaWrap #enemyWrap.lose
+{
+  -webkit-animation: 0.3s CampaignSumoLoseEnemy linear 0s 1 both;
+  -webkit-transform-origin: 50% 80%;
+}
+
+#CampaignSumoMain #charaWrap #enemyWrap.chara35
+{
+  width: 440px;
+}
+
+#CampaignSumoMain #charaWrap.trap
+{
+  -webkit-animation: 0.5s CampaignSumoCharaTrap linear 0s 1 both;
+}
+
+#CampaignSumoMain #charaWrap.shout
+{
+  -webkit-animation: 0.5s CampaignSumoCharaShout linear 0s 1 both;
+}
+
+#CampaignSumoMain #bgFrame
+{
+  background: url("/magica/resource/image_web/campaign/sumo/saku.png") center top no-repeat;
+  position: absolute;
+  left: -200px;
+  bottom: -100px;
+  width: 1424px;
+  height: 204px;
+}
+
+#CampaignSumoMain #touchIcon
+{
+  display: none;
+  pointer-events: none;
+  background: url("/magica/resource/image_web/campaign/sumo/icon_tap.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 99px);
+  bottom: 10px;
+  width: 198px;
+  height: 144px;
+}
+
+#CampaignSumoMain #touchIcon.anim
+{
+  display: block;
+  -webkit-animation: 1s CampaignSumoTouchIcon linear 0s infinite both;
+}
+
+#CampaignSumoMain #trapIcon
+{
+  display: none;
+  pointer-events: none;
+  background: url("/magica/resource/image_web/campaign/sumo/text_ex.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 95px);
+  bottom: 0px;
+  width: 190px;
+  height: 160px;
+}
+
+#CampaignSumoMain #trapIcon.show
+{
+  display: block;
+  -webkit-animation: 1s CampaignSumoTouchIcon linear 0s 1 both;
+}
+
+#CampaignSumoMain #gaugeWrap
+{
+  position: absolute;
+  left: -webkit-calc(50% - 400px);
+  top: 200px;
+  width: 800px;
+  height: 50px;
+  background: black;
+}
+
+#CampaignSumoMain #gaugeWrap .playerGauge
+{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  width: 780px;
+  height: 40px;
+  background: blue;
+}
+
+#CampaignSumoMain #gaugeWrap .enemyGauge
+{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 780px;
+  height: 40px;
+  background: red;
+}
+
+#CampaignSumoMain #gaugeWrap .enemyGauge:after
+{
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -10px;
+  width: 100px;
+  height: 50px;
+  background: green;
+}
+
+#CampaignSumoMain #gaugeWrap.anim .enemyGauge
+{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 780px;
+  height: 40px;
+  background: red;
+}
+
+#CampaignSumoMain #gaugeWrap.anim .enemyGauge:after
+{
+  -webkit-animation: 0.2s CampaignSumoGaugeCenter linear 0s infinite both;
+}
+
+#CampaignSumoMain .cutin
+{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+}
+
+#CampaignSumoMain .cutin.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #vsCutinWrap
+{
+  pointer-events: none;
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
+}
+
+#CampaignSumoMain #vsCutinWrap:after
+{
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: -200px;
+  top: 0;
+  width: 1424px;
+  height: 200%;
+  z-index: 1;
+  -webkit-animation: 2s CampaignSumoVsCutin linear 0s 1 both;
+}
+
+#CampaignSumoMain #vsCutinWrap .result
+{
+  display: none;
+  color: #000000;
+  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
+  position: absolute;
+  left: 20px;
+  top: -23px;
+  font-size: 30px;
+}
+
+#CampaignSumoMain #vsCutinWrap .name
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  font-size: 20px;
+  width: 86px;
+  height: 200px;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+  white-space: nowrap;
+}
+
+#CampaignSumoMain #vsCutinWrap .player
+{
+  background: url("/magica/resource/image_web/campaign/sumo/plate_user.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% + 200px - 43px);
+  top: 200px;
+  width: 86px;
+  height: 200px;
+  z-index: 2;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  -webkit-animation: 2s CampaignSumoVsNameRight linear 0s 1 both;
+}
+
+#CampaignSumoMain #vsCutinWrap .enemy
+{
+  background: url("/magica/resource/image_web/campaign/sumo/plate_enemy.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 200px - 43px);
+  top: 200px;
+  width: 86px;
+  height: 200px;
+  z-index: 2;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+  -webkit-animation: 2s CampaignSumoVsNameLeft linear 0s 1 both;
+}
+
+#CampaignSumoMain #vsCutinWrap.change .player
+{
+  -webkit-animation: 0.6s CampaignSumoVsNameRightChange2 linear 0s 1 both;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+#CampaignSumoMain #vsCutinWrap.change .player.before
+{
+  -webkit-animation: 0.6s CampaignSumoVsNameRightChange1 linear 0s 1 both;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+
+#CampaignSumoMain #vsCutinWrap.win .player .result
+{
+  display: block;
+  color: #fff;
+}
+
+#CampaignSumoMain #vsCutinWrap.win .enemy .result
+{
+  display: block;
+}
+
+#CampaignSumoMain #vsCutinWrap.lose .player .result
+{
+  display: block;
+}
+
+#CampaignSumoMain #vsCutinWrap.lose .enemy .result
+{
+  display: block;
+  color: #fff;
+}
+
+#CampaignSumoMain #vsCutinWrap.draw .player .result
+{
+  display: block;
+}
+
+#CampaignSumoMain #vsCutinWrap.draw .enemy .result
+{
+  display: block;
+}
+
+#CampaignSumoMain #startBtn
+{
+  display: none;
+  background: url("/magica/resource/image_web/campaign/sumo/icon_start.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 97px);
+  bottom: 56px;
+  width: 194px;
+  height: 60px;
+  z-index: 101;
+}
+
+#CampaignSumoMain #startBtn.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #startCutinWrap
+{
+  pointer-events: none;
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000;
+}
+
+#CampaignSumoMain #startCutinWrap .text1
+{
+  background: url("/magica/resource/image_web/campaign/sumo/text_1.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 194px);
+  top: -webkit-calc(50% - 62px);
+  width: 388px;
+  height: 124px;
+  -webkit-animation: 0.933s CampaignSumoStartText1 linear 0s infinite both;
+}
+
+#CampaignSumoMain #startCutinWrap .text2
+{
+  display: none;
+  background: url("/magica/resource/image_web/campaign/sumo/text_2.png") center top no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 279px);
+  top: -webkit-calc(50% - 95px);
+  width: 558px;
+  height: 190px;
+}
+
+#CampaignSumoMain #startCutinWrap.anim .text1
+{
+  -webkit-animation: 0.066s common_fade_out linear 0s 1 both;
+}
+
+#CampaignSumoMain #startCutinWrap.anim .text2
+{
+  display: block;
+  -webkit-animation: 0.833s CampaignSumoStartText2 linear 0s 1 both;
+}
+
+#CampaignSumoMain #startCutinWrap.drawAnim .text1
+{
+  -webkit-animation: 0.066s common_fade_out linear 0s 1 both;
+}
+
+#CampaignSumoMain #startCutinWrap.drawAnim .text2
+{
+  display: block;
+  left: -webkit-calc(50% - 315px);
+  top: -webkit-calc(50% - 135px);
+  width: 630px;
+  height: 270px;
+  background: url("/magica/resource/image_web/campaign/sumo/text_2b.png") center top no-repeat;
+  -webkit-animation: 1s CampaignSumoStartText2_draw linear 0s 1 both;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap
+{
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  width: 100%;
+  text-align: center;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap>div
+{
+  display: inline-block;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap.show
+{
+  display: block;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap #retryBtn
+{
+  background: url("/magica/resource/image_web/campaign/sumo/btn_retry.png") center top no-repeat;
+  width: 266px;
+  height: 58px;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap #toCharaSelectBtn
+{
+  background: url("/magica/resource/image_web/campaign/sumo/btn_select.png") center top no-repeat;
+  width: 266px;
+  height: 58px;
+}
+
+#CampaignSumoMain #resultCutinWrap #btnWrap #toTopBtn
+{
+  background: url("/magica/resource/image_web/campaign/sumo/btn_back.png") center top no-repeat;
+  width: 266px;
+  height: 58px;
+}
+
+#CampaignSumoMain #resultCutinWrap.win .text
+{
+  background: url("/magica/resource/image_web/campaign/sumo/text_win.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 155px);
+  top: -webkit-calc(50% - 86px);
+  width: 310px;
+  height: 172px;
+  -webkit-animation: 0.833s CampaignSumoMainResultWinText linear 0s 1 both;
+}
+
+#CampaignSumoMain #resultCutinWrap.win .effect
+{
+  background: url("/magica/resource/image_web/campaign/sumo/ef_win.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 197px);
+  top: -webkit-calc(50% - 197px);
+  width: 394px;
+  height: 394px;
+  -webkit-animation: 0.2s common_fade_in linear 0s 1 both, 13.333s CampaignSumoMainResultWinEffect linear 0s infinite both;
+}
+
+#CampaignSumoMain #resultCutinWrap.lose .text
+{
+  background: url("/magica/resource/image_web/campaign/sumo/text_lose.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 156px);
+  top: -webkit-calc(50% - 88px);
+  width: 312px;
+  height: 176px;
+  -webkit-animation: 0.833s CampaignSumoMainResultWinText linear 0s 1 both;
+}
+
+#CampaignSumoMain #resultCutinWrap.lose .effect
+{
+  background: url("/magica/resource/image_web/campaign/sumo/ef_lose.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 204px);
+  top: -webkit-calc(50% - 204px);
+  width: 408px;
+  height: 408px;
+  -webkit-animation: 0.2s common_fade_in linear 0s 1 both, 13.333s CampaignSumoMainResultWinEffect linear 0s infinite both;
+}
+
+#CampaignSumoMain #resultCutinWrap.draw .text
+{
+  background: url("/magica/resource/image_web/campaign/sumo/text_win2.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 224px);
+  top: -webkit-calc(50% - 120px);
+  width: 448px;
+  height: 240px;
+  -webkit-animation: 0.833s CampaignSumoMainResultWinText linear 0s 1 both;
+}
+
+#CampaignSumoMain #resultCutinWrap.draw .effect
+{
+  background: url("/magica/resource/image_web/campaign/sumo/ef_win.png") center center no-repeat;
+  position: absolute;
+  left: -webkit-calc(50% - 197px);
+  top: -webkit-calc(50% - 197px);
+  width: 394px;
+  height: 394px;
+  -webkit-animation: 0.2s common_fade_in linear 0s 1 both, 13.333s CampaignSumoMainResultWinEffect linear 0s infinite both;
+}
+
+#CampaignSumoMain #resultCutinWrap.show
+{
+  -webkit-animation: 1s CampaignSumoFinishCutin linear 0s 1 both;
+}
+
+@-webkit-keyframes CampaignSumoCharaChange
+{
+  0%
+  {
+    -webkit-transform: translateY(-600px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoJudgement
+{
+  0%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  5.88%
+  {
+    -webkit-transform: translateY(-32px);
+  }
+
+  11.76%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  41.18%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  47.06%
+  {
+    -webkit-transform: translateY(-32px);
+  }
+
+  52.94%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  58.82%
+  {
+    -webkit-transform: translateY(-32px);
+  }
+
+  64.70%
+  {
+    -webkit-transform: translateY(0px);
+  }
+
+  100%
+  {
+    -webkit-transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes CampaignSumoJudgement_madoka
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scaleY(1);
+  }
+
+  23%
+  {
+    -webkit-transform: translate(15px, -30px) scaleY(1.03);
+  }
+
+  54%
+  {
+    -webkit-transform: translate(0, 0) scaleY(1);
+  }
+
+  76%
+  {
+    -webkit-transform: translate(-15px, -30px) scaleY(1.03);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0) scaleY(1);
+  }
+}
+
+@-webkit-keyframes CampaignSumoCharaMoveLeft
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  30%
+  {
+    -webkit-transform: translate(15px, 0);
+  }
+
+  75%
+  {
+    -webkit-transform: translate(15px, -13.5px);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoCharaMoveRight
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  30%
+  {
+    -webkit-transform: translate(-15px, 0);
+  }
+
+  75%
+  {
+    -webkit-transform: translate(-15px, -13.5px);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoGaugeCenter
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  25%
+  {
+    -webkit-transform: translate(3px, 0);
+  }
+
+  50%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  75%
+  {
+    -webkit-transform: translate(-3px, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoRing
+{
+  0%
+  {
+    -webkit-transform: rotate(0);
+  }
+
+  25%
+  {
+    -webkit-transform: rotate(2deg);
+  }
+
+  50%
+  {
+    -webkit-transform: rotate(0);
+  }
+
+  75%
+  {
+    -webkit-transform: rotate(-2deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoHoleOpen
+{
+  0%
+  {
+    -webkit-transform: scale(0);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes CampaignSumoHoleClose
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoTouchIcon
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  6.67%
+  {
+    -webkit-transform: translate(-11px, -6px);
+  }
+
+  13.33%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  20%
+  {
+    -webkit-transform: translate(-11px, -6px);
+  }
+
+  26.67%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoVsCutin
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  25%
+  {
+    opacity: 1;
+  }
+
+  75%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoVsNameLeft
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  80%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(-240px, -90px);
+  }
+}
+
+@-webkit-keyframes CampaignSumoVsNameRight
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  80%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(240px, -90px);
+  }
+}
+
+@-webkit-keyframes CampaignSumoVsNameRightChange1
+{
+  0%
+  {
+    -webkit-transform: translate(240px, -90px) scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+
+  35%
+  {
+    -webkit-transform: translate(240px, -90px) scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: translate(240px, -80px) scaleY(0.1) scaleX(2.5);
+    opacity: 1;
+  }
+
+  90%
+  {
+    -webkit-transform: translate(240px, -80px) scaleY(0) scaleX(2.5);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(240px, -80px) scaleY(0) scaleX(2.5);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoVsNameRightChange2
+{
+  0%
+  {
+    -webkit-transform: translate(240px, -300px) scaleY(1);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: translate(240px, -300px) scaleY(1);
+    opacity: 0;
+  }
+
+  60%
+  {
+    -webkit-transform: translate(240px, -100px) scaleY(0.5);
+    opacity: 1;
+  }
+
+  90%
+  {
+    -webkit-transform: translate(240px, -90px) scaleY(1.1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(240px, -90px) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes CampaignSumoStartText1
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+  }
+
+  50%
+  {
+    -webkit-transform: scale(1.2);
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes CampaignSumoStartText2
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+
+  12%
+  {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+
+  36%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  48%
+  {
+    -webkit-transform: scale(1.5);
+    opacity: 1;
+  }
+
+  56%
+  {
+    -webkit-transform: scale(0.7);
+    opacity: 1;
+  }
+
+  64%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  68%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  84%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoStartText2_draw
+{
+  0%
+  {
+    -webkit-transform: scale(1) rotate(0);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(1) rotate(-5deg);
+    opacity: 1;
+  }
+
+  45%
+  {
+    -webkit-transform: scale(2) rotate(-5deg);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: scale(1.5) rotate(7deg);
+    opacity: 1;
+  }
+
+  75%
+  {
+    -webkit-transform: scale(2.5) rotate(7deg);
+    opacity: 1;
+  }
+
+  90%
+  {
+    -webkit-transform: scale(2) rotate(-10deg);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(3) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoFinishCutin
+{
+  0%
+  {
+    opacity: 1;
+  }
+
+  50%
+  {
+    opacity: 1;
+  }
+
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes CampaignSumoLosePlayer
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(90deg);
+  }
+}
+
+@-webkit-keyframes CampaignSumoLoseEnemy
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes CampaignSumoMainCutin
+{
+  0%
+  {
+    -webkit-transform: translateX(0.5);
+    opacity: 0;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoCharaTrap
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  80%
+  {
+    -webkit-transform: translate(0, 500px);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 500px);
+  }
+}
+
+@-webkit-keyframes CampaignSumoCharaShout
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  10%
+  {
+    -webkit-transform: translate(-5px, -6px);
+  }
+
+  20%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  30%
+  {
+    -webkit-transform: translate(5px, -6px);
+  }
+
+  40%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  50%
+  {
+    -webkit-transform: translate(-5px, -6px);
+  }
+
+  60%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  70%
+  {
+    -webkit-transform: translate(5px, -6px);
+  }
+
+  80%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+
+  90%
+  {
+    -webkit-transform: translate(-5px, -6px);
+  }
+
+  100%
+  {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes CampaignSumoCollisionText1
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+
+  80%
+  {
+    -webkit-transform: translate(-15px, -20px) scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(-15px, -20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoCollisionText2
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+
+  50%
+  {
+    -webkit-transform: translate(5px, -50px) scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(5px, -50px) scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoCollisionText3
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+
+  80%
+  {
+    -webkit-transform: translate(15px, -15px) scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(15px, -15px) scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoCollisionText4
+{
+  0%
+  {
+    -webkit-transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+
+  80%
+  {
+    -webkit-transform: translate(-8px, -5px) scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: translate(-8px, -5px) scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoMainTouchEffect
+{
+  0%
+  {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes CampaignSumoMainResultWinText
+{
+  0%
+  {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  30%
+  {
+    -webkit-transform: scale(1.067);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: scale(1.6);
+    opacity: 1;
+  }
+
+  60%
+  {
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes CampaignSumoMainResultWinEffect
+{
+  0%
+  {
+    -webkit-transform: rotate(0);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes CampaignSumoMainCollisionToge
+{
+  0%
+  {
+    opacity: 0;
+  }
+
+  10%
+  {
+    opacity: 1;
+  }
+
+  40%
+  {
+    opacity: 1;
+  }
+
+  50%
+  {
+    opacity: 0;
+  }
+
+  100%
+  {
+    opacity: 0;
+  }
+}
