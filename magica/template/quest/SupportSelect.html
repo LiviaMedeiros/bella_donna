@@ -23,8 +23,12 @@
 	<%="<% } %\>"%>
 
 	<%="<% if(model.chapterNoForView) { %\>"%>
+		<%="<% if(model.noDispStoryNum) { %\>"%>
+		<p class="chapterTitle c_white"><%="<%= model.chapterNoForView %\>"%></p>
+		<%="<% } else { %\>"%>
 		<p class="chapterTitle c_white"><%="<%= model.chapterNoForView %\>"%></p>
 		<p class="sectionTitle c_purple"><%="<%= model.genericIndex %\>"%>話</p>
+		<%="<% } %\>"%>
 	<%="<% } else if(model.eventObj || model.eventFlag) { %\>"%>
 		<p class="chapterTitle c_white event">期間限定</p>
 	<%="<% } else if(!model.weekText) { %\>"%>
