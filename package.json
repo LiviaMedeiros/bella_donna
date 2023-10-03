@@ -1,0 +1,21 @@
+{
+  "name": "bella_donna",
+  "type": "module",
+  "exports": {
+    ".": "./BellaDonna.mjs"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiviaMedeiros/bella_donna.git"
+  },
+  "author": {
+    "name": "LiviaMedeiros",
+    "email": "livia@cirno.name",
+    "url": "https://github.com/LiviaMedeiros"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "js-beautify": "^1.14.9"
+  }
+}

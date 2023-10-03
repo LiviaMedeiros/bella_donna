@@ -1,0 +1,31 @@
+name: bella_donna
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '9 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  bella_donna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+      - run: ./BellaDonna.mjs
+        env:
+          BELLADONNA_BASE: ${{ secrets.BELLADONNA_BASE }}
+          BELLADONNA_PATH: ${{ secrets.BELLADONNA_PATH }}
+      - run: |
+          GIT_DATE="$(cat Last-Modified)"
+          echo "GIT_AUTHOR_DATE=${GIT_DATE}" >> ${GITHUB_ENV}
+          echo "GIT_COMMITTER_DATE=${GIT_DATE}" >> ${GITHUB_ENV}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: upd
+          commit_user_name: LiviaMedeiros
+          commit_user_email: livia@cirno.name
