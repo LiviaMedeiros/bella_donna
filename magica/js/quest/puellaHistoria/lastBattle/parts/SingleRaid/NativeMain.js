@@ -33,12 +33,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     },
     setNativeObj: function(a)
     {
-      var m = this;
+      var f = this;
       a = a.model;
       $("#commandDiv").off();
       $("#commandDiv").on("nativeCallback", function(a, e)
       {
-        e && (d.startSe(1002), m.tapPoint(
+        e && (d.startSe(1002), f.tapPoint(
         {
           pointId: e.pointId
         }));
@@ -91,28 +91,28 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       this.remove()
     }
   });
-  var p = function(a, m)
+  var p = function(a, f)
     {
-      for (var g = [], e = "END" !== m ? "touches" : "changedTouches", f = 0; f < a.originalEvent[e].length; f++)
+      for (var m = [], e = "END" !== f ? "touches" : "changedTouches", g = 0; g < a.originalEvent[e].length; g++)
       {
-        var b = a.originalEvent[e][f].identifier;
+        var b = a.originalEvent[e][g].identifier;
         0 > b && (b = -b);
-        g[f] = {
+        m[g] = {
           identifier: b,
-          clientX: 1024 === c.displayWidth ? a.originalEvent[e][f].clientX : 1024 * a.originalEvent[e][f].clientX / 1280,
-          clientY: 1024 === c.displayWidth ? a.originalEvent[e][f].clientY : 1024 * a.originalEvent[e][f].clientY / 1280
+          clientX: 1024 === c.displayWidth ? a.originalEvent[e][g].clientX : 1024 * a.originalEvent[e][g].clientX / 1280,
+          clientY: 1024 === c.displayWidth ? a.originalEvent[e][g].clientY : 1024 * a.originalEvent[e][g].clientY / 1280
         }
       }
-      switch (m)
+      switch (f)
       {
         case "START":
-          d.callTouchesBegin(g);
+          d.callTouchesBegin(m);
           break;
         case "MOVE":
-          d.callTouchesMove(g);
+          d.callTouchesMove(m);
           break;
         case "END":
-          d.callTouchesEnd(g)
+          d.callTouchesEnd(m)
       }
     },
     x = q.View.extend(
@@ -168,20 +168,19 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     },
     t = function(a)
     {
-      var c = Number(a.pointId) - 10;
+      var f = Number(a.pointId) - 10;
       if ($("#mainSec #battleInfoSec")[0]) k = !1, $("#battleInfoSec").removeClass("show"), $("#battleInfoSec").addClass("hide"), d.startSe(1003);
       else
       {
-        var g = {};
+        var c = {};
         l.each(b.questInfo.questInfoList, function(a, b, d)
         {
-          b == c && (a.battleNo = Number(c + 1), g = a)
+          b == f && (a.battleNo = Number(f + 1), c = a)
         });
-        k = !0;
-        n.battleInfoView = new v(
+        "LAST" == b.nativeModel.pointList[f].iconType ? location.href = "#/EventPuellaRaidTop" : (k = !0, n.battleInfoView = new v(
         {
-          model: g
-        })
+          model: c
+        }))
       }
     };
   return r

@@ -114,6 +114,7 @@ textarea:focus
 /* 汎用:角が斜めの背景 */
 .topRadiusStrights
 {
+  background: -o-linear-gradient(bottom, transparent 0px, #333333 0px), -o-linear-gradient(bottom, transparent 0px, #333333 0px), -o-linear-gradient(225deg, transparent 8px, #333333 8px), -o-linear-gradient(315deg, transparent 8px, #333333 8px);
   background: linear-gradient(0deg, transparent 0px, #333333 0px), linear-gradient(0deg, transparent 0px, #333333 0px), linear-gradient(225deg, transparent 8px, #333333 8px), linear-gradient(135deg, transparent 8px, #333333 8px);
   background-repeat: no-repeat;
   background-position: bottom left, bottom right, top right, top left;
@@ -122,6 +123,7 @@ textarea:focus
 
 .allRadiusStrights
 {
+  background: -o-linear-gradient(45deg, transparent 8px, #333333 8px), -o-linear-gradient(135deg, transparent 8px, #333333 8px), -o-linear-gradient(225deg, transparent 8px, #333333 8px), -o-linear-gradient(315deg, transparent 8px, #333333 8px);
   background: linear-gradient(45deg, transparent 8px, #333333 8px), linear-gradient(315deg, transparent 8px, #333333 8px), linear-gradient(225deg, transparent 8px, #333333 8px), linear-gradient(135deg, transparent 8px, #333333 8px);
   background-repeat: no-repeat;
   background-position: bottom left, bottom right, top right, top left;
@@ -350,8 +352,10 @@ textarea:focus
 .scrollWillChange
 {
   -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
   transition-timing-function: linear;
   -webkit-transition-duration: 0ms;
+  -o-transition-duration: 0ms;
   transition-duration: 0ms;
   will-change: transform;
 }
@@ -775,6 +779,7 @@ textarea:focus
   background: url("/magica/resource/image_web/common/chara/bg_chara_memoria_on_base.png") left 22px no-repeat;
   background-size: 600px -webkit-calc(100% - 30px);
   -webkit-transition: height 0.3s 0s ease-in-out;
+  -o-transition: height 0.3s 0s ease-in-out;
   transition: height 0.3s 0s ease-in-out;
   position: relative;
 }
@@ -4951,7 +4956,7 @@ textarea:focus
 {
   position: absolute;
   right: 50px;
-  top: -9px;
+  top: -10px;
 }
 
 #myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap
@@ -4974,316 +4979,112 @@ textarea:focus
   text-shadow: 3px 0px 3px #0e91ce, -3px 0px 3px #0e91ce, 0px 3px 3px #0e91ce, 0px -3px 3px #0e91ce, 3px 3px 3px #0e91ce, -3px 3px 3px #0e91ce, 3px -3px 3px #0e91ce, -3px -3px 3px #0e91ce;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking,
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking
 {
+  width: 99px;
+  height: 99px;
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_null.png");
-  background-size: 100%;
+  background-size: 100% 100%;
   position: absolute;
   bottom: 2px;
   right: 8px;
   display: block;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.onGoing,
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch.onGoing
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.onGoing
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_ongoing.png");
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankD1.myProfile
 {
-  width: 130px;
-  height: 130px;
-  width: 99px;
-  height: 99px;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_1.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.idle
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankD2.myProfile
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_idle.png") left top no-repeat;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_2.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankD3.myProfile
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_0.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_3.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS1
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankC1.myProfile
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_1.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_1.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS2
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankC2.myProfile
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_2.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_2.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS3
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankC3.myProfile
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_0.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA1
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_1.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA2
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_2.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA3
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankB
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_0.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_3.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
 #myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankB1
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_1.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 #myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankB2
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_2.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
 #myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankB3
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_3.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch
-{
-  width: 130px;
-  height: 130px;
-  width: 99px;
-  height: 99px;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch.rankS
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_s.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch.rankA
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_a.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.rankMatch.rankB
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_b.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking
-{
-  width: 130px;
-  height: 130px;
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_null.png") left top no-repeat;
-  width: 99px;
-  height: 99px;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.idle
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_idle.png") left top no-repeat;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankS
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_0.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankS1
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_1.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankS2
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_2.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankS3
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankA
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_0.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankA1
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA1
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_1.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankA2
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA2
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_2.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankA3
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankA3
 {
   background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_3.png") left top no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankB
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS1
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_0.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_1.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankB1
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS2
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_1.png") left top no-repeat;
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_2.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankB2
+#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.ranking.rankS3
 {
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_2.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankB3
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankC
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_0.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankC1
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_1.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankC2
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_2.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankC3
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_c_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankD
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_0.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankD1
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_1.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankD2
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_2.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.ranking.rankD3
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_d_3.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch
-{
-  width: 130px;
-  height: 130px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_null.png") left top no-repeat;
-  width: 99px;
-  height: 99px;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch.rankS
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_s.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch.rankA
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_a.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch.rankB
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_b.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch.rankC
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_c.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.rankMatch.rankD
-{
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/emblem/emblem_d.png") left top no-repeat;
-  background-size: 100%;
-}
-
-#myProfile #followerParamDetail .detailMainWrap .detailWrap2 .markWrap.myself.onGoing
-{
-  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_ongoing.png");
-  background-size: 100%;
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_3.png") left top no-repeat;
+  background-size: 100% 100%;
 }
 
 #myProfile #followerParamDetail .detailMainWrap .detailWrap2 .arenaParams
@@ -8566,12 +8367,6 @@ textarea:focus
   -webkit-animation-fill-mode: forwards;
 }
 
-#sideMenu.anim #sideBigBtns .globalScene0Btn
-{
-  -webkit-animation: common_globalBig_open .3s ease 0s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-}
-
 #sideMenu.anim #sideBigBtns .globalQuestBtn
 {
   -webkit-animation: common_globalBig_open .3s ease .03s 1 alternate;
@@ -8638,7 +8433,6 @@ textarea:focus
 {
   -webkit-transform: translateY(0px);
   opacity: 1;
-  pointer-events: none !important;
 }
 
 #sideMenu.close #menuBtns .unit
@@ -8691,12 +8485,6 @@ textarea:focus
 }
 
 #sideMenu.close #sideBigBtns .globalPatrolBtn
-{
-  -webkit-animation: common_globalBig_close .3s ease .1s 1 alternate;
-  -webkit-animation-fill-mode: forwards;
-}
-
-#sideMenu.close #sideBigBtns .globalScene0Btn
 {
   -webkit-animation: common_globalBig_close .3s ease .1s 1 alternate;
   -webkit-animation-fill-mode: forwards;
@@ -8861,7 +8649,7 @@ textarea:focus
 
 #sideMenu #menuBtns .unit
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_unit.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_unit.png");
   background-size: contain;
   top: 57px;
   opacity: 0;
@@ -8870,7 +8658,7 @@ textarea:focus
 
 #sideMenu #menuBtns .innocent
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_memoria.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_memoria.png");
   background-size: contain;
   top: calc(57px - -88px);
   opacity: 0;
@@ -8879,7 +8667,7 @@ textarea:focus
 
 #sideMenu #menuBtns .team
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_team.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_team.png");
   background-size: contain;
   top: calc(57px - -88px*2);
   opacity: 0;
@@ -8888,7 +8676,7 @@ textarea:focus
 
 #sideMenu #menuBtns .gacha
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_gacha.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_gacha.png");
   background-size: contain;
   top: calc(57px - -88px*3);
   opacity: 0;
@@ -8897,7 +8685,7 @@ textarea:focus
 
 #sideMenu #menuBtns .mission
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_mission.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_mission.png");
   background-size: contain;
   top: calc(57px - -88px*4);
   opacity: 0;
@@ -8906,7 +8694,7 @@ textarea:focus
 
 #sideMenu #menuBtns .shop
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_shop.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_shop.png");
   background-size: contain;
   top: calc(57px - -88px*5);
   opacity: 0;
@@ -8915,7 +8703,7 @@ textarea:focus
 
 #sideMenu #menuBtns .shop2
 {
-  background-image: url("/magica/resource/image_web/common/global/update2/global_shop.png");
+  background-image: url("/magica/resource/image_web/common/global/update/global_shop.png");
   background-size: contain;
   top: calc(57px - -88px*6);
   opacity: 0;
@@ -8950,8 +8738,8 @@ textarea:focus
   height: auto;
   min-height: 66px;
   position: absolute;
-  right: 90px;
-  top: -webkit-calc(100% - 90px);
+  right: 100px;
+  top: -webkit-calc(100% - 88px);
   pointer-events: none;
   opacity: 0;
   z-index: 10000;
@@ -8961,8 +8749,8 @@ textarea:focus
 {
   width: 186px;
   height: 88px;
-  right: 183px;
-  top: -webkit-calc(100% - 347px);
+  right: 250px;
+  top: -webkit-calc(100% - 318px);
 }
 
 #sideMenu #sideBigBtns .campaignBadgeWrap.ARENA img
@@ -9043,29 +8831,26 @@ textarea:focus
   width: 128px;
   height: auto;
   position: absolute;
-  right: 92px;
-  top: -webkit-calc(100% - 270px);
+  right: 102px;
+  top: -webkit-calc(100% - 255px);
   z-index: 10000;
 }
 
-#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking,
-#sideMenu #sideBigBtns .eventBadgeWrap.arenarankmatch
+#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking
 {
-  right: 282px;
-  top: -webkit-calc(100% - 360px);
-  width: 90px;
+  right: 342px;
+  top: -webkit-calc(100% - 332px);
+  width: 110px;
 }
 
-#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking .endAtText,
-#sideMenu #sideBigBtns .eventBadgeWrap.arenarankmatch .endAtText
+#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking .endAtText
 {
   display: none;
 }
 
-#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking img,
-#sideMenu #sideBigBtns .eventBadgeWrap.arenarankmatch img
+#sideMenu #sideBigBtns .eventBadgeWrap.arenaranking img
 {
-  width: 90px;
+  width: 110px;
 }
 
 #sideMenu #sideBigBtns .eventBadgeWrap.touch
@@ -9087,22 +8872,22 @@ textarea:focus
 
 #sideMenu #sideBigBtns .eventBadgeWrap.regularevent
 {
-  right: 257px;
-  top: -webkit-calc(100% - 172px);
+  right: 347px;
+  top: -webkit-calc(100% - 169px);
   width: 110px;
 }
 
 #sideMenu #sideBigBtns .eventBadgeWrap.regularevent .endAtText
 {
   width: 118px;
-  left: 5px;
-  bottom: 8px;
+  left: 12px;
+  bottom: 21px;
 }
 
 #sideMenu #sideBigBtns .eventBadgeWrap.patrol
 {
-  right: 94px;
-  top: -webkit-calc(100% - 374px);
+  right: 122px;
+  top: -webkit-calc(100% - 360px);
   width: 140px;
 }
 
@@ -9126,8 +8911,8 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn div
 {
-  width: 100px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   position: absolute;
   top: 3px;
   left: 2px;
@@ -9136,8 +8921,8 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn div.overlayOn:before
 {
-  width: 100px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   background: url("/magica/resource/image_web/common/global/global_bigBtn_hover.png");
   background-position: 6px 0;
   background-size: contain;
@@ -9152,30 +8937,30 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalPatrolBtn
 {
-  width: 100px;
-  height: 110px;
+  width: 120px;
+  height: 130px;
   background-image: url("/magica/resource/image_web/common/global/global_patrol_a.png");
   background-size: contain;
-  top: -webkit-calc(100% - 350px);
-  right: 114px;
+  top: -webkit-calc(100% - 130px - 212px);
+  right: 160px;
   z-index: 20;
 }
 
 #sideMenu #sideBigBtns .globalBigBtn.globalBattleBtn
 {
-  width: 100px;
-  height: 110px;
+  width: 130px;
+  height: 140px;
   background-image: url("/magica/resource/image_web/common/global/global_battle.png");
   background-size: contain;
-  top: -webkit-calc(100% - 320px);
-  right: 214px;
+  top: -webkit-calc(100% - 140px - 140px);
+  right: 273px;
   z-index: 20;
 }
 
 #sideMenu #sideBigBtns .globalBigBtn.globalBattleBtn div
 {
-  width: 100px;
-  height: 110px;
+  width: 130px;
+  height: 140px;
   position: absolute;
   top: 6px;
   left: 5px;
@@ -9183,8 +8968,8 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalBattleBtn div.overlayOn:before
 {
-  width: 100px;
-  height: 110px;
+  width: 130px;
+  height: 140px;
   background: url("/magica/resource/image_web/common/global/global_bigBtn_hover.png");
   background-position: 6px 0;
   background-size: contain;
@@ -9217,12 +9002,12 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalRegularEventBtn
 {
-  width: 100px;
-  height: 110px;
+  width: 120px;
+  height: 130px;
   background-image: url("/magica/resource/image_web/common/global/global_nothing.png");
   background-size: contain;
-  top: -webkit-calc(100% - 240px);
-  right: 282px;
+  top: -webkit-calc(100% - 130px - 20px);
+  right: 330px;
   z-index: 20;
 }
 
@@ -9257,19 +9042,19 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalQuestBtn
 {
-  width: 150px;
-  height: 164px;
+  width: 172px;
+  height: 189px;
   background-image: url("/magica/resource/image_web/common/global/global_quest.png");
   background-size: contain;
   top: -webkit-calc(100% - 189px);
-  right: 116px;
+  right: 125px;
   z-index: 20;
 }
 
 #sideMenu #sideBigBtns .globalBigBtn.globalQuestBtn div
 {
-  width: 150px;
-  height: 150px;
+  width: 172px;
+  height: 172px;
   position: absolute;
   top: 6px;
   left: 5px;
@@ -9277,45 +9062,11 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalQuestBtn div.overlayOn:before
 {
-  width: 150px;
-  height: 150px;
+  width: 172px;
+  height: 172px;
   background: url("/magica/resource/image_web/common/global/global_bigBtn_hover.png");
   background-position: 6px 0;
   background-size: contain;
-}
-
-#sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn
-{
-  width: 100px;
-  height: 110px;
-  background-image: url("/magica/resource/image_web/common/global/global_scene0.png");
-  background-size: contain;
-  top: -webkit-calc(100% - 136px);
-  right: 310px;
-  z-index: 20;
-}
-
-#sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn div.btnOverlay
-{
-  z-index: 21;
-}
-
-#sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn .balloon
-{
-  background: url("/magica/resource/image_web/common/global/event_pop.png") left top no-repeat;
-  width: 122px;
-  height: 52px;
-  position: absolute;
-  top: 72px;
-  left: 14px;
-}
-
-#sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn .balloon .text
-{
-  display: inline-block;
-  text-align: center;
-  width: 122px;
-  margin: 16px 0 0 0;
 }
 
 #sideMenu .homeBtn
@@ -9907,46 +9658,6 @@ textarea:focus
 .b_puellaHistoria:after
 {
   background: url("/magica/resource/image_web/page/quest/puellaHistoria/top/btn_turquoise_r.png") left top no-repeat;
-}
-
-.b_scene0
-{
-  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_c.png") center top no-repeat;
-  background-size: -webkit-calc(100% - 46px) 52px;
-}
-
-.b_scene0.btn
-{
-  min-width: 158px;
-  height: 52px;
-  line-height: 48px;
-  font-size: 120%;
-}
-
-.b_scene0,
-.b_scene0 span
-{
-  color: #ffffff;
-  text-shadow: -1px -1px 2px #4cc002, 1px -1px 2px #4cc002, -1px 1px 2px #4cc002, 1px 1px 2px #4cc002, -1px -1px 2px #4cc002, 1px -1px 2px #4cc002, -1px 1px 2px #4cc002, 1px 1px 2px #4cc002;
-}
-
-.b_scene0:before,
-.b_scene0:after
-{
-  width: 30px;
-  height: 52px;
-}
-
-.b_scene0:before
-{
-  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_l.png") left top no-repeat;
-  background-size: cover;
-}
-
-.b_scene0:after
-{
-  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_r.png") left top no-repeat;
-  background-size: cover;
 }
 
 .mb_white,
@@ -11754,6 +11465,7 @@ textarea:focus
   position: relative;
   overflow: hidden;
   -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
   transition: all .3s ease;
   z-index: 10;
 }
@@ -13018,6 +12730,7 @@ textarea:focus
   width: 640px;
   height: -webkit-calc(100% - 117px);
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(10%, rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.6) 100%);
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0.6) 100%);
   position: fixed;
   top: 117px;

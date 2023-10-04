@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon ajaxControl text!template/quest/QuestResult.html cardUtil command QuestUtil js/view/quest/QuestResultUnitPartView js/view/chara/CharaResultView js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(l, x, a, r, G, q, h, A, B, u, H, E, C)
+define("underscore backbone backboneCommon ajaxControl text!template/quest/QuestResult.html cardUtil command QuestUtil js/view/quest/QuestResultUnitPartView js/view/chara/CharaResultView js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(l, x, a, r, F, q, h, A, B, u, G, H, C)
 {
   var d, t = x.Model.extend(),
     w = {},
@@ -70,17 +70,14 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               k = !1, "EVENT_S" == m && (c = "#/EventTrainingTop/" + e, a.historyArr = ["MyPage", "EventTrainingTop"]), void 0 !== b.section.dayOfTheWeekQuestType && (c = "#/EventQuest/" + e, a.historyArr = ["MyPage", "EventQuest"]), "TOWER" == m && (p = null, p = 1 == b.section.genericIndex ? "/normal/" + e : "/challenge/" + e, c = "#/EventTowerTop", p && (c += p), a.historyArr = ["MyPage", "EventTowerTop"]), "DAILYTOWER" == m && (p = b.section.parameter.split("=")[1], c = "#/EventDailyTowerTop", p && (c += "/" + p.toLowerCase() + "/" + e), a.historyArr = ["MyPage", "EventDailyTowerTop"]), "BRANCH" == m && (c = "#/EventBranchTop/" + e, a.historyArr = ["MyPage", "EventBranchTop"]), "SINGLERAID" == m && (c = "#/EventSingleRaidTop/" + e, a.historyArr = ["MyPage", "EventSingleRaidTop"], a.resumeData && (a.eventSingleRaidResumeData = a.resumeData)), "STORYRAID" == m && (c = "#/EventStoryRaidTop/" + e, a.historyArr = ["MyPage", "EventStoryRaidTop"], a.resumeData && (a.eventStoryRaidResumeData = a.resumeData)), "ACCOMPLISH" == m && (c = "#/EventAccomplishTop", a.historyArr = ["MyPage", "EventAccomplishTop"]), "REG_ACC" == m && (c = "#/RegularEventAccomplishTop/" + e, a.historyArr = ["MyPage", "RegularEventAccomplishTop"]), "DUNGEON" == m && (c = "#/EventDungeonMap", a.historyArr = ["MyPage", "EventDungeonMap"]), "EXTERMINATION" == m && (c = "#/RegularEventExterminationBattleSelect/" + e, a.historyArr = ["MyPage", "RegularEventExterminationTop", "RegularEventExterminationBattleSelect"])
           }
           a.clearSectionModel || a.clearChapterModel || !k || (c = "#/QuestBattleSelect/" + d + "/" + e, console.log("セクション内に未クリアクエストがあります。選択画面に遷移します。"));
-          k = H.getIsPuellaHistoriaInfo(
+          k = G.getIsPuellaHistoriaInfo(
           {
             sectionInfo: b,
             sectionList: h.toJSON()
           });
-          k.isPuellaHistoria && (c = "#/QuestBattleSelect/" + k.sectionInfoList[k.sectionInfoList.length - 1].sectionId + "/" + e, a.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], k.num && k.num == E.getPuellaHistoriaLastBattleNum(
+          k.isPuellaHistoria && (c = "#/QuestBattleSelect/" + k.sectionInfoList[k.sectionInfoList.length - 1].sectionId + "/" + e, a.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], k.num && k.num == H.getPuellaHistoriaLastBattleNum(
           {
             type: "singleRaid"
-          }) && (c = "#/PuellaHistoriaSingleRaid"), k.num && k.num == E.getPuellaHistoriaLastBattleNum(
-          {
-            type: "singleRaidLast"
           }) && (c = "#/PuellaHistoriaSingleRaid"));
           C.getIsScene0Info(
           {
@@ -172,7 +169,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       initialize: function(b)
       {
         this.listenTo(this, "remove", this.removeView);
-        this.template = l.template(G);
+        this.template = l.template(F);
         this.questDisableFlg = !1;
         a.setTitleCollectionObserved();
         if (this.model && this.model.userQuestBattleResultList)
@@ -188,7 +185,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           J(this.model);
           this.nextPage = I(this.model);
           this.questLoopStatus = "none";
-          if (this.canRetry = K(this.model)) this.questLoopStatus = A.getQuestLoopStatus(a.questBattleModel), A.supportPickUp(this.newestModel), L();
+          if (this.canRetry = K(this.model)) this.questLoopStatus = A.getQuestLoopStatus(a.questBattleModel), A.supportPickUp(this.newestModel),
+            L();
           q.createCardList();
           this.allInitialized();
           this.createDom()
@@ -607,10 +605,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           b.preventDefault();
           a.isScrolled() || void 0 === b.target.dataset.att || (a.removeClass(a.doc.getElementById("popupArea").getElementsByClassName("touchWrap")[0].getElementsByClassName("current")[0], "current"), a.addClass(b.target, "current"), a.doc.getElementById("popupArea").getElementsByClassName("unitWrap")[0].className = "unitWrap " + b.target.dataset.att)
         });
-        var F = function(b)
+        var E = function(b)
         {
           b.preventDefault();
-          a.isScrolled() || (a.doc.getElementById("followDecide").removeEventListener(a.cgti, F), r.ajaxPost(a.linkList.sendFollow,
+          a.isScrolled() || (a.doc.getElementById("followDecide").removeEventListener(a.cgti, E), r.ajaxPost(a.linkList.sendFollow,
           {
             friendUserId: d.userQuestResult.helpUserId
           }, function(b)
@@ -627,7 +625,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             }, d.levelUpFunc), a.responseSetStorage(b))
           }))
         };
-        a.doc.getElementById("followDecide").addEventListener(a.cgti, F)
+        a.doc.getElementById("followDecide").addEventListener(a.cgti, E)
       },
       levelUpFunc: function()
       {

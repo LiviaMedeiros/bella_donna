@@ -1,15 +1,13 @@
-define(["underscore", "backbone", "backboneCommon", "QuestUtil", "js/quest/puellaHistoria/CreateModel"], function(g, n, e, m, h)
+define(["underscore", "backbone", "backboneCommon", "QuestUtil", "js/quest/puellaHistoria/CreateModel"], function(h, m, e, l, f)
 {
-  var f = {
-    getPuellaHistoriaLastBattleNum: function(a)
+  var g = {
+    getPuellaHistoriaLastBattleNum: function(b)
     {
-      a = a.type;
       var c = 991;
-      "groupRaid" == a && (c = 992);
-      "singleRaidLast" == a && (c = 993);
+      "groupRaid" == b.type && (c = 992);
       return c
     },
-    getDeckType: function(a)
+    getDeckType: function(b)
     {
       return 110
     },
@@ -125,133 +123,100 @@ define(["underscore", "backbone", "backboneCommon", "QuestUtil", "js/quest/puell
         }]
       }
     },
-    getSingleRaidQuestInfo: function(a)
+    getSingleRaidQuestInfo: function(b)
     {
-      a = a.pageJson;
-      var c = {},
-        c = h.getPuellaHistoriaInfo(
+      b = b.pageJson;
+      return f.getPuellaHistoriaInfo(
+      {
+        puellaHistoriaNum: g.getPuellaHistoriaLastBattleNum(
         {
-          puellaHistoriaNum: f.getPuellaHistoriaLastBattleNum(
-          {
-            type: "singleRaid"
-          }),
-          pageJson: a
+          type: "singleRaid"
         }),
-        b = h.getPuellaHistoriaInfo(
-        {
-          puellaHistoriaNum: f.getPuellaHistoriaLastBattleNum(
-          {
-            type: "singleRaidLast"
-          }),
-          pageJson: a
-        });
-      g.each(b.sectionInfoList, function(b, a, d)
-      {
-        c.sectionInfoList.push(b)
-      });
-      g.each(b.questInfoList, function(b, a, d)
-      {
-        c.questInfoList.push(b)
-      });
-      var d = e.campaignParse(a.campaignList);
-      g.each(c.questInfoList, function(b, a, l)
-      {
-        g.each(c.sectionInfoList, function(a, c, k)
-        {
-          b.questBattle.sectionId == a.sectionId && (a = f.getOverwriteApInfo(
-          {
-            campaignData: d,
-            sectionModel: a,
-            questBattleModel: b
-          }), a.halfAp && (b.halfAp = a.halfAp, b.overwriteAp = a.halfAp), a.freeAtNotClear && (b.campaignFreeAtNotClear = a.freeAtNotClear, b.overwriteAp = 0))
-        })
-      });
-      return c
+        pageJson: b
+      })
     },
-    isClearSingleRaid: function(a)
+    isClearSingleRaid: function(b)
     {
-      a = a.singleRaidQuestList;
+      b = b.singleRaidQuestList;
       var c = !1,
-        b = a.sectionInfoList.length;
-      0 < b && a.sectionInfoList[b - 1].cleared && (c = !0);
+        a = b.sectionInfoList.length;
+      0 < a && b.sectionInfoList[a - 1].cleared && (c = !0);
       return c
     },
-    isClearCommonStory: function(a)
+    isClearCommonStory: function(b)
     {
-      return h.isCommonStoryLastAlreadyWatch(
+      return f.isCommonStoryLastAlreadyWatch(
       {
-        commonStoryInfo: h.getPuellaHistoriaInfo(
+        commonStoryInfo: f.getPuellaHistoriaInfo(
         {
           puellaHistoriaNum: 99,
-          pageJson: a.pageJson
+          pageJson: b.pageJson
         })
       })
     },
-    getCommonQuestBattleModel: function(a)
+    getCommonQuestBattleModel: function(b)
     {
-      var c = a.sectionModel,
-        b = a.questBattleModel;
-      a = a.userQuestAdventureList;
-      b.missionRewardCode = {
+      var c = b.sectionModel,
+        a = b.questBattleModel;
+      b = b.userQuestAdventureList;
+      a.missionRewardCode = {
         itemCode: "",
         rewardType: ""
       };
-      b.chestColor = "bronze_close";
-      b.questBattle.missionRewardCode && (b.missionRewardCode = e.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
-      "NONE" == b.questBattle.questBattleType && g.each([1, 2, 3], function(a, c, d)
+      a.chestColor = "bronze_close";
+      a.questBattle.missionRewardCode && (a.missionRewardCode = e.itemSet(a.questBattle.missionRewardCode), a.chestColor = a.missionRewardCode.chestColor);
+      "NONE" == a.questBattle.questBattleType && h.each([1, 2, 3], function(b, c, d)
       {
-        b.questBattle["missionMaster" + a] = {
+        a.questBattle["missionMaster" + b] = {
           description: ""
         }
       });
       var d = c.section;
-      b.questType = d.questType;
-      b.chapterNoForView = d.chapterNoForView;
-      b.genericIndex = d.genericIndex;
-      b.title = d.title;
-      b.battleTitle = "BATTLE " + b.battleNo;
-      b.userQuestAdventureList = a;
-      d.secret && (b.secret = d.secret);
-      b.ap = function()
+      a.questType = d.questType;
+      a.chapterNoForView = d.chapterNoForView;
+      a.genericIndex = d.genericIndex;
+      a.title = d.title;
+      a.battleTitle = "BATTLE " + a.battleNo;
+      a.userQuestAdventureList = b;
+      d.secret && (a.secret = d.secret);
+      a.ap = function()
       {
-        var a = d.ap;
-        b.questBattle.ap && (a = b.questBattle.ap);
-        b.overwriteAp && (a = b.overwriteAp);
-        b.campaignFreeAtNotClear && (a = 0);
-        return a
+        var b = d.ap;
+        a.questBattle.ap && (b = a.questBattle.ap);
+        a.overwriteAp && (b = a.overwriteAp);
+        a.campaignFreeAtNotClear && (b = 0);
+        return b
       }();
-      b.difficulty = d.difficulty ? d.difficulty : b.questBattle.difficulty;
-      c = h.getIsPuellaHistoriaInfo(
+      a.difficulty = d.difficulty ? d.difficulty : a.questBattle.difficulty;
+      f.getIsPuellaHistoriaInfo(
       {
         sectionInfo: c
-      });
-      c.isPuellaHistoria && (b.chapterNoForView = "-");
-      !c.num || 991 != c.num && 993 != c.num || (b.noDispStoryNum = !0);
-      b.rewardCodeArr = [];
-      c = m.dropItemJson(b);
-      c.firstClearReward && (b.firstClearReward = c.firstClearReward);
-      c.firstClearRewardName && (b.firstClearRewardName = c.firstClearRewardName);
-      c.firstClearRewardQuantity && (b.firstClearRewardQuantity = c.firstClearRewardQuantity);
-      c.addDropItem && (b.addDropItem = c.addDropItem);
-      c.addDropItemName && (b.addDropItemName = c.addDropItemName);
-      c.addDropItemQuantity && (b.addDropItemQuantity = c.addDropItemQuantity);
-      b.rewardCodeArr = c.list;
-      b.rewardNameArr = c.nameList;
-      b.rewardQuantityArr = c.quantityList;
-      return b
+      }).isPuellaHistoria && (a.chapterNoForView = "-");
+      a.rewardCodeArr = [];
+      c = l.dropItemJson(a);
+      c.firstClearReward && (a.firstClearReward = c.firstClearReward);
+      c.firstClearRewardName && (a.firstClearRewardName = c.firstClearRewardName);
+      c.firstClearRewardQuantity && (a.firstClearRewardQuantity = c.firstClearRewardQuantity);
+      c.addDropItem && (a.addDropItem = c.addDropItem);
+      c.addDropItemName && (a.addDropItemName = c.addDropItemName);
+      c.addDropItemQuantity && (a.addDropItemQuantity = c.addDropItemQuantity);
+      a.rewardCodeArr = c.list;
+      a.rewardNameArr = c.nameList;
+      a.rewardQuantityArr = c.quantityList;
+      return a
     },
-    isEnoughAP: function(a)
+    isEnoughAP: function(b)
     {
-      a = a.needAP;
+      b = b.needAP;
       var c = e.globalMenuView.getUserStatus().ACP,
-        b = !1;
-      a && c >= a && (b = !0);
-      0 == a && (b = !0);
-      return b
+        a = !1;
+      b && c >= b && (a = !0);
+      0 == b && (a = !0);
+      return a
     },
-    getGroupRaidQuestInfo: function(a)
+    getGroupRaidQuestInfo: function(b)
     {
-      a = a.pageJson;
+      b = b.pageJson;
       var c = {
         sectionInfoList: [],
         questInfoList:
@@ -261,119 +226,93 @@ define(["underscore", "backbone", "backboneCommon", "QuestUtil", "js/quest/puell
           subBossList: []
         }
       };
-      a = h.getPuellaHistoriaInfo(
+      b = f.getPuellaHistoriaInfo(
       {
-        puellaHistoriaNum: f.getPuellaHistoriaLastBattleNum(
+        puellaHistoriaNum: g.getPuellaHistoriaLastBattleNum(
         {
           type: "groupRaid"
         }),
-        pageJson: a
+        pageJson: b
       });
-      c.sectionInfoList = a.sectionInfoList;
-      g.each(a.questInfoList, function(b, a, k)
+      c.sectionInfoList = b.sectionInfoList;
+      h.each(b.questInfoList, function(a, b, e)
       {
-        4 == b.questBattle.sectionIndex ? c.questInfoList.boss = b : c.questInfoList.subBossList.push(b)
+        4 == a.questBattle.sectionIndex ? c.questInfoList.boss = a : c.questInfoList.subBossList.push(a)
       });
       return c
     },
-    startQuest: function(a)
+    startQuest: function(b)
     {
-      var c = a.pageType,
-        b = a.battleType,
-        d = a.questBattleModel,
-        k = a.sectionModel,
-        g = a.userQuestAdventureList,
-        l = a.isUseItem;
-      e.questBattleModel = f.getCommonQuestBattleModel(
+      var c = b.pageType,
+        a = b.battleType,
+        d = b.questBattleModel,
+        f = b.sectionModel,
+        h = b.userQuestAdventureList,
+        k = b.isUseItem;
+      e.questBattleModel = g.getCommonQuestBattleModel(
       {
         questBattleModel: d,
-        sectionModel: k,
-        userQuestAdventureList: g
+        sectionModel: f,
+        userQuestAdventureList: h
       });
-      f.isEnoughAP(
+      g.isEnoughAP(
       {
         needAP: e.questBattleModel.ap
-      }) ? ("singleRaid" == c && (location.href = "#/SupportSelect"), "groupRaid" == c && (e.PuellaHistoriaLastBattleGroupRaidPrm.battleType = "sub", b && (e.PuellaHistoriaLastBattleGroupRaidPrm.battleType = b), e.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem = l, location.href = "#/DeckFormation/puellaHistoriaGroupRaid")) : e.globalMenuView.apPopup(null, "APが不足しています", function()
+      }) ? ("singleRaid" == c && (location.href = "#/SupportSelect"), "groupRaid" == c && (e.PuellaHistoriaLastBattleGroupRaidPrm.battleType = "sub", a && (e.PuellaHistoriaLastBattleGroupRaidPrm.battleType = a), e.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem = k, location.href = "#/DeckFormation/puellaHistoriaGroupRaid")) : e.globalMenuView.apPopup(null, "APが不足しています", function()
       {
-        f.startQuest(
+        g.startQuest(
         {
           pageType: c,
-          battleType: b,
+          battleType: a,
           questBattleModel: d,
-          sectionModel: k,
-          userQuestAdventureList: g,
-          isUseItem: l
+          sectionModel: f,
+          userQuestAdventureList: h,
+          isUseItem: k
         })
       })
     },
-    openFirstNavi: function(a)
+    openFirstNavi: function(b)
     {
-      var c = a.isForceOpen,
-        b = "puellaHistoriaSingleRaidOpenFirstNavi";
-      "groupRaid" == a.type && (b = "puellaHistoriaGroupRaidOpenFirstNavi");
-      localStorage.getItem(b) || (localStorage.setItem(b, "true"), c = !0);
+      var c = b.isForceOpen,
+        a = "puellaHistoriaSingleRaidOpenFirstNavi";
+      "groupRaid" == b.type && (a = "puellaHistoriaGroupRaidOpenFirstNavi");
+      localStorage.getItem(a) || (localStorage.setItem(a, "true"), c = !0);
       c && e.eventFirstNavi(["navi_01", "navi_02", "navi_03"], 1198, "puellaHistoriaLastBattle", function() {}, null, "puellaHistoriaLastBattle")
     },
-    setQuestBeforeDP: function(a)
+    setQuestBeforeDP: function(b)
     {
-      localStorage.setItem("puellaHistoriaLastBattleBeforeDP", Number(a.groupRaidPrm.beforeDP))
+      localStorage.setItem("puellaHistoriaLastBattleBeforeDP", Number(b.groupRaidPrm.beforeDP))
     },
-    setBossUseItemQuantity: function(a)
+    setBossUseItemQuantity: function(b)
     {
-      localStorage.setItem("puellaHistoriaLastBattleBossUseItemQuantity", Number(a.groupRaidPrm.bossUseItemQuantity))
+      localStorage.setItem("puellaHistoriaLastBattleBossUseItemQuantity", Number(b.groupRaidPrm.bossUseItemQuantity))
     },
-    getQuestResultDP: function(a)
+    getQuestResultDP: function(b)
     {
-      var c = a.groupRaidPrm;
-      a = a.pageJson;
-      var b = {
+      var c = b.groupRaidPrm;
+      b = b.pageJson;
+      var a = {
         beforeDP: 0,
         afterDP: 0,
         getDP: 0
       };
-      c && c.beforeDP && (b.beforeDP = Number(c.beforeDP));
-      if (c = localStorage.getItem("puellaHistoriaLastBattleBeforeDP")) b.beforeDP = Number(c);
-      a && a.userEventPuellaRaid && (b.afterDP = Number(a.userEventPuellaRaid.totalDevotionPoint));
-      b.beforeDP <= b.afterDP && (b.getDP = b.afterDP - b.beforeDP);
-      return b
+      c && c.beforeDP && (a.beforeDP = Number(c.beforeDP));
+      if (c = localStorage.getItem("puellaHistoriaLastBattleBeforeDP")) a.beforeDP = Number(c);
+      b && b.userEventPuellaRaid && (a.afterDP = Number(b.userEventPuellaRaid.totalDevotionPoint));
+      a.beforeDP <= a.afterDP && (a.getDP = a.afterDP - a.beforeDP);
+      return a
     },
-    isJoinEvent: function(a)
+    isJoinEvent: function(b)
     {
-      a = a.userQuestAdventureList;
-      var c = f.getStoryIdList().event[8].storyId,
-        b = !1;
-      g.each(a, function(a, g, e)
+      b = b.userQuestAdventureList;
+      var c = g.getStoryIdList().event[8].storyId,
+        a = !1;
+      h.each(b, function(b, e, f)
       {
-        a.adventureId == c && (b = !0)
+        b.adventureId == c && (a = !0)
       });
-      return b
-    },
-    isConstantLastBattleQuestBattleId: function(a)
-    {
-      var c = !1;
-      1041021 == a.questBattleId && (c = !0);
-      return c
-    },
-    getOverwriteApInfo: function(a)
-    {
-      var c = a.campaignData,
-        b = a.sectionModel,
-        d = a.questBattleModel,
-        e = null,
-        f = !1;
-      c && (c.FREE_AT_NOT_CLEAR && (0 < c.FREE_AT_NOT_CLEAR.sectionIds.length && 0 <= c.FREE_AT_NOT_CLEAR.sectionIds.indexOf(String(b.sectionId)) ? f = !0 : 0 < c.FREE_AT_NOT_CLEAR.chapterIds.length && 0 <= c.FREE_AT_NOT_CLEAR.chapterIds.indexOf(String(b.section.genericId)) ? f = !0 : !f && c.FREE_AT_NOT_CLEAR.questType && g.each(c.FREE_AT_NOT_CLEAR.questType, function(a, c)
-      {
-        if ("ALL" === a || a == b.section.questType) f = !0
-      })), c.HALF_AP && g.each(c.HALF_AP.questType, function(a, f)
-      {
-        if ("MAIN" == a || "SUB" == a) a == b.section.questType && (0 <= c.HALF_AP.chapterIds.indexOf(String(b.section.genericId)) || 0 === c.HALF_AP.chapterIds.length) && (e = Math.ceil(b.section.ap / 2), d.questBattle.ap && (e = Math.ceil(d.questBattle.ap / 2)));
-        else if ("ALL" == a || a == b.section.questType) e = Math.ceil(b.section.ap / 2), d.questBattle.ap && (e = Math.ceil(d.questBattle.ap / 2))
-      }));
-      a = {};
-      a.halfAp = e;
-      a.freeAtNotClear = f;
       return a
     }
   };
-  return f
+  return g
 });
