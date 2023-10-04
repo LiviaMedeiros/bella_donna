@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/user/MyPage.html text!css/user/MyPage.css js/view/user/BannerView cardUtil text!template/etc/EtcPopup.html js/etc/ConsentRules js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(p, z, a, l, e, C, D, A, E, F, G, J)
+define("underscore backbone backboneCommon ajaxControl command text!template/user/MyPage.html text!css/user/MyPage.css js/view/user/BannerView cardUtil text!template/etc/EtcPopup.html js/etc/ConsentRules js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(p, z, a, l, e, C, D, A, E, F, G, H)
 {
-  var m, q, g, c, f, u, r = null,
+  var m, q, f, c, g, u, r = null,
     t = null,
     y = z.View.extend(
     {
@@ -31,7 +31,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         this.$el.html(this.template(
         {
           leaderCardId: c ? c.displayCardId : 10011,
-          presentCount: f.presentCount ? f.presentCount : 0
+          presentCount: g.presentCount ? g.presentCount : 0
         }));
         return this
       },
@@ -42,20 +42,20 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         e.setWebView();
         l.getPageJson().notifyMessage && !a.notifyMessage && (a.notifyMessage = l.getPageJson().notifyMessage);
         a.tapBlock(!0);
-        g = this;
+        f = this;
         if (l.getPageJson().interrupt) a.setGlobalView();
         else
         {
-          f.loginBonusList && (a.loginBonus = f.loginBonusList);
-          f.loginBonusPeriod && (a.loginBonusPeriod = f.loginBonusPeriod);
-          f.campaignList && (a.campaignListLogin = f.campaignList);
-          f.loginBonusCampaign && (a.loginBonusCampaign = f.loginBonusCampaign);
-          f.loginBonusCampaignList && (a.loginBonusCampaignList = f.loginBonusCampaignList);
-          if (f.supportPoint && (a.supportPoint = f.supportPoint, f.supportBonus))
+          g.loginBonusList && (a.loginBonus = g.loginBonusList);
+          g.loginBonusPeriod && (a.loginBonusPeriod = g.loginBonusPeriod);
+          g.campaignList && (a.campaignListLogin = g.campaignList);
+          g.loginBonusCampaign && (a.loginBonusCampaign = g.loginBonusCampaign);
+          g.loginBonusCampaignList && (a.loginBonusCampaignList = g.loginBonusCampaignList);
+          if (g.supportPoint && (a.supportPoint = g.supportPoint, g.supportBonus))
           {
             var b = "ALL",
               d = 0;
-            p.each(f.supportBonus.attributeIdCountMap, function(a, c)
+            p.each(g.supportBonus.attributeIdCountMap, function(a, c)
             {
               a > d && (d = a, b = c)
             });
@@ -67,7 +67,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
             v = !1,
             h = !1,
             B = !1; - 1 < n.indexOf("userDailyChallengeList") && a.storage.userDailyChallengeList && (v = k = !0, a.storage.userDailyChallengeList.reset(), delete a.storage.userDailyChallengeList); - 1 < n.indexOf("userTotalChallengeList") && a.storage.userTotalChallengeList && (h = k = !0, a.storage.userTotalChallengeList.reset(), delete a.storage.userTotalChallengeList); - 1 < n.indexOf("userLimitedChallengeList") && a.storage.userLimitedChallengeList && (B = k = !0, a.storage.userLimitedChallengeList.reset(), delete a.storage.userLimitedChallengeList);
-          k && (n = {}, v && (n.userDailyChallengeList = f.userDailyChallengeList), h && (n.userTotalChallengeList = f.userTotalChallengeList), B && (n.userLimitedChallengeList = f.userLimitedChallengeList), a.responseSetStorage(n));
+          k && (n = {}, v && (n.userDailyChallengeList = g.userDailyChallengeList), h && (n.userTotalChallengeList = g.userTotalChallengeList), B && (n.userLimitedChallengeList = g.userLimitedChallengeList), a.responseSetStorage(n));
           a.setGlobalView();
           !a.loginBonusCampaign && !a.loginBonusCampaignList || this.loginBonusCampaignFlg || (a.loginBonusCampaignList || (a.loginBonusCampaignList = [], a.loginBonusCampaignList.push(a.loginBonusCampaign)), p.each(a.loginBonusCampaignList, function(b, d)
           {
@@ -86,10 +86,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
               a.loginBonusCampaignList[d].storyIds = k
             }
           }));
-          g.popupFlgs();
-          f.presentFlag && a.addClass(a.doc.getElementById("present"), "anim");
+          f.popupFlgs();
+          g.presentFlag && a.addClass(a.doc.getElementById("present"), "anim");
           this.setBanner();
-          c && 2 <= c.live2dList.length && (w.prototype.rootView = this, this.live2dListMake(), a.doc.querySelector("#live2dBtn").className = "TE se_decide", a.scrollSet("mypageWearScrollOuter", "scrollInner"));
+          c && 2 <= c.live2dList.length && (x.prototype.rootView = this, this.live2dListMake(), a.doc.querySelector("#live2dBtn").className = "TE se_decide", a.scrollSet("mypageWearScrollOuter", "scrollInner"));
           this.checkApCurePush()
         }
         a.setTitleCollectionObserved();
@@ -166,7 +166,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           b.innerHTML = "";
           if (0 < c.live2dList.length) p.each(c.live2dList, function(a, d)
           {
-            a = new w(
+            a = new x(
             {
               model: a
             });
@@ -174,7 +174,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           });
           else
           {
-            var d = new w(
+            var d = new x(
             {
               model:
               {
@@ -210,7 +210,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           c.live2dIndex += 1;
           c.live2dList[c.live2dIndex] || (c.live2dIndex = 0);
           this.live2dId = b = c.live2dList[c.live2dIndex].live2dId;
-          x(b, null, this.live2dPortrait);
+          w(b, null, this.live2dPortrait);
           this.live2dListMake()
         }
       },
@@ -227,7 +227,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           live2dId: b
         });
         this.live2dId = b = c.live2dList[c.live2dIndex].live2dId;
-        x(b, null, this.live2dPortrait)
+        w(b, null, this.live2dPortrait)
       },
       uiHideFunc: function(b)
       {
@@ -324,20 +324,20 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         }, F, function()
         {
           a.storage.gameUser && a.storage.gameUser.toJSON().closeFunctions && -1 < a.storage.gameUser.toJSON().closeFunctions.indexOf("FRIEND") && a.addClass(a.doc.getElementById("popupArea").getElementsByClassName("friendBtn")[0], ["grayScale", "limited"]);
-          window.isDebug && (f && f.currentTime && (a.doc.getElementById("backDoorCurrentTimeArea").textContent = "アクセス時:" + f.currentTime), a.doc.querySelector("#popupArea .backDoorBtn").addEventListener(a.cgti, g.backdoor))
+          window.isDebug && (g && g.currentTime && (a.doc.getElementById("backDoorCurrentTimeArea").textContent = "アクセス時:" + g.currentTime), a.doc.querySelector("#popupArea .backDoorBtn").addEventListener(a.cgti, f.backdoor))
         })
       },
       popupFlgs: function()
       {
         a.tapBlock(!0);
-        if (g.rewardReceiveFlg) g.rewardReceiveFlg = !0, rewardReceiveHandler(), a.tapBlock(!1);
-        else if (a.loginBonus && !g.loginBonusFlg) g.loginBonusFlg = !0, g.loginBonusHandler(), localStorage.removeItem("puellaHistoriaOutlinesPopupAlready");
-        else if (a.loginBonusCampaignList && !g.loginBonusCampaignFlg) a.loginBonusCampaignList[0].storyIds && 0 < a.loginBonusCampaignList[0].storyIds.length ? g.loginBonusStory() : g.campaignLoginCommon();
-        else if ("NOT_ANSWERED" !== f.gameUser.userReviewStatus || a.oneTimeReviewPopFlg || g.reviewFlg)
-          if (f.userWarning && !g.warningFlg) g.warningFlg = !0, g.warningPopHandler(), a.tapBlock(!1);
-          else if (void 0 === g.firstPopFlg)
+        if (f.rewardReceiveFlg) f.rewardReceiveFlg = !0, rewardReceiveHandler(), a.tapBlock(!1);
+        else if (a.loginBonus && !f.loginBonusFlg) f.loginBonusFlg = !0, f.loginBonusHandler(), localStorage.removeItem("puellaHistoriaOutlinesPopupAlready");
+        else if (a.loginBonusCampaignList && !f.loginBonusCampaignFlg) a.loginBonusCampaignList[0].storyIds && 0 < a.loginBonusCampaignList[0].storyIds.length ? f.loginBonusStory() : f.campaignLoginCommon();
+        else if ("NOT_ANSWERED" !== g.gameUser.userReviewStatus || a.oneTimeReviewPopFlg || f.reviewFlg)
+          if (g.userWarning && !f.warningFlg) f.warningFlg = !0, f.warningPopHandler(), a.tapBlock(!1);
+          else if (void 0 === f.firstPopFlg)
         {
-          if (void 0 === g.firstPopFlg)
+          if (void 0 === f.firstPopFlg)
           {
             a.loading.show();
             var b = 6E4 * (Date.parse(l.getPageJson().currentTime) / 6E4 | 0);
@@ -351,49 +351,53 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
               for (var d = a.storage.gameUser.get("announcementViewAt") ? Date.parse(a.storage.gameUser.get("announcementViewAt")) : -1, c = b.length, e = -1, h = Date.parse(l.getPageJson().currentTime); 0 < c;)
               {
                 c--;
-                var f = b[c].startAt.replace(/-/g, "/"),
+                var g = b[c].startAt.replace(/-/g, "/"),
                   m = b[c].endAt.replace(/-/g, "/"),
-                  f = Date.parse(f),
+                  g = Date.parse(g),
                   m = Date.parse(m);
-                if (d < f && h >= f && m > h)
+                if (d < g && h >= g && m > h)
                   if (b[c].displayOs && "ALL" === b[c].displayOs) e = b[c].id, c = 0;
                   else if (a.ua.android && "ANDROID" === b[c].displayOs || a.ua.ios && "IOS" === b[c].displayOs) e = b[c].id, c = 0
-              } - 1 < e ? (g.firstPopFlg = !0, g.announcePopup()) : (g.firstPopFlg = !1, a.loading.hide(), g.popupFlgs())
+              } - 1 < e ? (f.firstPopFlg = !0, f.announcePopup()) : (f.firstPopFlg = !1, a.loading.hide(), f.popupFlgs())
             })
           }
         }
-        else a.notifyMessage && !g.messageFlg ? (g.messageFlg = !0, g.messagePopHandler(), a.tapBlock(!1)) : !a.passWordNoticeFlg && a.storage.gameUser.get("passwordNotice") && a.storage.gameUser.toJSON().closeFunctions && -1 === a.storage.gameUser.toJSON().closeFunctions.indexOf("FRIEND") ? (a.passWordNoticeFlg = !0, g.passwordPopHandler()) : (b = function()
+        else a.notifyMessage && !f.messageFlg ? (f.messageFlg = !0, f.messagePopHandler(), a.tapBlock(!1)) : !a.passWordNoticeFlg && a.storage.gameUser.get("passwordNotice") && a.storage.gameUser.toJSON().closeFunctions && -1 === a.storage.gameUser.toJSON().closeFunctions.indexOf("FRIEND") ? (a.passWordNoticeFlg = !0, f.passwordPopHandler()) : (b = function()
         {
-          localStorage.getItem("watchPuellaHistoriaPrologue") ? (x(null, !0), a.tapBlock(!1)) : location.href = "#/PuellaHistoriaTop"
+          var b = !!localStorage.getItem("watchPuellaHistoriaPrologue");
+          localStorage.getItem("watchPuellaHistoriaEnding") ? (w(null, !0), a.tapBlock(!1)) : H.isJoinEvent(
+          {
+            userQuestAdventureList: g.userQuestAdventureList
+          }) ? location.href = "#/PuellaHistoriaTop" : b ? (w(null, !0), a.tapBlock(!1)) : location.href = "#/PuellaHistoriaTop"
         }, a.consentRulesFunctions(
         {}).isConsentRules(
         {}) ? b() : (G.init(
         {
-          pageJson: f,
+          pageJson: g,
           endCallback: b
         }).consentPopup(), a.tapBlock(!1)));
-        else g.reviewFlg = !0, g.reviewPopHandler(), a.tapBlock(!1)
+        else f.reviewFlg = !0, f.reviewPopHandler(), a.tapBlock(!1)
       },
       loginBonusHandler: function()
       {
         var b = function()
         {
-          g.popupFlgs()
+          f.popupFlgs()
         };
         require(["text!template/loginBonus/loginBonusPopupTemp.html"], function(d)
         {
           var c = p.sortBy(a.loginBonus, "day"),
             k = "loginBonusPop",
-            g = "ログインボーナス";
-          !c[0] || "S1" != c[0].pattern && "S2" != c[0].pattern || (k = "loginBonusPop startDash", g = "　");
+            f = "ログインボーナス";
+          !c[0] || "S1" != c[0].pattern && "S2" != c[0].pattern || (k = "loginBonusPop startDash", f = "　");
           var h = a.loginBonusPeriod,
-            f = a.doc.createElement("div");
+            g = a.doc.createElement("div");
           d = p.template(d);
           var m = a.supportPoint ? a.supportPoint : null,
             q = a.mostUseSupportAtt ? a.mostUseSupportAtt : "ALL";
           new a.PopupClass(
           {
-            title: g,
+            title: f,
             content: "",
             exClass: k,
             popupType: "typeB"
@@ -404,7 +408,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
               a.tapBlock(!1)
             }, 500)
           }, b);
-          f.innerHTML = d(
+          g.innerHTML = d(
           {
             gameUser: a.storage.gameUser.toJSON(),
             loginBonus: c,
@@ -413,9 +417,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
             helperAtt: q,
             currentTime: l.getPageJson().currentTime
           });
-          a.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(f);
+          a.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(g);
           e.getBaseData(a.getNativeObj());
-          f = null
+          g = null
         })
       },
       campaignLoginCommon: function()
@@ -426,8 +430,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           {
             a.loginBonusCampaignList.splice(0, 1);
             a.androidKeyStop = !1;
-            0 === a.loginBonusCampaignList.length && (a.campaignListLogin = null, a.loginBonusCampaign = null, a.loginBonusCampaignList = null, g.loginBonusCampaignFlg = !0);
-            g.popupFlgs()
+            0 === a.loginBonusCampaignList.length && (a.campaignListLogin = null, a.loginBonusCampaign = null, a.loginBonusCampaignList = null, f.loginBonusCampaignFlg = !0);
+            f.popupFlgs()
           },
           d = p.findWhere(a.campaignListLogin,
           {
@@ -511,13 +515,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
             {
               c = a.loginBonusCampaignList.splice(0, 1);
               a.androidKeyStop = !1;
-              if (0 === a.loginBonusCampaignList.length && (a.campaignListLogin = null, a.loginBonusCampaign = null, a.loginBonusCampaignList = null, g.loginBonusCampaignFlg = !0, c[0].campaign.parameterMap && c[0].campaign.parameterMap.JUMP_URL))
+              if (0 === a.loginBonusCampaignList.length && (a.campaignListLogin = null, a.loginBonusCampaign = null, a.loginBonusCampaignList = null, f.loginBonusCampaignFlg = !0, c[0].campaign.parameterMap && c[0].campaign.parameterMap.JUMP_URL))
               {
                 a.campaignJump = !0;
                 location.href = c[0].campaign.parameterMap.JUMP_URL;
                 return
               }
-              g.popupFlgs()
+              f.popupFlgs()
             }
           });
           l.ajaxPost(a.linkList.userQuestAdventureRegist,
@@ -529,7 +533,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
             {
               e.setWebView(!1);
               e.startStory(String(b[0]));
-              d && g.campaignLoginCommon();
+              d && f.campaignLoginCommon();
               window.isBrowser && nativeCallback()
             }, 500))
           })
@@ -566,7 +570,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           {
             adventureId: String(b[0])
           }, k);
-          d ? g.campaignLoginCommon() : setTimeout(function()
+          d ? f.campaignLoginCommon() : setTimeout(function()
           {
             e.setWebView(!0);
             a.tapBlock(!1)
@@ -582,7 +586,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           l.ajaxPlainPost(a.linkList.rejectReview, "", function(b)
           {
             b = JSON.parse(b);
-            "error" !== b.resultCode && (a.responseSetStorage(b), g.popupFlgs())
+            "error" !== b.resultCode && (a.responseSetStorage(b), f.popupFlgs())
           })
         };
         require(["text!template/user/ReviewPopTemp.html"], function(c)
@@ -619,7 +623,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
               l.ajaxPlainPost(a.linkList.acceptReview, "", function(b)
               {
                 b = JSON.parse(b);
-                "error" !== b.resultCode && (a.responseSetStorage(b), g.popupFlgs())
+                "error" !== b.resultCode && (a.responseSetStorage(b), f.popupFlgs())
               })
             }
           })
@@ -630,7 +634,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         new a.PopupClass(
         {
           title: "マギアレコード運営事務局より",
-          content: '<div class="scrollInnerWrap">' + f.userWarning.warning + "</div>",
+          content: '<div class="scrollInnerWrap">' + g.userWarning.warning + "</div>",
           closeBtnText: "確認しました",
           exClass: "warningPop"
         }, null, function()
@@ -639,7 +643,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           a.scrollSet("warningScroll", "scrollInnerWrap")
         }, function()
         {
-          g.popupFlgs()
+          f.popupFlgs()
         })
       },
       messagePopHandler: function()
@@ -657,7 +661,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           a.notifyMessage = null
         }, function()
         {
-          g.popupFlgs()
+          f.popupFlgs()
         })
       },
       passwordPopHandler: function()
@@ -682,7 +686,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         }, function()
         {
           $("#popupArea .decideBtn").off();
-          g.popupFlgs()
+          f.popupFlgs()
         })
       },
       rewardReceiveHandler: function()
@@ -694,7 +698,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
           closeBtnText: "OK"
         }, null, null, function()
         {
-          g.popupFlgs()
+          f.popupFlgs()
         })
       },
       checkApCurePush: function()
@@ -785,7 +789,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         this.live2dSet(a)
       }
     }),
-    w = z.View.extend(
+    x = z.View.extend(
     {
       tagName: "div",
       className: function()
@@ -820,7 +824,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         this.remove()
       }
     }),
-    H = function()
+    I = function()
     {
       a.setStyle(D);
       a.forceTapBlock(
@@ -829,13 +833,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
       });
       console.log("common.tutorialId", a.tutorialId);
       console.log("common.tutorialUtil", a.tutorialUtil);
-      f = l.getPageJson();
-      p.has(f.user, "id") ? p.has(f, "gameUser") ? (E.createCardList(), c = (c = a.storage.userCardListEx.findWhere(
+      g = l.getPageJson();
+      p.has(g.user, "id") ? p.has(g, "gameUser") ? (E.createCardList(), c = (c = a.storage.userCardListEx.findWhere(
       {
-        id: f.gameUser.leaderId
+        id: g.gameUser.leaderId
       })) ? a.storage.userCardListEx.findWhere(
       {
-        id: f.gameUser.leaderId
+        id: g.gameUser.leaderId
       }).toJSON() : null, window.isBrowser ? m = new y : ($("#commandDiv").on("nativeCallback", function(b, c)
       {
         $("#commandDiv").off();
@@ -878,7 +882,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         })
       }), a.tapBlock(!1)) : e.nativeReload("#/TopPage")
     },
-    x = function(b, d, g)
+    w = function(b, d, g)
     {
       if (c && (b = b ? c.charaId + b : c.charaId + c.live2dId))
       {
@@ -893,7 +897,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         if (d)
         {
           h.type = l ? 1 : 0;
-          var n = "vo_char_" + c.charaId + "_" + c.live2dList[c.live2dIndex].voicePrefixNo + "_" + (I() + 1);
+          var n = "vo_char_" + c.charaId + "_" + c.live2dList[c.live2dIndex].voicePrefixNo + "_" + (J() + 1);
           h.key = l ? "idle" : n;
           f && (h.subId = c.chara.doubleUnitLive2dDetail, h.subX = -60, h.subY = 0);
           e.endL2d();
@@ -911,12 +915,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
         }, 100)) : (h.key = "metamorphose", e.storyMotionL2d(h))
       }
     },
-    I = function()
+    J = function()
     {
       var b = [];
       if (a.loginBonus) return 23;
-      var c = Number(f.currentTime.split(" ")[1].split(":")[0]),
-        e = Number(f.currentTime.split(" ")[1].split(":")[1]);
+      var c = Number(g.currentTime.split(" ")[1].split(":")[0]),
+        e = Number(g.currentTime.split(" ")[1].split(":")[1]);
       6 <= c && 9 >= c && !(9 == c && 0 < e) ? b.push(24) : 11 <= c && 13 >= c && !(13 == c && 0 < e) ? b.push(25) : 17 <= c && 19 >= c && !(19 == c && 0 < e) ? b.push(26) : 22 <= c || 0 == c && !(0 == c && 0 < e) ? b.push(27) : b.push(28);
       a.storage.userStatusList.findWhere(
       {
@@ -1028,7 +1032,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
     },
     init: function()
     {
-      H()
+      I()
     },
     pageJson: function()
     {

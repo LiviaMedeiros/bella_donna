@@ -94,7 +94,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             });
             a.PuellaHistoriaLastBattleSingleRaidPrm = {
               battleType: !1,
-              sectionInfo: d.questInfo.sectionInfoList,
+              sectionInfo: d.questInfo.sectionInfoList[0],
               userQuestAdventureList: b.userQuestAdventureList
             };
             var c = "";

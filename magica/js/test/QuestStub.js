@@ -248,8 +248,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/test/QuestS
                     type: "singleRaid"
                   }) && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"), d.num && d.num == n.getPuellaHistoriaLastBattleNum(
                   {
-                    type: "singleRaidLast"
-                  }) && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"));
+                    type: "groupRaid"
+                  }) && (c.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultSubBoss", c.retireUrl = "/magica/index.html#/EventPuellaRaidTop", a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (c.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultMainBoss")));
                   u.getIsScene0Info(
                   {
                     section: f.toJSON()
