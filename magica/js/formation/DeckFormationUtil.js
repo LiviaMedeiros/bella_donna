@@ -1,4 +1,4 @@
-define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/view/user/APPopup js/quest/puellaHistoria/CreateModel js/event/EventArenaRankMatch/Utility js/event/EventArenaRankMatch/parts/DeckEditCountDown js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(a, u, l, x, y, D, t, A, z, I, v, w)
+define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/view/user/APPopup js/quest/puellaHistoria/CreateModel js/event/EventArenaRankMatch/Utility js/event/EventArenaRankMatch/parts/DeckEditCountDown js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(a, u, l, x, y, D, t, A, z, J, v, w)
 {
   function E(c)
   {
@@ -281,7 +281,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
     c.deckType == e.listDefence[0] && (d.name = "防衛編成");
     return d
   };
-  var J = function(a, b)
+  var K = function(a, b)
     {
       switch (a)
       {
@@ -311,7 +311,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
           return 11 <= b && 19 >= b
       }
     },
-    K = {
+    L = {
       quest: "1",
       dungeon: "4",
       dungeonInMap: "4",
@@ -333,7 +333,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       b = [];
     _.each(a.storage.userDeckList.toJSON(), function(a, c)
     {
-      if (J(this.deckCatType, a.deckType))
+      if (K(this.deckCatType, a.deckType))
       {
         var d = [];
         _.each(a.formationSheet, function(a, b)
@@ -349,7 +349,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
     var d = 9;
     for ("group" === c || "groupPrepare" === c ? d = 4 : "endless" === c ? d = 3 : "accomplish" === c ? d = 1 : "puellaHistoriaGroupRaid" === c ? d = 5 : "scene0Challenge" === c && (d = 5); e < d;)
     {
-      var k = K[c] + (e + 1);
+      var k = L[c] + (e + 1);
       _.findWhere(b,
       {
         deckType: Number(k)
@@ -526,7 +526,8 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
           });
           if (0 == b.length || 0 < b.length && b.length == n) q = !1;
           "MAIN" != a.questBattleModel.questType && "SUB" != a.questBattleModel.questType && "CHARA" != a.questBattleModel.questType && "COSTUME" != a.questBattleModel.questType || a.storage.gameUser.toJSON().skipAdventure || (q = g = !0);
-          c || (g = !1)
+          c || (g = !1);
+          0 == b.length && (q = !1)
         }
         a.questBattleModel.eventBranchData && !a.questBattleModel.eventBranchData.startStoryJson && (g = !1);
         l.endL2d();
@@ -558,7 +559,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
                   pointId: a.questBattleModel.eventBranchData.pointId,
                   alternativeIdList: k.alternativeIdList
                 });
-                v.isConstantLastBattleQuestBattleId(
+                I(
                 {
                   questBattleId: d.questBattleId
                 }) ? C(
@@ -580,7 +581,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
               l.downloadFileFullVoice("section_" + a.questBattleModel.questBattle.sectionId);
               window.isBrowser && $("#commandDiv").trigger("nativeCallback")
             },
-            w = function(b, c)
+            v = function(b, c)
             {
               $("#commandDiv").on("nativeCallback", function()
               {
@@ -606,7 +607,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
                   {
                     sectionId: a.questBattleModel.questBattle.sectionId
                   }).toJSON()
-                }).isPuellaHistoria ? (p(b), l.startStory(d)) : "MAIN" == a.questBattleModel.questType || "SECONDPARTLAST" === a.questBattleModel.questType ? t(d, b) : a.questBattleModel.eventObj && a.questBattleModel.eventObj.event && a.questBattleModel.eventObj.event.existsVoice ? w(d, b) : (p(b), l.startStory(d), window.isBrowser && $("#commandDiv").trigger("nativeCallback"))
+                }).isPuellaHistoria ? (p(b), l.startStory(d)) : "MAIN" == a.questBattleModel.questType || "SECONDPARTLAST" === a.questBattleModel.questType ? t(d, b) : a.questBattleModel.eventObj && a.questBattleModel.eventObj.event && a.questBattleModel.eventObj.event.existsVoice ? v(d, b) : (p(b), l.startStory(d), window.isBrowser && $("#commandDiv").trigger("nativeCallback"))
               }, 500)
             };
           $("#popupArea").on(a.cgti, "#resultCodeError .popupCloseBtn", function(b)
@@ -629,7 +630,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             });
             H(b)
           };
-          v.isConstantLastBattleQuestBattleId(
+          I(
           {
             questBattleId: d.questBattleId
           }) ? C(
@@ -745,8 +746,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             b.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
             break;
           default:
-            b.resultUrl = "/magica/index.html#/QuestResult",
-              b.retireUrl = "/magica/index.html#/MainQuest"
+            b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/MainQuest"
         }
         "SECONDPARTLAST" === a.questBattleModel.questType && (b.resultUrl = "/magica/index.html#/SecondPartLastRouter/battleWin/" + e, b.retireUrl = "/magica/index.html#/SecondPartLastRouter");
         1033044 === e && (b.resultUrl = "/magica/index.html#/SecondPartLastRouter/forceLoseBattle/" + e, b.retireUrl = "/magica/index.html#/MainQuest");
@@ -849,7 +849,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
     {
       var b = u.getPageJson();
       a.EventArenaRankMatchPrm.deckEditPageJson && (b = a.EventArenaRankMatchPrm.deckEditPageJson);
-      c.userCardId1 ? a.EventArenaRankMatchPrm.isDeckEditTimeOver ? I.openPopup(
+      c.userCardId1 ? a.EventArenaRankMatchPrm.isDeckEditTimeOver ? J.openPopup(
       {}) : a.EventArenaRankMatchPrm.deckEditAccessTime && !z.isOpenEvent(
       {
         pageJson: b,
@@ -983,34 +983,40 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       }
   };
   var C = function(c)
-  {
-    var b = c.deckModel,
-      e = c.callback,
-      d = v.getStoryIdList(),
-      k = [];
-    _.each(b.userCardObj, function(a, b, c)
     {
-      _.each(d.special, function(b, c, d)
+      var b = c.deckModel,
+        e = c.callback,
+        d = v.getStoryIdList(),
+        k = [];
+      _.each(b.userCardObj, function(a, b, c)
       {
-        a.charaId == b.charaId && k.push(b)
-      })
-    });
-    var h = 0,
-      g = function()
-      {
-        h >= k.length ? e() : a.playStory(
+        _.each(d.special, function(b, c, d)
         {
-          cmd: l,
-          ajaxControl: u,
-          storyId: k[h].storyId,
-          callback: function()
-          {
-            h++;
-            g()
-          }
+          a.charaId == b.charaId && k.push(b)
         })
-      };
-    g()
-  };
+      });
+      var h = 0,
+        g = function()
+        {
+          h >= k.length ? e() : a.playStory(
+          {
+            cmd: l,
+            ajaxControl: u,
+            storyId: k[h].storyId,
+            callback: function()
+            {
+              h++;
+              g()
+            }
+          })
+        };
+      g()
+    },
+    I = function(a)
+    {
+      var b = !1;
+      1041021 == a.questBattleId && (b = !0);
+      return b
+    };
   return t
 });
