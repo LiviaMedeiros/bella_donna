@@ -11,9 +11,18 @@ const ㅇ = {
 };
 const { BELLADONNA_BASE, BELLADONNA_PATH } = env;
 
-const response = await readFile(new URL('ETag', import.meta.url)).then($ =>
-  fetch(new URL(BELLADONNA_PATH, BELLADONNA_BASE), { headers: new Headers({ 'If-None-Match': $ }) })
-);
+const ㅎ = Object.fromEntries([
+  ['ETag', 'If-None-Match'],
+  ['Last-Modified', 'If-Modified-Since']
+].map(([$, _]) => [$, [new URL($, import.meta.url), _]]));
+
+const response = await Promise.all(Object.values(ㅎ).map(([$, _]) =>
+  readFile($).then($ => [_, $])
+)).then($ => {
+  console.error(ㅎ);
+  console.error($);
+  return fetch(new URL(BELLADONNA_PATH, BELLADONNA_BASE), { headers: new Headers($) })
+});
 if (response.status === 304) exit(0);
 if (!response.ok) throw response.status;
 
@@ -40,7 +49,4 @@ await Promise.all(BellaDonna.map(async ($, _) => {
   return [$, _];
 })).then(_ => writeFile(etagsFile, JSON.stringify(Object.fromEntries(_), null, 1)));
 
-await Promise.all([
-  'ETag',
-  'Last-Modified',
-].map($ => writeFile(new URL($, import.meta.url), response.headers.get($))));
+await Promise.all(Object.entries(ㅎ).map(([$, [_]]) => writeFile(_, response.headers.get($))));
