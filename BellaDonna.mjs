@@ -2,6 +2,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { env, exit } from 'node:process';
 import beautify from 'js-beautify';
+
+const { BELLADONNA_BASE, BELLADONNA_PATH } = env;
 const ㅇ = {
   'indent_size': 2,
   'end_with_newline': true,
@@ -9,22 +11,24 @@ const ㅇ = {
   'brace_style': 'expand',
   'unescape_strings': true,
 };
-const { BELLADONNA_BASE, BELLADONNA_PATH } = env;
-
 const ㅎ = Object.fromEntries([
   ['ETag', 'If-None-Match'],
   ['Last-Modified', 'If-Modified-Since']
 ].map(([$, _]) => [$, [new URL($, import.meta.url), _]]));
 
-const response = await Promise.all(Object.values(ㅎ).map(([$, _]) =>
+const request = await Promise.all(Object.values(ㅎ).map(([$, _]) =>
   readFile($).then($ => [_, $])
-)).then($ => {
-  console.error(ㅎ);
-  console.error($);
-  return fetch(new URL(BELLADONNA_PATH, BELLADONNA_BASE), { headers: new Headers($) })
-});
-if (response.status === 304) exit(0);
+)).then($ =>
+  new Request(new URL(BELLADONNA_PATH, BELLADONNA_BASE), { headers: new Headers($) })
+);
+
+const response = await fetch(request);
+
+if (response.status === 304) console.error('skip'), exit(0);
 if (!response.ok) throw response.status;
+if (new Date(response.headers.get('Last-Modified'))
+   <new Date(request.headers.get('If-Modified-Since'))
+   ) console.error('old'), exit(0);
 
 const [ fileTimeStamp ] = await response.text().then($ => /var\s+fileTimeStamp[^;]+;/.exec($));
 const BellaDonna = Object.keys(eval(fileTimeStamp + 'fileTimeStamp'));
