@@ -138,6 +138,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           a.mirrorPartsView.isPlayClearMovie = !1
         }, 50)
       };
+      localStorage.setItem("watchPuellaHistoriaEnding", "true");
       localStorage.getItem("watchPuellaHistoriaPrologue") ? c() : b.playStory(
       {
         cmd: e,
