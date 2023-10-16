@@ -60,6 +60,7 @@
 
 #Scene0Top .mainSec .missionBtn .balloonSec
 {
+  display: none;
   position: absolute;
   background: url("/magica/resource/image_web/page/quest/scene0/top/bg_info_mission.png") left top repeat;
   top: -55px;
@@ -107,6 +108,21 @@
   right: 148px;
 }
 
+#Scene0Top .mainSec #movieBtn
+{
+  position: absolute;
+  bottom: 16px;
+  left: 10px;
+  width: 120px;
+  height: 46px;
+  background: url("/magica/resource/image_web/page/top/btn_bg00.png") center center no-repeat;
+  background-size: 110px 28px;
+  font-size: 11px;
+  line-height: 46px;
+  text-align: center;
+  text-shadow: 0 0;
+}
+
 #Scene0Top.AfterFilm1 .battleBtn,
 #Scene0Top.AfterFilm1 .sideStoryBtn,
 #Scene0Top.AfterFilm1 .missionBtn
@@ -122,6 +138,11 @@
 #Scene0Top.iPhoneXOrMore .missionBtn
 {
   bottom: 10px;
+}
+
+#Scene0Top.iPhoneXOrMore #movieBtn
+{
+  bottom: 0px;
 }
 
 #Scene0Top.iPad .mainStoryBtn
@@ -142,4 +163,9 @@
 #Scene0Top.iPad .missionBtn
 {
   bottom: 70px;
+}
+
+#Scene0Top.iPad #movieBtn
+{
+  bottom: 56px;
 }

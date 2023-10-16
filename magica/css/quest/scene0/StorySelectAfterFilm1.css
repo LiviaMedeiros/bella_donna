@@ -281,3 +281,9 @@
   background: url("/magica/resource/image_web/page/quest/scene0/storySelect/recollectionPopup/btn_film_on.png") left top no-repeat;
   color: #54700c;
 }
+
+.popupContent.typeC.scene0StoryPopup .popupTextArea
+{
+  font-size: 22px;
+  line-height: 1.5;
+}

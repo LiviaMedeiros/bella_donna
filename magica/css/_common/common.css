@@ -9302,6 +9302,7 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn .balloon
 {
+  display: none;
   background: url("/magica/resource/image_web/common/global/event_pop.png") left top no-repeat;
   width: 122px;
   height: 52px;
@@ -9946,6 +9947,31 @@ textarea:focus
 .b_scene0:after
 {
   background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_r.png") left top no-repeat;
+  background-size: cover;
+}
+
+.b_scene0_l
+{
+  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_c_a.png") center top no-repeat;
+  background-size: -webkit-calc(100% - 62px) 64px;
+}
+
+.b_scene0_l,
+.b_scene0_l span
+{
+  color: #ffffff;
+  text-shadow: -1px -1px 2px #4cc002, 1px -1px 2px #4cc002, -1px 1px 2px #4cc002, 1px 1px 2px #4cc002, -1px -1px 2px #4cc002, 1px -1px 2px #4cc002, -1px 1px 2px #4cc002, 1px 1px 2px #4cc002;
+}
+
+.b_scene0_l:before
+{
+  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_l_a.png") left top no-repeat;
+  background-size: cover;
+}
+
+.b_scene0_l:after
+{
+  background: url("/magica/resource/image_web/page/quest/scene0/common/btn_green_r_a.png") left top no-repeat;
   background-size: cover;
 }
 

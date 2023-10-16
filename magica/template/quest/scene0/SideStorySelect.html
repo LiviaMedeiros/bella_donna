@@ -10,7 +10,7 @@
     <div id="playBtnSec" class="">
       <div class="textSec"> 新しい<br> サイドストーリーを<br> ランダムに再生します </div>
       <div class="itemSec">
-        <span class="c_red"><%= model.itemInfoSide.quantity %></span>/<%= model.questNeedItemNum %>
+        <span class="<%= model.itemInfoSide.quantityClass %>"><%= model.itemInfoSide.quantity %></span>/<%= model.questNeedItemNum %>
       </div>
       <div id="playBtn" class="btn b_scene0 <%= model.playBtnClass %>">
         <span class="b_screen"></span> 再生する

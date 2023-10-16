@@ -17,9 +17,9 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         a = b.section;
         a.viewParameterMap && a.viewParameterMap[f + "_NUM"] && Number(a.viewParameterMap[f + "_NUM"]) == c && (b.isLastSection = !1, a.viewParameterMap[f + "_LAST_SECTION"] && 1 == Number(a.viewParameterMap[f + "_LAST_SECTION"]) && (b.isLastSection = !0), l.sectionInfoList.push(b))
       });
-      l.sectionInfoList.sort(function(b, a)
+      l.sectionInfoList.sort(function(b, c)
       {
-        return b.sectionId - a.sectionId
+        return b.sectionId - c.sectionId
       });
       var m = !0,
         h = [],
@@ -83,6 +83,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       var c = {
         type: "side",
         quantity: 0,
+        quantityClass: "c_red",
         itemId: "SCENEZERO_SIDE_TICKET",
         name: "ドアプライズフィルム"
       };
@@ -90,6 +91,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       {
         b.itemId == c.itemId && (c.quantity = b.quantity)
       });
+      0 == c.quantity && (c.quantityClass = "");
       return c
     },
     getIsScene0Info: function(a)
@@ -115,7 +117,8 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         else var e = new g.PopupClass(
         {
           title: "ストーリー再生",
-          content: b.name + "を" + c + "個消費して<br>ストーリーを再生しますか？",
+          content: '<span class="c_pink">' + b.name + '</span>を<span class="c_pink">' + c + "個</span>消費して<br>ストーリーを再生しますか？",
+          exClass: "scene0StoryPopup",
           closeBtnText: "閉じる",
           decideBtnText: "再生する",
           decideBtnEvent: function()
@@ -124,7 +127,11 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
             f()
           },
           popupType: "typeC"
-        }, null, null, function()
+        }, null, function()
+        {
+          $(".scene0StoryPopup .popupBtnArea .decideBtn").removeClass("b_pink");
+          $(".scene0StoryPopup .popupBtnArea .decideBtn").addClass("b_scene0_l")
+        }, function()
         {
           h.updateScene0StorySelectObject(
           {})
@@ -132,7 +139,8 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       else new g.PopupClass(
       {
         title: "アイテム不足",
-        content: "ストーリー再生に必要なアイテムが足りません。",
+        content: "ストーリー開放に必要なアイテムが足りません。",
+        exClass: "scene0StoryPopup",
         closeBtnText: "閉じる",
         popupType: "typeC"
       }, null, null, function()

@@ -1,7 +1,8 @@
-define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/quest/scene0/Top.html text!css/quest/scene0/Top.css js/quest/scene0/Model js/quest/scene0/Utility js/quest/scene0/parts/UseItemView js/view/tutorial/TutorialPopupView".split(" "), function(f, k, b, g, c, u, l, m, n, v, p, h)
+define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/quest/scene0/Top.html text!css/quest/scene0/Top.css js/quest/scene0/Model js/quest/scene0/Utility js/quest/scene0/parts/UseItemView js/view/tutorial/TutorialPopupView".split(" "), function(g, m, b, h, c, v, n, p, q, w, r, k)
 {
   var d = {},
-    q = k.View.extend(
+    e = {},
+    t = m.View.extend(
     {
       events: function()
       {
@@ -11,11 +12,12 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         a[b.cgti + " #sideStoryBtn"] = this.tapSideStoryBtn;
         a[b.cgti + " #missionBtn"] = this.tapMissionBtn;
         a[b.cgti + " #helpBtn"] = this.tapHelpBtn;
+        a[b.cgti + " #movieBtn"] = this.tapMovieBtn;
         return a
       },
       initialize: function(a)
       {
-        this.template = f.template(l);
+        this.template = g.template(n);
         this.pageModel = a.pageModel;
         this.createDom()
       },
@@ -30,7 +32,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       createDom: function()
       {
         b.content.append(this.render().el);
-        d.useItemView = new p(
+        d.useItemView = new r(
         {
           pageModel: this.pageModel
         });
@@ -62,24 +64,32 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         a.preventDefault();
         if (!b.isScrolled())
         {
-          var e;
+          var f;
           new b.PopupClass(
           {
             popupType: "tutorial"
           }, null, function()
           {
-            h.prototype.parentView = this;
-            e = new h(
+            k.prototype.parentView = this;
+            f = new k(
             {
-              imgArr: ["navi_01", "navi_02", "navi_03"],
+              imgArr: ["navi_01", "navi_02", "navi_03_a"],
               type: "scene0"
             });
-            b.doc.getElementsByClassName("popupInner")[0].appendChild(e.render().el)
+            b.doc.getElementsByClassName("popupInner")[0].appendChild(f.render().el)
           }, function()
           {
-            e.removeView()
+            f.removeView()
           })
         }
+      },
+      tapMovieBtn: function(a)
+      {
+        a.preventDefault();
+        b.isScrolled() || l(
+        {
+          isCanCancel: !0
+        })
       },
       removeView: function()
       {
@@ -87,9 +97,10 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         this.remove()
       }
     }),
-    r = function(a)
+    l = function(a)
     {
-      var e = a.callback;
+      var f = a.callback,
+        d = a.isCanCancel;
       b.preNativeFadeIn(function()
       {
         b.ready.show();
@@ -100,35 +111,37 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           $("#commandDiv").off();
           b.androidKeyStop = !1;
           c.setWebView(!0);
-          e()
+          f ? f() : (c.changeBg(e.bgName), c.startBgm(e.bgmName), b.ready.hide())
         });
-        c.playMovieNoSkip("resource/movie/other/op_movie3.usm");
+        d ? c.playMovie("resource/movie/other/op_movie3.usm") : c.playMovieNoSkip("resource/movie/other/op_movie3.usm");
         localStorage.setItem("watchScene0OP", "true");
         window.isBrowser && nativeCallback()
       }, 500)
     },
-    t = function()
+    u = function()
     {
       var a = function()
       {
-        var a = g.getPageJson();
-        b.setStyle(m);
-        a = n.getTopModel(
+        var a = h.getPageJson();
+        b.setStyle(p);
+        a = q.getTopModel(
         {
           pageJson: a
         });
-        c.startBgm("bgm01_anime11");
+        e.bgmName = "bgm01_anime11";
+        c.startBgm(e.bgmName);
         a.terminalClass = "";
         1024 !== b.displayWidth && (a.terminalClass = "iPhoneXOrMore");
         b.ua.ipad && (a.terminalClass = "iPad");
-        a.isFilm1Clear ? b.ua.isIphoneXOrMore ? c.changeBg("web_scene0_topBG_X.ExportJson") : c.changeBg("web_scene0_topBG.ExportJson") : b.ua.isIphoneXOrMore ? c.changeBg("web_scene0_topBG_2X.ExportJson") : c.changeBg("web_scene0_topBG_2.ExportJson");
-        d.pageView = new q(
+        e.bgName = a.isFilm1Clear ? b.ua.isIphoneXOrMore ? "web_scene0_topBG_X.ExportJson" : "web_scene0_topBG.ExportJson" : b.ua.isIphoneXOrMore ? "web_scene0_topBG_2X.ExportJson" : "web_scene0_topBG_2.ExportJson";
+        c.changeBg(e.bgName);
+        d.pageView = new t(
         {
           pageModel: a
         });
         b.setGlobalView()
       };
-      localStorage.getItem("watchScene0OP") ? a() : r(
+      localStorage.getItem("watchScene0OP") ? a() : l(
       {
         callback: a
       })
@@ -164,15 +177,15 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     }],
     fetch: function()
     {
-      g.pageModelGet(this.needModelIdObj, null)
+      h.pageModelGet(this.needModelIdObj, null)
     },
     init: function()
     {
-      t()
+      u()
     },
     remove: function(a)
     {
-      f.each(d, function(a, b, c)
+      g.each(d, function(a, b, c)
       {
         a.removeView && a.removeView()
       });
