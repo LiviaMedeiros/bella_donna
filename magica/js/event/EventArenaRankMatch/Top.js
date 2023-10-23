@@ -8,6 +8,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         var a = {};
         a[b.cgti + " #reloadListBtn"] = this.reloadList;
         a[b.cgti + " #editDefenceDeckBtn"] = this.editDefenceDeck;
+        a[b.cgti + " #editAttackDeckBtn"] = this.editAttackDeck;
         a[b.cgti + " #openEventRewardPopupBtn"] = this.openEventRewardPopup;
         a[b.cgti + " #rankMatchHelp"] = this.openRankMatchHelpPopup;
         a[b.cgti + " #limitMissionBtn"] = this.tapLimitMissionBtn;
@@ -38,7 +39,8 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         c.AttackCountBtn = new w.viewBtn(
         {
           model: this.model,
-          pageJson: d
+          pageJson: d,
+          _views: c
         });
         c.CoolTime = x.init(
         {
@@ -55,7 +57,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       reloadList: function(a)
       {
         a.preventDefault();
-        b.isScrolled() || l.setList(
+        b.isScrolled() || 0 != this.model.attackCountInfo.num && l.setList(
         {
           model: this.model,
           _views: c
@@ -65,6 +67,11 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       {
         a.preventDefault();
         b.isScrolled() || (location.href = "#/DeckFormation/arenaRankMatchDefence")
+      },
+      editAttackDeck: function(a)
+      {
+        a.preventDefault();
+        b.isScrolled() || (b.EventArenaRankMatchPrm.opponentInfo = null, location.href = "#/DeckFormation/arenaRankMatchAttack")
       },
       openEventRewardPopup: function(a)
       {
@@ -111,7 +118,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         eventInfo: a.eventInfo,
         orderRank: a.userInfo.orderRank,
         matchExpiredAt: a.battleInfo.matchExpiredAt,
-        editTime: 300,
+        editEndTime: a.battleInfo.matchExpiredAt,
         arenaBattleType: a.battleInfo.arenaBattleType,
         spRuleList: a.specialRuleInfo.list,
         matchId: a.battleInfo.matchId,

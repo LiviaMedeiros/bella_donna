@@ -1,118 +1,126 @@
-define("underscore backbone backboneCommon ajaxControl command text!css/event/EventArenaRankMatch/Result.css text!template/event/EventArenaRankMatch/Result.html js/event/EventArenaRankMatch/Utility js/follow/FollowPopup js/view/item/ItemImgPartsView".split(" "), function(f, n, a, k, e, p, q, r, v, t)
+define("underscore backbone backboneCommon ajaxControl command text!css/event/EventArenaRankMatch/Result.css text!template/event/EventArenaRankMatch/Result.html js/event/EventArenaRankMatch/Utility js/follow/FollowPopup js/view/item/ItemImgPartsView".split(" "), function(e, n, a, h, b, p, q, r, v, t)
 {
-  var g, h, m, u = n.View.extend(
+  var f, g, m, u = n.View.extend(
   {
     events: function()
     {
-      var c = {};
-      c[a.cgti + " .replayBtn"] = this.replayBtn;
-      c[a.cgti + " #touchScreen"] = this.toggles;
-      c["webkitAnimationEnd .touch_screenTextWrap"] = this.touchScreen;
-      return c
+      var d = {};
+      d[a.cgti + " .replayBtn"] = this.replayBtn;
+      d[a.cgti + " #touchScreen"] = this.toggles;
+      d["webkitAnimationEnd .touch_screenTextWrap"] = this.touchScreen;
+      return d
     },
-    initialize: function(c)
+    initialize: function(d)
     {
-      this.model = c;
-      h = k.getPageJson();
-      this.checkDispResult() ? this.model.userArenaBattleResultList[0] ? (this.tapFlag = !1, a.responseSetStorage(this.model), this.allInitialized(), this.template = f.template(q), this.createDom()) : (e.setWebView(), a.androidKeyStop = !0, new a.PopupClass(
+      this.model = d;
+      g = h.getPageJson();
+      this.model.userQuestBattleResultList && this.model.userQuestBattleResultList[0] && "TIME_UP" == this.model.userQuestBattleResultList[0].questBattleStatus ? (b.setWebView(), a.androidKeyStop = !0, new a.PopupClass(
       {
         title: "エラー",
-        content: "バトルの結果が正しく取得できませんでした。<br>トップページに戻ります。",
+        content: "バトルの所要時間が一定時間を超えたため<br>このバトルは無効になります。<br>イベントTOPに戻ります。",
         closeBtnText: "OK"
       }, null, null, function()
       {
-        e.endArena();
-        e.nativeReload("#/TopPage");
-        window.isBrowser && (location.href = "#/TopPage")
-      })) : (e.setWebView(), a.responseSetStorage(this.model), a.androidKeyStop = !0, new a.PopupClass(
+        b.endArena();
+        location.href = "#/RegularEventArenaRankMatchTop"
+      })) : this.model.userArenaBattleResultList && this.model.userArenaBattleResultList[0] ? this.checkDispResult() ? (this.tapFlag = !1, a.responseSetStorage(this.model), this.allInitialized(), this.template = e.template(q), this.createDom()) : (b.setWebView(), a.responseSetStorage(this.model), a.androidKeyStop = !0, new a.PopupClass(
       {
         title: "ミラーズランクマッチ",
         content: "ランキングバトルのプレイ期間外のため<br>プレイ結果は反映されません。<br>トップページに戻ります。",
         closeBtnText: "OK"
       }, null, null, function()
       {
-        e.endArena();
-        e.nativeReload("#/TopPage");
-        window.isBrowser && (location.href = "#/TopPage")
+        b.endArena();
+        location.href = "#/TopPage"
+      })) : (b.setWebView(), a.androidKeyStop = !0, new a.PopupClass(
+      {
+        title: "エラー",
+        content: "バトルの結果が正しく取得できませんでした。<br>トップページに戻ります。",
+        closeBtnText: "OK"
+      }, null, null, function()
+      {
+        b.endArena();
+        location.href = "#/TopPage"
       }))
     },
     allInitialized: function()
     {
-      var c = this,
-        b = r.getDeckType();
+      var d = this,
+        c = r.getDeckType(),
+        b = a.currentArenaRankMatchDeckType;
+      b || (b = c.attackBase + 1);
       this.model.arenaDecks = {};
       this.model.arenaDecks.noneLeader = [];
-      for (var b = f.findWhere(a.storage.userDeckList.toJSON(),
+      for (var c = e.findWhere(a.storage.userDeckList.toJSON(),
+        {
+          deckType: b
+        }), b = e.findWhere(a.storage.userCardList.toJSON(),
+        {
+          id: c.questEpisodeUserCardId
+        }), k = 1; 6 > k; k++)
+        if (c["userCardId" + k])
+          if (c.questEpisodeUserCardId !== c["userCardId" + k])
           {
-            deckType: b.listAttack[0]
-          }), e = f.findWhere(a.storage.userCardList.toJSON(),
-          {
-            id: b.questEpisodeUserCardId
-          }),
-          l = 1; 6 > l; l++)
-        if (b["userCardId" + l])
-          if (b.questEpisodeUserCardId !== b["userCardId" + l])
-          {
-            var d = f.findWhere(a.storage.userCardList.toJSON(),
+            var l = e.findWhere(a.storage.userCardList.toJSON(),
               {
-                id: b["userCardId" + l]
+                id: c["userCardId" + k]
               }),
-              k = f.findWhere(a.storage.userCharaList.toJSON(),
+              h = e.findWhere(a.storage.userCharaList.toJSON(),
               {
-                charaId: d.card.charaNo
+                charaId: l.card.charaNo
               });
-            d.chara = k.chara;
-            this.model.arenaDecks.noneLeader.push(d)
+            l.chara = h.chara;
+            this.model.arenaDecks.noneLeader.push(l)
           }
-      else this.model.arenaDecks.leaderCard = e, d = f.findWhere(a.storage.userCharaList.toJSON(),
+      else this.model.arenaDecks.leaderCard = b, l = e.findWhere(a.storage.userCharaList.toJSON(),
       {
-        charaId: e.card.charaNo
-      }), this.model.arenaDecks.leaderCard.chara = d.chara;
-      b = 999999;
-      this.model.userArenaRankMatchRankingA ? b = this.model.userArenaRankMatchRankingA.rank : this.model.userArenaRankMatchRankingB && (b = this.model.userArenaRankMatchRankingB.rank);
+        charaId: b.card.charaNo
+      }), this.model.arenaDecks.leaderCard.chara = l.chara;
+      c = 999999;
+      this.model.rankMatchRanking && (c = this.model.rankMatchRanking.ranking);
       this.model.rankMatchOrderRank = {
-        rank: b
+        rank: c
       };
       this.model.rankMatchOrderRank.isOrderRankUp = !1;
-      a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.orderRank && a.EventArenaRankMatchPrm.orderRank > b && (this.model.rankMatchOrderRank.isOrderRankUp = !0);
-      var g = [];
-      f.each(String(b), function(a, b, c)
+      a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.orderRank && a.EventArenaRankMatchPrm.orderRank > c && (this.model.rankMatchOrderRank.isOrderRankUp = !0);
+      var f = [];
+      e.each(String(c), function(a, c, b)
       {
-        g.push(String(a))
+        f.push(String(a))
       });
-      this.model.rankMatchOrderRank.textList = g;
+      this.model.rankMatchOrderRank.textList = f;
       this.model.rankMatchBonusRewardList = [];
-      var b = this.model.userArenaBattle.maxRankRewardsList,
-        h = 0;
-      b && b.length && (f.each(b, function(a, b, d)
+      var c = this.model.userArenaBattle.maxRankRewardsList,
+        g = 0;
+      c && c.length && (e.each(c, function(a, c, b)
       {
-        f.each(a.presentList, function(a, b, d)
+        e.each(a.presentList, function(a, c, b)
         {
-          b = (new t(
+          c = (new t(
           {
             model: a,
             type: a.presentType
           })).render().model;
-          c.model.rankMatchBonusRewardList.push(
+          d.model.rankMatchBonusRewardList.push(
           {
-            imagePath: b.imagePath,
-            displayName: b.displayName,
+            imagePath: c.imagePath,
+            displayName: c.displayName,
             quantity: a.quantity
           })
         })
-      }), f.each(this.model.rankMatchBonusRewardList, function(a, b, c)
+      }), e.each(this.model.rankMatchBonusRewardList, function(a, c, b)
       {
-        h += a.quantity
-      }), this.model.quantity = h);
+        g += a.quantity
+      }), this.model.quantity = g);
       this.model.enemyData = a.EventArenaRankMatchPrm.opponentInfo;
       a.historyArr = ["MyPage", "ArenaTop", "RegularEventArenaRankMatchTop"];
       this.backLink = "#/RegularEventArenaRankMatchTop"
     },
-    replayBtn: function(c)
+    replayBtn: function(d)
     {
-      if (!c.currentTarget.classList.contains("off") && (c.preventDefault(), !a.isScrolled()))
+      if (!d.currentTarget.classList.contains("off") && (d.preventDefault(), !a.isScrolled()))
       {
-        var b = this.model.userArenaBattleResultList[0].userQuestBattleResultId;
+        var c = this.model.userArenaBattleResultList[0].userQuestBattleResultId;
         new a.PopupClass(
         {
           title: "リプレイの保存",
@@ -123,27 +131,27 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
           {
             a.tapBlock(!0);
             a.androidKeyStop = !0;
-            $("#commandDiv").on("nativeCallback", function(b, c)
+            $("#commandDiv").on("nativeCallback", function(c, b)
             {
               $("#commandDiv").off();
-              if ("error" === c.resultCode) new a.PopupClass(
+              if ("error" === b.resultCode) new a.PopupClass(
               {
-                title: c.title ? c.title : "エラー",
-                content: c.errorTxt ? c.errorTxt : "リプレイデータの保存に失敗しました。",
+                title: b.title ? b.title : "エラー",
+                content: b.errorTxt ? b.errorTxt : "リプレイデータの保存に失敗しました。",
                 closeBtnText: "OK"
               });
               else
               {
-                b = k.getPageJson();
-                var d = new Date(b.currentTime);
+                c = h.getPageJson();
+                var d = new Date(c.currentTime);
                 d.setDate(d.getDate() + 30);
-                b = d.getFullYear();
-                c = 10 > d.getMonth() ? "0" + (d.getMonth() + 1) : d.getMonth() + 1;
+                c = d.getFullYear();
+                b = 10 > d.getMonth() ? "0" + (d.getMonth() + 1) : d.getMonth() + 1;
                 d = 10 > d.getDate() ? "0" + d.getDate() : d.getDate();
                 new a.PopupClass(
                 {
                   title: "リプレイの保存",
-                  content: "リプレイに保存しました。<br><br>有効期限：" + b + "/" + c + "/" + d + "まで",
+                  content: "リプレイに保存しました。<br><br>有効期限：" + c + "/" + b + "/" + d + "まで",
                   closeBtnText: "OK"
                 });
                 a.addClassId("replayBtn", "off");
@@ -151,9 +159,9 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
                 a.androidKeyStop = !1
               }
             });
-            e.saveQuestRelpay(
+            b.saveQuestRelpay(
             {
-              userQuestBattleResultId: b
+              userQuestBattleResultId: c
             });
             window.isBrowser && $("#commandDiv").trigger("nativeCallback",
             {
@@ -165,18 +173,18 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
     },
     checkDispResult: function()
     {
-      var c = !1,
-        b = f.findWhere(h.regularEventList,
+      var b = !1,
+        c = e.findWhere(g.regularEventList,
         {
           regularEventId: a.EventArenaRankMatchPrm.eventInfo.regularEventId
         });
-      b && a.getStatusTargetTermInCurrentTime(
+      c && a.getStatusTargetTermInCurrentTime(
       {
-        startAt: b.startAt,
-        endAt: b.endAt,
-        currentTime: h.currentTime
-      }) && (c = !0);
-      return c
+        startAt: c.startAt,
+        endAt: c.endAt,
+        currentTime: g.currentTime
+      }) && (b = !0);
+      return b
     },
     render: function()
     {
@@ -189,16 +197,16 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
     createDom: function()
     {
       a.content.append(this.render().el);
-      e.getBaseData(a.getNativeObj());
+      b.getBaseData(a.getNativeObj());
       a.ready.hide();
       a.globalMenuView && a.globalMenuView.trigger("removeView");
       "WIN" === this.model.userArenaBattleResultList[0].arenaBattleStatus ? this.model.rankMatchOrderRank.isOrderRankUp ? (a.addClass(a.doc.getElementsByClassName("touch_screenTextWrap")[0], "win"), a.addClass(a.doc.getElementsByClassName("touch_screen")[0], "win")) : (a.addClass(a.doc.getElementsByClassName("touch_screenTextWrap")[0], "win_noneReward"), a.addClass(a.doc.getElementsByClassName("touch_screen")[0], "win_noneReward")) : (a.addClass(a.doc.getElementsByClassName("touch_screenTextWrap")[0], "lose"), a.addClass(a.doc.getElementsByClassName("touch_screen")[0], "lose"));
-      e.setWebView()
+      b.setWebView()
     },
-    toggles: function(c)
+    toggles: function(d)
     {
-      c.preventDefault();
-      a.isScrolled() || (e.endArena(), location.href = "#/RegularEventArenaRankMatchTop")
+      d.preventDefault();
+      a.isScrolled() || (b.endArena(), location.href = "#/RegularEventArenaRankMatchTop")
     },
     touchScreen: function()
     {
@@ -206,7 +214,7 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
     },
     rankUps: function()
     {
-      e.startSe(1703)
+      b.startSe(1703)
     },
     removeView: function()
     {
@@ -279,24 +287,24 @@ define("underscore backbone backboneCommon ajaxControl command text!css/event/Ev
     fetch: function()
     {
       a.battleEnemy = null;
-      k.pageModelGet(this.needModelIdObj, null, null)
+      h.pageModelGet(this.needModelIdObj, null, null)
     },
     init: function()
     {
       a.ready.hide();
-      e.startBgm("bgm03_story15");
+      b.startBgm("bgm03_story15");
       a.androidKeyStop = !0;
       m = a.questNativeResponse;
       a.setStyle(p);
-      g = new u(m)
+      f = new u(m)
     },
-    remove: function(c)
+    remove: function(b)
     {
       a.questNativeResponse = null;
       a.androidKeyStop = !1;
       a.oldModel = null;
-      g && g.remove();
-      c()
+      f && f.remove();
+      b()
     }
   }
 });

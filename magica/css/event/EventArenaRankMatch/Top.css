@@ -84,19 +84,19 @@
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .statusBg
 {
-  width: 384px;
+  width: 460px;
   height: 76px;
   position: absolute;
   left: 10px;
   bottom: 82px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/status_bg.png") left bottom no-repeat;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/status_bg_a.png") left bottom no-repeat;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .nameSec
 {
-  width: 372px;
+  width: 448px;
   height: 28px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_player_base.png") left bottom no-repeat;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_player_base_a.png") left bottom no-repeat;
   position: absolute;
   bottom: 123px;
   left: 16px;
@@ -119,21 +119,23 @@
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .attackCountSec
 {
-  width: 166px;
+  width: 150px;
   height: 28px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_matchcount_base.png") left bottom no-repeat;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_matchcount_base_a.png") left bottom no-repeat;
   position: absolute;
   bottom: 88px;
   left: 16px;
   color: #ffffff;
-  padding: 2px 0 0 8px;
+  padding: 3px 0 0 6px;
+  font-size: 90%;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .attackCountSec #attackCountNumSec
 {
   position: absolute;
-  top: 2px;
-  left: 105px;
+  top: 3px;
+  left: 89px;
+  font-size: 110%;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .attackCountSec .recoverAttackCountBtn
@@ -151,23 +153,55 @@
   background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_matchcount_add_gray.png") left bottom no-repeat;
 }
 
-#EventArenaRankMatchTop .mainSec .userInfoSec .coolDownTimeSec
+#EventArenaRankMatchTop .mainSec .userInfoSec .itemNumSec
 {
-  width: 186px;
+  width: 102px;
   height: 28px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_cooltime_base.png") left bottom no-repeat;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_battleticket_base.png") left bottom no-repeat;
   position: absolute;
   bottom: 88px;
-  left: 202px;
+  left: 188px;
   color: #ffffff;
-  padding: 2px 0 0 8px;
+  padding: 3px 0 0 8px;
+  font-size: 90%;
+}
+
+#EventArenaRankMatchTop .mainSec .userInfoSec .itemNumSec .itemImg
+{
+  position: absolute;
+  top: -3px;
+  left: 0px;
+}
+
+#EventArenaRankMatchTop .mainSec .userInfoSec .itemNumSec #itemNumNumSec
+{
+  position: absolute;
+  width: 53px;
+  top: 3px;
+  left: 48px;
+  font-size: 110%;
+  text-align: center;
+}
+
+#EventArenaRankMatchTop .mainSec .userInfoSec .coolDownTimeSec
+{
+  width: 166px;
+  height: 28px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/rankmatch_cooltime_base_a.png") left bottom no-repeat;
+  position: absolute;
+  bottom: 88px;
+  left: 298px;
+  color: #ffffff;
+  padding: 4px 0 0 6px;
+  font-size: 90%;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .coolDownTimeSec #coolDownTimeNumSec
 {
   position: absolute;
-  top: 2px;
-  left: 128px;
+  top: 3px;
+  left: 113px;
+  font-size: 110%;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .orderRankSec
@@ -269,29 +303,28 @@
   z-index: 10;
 }
 
+#EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .attackFormationBtn,
 #EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .formationBtn,
 #EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .openSpRulePopupBtn
 {
-  width: 182px;
+  width: 152px;
   height: 52px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_defense_formation.png") left top no-repeat;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_defense_formation_a.png") left top no-repeat;
   position: absolute;
   bottom: 16px;
-  left: 209px;
-}
-
-#EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .formationBtn .b_screen,
-#EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .openSpRulePopupBtn .b_screen
-{
-  width: 92%;
-  left: 4%;
-  border-radius: 27px;
+  left: 365px;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .openSpRulePopupBtn
 {
-  left: 410px;
-  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_special_rules.png") left top no-repeat;
+  left: 522px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_special_rules_a.png") left top no-repeat;
+}
+
+#EventArenaRankMatchTop .mainSec .userInfoSec #userInfoBottom .attackFormationBtn
+{
+  left: 209px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_attack_formation_a.png") left top no-repeat;
 }
 
 #EventArenaRankMatchTop .mainSec .userInfoSec .commonFrame1
@@ -327,6 +360,13 @@
   top: -20px;
   right: 6px;
   background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/btn_enemy_update.png") left top no-repeat;
+}
+
+#EventArenaRankMatchTop .mainSec .listInfoSec .reloadListBtn.off
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%) brightness(70%);
+  filter: grayscale(100%) brightness(70%);
 }
 
 #EventArenaRankMatchTop .mainSec #matchingWrap
@@ -380,15 +420,39 @@
 
 #EventArenaRankMatchTop .mainSec #matchingWrap li.nomatch
 {
-  width: 552px;
-  height: 436px;
-  padding-top: 186px;
-  padding-right: 42px;
+  width: 450px;
+  height: 290px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  bottom: 46px;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(0, 16, 40, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#EventArenaRankMatchTop .mainSec #matchingWrap li.nomatch .textSec
+{
+  display: inline-block;
   color: #ffffff;
   font-size: 20px;
   line-height: 36px;
-  text-align: center;
-  text-shadow: 3px 0px 3px #ab3c6b, -3px 0px 3px #ab3c6b, 0px 3px 3px #ab3c6b, 0px -3px 3px #ab3c6b, 3px 3px 3px #ab3c6b, -3px 3px 3px #ab3c6b, 3px -3px 3px #ab3c6b, -3px -3px 3px #ab3c6b;
+}
+
+#EventArenaRankMatchTop .mainSec #matchingWrap li.nomatch .textSec .recoverAttackCountBtn
+{
+  display: inline-block;
+  margin: 24px 0 0 0;
 }
 
 #EventArenaRankMatchTop .mainSec #matchingWrap li.enemyWrap
@@ -926,6 +990,182 @@
 }
 
 #EventArenaRankMatchAttackCountPopup .statusCanNotUse .canUse
+{
+  display: none;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse
+{
+  margin: 18px 0 0 0;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap
+{
+  margin: 10px 0 4px 0;
+  width: 470px;
+  height: 72px;
+  background: #ffffff;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #eddbb8;
+  border-radius: 5px;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap .titles
+{
+  display: inline-block;
+  position: absolute;
+  top: 14px;
+  left: 42px;
+  font-size: 18px;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap .amountNums
+{
+  width: 100%;
+  position: absolute;
+  top: 13px;
+  left: 0;
+  font-size: 22px;
+  text-align: center;
+  z-index: 3;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap .amountNums span
+{
+  font-size: 24px;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap #amountMinus
+{
+  width: 42px;
+  height: 42px;
+  background: url("/magica/resource/image_web/page/shop/btn_minus.png");
+  position: absolute;
+  top: 14px;
+  left: 120px;
+  z-index: 5;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap #amountMinus.off
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap #amountPlus
+{
+  width: 42px;
+  height: 42px;
+  background: url("/magica/resource/image_web/page/shop/btn_plus.png");
+  position: absolute;
+  top: 14px;
+  right: 120px;
+  z-index: 5;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap #amountPlus.off
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap .maxBtn
+{
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  z-index: 6;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .amountSelectWrap .maxBtn.off
+{
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap
+{
+  width: 234px;
+  height: 26px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  line-height: 24px;
+  text-align: left;
+  z-index: 5;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .useItemIcon
+{
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  bottom: -14px;
+  z-index: 10;
+  left: -27px;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .purchasedIcon
+{
+  position: absolute;
+  top: -8px;
+  left: -40px;
+  z-index: 10;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA
+{
+  position: absolute;
+  font-size: 18px;
+  top: 0px;
+  width: 250px;
+  padding-left: 24px;
+  left: 0px;
+  z-index: 5;
+  text-align: left;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA .arrow
+{
+  display: inline-block;
+  margin: 0 12px;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA .num
+{
+  position: absolute;
+  top: 0px;
+  left: 64px;
+  width: 176px;
+  height: 24px;
+  text-align: center;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA .num .remain
+{
+  color: #ffffff;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA .num .remain .arrow
+{
+  color: #ffffff;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA .num .remain #itemUseNum
+{
+  color: #ffffff;
+}
+
+#EventArenaRankMatchAttackCountPopup .statusItemUse .itemInfoWrap .stoneA.pointFrame::before
 {
   display: none;
 }

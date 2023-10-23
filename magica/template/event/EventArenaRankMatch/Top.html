@@ -17,6 +17,11 @@
       <div class="attackCountSec"> 対戦回数 <span id="attackCountNumSec"></span>
         <div id="recoverAttackCountBtnSec"></div>
       </div>
+      <!-- アイテム情報 -->
+      <div class="itemNumSec">
+        <img class="itemImg" src="/magica/resource/image_web/event/arenaRankMatch/common/top/icon_rankmatch_battleticket.png">
+        <span id="itemNumNumSec"><%= model.attackCountInfo.itemNum %></span>
+      </div>
       <!-- クールタイム情報 -->
       <div class="coolDownTimeSec"> クールタイム <span id="coolDownTimeNumSec"></span>
       </div>
@@ -30,9 +35,8 @@
       </div>
       <!-- フッター -->
       <div id="userInfoBottom">
-        <div id="editDefenceDeckBtn" class="formationBtn se_decide TE">
-          <span class="b_screen"></span>
-        </div>
+        <div id="editAttackDeckBtn" class="attackFormationBtn se_decide TE"></div>
+        <div id="editDefenceDeckBtn" class="formationBtn se_decide TE"></div>
         <div id="openSpRulePopupBtnSec"></div>
       </div>
       <div id="rankMatchHelp" class="mb_white se_tabs TE">
@@ -41,8 +45,8 @@
       <div id="limitMissionBtn"></div>
     </div>
     <div class="listInfoSec">
-      <span id="reloadListTimeSec"></span>
-      <div id="reloadListBtn" class="reloadListBtn TE"></div>
+      <span id="reloadListTimeSec">--:--</span>
+      <div id="reloadListBtn" class="reloadListBtn <%= model.attackCountInfo.reloadBtnClass %> se_decide TE"></div>
     </div>
     <ul id="matchingWrap"></ul>
   </div>

@@ -1,11 +1,11 @@
-define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility DeckUtil cardUtil".split(" "), function(d, n, h, e, l, p)
+define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility DeckUtil cardUtil".split(" "), function(d, p, e, f, m, q)
 {
   return {
-    getTopModel: function(b)
+    getTopModel: function(c)
     {
-      var a = {};
-      b = b.pageJson;
-      var c = h.getDateShortening(
+      var a = {},
+        b = c.pageJson;
+      c = e.getDateShortening(
       {
         date: new Date
       });
@@ -19,48 +19,27 @@ define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility 
         classRank: "",
         isEnableDefenseDeck: b.enableDefenseDeck
       };
-      d.each([b.userArenaRankMatchRankingA, b.userArenaRankMatchRankingB], function(b, c, d)
+      d.each([b.userArenaRankMatchRanking], function(b, c, d)
       {
-        b && (a.userInfo.orderRank = Number(b.rank))
+        b && (a.userInfo.orderRank = Number(b.ranking))
       });
-      a.userInfo.classRank = e.getEmblemRank(
+      a.userInfo.classRank = f.getEmblemRank(
       {
         orderRank: a.userInfo.orderRank,
         emblemList: b.emblemList
       });
       a.battleInfo = {
         arenaBattleType: b.arenaBattleType,
-        matchExpiredAt: b.userArenaRankMatch.expiredAt,
-        matchId: b.userArenaRankMatch.matchId
+        matchExpiredAt: !1,
+        matchId: !1
       };
-      c = e.getDeckType();
-      a.userDeckInfo = {
-        attack: d.findWhere(b.userDeckList,
-        {
-          deckType: c.listAttack[0]
-        }),
-        defence: d.findWhere(b.userDeckList,
-        {
-          deckType: c.listDefence[0]
-        }),
-        editTime: 300
-      };
-      c = new l("arenaRankMatchAttack");
-      a.userInfo.teamStatus = "---";
-      if (a.userDeckInfo.attack)
-      {
-        var f = c.deckDataCreate(a.userDeckInfo.attack);
-        a.userInfo.teamStatus = c.getTeamStatus(
-        {
-          deckInfo: f
-        })
-      }
-      a.userInfo.displayCardId = h.storage.userCardListEx.findWhere(
+      b.userArenaRankMatch && (a.battleInfo.matchExpiredAt = b.userArenaRankMatch.expiredAt, a.battleInfo.matchId = b.userArenaRankMatch.matchId);
+      a.userInfo.displayCardId = e.storage.userCardListEx.findWhere(
       {
         id: b.gameUser.leaderId
       }).toJSON().displayCardId;
       a.userInfo.displayCardId || (a.userInfo.displayCardId = 10011);
-      a.presentInfo = e.createRewardModel(
+      a.presentInfo = f.createRewardModel(
       {
         rewardList: b.rewardList,
         emblemList: b.emblemList
@@ -72,7 +51,7 @@ define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility 
         {
           a = a.presentList[0];
           a = {
-            img: e.getItemInfo(
+            img: f.getItemInfo(
             {
               model: a,
               type: a.presentType
@@ -91,8 +70,8 @@ define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility 
         list: ["特殊ルールはありません"],
         deckMinNumList:
         {
-          arenaRankMatchAttack: 5,
-          arenaRankMatchDefence: 5
+          arenaRankMatchAttack: 1,
+          arenaRankMatchDefence: 1
         },
         deckMaxNumList:
         {
@@ -101,20 +80,56 @@ define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility 
         }
       };
       c = a.eventInfo.specialRuleMap;
-      f = {};
-      c && (a.specialRuleInfo.deckMinNumList.arenaRankMatchAttack = c.MUST_KEEP_ATTACK_DECK, a.specialRuleInfo.deckMinNumList.arenaRankMatchDefence = c.MUST_KEEP_DEFENSE_DECK, f = e.getSpRulesList(
+      var g = {};
+      c && (a.specialRuleInfo.deckMinNumList.arenaRankMatchAttack = c.MUST_KEEP_ATTACK_DECK, a.specialRuleInfo.deckMinNumList.arenaRankMatchDefence = c.MUST_KEEP_DEFENSE_DECK, g = f.getSpRulesList(
       {
         spRulesMap: c
-      }), a.specialRuleInfo.plusList = f, a.specialRuleInfo.list = e.getSpRulesText(
+      }), a.specialRuleInfo.plusList = g, a.specialRuleInfo.list = f.getSpRulesText(
       {
         spRulesMap: c,
-        plusList: f
+        plusList: g
       }));
+      e.EventArenaRankMatchPrm = {
+        spPlusList: a.specialRuleInfo.plusList
+      };
+      c = f.getDeckType();
+      g = c.attackBase + 1;
+      e.currentArenaRankMatchDeckType && (g = e.currentArenaRankMatchDeckType);
+      a.userDeckInfo = {
+        attack: d.findWhere(b.userDeckList,
+        {
+          deckType: g
+        }),
+        defence: d.findWhere(b.userDeckList,
+        {
+          deckType: c.defence
+        })
+      };
+      c = new m("arenaRankMatchAttack");
+      a.userInfo.teamStatus = "---";
+      a.userDeckInfo.attack && (c = c.deckDataCreate(a.userDeckInfo.attack), a.userInfo.teamStatus = c.teamStatus);
       a.attackCountInfo = {
         num: b.battlePossibleCount,
         numMax: 5,
-        recoverNeedNum: a.eventInfo.recoveryBattleCost
+        recoverNeedNum: a.eventInfo.recoveryBattleCost,
+        itemNum: 0,
+        itemName: "",
+        reloadBtnClass: ""
       };
+      0 == a.attackCountInfo.num && (a.attackCountInfo.reloadBtnClass = "off");
+      var l = function()
+      {
+        var a = !1;
+        d.each(b.regularEventList, function(b, c, d)
+        {
+          "ARENARANKMATCH" == b.regularEventType && (a = b.regularEventId)
+        });
+        return a
+      }();
+      l && (c = e.storage.userItemList.toJSON(), d.each(c, function(b, c, d)
+      {
+        b.itemId == "RANK_MATCH_BATTLE_RECOVERY_" + l && (a.attackCountInfo.itemNum = b.quantity, a.attackCountInfo.itemName = b.item.name)
+      }));
       a.coolDownTimeInfo = {
         nextTime: b.battleCoolTime,
         recoverNeedNum: a.eventInfo.recoverCoolTimeCost
@@ -124,15 +139,15 @@ define("underscore backbone backboneCommon js/event/EventArenaRankMatch/Utility 
         midst: [],
         lower: []
       };
-      var g = b.userArenaRankMatch,
-        m = ["higherOpponentUserArenaBattleInfo", "midstOpponentUserArenaBattleInfo", "lowerOpponentUserArenaBattleInfo"];
+      var h = b.userArenaRankMatch,
+        n = ["higherOpponentUserArenaBattleInfo", "midstOpponentUserArenaBattleInfo", "lowerOpponentUserArenaBattleInfo"];
       d.each(a.opponentList, function(a, b, c)
       {
         d.each([1, 2, 3, 4, 5], function(c, e, f)
         {
-          d.each(m, function(d, e, f)
+          d.each(n, function(d, e, f)
           {
-            g[d + c] && (e = g[d + c], e.battleType = g.arenaBattleType, -1 != d.indexOf(b) && a.push(e))
+            h && h[d + c] && (e = h[d + c], e.battleType = h.arenaBattleType, -1 != d.indexOf(b) && a.push(e))
           })
         })
       });

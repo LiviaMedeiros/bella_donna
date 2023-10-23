@@ -98,9 +98,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/are
             });
           c.rankMatchModel.userRank = c.rankMatchModel.npcNum + 1 + "位";
           c.rankMatchModel.userRankNum = c.rankMatchModel.npcNum + 1;
-          k.each([a.userArenaRankMatchRankingA, a.userArenaRankMatchRankingB], function(a, b, d)
+          k.each([a.userArenaRankMatchRanking], function(a, b, d)
           {
-            a && (c.rankMatchModel.userRank = a.rank + "位", c.rankMatchModel.userRankNum = a.rank)
+            a && (c.rankMatchModel.userRank = a.ranking + "位", c.rankMatchModel.userRankNum = a.ranking)
           });
           c.rankMatchModel.currentBattleCount = a.battlePossibleCount;
           c.rankMatchModel.currentClassRank = q.getEmblemRank(

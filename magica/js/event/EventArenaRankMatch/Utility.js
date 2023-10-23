@@ -4,8 +4,8 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
     getDeckType: function(b)
     {
       return {
-        listAttack: [23],
-        listDefence: [24]
+        attackBase: 130,
+        defence: 24
       }
     },
     getItemInfo: function(b)
@@ -18,8 +18,8 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
     },
     createRewardModel: function(b)
     {
-      var f = b.emblemList,
-        e = {
+      var e = b.emblemList,
+        f = {
           daily:
           {
             rankList: []
@@ -69,37 +69,37 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
           };
           g.itemList.push(a)
         });
-        "FINAL_RANK" == a.rewardType && d.each(f, function(c, b, d)
+        "FINAL_RANK" == a.rewardType && d.each(e, function(c, b, d)
         {
           c.minRank == a.minRank && (g.emblemRank = c.emblem)
         });
         "MAX_RANK" == a.rewardType && k(
         {
           rank: a.maxRank
-        }) || e[h[a.rewardType]].rankList.push(g)
+        }) || f[h[a.rewardType]].rankList.push(g)
       });
-      d.each(f, function(a, c, b)
+      d.each(e, function(a, c, b)
       {
         var g = !1;
-        d.each(e.lastRanking.rankList, function(c, b, d)
+        d.each(f.lastRanking.rankList, function(c, b, d)
         {
           a.minRank == c.id && (g = !0)
         });
-        g || (c = {}, c.id = a.minRank, c.rank = a.minRank + "位〜" + a.maxRank + "位", a.minRank == a.maxRank && (c.rank = a.maxRank + "位"), c.itemList = [], c.emblemRank = a.emblem, e.lastRanking.rankList.push(c))
+        g || (c = {}, c.id = a.minRank, c.rank = a.minRank + "位〜" + a.maxRank + "位", a.minRank == a.maxRank && (c.rank = a.maxRank + "位"), c.itemList = [], c.emblemRank = a.emblem, f.lastRanking.rankList.push(c))
       });
-      d.each(e, function(a, c, b)
+      d.each(f, function(a, c, b)
       {
         a.rankList = d.sortBy(a.rankList, function(a)
         {
           return a.id
         })
       });
-      return e
+      return f
     },
     getSpRulesList: function(b)
     {
-      var f = "FIRE WATER TIMBER LIGHT DARK VOID".split(" "),
-        e = ["hp", "attack", "defense"],
+      var e = "FIRE WATER TIMBER LIGHT DARK VOID".split(" "),
+        f = ["hp", "attack", "defense"],
         h = {},
         k = [];
       d.each(b.spRulesMap, function(a, c, b)
@@ -107,11 +107,11 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
         if (-1 != c.indexOf("PLUS_"))
         {
           var g = {};
-          d.each(f, function(a, b, d)
+          d.each(e, function(a, b, d)
           {
             -1 != c.indexOf(String(a)) && (g.attr = a)
           });
-          d.each(e, function(a, b, d)
+          d.each(f, function(a, b, d)
           {
             -1 != c.toLowerCase().indexOf(String(a)) && (g.type = a)
           });
@@ -121,17 +121,17 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
       });
       k = k.sort(function(a, b)
       {
-        return e.indexOf(a.type) - e.indexOf(b.type)
+        return f.indexOf(a.type) - f.indexOf(b.type)
       });
       k = k.sort(function(a, b)
       {
-        return f.indexOf(a.attr) - f.indexOf(b.attr)
+        return e.indexOf(a.attr) - e.indexOf(b.attr)
       });
       d.each(k, function(a, b, k)
       {
-        d.each(f, function(b, c, f)
+        d.each(e, function(b, c, e)
         {
-          a.attr == b && (h[b] || (h[b] = {}), d.each(e, function(c, d, g)
+          a.attr == b && (h[b] || (h[b] = {}), d.each(f, function(c, d, g)
           {
             a.type == c && (h[b][c] = a.value)
           }))
@@ -141,15 +141,15 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
     },
     getSpRulesText: function(b)
     {
-      var f = b.plusList,
-        e = [];
+      var e = b.plusList,
+        f = [];
       d.each(b.spRulesMap, function(a, b, d)
       {
         if (-1 != b.indexOf("MUST_KEEP_"))
         {
           d = "攻撃";
           var c = 0; - 1 != b.indexOf("DEFENSE") && (d = "防衛", c = 1);
-          e[c] = "◆" + d + "編成人数制限：" + a + "人以上"
+          f[c] = "◆" + d + "編成人数制限：" + a + "人以上"
         }
       });
       var h = {
@@ -165,42 +165,48 @@ define(["underscore", "backbone", "backboneCommon", "js/view/item/ItemImgPartsVi
           attack: "ATK",
           hp: "HP"
         };
-      d.each(f, function(a, b, f)
+      d.each(e, function(a, b, e)
       {
         var c = "",
-          l = 0;
+          l = 0,
+          m = 0;
         d.each(a, function(a, b, d)
         {
           c += k[b] + "・";
-          l = a
+          l = a;
+          m++
         });
         c = c.slice(0, -1);
-        e.push("◆" + ('<div class="icon ' + b + '"></div>') + h[b] + "属性魔法少女の" + c + "がそれぞれ" + l + "アップ")
+        a = "";
+        2 <= m && (a = "それぞれ");
+        e = "アップ";
+        0 > l && (e = "ダウン", l = Math.abs(l));
+        f.push("◆" + ('<div class="icon ' + b + '"></div>') + h[b] + "属性魔法少女の" + c + "が" + a + l + e)
       });
-      return e
+      return f
     },
     getEmblemRank: function(b)
     {
-      var f = b.orderRank,
-        e = "";
+      var e = b.orderRank,
+        f = "";
       d.each(b.emblemList, function(b, d, a)
       {
-        b.minRank <= f && f <= b.maxRank && (e = b.emblem)
+        b.minRank <= e && e <= b.maxRank && (f = b.emblem)
       });
-      return e
+      return f
     },
     isOpenEvent: function(b)
     {
-      var f = b.pageJson,
-        e = b.pageAccessLocalTime,
+      var e = b.pageJson,
+        f = b.pageAccessLocalTime,
         h = !1;
-      (b = d.findWhere(f.regularEventList,
+      (b = d.findWhere(e.regularEventList,
       {
         regularEventId: b.rankMatchEventInfo.regularEventId
       })) && (h = !n.getIsElapsedTargetTime(
       {
-        pageAccessLocalTime: e,
-        pageAccessServerTime: f.currentTime,
+        pageAccessLocalTime: f,
+        pageAccessServerTime: e.currentTime,
         targetTime: b.endAt
       }));
       return h

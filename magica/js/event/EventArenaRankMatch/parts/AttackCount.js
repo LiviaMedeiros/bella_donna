@@ -1,23 +1,25 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/event/EventArenaRankMatch/parts/AttackCountPopup.html text!template/event/EventArenaRankMatch/parts/AttackCountBtn.html js/event/EventArenaRankMatch/Utility".split(" "), function(g, l, b, m, r, n, p, q)
+define("underscore backbone backboneCommon ajaxControl command text!template/event/EventArenaRankMatch/parts/AttackCountPopup.html text!template/event/EventArenaRankMatch/parts/AttackCountBtn.html js/event/EventArenaRankMatch/Utility js/event/EventArenaRankMatch/parts/AttackCountItemPopup".split(" "), function(k, f, c, m, u, n, p, q, r)
 {
-  var c = {
-    num: 0
-  };
-  c.viewBtn = l.View.extend(
+  var b = {
+      num: 0
+    },
+    d;
+  b.viewBtn = f.View.extend(
   {
     events: function()
     {
       var a = {};
-      a[b.cgti + " #recoverAttackCountBtn"] = this.tapBtn;
+      a[c.cgti + " #recoverAttackCountBtn"] = this.tapBtn;
       return a
     },
     initialize: function(a)
     {
       this.model = a.model;
-      this.template = g.template(p);
+      this.template = k.template(p);
       this.pageJson = a.pageJson;
-      b.doc.getElementById("recoverAttackCountBtnSec").appendChild(this.render().el);
-      c.setNum(
+      d = a._views;
+      c.doc.getElementById("recoverAttackCountBtnSec").appendChild(this.render().el);
+      b.setNum(
       {
         num: this.model.attackCountInfo.num,
         maxNum: this.model.attackCountInfo.numMax
@@ -34,94 +36,16 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     tapBtn: function(a)
     {
       a.preventDefault();
-      if (!(b.isScrolled() || 0 < this.model.attackCountInfo.num))
+      c.isScrolled() || 0 < this.model.attackCountInfo.num || (0 < this.model.attackCountInfo.itemNum ? d.AttackCountItemPopup = new r(
       {
-        var d = this;
-        a = "statusCanUse";
-        var c = "",
-          h = "キャンセル",
-          k = "回復する",
-          f = b.calcExpendStone(
-          {
-            quantity: d.model.attackCountInfo.recoverNeedNum,
-            isPurchasedMoneyOnly: !1
-          });
-        0 > f.totalMoney && (a = "statusCanNotUse", h = "OK", k = null, c = 'マギアストーンが<span class="c_pink">' + Math.abs(f.totalMoney) + "個</span>不足しているため<br>回復できません。");
-        d.popup = new b.PopupClass(
-        {
-          title: "対戦回数回復",
-          content: g.template(n)(
-          {
-            model:
-            {
-              statusClass: a,
-              canNotUseText: c,
-              attackCountInfo: d.model.attackCountInfo,
-              userStone: b.getTotalStone(),
-              remainStone: f
-            }
-          }),
-          popupType: "typeB",
-          decideBtnText: k,
-          decideBtnEvent: function()
-          {
-            d.popup.remove();
-            d.getAttackCountInfo(
-            {
-              callback: d.callbackAttackCount
-            })
-          },
-          closeBtnText: h,
-          popupId: "EventArenaRankMatchAttackCountPopup"
-        }, null, function() {}, function() {})
-      }
-    },
-    getAttackCountInfo: function(a)
-    {
-      var c = a.callback,
-        e = this;
-      q.isOpenEvent(
+        model: this.model,
+        AttackCount: b,
+        pageJson: this.pageJson
+      }) : b.recoverByMoneyPopup(
       {
-        pageJson: e.pageJson,
-        pageAccessLocalTime: e.model.pageAccessLocalTime,
-        rankMatchEventInfo: e.model.eventInfo
-      }) ? (b.tapBlock(!0), m.ajaxPost(b.linkList.eventArenaRankMatchRecoveryAttackCount,
-      {}, function(a)
-      {
-        b.tapBlock(!1);
-        b.responseSetStorage(a);
-        c(
-        {
-          _this: e,
-          res: a
-        })
-      })) : new b.PopupClass(
-      {
-        title: "イベント終了",
-        content: "イベント開催期間外です。",
-        closeBtnText: "OK",
-        canClose: !1,
-        popupType: "typeC"
-      }, null, function() {}, function()
-      {
-        location.href = "#/ArenaTop"
-      })
-    },
-    callbackAttackCount: function(a)
-    {
-      a = a._this;
-      a.model.attackCountInfo.num = 5;
-      c.setNum(
-      {
-        num: a.model.attackCountInfo.num,
-        maxNum: a.model.attackCountInfo.numMax
-      });
-      new b.PopupClass(
-      {
-        title: "対戦回数回復",
-        content: "ミラーズランクマッチの対戦回数が<br>" + a.model.attackCountInfo.num + "回になりました。",
-        closeBtnText: "OK"
-      }, null, function() {}, function() {})
+        model: this.model,
+        pageJson: this.pageJson
+      }))
     },
     removeView: function()
     {
@@ -129,27 +53,125 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
       this.remove()
     }
   });
-  c.setNum = function(a)
+  b.recoverByMoneyPopup = function(a)
   {
-    var b = a.num;
+    var g = a.model,
+      t = a.pageJson;
+    a = "statusCanUse";
+    var e = "",
+      l = "キャンセル",
+      d = "回復する",
+      h = c.calcExpendStone(
+      {
+        quantity: g.attackCountInfo.recoverNeedNum,
+        isPurchasedMoneyOnly: !1
+      });
+    0 > h.totalMoney && (a = "statusCanNotUse", l = "OK", d = null, e = 'マギアストーンが<span class="c_pink">' + Math.abs(h.totalMoney) + "個</span>不足しているため<br>回復できません。");
+    var f = new c.PopupClass(
+    {
+      title: "対戦回数回復",
+      content: k.template(n)(
+      {
+        model:
+        {
+          statusClass: a,
+          canNotUseText: e,
+          attackCountInfo: g.attackCountInfo,
+          userStone: c.getTotalStone(),
+          remainStone: h
+        }
+      }),
+      popupType: "typeB",
+      decideBtnText: d,
+      decideBtnEvent: function()
+      {
+        f.remove();
+        b.recoverAttackCount(
+        {
+          recoverInfo:
+          {
+            type: "magia_stone",
+            num: 5
+          },
+          pageJson: t,
+          model: g,
+          callback: b.callbackRecoverAttackCount
+        })
+      },
+      closeBtnText: l,
+      popupId: "EventArenaRankMatchAttackCountPopup"
+    }, null, function() {}, function() {})
+  };
+  b.recoverAttackCount = function(a)
+  {
+    var b = a.recoverInfo,
+      d = a.callback,
+      e = a.model;
+    q.isOpenEvent(
+    {
+      pageJson: a.pageJson,
+      pageAccessLocalTime: e.pageAccessLocalTime,
+      rankMatchEventInfo: e.eventInfo
+    }) ? (c.tapBlock(!0), m.ajaxPost(c.linkList.eventArenaRankMatchRecoveryAttackCount,
+    {
+      recoveryItemType: b.type,
+      recoveryItemNum: b.num
+    }, function(a)
+    {
+      c.tapBlock(!1);
+      c.responseSetStorage(a);
+      d(
+      {
+        recoverInfo: b,
+        res: a
+      })
+    })) : new c.PopupClass(
+    {
+      title: "イベント終了",
+      content: "イベント開催期間外です。",
+      closeBtnText: "OK",
+      canClose: !1,
+      popupType: "typeC"
+    }, null, function() {}, function()
+    {
+      location.href = "#/ArenaTop"
+    })
+  };
+  b.callbackRecoverAttackCount = function(a)
+  {
+    new c.PopupClass(
+    {
+      title: "対戦回数回復",
+      content: "ミラーズランクマッチの対戦回数を<br>" + a.recoverInfo.num + "回回復しました。",
+      closeBtnText: "OK"
+    }, null, function() {}, function()
+    {
+      c.EventArenaRankMatchPrm.isOpenPopup = !1;
+      c.EventArenaRankMatchPrm.openTimeOverPopup = !1;
+      location.href = "#/RegularEventArenaRankMatchRedirectTop"
+    })
+  };
+  b.setNum = function(a)
+  {
+    var c = a.num;
     a = a.maxNum;
-    c.num = b;
-    $("#attackCountNumSec").html(b + "/" + a);
+    b.num = c;
+    $("#attackCountNumSec").html(c + "/" + a);
     $("#recoverAttackCountBtn").addClass("off");
-    0 >= c.num && $("#recoverAttackCountBtn").removeClass("off")
+    0 >= b.num && $("#recoverAttackCountBtn").removeClass("off")
   };
-  c.getNum = function(a)
+  b.getNum = function(a)
   {
-    return c.num
+    return b.num
   };
-  c.noBattlePopup = function(a)
+  b.noBattlePopup = function(a)
   {
-    new b.PopupClass(
+    new c.PopupClass(
     {
       title: "対戦回数不足",
       content: "対戦回数が残っていないので対戦できません。",
       closeBtnText: "OK"
     }, null, function() {}, function() {})
   };
-  return c
+  return b
 });

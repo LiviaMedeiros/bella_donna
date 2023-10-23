@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/formation/DeckFormation.html text!css/formation/DeckFormation.css cardUtil memoriaUtil js/view/chara/CharaListView js/card/CardPopup js/memoria/MemoriaPopup QuestUtil DeckUtil js/event/EventArenaRankMatch/parts/SpRule js/event/EventArenaRankMatch/parts/OpponentPopup js/event/EventArenaRankMatch/parts/DeckEditCountDown js/event/EventArenaRankMatch/Utility js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(h, B, a, A, n, T, U, V, ia, W, C, J, X, Y, Z, aa, ba, ca, da, ea)
+define("underscore backbone backboneCommon ajaxControl command text!template/formation/DeckFormation.html text!css/formation/DeckFormation.css cardUtil memoriaUtil js/view/chara/CharaListView js/card/CardPopup js/memoria/MemoriaPopup QuestUtil DeckUtil js/event/EventArenaRankMatch/parts/SpRule js/event/EventArenaRankMatch/parts/OpponentPopup js/event/EventArenaRankMatch/parts/DeckEditCountDown js/event/EventArenaRankMatch/Utility js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(h, B, a, A, n, U, V, W, ia, X, C, J, Y, Z, aa, ba, ca, R, da, ea)
 {
   var M = B.Model.extend(),
-    R = B.Collection.extend(),
+    S = B.Collection.extend(),
     K = null,
     d = null,
     y = null,
@@ -15,8 +15,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     {
       initialize: function(b)
       {
-        this.template = h.template(T);
-        this.questLoopStatus = X.getQuestLoopStatus(a.questBattleModel);
+        this.template = h.template(U);
+        this.questLoopStatus = Y.getQuestLoopStatus(a.questBattleModel);
         this.createDom()
       },
       render: function()
@@ -36,6 +36,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         "accomplish" === d && (b.hideHelp = !0);
         a.setGlobalView(b);
         a.content.append(this.render().el);
+        "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && !a.EventArenaRankMatchPrm.opponentInfo && $("#DeckFormation").addClass("deckEdit");
         if ("accomplish" === d)
         {
           var c = this;
@@ -265,7 +266,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               a.androidKeyStop = !1;
               return
             }
-            if (!ca.isOpenEvent(
+            if (!R.isOpenEvent(
               {
                 pageJson: p,
                 pageAccessLocalTime: a.EventArenaRankMatchPrm.deckEditAccessTime,
@@ -567,7 +568,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       {
         b.preventDefault();
         if (!a.isScrolled())
-          if (a.doc.getElementById("formationDetail").classList.contains("disp")) a.removeClassId("formationDetail", "disp"), a.removeClass(a.doc.getElementById("formationSheetListOuter"), "hide"), b.currentTarget.textContent = "陣形詳細", a.scrollDestroy("formationDetailScrollWrap", "fromationDetailScrollInner"), a.doc.getElementById("formationDetail").innerHTML = "";
+          if (a.doc.getElementById("formationDetail").classList.contains("disp")) a.removeClassId("formationDetail", "disp"), a.removeClass(a.doc.getElementById("formationSheetListOuter"), "hide"), b.currentTarget.textContent = "陣形詳細", a.scrollDestroy("formationDetailScrollWrap", "fromationDetailScrollInner"),
+            a.doc.getElementById("formationDetail").innerHTML = "";
           else
           {
             var c = h.clone(f.model.toJSON()),
@@ -646,7 +648,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       openArenaRankMatchSpRulePopup: function(b)
       {
         b.preventDefault();
-        a.isScrolled() || a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.spRuleList && Z.openPopup(
+        a.isScrolled() || a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.spRuleList && aa.openPopup(
         {
           ruleList: a.EventArenaRankMatchPrm.spRuleList
         })
@@ -654,7 +656,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       openArenaRankMatchOpponentPopup: function(b)
       {
         b.preventDefault();
-        !a.isScrolled() && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo && (this.EventArenaRankMatchOpponentPopup = new aa(
+        !a.isScrolled() && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo && (this.EventArenaRankMatchOpponentPopup = new ba(
         {
           model: a.EventArenaRankMatchPrm.opponentInfo,
           pageType: "DeckFormation"
@@ -1135,11 +1137,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               puellaHistoriaGroupRaid: String(da.getDeckType(
               {}) / 10),
               scene0Challenge: String(ea.getDeckType() / 10),
+              arenaRankMatchAttack: String(R.getDeckType().attackBase / 10),
               accomplish: "8",
               exterminationCopy: "1",
               secondPartLastCopy: "1"
             };
-          b = "group" === d || "groupPrepare" === d ? Number(e[d || "quest"] + "4") : "endless" === d ? Number(e[d || "quest"] + "3") : "accomplish" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d ? Number(e[d || "quest"] + "5") : Number(e[d || "quest"] + "9");
+          b = "group" === d || "groupPrepare" === d ? Number(e[d || "quest"] + "4") : "endless" === d ? Number(e[d || "quest"] + "3") : "accomplish" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d ? Number(e[d || "quest"] + "5") : Number(e[d || "quest"] + "9");
           e = Number(e[d || "quest"] + "1");
           c = c > b ? e : c;
           c = c < e ? b : c;
@@ -1358,11 +1361,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                   var w = a.EventArenaRankMatchPrm.spPlusList;
                   h.each(m, function(a, b, c)
                   {
-                    h.each(w, function(c, e, d)
+                    h.each(w, function(b, c, e)
                     {
-                      b == a.card.attributeId && h.each(c, function(b, d, g)
+                      c == a.card.attributeId && h.each(b, function(b, c, e)
                       {
-                        a[e] && (a[e] += c)
+                        a[c] && (a[c] += b);
+                        0 > a[c] && (a[c] = 0)
                       })
                     })
                   })
@@ -1743,7 +1747,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     ga = function()
     {
       var b = !0;
-      "dungeonInMap" === d ? (b = !1, a.addClass(a.doc.querySelector("#charaListWrap"), "dungeonInMap")) : "group" === d || "groupPrepare" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "groupWrap") : "extermination" === d || "secondPartLast" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "exterminationWrap") : "accomplish" === d && S();
+      "dungeonInMap" === d ? (b = !1, a.addClass(a.doc.querySelector("#charaListWrap"), "dungeonInMap")) : "group" === d || "groupPrepare" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "groupWrap") : "extermination" === d || "secondPartLast" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "exterminationWrap") : "accomplish" === d && T();
       a.removeClass(a.doc.querySelector("#charaListElms .select"), "select");
       a.removeClass(a.doc.querySelector("#charaListElms .formationRemove"), "formationRemove");
       h.each([].slice.call(a.doc.querySelectorAll("#charaListElms .formationCurrent")), function(b)
@@ -1782,7 +1786,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         }
       }
     },
-    S = function()
+    T = function()
     {
       a.storage.userCardListEx.each(function(b)
       {
@@ -1851,7 +1855,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           a.addBackHandler(a.pageObj.deckChangeConf)
         }, 0);
-        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "arenaRankMatchAttack" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d) a.addClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.addClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.removeClass(a.doc.querySelector("#mainBtn"), "noneDisp");
+        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.addClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.addClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.removeClass(a.doc.querySelector("#mainBtn"), "noneDisp");
         a.removeClass(a.doc.querySelector("#mainBtn"), "off");
         "group" === d && u.deckMpCalculate()
       }
@@ -1861,7 +1865,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.removeBackHandler();
         a.androidKeyStop = !1;
         a.holdDeck = null;
-        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "arenaRankMatchAttack" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d) a.removeClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.removeClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.addClass(a.doc.querySelector("#mainBtn"), "noneDisp");
+        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.removeClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.removeClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.addClass(a.doc.querySelector("#mainBtn"), "noneDisp");
         a.addClass(a.doc.querySelector("#mainBtn"), "off");
         u && "group" === d && u.deckMpCalculate()
       }
@@ -1874,31 +1878,31 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     {
       a.switchNpcCompar = {};
       a.switchNpcCompar.eventId = a.questBattleModel && a.questBattleModel.questBattle.eventId ? a.questBattleModel.questBattle.eventId : null;
-      V.createCardList();
+      W.createCardList();
       p = A.getPageJson();
       p.rentalPieceSetList && 0 < p.rentalPieceSetList.length ? a.rentalPieceData && (a.rentalPieceData.rentalFlag = !0, a.rentalPieceData.rentalPieceSetList = p.rentalPieceSetList) : a.rentalPieceData && (a.rentalPieceData.rentalFlag = !1, a.rentalPieceData = null);
       if ("group" === d || "groupPrepare" === d) L = h.findWhere(p.regularEventList,
       {
         regularEventType: "GROUPBATTLE"
       });
-      r = new Y(d);
+      r = new Z(d);
       r.appendCharaStatus();
       var b = r.deckPrmInit();
       y = b.currentDeckType;
       t = b.currentDeckModel;
       a.removeUserCardIdArr || (a.removeUserCardIdArr = []);
       "accomplish" === d && n.changeBg("web_accomplish_page_01.ExportJson");
-      a.setStyle(U);
+      a.setStyle(V);
       u = new fa;
       var c;
-      "extermination" === d || "exterminationCopy" === d ? (c = new R, a.storage.userCardListEx.each(function(a)
+      "extermination" === d || "exterminationCopy" === d ? (c = new S, a.storage.userCardListEx.each(function(a)
       {
         4 <= a.get("cardId") % 10 && c.add(a)
-      })) : "accomplish" === d ? (c = new R, a.storage.userCardListEx.each(function(a)
+      })) : "accomplish" === d ? (c = new S, a.storage.userCardListEx.each(function(a)
       {
         40 <= a.get("level") && c.add(a)
       })) : c = a.storage.userCardListEx;
-      "arenaRankMatchAttack" !== d && "arenaRankMatchDefence" !== d || !a.EventArenaRankMatchPrm || ("arenaRankMatchAttack" === d && (u.DeckEditCountDown = ba.init(
+      "arenaRankMatchAttack" !== d && "arenaRankMatchDefence" !== d || !a.EventArenaRankMatchPrm || ("arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo && (u.DeckEditCountDown = ca.init(
       {
         model: a.EventArenaRankMatchPrm,
         pageJson: p
@@ -1906,13 +1910,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       {
         date: new Date
       }), a.EventArenaRankMatchPrm.deckEditAccessTime = b.yr + "/" + b.mo + "/" + b.da + " " + b.ho + ":" + b.mi + ":" + b.se, a.EventArenaRankMatchPrm.deckEditPageJson = p);
-      u.charaListView = new W(
+      u.charaListView = new X(
       {
         model: new M,
         collection: c
       });
       a.content.append(u.charaListView.render().el);
-      "accomplish" === d && S();
+      "accomplish" === d && T();
       a.scrollSetX("charaListScrollWrap", "list");
       n.getBaseData(a.getNativeObj())
     };
@@ -2047,7 +2051,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.removeBackHandler();
         C.popupTimerStop();
         J.popupTimerStop();
-        d && "quest" !== d ? "group" === d || "groupPrepare" === d ? a.currentGroupDeckType = f.model.toJSON().deckType : "dungeon" === d ? a.currentDungeonDeckType = f.model.toJSON().deckType : "endless" === d ? a.currentEndlessDeckType = f.model.toJSON().deckType : "puellaHistoriaGroupRaid" === d ? a.currentPuellaHistoriaGroupRaidDeckType = f.model.toJSON().deckType : "scene0Challenge" === d && (a.currentScene0ChallengeDeckType = f.model.toJSON().deckType) : a.currentDeckType = f.model.toJSON().deckType;
+        d && "quest" !== d ? "group" === d || "groupPrepare" === d ? a.currentGroupDeckType = f.model.toJSON().deckType : "dungeon" === d ? a.currentDungeonDeckType = f.model.toJSON().deckType : "endless" === d ? a.currentEndlessDeckType = f.model.toJSON().deckType : "puellaHistoriaGroupRaid" === d ? a.currentPuellaHistoriaGroupRaidDeckType = f.model.toJSON().deckType : "scene0Challenge" === d ? a.currentScene0ChallengeDeckType = f.model.toJSON().deckType : "arenaRankMatchAttack" === d && (a.currentArenaRankMatchDeckType = f.model.toJSON().deckType) : a.currentDeckType = f.model.toJSON().deckType;
         u.charaListView.trigger("remove");
         u.charaListView.remove();
         if ("arenaRankMatchAttack" == d || "arenaRankMatchDefence" == d) u.EventArenaRankMatchOpponentPopup && u.EventArenaRankMatchOpponentPopup.removeView(), u.DeckEditCountDown && u.DeckEditCountDown.removeView();

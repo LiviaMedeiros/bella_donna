@@ -34,13 +34,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a[b.cgti + " #commonStoryTest"] = this.commonStoryTest;
       a[b.cgti + " #mirrorBattleRetry"] = this.mirrorBattleRetry;
       a[b.cgti + " #getPurchaseStatus"] = this.getPurchaseStatus;
-      a[b.cgti + " #puellaHistoriaLastBattleSingleRaid"] = this.puellaHistoriaLastBattleSingleRaid;
-      a[b.cgti + " #puellaHistoriaLastBattleGroupRaid"] = this.puellaHistoriaLastBattleGroupRaid;
-      a[b.cgti + " #toScene0Top"] = this.toScene0Top;
-      a[b.cgti + " #toPlayScene0OP"] = this.toPlayScene0OP;
-      a[b.cgti + " #getCardAnime"] = this.getCardAnime;
-      a[b.cgti + " #testSurround"] = this.testSurround;
-      a[b.cgti + " #testSurround2"] = this.testSurround2;
+      a[b.cgti + " #returnRankMatchTop"] = this.returnRankMatchTop;
       return a
     },
     initialize: function(b)
@@ -364,10 +358,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           {
             "readyFadeOut" == a.originalEvent.animationName && (b.ready.target.className = "")
           });
-          $("#commandDiv").on("nativeCallback", function(b, a)
+          $("#commandDiv").on("nativeCallback", function(a, b)
           {
-            console.log("nativeCallback", a);
-            a && "prologue" === a && ($("#commandDiv").off(), c.setWebView())
+            console.log("nativeCallback", b);
+            b && "prologue" === b && ($("#commandDiv").off(), c.setWebView())
           });
           setTimeout(function()
           {
@@ -576,106 +570,20 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         product_ids: ["aaaa", "bbbb", "cccc"]
       }, window.isBrowser && nativeCallback(a))
     },
-    puellaHistoriaLastBattleSingleRaid: function(a)
+    returnRankMatchTop: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (location.href = "#/PuellaHistoriaSingleRaid")
-    },
-    puellaHistoriaLastBattleGroupRaid: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || (location.href = "#/EventPuellaRaidTop")
-    },
-    toScene0Top: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || (location.href = "#/Scene0Top")
-    },
-    toPlayScene0OP: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || b.preNativeFadeIn(function()
+      b.isScrolled() || (c.setWebView(), new b.PopupClass(
       {
-        b.ready.show();
-        c.stopBgm();
-        $("#commandDiv").on("nativeCallback", function(a, d)
-        {
-          $("#commandDiv").off();
-          b.ready.target.className = "";
-          c.changeBg(b.background);
-          c.startBgm(b.bgm);
-          b.androidKeyStop = !1;
-          c.setWebView();
-          b.ready.hide()
-        });
-        c.playMovieNoSkip("resource/movie/other/op_movie3.usm");
-        window.isBrowser && nativeCallback()
-      }, 500)
-    },
-    getCardAnime: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || (c.endL2d(), $("#commandDiv").on("nativeCallback", function()
+        title: "エラー",
+        content: "バトルの所要時間が一定時間を超えたため<br>このバトルは無効になります。<br>イベントTOPに戻ります。",
+        closeBtnText: "OK"
+      }, null, null, function()
       {
-        $("#commandDiv").off();
-        c.startBgm(b.settingBgm);
-        setTimeout(function()
-        {
-          c.setWebView(!0);
-          b.androidKeyStop = !1;
-          b.ready.target.className = "readyFadeOut";
-          c.changeBg("web_common.ExportJson")
-        }, 50)
-      }), $(b.ready.target).on("webkitAnimationEnd", function()
-      {
-        c.stopBgm();
-        c.changeBg("web_black.jpg");
-        $(b.ready.target).off();
-        $(b.ready.target).on("webkitAnimationEnd", function(a)
-        {
-          "readyFadeOut" == a.originalEvent.animationName && (b.ready.target.className = "")
-        });
-        setTimeout(function()
-        {
-          c.setWebView(!1);
-          c.startPresentAnimation(
-          {
-            gachaAnimation:
-            {
-              direction1: 1,
-              direction2: 1,
-              direction3: 1,
-              gachaResultList: [
-              {
-                type: "CARD",
-                rarity: "RANK_4",
-                cardId: 40144,
-                attributeId: "LIGHT",
-                charaId: 4014,
-                direction: 4,
-                displayName: "昴 かずみ",
-                isNew: !0
-              }]
-            }
-          })
-        }, 500)
-      }), b.addClass(b.ready.target, "preNativeFadeIn"))
-    },
-    testSurround: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || (c.stopSe(), c.stopSur(), setTimeout(function()
-      {
-        c.startSur("8092_film")
-      }, 10))
-    },
-    testSurround2: function(a)
-    {
-      a.preventDefault();
-      b.isScrolled() || (c.stopSe(), c.stopSur(), setTimeout(function()
-      {
-        c.startSur("9004_historia")
-      }, 10))
+        c.endArena();
+        location.href = "#/RegularEventArenaRankMatchTop";
+        window.isBrowser && (location.href = "#/RegularEventArenaRankMatchTop")
+      }))
     }
   })
 });

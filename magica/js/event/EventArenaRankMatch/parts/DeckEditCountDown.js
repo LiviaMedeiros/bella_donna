@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/event/EventArenaRankMatch/parts/CoolTimePopup.html".split(" "), function(e, f, c, g, h, k)
+define("underscore backbone backboneCommon ajaxControl command text!template/event/EventArenaRankMatch/parts/CoolTimePopup.html".split(" "), function(d, e, c, f, g, h)
 {
   var a = {
     init: function(b)
@@ -7,21 +7,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
       a.pageJson = b.pageJson;
       a.selector = "#editCountDown";
       b = a.pageJson.currentTime;
-      if (a.model.isDeckEditCountDownContinue) a.timer && $(a.selector).html(a.timer.getString());
-      else
+      a.model.isDeckEditCountDownContinue ? a.timer && $(a.selector).html(a.timer.getString()) : a.setTimer(
       {
-        var d = c.getAddDate(
-        {
-          date: b,
-          amount: a.model.editTime,
-          type: "seconds"
-        });
-        a.setTimer(
-        {
-          currentTime: b,
-          endTime: d
-        })
-      }
+        currentTime: b,
+        endTime: a.model.editEndTime
+      });
       c.EventArenaRankMatchPrm.isDeckEditCountDownContinue = !1;
       return a
     },

@@ -2583,7 +2583,8 @@
 #DeckFormation .deckViewWrap.memoriaEquipMode .memoriaSkillWrap,
 #DeckFormation .deckViewWrap.memoriaEquipMode .head>.formationEffect,
 #DeckFormation .deckViewWrap.memoriaEquipMode .eventEffectBtn,
-#DeckFormation .deckViewWrap.memoriaEquipMode .epSetBtn
+#DeckFormation .deckViewWrap.memoriaEquipMode .epSetBtn,
+#DeckFormation .deckViewWrap.memoriaEquipMode .prmChangeIcon
 {
   display: none !important;
 }
@@ -3914,9 +3915,7 @@
 
 #DeckFormation #deckFooter #mainBtn,
 #DeckFormation #deckFooter .nextPageBtn,
-#DeckFormation #deckFooter #exterminationCopyBtn,
-#DeckFormation #deckFooter #arenaRankMatchSpRuleBtn,
-#DeckFormation #deckFooter #arenaRankMatchOpponentBtn
+#DeckFormation #deckFooter #exterminationCopyBtn
 {
   width: 98px;
   height: 102px;
@@ -3935,18 +3934,14 @@
 
 #DeckFormation #deckFooter #mainBtn.off,
 #DeckFormation #deckFooter .nextPageBtn.off,
-#DeckFormation #deckFooter #exterminationCopyBtn.off,
-#DeckFormation #deckFooter #arenaRankMatchSpRuleBtn.off,
-#DeckFormation #deckFooter #arenaRankMatchOpponentBtn.off
+#DeckFormation #deckFooter #exterminationCopyBtn.off
 {
   -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25)) grayscale(100%);
 }
 
 #DeckFormation #deckFooter #mainBtn.loop,
 #DeckFormation #deckFooter .nextPageBtn.loop,
-#DeckFormation #deckFooter #exterminationCopyBtn.loop,
-#DeckFormation #deckFooter #arenaRankMatchSpRuleBtn.loop,
-#DeckFormation #deckFooter #arenaRankMatchOpponentBtn.loop
+#DeckFormation #deckFooter #exterminationCopyBtn.loop
 {
   bottom: 124px;
   background: url("/magica/resource/image_web/page/formation/btn_round.png") left top no-repeat;
@@ -3957,29 +3952,72 @@
 
 #DeckFormation #deckFooter #mainBtn.noneDisp,
 #DeckFormation #deckFooter .nextPageBtn.noneDisp,
-#DeckFormation #deckFooter #exterminationCopyBtn.noneDisp,
-#DeckFormation #deckFooter #arenaRankMatchSpRuleBtn.noneDisp,
-#DeckFormation #deckFooter #arenaRankMatchOpponentBtn.noneDisp
+#DeckFormation #deckFooter #exterminationCopyBtn.noneDisp
 {
   display: none;
 }
 
-#DeckFormation #deckFooter #arenaRankMatchSpRuleBtn
+#DeckFormation.arenaRankMatchAttackWrap .deckName
 {
+  display: none;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap.deckEdit .editCountDownSec,
+#DeckFormation.arenaRankMatchAttackWrap.deckEdit #arenaRankMatchOpponentBtn
+{
+  display: none;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchAttackWrap #arenaRankMatchOpponentBtn,
+#DeckFormation.arenaRankMatchDefenceWrap #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchDefenceWrap #arenaRankMatchOpponentBtn
+{
+  position: absolute;
   width: 94px;
   height: 94px;
   right: 25px;
-  bottom: 120px;
+  top: 68px;
+  z-index: 10;
   background: url("/magica/resource/image_web/page/formation/arenaRankMatch/btn_special_rules_circle.png") left top no-repeat;
 }
 
-#DeckFormation #deckFooter #arenaRankMatchOpponentBtn
+#DeckFormation.arenaRankMatchAttackWrap #arenaRankMatchOpponentBtn,
+#DeckFormation.arenaRankMatchDefenceWrap #arenaRankMatchOpponentBtn
 {
-  width: 94px;
-  height: 94px;
-  right: 25px;
-  bottom: 220px;
+  top: 160px;
   background: url("/magica/resource/image_web/page/formation/arenaRankMatch/btn_rankmatch_enemy_circle.png") left top no-repeat;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap .deckViewWrap .deckPartsWrap .deckParts .prmChangeIcon,
+#DeckFormation.arenaRankMatchDefenceWrap .deckViewWrap .deckPartsWrap .deckParts .prmChangeIcon
+{
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 17px;
+  bottom: 148px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/icon_status_up.png") left top no-repeat;
+  z-index: 100000;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap .deckViewWrap .deckPartsWrap .deckParts .prmChangeIcon.minus,
+#DeckFormation.arenaRankMatchDefenceWrap .deckViewWrap .deckPartsWrap .deckParts .prmChangeIcon.minus
+{
+  left: 100px;
+  background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/icon_status_down.png") left top no-repeat;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap.formation #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchAttackWrap.formation #arenaRankMatchOpponentBtn,
+#DeckFormation.arenaRankMatchAttackWrap.deckChange #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchAttackWrap.deckChange #arenaRankMatchOpponentBtn,
+#DeckFormation.arenaRankMatchDefenceWrap.formation #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchDefenceWrap.formation #arenaRankMatchOpponentBtn,
+#DeckFormation.arenaRankMatchDefenceWrap.deckChange #arenaRankMatchSpRuleBtn,
+#DeckFormation.arenaRankMatchDefenceWrap.deckChange #arenaRankMatchOpponentBtn
+{
+  display: none;
 }
 
 /* 19-05-27 ios11レンダリングバグ対応を分離 */

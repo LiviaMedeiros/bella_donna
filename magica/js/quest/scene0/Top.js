@@ -73,7 +73,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             k.prototype.parentView = this;
             f = new k(
             {
-              imgArr: ["navi_01", "navi_02", "navi_03_a"],
+              imgArr: ["navi_01", "navi_02_a", "navi_03_a"],
               type: "scene0"
             });
             b.doc.getElementsByClassName("popupInner")[0].appendChild(f.render().el)

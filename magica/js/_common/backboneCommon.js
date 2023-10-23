@@ -108,7 +108,10 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
       d = a.type;
     a = new Date(a.date);
     "year" == d ? a.setFullYear(a.getFullYear() + b) : "month" == d ? a.setMonth(a.getMonth() + b) : "date" == d ? a.setDate(a.getDate() + b) : "hours" == d ? a.setHours(a.getHours() + b) : "minutes" == d ? a.setMinutes(a.getMinutes() + b) : "seconds" == d && a.setSeconds(a.getSeconds() + b);
-    return a.toLocaleString()
+    return a.toLocaleString("ja-JP",
+    {
+      timeZone: "Asia/Tokyo"
+    })
   };
   a.getIsElapsedTargetTime = function(a)
   {
