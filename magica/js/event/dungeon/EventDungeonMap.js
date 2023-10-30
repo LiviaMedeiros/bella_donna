@@ -509,7 +509,6 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
           mp2: this.model.dp ? this.model.dp : 0,
           isRetire: this.model.retired
         }));
-        this.changeDamage();
         return this
       },
       changeDamage: function(b)
@@ -903,6 +902,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     },
     {
       id: "userSectionList"
+    },
+    {
+      id: "userQuestBattleList"
     },
     {
       id: "userChapterList"

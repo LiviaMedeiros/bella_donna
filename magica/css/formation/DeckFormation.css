@@ -4008,6 +4008,24 @@
   background: url("/magica/resource/image_web/event/arenaRankMatch/common/top/icon_status_down.png") left top no-repeat;
 }
 
+#DeckFormation.arenaRankMatchAttackWrap .deckViewWrap .deckPartsWrap .deckParts .bonusIcon,
+#DeckFormation.arenaRankMatchDefenceWrap .deckViewWrap .deckPartsWrap .deckParts .bonusIcon
+{
+  display: none;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .bonusIcon,
+#DeckFormation.arenaRankMatchDefenceWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .bonusIcon
+{
+  display: none;
+}
+
+#DeckFormation.arenaRankMatchAttackWrap #bonusTextWrap,
+#DeckFormation.arenaRankMatchDefenceWrap #bonusTextWrap
+{
+  display: none;
+}
+
 #DeckFormation.arenaRankMatchAttackWrap.formation #arenaRankMatchSpRuleBtn,
 #DeckFormation.arenaRankMatchAttackWrap.formation #arenaRankMatchOpponentBtn,
 #DeckFormation.arenaRankMatchAttackWrap.deckChange #arenaRankMatchSpRuleBtn,
