@@ -1,21 +1,21 @@
-define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHistoria/CreateModel js/quest/scene0/Utility".split(" "), function(k, y, a, h, p, l, g)
+define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHistoria/CreateModel js/quest/scene0/Utility".split(" "), function(k, y, b, g, p, l, h)
 {
-  var t = function(b)
+  var t = function(a)
     {
-      var c = b.model,
-        e = b.callback;
-      b = "";
-      c.sectionModel.section.secret && (b = "_" + c.sectionModel.section.secret);
+      var c = a.model,
+        e = a.callback;
+      a = "";
+      c.sectionModel.section.secret && (a = "_" + c.sectionModel.section.secret);
       var d = c.questBattleModel.sectionId;
       99 == l.getIsPuellaHistoriaInfo(
       {
         sectionInfo: c.sectionModel
       }).num && (d = !1);
-      a.playStory(
+      b.playStory(
       {
         cmd: p,
-        ajaxControl: h,
-        storyId: c.questBattleModel.startStory + b,
+        ajaxControl: g,
+        storyId: c.questBattleModel.startStory + a,
         fullVoiceSectionId: d,
         isForcePlay: !0,
         callback: function()
@@ -27,20 +27,20 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
         }
       })
     },
-    u = function(b)
+    u = function(a)
     {
-      var c = b.model,
-        e = b.callback,
+      var c = a.model,
+        e = a.callback,
         d = c.questBattleModel.sectionId;
-      b.isSideStory && (d = !1);
-      var f = function(b)
+      a.isSideStory && (d = !1);
+      var f = function(a)
         {
-          var c = b.callback;
-          a.playStory(
+          var c = a.callback;
+          b.playStory(
           {
             cmd: p,
-            ajaxControl: h,
-            storyId: b.storyId,
+            ajaxControl: g,
+            storyId: a.storyId,
             fullVoiceSectionId: d,
             isForcePlay: !0,
             callback: function()
@@ -51,7 +51,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
         },
         m = c.questBattleModel.sceneZeroStoryIds.split(","),
         n = 0,
-        g = function()
+        h = function()
         {
           n++;
           m.length == n ? e(
@@ -62,7 +62,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
             storyId: m[n],
             callback: function()
             {
-              g()
+              h()
             }
           })
         };
@@ -71,108 +71,108 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
         storyId: m[0],
         callback: function()
         {
-          g()
+          h()
         }
       })
     },
-    v = function(a)
+    v = function(b)
     {
-      var c = a.callback;
-      h.simplePageModelGet("Scene0StorySelectAfterFilm1", null, function(a)
+      var a = b.callback;
+      g.simplePageModelGet("Scene0StorySelectAfterFilm1", null, function(b)
       {
-        a && a.receiveCardPresentId ? g.playCardGetMvMabayu(
+        b && b.receiveCardPresentId ? h.playCardGetMvMabayu(
         {
-          presentId: a.receiveCardPresentId,
+          presentId: b.receiveCardPresentId,
           callback: function()
           {
-            c()
+            a()
           }
-        }) : c()
+        }) : a()
       })
     },
-    r = function(b)
+    r = function(a)
     {
-      var c = b.model,
-        e, d = function(b)
+      var c = a.model,
+        e, d = function(a)
         {
-          a.questNativeResponse = b;
-          a.responseSetStorage(a.questNativeResponse);
-          w(a.questNativeResponse);
+          b.questNativeResponse = a;
+          b.responseSetStorage(b.questNativeResponse);
+          w(b.questNativeResponse);
           10420203 == c.questBattleModel.questBattleId ? v(
           {
             callback: function()
             {
-              location.href = q(a.questNativeResponse)
+              location.href = q(b.questNativeResponse)
             }
-          }) : location.href = q(a.questNativeResponse)
+          }) : location.href = q(b.questNativeResponse)
         },
-        f = function(b)
+        f = function(a)
         {
-          if (b)
+          if (a)
           {
-            b = b.webData;
-            var c = b.userQuestBattleResultList[0].questBattle;
-            a.responseSetStorage(b);
-            if (b = (b = a.storage.userSectionList.findWhere(
+            a = a.webData;
+            var c = a.userQuestBattleResultList[0].questBattle;
+            b.responseSetStorage(a);
+            if (a = (a = b.storage.userSectionList.findWhere(
               {
                 sectionId: c.sectionId
-              })) ? b.toJSON() : null) c = (c = a.storage.userChapterList.findWhere(
+              })) ? a.toJSON() : null) c = (c = b.storage.userChapterList.findWhere(
             {
-              chapterId: b.section.genericId
-            })) ? c.toJSON() : null, a.playChapter = c, a.playSection = b
+              chapterId: a.section.genericId
+            })) ? c.toJSON() : null, b.playChapter = c, b.playSection = a
           }
-          b = {
+          a = {
             result: "SUCCESSFUL"
           };
-          b.userQuestBattleResultId = e;
-          h.ajaxPost(a.linkList.questNativeResultSend, b, d)
+          a.userQuestBattleResultId = e;
+          g.ajaxPost(b.linkList.questNativeResultSend, a, d)
         };
-      b = {};
-      b.questBattleId = c.questBattleModel.questBattleId;
-      b.deckType = 1;
-      h.ajaxPost(a.linkList.questStart, b, function(b)
+      a = {};
+      a.questBattleId = c.questBattleModel.questBattleId;
+      a.deckType = 1;
+      g.ajaxPost(b.linkList.questStart, a, function(a)
       {
         var c = {};
-        c.userQuestBattleResultId = b.userQuestBattleResultList[0].id;
+        c.userQuestBattleResultId = a.userQuestBattleResultList[0].id;
         e = c.userQuestBattleResultId;
-        h.ajaxPost(a.linkList.questNativeGet, c, f)
+        g.ajaxPost(b.linkList.questNativeGet, c, f)
       })
     },
-    w = function(b)
+    w = function(a)
     {
-      if (a.playSection)
+      if (b.playSection)
       {
-        var c = a.storage.userSectionList.findWhere(
+        var c = b.storage.userSectionList.findWhere(
           {
-            sectionId: b.userQuestBattleResultList[0].questBattle.sectionId
+            sectionId: a.userQuestBattleResultList[0].questBattle.sectionId
           }).toJSON(),
           e = c.cleared;
-        !a.playSection.cleared && e && (a.clearSectionModel = c, a.playSection = null);
+        !b.playSection.cleared && e && (b.clearSectionModel = c, b.playSection = null);
         var d = null;
-        b.userChapterList && k.each(b.userChapterList, function(a, b)
+        a.userChapterList && k.each(a.userChapterList, function(a, b)
         {
           a.chapterId == c.section.genericId && (d = a)
         });
         var f = null;
-        d && (e = d.cleared, f = a.playChapter.cleared, e && !f && (a.clearChapterModel = {}, a.clearChapterModel.before = a.playChapter, a.clearChapterModel.after = null, b.userChapterList && k.each(b.userChapterList, function(b)
+        d && (e = d.cleared, f = b.playChapter.cleared, e && !f && (b.clearChapterModel = {}, b.clearChapterModel.before = b.playChapter, b.clearChapterModel.after = null, a.userChapterList && k.each(a.userChapterList, function(a)
         {
-          b.chapter.questType == d.chapter.questType && b.chapterId !== d.chapterId && (a.clearChapterModel.after = b)
+          a.chapter.questType == d.chapter.questType && a.chapterId !== d.chapterId && (b.clearChapterModel.after = a)
         })));
-        a.playChapter = null;
+        b.playChapter = null;
         99 == l.getIsPuellaHistoriaInfo(
         {
           sectionInfo: c
-        }).num && (a.clearSectionModel = null, a.playSection = null, a.clearChapterModel = null);
-        g.getIsScene0Info(
+        }).num && (b.clearSectionModel = null, b.playSection = null, b.clearChapterModel = null);
+        h.getIsScene0Info(
         {
           section: c
-        }).isScene0 && (a.clearSectionModel = null, a.playSection = null, a.clearChapterModel = null)
+        }).isScene0 && (b.clearSectionModel = null, b.playSection = null, b.clearChapterModel = null)
       }
     },
-    q = function(b)
+    q = function(a)
     {
-      var c, e = b.userQuestBattleResultList[0].questBattle.sectionId,
-        d = a.storage.userSectionList.findWhere(
+      var c, e = a.userQuestBattleResultList[0].questBattle.sectionId,
+        d = b.storage.userSectionList.findWhere(
         {
           sectionId: e
         }).toJSON();
@@ -180,67 +180,64 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
       {
         case "MAIN":
           c = "#/MainQuest";
-          a.historyArr = ["MyPage", "MainQuest"];
+          b.historyArr = ["MyPage", "MainQuest"];
           break;
         case "SUB":
           c = "#/SubQuest";
-          a.historyArr = ["MyPage", "SubQuest"];
+          b.historyArr = ["MyPage", "SubQuest"];
           break;
         case "CHARA":
         case "COSTUME":
           c = "#/CharaQuest";
-          a.historyArr = ["MyPage", "CharaQuest"];
+          b.historyArr = ["MyPage", "CharaQuest"];
           break;
         default:
-          void 0 !== d.section.dayOfTheWeekQuestType && (c = "#/EventQuest", a.historyArr = ["MyPage", "EventQuest"])
+          void 0 !== d.section.dayOfTheWeekQuestType && (c = "#/EventQuest", b.historyArr = ["MyPage", "EventQuest"])
       }
       var f = !1;
-      b.userSectionList && k.each(b.userSectionList, function(a, b, c)
+      a.userSectionList && k.each(a.userSectionList, function(a, b, c)
       {
         a.sectionId == e && a.cleared && (f = !0)
       });
       f || (c = "#/QuestBattleSelect/" + e);
-      b = l.getIsPuellaHistoriaInfo(
+      a = l.getIsPuellaHistoriaInfo(
       {
         sectionInfo: d,
-        sectionList: a.storage.userSectionList.toJSON()
+        sectionList: b.storage.userSectionList.toJSON()
       });
-      99 == b.num && (c = "#/QuestBattleSelect/" + b.sectionInfoList[b.sectionInfoList.length - 1].sectionId, a.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], b.isLastSection && (c = "#/PuellaHistoriaTop"));
-      d = g.getIsScene0Info(
+      99 == a.num && (c = "#/QuestBattleSelect/" + a.sectionInfoList[a.sectionInfoList.length - 1].sectionId, b.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], a.isLastSection && (c = "#/PuellaHistoriaTop"));
+      a = h.getIsScene0Info(
       {
         section: d
       });
-      d.isScene0 && (a.historyArr = ["MyPage", "Scene0Top"], d.filmNum ? (c = "#/Scene0StorySelectBeforeFilm1", g.getIsScene0Film1Clear(
-      {
-        userSectionList: a.storage.userSectionList.toJSON()
-      }) && localStorage.getItem("scene0BeforeFilm1IsClear") && (c = "#/Scene0StorySelectAfterFilm1")) : d.sideStoryNum && (c = "#/Scene0SideStorySelect"));
+      a.isScene0 && (b.historyArr = ["MyPage", "Scene0Top"], a.filmNum ? 2 <= a.filmNum ? (localStorage.setItem("scene0BeforeFilm1IsClear", "true"), c = "#/Scene0StorySelectAfterFilm1") : (c = "#/Scene0StorySelectBeforeFilm1", d.cleared && localStorage.getItem("scene0BeforeFilm1IsClear") && (c = "#/Scene0StorySelectAfterFilm1")) : a.sideStoryNum && (c = "#/Scene0SideStorySelect"));
       return c
     },
     x = function()
     {
-      var b = g.getIsScene0Info(
+      var a = h.getIsScene0Info(
       {
-        section: a.questStoryOnlyModel.sectionModel
+        section: b.questStoryOnlyModel.sectionModel
       });
-      b.isScene0 && a.questStoryOnlyModel.questBattleModel.sceneZeroStoryIds ? u(
+      a.isScene0 && b.questStoryOnlyModel.questBattleModel.sceneZeroStoryIds ? u(
       {
-        model: a.questStoryOnlyModel,
-        isSideStory: b.sideStoryNum,
-        callback: function(b)
+        model: b.questStoryOnlyModel,
+        isSideStory: a.sideStoryNum,
+        callback: function(a)
         {
-          a.questStoryOnlyModel.questNoClearNextPage ? location.href = a.questStoryOnlyModel.questNoClearNextPage : r(
+          b.questStoryOnlyModel.questNoClearNextPage ? location.href = b.questStoryOnlyModel.questNoClearNextPage : r(
           {
-            model: b.model
+            model: a.model
           })
         }
       }) : t(
       {
-        model: a.questStoryOnlyModel,
-        callback: function(b)
+        model: b.questStoryOnlyModel,
+        callback: function(a)
         {
-          a.questStoryOnlyModel.questNoClearNextPage ? location.href = a.questStoryOnlyModel.questNoClearNextPage : r(
+          b.questStoryOnlyModel.questNoClearNextPage ? location.href = b.questStoryOnlyModel.questNoClearNextPage : r(
           {
-            model: b.model
+            model: a.model
           })
         }
       })
@@ -253,14 +250,14 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/puellaHi
     {
       id: "gameUser"
     }],
-    fetch: function(b)
+    fetch: function(a)
     {
-      a.questStoryOnlyModel ? h.pageModelGet(this.needModelIdObj, null, "noConnect") : location.href = "#/MainQuest"
+      b.questStoryOnlyModel ? g.pageModelGet(this.needModelIdObj, null, "noConnect") : location.href = "#/MainQuest"
     },
     init: function()
     {
-      a.globalMenuView && a.globalMenuView.removeView();
-      a.historyArr = ["MyPage", "MainQuest", "QuestStoryOnly"];
+      b.globalMenuView && b.globalMenuView.removeView();
+      b.historyArr = ["MyPage", "MainQuest", "QuestStoryOnly"];
       x()
     },
     remove: function(a)

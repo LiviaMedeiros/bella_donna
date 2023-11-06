@@ -60,7 +60,6 @@
 
 #Scene0Top .mainSec .missionBtn .balloonSec
 {
-  display: none;
   position: absolute;
   background: url("/magica/resource/image_web/page/quest/scene0/top/bg_info_mission.png") left top repeat;
   top: -55px;
@@ -98,6 +97,11 @@
   color: #7e1b26;
   line-height: 120%;
   font-size: 110%;
+}
+
+#Scene0Top .mainSec .missionBtn .balloonSec.noDisp
+{
+  display: none;
 }
 
 #Scene0Top .mainSec #helpBtn

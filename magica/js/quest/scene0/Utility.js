@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(" "), function(e, q, g, h, n, p)
+define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(" "), function(f, q, g, h, n, p)
 {
   var k = {
     getScene0QuestInfo: function(a)
@@ -6,53 +6,53 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       var c = a.targetNum,
         b = a.pageJson,
         d = a.type,
-        f = "SCENE0_FILM";
-      d && ("battle" == d ? f = "SCENE0_CHALLENGEBATTLE" : "side" == d && (f = "SCENE0_SIDESTORY"));
+        e = "SCENE0_FILM";
+      d && ("battle" == d ? e = "SCENE0_CHALLENGEBATTLE" : "side" == d && (e = "SCENE0_SIDESTORY"));
       var l = {
         sectionInfoList: [],
         questInfoList: []
       };
-      e.each(b.userSectionList, function(b, a, d)
+      f.each(b.userSectionList, function(b, a, d)
       {
         a = b.section;
-        a.viewParameterMap && a.viewParameterMap[f + "_NUM"] && Number(a.viewParameterMap[f + "_NUM"]) == c && (b.isLastSection = !1, a.viewParameterMap[f + "_LAST_SECTION"] && 1 == Number(a.viewParameterMap[f + "_LAST_SECTION"]) && (b.isLastSection = !0), l.sectionInfoList.push(b))
+        a.viewParameterMap && a.viewParameterMap[e + "_NUM"] && Number(a.viewParameterMap[e + "_NUM"]) == c && (b.isLastSection = !1, a.viewParameterMap[e + "_LAST_SECTION"] && (d = Number(a.viewParameterMap[e + "_LAST_SECTION"]), 1 == d && (b.isLastSection = !0)), b.isNewestSection = !1, a.viewParameterMap[e + "_NEWEST_SECTION"] && (d = Number(a.viewParameterMap[e + "_NEWEST_SECTION"]), 1 == d && (b.isNewestSection = !0)), l.sectionInfoList.push(b))
       });
-      l.sectionInfoList.sort(function(b, c)
+      l.sectionInfoList.sort(function(b, a)
       {
-        return b.sectionId - c.sectionId
+        return b.sectionId - a.sectionId
       });
       var m = !0,
         h = [],
         k = [];
-      e.each(l.sectionInfoList, function(a, d, f)
+      f.each(l.sectionInfoList, function(a, d, e)
       {
         h[d] = [];
-        e.each(b.userQuestBattleList, function(b, f, e)
+        f.each(b.userQuestBattleList, function(b, e, f)
         {
           a.sectionId == b.questBattle.sectionId && (b.targetNum = c, a.section && a.section.secret && (b.secret = a.section.secret), !b.questBattle.ap && a.section.ap && (b.questBattle.ap = a.section.ap), !b.questBattle.difficulty && a.section.difficulty && (b.questBattle.difficulty = a.section.difficulty), h[d].push(b))
         })
       });
-      e.each(h, function(b, a, c)
+      f.each(h, function(b, a, c)
       {
         b.sort(function(b, a)
         {
           return b.questBattleId - a.questBattleId
         })
       });
-      e.each(h, function(b, a, c)
+      f.each(h, function(b, a, c)
       {
-        e.each(b, function(b, a, c)
+        f.each(b, function(b, a, c)
         {
           k.push(b)
         })
       });
-      e.each(k, function(b, a, c)
+      f.each(k, function(b, a, c)
       {
         if (b.cleared || m) l.questInfoList.push(b), b.cleared || "side" == d || "battle" == d || (m = !1)
       });
-      e.each(l.sectionInfoList, function(a, c, d)
+      f.each(l.sectionInfoList, function(a, c, d)
       {
-        e.each(l.questInfoList, function(c, d, f)
+        f.each(l.questInfoList, function(c, d, e)
         {
           c.questBattle.sectionId == a.sectionId && g.inputOverwriteApInfo(
           {
@@ -72,7 +72,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         itemId: "SCENEZERO_PLAY_TICKET",
         name: "リコールランプ"
       };
-      e.each(a.pageJson.userItemList, function(b, a, f)
+      f.each(a.pageJson.userItemList, function(b, a, e)
       {
         b.itemId == c.itemId && (c.quantity = b.quantity)
       });
@@ -87,7 +87,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         itemId: "SCENEZERO_SIDE_TICKET",
         name: "ドアプライズフィルム"
       };
-      e.each(a.pageJson.userItemList, function(b, a, f)
+      f.each(a.pageJson.userItemList, function(b, a, e)
       {
         b.itemId == c.itemId && (c.quantity = b.quantity)
       });
@@ -111,10 +111,10 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       var c = a.needItemNum,
         b = a.itemInfo,
         d = a.noPopup,
-        f = a.callback;
+        e = a.callback;
       if (b.quantity >= c)
-        if (d) f();
-        else var e = new g.PopupClass(
+        if (d) e();
+        else var f = new g.PopupClass(
         {
           title: "ストーリー再生",
           content: '<span class="c_pink">' + b.name + '</span>を<span class="c_pink">' + c + "個</span>消費して<br>ストーリーを再生しますか？",
@@ -123,8 +123,8 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
           decideBtnText: "再生する",
           decideBtnEvent: function()
           {
-            e.remove();
-            f()
+            f.remove();
+            e()
           },
           popupType: "typeC"
         }, null, function()
@@ -161,7 +161,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         }
       }).sectionInfoList;
       var c = !1;
-      e.each(a, function(b, a, f)
+      f.each(a, function(b, a, e)
       {
         c = b.cleared
       });
@@ -215,7 +215,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       };
       b.chestColor = "bronze_close";
       b.questBattle.missionRewardCode && (b.missionRewardCode = g.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
-      "NONE" == b.questBattle.questBattleType && e.each([1, 2, 3], function(a, c, d)
+      "NONE" == b.questBattle.questBattleType && f.each([1, 2, 3], function(a, c, d)
       {
         b.questBattle["missionMaster" + a] = {
           description: ""
@@ -254,9 +254,9 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
     setDebugJson: function(a)
     {
       a = a.userSectionList;
-      e.each(a, function(a, b, d)
+      f.each(a, function(a, b, d)
       {
-        e.each(["1", "2"], function(b, c, d)
+        f.each(["1", "2"], function(b, c, d)
         {
           a.section.viewParameterMap && a.section.viewParameterMap.PUELLAHISTORIA_NORMAL_NUM == b && (a.section.viewParameterMap.SCENE0_FILM_NUM = b)
         })
@@ -269,7 +269,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         b = a.nativeFilmNo,
         d = a.nativeVersionNo;
       a = a.getType;
-      var f = {
+      var e = {
           webFilmNo: c,
           nativeFilmNo: b,
           nativeVersionNo: d
@@ -336,12 +336,12 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
             version: 1
           }
         };
-      "web" == a && e.each(g, function(a, c, e)
+      "web" == a && f.each(g, function(a, c, f)
       {
-        a.filmNo == b && a.version == d && (f.webFilmNo = c)
+        a.filmNo == b && a.version == d && (e.webFilmNo = c)
       });
-      "native" == a && (f.nativeFilmNo = g[c].filmNo, f.nativeVersionNo = g[c].version);
-      return f
+      "native" == a && (e.nativeFilmNo = g[c].filmNo, e.nativeVersionNo = g[c].version);
+      return e
     },
     playCardGetMvMabayu: function(a)
     {
