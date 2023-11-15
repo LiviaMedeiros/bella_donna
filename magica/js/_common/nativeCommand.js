@@ -34,6 +34,7 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
       DATA_DELETE_REWARD: 71,
       DATA_SET_FOX: 80,
       DATA_SET_ADJUST: 81,
+      DATA_SET_TD_LOGIN: 82,
       DATA_OPEN_EDIT_BOX: 90,
       DATA_GET_QUEST_REPLAY_VERSION: 97,
       SOUND_BGM_PLAY: 100,
@@ -692,6 +693,10 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
   {
     !window.isDebug && a && (a = JSON.stringify(a), this.sendCommand(b.DATA_SET_FOX + "," + a));
     c && (a = {}, a.token = c.token, a.eventName = c.eventName, c.currency && (a.currency = c.currency), c.price && (a.price = c.price), c = JSON.stringify(a), this.sendCommand(b.DATA_SET_ADJUST + "," + c))
+  };
+  b.setUserId = function(a)
+  {
+    this.sendCommand(b.DATA_SET_TD_LOGIN + "," + String(a))
   };
   b.openKeyBoard = function(a, c, d, f)
   {

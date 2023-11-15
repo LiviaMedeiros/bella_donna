@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/test/backdoorList.html".split(" "), function(f, n, b, d, c, p)
+define("underscore backbone backboneCommon ajaxControl command text!template/test/backdoorList.html".split(" "), function(f, m, b, e, c, n)
 {
-  return n.View.extend(
+  return m.View.extend(
   {
     id: "content",
     className: "hide",
@@ -34,12 +34,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a[b.cgti + " #commonStoryTest"] = this.commonStoryTest;
       a[b.cgti + " #mirrorBattleRetry"] = this.mirrorBattleRetry;
       a[b.cgti + " #getPurchaseStatus"] = this.getPurchaseStatus;
-      a[b.cgti + " #returnRankMatchTop"] = this.returnRankMatchTop;
+      a[b.cgti + " #setUserIdTest"] = this.setUserIdTest;
       return a
     },
     initialize: function(b)
     {
-      this.template = f.template(p)
+      this.template = f.template(n)
     },
     render: function()
     {
@@ -51,22 +51,22 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        a = d.getPageJson();
+        a = e.getPageJson();
         a = f.findWhere(a.regularEventList,
         {
           regularEventType: "ACCOMPLISH"
         });
-        var e = 2013;
-        a && (e = a.regularEventId);
+        var d = 2013;
+        a && (d = a.regularEventId);
         new b.PopupClass(
         {
           title: "バトルミュージアムの回復リセット",
           content: "バトルミュージアムの回復機能をリセットしますか？<br>eventId：<input id='inputEventId' class='commonFrame3' readonly='readonly' type='text' maxlength='4' value=''>",
           decideBtnEvent: function()
           {
-            d.ajaxPost(b.linkList.accomplishResetCure,
+            e.ajaxPost(b.linkList.accomplishResetCure,
             {
-              regularEventId: e
+              regularEventId: d
             }, function(a)
             {
               new b.PopupClass(
@@ -82,7 +82,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           closeBtnText: "閉じる"
         }, null, function()
         {
-          b.doc.getElementById("inputEventId").value = e;
+          b.doc.getElementById("inputEventId").value = d;
           b.nativeKeyBoard("inputEventId", 15, 1)
         })
       }
@@ -90,7 +90,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     seachableFunc: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || d.ajaxPost(b.linkList.testSeachabke, null, function(a)
+      b.isScrolled() || e.ajaxPost(b.linkList.testSeachabke, null, function(a)
       {
         new b.PopupClass(
         {
@@ -105,25 +105,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        var e = "";
+        var d = "";
         switch (a.currentTarget.dataset.target)
         {
           case "firstChapter":
-            e = "１部一括クリア"
+            d = "１部一括クリア"
         }
         new b.PopupClass(
         {
-          title: e,
+          title: d,
           content: "実行するにはデッキ１が「いろは単デッキ」になっている<br>必要があります。",
           closeBtnText: "キャンセル",
           decideBtnText: "実行する",
           decideBtnEvent: function()
           {
-            d.ajaxPost(b.linkList.backdoor1stChapterClear, null, function(a)
+            e.ajaxPost(b.linkList.backdoor1stChapterClear, null, function(a)
             {
               new b.PopupClass(
               {
-                title: e,
+                title: d,
                 content: "対象のストーリーをすべてクリア状態にしました。",
                 closeBtnText: "閉じる"
               }, null, null, function()
@@ -147,7 +147,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         decideBtnText: "実行する",
         decideBtnEvent: function()
         {
-          d.ajaxPost(b.linkList.backdoor2ndChapterClear, null, function(a)
+          e.ajaxPost(b.linkList.backdoor2ndChapterClear, null, function(a)
           {
             new b.PopupClass(
             {
@@ -188,10 +188,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         decideBtnEvent: function()
         {
           var a = b.doc.getElementById("tutorialSelect").value;
-          d.ajaxPost(b.linkList.prologueRegister,
+          e.ajaxPost(b.linkList.prologueRegister,
           {
             tutorialId: a
-          }, function(e)
+          }, function(d)
           {
             new b.PopupClass(
             {
@@ -199,8 +199,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
               content: a + "を登録しました。",
               closeBtnText: "閉じる"
             });
-            console.log("tutorialIdRegistComp", e);
-            b.responseSetStorage(e)
+            console.log("tutorialIdRegistComp", d);
+            b.responseSetStorage(d)
           })
         }
       })
@@ -208,7 +208,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     tutorialCompFunc: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || d.ajaxPost(b.linkList.prologueRegister,
+      b.isScrolled() || e.ajaxPost(b.linkList.prologueRegister,
       {
         tutorialId: "TU999"
       }, function(a)
@@ -245,7 +245,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         decideBtnEvent: function(a)
         {
           a = b.doc.getElementById("errorCode").value;
-          d.ajaxPost(b.linkList.backdoorError + "/" + a, "", function(b) {})
+          e.ajaxPost(b.linkList.backdoorError + "/" + a, "", function(b) {})
         }
       }, null, function()
       {
@@ -255,7 +255,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     rondomeErrorTest: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || d.ajaxPost(b.linkList.randomError, "", function(b)
+      b.isScrolled() || e.ajaxPost(b.linkList.randomError, "", function(b)
       {
         console.log("server ramdom error test", b)
       })
@@ -320,15 +320,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        $(document).ajaxSend(function(b, a, c)
+        $(document).ajaxSend(function(b, a, d)
         {
           a.setRequestHeader("USER-ID-FBA9X88MAE", null)
         });
-        var c = function()
+        var d = function()
         {
-          $(document).ajaxSend(function(b, a, c)
+          $(document).ajaxSend(function(a, b, d)
           {
-            a.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns)
+            b.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns)
           })
         };
         $.ajax(
@@ -339,7 +339,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           dataType: "JSON"
         }).done(function(a)
         {
-          "error" !== a.resultCode && c && c(a);
+          "error" !== a.resultCode && d && d(a);
           b.loading.hide()
         })
       }
@@ -349,7 +349,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        var e = a.currentTarget.dataset.opid;
+        var d = a.currentTarget.dataset.opid;
         c.endL2d();
         $(b.ready.target).on("webkitAnimationEnd", function()
         {
@@ -365,7 +365,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           });
           setTimeout(function()
           {
-            c.startPrologue(e);
+            c.startPrologue(d);
             c.setWebView(!1);
             b.removeClass(b.ready.target, "preNativeFadeIn")
           }, 500)
@@ -428,18 +428,18 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     {
       a.preventDefault();
       if (!b.isScrolled())
-        if (f.findWhere(d.getPageJson().eventList,
+        if (f.findWhere(e.getPageJson().eventList,
           {
             eventType: "DUNGEON"
           }))
         {
-          var c = function(a)
+          var d = function(a)
           {
             a = window.isLocal ? JSON.parse(a) : a;
             a.interrupt ? (b.interrupt = null, location.href = a.interrupt.page) : (a = {
               areaId: a.userEventDungeonAreaList[a.userEventDungeonAreaList.length - 1].areaId,
               deckType: 41
-            }, console.log("dungeon start Api:", a), d.ajaxPost(b.linkList.dungeonStart, a, function(a)
+            }, console.log("dungeon start Api:", a), e.ajaxPost(b.linkList.dungeonStart, a, function(a)
             {
               console.log("-------- dungeonStart --------");
               console.log("dungeonStartResponse:", a);
@@ -449,14 +449,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           };
           if (window.isLocal) require(["text!/magica/json/page/EventDungeonTop.json"], function(a)
           {
-            c(a)
+            d(a)
           });
           else
           {
-            var g = [],
+            var c = [],
+              g = [],
               h = [],
-              k = [],
-              l, q = {
+              k, p = {
                 0: 1,
                 1: 3,
                 2: 5,
@@ -465,34 +465,34 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
                 5: 10,
                 6: 11
               },
-              m = b.storage.userPieceList.toJSON();
+              l = b.storage.userPieceList.toJSON();
             b.storage.userCardListEx.each(function(a, b)
             {
               if (7 > b)
               {
                 a.toJSON();
-                g.push(a.id);
-                h.push(q[b]);
-                var c = [];
-                m[b] && c.push(m[b].id);
-                k.push(c);
-                0 === b && (l = a.id)
+                c.push(a.id);
+                g.push(p[b]);
+                var d = [];
+                l[b] && d.push(l[b].id);
+                h.push(d);
+                0 === b && (k = a.id)
               }
             });
             a = {
               deckType: 41,
               formationSheetId: 111,
               name: "ダンジョン1",
-              episodeUserCardId: l
+              episodeUserCardId: k
             };
-            a.userCardIds = g;
-            a.questPositionIds = h;
-            a.userPieceIdLists = k;
+            a.userCardIds = c;
+            a.questPositionIds = g;
+            a.userPieceIdLists = h;
             console.log("dungeon deck savePrm:", a);
-            d.ajaxPost(b.linkList.userDeckSave, a, function(a)
+            e.ajaxPost(b.linkList.userDeckSave, a, function(a)
             {
               b.responseSetStorage(a);
-              d.ajaxSimpleGet("/magica/api/page/EventDungeonTop", "", c)
+              e.ajaxSimpleGet("/magica/api/page/EventDungeonTop", "", d)
             })
           }
         }
@@ -518,7 +518,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       b.isScrolled() || b.playStory(
       {
         cmd: c,
-        ajaxControl: d,
+        ajaxControl: e,
         storyId: "101203-8",
         fullVoiceSectionId: 101203,
         isForcePlay: !0,
@@ -536,7 +536,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     mirrorBattleRetry: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || d.ajaxPost(b.linkList.backdoorMirrorBattleRetry, null, function(a)
+      b.isScrolled() || e.ajaxPost(b.linkList.backdoorMirrorBattleRetry, null, function(a)
       {
         new b.PopupClass(
         {
@@ -570,19 +570,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         product_ids: ["aaaa", "bbbb", "cccc"]
       }, window.isBrowser && nativeCallback(a))
     },
-    returnRankMatchTop: function(a)
+    setUserIdTest: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (c.setWebView(), new b.PopupClass(
+      b.isScrolled() || (a = e.getPageJson().gameUser.userId, c.setUserId(a), new b.PopupClass(
       {
-        title: "エラー",
-        content: "バトルの所要時間が一定時間を超えたため<br>このバトルは無効になります。<br>イベントTOPに戻ります。",
-        closeBtnText: "OK"
-      }, null, null, function()
-      {
-        c.endArena();
-        location.href = "#/RegularEventArenaRankMatchTop";
-        window.isBrowser && (location.href = "#/RegularEventArenaRankMatchTop")
+        title: "ユーザーID送信テスト",
+        content: "ユーザーID<br>" + a + "<br>を送信しました。",
+        closeBtnText: "閉じる"
       }))
     }
   })

@@ -40,8 +40,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           if ("NORMAL" === a.questBattle.questBattleType && "HARD" === b.questBattle.questBattleType) return -1;
           if ("HARD" === a.questBattle.questBattleType && "NORMAL" === b.questBattle.questBattleType) return 1;
           var d = parseInt(String(a.questBattleId).substr(0, 6)),
-            c = parseInt(String(b.questBattleId).substr(0, 6));
-          return d < c ? -1 : d > c ? 1 : a.questBattle.sectionIndex < b.questBattle.sectionIndex ? -1 : a.questBattle.sectionIndex > b.questBattle.sectionIndex ? 1 : 0
+            e = parseInt(String(b.questBattleId).substr(0, 6));
+          return d < e ? -1 : d > e ? 1 : a.questBattle.sectionIndex < b.questBattle.sectionIndex ? -1 : a.questBattle.sectionIndex > b.questBattle.sectionIndex ? 1 : 0
         });
         k.prototype.rootView = this;
         k.prototype.template = l.template($("#QuestBtn").text());
@@ -58,36 +58,37 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
             var c = "btn ",
               e = String(a.questBattle.sectionId).substr(3, 1);
             if ("MAIN" == a.sectionModel.section.questType)
-              if (103401 == a.questBattle.sectionId || 103500 <= a.questBattle.sectionId) switch (d += "PH ", c += "b_puellaHistoria", a.questBattle.sectionId)
-              {
-                case 103401:
-                  e = "現代神浜編";
-                  break;
-                case 103501:
-                case 103502:
-                  e = "神浜の戦神子編";
-                  break;
-                case 103601:
-                case 103602:
-                  e = "アレクサンドリアの蜃気楼編";
-                  break;
-                case 103701:
-                case 103702:
-                  e = "ヴィークのワルキューレ編";
-                  break;
-                case 103801:
-                case 103802:
-                  e = "チベットのラクシャーシー編";
-                  break;
-                case 103901:
-                case 103902:
-                  e = "邪馬台国の跡目編";
-                  break;
-                case 104001:
-                case 104002:
-                case 104003:
-                  e = "パクス・ロマーナの恋人編"
-              }
+              if (104201 <= a.questBattle.sectionId) d += "S0 ", c += "b_scene0", e = String(parseInt(e) - 1);
+              else if (103401 == a.questBattle.sectionId || 103500 <= a.questBattle.sectionId) switch (d += "PH ", c += "b_puellaHistoria", a.questBattle.sectionId)
+            {
+              case 103401:
+                e = "現代神浜編";
+                break;
+              case 103501:
+              case 103502:
+                e = "神浜の戦神子編";
+                break;
+              case 103601:
+              case 103602:
+                e = "アレクサンドリアの蜃気楼編";
+                break;
+              case 103701:
+              case 103702:
+                e = "ヴィークのワルキューレ編";
+                break;
+              case 103801:
+              case 103802:
+                e = "チベットのラクシャーシー編";
+                break;
+              case 103901:
+              case 103902:
+                e = "邪馬台国の跡目編";
+                break;
+              case 104001:
+              case 104002:
+              case 104003:
+                e = "パクス・ロマーナの恋人編"
+            }
             else 103E3 <= a.questBattle.sectionId ? (d += "M2 ", c += "b_blue", e = String(parseInt(e) - 1 + 10)) : 102100 <= a.questBattle.sectionId ? (d += "M2 ", c += "b_blue", e = String(parseInt(e) - 1)) : 102E3 <= a.questBattle.sectionId ? (d += "M1 ", c += "b_purple", e = 10) : (d += "M1 ", c += "b_purple");
             else 207101 <= a.questBattle.sectionId ? (d += "S2 ", c += "b_pale") : (d += "S1 ", c += "b_green");
             e = "0" === e ? "序" : e;
