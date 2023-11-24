@@ -178,6 +178,16 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
             num: 750
           },
           {
+            itemCode: "SCENEZERO_PLAY_TICKET",
+            name: "リコールランプ",
+            num: 100
+          },
+          {
+            itemCode: "SCENEZERO_SIDE_TICKET",
+            name: "ドアプライズフィルム",
+            num: 100
+          },
+          {
             itemCode: "PRISM",
             name: "マギアチップ",
             num: 1E3
@@ -562,7 +572,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           });
           g.each(f.itemList, function(a)
           {
-            if ("EPISODE_COMPOSE_PP" === a.itemCode || -1 !== a.itemCode.indexOf("COMPOSE_ITEM_")) d = {}, d.itemCode = a.itemCode, d.quantity = 999, e.ajaxPost(b.linkList.backdoorItemSend, d, c)
+            if ("EPISODE_COMPOSE_PP" === a.itemCode || -1 !== a.itemCode.indexOf("COMPOSE_ITEM_")) d = {},
+              d.itemCode = a.itemCode, d.quantity = 999, e.ajaxPost(b.linkList.backdoorItemSend, d, c)
           });
           b.tapBlock(!1);
           new b.PopupClass(

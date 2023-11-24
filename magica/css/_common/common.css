@@ -9302,6 +9302,7 @@ textarea:focus
 
 #sideMenu #sideBigBtns .globalBigBtn.globalScene0Btn .balloon
 {
+  display: none;
   background: url("/magica/resource/image_web/common/global/event_pop.png") left top no-repeat;
   width: 122px;
   height: 52px;

@@ -1,10 +1,10 @@
-define("underscore backbone backboneCommon ajaxControl command TutorialUtil text!template/top/TopPage.html text!template/etc/RulePopup.html text!template/etc/GameStartPopup.html text!css/top/Top.css".split(" "), function(m, p, a, g, b, C, u, v, w, x)
+define("underscore backbone backboneCommon ajaxControl command TutorialUtil text!template/top/TopPage.html text!template/etc/RulePopup.html text!template/etc/GameStartPopup.html text!css/top/Top.css".split(" "), function(l, n, a, g, b, B, t, u, v, w)
 {
-  var k, f, q = !1,
-    r = !1,
-    A = function()
+  var h, e, p = !1,
+    q = !1,
+    z = function()
     {
-      y();
+      x();
       b.noticeOffWeekly('["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]');
       var c = function()
         {
@@ -17,10 +17,10 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
           "TopPage" !== a.location ? b.setWebView() : ($("#commandDiv").on("saveDataCallback", function(c, d)
           {
             $("#commandDiv").off();
-            d ? (a.resumeData = d, a.responseSetStorage(d), z(d), a.questHelperId = d.userQuestBattleResultList[0].helpUserId, d.userQuestBattleResultList[0].questBattle.questBattleType && "HARD" == d.userQuestBattleResultList[0].questBattle.questBattleType && (a.mainQuestMode = "HARD"), location.href = "#/QuestBackground") : ($("#commandDiv").on("nativeCallback", function(a, c)
+            d ? (a.resumeData = d, a.responseSetStorage(d), y(d), a.questHelperId = d.userQuestBattleResultList[0].helpUserId, d.userQuestBattleResultList[0].questBattle.questBattleType && "HARD" == d.userQuestBattleResultList[0].questBattle.questBattleType && (a.mainQuestMode = "HARD"), location.href = "#/QuestBackground") : ($("#commandDiv").on("nativeCallback", function(a, c)
             {
               $("#commandDiv").off();
-              n();
+              m();
               b.noticeRegist()
             }), b.startTop())
           }), b.checkQuestStored())
@@ -37,15 +37,15 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       a.nativeDownload = !0;
       if (162 < (window.app_ver.split(".").join("") | 0))
       {
-        var e = 0;
-        $("#configCallback").on("configCallback", function(l, h)
+        var f = 0;
+        $("#configCallback").on("configCallback", function(k, e)
         {
           $("#configCallback").off();
-          e = h.movie ? h.movie : 0;
-          $("#commandDiv").on("nativeCallback", function(l, D)
+          f = e.movie ? e.movie : 0;
+          $("#commandDiv").on("nativeCallback", function(k, C)
           {
             $("#commandDiv").off();
-            0 !== e ? (d(), b.downloadFile("movie",
+            0 !== f ? (d(), b.downloadFile("movie",
             {
               isVisibleCancel: !0,
               description: !0,
@@ -59,19 +59,19 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       }
       else d(), b.downloadFile("common"), b.awakePurchase()
     },
-    n = function()
+    m = function()
     {
-      f = g.getPageJson();
-      a.setStyle(x);
+      e = g.getPageJson();
+      a.setStyle(w);
       a.forceTapBlock(
       {
         isBlock: !1
       });
       console.log("common.tutorialId", a.tutorialId);
       console.log("common.tutorialUtil", a.tutorialUtil);
-      m.has(f.user, "id") || g.ajaxPost(a.linkList.createUser, null, function(c)
+      l.has(e.user, "id") || g.ajaxPost(a.linkList.createUser, null, function(c)
       {
-        p.Model.extend(
+        n.Model.extend(
         {});
         a.responseSetStorage(c);
         b.noticeApFullTurnOn();
@@ -84,10 +84,10 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
         })
       });
       b.setWebView();
-      k = new B;
+      h = new A;
       a.globalMenuView && a.globalMenuView.removeView()
     },
-    B = p.View.extend(
+    A = n.View.extend(
     {
       events: function()
       {
@@ -101,25 +101,25 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       },
       initialize: function(a)
       {
-        this.template = m.template(u);
+        this.template = l.template(t);
         this.createDom()
       },
       render: function()
       {
-        window.isDebug && m.findWhere(f.eventList,
+        window.isDebug && l.findWhere(e.eventList,
         {
           eventType: "AJ2018"
-        }) && (f.aj2018 = !0);
+        }) && (e.aj2018 = !0);
         this.$el.html(this.template(
         {
-          model: f
+          model: e
         }));
         return this
       },
       touchScreen: function(b)
       {
         b.preventDefault();
-        a.isScrolled() || ("undefined" !== typeof f.gameUser ? "TU997" !== a.storage.user.get("tutorialId") && "TU999" !== a.storage.user.get("tutorialId") ? (a.tapBlock(!0), require(["js/util/TutorialUtil.js"], function(b)
+        a.isScrolled() || ("undefined" !== typeof e.gameUser ? "TU997" !== a.storage.user.get("tutorialId") && "TU999" !== a.storage.user.get("tutorialId") ? (a.tapBlock(!0), require(["js/util/TutorialUtil.js"], function(b)
         {
           a.tutorialUtil = b;
           a.tutorialId = a.tutorialUtil.getResumeId();
@@ -134,17 +134,17 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
           a.tutorialUtil = null;
           a.tutorialId = null;
           location.href = "#/MyPage"
-        }), a.addClass(a.ready.target, "gameStartFadeIn")) : t())
+        }), a.addClass(a.ready.target, "gameStartFadeIn")) : r())
       },
       cacheClear: function(c)
       {
         c && c.preventDefault();
-        a.isScrolled() || q || (b.clearWebCache(!0), new a.PopupClass(
+        a.isScrolled() || p || (b.clearWebCache(!0), new a.PopupClass(
         {
           title: "キャッシュクリア",
           content: "キャッシュクリアしました。",
           closeBtnText: "閉じる"
-        }), q = !0)
+        }), p = !0)
       },
       opMovie: function(c)
       {
@@ -162,7 +162,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
             b.setWebView(!1);
             a.ready.show();
             b.stopBgm();
-            $("#commandDiv").on("nativeCallback", function(c, e)
+            $("#commandDiv").on("nativeCallback", function(c, f)
             {
               $("#commandDiv").off();
               a.ready.target.className = "";
@@ -187,9 +187,9 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
         {
           b = JSON.parse(b);
           var c = a.doc.querySelector("#TopPage"),
-            e = a.doc.createElement("div");
-          e.innerHTML = '<p id="web_res_ver" class="c_purple" style="line-height: 1.1;margin: 10px;">web res：<span class="c_purple">' + b.webBranch + "</span></p>";
-          c.appendChild(e)
+            f = a.doc.createElement("div");
+          f.innerHTML = '<p id="web_res_ver" class="c_purple" style="line-height: 1.1;margin: 10px;">web res：<span class="c_purple">' + b.webBranch + "</span></p>";
+          c.appendChild(f)
         }, function(a)
         {
           console.log(a)
@@ -200,16 +200,16 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       {
         if (!a.isScrolled())
         {
-          var b, d, e = this,
-            l = function()
+          var b, d, f = this,
+            k = function()
             {
-              e.transferPop()
+              f.transferPop()
             },
-            h = !1,
-            f = function(c)
+            e = !1,
+            g = function(c)
             {
               c.preventDefault();
-              a.isScrolled() || h || (h = !0, e.transferSubmit(b, d))
+              a.isScrolled() || e || (e = !0, f.transferSubmit(b, d))
             };
           new a.PopupClass(
           {
@@ -231,7 +231,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
               content: "パスワードは8文字以上15文字以内です。",
               popupType: "typeC",
               closeBtnText: "OK"
-            }, null, null, l) : (new a.PopupClass(
+            }, null, null, k) : (new a.PopupClass(
             {
               title: "引き継ぎ・連携",
               content: "引き継ぎ・連携を行います。<br>よろしいですか？",
@@ -239,7 +239,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
               closeBtnText: "キャンセル",
               decideBtnText: "OK",
               exClass: "transferCheck"
-            }, null, null, l), a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, f)))
+            }, null, null, k), a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, g)))
           }, !1)
         }
       },
@@ -275,11 +275,11 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
         c.preventDefault();
         a.isScrolled() || (c = null, d && (c = function()
         {
-          t()
+          r()
         }), new a.PopupClass(
         {
           title: "サービス利用規約",
-          content: v,
+          content: u,
           popupType: "typeB"
         }, null, function()
         {
@@ -291,7 +291,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
         }, c), a.scrollSet("rulesBase", "rulesPop"))
       }
     }),
-    t = function()
+    r = function()
     {
       function c()
       {
@@ -318,7 +318,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
                     }, 200)
                   })
                 };
-                window.isBrowser && window.isDebug && !f.gameUser ? g.ajaxPost(a.linkList.prologueRegister,
+                window.isBrowser && window.isDebug && !e.gameUser ? g.ajaxPost(a.linkList.prologueRegister,
                 {
                   tutorialId: "TU999"
                 }, function()
@@ -329,10 +329,10 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
               d = {
                 userName: "？？？？？"
               };
-            r || (r = !0, g.ajaxPost(a.linkList.createGameUser, d, c))
+            q || (q = !0, g.ajaxPost(a.linkList.createGameUser, d, c))
           }
           c && a.responseSetStorage(c);
-          window.isBrowser ? (e && e.remove(), d()) : (e && e.remove(), $(a.ready.target).on("webkitAnimationEnd", function()
+          window.isBrowser ? (f && f.remove(), d()) : (f && f.remove(), $(a.ready.target).on("webkitAnimationEnd", function()
           {
             b.endTop();
             $(a.ready.target).off();
@@ -364,15 +364,15 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       {
         $(a.doc.querySelector("#rulePopupBtn")).on(a.cgti, function(a)
         {
-          k.rulePopup(a, !0)
+          h.rulePopup(a, !0)
         });
         $(a.doc.querySelector("#gameStartBtn")).on(a.cgti, function(d)
         {
           d && d.preventDefault();
           a.isScrolled() || ($(a.doc.querySelector("#gameStartBtn")).off(), localStorage.clear(), d = a.consentRulesFunctions(
-          {}), f.currentTime && d.setTime(
+          {}), e.currentTime && d.setTime(
           {
-            currentTime: f.currentTime
+            currentTime: e.currentTime
           }), $("#commandDiv").on("nativeCallback", function(d)
           {
             $("#commandDiv").off();
@@ -382,14 +382,14 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
           }), b.configDataInitilize(), window.isBrowser && nativeCallback())
         })
       };
-      if ("OP000" == a.storage.user.get("tutorialId")) var e = new a.PopupClass(
+      if ("OP000" == a.storage.user.get("tutorialId")) var f = new a.PopupClass(
       {
         title: "ゲーム開始",
-        content: w
+        content: v
       }, null, d);
       else c()
     },
-    y = function()
+    x = function()
     {
       var c = a.storage.user.toJSON(),
         d = a.storage.gameUser.toJSON();
@@ -400,7 +400,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
         tag3: d.progressTag
       })
     },
-    z = function(b)
+    y = function(b)
     {
       if (b)
       {
@@ -473,7 +473,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       else
       {
         var d = 0,
-          e = function()
+          f = function()
           {
             d++;
             3 < d ? (a.androidKeyStop = !0, b.setWebView(), new a.PopupClass(
@@ -497,47 +497,48 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
                 b.nativeReload("#/TopPage");
                 window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
               })
-            })) : window.g_sns && window.app_ver ? g.pageModelGet(c.needModelIdObj) : setTimeout(e, 500)
+            })) : window.g_sns && window.app_ver ? g.pageModelGet(c.needModelIdObj) : setTimeout(f, 500)
           };
-        setTimeout(e, 500)
+        setTimeout(f, 500)
       }
     },
     init: function()
     {
-      f = g.getPageJson();
+      e = g.getPageJson();
+      "undefined" !== typeof e.gameUser && b.setUserId(e.gameUser.userId);
       var a = window.deleteAssetArr(),
         d = function()
         {
-          "undefined" !== typeof f.gameUser ? A() : ($("#commandDiv").on("nativeCallback", function(a, c)
+          "undefined" !== typeof e.gameUser ? z() : ($("#commandDiv").on("nativeCallback", function(a, c)
           {
             $("#commandDiv").off();
-            n();
+            m();
             b.noticeRegist()
           }), b.startTop(), b.changeBg("web_black.jpg"))
         },
-        e = function()
+        f = function()
         {
-          $("#commandDiv").on("nativeCallback", function(c, f)
+          $("#commandDiv").on("nativeCallback", function(c, e)
           {
             $("#commandDiv").off();
-            f.isExist ? ($("#commandDiv").on("nativeCallback", function(b, c)
+            e.isExist ? ($("#commandDiv").on("nativeCallback", function(b, c)
             {
               $("#commandDiv").off();
               a.shift();
-              0 < a.length ? e() : d()
+              0 < a.length ? f() : d()
             }), c = 6E4 * ((new Date).getTime() / 6E4 | 0), require(["text!" + a[0].jsonFilePath + "?bust=" + c], function(a)
             {
               a = JSON.parse(a);
               b.removeFile(a.list)
-            })) : (a.shift(), 0 < a.length ? e() : d())
+            })) : (a.shift(), 0 < a.length ? f() : d())
           });
           b.existFile(a[0].confirmFileNames)
         };
-      window.isBrowser ? n() : 0 < a.length ? e() : d()
+      window.isBrowser ? m() : 0 < a.length ? f() : d()
     },
     remove: function(a)
     {
-      k && k.remove();
+      h && h.remove();
       b.endTop();
       a()
     }
