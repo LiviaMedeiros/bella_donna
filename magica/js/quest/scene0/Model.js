@@ -1,11 +1,11 @@
-define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/Utility".split(" "), function(f, p, m, q, r, g)
+define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/Utility".split(" "), function(e, p, m, q, r, f)
 {
   return {
     getTopModel: function(a)
     {
       a = a.pageJson;
       var c = {
-        itemInfo: g.getMainItemInfo(
+        itemInfo: f.getMainItemInfo(
         {
           pageJson: a
         }),
@@ -13,13 +13,13 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
         templateClass: "BeforeFilm1",
         StorySelectUrl: "#/Scene0StorySelectBeforeFilm1"
       };
-      g.getIsScene0Film1Clear(
+      f.getIsScene0Film1Clear(
       {
         userSectionList: a.userSectionList
       }) && (c.isFilm1Clear = !0, c.templateClass = "AfterFilm1", c.StorySelectUrl = "#/Scene0StorySelectAfterFilm1");
       c.limitedMission = {
-        balloonSecClass: "noDisp",
-        endDateText: "11/24"
+        balloonSecClass: "",
+        endDateText: "12/18"
       };
       return c
     },
@@ -27,14 +27,14 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
     {
       a = a.pageJson;
       var c = {
-        itemInfo: g.getMainItemInfo(
+        itemInfo: f.getMainItemInfo(
         {
           pageJson: a
         }),
         questInfo:
         {}
       };
-      c.questInfo = g.getScene0QuestInfo(
+      c.questInfo = f.getScene0QuestInfo(
       {
         pageJson: a,
         targetNum: 1
@@ -45,7 +45,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
     {
       var c = a.pageJson,
         b = {
-          itemInfo: g.getMainItemInfo(
+          itemInfo: f.getMainItemInfo(
           {
             pageJson: c
           }),
@@ -58,14 +58,14 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
           filmInfoWeb: [],
           clearFilmList: []
         },
-        h = [];
-      for (a = 1; 17 >= a; a++) h.push(a);
+        k = [];
+      for (a = 1; 17 >= a; a++) k.push(a);
       b.questInfo = function()
       {
         var a = [];
-        f.each(h, function(b, e, d)
+        e.each(k, function(b, d, h)
         {
-          b = g.getScene0QuestInfo(
+          b = f.getScene0QuestInfo(
           {
             pageJson: c,
             targetNum: b
@@ -75,84 +75,85 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
         return a
       }();
       a = !1;
-      f.each(b.questInfo, function(a, e, c)
+      e.each(b.questInfo, function(a, d, h)
       {
-        var d = a.sectionInfoList[0];
-        e = Number(d.section.viewParameterMap.SCENE0_FILM_NUM);
-        c = g.convertFilmNo(
+        var c = a.sectionInfoList[0];
+        d = Number(c.section.viewParameterMap.SCENE0_FILM_NUM);
+        h = f.convertFilmNo(
         {
           getType: "native",
-          webFilmNo: e
+          webFilmNo: d
         });
-        var k = {
-            id: c.nativeFilmNo,
-            version: c.nativeVersionNo,
+        var g = {
+            id: h.nativeFilmNo,
+            version: h.nativeVersionNo,
             status: function()
             {
               var b = "NEW";
-              f.each(a.questInfoList, function(a, e, d)
+              e.each(a.questInfoList, function(a, d, c)
               {
                 a.cleared && (b = "READY")
               });
               return b
             }(),
             isExtra: !1,
-            hasList: d.cleared,
+            hasList: c.cleared,
             nextWaitDay: 0,
+            isNextWait: !1,
             dayList: []
           },
           l = {
-            id: e,
-            sectionInfo: d,
+            id: d,
+            sectionInfo: c,
             dayList: []
           },
           n = function(a)
           {
             var b = a.filmInfoWeb,
-              e = a.section,
-              d = a.val;
+              d = a.section,
+              c = a.val;
             a.filmInfo.dayList.push(
             {
-              id: d.questBattle.sectionIndex,
+              id: c.questBattle.sectionIndex,
               status: function()
               {
                 var a = "NEW";
-                d.cleared && (a = "READY");
+                c.cleared && (a = "READY");
                 return a
               }(),
               releaseCost: function()
               {
-                var a = d.questBattle.needItemNum;
-                d.cleared && (a = 0);
+                var a = c.questBattle.needItemNum;
+                c.cleared && (a = 0);
                 return a
               }(),
               checkMessage: function()
               {
                 var a = "";
-                d.questBattle.parameterMap && d.questBattle.parameterMap.MESSAGE && (a = d.questBattle.parameterMap.MESSAGE);
+                c.questBattle.parameterMap && c.questBattle.parameterMap.MESSAGE && (a = c.questBattle.parameterMap.MESSAGE);
                 return a
               }()
             });
-            b.dayList[d.questBattle.sectionIndex] = {
-              id: d.questBattle.sectionIndex,
-              sectionInfo: e,
-              questInfo: d,
-              isClear: d.cleared,
-              needItemNum: d.questBattle.needItemNum
+            b.dayList[c.questBattle.sectionIndex] = {
+              id: c.questBattle.sectionIndex,
+              sectionInfo: d,
+              questInfo: c,
+              isClear: c.cleared,
+              needItemNum: c.questBattle.needItemNum
             }
           };
-        f.each(a.questInfoList, function(a, b, e)
+        e.each(a.questInfoList, function(a, b, d)
         {
           n(
           {
-            filmInfo: k,
+            filmInfo: g,
             filmInfoWeb: l,
-            section: d,
+            section: c,
             val: a
           })
         });
-        b.nativeModel.filmList.push(k);
-        b.filmInfoWeb[e] = l;
+        b.nativeModel.filmList.push(g);
+        b.filmInfoWeb[d] = l;
         l.sectionInfo.cleared && b.clearFilmList.push(l)
       });
       b.nativeModel.filmList.sort(function(a, b)
@@ -161,11 +162,11 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
       });
       var d = b.nativeModel.filmList.slice(-1)[0];
       a = d.id;
-      var e = b.filmInfoWeb[a];
+      var h = b.filmInfoWeb[a];
       b.nativeModel.displayFilmId = a;
-      var k = localStorage.getItem("scene0LastFilmId");
-      k && (b.nativeModel.displayFilmId = Number(k));
-      e.sectionInfo.cleared && e.sectionInfo.isNewestSection ? (e = d.dayList.slice(-1)[0].id, d.nextWaitDay = e) : b.nativeModel.displayFilmId = a;
+      var g = localStorage.getItem("scene0LastFilmId");
+      g && (b.nativeModel.displayFilmId = Number(g));
+      h.sectionInfo.cleared && h.sectionInfo.isNewestSection ? (h = d.dayList.slice(-1)[0].id, d.nextWaitDay = h, d.isNextWait = !0) : b.nativeModel.displayFilmId = a;
       localStorage.getItem("scene0AfterFilm1IsFirst") || (b.nativeModel.startChangeFilmId = a, b.nativeModel.displayFilmId = a - 1, localStorage.setItem("scene0AfterFilm1IsFirst", "true"));
       return b
     },
@@ -173,7 +174,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
     {
       var c = a.pageJson,
         b = {
-          itemInfo: g.getMainItemInfo(
+          itemInfo: f.getMainItemInfo(
           {
             pageJson: c
           }),
@@ -188,14 +189,14 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
             return a
           }()
         },
-        h = [];
-      for (a = 1; 3 >= a; a++) h.push(a);
+        k = [];
+      for (a = 1; 3 >= a; a++) k.push(a);
       b.questInfo = function()
       {
         var a = [];
-        f.each(h, function(b, d, f)
+        e.each(k, function(b, d, e)
         {
-          b = g.getScene0QuestInfo(
+          b = f.getScene0QuestInfo(
           {
             pageJson: c,
             targetNum: b,
@@ -205,21 +206,21 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
         });
         return a
       }();
-      f.each(b.questInfo, function(a, e, c)
+      e.each(b.questInfo, function(a, c, g)
       {
         var d = a.sectionInfoList[0];
-        e = Number(d.section.viewParameterMap.SCENE0_CHALLENGEBATTLE_NUM);
-        c = {
-          id: e,
-          difficultyLevel: e,
+        c = Number(d.section.viewParameterMap.SCENE0_CHALLENGEBATTLE_NUM);
+        g = {
+          id: c,
+          difficultyLevel: c,
           questList: []
         };
-        f.each(a.questInfoList, function(a, b, e)
+        e.each(a.questInfoList, function(a, b, c)
         {
-          c.questList.push(
+          g.questList.push(
           {
             id: Number(b + 1),
-            difficultyLevel: c.difficultyLevel,
+            difficultyLevel: g.difficultyLevel,
             sectionInfo: d,
             questInfo: a,
             isClear: a.cleared,
@@ -231,7 +232,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
             }()
           })
         });
-        b.challengeList.push(c)
+        b.challengeList.push(g)
       });
       return b
     },
@@ -239,11 +240,11 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
     {
       var c = a.pageJson,
         b = {
-          itemInfo: g.getMainItemInfo(
+          itemInfo: f.getMainItemInfo(
           {
             pageJson: c
           }),
-          itemInfoSide: g.getSideItemInfo(
+          itemInfoSide: f.getSideItemInfo(
           {
             pageJson: c
           }),
@@ -254,14 +255,14 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
           sideStoryList: [],
           noClearList: []
         },
-        h = [];
-      for (a = 1; 17 >= a; a++) h.push(a);
+        k = [];
+      for (a = 1; 17 >= a; a++) k.push(a);
       b.questInfo = function()
       {
         var a = [];
-        f.each(h, function(b, d, f)
+        e.each(k, function(b, d, e)
         {
-          b = g.getScene0QuestInfo(
+          b = f.getScene0QuestInfo(
           {
             pageJson: c,
             targetNum: b,
@@ -271,25 +272,25 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
         });
         return a
       }();
-      f.each(b.questInfo, function(a, c, g)
+      e.each(b.questInfo, function(a, c, g)
       {
         var d = a.sectionInfoList[0],
-          e = Number(d.section.viewParameterMap.SCENE0_SIDESTORY_NUM);
+          f = Number(d.section.viewParameterMap.SCENE0_SIDESTORY_NUM);
         g = {
-          id: e,
+          id: f,
           questList: []
         };
-        f.each(a.questInfoList, function(a, c, f)
+        e.each(a.questInfoList, function(a, c, e)
         {
           c = Number(c + 1);
-          f = Number(a.questBattle.needItemNum);
+          e = Number(a.questBattle.needItemNum);
           g.questList.push(
           {
             id: c,
             sectionInfo: d,
             questInfo: a,
             isClear: a.cleared,
-            needItemNum: f,
+            needItemNum: e,
             charaId: function(b)
             {
               b = null;
@@ -299,10 +300,10 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
           });
           a.cleared || b.noClearList.push(
           {
-            listId: e,
+            listId: f,
             btnId: c
           });
-          b.questNeedItemNum = f
+          b.questNeedItemNum = e
         });
         b.sideStoryList.push(g)
       });

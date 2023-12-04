@@ -119,7 +119,6 @@ define("underscore backbone backboneCommon ajaxControl text!template/base/Mypage
     },
     campaignBannerMake: function()
     {
-      console.log("this.model", this.model);
       var b = g.sortBy(this.model, function(a)
         {
           return a.sortKey
