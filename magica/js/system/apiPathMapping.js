@@ -100,6 +100,8 @@ define(["backboneCommon"], function(b)
       backdoorStartQuest: "/test/backdoor/startQuest",
       accomplishResetCure: "/test/backdoor/regularEvent/accomplish/resetCure",
       backdoorMirrorBattleRetry: "/test/backdoor/revertWhcmClear",
+      sendRepaymentMail: "/test/backdoor/sendRepaymentMail",
+      registerRepaymentMail: "/repayment/registerRepaymentMail",
       presentListPage: "/page/PresentList",
       presentHistoryPage: "/page/PresentHistory",
       GachaHistoryPage: "/page/GachaHistory",

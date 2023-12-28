@@ -360,6 +360,18 @@ define(["underscore", "backbone", "backboneCommon"], function(c, d, b)
           a.fetch()
         })
       }
+    },
+    MailSendTest:
+    {
+      url: "MailSendTest",
+      pageInit: function()
+      {
+        require(["js/test/MailSendTest"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
     }
   }
 });

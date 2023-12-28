@@ -1,8 +1,8 @@
-define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/campaign/newyear_login/NewYearLogin.html text!css/campaign/newyear_login/NewYearLogin.css".split(" "), function(h, k, c, l, d, r, n, p)
+define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/campaign/newyear_login/NewYearLogin.html text!css/campaign/newyear_login/NewYearLogin.css".split(" "), function(h, k, b, l, c, r, n, p)
 {
   k.Model.extend(
   {});
-  var g, b, f, m = k.View.extend(
+  var g, d, f, m = k.View.extend(
     {
       events: function()
       {
@@ -11,31 +11,31 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         a["webkitAnimationEnd #NewYearLogin .animTrigger"] = this.animationTrigger;
         a["webkitanimationend #NewYearLogin .animTrigger"] = this.animationTrigger;
         a["animationend #NewYearLogin .animTrigger"] = this.animationTrigger;
-        a[c.cgti + " .tweetBtn"] = this.tweetBtn;
-        window.isDebug && (a[c.cgti + " .debugBtn"] = q);
+        a[b.cgti + " .tweetBtn"] = this.tweetBtn;
+        window.isDebug && (a[b.cgti + " .debugBtn"] = q);
         return a
       },
       initialize: function(a)
       {
         this.template = h.template(n);
         this.lotResult = a ? a.lotResult : g.lotteryResult.loginBonusCampaignLottery.typeCode;
-        require(["text!js/campaign/newyear_login/json/" + b.id + ".json"], function(a)
+        require(["text!js/campaign/newyear_login/json/" + d.id + ".json"], function(a)
         {
           this.model = this.createFortuneModel(a);
           this.createDom();
-          c.campaignJump ? (c.addClass(c.doc.getElementById("globalMenuContainer"), "hide"), c.doc.getElementById("fortuneAnimationWrap").className = "show", setTimeout(function()
+          b.campaignJump ? (b.addClass(b.doc.getElementById("globalMenuContainer"), "hide"), b.doc.getElementById("fortuneAnimationWrap").className = "show", setTimeout(function()
           {
-            d.startSe(1004)
+            c.startSe(1004)
           }, 100), setTimeout(function()
           {
-            d.startSe(1004)
+            c.startSe(1004)
           }, 200), setTimeout(function()
           {
-            d.startSe(1004)
+            c.startSe(1004)
           }, 300), setTimeout(function()
           {
-            d.startSe(1602)
-          }, 1333), c.campaignJump = null) : this.showResultPage()
+            c.startSe(1602)
+          }, 1333), b.campaignJump = null) : this.showResultPage()
         }.bind(this))
       },
       render: function()
@@ -43,7 +43,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         this.$el.html(this.template(
         {
           model: this.model,
-          master: b,
+          master: d,
           lotResult: this.lotResult,
           rewardModels: this.rewardModels
         }));
@@ -51,55 +51,53 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       },
       createDom: function()
       {
-        c.setGlobalView();
-        c.content.append(this.render().el);
-        d.setWebView();
-        c.ready.hide()
+        b.setGlobalView();
+        b.content.append(this.render().el);
+        c.setWebView();
+        b.ready.hide()
       },
       createFortuneModel: function(a)
       {
         var e = JSON.parse(a);
         a = g.lotteryResult;
         var e = e.omikuziList[a.loginBonusCampaignLottery.typeCode],
-          d = a.textType < e.fortuneList.length ? a.textType : a.textType % e.fortuneList.length,
-          b = e.charaList[(a.loginBonusCampaignLottery.loginCount - 1) % e.charaList.length];
-        b.fortuneText = e.fortuneList[d].replace(/＠/g, "<br>");
-        b.message = b.message.replace(/＠/g, "<br>");
-        b.tweetImgId = e.tweetImgIdList[d];
-        b.rewardModels = [];
+          c = e.charaList[(a.loginBonusCampaignLottery.loginCount - 1) % e.charaList.length];
+        c.fortuneText = e.fortuneList[a.textType < e.fortuneList.length ? a.textType : a.textType % e.fortuneList.length].replace(/＠/g, "<br>");
+        c.message = c.message.replace(/＠/g, "<br>");
+        c.rewardModels = [];
         a = a.loginBonusCampaignLottery.rewardCodes.split(",");
         h.each(a, function(a)
         {
-          b.rewardModels.push(c.itemSet(a))
+          c.rewardModels.push(b.itemSet(a))
         });
-        return b
+        return c
       },
       animationTrigger: function()
       {
-        var a = c.doc.getElementById("fortuneAnimationWrap"),
-          e = c.doc.getElementById("resultAnimationWrap");
+        var a = b.doc.getElementById("fortuneAnimationWrap"),
+          e = b.doc.getElementById("resultAnimationWrap");
         if (a.classList.contains("show"))
         {
           a.className = "";
           e.className = "show type" + this.lotResult;
-          var b;
+          var d;
           switch (this.lotResult)
           {
             case 0:
-              b = 1111;
+              d = 1111;
               break;
             case 1:
-              b = 1106;
+              d = 1106;
               break;
             case 2:
-              b = 1105;
+              d = 1105;
               break;
             case 3:
-              b = 1104
+              d = 1104
           }
           setTimeout(function()
           {
-            d.startSe(b)
+            c.startSe(d)
           }, 100);
           setTimeout(function()
           {
@@ -110,40 +108,34 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       },
       showResultPage: function()
       {
-        if (c.doc.getElementById("resultPageWrap"))
+        if (b.doc.getElementById("resultPageWrap"))
         {
-          c.doc.getElementById("resultPageWrap").className = "show";
+          b.doc.getElementById("resultPageWrap").className = "show";
           var a = this.model.oneshotId;
           if (a)
           {
-            d.endL2d();
-            var b = {};
-            b.key = String(a);
-            b.type = 1;
-            b.id = "0";
-            b.x = 226;
-            b.y = 1024 === c.displayWidth ? Math.floor(c.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(c.shortSize / 2);
-            d.startL2d(b)
+            c.endL2d();
+            var e = {};
+            e.key = String(a);
+            e.type = 1;
+            e.id = "0";
+            e.x = 226;
+            e.y = 1024 === b.displayWidth ? Math.floor(b.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(b.shortSize / 2);
+            c.startL2d(e)
           }
         }
-        c.removeClass(c.doc.getElementById("globalMenuContainer"), "hide")
+        b.removeClass(b.doc.getElementById("globalMenuContainer"), "hide")
       },
       tweetBtn: function(a)
       {
         a.preventDefault();
-        if (!c.isScrolled())
-        {
-          a = " ★水名神社で開運おみくじ★%0aマギアレコードではログインボーナスを開催中！%0a pic.twitter.com/" + this.model.tweetImgId;
-          a = encodeURI(a).replace(/%250a/g, "%0a");
-          var b = encodeURI("マギレコ,水名神社で開運おみくじ");
-          d.browserOpen("https://twitter.com/share?text=" + a + "%0a&hashtags=" + b + "&count=none&lang=ja")
-        }
+        b.isScrolled()
       }
     }),
     q = function(a)
     {
       a.preventDefault();
-      c.isScrolled() || (c.campaignJump = !0, f.remove(), d.endL2d(), f = null, f = new m(
+      b.isScrolled() || (b.campaignJump = !0, f.remove(), c.endL2d(), f = null, f = new m(
       {
         lotResult: parseInt(a.currentTarget.dataset.type)
       }))
@@ -214,29 +206,29 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
     init: function()
     {
       g = l.getPageJson();
-      c.historyArr = ["MyPage", "NewYearLogin"];
+      b.historyArr = ["MyPage", "NewYearLogin"];
       if (g.lotteryResult)
       {
-        b = h.filter(g.campaignList, function(a)
+        d = h.filter(g.campaignList, function(a)
         {
           return "LOGIN_BONUS" === a.campaignType && a.parameterMap && "#/NewYearLogin" === a.parameterMap.JUMP_URL
         });
-        b = b[b.length - 1];
-        if (b.parameterMap && b.parameterMap.BGM && b.parameterMap.BG_IMG)
+        d = d[d.length - 1];
+        if (d.parameterMap && d.parameterMap.BGM && d.parameterMap.BG_IMG)
         {
-          var a = b.parameterMap.BGM;
-          d.changeBg(b.parameterMap.BG_IMG + ".ExportJson");
-          d.startBgm(a)
+          var a = d.parameterMap.BGM;
+          c.changeBg(d.parameterMap.BG_IMG + ".ExportJson");
+          c.startBgm(a)
         }
-        else d.changeBg("web_common.ExportJson"), d.startBgm("bgm01_anime07");
-        c.setStyle(p);
+        else c.changeBg("web_common.ExportJson"), c.startBgm("bgm01_anime07");
+        b.setStyle(p);
         f = new m
       }
       else location.href = "#/MyPage"
     },
     remove: function(a)
     {
-      d.endL2d();
+      c.endL2d();
       f && f.remove();
       a()
     }

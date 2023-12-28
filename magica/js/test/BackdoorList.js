@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/test/backdoorList.html".split(" "), function(f, m, b, e, c, n)
+define("underscore backbone backboneCommon ajaxControl command text!template/test/backdoorList.html".split(" "), function(f, m, b, e, d, n)
 {
   return m.View.extend(
   {
@@ -34,7 +34,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a[b.cgti + " #commonStoryTest"] = this.commonStoryTest;
       a[b.cgti + " #mirrorBattleRetry"] = this.mirrorBattleRetry;
       a[b.cgti + " #getPurchaseStatus"] = this.getPurchaseStatus;
-      a[b.cgti + " #setUserIdTest"] = this.setUserIdTest;
+      a[b.cgti + " #mailSendTest"] = this.mailSendTest;
       return a
     },
     initialize: function(b)
@@ -56,8 +56,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         {
           regularEventType: "ACCOMPLISH"
         });
-        var d = 2013;
-        a && (d = a.regularEventId);
+        var c = 2013;
+        a && (c = a.regularEventId);
         new b.PopupClass(
         {
           title: "バトルミュージアムの回復リセット",
@@ -66,7 +66,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           {
             e.ajaxPost(b.linkList.accomplishResetCure,
             {
-              regularEventId: d
+              regularEventId: c
             }, function(a)
             {
               new b.PopupClass(
@@ -82,7 +82,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           closeBtnText: "閉じる"
         }, null, function()
         {
-          b.doc.getElementById("inputEventId").value = d;
+          b.doc.getElementById("inputEventId").value = c;
           b.nativeKeyBoard("inputEventId", 15, 1)
         })
       }
@@ -105,15 +105,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        var d = "";
+        var c = "";
         switch (a.currentTarget.dataset.target)
         {
           case "firstChapter":
-            d = "１部一括クリア"
+            c = "１部一括クリア"
         }
         new b.PopupClass(
         {
-          title: d,
+          title: c,
           content: "実行するにはデッキ１が「いろは単デッキ」になっている<br>必要があります。",
           closeBtnText: "キャンセル",
           decideBtnText: "実行する",
@@ -123,12 +123,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
             {
               new b.PopupClass(
               {
-                title: d,
+                title: c,
                 content: "対象のストーリーをすべてクリア状態にしました。",
                 closeBtnText: "閉じる"
               }, null, null, function()
               {
-                c.nativeReload("#/MyPage");
+                d.nativeReload("#/MyPage");
                 window.isDebug && window.isBrowser && (location.href = "#/MyPage", location.reload())
               })
             })
@@ -156,7 +156,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
               closeBtnText: "閉じる"
             }, null, null, function()
             {
-              c.nativeReload("#/MyPage");
+              d.nativeReload("#/MyPage");
               window.isDebug && window.isBrowser && (location.href = "#/MyPage", location.reload())
             })
           })
@@ -191,7 +191,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           e.ajaxPost(b.linkList.prologueRegister,
           {
             tutorialId: a
-          }, function(d)
+          }, function(c)
           {
             new b.PopupClass(
             {
@@ -199,8 +199,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
               content: a + "を登録しました。",
               closeBtnText: "閉じる"
             });
-            console.log("tutorialIdRegistComp", d);
-            b.responseSetStorage(d)
+            console.log("tutorialIdRegistComp", c);
+            b.responseSetStorage(c)
           })
         }
       })
@@ -226,12 +226,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     reloadFunc: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (b.pageObj.removeCommand(), 160 > (window.app_ver.split(".").join("") | 0) || window.isBrowser ? (c.setWebView(!1), location.href = a.currentTarget.getAttribute("data-href"), location.reload()) : c.nativeReload(a.currentTarget.getAttribute("data-href")))
+      b.isScrolled() || (b.pageObj.removeCommand(), 160 > (window.app_ver.split(".").join("") | 0) || window.isBrowser ? (d.setWebView(!1), location.href = a.currentTarget.getAttribute("data-href"), location.reload()) : d.nativeReload(a.currentTarget.getAttribute("data-href")))
     },
     nativeReloadTest: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || c.nativeReload("#/MyPage")
+      b.isScrolled() || d.nativeReload("#/MyPage")
     },
     errorTest: function(a)
     {
@@ -278,7 +278,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
             title: "エラー",
             content: "URLが不正です",
             closeBtnText: "閉じる"
-          }) : (a = " ★おためしついーと★%0a https://twitter.com/" + a[3] + "/status/" + a[5] + "/photo/1%0a★おためしついーと★", a = encodeURI(a).replace(/%250a/g, "%0a"), c.browserOpen("https://twitter.com/share?text=" + a + "%0a&count=none&lang=ja"))
+          }) : (a = " ★おためしついーと★%0a https://twitter.com/" + a[3] + "/status/" + a[5] + "/photo/1%0a★おためしついーと★", a = encodeURI(a).replace(/%250a/g, "%0a"), d.browserOpen("https://twitter.com/share?text=" + a + "%0a&count=none&lang=ja"))
         }
       }, null, function()
       {
@@ -290,7 +290,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       b.isScrolled() || ($(b.ready.target).on("webkitAnimationEnd", function()
       {
-        c.changeBg("web_black.jpg");
+        d.changeBg("web_black.jpg");
         $(b.ready.target).off();
         $(b.ready.target).on("webkitAnimationEnd", function(a)
         {
@@ -300,35 +300,35 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         {
           $("#commandDiv").off();
           b.removeClass(b.ready.target, "preNativeFadeIn");
-          c.setWebView(!0);
-          c.startBgm(b.settingBgm);
-          c.changeBg(b.settingBg)
+          d.setWebView(!0);
+          d.startBgm(b.settingBgm);
+          d.changeBg(b.settingBg)
         });
         setTimeout(function()
         {
-          c.setWebView(!1);
-          c.downloadFileFullVoice("section_event_1033")
+          d.setWebView(!1);
+          d.downloadFileFullVoice("section_event_1033")
         }, 500)
       }), b.addClass(b.ready.target, "preNativeFadeIn"))
     },
     chatTest: function()
     {
-      c.startChat()
+      d.startChat()
     },
     errorIdTestBtn: function(a)
     {
       a.preventDefault();
       if (!b.isScrolled())
       {
-        $(document).ajaxSend(function(b, a, d)
+        $(document).ajaxSend(function(b, a, c)
         {
           a.setRequestHeader("USER-ID-FBA9X88MAE", null)
         });
-        var d = function()
+        var c = function()
         {
-          $(document).ajaxSend(function(a, b, d)
+          $(document).ajaxSend(function(b, a, c)
           {
-            b.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns)
+            a.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns)
           })
         };
         $.ajax(
@@ -339,7 +339,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           dataType: "JSON"
         }).done(function(a)
         {
-          "error" !== a.resultCode && d && d(a);
+          "error" !== a.resultCode && c && c(a);
           b.loading.hide()
         })
       }
@@ -349,8 +349,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        var d = a.currentTarget.dataset.opid;
-        c.endL2d();
+        var c = a.currentTarget.dataset.opid;
+        d.endL2d();
         $(b.ready.target).on("webkitAnimationEnd", function()
         {
           $(b.ready.target).off();
@@ -361,12 +361,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           $("#commandDiv").on("nativeCallback", function(a, b)
           {
             console.log("nativeCallback", b);
-            b && "prologue" === b && ($("#commandDiv").off(), c.setWebView())
+            b && "prologue" === b && ($("#commandDiv").off(), d.setWebView())
           });
           setTimeout(function()
           {
-            c.startPrologue(d);
-            c.setWebView(!1);
+            d.startPrologue(c);
+            d.setWebView(!1);
             b.removeClass(b.ready.target, "preNativeFadeIn")
           }, 500)
         });
@@ -433,7 +433,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
             eventType: "DUNGEON"
           }))
         {
-          var d = function(a)
+          var c = function(a)
           {
             a = window.isLocal ? JSON.parse(a) : a;
             a.interrupt ? (b.interrupt = null, location.href = a.interrupt.page) : (a = {
@@ -449,11 +449,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
           };
           if (window.isLocal) require(["text!/magica/json/page/EventDungeonTop.json"], function(a)
           {
-            d(a)
+            c(a)
           });
           else
           {
-            var c = [],
+            var d = [],
               g = [],
               h = [],
               k, p = {
@@ -471,11 +471,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
               if (7 > b)
               {
                 a.toJSON();
-                c.push(a.id);
+                d.push(a.id);
                 g.push(p[b]);
-                var d = [];
-                l[b] && d.push(l[b].id);
-                h.push(d);
+                var c = [];
+                l[b] && c.push(l[b].id);
+                h.push(c);
                 0 === b && (k = a.id)
               }
             });
@@ -485,14 +485,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
               name: "ダンジョン1",
               episodeUserCardId: k
             };
-            a.userCardIds = c;
+            a.userCardIds = d;
             a.questPositionIds = g;
             a.userPieceIdLists = h;
             console.log("dungeon deck savePrm:", a);
             e.ajaxPost(b.linkList.userDeckSave, a, function(a)
             {
               b.responseSetStorage(a);
-              e.ajaxSimpleGet("/magica/api/page/EventDungeonTop", "", d)
+              e.ajaxSimpleGet("/magica/api/page/EventDungeonTop", "", c)
             })
           }
         }
@@ -506,7 +506,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     startMirrorBattle: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (c.setWebView(!1), c.startMirrorBattle(
+      b.isScrolled() || (d.setWebView(!1), d.startMirrorBattle(
       {
         resultUrl: "/magica/index.html#/MainQuest",
         retireUrl: "/magica/index.html#/TopPage"
@@ -517,7 +517,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       b.isScrolled() || b.playStory(
       {
-        cmd: c,
+        cmd: d,
         ajaxControl: e,
         storyId: "101203-8",
         fullVoiceSectionId: 101203,
@@ -549,36 +549,31 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     getPurchaseStatus: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || ($("#commandDiv").on("nativeCallback", function(a, c)
+      b.isScrolled() || ($("#commandDiv").on("nativeCallback", function(a, d)
       {
         $("#commandDiv").off();
-        var d = "ロック状態のはありません";
-        a = c.product_ids;
-        0 < a.length && (d = "ロック状態のproduct_idリスト<br>", f.each(a, function(a, b, c)
+        var c = "ロック状態のはありません";
+        a = d.product_ids;
+        0 < a.length && (c = "ロック状態のproduct_idリスト<br>", f.each(a, function(a, b, d)
         {
-          d += "・" + String(a);
-          d += "<br>"
+          c += "・" + String(a);
+          c += "<br>"
         }));
         new b.PopupClass(
         {
           title: "マギアストーン購入状況確認",
-          content: d,
+          content: c,
           popupType: "typeB",
           closeBtnText: "閉じる"
         })
-      }), c.getPurchaseStatus(), a = {
+      }), d.getPurchaseStatus(), a = {
         product_ids: ["aaaa", "bbbb", "cccc"]
       }, window.isBrowser && nativeCallback(a))
     },
-    setUserIdTest: function(a)
+    mailSendTest: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (a = e.getPageJson().gameUser.userId, c.setUserId(a), new b.PopupClass(
-      {
-        title: "ユーザーID送信テスト",
-        content: "ユーザーID<br>" + a + "<br>を送信しました。",
-        closeBtnText: "閉じる"
-      }))
+      b.isScrolled() || (location.href = "#/MailSendTest")
     }
   })
 });

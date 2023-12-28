@@ -41,7 +41,7 @@
   width: 512px;
   height: 512px;
   z-index: 3;
-  -webkit-animation: 1.03333s cpNewYearClearLight linear 1.01667s 1 both;
+  -webkit-animation: 1.0333333333s cpNewYearClearLight linear 1.0166666667s 1 both;
 }
 
 #NewYearLogin #fortuneAnimationWrap .kuji01
@@ -53,7 +53,7 @@
   width: 20px;
   height: 232px;
   z-index: 3;
-  -webkit-animation: 1.85s cpNewYearKuji01 linear 0.36667s 1 both;
+  -webkit-animation: 1.85s cpNewYearKuji01 linear 0.3666666667s 1 both;
 }
 
 #NewYearLogin #fortuneAnimationWrap .box
@@ -81,7 +81,7 @@
 #NewYearLogin #resultAnimationWrap.show
 {
   display: block;
-  -webkit-animation: 0.16667s simpleFadeOut linear 2.5s 1 both;
+  -webkit-animation: 0.1666666667s simpleFadeOut linear 2.5s 1 both;
 }
 
 #NewYearLogin #resultAnimationWrap .circle01
@@ -93,12 +93,12 @@
   width: 340px;
   height: 340px;
   z-index: 1;
-  -webkit-animation: 0.78333s cpNewYearResultCircle01 linear 0s infinite both;
+  -webkit-animation: 0.7833333333s cpNewYearResultCircle01 linear 0s infinite both;
 }
 
 #NewYearLogin #resultAnimationWrap .circle01.late
 {
-  -webkit-animation: 0.78333s cpNewYearResultCircle01 linear 0.45s infinite both;
+  -webkit-animation: 0.7833333333s cpNewYearResultCircle01 linear 0.45s infinite both;
 }
 
 #NewYearLogin #resultAnimationWrap .wave01
@@ -127,12 +127,12 @@
   width: 500px;
   height: 500px;
   z-index: 1;
-  -webkit-animation: 0.98333s cpNewYearResultWave02 linear 0.03333s 1 both;
+  -webkit-animation: 0.9833333333s cpNewYearResultWave02 linear 0.0333333333s 1 both;
 }
 
 #NewYearLogin #resultAnimationWrap .wave02.late
 {
-  -webkit-animation: 0.98333s cpNewYearResultWave02 linear 0.53333s 1 both;
+  -webkit-animation: 0.9833333333s cpNewYearResultWave02 linear 0.5333333333s 1 both;
 }
 
 #NewYearLogin #resultAnimationWrap .flare01
@@ -155,7 +155,7 @@
   width: 654px;
   height: 628px;
   z-index: 1;
-  -webkit-animation: 0.5s cpNewYearResultFlare03_2 linear 0s 1 normal, 2.91667s cpNewYearResultFlare03_1 linear 0s 1 normal;
+  -webkit-animation: 0.5s cpNewYearResultFlare03_2 linear 0s 1 normal, 2.9166666667s cpNewYearResultFlare03_1 linear 0s 1 normal;
 }
 
 #NewYearLogin #resultAnimationWrap .flare04
@@ -167,7 +167,7 @@
   width: 430px;
   height: 438px;
   z-index: 1;
-  -webkit-animation: 1.45s cpNewYearResultFlare04 linear 0.86667s infinite both;
+  -webkit-animation: 1.45s cpNewYearResultFlare04 linear 0.8666666667s infinite both;
 }
 
 #NewYearLogin #resultAnimationWrap .flare05
@@ -179,7 +179,7 @@
   width: 556px;
   height: 552px;
   z-index: 1;
-  -webkit-animation: 2.91667s cpNewYearResultFlare05 linear 0s 1 both;
+  -webkit-animation: 2.9166666667s cpNewYearResultFlare05 linear 0s 1 both;
 }
 
 #NewYearLogin #resultAnimationWrap .light
@@ -191,7 +191,7 @@
   width: 779px;
   height: 729px;
   z-index: 1;
-  -webkit-animation: 0.81667s cpNewYearResultLight01_1 linear 0s 1 normal, 2.66667s cpNewYearResultLight01_2 linear 0s 1 normal;
+  -webkit-animation: 0.8166666667s cpNewYearResultLight01_1 linear 0s 1 normal, 2.6666666667s cpNewYearResultLight01_2 linear 0s 1 normal;
 }
 
 #NewYearLogin #resultAnimationWrap .light02
@@ -203,7 +203,7 @@
   width: 779px;
   height: 729px;
   z-index: 1;
-  -webkit-animation: 0.81667s cpNewYearResultLight02_1 linear 0s 1 normal, 2.66667s cpNewYearResultLight02_2 linear 0s 1 normal;
+  -webkit-animation: 0.8166666667s cpNewYearResultLight02_1 linear 0s 1 normal, 2.6666666667s cpNewYearResultLight02_2 linear 0s 1 normal;
 }
 
 #NewYearLogin #resultAnimationWrap .textWrap
@@ -237,25 +237,25 @@
 #NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(1)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_01.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.4s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(2)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_02.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.3666666667s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.75s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(3)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_03.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.41667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.88333s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.4166666667s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.8833333333s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type0 .textWrap .text:nth-child(4)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_hamadaikichi_04.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.58333s 1 normal, 0.43333s cpNewYearResultText_2 linear 1.05s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.5833333333s 1 normal, 0.4333333333s cpNewYearResultText_2 linear 1.05s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type1 .effectCircle
@@ -279,19 +279,19 @@
 #NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(1)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_01.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.4s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(2)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_02.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.3666666667s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.75s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type1 .textWrap .text:nth-child(3)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_gokudaikichi_03.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.41667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.88333s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.4166666667s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.8833333333s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type2 .effectCircle
@@ -315,13 +315,13 @@
 #NewYearLogin #resultAnimationWrap.type2 .textWrap .text:nth-child(1)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_daikichi_01.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.4s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.15s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.4s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type2 .textWrap .text:nth-child(2)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_daikichi_02.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.36667s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.75s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0.3666666667s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.75s infinite normal;
 }
 
 #NewYearLogin #resultAnimationWrap.type3 .effectCircle
@@ -338,7 +338,7 @@
 #NewYearLogin #resultAnimationWrap.type3 .textWrap .text:nth-child(1)
 {
   background: url("/magica/resource/image_web/campaign/new_year/common/animation/text_kichi.png") center center;
-  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0s 1 normal, 0.41667s cpNewYearResultText_2 linear 0.38333s infinite normal;
+  -webkit-animation: 0.3s cpNewYearResultText_1 linear 0s 1 normal, 0.4166666667s cpNewYearResultText_2 linear 0.3833333333s infinite normal;
 }
 
 #NewYearLogin #resultPageWrap
@@ -350,7 +350,7 @@
 {
   display: block;
   opacity: 0;
-  -webkit-animation: 0.16667s simpleFadeIn linear 0s 1 both;
+  -webkit-animation: 0.1666666667s simpleFadeIn linear 0s 1 both;
 }
 
 #NewYearLogin #resultPageWrap .charaSerif
@@ -359,7 +359,6 @@
   height: 160px;
   padding: 45px 40px 0 50px;
   background: url("/magica/resource/image_web/page/quest/questBattle/bg_serif.png") left top no-repeat;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,10 +368,8 @@
   font-size: 22px;
   line-height: 1.3;
   -webkit-border-radius: 10px;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -520,6 +517,7 @@
 
 #NewYearLogin #resultPageWrap .resultWrap .tweetBtn
 {
+  display: none;
   background: url("/magica/resource/image_web/campaign/new_year/common/btn_twitter.png") left top no-repeat;
   position: absolute;
   right: 45px;
