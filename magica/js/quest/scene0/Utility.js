@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(" "), function(f, q, g, h, n, p)
+define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(" "), function(h, r, f, k, p, q)
 {
-  var k = {
+  var l = {
     getScene0QuestInfo: function(a)
     {
       var c = a.targetNum,
@@ -8,53 +8,53 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         d = a.type,
         e = "SCENE0_FILM";
       d && ("battle" == d ? e = "SCENE0_CHALLENGEBATTLE" : "side" == d && (e = "SCENE0_SIDESTORY"));
-      var l = {
+      var g = {
         sectionInfoList: [],
         questInfoList: []
       };
-      f.each(b.userSectionList, function(b, a, d)
+      h.each(b.userSectionList, function(b, a, d)
       {
         a = b.section;
-        a.viewParameterMap && a.viewParameterMap[e + "_NUM"] && Number(a.viewParameterMap[e + "_NUM"]) == c && (b.isLastSection = !1, a.viewParameterMap[e + "_LAST_SECTION"] && (d = Number(a.viewParameterMap[e + "_LAST_SECTION"]), 1 == d && (b.isLastSection = !0)), b.isNewestSection = !1, a.viewParameterMap[e + "_NEWEST_SECTION"] && (d = Number(a.viewParameterMap[e + "_NEWEST_SECTION"]), 1 == d && (b.isNewestSection = !0)), l.sectionInfoList.push(b))
+        a.viewParameterMap && a.viewParameterMap[e + "_NUM"] && Number(a.viewParameterMap[e + "_NUM"]) == c && (b.isLastSection = !1, a.viewParameterMap[e + "_LAST_SECTION"] && (d = Number(a.viewParameterMap[e + "_LAST_SECTION"]), 1 == d && (b.isLastSection = !0)), b.isNewestSection = !1, a.viewParameterMap[e + "_NEWEST_SECTION"] && (d = Number(a.viewParameterMap[e + "_NEWEST_SECTION"]), 1 == d && (b.isNewestSection = !0)), g.sectionInfoList.push(b))
       });
-      l.sectionInfoList.sort(function(b, a)
+      g.sectionInfoList.sort(function(b, c)
       {
-        return b.sectionId - a.sectionId
+        return b.sectionId - c.sectionId
       });
-      var m = !0,
-        h = [],
+      var n = !0,
+        m = [],
         k = [];
-      f.each(l.sectionInfoList, function(a, d, e)
+      h.each(g.sectionInfoList, function(a, d, e)
       {
-        h[d] = [];
-        f.each(b.userQuestBattleList, function(b, e, f)
+        m[d] = [];
+        h.each(b.userQuestBattleList, function(b, e, g)
         {
-          a.sectionId == b.questBattle.sectionId && (b.targetNum = c, a.section && a.section.secret && (b.secret = a.section.secret), !b.questBattle.ap && a.section.ap && (b.questBattle.ap = a.section.ap), !b.questBattle.difficulty && a.section.difficulty && (b.questBattle.difficulty = a.section.difficulty), h[d].push(b))
+          a.sectionId == b.questBattle.sectionId && (b.targetNum = c, a.section && a.section.secret && (b.secret = a.section.secret), !b.questBattle.ap && a.section.ap && (b.questBattle.ap = a.section.ap), !b.questBattle.difficulty && a.section.difficulty && (b.questBattle.difficulty = a.section.difficulty), m[d].push(b))
         })
       });
-      f.each(h, function(b, a, c)
+      h.each(m, function(b, a, c)
       {
         b.sort(function(b, a)
         {
           return b.questBattleId - a.questBattleId
         })
       });
-      f.each(h, function(b, a, c)
+      h.each(m, function(b, a, c)
       {
-        f.each(b, function(b, a, c)
+        h.each(b, function(b, a, c)
         {
           k.push(b)
         })
       });
-      f.each(k, function(b, a, c)
+      h.each(k, function(b, a, c)
       {
-        if (b.cleared || m) l.questInfoList.push(b), b.cleared || "side" == d || "battle" == d || (m = !1)
+        if (b.cleared || n) g.questInfoList.push(b), b.cleared || "side" == d || "battle" == d || (n = !1)
       });
-      f.each(l.sectionInfoList, function(a, c, d)
+      h.each(g.sectionInfoList, function(a, c, d)
       {
-        f.each(l.questInfoList, function(c, d, e)
+        h.each(g.questInfoList, function(c, d, e)
         {
-          c.questBattle.sectionId == a.sectionId && g.inputOverwriteApInfo(
+          c.questBattle.sectionId == a.sectionId && f.inputOverwriteApInfo(
           {
             campaignList: b.campaignList,
             sectionModel: a,
@@ -62,7 +62,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
           })
         })
       });
-      return l
+      return g
     },
     getMainItemInfo: function(a)
     {
@@ -72,7 +72,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         itemId: "SCENEZERO_PLAY_TICKET",
         name: "リコールランプ"
       };
-      f.each(a.pageJson.userItemList, function(b, a, e)
+      h.each(a.pageJson.userItemList, function(b, a, e)
       {
         b.itemId == c.itemId && (c.quantity = b.quantity)
       });
@@ -87,7 +87,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         itemId: "SCENEZERO_SIDE_TICKET",
         name: "ドアプライズフィルム"
       };
-      f.each(a.pageJson.userItemList, function(b, a, e)
+      h.each(a.pageJson.userItemList, function(b, a, e)
       {
         b.itemId == c.itemId && (c.quantity = b.quantity)
       });
@@ -114,7 +114,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         e = a.callback;
       if (b.quantity >= c)
         if (d) e();
-        else var f = new g.PopupClass(
+        else var g = new f.PopupClass(
         {
           title: "ストーリー再生",
           content: '<span class="c_pink">' + b.name + '</span>を<span class="c_pink">' + c + "個</span>消費して<br>ストーリーを再生しますか？",
@@ -123,7 +123,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
           decideBtnText: "再生する",
           decideBtnEvent: function()
           {
-            f.remove();
+            g.remove();
             e()
           },
           popupType: "typeC"
@@ -133,10 +133,10 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
           $(".scene0StoryPopup .popupBtnArea .decideBtn").addClass("b_scene0_l")
         }, function()
         {
-          h.updateScene0StorySelectObject(
+          k.updateScene0StorySelectObject(
           {})
         });
-      else new g.PopupClass(
+      else new f.PopupClass(
       {
         title: "アイテム不足",
         content: "ストーリー開放に必要なアイテムが足りません。",
@@ -145,13 +145,13 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         popupType: "typeC"
       }, null, null, function()
       {
-        h.updateScene0StorySelectObject(
+        k.updateScene0StorySelectObject(
         {})
       })
     },
     getIsScene0Film1Clear: function(a)
     {
-      a = k.getScene0QuestInfo(
+      a = l.getScene0QuestInfo(
       {
         targetNum: 1,
         pageJson:
@@ -161,7 +161,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         }
       }).sectionInfoList;
       var c = !1;
-      f.each(a, function(b, a, e)
+      h.each(a, function(b, a, e)
       {
         c = b.cleared
       });
@@ -172,18 +172,18 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       var c = a.questBattleModel,
         b = a.sectionModel,
         d = a.userQuestAdventureList;
-      g.questBattleModel = k.getCommonQuestBattleModel(
+      f.questBattleModel = l.getCommonQuestBattleModel(
       {
         questBattleModel: c,
         sectionModel: b,
         userQuestAdventureList: d
       });
-      k.isEnoughAP(
+      l.isEnoughAP(
       {
-        needAP: g.questBattleModel.ap
-      }) ? location.href = "#/DeckFormation/scene0Challenge" : g.globalMenuView.apPopup(null, "APが不足しています", function()
+        needAP: f.questBattleModel.ap
+      }) ? location.href = "#/DeckFormation/scene0Challenge" : f.globalMenuView.apPopup(null, "APが不足しています", function()
       {
-        k.startQuest(
+        l.startQuest(
         {
           questBattleModel: c,
           sectionModel: b,
@@ -194,7 +194,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
     isEnoughAP: function(a)
     {
       a = a.needAP;
-      var c = g.globalMenuView.getUserStatus().ACP,
+      var c = f.globalMenuView.getUserStatus().ACP,
         b = !1;
       a && c >= a && (b = !0);
       0 == a && (b = !0);
@@ -214,8 +214,8 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
         rewardType: ""
       };
       b.chestColor = "bronze_close";
-      b.questBattle.missionRewardCode && (b.missionRewardCode = g.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
-      "NONE" == b.questBattle.questBattleType && f.each([1, 2, 3], function(a, c, d)
+      b.questBattle.missionRewardCode && (b.missionRewardCode = f.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
+      "NONE" == b.questBattle.questBattleType && h.each([1, 2, 3], function(a, c, d)
       {
         b.questBattle["missionMaster" + a] = {
           description: ""
@@ -239,7 +239,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
       }();
       b.difficulty = d.difficulty ? d.difficulty : b.questBattle.difficulty;
       b.rewardCodeArr = [];
-      c = p.dropItemJson(b);
+      c = q.dropItemJson(b);
       c.firstClearReward && (b.firstClearReward = c.firstClearReward);
       c.firstClearRewardName && (b.firstClearRewardName = c.firstClearRewardName);
       c.firstClearRewardQuantity && (b.firstClearRewardQuantity = c.firstClearRewardQuantity);
@@ -254,9 +254,9 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
     setDebugJson: function(a)
     {
       a = a.userSectionList;
-      f.each(a, function(a, b, d)
+      h.each(a, function(a, b, d)
       {
-        f.each(["1", "2"], function(b, c, d)
+        h.each(["1", "2"], function(b, c, d)
         {
           a.section.viewParameterMap && a.section.viewParameterMap.PUELLAHISTORIA_NORMAL_NUM == b && (a.section.viewParameterMap.SCENE0_FILM_NUM = b)
         })
@@ -267,102 +267,172 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil".split(
     {
       var c = a.webFilmNo,
         b = a.nativeFilmNo,
-        d = a.nativeVersionNo;
+        d = a.nativeVersionNo,
+        e = a.nativeDaySectionNo;
+      e || (e = 0);
       a = a.getType;
-      var e = {
+      var g = {
           webFilmNo: c,
           nativeFilmNo: b,
-          nativeVersionNo: d
+          nativeVersionNo: d,
+          nativeDaySectionNo: e
         },
-        g = {
+        f = {
           1:
           {
             filmNo: 1,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 3
           },
           2:
           {
             filmNo: 2,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 4
           },
           3:
           {
             filmNo: 3,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 5
           },
           4:
           {
             filmNo: 4,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 6
           },
           5:
           {
             filmNo: 5,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 7
           },
           6:
           {
             filmNo: 6,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 8
           },
           7:
           {
             filmNo: 7,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 9
           },
           8:
           {
             filmNo: 8,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 10
           },
           9:
           {
             filmNo: 9,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 11
           },
           10:
           {
             filmNo: 10,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 12
           },
           11:
           {
             filmNo: 11,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 13
           },
           12:
           {
             filmNo: 12,
-            version: 1
+            version: 1,
+            daySection: 0,
+            sortNo: 14
+          },
+          13:
+          {
+            filmNo: 12,
+            version: 1,
+            daySection: 1,
+            sortNo: 14
+          },
+          14:
+          {
+            filmNo: 12,
+            version: 1,
+            daySection: 2,
+            sortNo: 14
+          },
+          15:
+          {
+            filmNo: 0,
+            version: 1,
+            daySection: 0,
+            sortNo: 1
+          },
+          16:
+          {
+            filmNo: 1,
+            version: 0,
+            daySection: 0,
+            sortNo: 2
+          },
+          17:
+          {
+            filmNo: 12,
+            version: 1,
+            daySection: 3,
+            sortNo: 14
+          },
+          18:
+          {
+            filmNo: 13,
+            version: 1,
+            daySection: 0,
+            sortNo: 15,
+            storyEnd: !0
           }
         };
-      "web" == a && f.each(g, function(a, c, f)
+      "web" == a && h.each(f, function(a, c, f)
       {
-        a.filmNo == b && a.version == d && (e.webFilmNo = c)
+        a.filmNo == b && a.version == d && a.daySection == e && (g.webFilmNo = c)
       });
-      "native" == a && (e.nativeFilmNo = g[c].filmNo, e.nativeVersionNo = g[c].version);
-      return e
+      "native" == a && (g.nativeFilmNo = f[c].filmNo, g.nativeVersionNo = f[c].version, g.nativeDaySectionNo = f[c].daySection, g.nativeSortNo = f[c].sortNo, g.storyEnd = !1, f[c].storyEnd && (g.storyEnd = f[c].storyEnd));
+      return g
     },
     playCardGetMvMabayu: function(a)
     {
       var c = a.callback,
         b = {};
       b.presentId = [a.presentId];
-      n.ajaxPost(g.linkList.receivePresent, b, function(a)
+      p.ajaxPost(f.linkList.receivePresent, b, function(a)
       {
-        g.responseSetStorage(a);
+        f.responseSetStorage(a);
         a && a.gachaAnimation ? ($("#commandDiv").on("nativeCallback", function()
         {
           $("#commandDiv").off();
-          h.setWebView(!0);
-          g.androidKeyStop = !1;
+          k.setWebView(!0);
+          f.androidKeyStop = !1;
           c()
-        }), g.androidKeyStop = !0, h.stopBgm(), h.setWebView(!1), h.startPresentAnimation(
+        }), f.androidKeyStop = !0, k.stopBgm(), k.setWebView(!1), k.startPresentAnimation(
         {
           gachaAnimation: a.gachaAnimation
         }), window.isBrowser && nativeCallback()) : c()
       })
     }
   };
-  return k
+  return l
 });

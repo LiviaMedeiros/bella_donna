@@ -149,7 +149,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
       createModel: function(a)
       {
         return {
-          filmNum: a.model.filmInfo.id
+          filmNum: a.model.filmInfo.nativeFilmNo
         }
       },
       createDom: function()

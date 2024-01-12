@@ -1,8 +1,8 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/NativeAfterFilm1.html js/quest/scene0/Utility".split(" "), function(n, p, b, r, f, q, l)
+define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/NativeAfterFilm1.html js/quest/scene0/Utility".split(" "), function(p, q, b, t, f, r, m)
 {
-  var e, h, k = function(a, m)
+  var h, k, l = function(a, n)
   {
-    for (var g = [], c = "END" !== m ? "touches" : "changedTouches", d = 0; d < a.originalEvent[c].length; d++)
+    for (var g = [], c = "END" !== n ? "touches" : "changedTouches", d = 0; d < a.originalEvent[c].length; d++)
     {
       var e = a.originalEvent[c][d].identifier;
       0 > e && (e = -e);
@@ -12,7 +12,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
         clientY: 1024 === b.displayWidth ? a.originalEvent[c][d].clientY : 1024 * a.originalEvent[c][d].clientY / 1280
       }
     }
-    switch (m)
+    switch (n)
     {
       case "START":
         f.callTouchesBegin(g);
@@ -24,7 +24,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
         f.callTouchesEnd(g)
     }
   };
-  return p.View.extend(
+  return q.View.extend(
   {
     events: function()
     {
@@ -38,20 +38,20 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     },
     initialize: function(a)
     {
-      e = a.pageModel;
-      this.template = n.template(q);
+      h = a.pageModel;
+      this.template = p.template(r);
       this.setNativeObj(
       {
-        model: e
+        model: h
       });
       b.removeBackHandler();
-      h = !0
+      k = !0
     },
     render: function()
     {
       this.$el.html(this.template(
       {
-        model: e
+        model: h
       }));
       return this
     },
@@ -62,10 +62,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       $("#commandDiv").off();
       $("#commandDiv").on("nativeCallback", function(a, c)
       {
-        c && (c.filmId && b.tapStory(
+        c && ((c.filmId || 0 == c.filmId) && b.tapStory(
         {
           filmId: c.filmId,
           filmVersion: c.filmVersion,
+          sectionId: c.sectionId,
           dayId: c.dayId
         }), c.status && "popList" == c.status && b.tapReturnStoryListBtn())
       });
@@ -74,30 +75,33 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     tapStory: function(a)
     {
       var b = a.filmId,
-        g = a.filmVersion;
+        g = a.filmVersion,
+        c = a.sectionId;
       a = a.dayId;
-      var c = this;
+      var d = this;
       f.startSe(1002);
-      var g = l.convertFilmNo(
+      var b = m.convertFilmNo(
         {
           getType: "web",
           nativeFilmNo: b,
-          nativeVersionNo: g
+          nativeVersionNo: g,
+          nativeDaySectionNo: c
         }),
-        d = e.filmInfoWeb[g.webFilmNo].dayList[a];
-      d.lastFilmId = b;
-      d.isClear ? c.startQuest(
+        b = h.filmInfoWeb[b.webFilmNo],
+        e = b.dayList[a];
+      e.lastFilmId = b.id;
+      e.isClear ? d.startQuest(
       {
-        model: d
-      }) : l.openStoryPopup(
+        model: e
+      }) : m.openStoryPopup(
       {
-        needItemNum: d.needItemNum,
-        itemInfo: e.itemInfo,
+        needItemNum: e.needItemNum,
+        itemInfo: h.itemInfo,
         callback: function()
         {
-          c.startQuest(
+          d.startQuest(
           {
-            model: d
+            model: e
           })
         }
       })
@@ -109,7 +113,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
         sectionModel: a.sectionInfo,
         questBattleModel: a.questInfo.questBattle
       };
-      a.lastFilmId && localStorage.setItem("scene0LastFilmId", a.lastFilmId);
+      localStorage.setItem("scene0LastFilmId", a.lastFilmId);
       location.href = "#/QuestStoryOnly"
     },
     tapChangeStoryAllListBtn: function(a)
@@ -125,24 +129,24 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     touchStart: function(a)
     {
       a.preventDefault();
-      h && (b.tapEffectStop = !0, k(a, "START"))
+      k && (b.tapEffectStop = !0, l(a, "START"))
     },
     touchMove: function(a)
     {
       a.preventDefault();
-      h && k(a, "MOVE")
+      k && l(a, "MOVE")
     },
     touchEnd: function(a)
     {
       a.preventDefault();
-      h && !b.isDoubleTouch() && (b.tapEffectStop = !1, k(a, "END"))
+      k && !b.isDoubleTouch() && (b.tapEffectStop = !1, l(a, "END"))
     },
     removeView: function()
     {
       $("#commandDiv").off();
       f.deleteScene0StorySelectObject();
       b.removeBackHandler();
-      h = null;
+      k = null;
       this.off();
       this.remove()
     }

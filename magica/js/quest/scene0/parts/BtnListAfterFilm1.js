@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/BtnListAfterFilm1.html js/quest/scene0/Utility".split(" "), function(c, g, e, h, q, l, m)
+define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/BtnListAfterFilm1.html js/quest/scene0/Utility".split(" "), function(c, g, d, h, q, l, m)
 {
-  var d, k;
+  var e, k;
   h = g.View.extend(
   {
     events: function()
@@ -11,7 +11,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     {
       this.template = c.template(l);
       k = this.pageModel = a.pageModel;
-      d = a._views;
+      e = a._views;
       this.viewModel = this.createModel(
       {
         pageModel: this.pageModel
@@ -34,20 +34,21 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     {
       $("#mainSec").append(this.render().el);
       var a = JSON.parse(JSON.stringify(this.viewModel.filmInfoWeb));
-      c.each(a.reverse(), function(a, f, e)
+      c.each(a.reverse(), function(a, f, d)
       {
-        a && (d["ListView" + f] = new n(
+        a && (e["ListView" + f] = new n(
         {
           model: a
-        }), $("#BtnListAfterFilm1Sec #btnList").append(d["ListView" + f].render().el), c.each(a.dayList.reverse(), function(a, b, c)
+        }), $("#BtnListAfterFilm1Sec #btnList").append(e["ListView" + f].render().el), c.each(a.dayList.reverse(), function(b, c, d)
         {
-          a && (d["BtnView" + f] = new p(
+          b && (e["BtnView" + f] = new p(
           {
-            model: a
-          }), $("#BtnListAfterFilm1Sec #" + d["ListView" + f].getListId()).append(d["BtnView" + f].render().el))
+            model: b,
+            filmInfoWeb: a
+          }), $("#BtnListAfterFilm1Sec #" + e["ListView" + f].getListId()).append(e["BtnView" + f].render().el))
         }))
       });
-      e.scrollSet("scrollWrap", "scrollInner")
+      d.scrollSet("scrollWrap", "scrollInner")
     },
     removeView: function()
     {
@@ -104,7 +105,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       events: function()
       {
         var a = {};
-        a[e.cgti] = this.tapBtn;
+        a[d.cgti] = this.tapBtn;
         return a
       },
       initialize: function(a)
@@ -114,7 +115,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
         this.viewModel = this.createModel(
         {
           model: this.model
-        })
+        });
+        this.viewModel.filmInfoWeb = a.filmInfoWeb
       },
       render: function()
       {
@@ -136,9 +138,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       tapBtn: function(a)
       {
         a.preventDefault();
-        if (!e.isScrolled())
+        if (!d.isScrolled())
         {
           var b = this;
+          console.log("BtnViewModel", b.viewModel);
           b.viewModel.isClear ? b.startQuest(
           {
             model: b.viewModel
@@ -159,10 +162,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
       startQuest: function(a)
       {
         a = a.model;
-        e.questStoryOnlyModel = {
+        d.questStoryOnlyModel = {
           sectionModel: a.sectionInfo,
           questBattleModel: a.questInfo.questBattle
         };
+        localStorage.setItem("scene0LastFilmId", a.filmInfoWeb.id);
         location.href = "#/QuestStoryOnly"
       },
       removeView: function()
