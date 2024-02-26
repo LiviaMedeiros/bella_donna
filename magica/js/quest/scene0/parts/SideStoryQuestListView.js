@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/SideStoryQuestList.html js/quest/scene0/Utility".split(" "), function(d, e, b, g, h, f, k)
+define("underscore backbone backboneCommon ajaxControl command text!template/quest/scene0/SideStoryQuestList.html js/quest/scene0/Utility".split(" "), function(d, e, c, g, h, f, k)
 {
   return e.View.extend(
   {
@@ -6,7 +6,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     events: function()
     {
       var a = {};
-      a[b.cgti + " #toggleBtn"] = this.tapToggleBtn;
+      a[c.cgti + " #toggleBtn"] = this.tapToggleBtn;
       return a
     },
     initialize: function(a)
@@ -30,8 +30,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     {
       a = a.model;
       this.listId = "SideStoryFilm" + a.id;
+      var b = "Film." + a.id;
+      13 == a.id && (b = "Film.0");
       return {
-        listTitle: "Film." + a.id,
+        listTitle: b,
         listId: this.listId
       }
     },
@@ -42,13 +44,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/que
     tapToggleBtn: function(a)
     {
       a.preventDefault();
-      if (!b.isScrolled())
+      if (!c.isScrolled())
       {
-        var c = $(a.currentTarget).data().listid;
-        $("#" + c).hasClass("open") ? ($("#" + c).removeClass("open"), $(a.currentTarget).find(".toggleBtn").removeClass("up")) : ($("#" + c).addClass("open"), $(a.currentTarget).find(".toggleBtn").addClass("up"));
+        var b = $(a.currentTarget).data().listid;
+        $("#" + b).hasClass("open") ? ($("#" + b).removeClass("open"), $(a.currentTarget).find(".toggleBtn").removeClass("up")) : ($("#" + b).addClass("open"), $(a.currentTarget).find(".toggleBtn").addClass("up"));
         setTimeout(function()
         {
-          b.scrollRefresh()
+          c.scrollRefresh()
         }, 50)
       }
     },

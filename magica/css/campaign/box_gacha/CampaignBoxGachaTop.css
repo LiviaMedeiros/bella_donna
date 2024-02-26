@@ -15,7 +15,6 @@
   width: 258px;
   height: 28px;
   background: url("/magica/resource/image_web/campaign/box_gacha/common/box_remain_base.png") left top no-repeat;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,7 +57,6 @@
 {
   width: 416px;
   height: 64px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +65,6 @@
   left: -webkit-calc(50% - 208px);
   pointer-events: none;
   z-index: 10;
-  -webkit-justify-content: space-between;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -98,7 +95,6 @@
 
 .resultWrap .resultBtnWrap.singleBtn
 {
-  -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
@@ -126,10 +122,8 @@
 
 .resultWrap .rainforcedApper.singleDraw .drawItemWrap
 {
-  -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -178,14 +172,12 @@
 {
   width: 628px;
   height: 246px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: -webkit-calc(50% - 123px);
   left: -webkit-calc(50% - 314px);
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -489,10 +481,8 @@
 
 .resultWrap.singleDraw .drawItemWrap
 {
-  -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1193,12 +1183,10 @@
   margin: 0 auto 8px;
   padding: 0 40px 0 26px;
   background: url("/magica/resource/image_web/campaign/box_gacha/common/header_box.png") left top no-repeat;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  -webkit-justify-content: space-between;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -1218,11 +1206,9 @@
 .boxContentsPop.popupContent .popupInner .popupTextArea .boxTitleWrap .gachaRemain,
 .boxContentsPop.popupContent .popupInner .popupTextArea .boxTitleWrap .remainNum
 {
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: flex-end;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -1651,21 +1637,18 @@
   font-size: 20px;
   line-height: 30px;
   text-align: center;
-  -webkit-border-radius: 15px;
   border-radius: 15px;
 }
 
 #CampaignBoxGachaTop #gachaHeader #gachaRemain
 {
   width: 200px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 47px;
   right: 380px;
-  -webkit-justify-content: flex-end;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -1706,14 +1689,12 @@
 {
   width: 560px;
   height: 134px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 96px;
   left: 19px;
-  -webkit-justify-content: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1724,12 +1705,10 @@
   width: 286px;
   height: 134px;
   margin: 0 -6px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1758,14 +1737,12 @@
 #CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame
 {
   width: 196px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   bottom: 13px;
   left: -webkit-calc(50% - 98px);
-  -webkit-justify-content: flex-end;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
