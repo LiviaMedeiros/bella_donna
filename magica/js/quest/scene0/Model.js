@@ -18,7 +18,7 @@ define("underscore backbone backboneCommon ajaxControl command js/quest/scene0/U
         userSectionList: a.userSectionList
       }) && (e.isFilm1Clear = !0, e.templateClass = "AfterFilm1", e.StorySelectUrl = "#/Scene0StorySelectAfterFilm1");
       e.limitedMission = {
-        balloonSecClass: "",
+        balloonSecClass: "noDisp",
         endDateText: "3/8"
       };
       return e
