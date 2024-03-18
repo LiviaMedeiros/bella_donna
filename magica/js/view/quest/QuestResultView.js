@@ -1,11 +1,12 @@
-define("underscore backbone backboneCommon ajaxControl text!template/quest/QuestResult.html cardUtil command QuestUtil js/view/quest/QuestResultUnitPartView js/view/chara/CharaResultView js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(l, x, a, r, G, q, h, A, B, u, H, E, C)
+define("underscore backbone backboneCommon ajaxControl text!template/quest/QuestResult.html cardUtil command QuestUtil js/view/quest/QuestResultUnitPartView js/view/chara/CharaResultView js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility js/event/EventWitch/Utility js/event/EventWitch/parts/IconCharaGauge".split(" "), function(l, A, a, r, I, q, h, B, C, u, J, F, D, v, G)
 {
-  var d, t = x.Model.extend(),
-    w = {},
-    I = function(b)
+  var d, w = A.Model.extend(),
+    x = {},
+    t = {},
+    K = function(b)
     {
       var c, d = b.userQuestBattleResultList[0].questBattle.sectionId,
-        e = b.userQuestBattleResultList[0].questBattleId,
+        f = b.userQuestBattleResultList[0].questBattleId,
         g = [];
       l.each(b.userQuestBattleList, function(a)
       {
@@ -26,10 +27,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       });
       var p = a.storage.userQuestBattleList.findWhere(
       {
-        questBattleId: e
+        questBattleId: f
       });
       if (b)
-        if (a.searchQuestGiftId && "MAIN" == b.toJSON().section.questType || a.searchQuestGiftId && "SUB" == b.toJSON().section.questType || a.searchQuestGiftId && "CHARA" == b.toJSON().section.questType || a.searchQuestGiftId && "COSTUME" == b.toJSON().section.questType) c = "#/SearchQuest/" + e, a.historyArr = ["MyPage", "SearchQuest"];
+        if (a.searchQuestGiftId && "MAIN" == b.toJSON().section.questType || a.searchQuestGiftId && "SUB" == b.toJSON().section.questType || a.searchQuestGiftId && "CHARA" == b.toJSON().section.questType || a.searchQuestGiftId && "COSTUME" == b.toJSON().section.questType) c = "#/SearchQuest/" + f, a.historyArr = ["MyPage", "SearchQuest"];
         else
         {
           a.searchQuestGiftId = null;
@@ -67,31 +68,36 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               a.historyArr = ["MyPage", "CharaQuest"];
               break;
             default:
-              k = !1, "EVENT_S" == m && (c = "#/EventTrainingTop/" + e, a.historyArr = ["MyPage", "EventTrainingTop"]), void 0 !== b.section.dayOfTheWeekQuestType && (c = "#/EventQuest/" + e, a.historyArr = ["MyPage", "EventQuest"]), "TOWER" == m && (p = null, p = 1 == b.section.genericIndex ? "/normal/" + e : "/challenge/" + e, c = "#/EventTowerTop", p && (c += p), a.historyArr = ["MyPage", "EventTowerTop"]), "DAILYTOWER" == m && (p = b.section.parameter.split("=")[1], c = "#/EventDailyTowerTop", p && (c += "/" + p.toLowerCase() + "/" + e), a.historyArr = ["MyPage", "EventDailyTowerTop"]), "BRANCH" == m && (c = "#/EventBranchTop/" + e, a.historyArr = ["MyPage", "EventBranchTop"]), "SINGLERAID" == m && (c = "#/EventSingleRaidTop/" + e, a.historyArr = ["MyPage", "EventSingleRaidTop"], a.resumeData && (a.eventSingleRaidResumeData = a.resumeData)), "STORYRAID" == m && (c = "#/EventStoryRaidTop/" + e, a.historyArr = ["MyPage", "EventStoryRaidTop"], a.resumeData && (a.eventStoryRaidResumeData = a.resumeData)), "ACCOMPLISH" == m && (c = "#/EventAccomplishTop", a.historyArr = ["MyPage", "EventAccomplishTop"]), "REG_ACC" == m && (c = "#/RegularEventAccomplishTop/" + e, a.historyArr = ["MyPage", "RegularEventAccomplishTop"]), "DUNGEON" == m && (c = "#/EventDungeonMap", a.historyArr = ["MyPage", "EventDungeonMap"]), "EXTERMINATION" == m && (c = "#/RegularEventExterminationBattleSelect/" + e, a.historyArr = ["MyPage", "RegularEventExterminationTop", "RegularEventExterminationBattleSelect"])
+              k = !1, "EVENT_S" == m && (c = "#/EventTrainingTop/" + f, a.historyArr = ["MyPage", "EventTrainingTop"]), void 0 !== b.section.dayOfTheWeekQuestType && (c = "#/EventQuest/" + f, a.historyArr = ["MyPage", "EventQuest"]), "TOWER" == m && (p = null, p = 1 == b.section.genericIndex ? "/normal/" + f : "/challenge/" + f, c = "#/EventTowerTop", p && (c += p), a.historyArr = ["MyPage", "EventTowerTop"]), "DAILYTOWER" == m && (p = b.section.parameter.split("=")[1], c = "#/EventDailyTowerTop", p && (c += "/" + p.toLowerCase() + "/" + f), a.historyArr = ["MyPage", "EventDailyTowerTop"]), "BRANCH" == m && (c = "#/EventBranchTop/" + f, a.historyArr = ["MyPage", "EventBranchTop"]), "SINGLERAID" == m && (c = "#/EventSingleRaidTop/" + f, a.historyArr = ["MyPage", "EventSingleRaidTop"], a.resumeData && (a.eventSingleRaidResumeData = a.resumeData)), "STORYRAID" == m && (c = "#/EventStoryRaidTop/" + f, a.historyArr = ["MyPage", "EventStoryRaidTop"], a.resumeData && (a.eventStoryRaidResumeData = a.resumeData)), "ACCOMPLISH" == m && (c = "#/EventAccomplishTop", a.historyArr = ["MyPage", "EventAccomplishTop"]), "REG_ACC" == m && (c = "#/RegularEventAccomplishTop/" + f, a.historyArr = ["MyPage", "RegularEventAccomplishTop"]), "DUNGEON" == m && (c = "#/EventDungeonMap", a.historyArr = ["MyPage", "EventDungeonMap"]), "EXTERMINATION" == m && (c = "#/RegularEventExterminationBattleSelect/" + f, a.historyArr = ["MyPage", "RegularEventExterminationTop", "RegularEventExterminationBattleSelect"])
           }
-          a.clearSectionModel || a.clearChapterModel || !k || (c = "#/QuestBattleSelect/" + d + "/" + e, console.log("セクション内に未クリアクエストがあります。選択画面に遷移します。"));
-          k = H.getIsPuellaHistoriaInfo(
+          a.clearSectionModel || a.clearChapterModel || !k || (c = "#/QuestBattleSelect/" + d + "/" + f, console.log("セクション内に未クリアクエストがあります。選択画面に遷移します。"));
+          k = J.getIsPuellaHistoriaInfo(
           {
             sectionInfo: b,
             sectionList: h.toJSON()
           });
-          k.isPuellaHistoria && (c = "#/QuestBattleSelect/" + k.sectionInfoList[k.sectionInfoList.length - 1].sectionId + "/" + e, a.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], k.num && k.num == E.getPuellaHistoriaLastBattleNum(
+          k.isPuellaHistoria && (c = "#/QuestBattleSelect/" + k.sectionInfoList[k.sectionInfoList.length - 1].sectionId + "/" + f, a.historyArr = ["MyPage", "MainQuest", "PuellaHistoriaTop"], k.num && k.num == F.getPuellaHistoriaLastBattleNum(
           {
             type: "singleRaid"
-          }) && (c = "#/PuellaHistoriaSingleRaid"), k.num && k.num == E.getPuellaHistoriaLastBattleNum(
+          }) && (c = "#/PuellaHistoriaSingleRaid"), k.num && k.num == F.getPuellaHistoriaLastBattleNum(
           {
             type: "singleRaidLast"
           }) && (c = "#/PuellaHistoriaSingleRaid"));
-          C.getIsScene0Info(
+          D.getIsScene0Info(
           {
             section: b
-          }).isScene0 && (a.historyArr = ["MyPage", "Scene0Top", "Scene0BattleSelect"], c = "#/Scene0BattleSelect")
+          }).isScene0 && (a.historyArr = ["MyPage", "Scene0Top", "Scene0BattleSelect"], c = "#/Scene0BattleSelect");
+          v.IsEventWitchSection(
+          {
+            section: b,
+            pageJson: t
+          }) && (a.historyArr = ["MyPage", "MainQuest", "EventWitchTopPage"], c = "#/EventWitchTopPage")
         }
       else c = "#/MainQuest", a.historyArr = ["MyPage", "MainQuest"];
       a.resumeData = null;
       return c
     },
-    J = function(b)
+    L = function(b)
     {
       if (a.playSection)
       {
@@ -104,25 +110,30 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           var d = c.toJSON(),
             c = d.cleared;
           !a.playSection.cleared && c && (a.clearSectionModel = d, a.playSection = null);
-          var e = null;
+          var f = null;
           b.userChapterList && l.each(b.userChapterList, function(a, b)
           {
-            a.chapterId == d.section.genericId && (e = a)
+            a.chapterId == d.section.genericId && (f = a)
           });
           var g = null;
-          e && a.playChapter && (c = e.cleared, g = a.playChapter.cleared, c && !g && (a.clearChapterModel = {}, a.clearChapterModel.before = a.playChapter, a.clearChapterModel.after = null, b.userChapterList && l.each(b.userChapterList, function(b)
+          f && a.playChapter && (c = f.cleared, g = a.playChapter.cleared, c && !g && (a.clearChapterModel = {}, a.clearChapterModel.before = a.playChapter, a.clearChapterModel.after = null, b.userChapterList && l.each(b.userChapterList, function(b)
           {
-            b.chapter.questType == e.chapter.questType && b.chapter.partNo == e.chapter.partNo && b.chapterId !== e.chapterId && (a.clearChapterModel.after = b)
+            b.chapter.questType == f.chapter.questType && b.chapter.partNo == f.chapter.partNo && b.chapterId !== f.chapterId && (a.clearChapterModel.after = b)
           })));
           a.playChapter = null;
-          C.getIsScene0Info(
+          D.getIsScene0Info(
           {
             section: d
-          }).isScene0 && (a.clearSectionModel = null, a.playSection = null, a.clearChapterModel = null)
+          }).isScene0 && (a.clearSectionModel = null, a.playSection = null, a.clearChapterModel = null);
+          v.IsEventWitchSection(
+          {
+            section: d,
+            pageJson: t
+          }) && (a.clearSectionModel = null, a.playSection = null, a.clearChapterModel = null)
         }
       }
     },
-    K = function(b)
+    M = function(b)
     {
       if (!a.questBattleModel || !a.questBattleModel.cleared) return !1;
       var c = a.questBattleModel.overwriteAp ? Number(a.questBattleModel.overwriteAp) : a.questBattleModel.ap,
@@ -141,9 +152,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       if (!a.questBattleModel.questBattle.autoRun || a.questBattleModel.questBattle.skipHelper) b = !1;
       return b
     },
-    L = function()
+    N = function()
     {
-      var b = A.dropItemJson(a.questBattleModel);
+      var b = B.dropItemJson(a.questBattleModel);
       b.addDropItem && (a.questBattleModel.addDropItem = b.addDropItem);
       b.addDropItemName && (a.questBattleModel.addDropItemName = b.addDropItemName);
       b.addDropItemQuantity && (a.questBattleModel.addDropItemQuantity = b.addDropItemQuantity);
@@ -151,7 +162,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       a.questBattleModel.rewardNameArr = b.nameList;
       a.questBattleModel.rewardQuantityArr = b.quantityList
     },
-    M = x.View.extend(
+    O = A.View.extend(
     {
       events: function()
       {
@@ -171,8 +182,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       },
       initialize: function(b)
       {
+        t = b.pageJson;
         this.listenTo(this, "remove", this.removeView);
-        this.template = l.template(G);
+        this.template = l.template(I);
         this.questDisableFlg = !1;
         a.setTitleCollectionObserved();
         if (this.model && this.model.userQuestBattleResultList)
@@ -185,10 +197,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           this.newestModel = r.getPageJson();
           this.model.userStatusList || (this.model.userStatusList = a.storage.userStatusList.toJSON());
           a.responseSetStorage(this.model);
-          J(this.model);
-          this.nextPage = I(this.model);
+          L(this.model);
+          this.nextPage = K(this.model);
           this.questLoopStatus = "none";
-          if (this.canRetry = K(this.model)) this.questLoopStatus = A.getQuestLoopStatus(a.questBattleModel), A.supportPickUp(this.newestModel), L();
+          if (this.canRetry = M(this.model)) this.questLoopStatus = B.getQuestLoopStatus(a.questBattleModel), B.supportPickUp(this.newestModel), N();
           q.createCardList();
           this.allInitialized();
           this.createDom()
@@ -206,6 +218,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       },
       render: function()
       {
+        var b = this;
         this.$el.html(this.template(
         {
           model: this.userQuestResult,
@@ -216,7 +229,13 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           rewardRiche: this.rewardRiche,
           gameUser: a.storage.gameUser.toJSON(),
           canRetry: this.canRetry,
-          questLoopStatus: this.questLoopStatus
+          questLoopStatus: this.questLoopStatus,
+          eventWitchPointType: function(a)
+          {
+            a = "";
+            b.eventWitchBattleInfo && b.eventWitchBattleInfo.isGaugeBattle && (a = b.eventWitchBattleInfo.pointType);
+            return a
+          }()
         }));
         return this
       },
@@ -260,8 +279,14 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         this.unitEpBefore = [];
         this.unitEpAfter = [];
         this.timeOuts = null;
-        w = {};
-        this.runRetry = this.runLoop = !1
+        x = {};
+        this.runRetry = this.runLoop = !1;
+        this.eventWitchBattleInfo = v.getEventWitchBattleInfo(
+        {
+          questBattle: this.userQuestBattle,
+          pageJson: t
+        });
+        this.isEventWitchGaugeBattle = this.eventWitchBattleInfo.isGaugeBattle
       },
       stepObserver: function(a)
       {
@@ -316,12 +341,15 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               a.doc.getElementById("tapAction").dataset.nowFunc = "noneActive";
               b = null;
               var c = a.storage.userQuestAdventureList.toJSON(),
-                f = a.storage.userSectionList.findWhere(
+                e = a.storage.userSectionList.findWhere(
                 {
                   sectionId: this.model.userQuestBattleResultList[0].questBattle.sectionId
                 });
-              f && (f = f.toJSON(), f.section && f.section.secret && (b = f.section.secret));
-              this.storyCheck(this.userQuestBattle.endStory, c, this.nextPage, b)
+              e && (e = e.toJSON(), e.section && e.section.secret && (b = e.section.secret));
+              this.storyCheck(this.userQuestBattle.endStory, c, this.nextPage, b);
+              break;
+            case "EventGaugeUp":
+              a.doc.getElementById("tapAction").dataset.nowFunc = "noneActive", this.setEventGaugeUpSec(b)
           }
         }
       },
@@ -332,14 +360,14 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         {
           var b = a.doc.getElementById("expNum"),
             c = a.doc.getElementById("exRankGuageBar"),
-            f = a.doc.getElementById("playerLv");
+            e = a.doc.getElementById("playerLv");
           d.countUp(0, d.userQuestResult.exp, b);
           h.startSe(1007);
           setTimeout(function()
           {
             a.addClass(a.doc.getElementById("nextRankExp"), "on")
           }, 510);
-          d.gaugeUp(d.userExpBefore, d.userExpAfter, c, f, "rank", "up");
+          d.gaugeUp(d.userExpBefore, d.userExpAfter, c, e, "rank", "up");
           a.addClass(a.doc.getElementsByClassName("exGuageWrap")[0], "active")
         }, 2500);
         setTimeout(function()
@@ -349,13 +377,13 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               followUserId: d.userQuestResult.helpUserId
             }) ? !0 : !1,
             c = 0,
-            f = a.storage.userStatusList.findWhere(
+            e = a.storage.userStatusList.findWhere(
             {
               statusId: "MAX_FOLLOW"
             }),
-            e = a.storage.userFollowList.toJSON().length;
-          void 0 !== f ? c = f.toJSON().point : b = !0;
-          c <= e && (b = !0);
+            f = a.storage.userFollowList.toJSON().length;
+          void 0 !== e ? c = e.toJSON().point : b = !0;
+          c <= f && (b = !0);
           d.userQuestResult.helpUserId || (b = !0);
           a.storage.gameUser.toJSON().closeFunctions && -1 < a.storage.gameUser.toJSON().closeFunctions.indexOf("FRIEND") && (b = !0);
           b || d.model.questLoop ? d.stepObserver("userRank") : d.stepObserver("follow")
@@ -391,20 +419,20 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         var d = function()
           {
             var b = a[0],
-              f = new Image;
-            f.src = "/magica/resource/image_web/common/treasure/" + b + "_close.png";
-            f.onload = function()
+              e = new Image;
+            e.src = "/magica/resource/image_web/common/treasure/" + b + "_close.png";
+            e.onload = function()
             {
-              var f = new Image;
-              f.src = "/magica/resource/image_web/common/treasure/" + b + "_open.png";
-              f.onload = function()
+              var e = new Image;
+              e.src = "/magica/resource/image_web/common/treasure/" + b + "_open.png";
+              e.onload = function()
               {
                 a.shift();
-                0 < a.length ? d() : 0 < c.length && e()
+                0 < a.length ? d() : 0 < c.length && f()
               }
             }
           },
-          e = function()
+          f = function()
           {
             var a = c[0],
               b = new Image;
@@ -416,7 +444,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               b.onload = function()
               {
                 c.shift();
-                0 < c.length && e()
+                0 < c.length && f()
               }
             }
           };
@@ -432,16 +460,20 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         });
         if (b)
           for (var c = 1; 4 > c; c++) this.missionArr.push(this.userQuestBattle["missionMaster" + c]), this.userQuest["missionStatus" + c] === b["missionStatus" + c] ? (this.missionClear.push(this.userQuest["missionStatus" + c]), "CLEARED" === this.userQuest["missionStatus" + c] && this.missionCount2++) : (this.missionClear.push("CLEAR"), this.missionCount1++);
+        var d = this;
         if (b = this.userQuestResult.dropRewardCodes)
         {
-          var d = this,
+          var f = this,
             b = b.split(",");
           l.each(b, function(b, c)
           {
             var e = a.itemSet(b);
-            e.itemCode ? (-1 < e.itemCode.indexOf("GIFT") ? e.imgPath = "/gift/" : -1 < e.itemCode.indexOf("MONEY") ? e.imgPath = "/main/" : -1 < e.itemCode.indexOf("riche") ? (d.rewardRiche += e.quantity | 0, e.imgPath = "/main/") : -1 < e.itemCode.indexOf("memoria_") ? e.imgPath = "/memoria/" : e.imgPath = -1 < e.itemCode.indexOf("EVENT_") ? "/event/" : "/main/", d.getItems.push(e)) : l.each(d.getItems, function(a, b)
+            e.itemCode ? (-1 < e.itemCode.indexOf("GIFT") ? e.imgPath = "/gift/" : -1 < e.itemCode.indexOf("MONEY") ? e.imgPath = "/main/" : -1 < e.itemCode.indexOf("riche") ? (f.rewardRiche += e.quantity | 0, e.imgPath = "/main/") : -1 < e.itemCode.indexOf("memoria_") ? e.imgPath = "/memoria/" : e.imgPath = -1 < e.itemCode.indexOf("EVENT_") ? "/event/" : "/main/", d.isEventWitchGaugeBattle && l.each(d.eventWitchBattleInfo.factorItemIdList, function(a, b, c)
             {
-              a.itemCode == e.effectItemCode && (d.getItems[b].effectFlag = !0)
+              e && e.itemCode == a && (e = null)
+            }), e && f.getItems.push(e)) : l.each(f.getItems, function(a, b)
+            {
+              a.itemCode == e.effectItemCode && (f.getItems[b].effectFlag = !0)
             })
           })
         }
@@ -462,9 +494,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           d = b.totalExpForCurrentLevel || 0;
         this.rankUpNum = b.level - this.oldGameUser.level;
         a.doc.getElementById("playerLv").textContent = this.oldGameUser.level;
-        var e = 0;
-        b.totalExpForNextLevel && (e = b.totalExpForNextLevel - b.exp);
-        a.doc.getElementById("nextRankExpNum").textContent = e;
+        var f = 0;
+        b.totalExpForNextLevel && (f = b.totalExpForNextLevel - b.exp);
+        a.doc.getElementById("nextRankExpNum").textContent = f;
         this.userExpBefore = Math.floor((this.oldGameUser.exp - c) / (this.oldGameUser.totalExpForNextLevel - c) * 100) | 0;
         this.userExpAfter = Math.floor((b.exp - d) / (b.totalExpForNextLevel - c) * 100 + 100 * this.rankUpNum) | 0;
         a.doc.getElementById("exRankGuageBar").style.width = this.userExpBefore + "%"
@@ -486,20 +518,20 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             {
               charaId: d.charaId
             }).bondsTotalPt;
-            var e = !1;
-            this.userQuestResult.episodeUserCardId && this.userQuestResult.episodeUserCardId === d.id && (e = !0);
+            var f = !1;
+            this.userQuestResult.episodeUserCardId && this.userQuestResult.episodeUserCardId === d.id && (f = !0);
             this.beforeCards.push(
             {
               beforeModel: c,
               afterModel: d,
-              isLeader: e
+              isLeader: f
             })
-          } B.prototype.parentView = this;
-        B.prototype.template = l.template($("#unitPartTemp").text());
+          } C.prototype.parentView = this;
+        C.prototype.template = l.template($("#unitPartTemp").text());
         var g = a.doc.createDocumentFragment();
         l.each(this.beforeCards, function(a, b)
         {
-          a = new B(a);
+          a = new C(a);
           g.appendChild(a.render().el)
         });
         a.doc.getElementById("charaWrap").appendChild(g);
@@ -507,12 +539,12 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       },
       followerHandler: function()
       {
-        D.prototype.parentView = this;
-        D.prototype.template = l.template($("#supportPart").text());
+        E.prototype.parentView = this;
+        E.prototype.template = l.template($("#supportPart").text());
         var b = l.template($("#followPopTemp").text()),
           c = r.getPageJson().userProfile,
-          f = a.storage.userFollowList ? a.storage.userFollowList.toJSON().length : 0,
-          e = {
+          e = a.storage.userFollowList ? a.storage.userFollowList.toJSON().length : 0,
+          f = {
             1: "ALL",
             2: "FIRE",
             3: "WATER",
@@ -530,13 +562,13 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           },
           n = {},
           k = Date.parse(d.newestModel.currentTime) / 1E3,
-          v = c.lastAccessDate ? Date.parse(c.lastAccessDate) / 1E3 : null;
-        v ? (k = (k - v) / 60, 16 > k ? k = "15分以内" : 60 > k ? k = Math.floor(k) + "分前" : 60 < k && 1440 > k ? k = Math.floor(k / 60) + "時間前" : (k = k / 60 / 24, k = 30 < k ? Math.floor(k / 30) + "カ月前" : Math.floor(k) + "日前")) : k = "-日前";
+          y = c && c.lastAccessDate ? Date.parse(c.lastAccessDate) / 1E3 : null;
+        y ? (k = (k - y) / 60, 16 > k ? k = "15分以内" : 60 > k ? k = Math.floor(k) + "分前" : 60 < k && 1440 > k ? k = Math.floor(k / 60) + "時間前" : (k = k / 60 / 24, k = 30 < k ? Math.floor(k / 30) + "カ月前" : Math.floor(k) + "日前")) : k = "-日前";
         c.loginTimeLag = k;
         var p = {};
         l.each(c.userDeck, function(a, b)
         {
-          -1 !== b.indexOf("questPositionId") && (b = b.split("questPositionId")[1], p[e[a]] = c.userDeck["userCardId" + b])
+          -1 !== b.indexOf("questPositionId") && (b = b.split("questPositionId")[1], p[f[a]] = c.userDeck["userCardId" + b])
         });
         l.each(p, function(a, b)
         {
@@ -547,7 +579,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         });
         l.each(c.userCharaList, function(a)
         {
-          l.each(e, function(b)
+          l.each(f, function(b)
           {
             g[b] && a.userCardId == g[b].id && (g[b].supportFlag = !0, g[b].filterAtt = b, g[b] = q.addExStatus($.extend(g[b], a), c.userPieceList, c.userDoppelList, c.userDeck))
           })
@@ -563,7 +595,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         {
           statusId: "MAX_FOLLOW"
         });
-        v = d.userQuestResult.helpAttributeId;
+        y = d.userQuestResult.helpAttributeId;
         new a.PopupClass(
         {
           title: "フォロー",
@@ -578,12 +610,12 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         m.innerHTML = b(
         {
           model: c,
-          follow: f,
+          follow: e,
           maxFollow: k.toJSON().point,
-          attribute: v
+          attribute: y
         });
         a.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(m);
-        l.each(e, function(b)
+        l.each(f, function(b)
         {
           n.tapBlock = !1;
           b = $.extend(!1, n, g[b] ||
@@ -595,9 +627,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             },
             tapBlock: !0
           });
-          b = new D(
+          b = new E(
           {
-            model: new t(b)
+            model: new w(b)
           });
           a.doc.querySelector("#supportDecks").appendChild(b.render().el)
         });
@@ -607,10 +639,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           b.preventDefault();
           a.isScrolled() || void 0 === b.target.dataset.att || (a.removeClass(a.doc.getElementById("popupArea").getElementsByClassName("touchWrap")[0].getElementsByClassName("current")[0], "current"), a.addClass(b.target, "current"), a.doc.getElementById("popupArea").getElementsByClassName("unitWrap")[0].className = "unitWrap " + b.target.dataset.att)
         });
-        var F = function(b)
+        var H = function(b)
         {
           b.preventDefault();
-          a.isScrolled() || (a.doc.getElementById("followDecide").removeEventListener(a.cgti, F), r.ajaxPost(a.linkList.sendFollow,
+          a.isScrolled() || (a.doc.getElementById("followDecide").removeEventListener(a.cgti, H), r.ajaxPost(a.linkList.sendFollow,
           {
             friendUserId: d.userQuestResult.helpUserId
           }, function(b)
@@ -627,7 +659,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             }, d.levelUpFunc), a.responseSetStorage(b))
           }))
         };
-        a.doc.getElementById("followDecide").addEventListener(a.cgti, F)
+        a.doc.getElementById("followDecide").addEventListener(a.cgti, H)
       },
       levelUpFunc: function()
       {
@@ -642,20 +674,20 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           {
             statusId: "MAX_ACP"
           }).point;
-          var f = l.findWhere(d.model.userStatusList,
+          var e = l.findWhere(d.model.userStatusList,
           {
             statusId: "MAX_ACP"
           });
-          c.afterMaxAp = f ? f.point : c.beforeMaxAp;
+          c.afterMaxAp = e ? e.point : c.beforeMaxAp;
           c.beforeMaxFollow = l.findWhere(d.oldStatusModel,
           {
             statusId: "MAX_FOLLOW"
           }).point;
-          f = l.findWhere(d.model.userStatusList,
+          e = l.findWhere(d.model.userStatusList,
           {
             statusId: "MAX_FOLLOW"
           });
-          c.afterMaxFollow = f ? f.point : c.beforeMaxFollow;
+          c.afterMaxFollow = e ? e.point : c.beforeMaxFollow;
           new a.PopupClass(
           {}, b(
           {
@@ -703,10 +735,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         d.timeOuts = setTimeout(function()
         {
           h.startSe(1007);
-          for (var c = a.doc.getElementById("charaWrap").getElementsByTagName("li"), f = 0, e = c.length; f < e; f++)
+          for (var c = a.doc.getElementById("charaWrap").getElementsByTagName("li"), e = 0, f = c.length; e < f; e++)
           {
-            var g = c[f];
-            0 < f ? setTimeout(d.gaugeUp(d.unitExpBefore[f], d.unitExpAfter[f], g.getElementsByClassName("charaExGuage")[0], g, "charaEx", f), 500) : setTimeout(d.gaugeUp(d.unitExpBefore[f], d.unitExpAfter[f], g.getElementsByClassName("charaExGuage")[0], g, "charaEx", f, b), 500);
+            var g = c[e];
+            0 < e ? setTimeout(d.gaugeUp(d.unitExpBefore[e], d.unitExpAfter[e], g.getElementsByClassName("charaExGuage")[0], g, "charaEx", e), 500) : setTimeout(d.gaugeUp(d.unitExpBefore[e], d.unitExpAfter[e], g.getElementsByClassName("charaExGuage")[0], g, "charaEx", e, b), 500);
             a.addClass(g.getElementsByClassName("getExNum")[0], "anim");
             a.addClass(g.getElementsByClassName("exFlashWrap")[0], "active")
           }
@@ -721,10 +753,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           var c;
           1 < d.levelUpUnit.length ? (a.tapBlock(!1), c = d.levelUpUnit[0][0], c.chara = d.levelUpUnit[0][1].chara, b.before = q.addExStatus(c), b.after = q.addExStatus(d.levelUpUnit[0][1]), b.type = "level", a.resultView = new u(
           {
-            model: new t(b)
+            model: new w(b)
           }, d.unitLvUpPop, d.model.questLoop), $("#overlapContainer").append(a.resultView.render().el), h.getBaseData(a.getNativeObj()), d.unitLvUpFlag || (d.unitLvUpFlag = !0), d.levelUpUnit.splice(0, 1)) : (a.tapBlock(!1), c = d.levelUpUnit[0][0], c.chara = d.levelUpUnit[0][1].chara, b.before = q.addExStatus(c), b.after = q.addExStatus(d.levelUpUnit[0][1]), b.type = "level", a.resultView = new u(
           {
-            model: new t(b)
+            model: new w(b)
           }, d.epExpFunc, d.model.questLoop), $("#overlapContainer").append(a.resultView.render().el), d.unitLvUpFlag = !0, h.getBaseData(a.getNativeObj()), d.levelUpUnit = [])
         }
       },
@@ -738,10 +770,10 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             {
               d.trigger("showEpExp");
               0 < d.epUpUnit.length ? d.stepObserver("charaEpPop") : d.model.questLoop ? (a.doc.getElementById("tapAction").dataset.nowFunc = "nextBtn", d.nextBtnFunc()) : (a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextBtn")
-            }, c = a.doc.getElementById("charaWrap").getElementsByTagName("li"), f = 0, e = c.length; f < e; f++)
+            }, c = a.doc.getElementById("charaWrap").getElementsByTagName("li"), e = 0, f = c.length; e < f; e++)
           {
-            var g = c[f];
-            0 < f ? setTimeout(d.gaugeUp(d.unitEpBefore[f], d.unitEpAfter[f], g.getElementsByClassName("charaEpGuage")[0], g, "charaEp", f), 500) : setTimeout(d.gaugeUp(d.unitEpBefore[f], d.unitEpAfter[f], g.getElementsByClassName("charaEpGuage")[0], g, "charaEp", f, b), 500);
+            var g = c[e];
+            0 < e ? setTimeout(d.gaugeUp(d.unitEpBefore[e], d.unitEpAfter[e], g.getElementsByClassName("charaEpGuage")[0], g, "charaEp", e), 500) : setTimeout(d.gaugeUp(d.unitEpBefore[e], d.unitEpAfter[e], g.getElementsByClassName("charaEpGuage")[0], g, "charaEp", e, b), 500);
             a.addClass(g.getElementsByClassName("getEpExNum")[0], "anim");
             a.addClass(g.getElementsByClassName("epFlashWrap")[0], "active")
           }
@@ -757,16 +789,16 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             cardId: d.epUpUnit[0][0].cardId
           }).toJSON();
           var c = {},
-            f;
-          1 < d.epUpUnit.length ? (a.tapBlock(!1), f = d.epUpUnit[0][0], f.chara = b.chara, c.before = q.addExStatus(f), c.before.episodeLevel = d.epUpUnit[0][1], c.after = q.addExStatus(b), c.type = "episode", a.resultView = new u(
+            e;
+          1 < d.epUpUnit.length ? (a.tapBlock(!1), e = d.epUpUnit[0][0], e.chara = b.chara, c.before = q.addExStatus(e), c.before.episodeLevel = d.epUpUnit[0][1], c.after = q.addExStatus(b), c.type = "episode", a.resultView = new u(
           {
-            model: new t(c)
+            model: new w(c)
           }, function()
           {
             d.unitEpPop()
-          }, d.model.questLoop), $("#overlapContainer").append(a.resultView.render().el), h.getBaseData(a.getNativeObj()), d.unitEpUpFlag = !0, d.epUpUnit.splice(0, 1)) : (a.tapBlock(!1), f = d.epUpUnit[0][0], f.chara = b.chara, c.before = q.addExStatus(f), c.before.episodeLevel = d.epUpUnit[0][1], c.after = q.addExStatus(b), c.type = "episode", a.resultView = new u(
+          }, d.model.questLoop), $("#overlapContainer").append(a.resultView.render().el), h.getBaseData(a.getNativeObj()), d.unitEpUpFlag = !0, d.epUpUnit.splice(0, 1)) : (a.tapBlock(!1), e = d.epUpUnit[0][0], e.chara = b.chara, c.before = q.addExStatus(e), c.before.episodeLevel = d.epUpUnit[0][1], c.after = q.addExStatus(b), c.type = "episode", a.resultView = new u(
           {
-            model: new t(c)
+            model: new w(c)
           }, function()
           {
             setTimeout(function()
@@ -795,11 +827,14 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         d.countUp(0, d.userQuestResult.riche, b);
         b = a.doc.getElementById("getItemList").getElementsByTagName("li");
         a.addClass(a.doc.getElementById("itemResult"), "anim");
-        var c = function()
+        if (!this.isEventWitchGaugeBattle)
         {
-          d.canRetry && d.model.questLoop ? d.autoQuest() : (d.canRetry && a.addClass(a.doc.getElementById("retryWrap"), "active"), a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextPageBtn")
-        };
-        1 > b.length ? d.timeOuts = setTimeout(c, 500) : (d.canRetry && !d.model.questLoop && a.addClass(a.doc.getElementById("retryWrap"), "active"), h.startSe(1604))
+          var c = function()
+          {
+            d.canRetry && d.model.questLoop ? d.autoQuest() : (d.canRetry && a.addClass(a.doc.getElementById("retryWrap"), "active"), a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextPageBtn")
+          };
+          1 > b.length ? d.timeOuts = setTimeout(c, 500) : (d.canRetry && !d.model.questLoop && a.addClass(a.doc.getElementById("retryWrap"), "active"), h.startSe(1604))
+        }
       },
       spliteRoling: function(b)
       {
@@ -807,11 +842,11 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       },
       itemAnimEnd: function()
       {
-        this.okFlg || (this.okFlg = !0, 14 < a.doc.getElementById("getItemList").getElementsByTagName("li").length && (a.addClass(a.doc.getElementById("itemResult"), "canScroll"), a.scrollSet("itemResult", "itemScroll")), d.canRetry && d.model.questLoop ? d.autoQuest() : (a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextPageBtn"))
+        this.okFlg || (this.okFlg = !0, 14 < a.doc.getElementById("getItemList").getElementsByTagName("li").length && (a.addClass(a.doc.getElementById("itemResult"), "canScroll"), a.scrollSet("itemResult", "itemScroll")), this.isEventWitchGaugeBattle ? d.canRetry && d.model.questLoop ? d.setEventGaugeUpSec() : (a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "EventGaugeUp") : d.canRetry && d.model.questLoop ? d.autoQuest() : (a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextPageBtn"))
       },
-      storyCheck: function(b, c, d, e)
+      storyCheck: function(b, c, d, f)
       {
-        var f = r.getPageJson(),
+        var e = r.getPageJson(),
           n = a.storage.userSectionList.findWhere(
           {
             sectionId: this.model.userQuestBattleResultList[0].questBattle.sectionId
@@ -821,7 +856,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         {
           b === a.adventureId && (k = !1)
         });
-        if ("MAIN" == n.toJSON().section.questType || "SUB" == n.toJSON().section.questType || "CHARA" == n.toJSON().section.questType || "COSTUME" == n.toJSON().section.questType) f.gameUser.skipAdventure || (k = !0);
+        if ("MAIN" == n.toJSON().section.questType || "SUB" == n.toJSON().section.questType || "CHARA" == n.toJSON().section.questType || "COSTUME" == n.toJSON().section.questType) e.gameUser.skipAdventure || (k = !0);
         b && "BRANCH" != n.toJSON().section.questType || (k = !1);
         if (window.isBrowser)
           if (a.tutorialId) a.tutorialUtil[a.tutorialId]();
@@ -874,7 +909,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               "error" !== b.resultCode && a.responseSetStorage(b)
             });
             var c = String(b);
-            e && (c += "_" + e);
+            f && (c += "_" + f);
             setTimeout(function()
             {
               h.setWebView(!1);
@@ -935,17 +970,17 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
       },
       countUp: function(b, c, d)
       {
-        var e, f;
+        var e, g;
         a.storage.user && "IOS" === a.storage.user.get("platform") ? (e = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a)
         {
           window.setTimeout(a, 10)
-        }, f = window.cancelAnimationFrame || window.mozCancelAnimationFrame || function(a)
+        }, g = window.cancelAnimationFrame || window.mozCancelAnimationFrame || function(a)
         {
           window.setTimeout(a)
         }) : (e = function(a)
         {
           window.setTimeout(a, 10)
-        }, f = function(a)
+        }, g = function(a)
         {
           window.clearTimeout(a)
         });
@@ -961,25 +996,24 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
               var c = (new Date).getTime() - k;
               if (50 >= h)
               {
-                var g = Math.floor(c / 500 * (l - b)) + b | 0;
-                499 < c ? (l = String(l).split("").reverse().join("").match(/\d{1,3}/g).join(",").split("").reverse().join(""), d.innerHTML = "+" + l.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,"), f(m)) : (g = String(g).split("").reverse().join("").match(/\d{1,3}/g).join(",").split("").reverse().join(""), g = g.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,"), d.innerHTML = "+" + g, m = e(p))
+                var f = Math.floor(c / 500 * (l - b)) + b | 0;
+                499 < c ? (l = String(l).split("").reverse().join("").match(/\d{1,3}/g).join(",").split("").reverse().join(""), d.innerHTML = "+" + l.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,"), g(m)) : (f = String(f).split("").reverse().join("").match(/\d{1,3}/g).join(",").split("").reverse().join(""), f = f.replace(/(\d)(?=(\d\d\d)+$)/g, "$1,"), d.innerHTML = "+" + f, m = e(p))
               }
-              else f(m),
-                h = 0
+              else g(m), h = 0
             }
           },
           m = e(p)
       },
-      gaugeUp: function(b, c, d, e, g, h, k)
+      gaugeUp: function(b, c, d, f, g, h, k)
       {
-        var f, l, m = null;
-        a.storage.user && "IOS" === a.storage.user.get("platform") ? (f = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a)
+        var e, l, m = null;
+        a.storage.user && "IOS" === a.storage.user.get("platform") ? (e = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a)
         {
           window.setTimeout(a, 10)
         }, l = window.cancelAnimationFrame || window.mozCancelAnimationFrame || function(a)
         {
           window.setTimeout(a)
-        }) : (f = function(a)
+        }) : (e = function(a)
         {
           window.setTimeout(a, 10)
         }, l = function(a)
@@ -990,11 +1024,11 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           r = "rank" === g ? 50 : 25,
           q = 0,
           t = 0,
-          y = 0;
-        "rank" === g && e && (y = Number(e.textContent));
-        "charaEx" === g && e && (y = Number(e.getElementsByClassName("unitLv")[0].textContent));
-        "charaEp" === g && e && (y = Number(e.getElementsByClassName("epLvNum")[0].textContent));
-        var u = function()
+          z = 0;
+        "rank" === g && f && (z = Number(f.textContent));
+        "charaEx" === g && f && (z = Number(f.getElementsByClassName("unitLv")[0].textContent));
+        "charaEp" === g && f && (z = Number(f.getElementsByClassName("epLvNum")[0].textContent));
+        var v = function()
         {
           n++;
           if ("QuestResult" === a.location)
@@ -1003,20 +1037,19 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
             var p = (new Date).getTime() - m;
             if (n <= r && b !== c)
             {
-              var v = p / (10 * r),
-                z = Math.floor((c - b) * v) + b - 100 * q | 0,
-                x = 0;
-              if ("rank" === g && 499 < p || "rank" !== g && 249 < p) v = 1, z = Math.floor(c - b) + b - 100 * q | 0;
-              for (; 99 < z;) t++, x++,
-                q++, z = Math.floor((c - b) * v) + b - 100 * q | 0;
-              0 < x && ("rank" === g && e && (e.textContent = t + y), "charaEx" === g && e && (a.addClass(e.getElementsByClassName("lvup")[0], "anim"), a.addClass(e.getElementsByClassName("unitLv")[0], "c_red"), e.getElementsByClassName("unitLv")[0].textContent = t + y), "charaEp" === g && e && (a.addClass(e.getElementsByClassName("epup")[0], "anim"), a.addClass(e.getElementsByClassName("epLvNum")[0], "c_red"), e.getElementsByClassName("epLvNum")[0].textContent = t + y));
-              d.style.width = z + "%";
-              "rank" === g && 499 < p || "rank" !== g && 249 < p ? (l(w[g + h]), n = 0, k && k()) : w[g + h] = f(u)
+              var w = p / (10 * r),
+                u = Math.floor((c - b) * w) + b - 100 * q | 0,
+                y = 0;
+              if ("rank" === g && 499 < p || "rank" !== g && 249 < p) w = 1, u = Math.floor(c - b) + b - 100 * q | 0;
+              for (; 99 < u;) t++, y++, q++, u = Math.floor((c - b) * w) + b - 100 * q | 0;
+              0 < y && ("rank" === g && f && (f.textContent = t + z), "charaEx" === g && f && (a.addClass(f.getElementsByClassName("lvup")[0], "anim"), a.addClass(f.getElementsByClassName("unitLv")[0], "c_red"), f.getElementsByClassName("unitLv")[0].textContent = t + z), "charaEp" === g && f && (a.addClass(f.getElementsByClassName("epup")[0], "anim"), a.addClass(f.getElementsByClassName("epLvNum")[0], "c_red"), f.getElementsByClassName("epLvNum")[0].textContent = t + z));
+              d.style.width = u + "%";
+              "rank" === g && 499 < p || "rank" !== g && 249 < p ? (l(x[g + h]), n = 0, k && k()) : x[g + h] = e(v)
             }
-            else n <= r && b === c || "rank" === g && 500 > p || "rank" !== g && 259 > p ? w[g + h] = f(u) : (l(w[g + h]), n = 0, k && k())
+            else n <= r && b === c || "rank" === g && 500 > p || "rank" !== g && 259 > p ? x[g + h] = e(v) : (l(x[g + h]), n = 0, k && k())
           }
         };
-        w[g + h] = f(u)
+        x[g + h] = e(v)
       },
       questRetry: function(b)
       {
@@ -1031,24 +1064,73 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
           {
             sectionId: this.model.userQuestBattleResultList[0].questBattle.sectionId
           });
-          var c = C.getIsScene0Info(
+          var c = D.getIsScene0Info(
           {
             section: b.toJSON()
           });
           "DAILYTOWER" === b.toJSON().section.questType && "ENDLESSCHALLENGE" === b.toJSON().section.parameter.split("=")[1] ? location.href = "#/DeckFormation/endless" : location.href = c.isScene0 ? "#/DeckFormation/scene0Challenge" : "#/SupportSelect"
         }
       },
+      setEventGaugeUpSec: function(b)
+      {
+        if (b && (b.preventDefault(), a.isScrolled())) return;
+        a.addClass(a.doc.getElementById("expWrap"), "off");
+        a.addClass(a.doc.getElementById("itemWrap"), "off");
+        a.addClass(a.doc.getElementById("itemResult"), "off");
+        a.addClass(a.doc.getElementById("getTotalRiche"), "off");
+        a.addClass(a.doc.getElementById("hasTotalRiche"), "off");
+        a.removeClass(a.doc.getElementById("gaugeWrap"), "off");
+        G.prototype.rootView = this;
+        var c = this,
+          e = v.getEventCharaInfo(
+          {
+            pageType: "questResult",
+            eventWitchCharaList: t.eventWitchCharaList,
+            eventWitch: t.eventWitch,
+            userItemList: a.storage.userItemList.toJSON()
+          });
+        l.each(e, function(a, b, d)
+        {
+          new G(
+          {
+            pointType: c.eventWitchBattleInfo.pointType,
+            appendSelector: "#gaugeWrap .charaListSec",
+            model: a
+          })
+        });
+        7 == e.length && $("#gaugeWrap .charaListSec").addClass("chara7");
+        h.getBaseData(a.getNativeObj());
+        setTimeout(function()
+        {
+          a.EventWitchPrm || (a.EventWitchPrm = {});
+          a.EventWitchPrm.beforeRatioList = v.getBeforeRatioList(
+          {
+            eventCharaInfo: e
+          })
+        }, 100);
+        setTimeout(function()
+        {
+          d.setLastTouchScreen()
+        }, 500)
+      },
+      setLastTouchScreen: function()
+      {
+        d.canRetry && d.model.questLoop ? setTimeout(function()
+        {
+          d.autoQuest()
+        }, 1E3) : (d.canRetry && a.addClass(a.doc.getElementById("retryWrap"), "active"), a.addClass(a.doc.getElementById("tapAction"), "active"), a.doc.getElementById("tapAction").dataset.nowFunc = "nextPageBtn")
+      },
       removeView: function()
       {
         this.trigger("removeChildView");
         this.runLoop || (a.nativeQuestPrm = null, a.apiQuestPrm = null, a.questHelperId = null, this.runRetry || (a.questBattleModel = null));
-        w = a.resultView = null;
+        x = a.resultView = null;
         d && d.timeOuts && clearTimeout(this.timeOuts);
         this.off();
         this.remove()
       }
     }),
-    D = x.View.extend(
+    E = A.View.extend(
     {
       initialize: function()
       {
@@ -1078,5 +1160,5 @@ define("underscore backbone backboneCommon ajaxControl text!template/quest/Quest
         this.remove()
       }
     });
-  return M
+  return O
 });

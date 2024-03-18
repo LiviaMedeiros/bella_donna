@@ -1,6 +1,21 @@
-define("underscore backbone backboneCommon ajaxControl command text!css/quest/QuestResult.css js/view/quest/QuestResultView".split(" "), function(l, m, a, g, c, h, k)
+define("underscore backbone backboneCommon ajaxControl command text!css/quest/QuestResult.css js/view/quest/QuestResultView".split(" "), function(m, n, a, g, c, h, k)
 {
-  var d, e, f = null;
+  var d, e, l = function()
+    {
+      a.androidKeyStop = !0;
+      a.strSupportPickUpUserIds = "";
+      a.supportUserList = null;
+      e = a.questNativeResponse;
+      a.setStyle(h);
+      var b = g.getPageJson();
+      d = new k(
+      {
+        model: e,
+        pageJson: b
+      });
+      c.setWebView()
+    },
+    f = null;
   return {
     needModelIdObj: [
     {
@@ -85,16 +100,15 @@ define("underscore backbone backboneCommon ajaxControl command text!css/quest/Qu
     fetch: function(b)
     {
       f = b || null;
-      a.questHelperId ? g.pageModelGet(this.needModelIdObj, null,
-      {
-        strUserId: a.questHelperId
-      }) : g.pageModelGet(this.needModelIdObj)
+      b = {};
+      a.questNativeResponse && a.questNativeResponse.userQuestBattleResultList[0] && a.questNativeResponse.userQuestBattleResultList[0].questBattleId && (b.questBattleId = String(a.questNativeResponse.userQuestBattleResultList[0].questBattleId));
+      a.questHelperId && (b.strUserId = a.questHelperId);
+      g.pageModelGet(this.needModelIdObj, null, b)
     },
     init: function()
     {
       if (f)
-        if (a.tutorialId = f, a.tutorialUtil) a.tutorialUtil.tutorialIdRegist(a.tutorialId),
-          a.tutorialUtil.tutorialAddClass(a.tutorialId);
+        if (a.tutorialId = f, a.tutorialUtil) a.tutorialUtil.tutorialIdRegist(a.tutorialId), a.tutorialUtil.tutorialAddClass(a.tutorialId);
         else
         {
           c.nativeReload("#/TopPage");
@@ -103,16 +117,7 @@ define("underscore backbone backboneCommon ajaxControl command text!css/quest/Qu
       {
         "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
       });
-      a.androidKeyStop = !0;
-      a.strSupportPickUpUserIds = "";
-      a.supportUserList = null;
-      e = a.questNativeResponse;
-      a.setStyle(h);
-      d = new k(
-      {
-        model: e
-      });
-      c.setWebView()
+      l()
     },
     remove: function(b)
     {

@@ -222,6 +222,33 @@
 			<%="<% }) %\>"%>
 	</div>
 </script>
+<script type="text/template" id="EventStoryTempWitch"> <div class="chapterTitleWrap commonFrame4 se_tabs" data-chapter='Event<%="<%= model.eventId %\>"%>'>
+		<div class="chapterTitle">
+			<img src="/magica/resource/image_web/event/eventWitch/<%='<%= model.eventId %\>'%>/story_collection_title.png" class="titleWrapper">
+		</div>
+		<div class='panArrow chapterIdPanEvent<%="<%= model.eventId %\>"%>'></div>
+	</div>
+	<div class='sectionListWrap chapterIdEvent<%="<%= model.eventId %\>"%>'>
+			<%="<% _.forEach(model.storyList,function(txt,index){ %\>"%>
+			<div class="commonFrame3 storyWrap">
+				<%="<% if(index > 0){ %\>"%>
+					<div class="branchStoryChara">
+						<p class="charaTxt"><%="<%= txt.storyTitle %\>"%></p>
+						<img src="/magica/resource/image_web/event/eventWitch/common/story_collection_header.png">
+					</div>
+				<%="<% } else { %\>"%>
+					<div class="branchStoryChara">
+						<p class="charaTxt"><%="<%= txt.storyTitle %\>"%></p>
+						<img src="/magica/resource/image_web/event/branch/common/quest_header_9900.png">
+					</div>
+				<%="<% } %\>"%>
+				<div class="btnWrap <%='<% if (txt.isOpen === false) { %\>'%>lock<%='<% } %\>'%>">
+					<p class="sb_gold_01 TE se_decide eventStoryStart" data-ids="<%='<%= txt.storyIds %\>'%>"><span class="b_screen"></span>再生</p>
+				</div>
+			</div>
+			<%="<% }) %\>"%>
+	</div>
+</script>
 <script type="text/template" id="SpecialStoryTemp"> <div class='chapterTitleWrap commonFrame4 se_tabs' data-chapter='Special<%="<%= model.campaignId %\>"%>'>
 		<div class="chapterTitle">
 			<img src="/magica/resource/image_web/campaign/story/<%='<%= model.campaignId %\>'%>/story_collection_title.png" class="titleWrapper">

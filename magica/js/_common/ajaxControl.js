@@ -86,6 +86,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     d.popEventBranch();
     d.hideSubQuestBg();
     d.popEventSingleRaid();
+    d.deleteEventWitchExchangeAnime();
     d.callTouchesClear();
     d.weekQuestTopUnset();
     d.stopComposeEffect();
@@ -109,26 +110,26 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
   function E(a, b)
   {
     var e = 0;
-    _.each(a, function(a, m, g)
+    _.each(a, function(a, k, g)
     {
-      var l = c.storageType[m] || null;
-      u.push(m);
-      p[m] = g[m];
-      switch (l)
+      var m = c.storageType[k] || null;
+      u.push(k);
+      p[k] = g[k];
+      switch (m)
       {
         case "model":
-          var l = {},
+          var m = {},
             B = r.Model.extend(
             {
-              url: c.linkList[m]
+              url: c.linkList[k]
             });
-          c.hasModel(m) ? (l[m] = a, c.responseSetStorage(l)) : (l = new B(a), c.setStorage(l, m));
+          c.hasModel(k) ? (m[k] = a, c.responseSetStorage(m)) : (m = new B(a), c.setStorage(m, k));
           break;
         case "collection":
-          l = {}, B = r.Collection.extend(
+          m = {}, B = r.Collection.extend(
           {
-            url: c.linkList[m]
-          }), c.hasModel(m) ? (l[m] = a, c.responseSetStorage(l)) : (a = new B(a), c.setStorage(a, m))
+            url: c.linkList[k]
+          }), c.hasModel(k) ? (m[k] = a, c.responseSetStorage(m)) : (a = new B(a), c.setStorage(a, k))
       }
       if (Object.keys(g).length - 1 == e)
       {
@@ -137,8 +138,8 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         {
           if ("undefined" !== typeof g.resultCode && ("error" == g.resultCode && x(), "maintenance" == g.resultCode))
           {
-            if (k) break a;
-            k = !0;
+            if (l) break a;
+            l = !0;
             160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance");
             break a
           }
@@ -151,7 +152,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
 
   function w(a, b, e)
   {
-    if (b.responseJSON && "maintenance" == b.responseJSON.resultCode) k || (k = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance") : d.nativeReload("#/Maintenance"));
+    if (b.responseJSON && "maintenance" == b.responseJSON.resultCode) l || (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance") : d.nativeReload("#/Maintenance"));
     else if (0 == b.status) c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
     {
       title: "通信エラー",
@@ -191,7 +192,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     p = {},
     u = {},
     g = [],
-    k = !1;
+    l = !1;
   f(document).ajaxSend(function(a, b, c)
   {
     window.g_sns ? (b.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns), window.isDebug && window.g_token && b.setRequestHeader("F4-Access-Token", window.g_token), window.app_ver && b.setRequestHeader("F4S-CLIENT-VER", window.app_ver), window.sendHostName || (window.sendHostName = location.hostname), b.setRequestHeader("X-Platform-Host", window.sendHostName), window.modelName && b.setRequestHeader("CLIENT-MODEL-NAME", window.modelName), window.osVersion && b.setRequestHeader("CLIENT-OS-VER", window.osVersion), window.bootCount && b.setRequestHeader("CLIENT-SESSION-ID", window.bootCount), window.webInitTime && b.setRequestHeader("WEBVIEW-SESSION-ID", window.webInitTime)) : window.isDebug || window.isBrowser || x()
@@ -200,9 +201,9 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
   {
     c.loading.show()
   });
-  f(document).ajaxError(function(a, b, e, l)
+  f(document).ajaxError(function(a, b, e, m)
   {
-    "timeout" == l ? (c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
+    "timeout" == m ? (c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
     {
       title: "通信エラー",
       popupId: "resultCodeError",
@@ -217,7 +218,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         d.nativeReload("#/TopPage");
         window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
       })
-    })) : "abort" == l ? (c.tapBlock(!1), c.loading.hide()) : b.responseJSON && "maintenance" == b.responseJSON.resultCode && !k && (k = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance"))
+    })) : "abort" == m ? (c.tapBlock(!1), c.loading.hide()) : b.responseJSON && "maintenance" == b.responseJSON.resultCode && !l && (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance"))
   });
   f(document).ajaxComplete(function(a, b)
   {
@@ -236,7 +237,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       });
       window.webInitTime = e
     }
-    400 == b.status ? c.loading.hide() : b.responseJSON && "maintenance" == b.responseJSON.resultCode ? k || (k = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance")) : 200 !== b.status && 429 !== b.status && 502 !== b.status && 503 !== b.status ? (a = b.status ? b.status : "-", window.isBrowser && 404 == b.status || (C = function()
+    400 == b.status ? c.loading.hide() : b.responseJSON && "maintenance" == b.responseJSON.resultCode ? l || (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance")) : 200 !== b.status && 429 !== b.status && 502 !== b.status && 503 !== b.status ? (a = b.status ? b.status : "-", window.isBrowser && 404 == b.status || (C = function()
     {
       c.tapBlock(!1);
       c.loading.hide();
@@ -353,7 +354,12 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         },
         success: function(a)
         {
-          window.isLocal && (a = JSON.parse(a));
+          if (window.isLocal) try
+          {
+            a = JSON.parse(a)
+          }
+          catch (k)
+          {}
           n.interruptCheck(a, !1) || A(a, c)
         }
       });
@@ -415,12 +421,12 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       p = {};
       u = null;
       u = [];
-      for (var g = b ? !0 : !1, n = b = "", h = 0, k = 0; h < a.length;)
+      for (var g = b ? !0 : !1, n = b = "", h = 0, l = 0; h < a.length;)
       {
         var q = c.storageType[a[h].id] || null,
           r = c.hasModel(a[h].id),
           v = a[h].refresh;
-        !r || r && v ? ("collection" === q && r && c.storage[a[h].id].reset(), delete c.storage[a[h].id], "GET" == e ? b += 0 === k ? "value=" + a[h].id : "," + a[h].id : "POST" == e && (n += 0 === k ? "" + a[h].id : "," + a[h].id), k = k + 1 | 0) : p[a[h].id] = c.storage[a[h].id].toJSON();
+        !r || r && v ? ("collection" === q && r && c.storage[a[h].id].reset(), delete c.storage[a[h].id], "GET" == e ? b += 0 === l ? "value=" + a[h].id : "," + a[h].id : "POST" == e && (n += 0 === l ? "" + a[h].id : "," + a[h].id), l = l + 1 | 0) : p[a[h].id] = c.storage[a[h].id].toJSON();
         h = h + 1 | 0
       }
       var t;

@@ -504,6 +504,54 @@ define(["underscore", "backbone", "backboneCommon"], function(e, f, b)
           a.fetch()
         })
       }
+    },
+    EventWitchTopPage:
+    {
+      url: "EventWitchTopPage",
+      pageInit: function()
+      {
+        require(["EventWitchTop"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
+    },
+    EventWitchExchangePage:
+    {
+      url: "EventWitchExchangePage",
+      pageInit: function()
+      {
+        require(["EventWitchExchangeTop"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
+    },
+    EventWitchExchangeAnimePage:
+    {
+      url: "EventWitchExchangeAnimePage",
+      pageInit: function()
+      {
+        require(["EventWitchExchangeAnime"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
+    },
+    EventWitchIconTest:
+    {
+      url: "EventWitchIconTest",
+      pageInit: function()
+      {
+        require(["EventWitchIconTest"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
     }
   }
 });

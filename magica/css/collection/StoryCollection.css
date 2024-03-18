@@ -806,16 +806,22 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap
 {
   margin-bottom: 17px;
   padding-bottom: 8px;
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap
 {
   width: 498px;
   height: 63px;
@@ -824,8 +830,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara
 {
   width: 155px;
   height: 28px;
@@ -835,8 +844,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara img,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara img,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara img
 {
   position: absolute;
   top: 0;
@@ -845,8 +857,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt
 {
   height: 28px;
   padding-right: 12px;
@@ -858,8 +873,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .branchStoryTitle,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .branchStoryTitle,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .branchStoryTitle
 {
   position: absolute;
   top: 14px;
@@ -868,8 +886,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap
 {
   position: absolute;
   top: 12px;
@@ -877,8 +898,11 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap .sb_gold_01
 {
   width: 94px;
   height: 34px;
@@ -887,30 +911,42 @@
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01
 {
   background: url("/magica/resource/image_web/page/collection/storyCollection/btn_s_gray_01_c.png") center top no-repeat;
   color: #535353;
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:before
 {
   background: url("/magica/resource/image_web/page/collection/storyCollection/btn_s_gray_01_l.png") left top no-repeat;
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock .sb_gold_01:after
 {
   background: url("/magica/resource/image_web/page/collection/storyCollection/btn_s_gray_01_r.png") left top no-repeat;
 }
 
 #StoryCollection #listWrap #puellaHistoria .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock:after,
+#StoryCollection #listWrap #puellaHistoria .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock:after,
 #StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock:after,
-#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock:after
+#StoryCollection #listWrap #event .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock:after,
+#StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .btnWrap.lock:after,
+#StoryCollection #listWrap #special .wrap.WITCH .sectionListWrap .storyWrap .btnWrap.lock:after
 {
   content: "";
   position: absolute;

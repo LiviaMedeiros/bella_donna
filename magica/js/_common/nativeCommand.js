@@ -134,6 +134,8 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
       SCENE_UPDATE_SCENARIO_PAGE: 1022,
       SCENE_PUSH_SCENARIO_LIST: 1023,
       SCENE_POP_SCENARIO_LIST: 1024,
+      SCENE_PUSH_EVENT_WITCH_EXCHANGE_ANIME: 1025,
+      SCENE_POP_EVENT_WITCH_EXCHANGE_ANIME: 1026,
       DISPLAY_SET_WEBVIEW_VISIBLE: 400,
       DISPLAY_CHANGE_BG: 410,
       DISPLAY_REMOVE_BG: 411,
@@ -1206,6 +1208,15 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
   b.deleteScene0StoryListObject = function()
   {
     this.sendCommand(b.SCENE_POP_SCENARIO_LIST)
+  };
+  b.pushEventWitchExchangeAnime = function(a)
+  {
+    a = JSON.stringify(a);
+    this.sendCommand(b.SCENE_PUSH_EVENT_WITCH_EXCHANGE_ANIME + "," + a)
+  };
+  b.deleteEventWitchExchangeAnime = function()
+  {
+    this.sendCommand(b.SCENE_POP_EVENT_WITCH_EXCHANGE_ANIME)
   };
   b.setWebView = function(a)
   {

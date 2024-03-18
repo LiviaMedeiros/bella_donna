@@ -453,6 +453,7 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
       b.popEventBranch();
       b.hideSubQuestBg();
       b.popEventSingleRaid();
+      b.deleteEventWitchExchangeAnime();
       b.popEventStoryRaid();
       b.callTouchesClear();
       b.weekQuestTopUnset();

@@ -34,8 +34,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/ite
         switch (this.type)
         {
           case "ITEM":
-            var a = this.model.item.itemCode,
-              c = a.split("_"); - 1 < a.indexOf("LIMIT_BREAK_ALL_PIECE") ? (b = "main/", a = "LIMIT_BREAK_ALL_PIECE") : -1 < a.indexOf("LIMIT_BREAK_ALL") ? (b = "main/", a = "LIMIT_BREAK_ALL_A") : -1 < a.indexOf("GACHA_FREEBIE_") ? isNaN(c[2]) ? (b = "gacha/", c.pop(), a = c.join("_")) : b = "gacha_old/" : -1 < a.indexOf("SELECTABLE_MEMORIA_TICKET_") ? (b = "main/", isNaN(c[3]) && (c.pop(), a = c.join("_"))) : (b = -1 < a.indexOf("EVENT_") ? "event/" : "main/", -1 < a.indexOf("GROUPBATTLE") && -1 < a.indexOf("_COIN") ? a = "EVENT_GROUPBATTLE_COIN" : -1 < a.indexOf("EVENT_TRAINING_") && 4 > c.length ? a = "EVENT_TRAINING_POTION" : -1 < a.indexOf("EVENT_DUNGEON_") && -1 < a.indexOf("_CURE_CP") ? a = "EVENT_DUNGEON_CURE_CP" : 0 > a.indexOf("ARENARANKING_EXCHANGE") && -1 < a.indexOf("ARENARANKING") && (a = "EVENT_ARENARANKING_1013_EXCHANGE_1"));
+            var a = this.model.itemCode;
+            a || (a = this.model.item.itemCode);
+            var c = a.split("_"); - 1 < a.indexOf("LIMIT_BREAK_ALL_PIECE") ? (b = "main/", a = "LIMIT_BREAK_ALL_PIECE") : -1 < a.indexOf("LIMIT_BREAK_ALL") ? (b = "main/", a = "LIMIT_BREAK_ALL_A") : -1 < a.indexOf("GACHA_FREEBIE_") ? isNaN(c[2]) ? (b = "gacha/", c.pop(), a = c.join("_")) : b = "gacha_old/" : -1 < a.indexOf("SELECTABLE_MEMORIA_TICKET_") ? (b = "main/", isNaN(c[3]) && (c.pop(), a = c.join("_"))) : (b = -1 < a.indexOf("EVENT_") ? "event/" : "main/", -1 < a.indexOf("GROUPBATTLE") && -1 < a.indexOf("_COIN") ? a = "EVENT_GROUPBATTLE_COIN" : -1 < a.indexOf("EVENT_TRAINING_") && 4 > c.length ? a = "EVENT_TRAINING_POTION" : -1 < a.indexOf("EVENT_DUNGEON_") && -1 < a.indexOf("_CURE_CP") ? a = "EVENT_DUNGEON_CURE_CP" : 0 > a.indexOf("ARENARANKING_EXCHANGE") && -1 < a.indexOf("ARENARANKING") && (a = "EVENT_ARENARANKING_1013_EXCHANGE_1"));
             this.model.imagePath = "item/" + b + a.toLowerCase();
             break;
           case "TITLE":

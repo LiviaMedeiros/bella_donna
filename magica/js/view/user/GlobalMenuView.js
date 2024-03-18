@@ -641,7 +641,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/bas
             d = null,
             d = b.eventList.filter(function(a, b)
             {
-              if ("TOWER" == a.eventType || "DAILYTOWER" == a.eventType || "BRANCH" == a.eventType || "ARENAMISSION" == a.eventType || "SINGLERAID" == a.eventType || "STORYRAID" == a.eventType || "TRAINING" == a.eventType || "ACCOMPLISH" == a.eventType || "DUNGEON" == a.eventType || "RAID" == a.eventType || "PUELLA_RAID" == a.eventType || "ARENARANKING" == a.eventType && -1 === c.indexOf("ARENA")) return !0
+              if ("TOWER" == a.eventType || "DAILYTOWER" == a.eventType || "BRANCH" == a.eventType || "ARENAMISSION" == a.eventType || "SINGLERAID" == a.eventType || "STORYRAID" == a.eventType || "TRAINING" == a.eventType || "ACCOMPLISH" == a.eventType || "DUNGEON" == a.eventType || "RAID" == a.eventType || "PUELLA_RAID" == a.eventType || "WITCH" == a.eventType || "ARENARANKING" == a.eventType && -1 === c.indexOf("ARENA")) return !0
             });
           b.regularEventList && (b = b.regularEventList.filter(function(a, b)
           {
@@ -887,7 +887,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/bas
       EXTERMINATION: "#/RegularEventExterminationTop",
       ACCOMPLISH: "#/RegularEventAccomplishTop",
       ARENARANKMATCH: "#/ArenaTop",
-      PUELLA_RAID: "#/PuellaHistoriaRouter"
+      PUELLA_RAID: "#/PuellaHistoriaRouter",
+      WITCH: "#/EventWitchTopPage"
     },
     x = {
       TOWER: "tower",
@@ -903,7 +904,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/bas
       GROUPBATTLE: "groupBattle",
       EXTERMINATION: "extermination",
       ACCOMPLISH: "accomplish",
-      PUELLA_RAID: "puellaRaid"
+      PUELLA_RAID: "puellaRaid",
+      WITCH: "eventWitch"
     },
     p = n.View.extend(
     {

@@ -143,7 +143,7 @@
 {
   width: 420px;
   height: 420px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/animation/magic_team.png") left top no-repeat;
+  background: url("/magica/resource/image_web/campaign/box_gacha/animation/magic_team_a.png") left top no-repeat;
   position: absolute;
   top: -webkit-calc(50% - 210px);
   left: -webkit-calc(50% - 210px);
@@ -545,7 +545,7 @@
 {
   width: 420px;
   height: 420px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/animation/magic_team.png") left top no-repeat;
+  background: url("/magica/resource/image_web/campaign/box_gacha/animation/magic_team_a.png") left top no-repeat;
   position: absolute;
   top: -webkit-calc(50% - 210px);
   left: -webkit-calc(50% - 210px);
@@ -1588,38 +1588,35 @@
   z-index: 1;
 }
 
-#CampaignBoxGachaTop .itemImg
-{
-  width: 414px;
-  height: 314px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
 #CampaignBoxGachaTop .titleImg
 {
-  width: 610px;
-  height: 260px;
+  width: 666px;
+  height: 300px;
   position: absolute;
-  top: -webkit-calc(50% - 288px);
+  top: -webkit-calc(50% - 280px);
   right: 0;
 }
 
 #CampaignBoxGachaTop #gachaWrap
 {
-  width: 600px;
-  height: 306px;
+  width: 648px;
+  height: 260px;
   position: absolute;
-  top: -webkit-calc(50% - 28px);
+  top: -webkit-calc(50% + 20px);
   right: 10px;
+}
+
+#CampaignBoxGachaTop #gachaWrap .commonFrame2
+{
+  padding: 0;
 }
 
 #CampaignBoxGachaTop #gachaHeader
 {
-  width: 596px;
-  height: 76px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/common/bg_header.png") left top no-repeat;
+  width: 642px;
+  height: 52px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/bg_header.png") left top no-repeat;
+  background-size: 100%;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -1627,84 +1624,77 @@
 
 #CampaignBoxGachaTop #gachaHeader #gachaNum
 {
-  width: 210px;
-  height: 30px;
-  background: #b28750;
   position: absolute;
-  top: 12px;
-  left: 15px;
+  top: 10px;
+  left: 20px;
   color: #ffffff;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 15px;
+  font-size: 24px;
+  text-shadow: 2px 0px 2px #008554, -2px 0px 2px #008554, 0px 2px 2px #008554, 0px -2px 2px #008554, 2px 2px 2px #008554, -2px 2px 2px #008554, 2px -2px 2px #008554, -2px -2px 2px #008554;
 }
 
 #CampaignBoxGachaTop #gachaHeader #gachaRemain
 {
-  width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 160px;
   position: absolute;
-  top: 47px;
-  right: 380px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  top: 12px;
+  left: 152px;
+  padding: 3px 8px 1px 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  text-align: right;
 }
 
 #CampaignBoxGachaTop #gachaHeader #gachaRemain .title
 {
-  width: 54px;
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  font-size: 110%;
 }
 
-#CampaignBoxGachaTop #gachaHeader .gachaContentsBtn
+#CampaignBoxGachaTop #gachaHeader #gachaRemain .remainNum
 {
-  width: 130px;
-  height: 50px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/common/btn_box_detail.png") left top no-repeat;
-  position: absolute;
-  right: 224px;
-  bottom: 0;
+  display: inline-block;
+  font-size: 120%;
 }
 
 #CampaignBoxGachaTop #gachaHeader .nextGachaBtn
 {
-  width: 204px;
-  height: 50px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/common/btn_box_change.png") left top no-repeat;
+  width: 172px;
+  height: 36px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_box_change.png") left top no-repeat;
   position: absolute;
   right: 14px;
-  bottom: 0;
+  bottom: 6px;
 }
 
 #CampaignBoxGachaTop #gachaHeader .nextGachaBtn.off
 {
-  background: url("/magica/resource/image_web/campaign/box_gacha/common/btn_box_change_gray.png") left top no-repeat;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_box_change_gray.png") left top no-repeat;
   pointer-events: none;
 }
 
 #CampaignBoxGachaTop #gachaBtnWrap
 {
-  width: 560px;
+  width: 648px;
   height: 134px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  top: 96px;
-  left: 19px;
+  top: 72px;
+  left: 0px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn
 {
-  width: 286px;
-  height: 134px;
-  margin: 0 -6px;
+  width: 192px;
+  height: 102px;
+  margin: 0 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1712,52 +1702,47 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box_2.png") left top no-repeat;
 }
 
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.off
-{
-  pointer-events: none;
-}
-
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.off .btnText
-{
-  color: #cacaca !important;
-  text-shadow: none !important;
-}
-
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .btnText
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .btnText,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn .btnText
 {
   width: 100%;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 30px;
   text-align: center;
+  text-shadow: 2px 0px 2px #276848, -2px 0px 2px #276848, 0px 2px 2px #276848, 0px -2px 2px #276848, 2px 2px 2px #276848, -2px 2px 2px #276848, 2px -2px 2px #276848, -2px -2px 2px #276848;
 }
 
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn .pointFrame
 {
-  width: 196px;
+  width: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: 13px;
-  left: -webkit-calc(50% - 98px);
+  bottom: -3px;
+  left: -webkit-calc(50% - 75px);
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame .useItem
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame .useItem,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn .pointFrame .useItem
 {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: -webkit-calc(50% - 23px);
+  top: -webkit-calc(50% - 19px);
   left: 8px;
 }
 
-#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame .hasNum
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn .pointFrame .hasNum,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn .pointFrame .hasNum
 {
   position: relative;
   top: 1px;
@@ -1765,20 +1750,68 @@
   line-height: 24px;
 }
 
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.off,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.off
+{
+  pointer-events: none;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box_gray2.png") left top no-repeat;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.off .btnText,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.off .btnText
+{
+  color: #cacaca !important;
+  text-shadow: none !important;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.btnType2,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.btnType2
+{
+  width: 240px;
+  margin: 0 20px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box.png") left top no-repeat;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaBtn.btnType2.off,
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.btnType2.off
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box_gray.png") left top no-repeat;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box_3.png") left top no-repeat;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn .btnText
+{
+  text-shadow: 2px 0px 2px #528d1b, -2px 0px 2px #528d1b, 0px 2px 2px #528d1b, 0px -2px 2px #528d1b, 2px 2px 2px #528d1b, -2px 2px 2px #528d1b, 2px -2px 2px #528d1b, -2px -2px 2px #528d1b;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.allGet
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/gacha_btn_box_4.png") left top no-repeat;
+}
+
+#CampaignBoxGachaTop #gachaBtnWrap .gachaAllBtn.allGet .btnText
+{
+  text-shadow: 2px 0px 2px #b45b0e, -2px 0px 2px #b45b0e, 0px 2px 2px #b45b0e, 0px -2px 2px #b45b0e, 2px 2px 2px #b45b0e, -2px 2px 2px #b45b0e, 2px -2px 2px #b45b0e, -2px -2px 2px #b45b0e;
+}
+
 #CampaignBoxGachaTop #hasItemNumWrap
 {
-  width: 284px;
-  height: 34px;
-  background: url("/magica/resource/image_web/campaign/box_gacha/common/bg_cost.png") left top no-repeat;
+  width: 236px;
+  height: 28px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/bg_cost.png") left top no-repeat;
   position: absolute;
-  bottom: 27px;
-  left: 159px;
+  bottom: 24px;
+  left: 22px;
 }
 
 #CampaignBoxGachaTop #hasItemNumWrap .useItem
 {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: -6px;
   left: 6px;
@@ -1788,12 +1821,12 @@
 {
   width: 140px;
   height: 34px;
-  padding-right: 24px;
+  padding-right: 39px;
   position: absolute;
-  top: 0;
+  top: -3px;
   left: 0;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 34px;
   text-align: right;
 }
@@ -1802,13 +1835,23 @@
 {
   width: 140px;
   height: 34px;
-  padding-right: 20px;
+  padding-right: 12px;
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 34px;
   text-align: right;
+}
+
+#CampaignBoxGachaTop .gachaContentsBtn
+{
+  width: 130px;
+  height: 42px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_box_detail.png") left top no-repeat;
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
 }
 
 #CampaignBoxGachaTop .outerLinkBtn
@@ -1820,4 +1863,255 @@
   bottom: 101px;
   left: 23px;
   z-index: 2;
+}
+
+#CampaignBoxGachaTop #ToExchangeTopBtn
+{
+  width: 180px;
+  height: 66px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_alina_request.png") left top no-repeat;
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  z-index: 2;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea
+{
+  height: 315px;
+  padding: 0 60px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap
+{
+  width: 100%;
+  padding-top: 20px;
+  height: 290px;
+  border: 2px solid #eddbb8;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap.alignLeft
+{
+  text-align: left;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .scrollInner
+{
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap
+{
+  width: 88px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet
+{
+  background: url("/magica/resource/image_web/item/main/item_bg.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase
+{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: absolute;
+  top: -webkit-calc(50% - 25px);
+  left: -webkit-calc(50% - 25px);
+  border-radius: 5px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner
+{
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+  border-radius: 5px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols
+{
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+  position: absolute;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.on
+{
+  background-color: #f4e0ca;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7
+{
+  top: 27px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8
+{
+  top: 15px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  top: 3px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation1,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation2,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation3
+{
+  left: 3px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation4,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation5,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation6
+{
+  left: 15px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation7,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation8,
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.formation_sheet .formationBase .formationInner .cols.formation9
+{
+  left: 27px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.live2d
+{
+  background: url("/magica/resource/image_web/item/main/live2d.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap.doppel
+{
+  background: url("/magica/resource/image_web/item/main/doppel.png") left center no-repeat;
+  background-size: 88px 88px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .commonItemImg
+{
+  width: 88px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  color: #fff;
+  text-shadow: -1px -1px 1px #8a5f29, 1px -1px 1px #8a5f29, -1px 1px 1px #8a5f29, 1px 1px 1px #8a5f29, -1px -1px #8a5f29, 1px -1px #8a5f29, -1px 1px #8a5f29, 1px 1px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 2px #8a5f29, 1px -1px 2px #8a5f29, -1px 1px 2px #8a5f29, 1px 1px 2px #8a5f29, -1px -1px 3px #8a5f29, 1px -1px 3px #8a5f29, -1px 1px 3px #8a5f29, 1px 1px 3px #8a5f29;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon
+{
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  bottom: 5px;
+  right: -12px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon:before
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 100;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon:after
+{
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  z-index: 80;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon .maskWrap
+{
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  z-index: 90;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .charaIcon .maskWrap img
+{
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 30px);
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap
+{
+  position: relative;
+  display: inline-block;
+  height: 88px;
+  margin: 0 25px 25px;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .commonItemImg
+{
+  position: absolute;
+  left: 0;
+}
+
+.popupContent.typeA.popupDetail .popupInner .popupTextArea #popupDetailScrollWrap .commonItemImgWrap .quantity
+{
+  position: absolute;
+  font-size: 20px;
+  right: -5px;
+  bottom: 0;
+  color: #fff;
+}
+
+.popupContent.typeA.popupDetail .popupInner .detailImg
+{
+  padding-top: 35px;
 }

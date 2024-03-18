@@ -65,6 +65,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/top
       a.popEventBranch();
       a.hideSubQuestBg();
       a.popEventSingleRaid();
+      a.deleteEventWitchExchangeAnime();
       a.callTouchesClear();
       a.weekQuestTopUnset();
       a.stopComposeEffect();

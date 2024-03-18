@@ -303,7 +303,6 @@ define("underscore backbone backboneCommon ajaxControl command js/view/item/Item
         {
           challengeId: this.model.challenge.rewardRequiredId
         });
-        console.log("_mission", a);
         a && !a.toJSON().receivedAt ? b.addClass(this.el.getElementsByClassName("missionBtn")[0], "inactive") : b.removeClass(this.el.getElementsByClassName("missionBtn")[0], "inactive")
       }
     },

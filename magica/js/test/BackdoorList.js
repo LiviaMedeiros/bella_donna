@@ -35,6 +35,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a[b.cgti + " #mirrorBattleRetry"] = this.mirrorBattleRetry;
       a[b.cgti + " #getPurchaseStatus"] = this.getPurchaseStatus;
       a[b.cgti + " #mailSendTest"] = this.mailSendTest;
+      a[b.cgti + " #ToEventWitch"] = this.ToEventWitch;
+      a[b.cgti + " #ToEventWitchIconTest"] = this.ToEventWitchIconTest;
+      a[b.cgti + " #ToEventWitchExchangeTest"] = this.ToEventWitchExchangeTest;
+      a[b.cgti + " #ToPuellaHistoriaSingleRaid"] = this.ToPuellaHistoriaSingleRaid;
       return a
     },
     initialize: function(b)
@@ -320,9 +324,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a.preventDefault();
       if (!b.isScrolled())
       {
-        $(document).ajaxSend(function(b, a, c)
+        $(document).ajaxSend(function(a, b, c)
         {
-          a.setRequestHeader("USER-ID-FBA9X88MAE", null)
+          b.setRequestHeader("USER-ID-FBA9X88MAE", null)
         });
         var c = function()
         {
@@ -574,6 +578,30 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
     {
       a.preventDefault();
       b.isScrolled() || (location.href = "#/MailSendTest")
+    },
+    ToEventWitch: function(a)
+    {
+      a.preventDefault();
+      b.isScrolled() || (location.href = "#/EventWitchTopPage")
+    },
+    ToEventWitchIconTest: function(a)
+    {
+      a.preventDefault();
+      b.isScrolled() || (location.href = "#/EventWitchIconTest")
+    },
+    ToEventWitchExchangeTest: function(a)
+    {
+      a.preventDefault();
+      b.isScrolled() || (b.EventWitchMemoriaExchangeAnimePrm = {
+        charaId: 1001,
+        rewardPieceId: 2016,
+        storyId: "501301-0"
+      }, location.href = "#/EventWitchExchangeAnimePage")
+    },
+    ToPuellaHistoriaSingleRaid: function(a)
+    {
+      a.preventDefault();
+      b.isScrolled() || (location.href = "#/PuellaHistoriaSingleRaid")
     }
   })
 });

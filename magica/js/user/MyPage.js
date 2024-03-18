@@ -1023,6 +1023,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/use
       e.popEventBranch();
       e.hideSubQuestBg();
       e.popEventSingleRaid();
+      e.deleteEventWitchExchangeAnime();
       e.callTouchesClear();
       l.pageModelGet(this.needModelIdObj)
     },

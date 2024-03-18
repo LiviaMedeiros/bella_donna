@@ -1,10 +1,10 @@
-define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/collection/StoryCollection.html text!css/collection/StoryCollection.css text!template/quest/OutlinePopup.html js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(g, p, b, D, h, T, U, V, W, X, Y)
+define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/collection/StoryCollection.html text!css/collection/StoryCollection.css text!template/quest/OutlinePopup.html js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(f, p, b, D, h, T, U, V, W, X, Y)
 {
-  var k, F, m, r, A, t, x, y, B, l, q, C, E, fa = p.View.extend(
+  var k, F, m, r, A, t, y, z, B, l, q, C, E, fa = p.View.extend(
     {
       initialize: function(a)
       {
-        this.template = g.template(U);
+        this.template = f.template(U);
         this.createDom()
       },
       events: function()
@@ -31,11 +31,11 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         this.puellaHistoriaModel = aa();
         b.content.append(this.render().el);
         G.prototype.parentView = this;
-        G.prototype.template = g.template($("#ChapterTemp").text());
-        J.prototype.template = g.template($("#SectionTemp").text());
-        K.prototype.template = g.template($("#PuellaHistoriaChapterTemp").text());
-        L.prototype.template = g.template($("#PuellaHistoriaSectionTemp").text());
-        M.prototype.template = g.template($("#MirrorBattleSectionTemp").text());
+        G.prototype.template = f.template($("#ChapterTemp").text());
+        J.prototype.template = f.template($("#SectionTemp").text());
+        K.prototype.template = f.template($("#PuellaHistoriaChapterTemp").text());
+        L.prototype.template = f.template($("#PuellaHistoriaSectionTemp").text());
+        M.prototype.template = f.template($("#MirrorBattleSectionTemp").text());
         N();
         this.createView()
       },
@@ -49,17 +49,18 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         u("chara", ca());
         u("arena", da());
         u("accomplish", ea());
-        z.prototype.parentView = this;
-        z.prototype.templatePuellaHistoria = g.template($("#PuellaHistoriaTemp").text());
-        z.prototype.templateCommon = g.template($("#EventStoryTempCommon").text());
-        z.prototype.templateBranch = g.template($("#EventStoryTempBranch").text());
-        z.prototype.templateSpecial = g.template($("#SpecialStoryTemp").text());
+        v.prototype.parentView = this;
+        v.prototype.templatePuellaHistoria = f.template($("#PuellaHistoriaTemp").text());
+        v.prototype.templateCommon = f.template($("#EventStoryTempCommon").text());
+        v.prototype.templateBranch = f.template($("#EventStoryTempBranch").text());
+        v.prototype.templateWitch = f.template($("#EventStoryTempWitch").text());
+        v.prototype.templateSpecial = f.template($("#SpecialStoryTemp").text());
         var a = D.getPageJson();
         if (a.eventStoryList && 0 < a.eventStoryList.length)
         {
           b.removeClass(b.doc.getElementById("tabBtn").getElementsByClassName("event")[0], "none");
           var c = 0;
-          g.each(a.eventStoryList, function(a, b, f)
+          f.each(a.eventStoryList, function(a, b, g)
           {
             1164 == a.eventId && (c = b)
           });
@@ -76,20 +77,20 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             }],
             isOpen: !0
           });
-          g.each(a.eventStoryList, function(a, b)
+          f.each(a.eventStoryList, function(a, b)
           {
             O(a);
-            !1 === a.isOpen && x++
+            !1 === a.isOpen && y++
           });
           b.scrollSet("eventHiddenWrap", "scrollInner")
         }
-        a.campaignStoryList && 0 < a.campaignStoryList.length && (b.removeClass(b.doc.getElementById("tabBtn").getElementsByClassName("special")[0], "none"), a = g.sortBy(a.campaignStoryList, function(a)
+        a.campaignStoryList && 0 < a.campaignStoryList.length && (b.removeClass(b.doc.getElementById("tabBtn").getElementsByClassName("special")[0], "none"), a = f.sortBy(a.campaignStoryList, function(a)
         {
           return -1 * a.campaignId
-        }), g.each(a, function(a, b)
+        }), f.each(a, function(a, b)
         {
           O(a);
-          !1 === a.isOpen && y++
+          !1 === a.isOpen && z++
         }), b.scrollSet("specialHiddenWrap", "scrollInner"));
         (a = b.storage.userSectionList.findWhere(
         {
@@ -125,14 +126,14 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             var c;
             if (l)
             {
-              var d = v(a),
+              var d = w(a),
                 e = d.indexOf(C); - 1 < e && (d.splice(0, e), c = d)
             }
             else
             {
               a = a.split(":");
-              for (var f = 0; f < a.length; f++)
-                if (d = a[f].split(","), e = d.indexOf(C), -1 < e)
+              for (var g = 0; g < a.length; g++)
+                if (d = a[g].split(","), e = d.indexOf(C), -1 < e)
                 {
                   d.splice(0, e);
                   c = d;
@@ -156,7 +157,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
                 {
                   $("#commandDiv").off();
                   d && d.isSaved ? (b.addClass(middlePlayBtn, "on"), c = []) : (localStorage.removeItem("storedVoiceTarget"), localStorage.removeItem("storedStoryIds"), b.removeClassId("middlePlayBtn", "on"), C = null, c.splice(0, 1));
-                  c[0] ? w(c, n) : setTimeout(function()
+                  c[0] ? x(c, n) : setTimeout(function()
                   {
                     h.changeBg(b.background);
                     h.startBgm(b.bgm);
@@ -250,7 +251,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             closeBtnText: "OK"
           }) : b.preNativeFadeIn(function()
           {
-            w(c)
+            x(c)
           })
         }
       },
@@ -306,7 +307,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         this.frgmntNode = b.doc.createDocumentFragment();
         this.continuousIds = [];
         var c = this;
-        g.each(this.model.sectionList, function(a, b)
+        f.each(this.model.sectionList, function(a, b)
         {
           a.parentModel = c.model;
           "arena" === c.type ? c.continuousIds = B : a.cleared && a.canPlay && a.storyArr.length && c.continuousIds.push(a.storyArr.join(","));
@@ -319,7 +320,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           c.frgmntNode.appendChild(b.render().el)
         });
         this.model.continuousIds = c.continuousIds.join(":");
-        this.model.isStillBtn = -1 < g.findIndex(E,
+        this.model.isStillBtn = -1 < f.findIndex(E,
         {
           chapterId: this.model.chapterId
         })
@@ -339,11 +340,11 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         if (!b.isScrolled())
         {
           var c = this.model;
-          I.prototype.stillModelList = g.filter(E, function(a)
+          I.prototype.stillModelList = f.filter(E, function(a)
           {
             return a.partNo === c.partNo
           });
-          I.prototype.template = g.template($("#StillPopupTemp").text());
+          I.prototype.template = f.template($("#StillPopupTemp").text());
           new I(this.model.chapterId)
         }
       }
@@ -359,7 +360,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       initialize: function(a)
       {
-        this.index = g.findIndex(this.stillModelList,
+        this.index = f.findIndex(this.stillModelList,
         {
           chapterId: a
         });
@@ -520,7 +521,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         {
           var c = this.model.storyArr[0];
           q = this.model.parentModel.continuousIds;
-          a = v(this.model.parentModel.continuousIds);
+          a = w(this.model.parentModel.continuousIds);
           c = a.indexOf(c); - 1 < c ? a.splice(0, c) : a = [];
           var d;
           d = l ? a : this.model.storyArr.concat();
@@ -535,21 +536,21 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             if ("main" === m || "mainSecond" === m)
             {
               var e = "section_" + this.model.sectionId,
-                f = H(e);
+                g = H(e);
               a = function()
               {
                 $("#commandDiv").on("nativeCallback", function()
                 {
                   $("#commandDiv").off();
-                  w(d, e)
+                  x(d, e)
                 });
-                h.downloadFileFullVoice(f);
+                h.downloadFileFullVoice(g);
                 window.isBrowser && nativeCallback()
               }
             }
             else a = function()
             {
-              w(d)
+              x(d)
             };
             b.preNativeFadeIn(a)
           }
@@ -609,7 +610,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       l && 0 > b.indexOf("_event_") && (b = a.slice(0, -2));
       return b
     },
-    w = function(a, c)
+    x = function(a, c)
     {
       var d = function()
       {
@@ -620,9 +621,9 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         window.isBrowser && nativeCallback(
         {})
       };
-      $("#commandDiv").on("nativeCallback", function(e, f)
+      $("#commandDiv").on("nativeCallback", function(e, g)
       {
-        f && f.isSaved ? (c ? (0 > c.indexOf("_event_") && (c = "section_" + a[0].split("-")[0]), localStorage.setItem("storedVoiceTarget", c)) : localStorage.removeItem("storedVoiceTarget"), localStorage.setItem("storedStoryIds", q), b.addClassId("middlePlayBtn", "on"), a = [], N()) : a.splice(0, 1);
+        g && g.isSaved ? (c ? (0 > c.indexOf("_event_") && (c = "section_" + a[0].split("-")[0]), localStorage.setItem("storedVoiceTarget", c)) : localStorage.removeItem("storedVoiceTarget"), localStorage.setItem("storedStoryIds", q), b.addClassId("middlePlayBtn", "on"), a = [], N()) : a.splice(0, 1);
         a[0] ? d() : setTimeout(function()
         {
           h.changeBg(b.background);
@@ -655,27 +656,27 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       d && (e = d.getElementsByClassName("scrollInner")[0]);
       if (e)
       {
-        var f = b.doc.createDocumentFragment();
-        c.length ? g.each(c, function(b, c)
+        var g = b.doc.createDocumentFragment();
+        c.length ? f.each(c, function(b, c)
         {
           if ("main" != a && "sub" != a || 1 === b.partNo)
             if ("mainSecond" != a && "subSecond" != a || 2 === b.partNo) b = new G(
             {
               model: b,
               type: a
-            }), f.appendChild(b.render().el)
-        }) : (c = b.doc.createElement("p"), c.className = "storyCautionText ts_white", c.innerText = "対象のストーリーがありません", f.appendChild(c));
-        e.appendChild(f)
+            }), g.appendChild(b.render().el)
+        }) : (c = b.doc.createElement("p"), c.className = "storyCautionText ts_white", c.innerText = "対象のストーリーがありません", g.appendChild(c));
+        e.appendChild(g)
       }
     },
     ga = function()
     {
       var a = [];
-      g.each(k.userChapterList, function(b)
+      f.each(k.userChapterList, function(b)
       {
         if ("MAIN" == b.chapter.questType)
         {
-          var c = g.filter(k.userSectionList, function(a)
+          var c = f.filter(k.userSectionList, function(a)
           {
             return b.chapterId === a.section.genericId
           });
@@ -684,13 +685,13 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             return a.sectionId < b.sectionId ? -1 : a.sectionId > b.sectionId ? 1 : 0
           });
           var e = [];
-          g.each(c, function(a)
+          f.each(c, function(a)
           {
-            var b = g.findWhere(k.sectionStillList,
+            var b = f.findWhere(k.sectionStillList,
             {
               sectionId: a.sectionId
             });
-            b && b.viewParameters && (b = b.viewParameters.split(";"), g.each(b, function(b)
+            b && b.viewParameters && (b = b.viewParameters.split(";"), f.each(b, function(b)
             {
               if (0 <= b.indexOf("IMAGE_PATH="))
               {
@@ -731,7 +732,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       {
         return a.sectionId < b.sectionId ? -1 : a.sectionId > b.sectionId ? 1 : 0
       });
-      g.each(k.userSectionList, function(b, d)
+      f.each(k.userSectionList, function(b, d)
       {
         if ("REG_ACC" == b.section.questType)
         {
@@ -739,17 +740,17 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           c.title = b.section.title;
           c.chapterId = b.sectionId;
           c.sectionList = [];
-          var f = [];
-          g.each(k.userQuestBattleList, function(a)
+          var g = [];
+          f.each(k.userQuestBattleList, function(a)
           {
-            b.section.sectionId === a.questBattle.sectionId && a.questBattle.startStory && f.push(a)
+            b.section.sectionId === a.questBattle.sectionId && a.questBattle.startStory && g.push(a)
           });
-          f.sort(function(a, b)
+          g.sort(function(a, b)
           {
             return a.questBattleId < b.questBattleId ? -1 : a.questBattleId > b.questBattleId ? 1 : 0
           });
           var n = 1;
-          g.each(f, function(a, d)
+          f.each(g, function(a, d)
           {
             c.cardId = a.questBattle.parameterMap ? a.questBattle.parameterMap.CARDID : null;
             c.cardId && (c.displayCardId = c.cardId);
@@ -778,11 +779,11 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       var a = b.storage.userArenaBattle.toJSON(),
         c = [];
       B = [];
-      g.each(k.arenaBattleFreeRankClassList, function(d)
+      f.each(k.arenaBattleFreeRankClassList, function(d)
       {
         var e = Number(a.currentFreeRankClassType.split("_")[2]),
-          f = Number(d.arenaBattleFreeRankClass.split("_")[2]);
-        e >= f && (d.chapterId = d.arenaBattleFreeRankClass, d.title = d.className, d.questType = "ARENA", d.sectionList = [], e = {}, e.sectionId = d.openConditionSectionId, e.sectionNo = d.className, e.title = d.className, b.storage.userQuestAdventureList.findWhere(
+          g = Number(d.arenaBattleFreeRankClass.split("_")[2]);
+        e >= g && (d.chapterId = d.arenaBattleFreeRankClass, d.title = d.className, d.questType = "ARENA", d.sectionList = [], e = {}, e.sectionId = d.openConditionSectionId, e.sectionNo = d.className, e.title = d.className, b.storage.userQuestAdventureList.findWhere(
         {
           adventureId: d.storyId
         }) && (e.canPlay = !0, e.cleared = !0, B.push(d.storyId), e.storyArr = [d.storyId], d.sectionList.push(e), c.push(d)));
@@ -813,44 +814,44 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         {
           id: e.userCardId
         }).toJSON().displayCardId : d.displayCardId = d.cardId;
-        g.each(k.userSectionList, function(a, e)
+        f.each(k.userSectionList, function(a, e)
         {
           if ("CHARA" == a.section.questType && c.toJSON().charaId == a.section.genericId || "COSTUME" == a.section.questType && c.toJSON().charaId == a.section.charaId)
           {
-            var f = {};
-            f.canPlay = a.canPlay;
-            f.cleared = a.cleared;
-            f.sectionId = a.sectionId;
-            f.title = a.section.title;
-            "CHARA" == a.section.questType ? (c.toJSON().chara.title && (f.title += "(" + c.toJSON().chara.title + ")"), f.sectionNo = a.section.genericIndex + "話") : "COSTUME" == a.section.questType && (e = (a.section.genericId + "").slice(-2), e = b.storage.userLive2dList.findWhere(
+            var g = {};
+            g.canPlay = a.canPlay;
+            g.cleared = a.cleared;
+            g.sectionId = a.sectionId;
+            g.title = a.section.title;
+            "CHARA" == a.section.questType ? (c.toJSON().chara.title && (g.title += "(" + c.toJSON().chara.title + ")"), g.sectionNo = a.section.genericIndex + "話") : "COSTUME" == a.section.questType && (e = (a.section.genericId + "").slice(-2), e = b.storage.userLive2dList.findWhere(
             {
               charaId: c.toJSON().charaId,
               live2dId: e
-            }), c.toJSON().chara.title && (f.title += "(" + c.toJSON().chara.title + ")"), e && (f.sectionNo = e.toJSON().live2d.description));
-            f.openConditionMagiaLevel = a.section.openConditionMagiaLevel || null;
-            f.openConditionCharaBondsPt = a.section.openConditionCharaBondsPt || null;
-            f.openConditionSection = a.section.openConditionSection || null;
-            f.openConditionChapter = a.section.openConditionChapter || null;
-            f.questList = [];
-            f.storyArr = [];
-            g.each(k.userQuestBattleList, function(b)
+            }), c.toJSON().chara.title && (g.title += "(" + c.toJSON().chara.title + ")"), e && (g.sectionNo = e.toJSON().live2d.description));
+            g.openConditionMagiaLevel = a.section.openConditionMagiaLevel || null;
+            g.openConditionCharaBondsPt = a.section.openConditionCharaBondsPt || null;
+            g.openConditionSection = a.section.openConditionSection || null;
+            g.openConditionChapter = a.section.openConditionChapter || null;
+            g.questList = [];
+            g.storyArr = [];
+            f.each(k.userQuestBattleList, function(b)
             {
-              a.section.sectionId === b.questBattle.sectionId && f.questList.push(b)
+              a.section.sectionId === b.questBattle.sectionId && g.questList.push(b)
             });
-            f.questList.sort(function(a, b)
+            g.questList.sort(function(a, b)
             {
               return a.questBattleId < b.questBattleId ? -1 : a.questBattleId > b.questBattleId ? 1 : 0
             });
-            g.each(f.questList, function(a)
+            f.each(g.questList, function(a)
             {
-              a.questBattle.startStory && f.storyArr.push(a.questBattle.startStory);
-              a.questBattle.questStoryList && g.each(a.questBattle.questStoryList, function(a)
+              a.questBattle.startStory && g.storyArr.push(a.questBattle.startStory);
+              a.questBattle.questStoryList && f.each(a.questBattle.questStoryList, function(a)
               {
-                a && f.storyArr.push(a)
+                a && g.storyArr.push(a)
               });
-              a.questBattle.endStory && f.storyArr.push(a.questBattle.endStory)
+              a.questBattle.endStory && g.storyArr.push(a.questBattle.endStory)
             });
-            d.sectionList.push(f)
+            d.sectionList.push(g)
           }
         });
         d.sectionList.sort(function(a, b)
@@ -870,7 +871,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       var a = {},
         b = [],
         d = [];
-      g.each(k.userChapterList, function(a)
+      f.each(k.userChapterList, function(a)
       {
         if ("MAIN" == a.chapter.questType || "SUB" == a.chapter.questType)
         {
@@ -881,25 +882,25 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           c.chapterNoForView = a.chapter.chapterNoForView;
           a.chapter.partNo && (c.partNo = a.chapter.partNo);
           c.sectionList = [];
-          g.each(k.userSectionList, function(b, d)
+          f.each(k.userSectionList, function(b, d)
           {
             var e = {};
-            a.chapterId === b.section.genericId && (e.canPlay = b.canPlay, e.cleared = b.cleared, e.sectionId = b.sectionId, e.title = b.section.title, e.outline = b.section.outline, e.sectionNo = b.section.genericIndex, e.outlineCardId = b.section.defaultCardId, e.questList = [], e.storyArr = [], g.each(k.userQuestBattleList, function(a)
+            a.chapterId === b.section.genericId && (e.canPlay = b.canPlay, e.cleared = b.cleared, e.sectionId = b.sectionId, e.title = b.section.title, e.outline = b.section.outline, e.sectionNo = b.section.genericIndex, e.outlineCardId = b.section.defaultCardId, e.questList = [], e.storyArr = [], f.each(k.userQuestBattleList, function(a)
             {
               b.section.sectionId !== a.questBattle.sectionId || a.questBattle.questBattleType && "HARD" == a.questBattle.questBattleType || e.questList.push(a)
             }), e.questList.sort(function(a, b)
             {
               return a.questBattleId < b.questBattleId ? -1 : a.questBattleId > b.questBattleId ? 1 : 0
-            }), g.each(e.questList, function(a)
+            }), f.each(e.questList, function(a)
             {
               var c = b.section.secret ? "_" + b.section.secret : "";
               a.questBattle.startStory && e.storyArr.push(a.questBattle.startStory + c);
-              a.questBattle.questStoryList && g.each(a.questBattle.questStoryList, function(a)
+              a.questBattle.questStoryList && f.each(a.questBattle.questStoryList, function(a)
               {
                 a && e.storyArr.push(a + c)
               });
               a.questBattle.endStory && e.storyArr.push(a.questBattle.endStory + c)
-            }), 103305 == e.sectionId && (e.storyArr = [], g.each("103305-1_eP5wU 103305-3_eP5wU 103305-4_eP5wU 103305-5_eP5wU 103305-6_eP5wU 103305-7_eP5wU 103305-10_eP5wU 103305-11_eP5wU 103305-8_eP5wU 103305-9_eP5wU 103305-12_eP5wU 103305-13_eP5wU 103305-14_eP5wU 103305-15_eP5wU 103305-16_eP5wU 103305-17_eP5wU 103305-18_eP5wU 103305-19_eP5wU".split(" "), function(a, b, c)
+            }), 103305 == e.sectionId && (e.storyArr = [], f.each("103305-1_eP5wU 103305-3_eP5wU 103305-4_eP5wU 103305-5_eP5wU 103305-6_eP5wU 103305-7_eP5wU 103305-10_eP5wU 103305-11_eP5wU 103305-8_eP5wU 103305-9_eP5wU 103305-12_eP5wU 103305-13_eP5wU 103305-14_eP5wU 103305-15_eP5wU 103305-16_eP5wU 103305-17_eP5wU 103305-18_eP5wU 103305-19_eP5wU".split(" "), function(a, b, c)
             {
               e.storyArr.push(a)
             })), c.sectionList.push(e))
@@ -933,7 +934,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     aa = function()
     {
       var a = [];
-      g.each(k.puellaStoryList, function(b)
+      f.each(k.puellaStoryList, function(b)
       {
         var c = {};
         c.questType = b.eventType;
@@ -968,15 +969,15 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       b.eventName = "現代神浜編";
       b.isOpen = !1;
       b.storyList = [];
-      g.each(a.questInfoList, function(a, c, f)
+      f.each(a.questInfoList, function(a, c, g)
       {
-        f = {};
-        f.storyTitle = a.questBattle.sectionIndex + "話";
-        f.storyIds = a.questBattle.startStory;
-        a.secret && (f.storyIds = a.questBattle.startStory + "_" + a.secret);
-        f.isOpen = a.cleared;
-        0 == c && (f.storyTitle = "Prologue");
-        b.storyList.push(f)
+        g = {};
+        g.storyTitle = a.questBattle.sectionIndex + "話";
+        g.storyIds = a.questBattle.startStory;
+        a.secret && (g.storyIds = a.questBattle.startStory + "_" + a.secret);
+        g.isOpen = a.cleared;
+        0 == c && (g.storyTitle = "Prologue");
+        b.storyList.push(g)
       });
       0 < b.storyList.length && (b.isOpen = !0);
       return b
@@ -991,14 +992,14 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         storyList: []
       };
       a = Y.getStoryIdList();
-      g.each(a, function(a, c, f)
+      f.each(a, function(a, c, g)
       {
-        g.each(a, function(a, c, d)
+        f.each(a, function(a, c, d)
         {
           var e = {};
           e.storyTitle = a.storyTitle;
           e.storyIds = a.storyId;
-          g.each(k.userQuestAdventureList, function(c, d, f)
+          f.each(k.userQuestAdventureList, function(c, d, g)
           {
             c.adventureId == a.storyId && (e.isOpen = !0, a.secret && (e.storyIds = a.storyId + "_" + a.secret), b.storyList.push(e))
           })
@@ -1011,8 +1012,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     {
       var c = function(c)
         {
-          console.log("viewCreatePuellaHistoria modelList", a);
-          g.each(a, function(a)
+          f.each(a, function(a)
           {
             a = new K(
             {
@@ -1042,8 +1042,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         this.frgmntNode = b.doc.createDocumentFragment();
         this.model.storyIdsList = [];
         var a = this;
-        console.log("PuellaHistoriaChapterView this.model: ", this.model);
-        g.each(this.model.storyList, function(b, d)
+        f.each(this.model.storyList, function(b, d)
         {
           b.isOpen && a.model.storyIdsList.push(b.storyIds);
           b = new L(
@@ -1053,13 +1052,11 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             index: d
           });
           a.frgmntNode.appendChild(b.render().el)
-        });
-        console.log("PuellaHistoriaChapterView this.model: ", this.model);
-        console.log("that.model.storyIdsList: ", a.model.storyIdsList)
+        })
       },
       render: function()
       {
-        this.$el.html(g.template($("#PuellaHistoriaChapterTemp").text())(
+        this.$el.html(f.template($("#PuellaHistoriaChapterTemp").text())(
         {
           model: this.model
         }));
@@ -1073,8 +1070,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       {
         this.storyIdsList = a.storyIdsList;
         this.list = a.list;
-        this.index = a.index;
-        console.log("PuellaHistoriaSectionView options", a)
+        this.index = a.index
       },
       events: function()
       {
@@ -1098,9 +1094,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         {
           var c = "",
             d = a.currentTarget.dataset.ids;
-          console.log("e.currentTarget.dataset.ids (btnId)", d);
-          console.log("this.storyIdsList", this.storyIdsList);
-          l ? (a = this.storyIdsList.join(","), console.log("true: _join", a), q = a, d = a.indexOf(d), console.log("true: _indexOf", d), -1 < d && (a = a.substring(d), console.log("true: _substring", a), c = v(a), console.log("true: storyIdsText", c))) : (console.log("false: storyIdsText, 1", c), c = v(d), console.log("false: storyIdsText, 2", c));
+          l ? (q = a = this.storyIdsList.join(","), d = a.indexOf(d), -1 < d && (a = a.substring(d), c = w(a))) : c = w(d);
           0 === c.length ? new b.PopupClass(
           {
             title: "ストーリー確認",
@@ -1108,7 +1102,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             closeBtnText: "OK"
           }) : b.preNativeFadeIn(function()
           {
-            w(c)
+            x(c)
           })
         }
       }
@@ -1119,7 +1113,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       {
         var c = function(c)
         {
-          var d = new z(
+          var d = new v(
           {
             model: a
           });
@@ -1128,13 +1122,14 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         a.eventId || a.regularEventId ? c("eventHiddenWrap") : a.campaignId && c("specialHiddenWrap")
       }
     },
-    z = p.View.extend(
+    v = p.View.extend(
     {
       className: function()
       {
         var a = "wrap";
         !1 === this.model.isOpen && (a += " lock");
         "BRANCH" === this.model.eventType && (a += " BRANCH");
+        "WITCH" === this.model.eventType && (a += " WITCH");
         return a
       },
       events: function()
@@ -1146,7 +1141,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       initialize: function() {},
       render: function()
       {
-        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : this.templateCommon)(
+        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : "WITCH" === this.model.eventType ? this.templateWitch : this.templateCommon)(
         {
           model: this.model
         }));
@@ -1160,31 +1155,31 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         {
           var c = "",
             d = "";
-          if ("BRANCH" !== this.model.eventType)
+          if ("BRANCH" !== this.model.eventType || "WITCH" !== this.model.eventType)
           {
-            for (var e = a.currentTarget.parentNode.parentNode.getElementsByClassName("eventStoryStart"), f = !1, g = 0; g < e.length; g++)
+            for (var e = a.currentTarget.parentNode.parentNode.getElementsByClassName("eventStoryStart"), g = !1, f = 0; f < e.length; f++)
             {
-              var h = e[g].dataset.ids;
-              h === a.currentTarget.dataset.ids && (f = !0);
-              f && (e[g].parentNode.classList.contains("lock") ? ("" !== d && (d += ":"), d += h) : ("" !== c && (c += ":"), c += h))
+              var h = e[f].dataset.ids;
+              h === a.currentTarget.dataset.ids && (g = !0);
+              g && (e[f].parentNode.classList.contains("lock") ? ("" !== d && (d += ":"), d += h) : ("" !== c && (c += ":"), c += h))
             }
             q = c
           }
           else q = a.currentTarget.dataset.ids;
-          "BRANCH" !== this.model.eventType && l ? e = "" !== d : (e = a.currentTarget.parentNode.classList.contains("lock")) ? d = a.currentTarget.dataset.ids : c = a.currentTarget.dataset.ids;
-          e ? this.openStory(c, d) : this.startStory(v(c))
+          "BRANCH" !== this.model.eventType && "WITCH" !== this.model.eventType && l ? e = "" !== d : (e = a.currentTarget.parentNode.classList.contains("lock")) ? d = a.currentTarget.dataset.ids : c = a.currentTarget.dataset.ids;
+          e ? this.openStory(c, d) : this.startStory(w(c))
         }
       },
       openStory: function(a, c)
       {
         var d = b.doc.getElementById("openStoryPopTemp").textContent,
           e = this.model.eventName,
-          f = function()
+          g = function()
           {
             var c = function(c)
             {
               c.preventDefault();
-              b.isScrolled() || (b.g_popup_instance.popupView.close(), this.startStory(v(a)))
+              b.isScrolled() || (b.g_popup_instance.popupView.close(), this.startStory(w(a)))
             }.bind(this);
             new b.PopupClass(
             {
@@ -1197,7 +1192,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           }.bind(this);
         if (0 < t)
         {
-          var g = function(f)
+          var f = function(f)
             {
               f.preventDefault();
               if (!b.isScrolled())
@@ -1209,8 +1204,8 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
                 {
                   b.responseSetStorage(f);
                   R();
-                  (g || k) && x--;
-                  h && y--;
+                  (g || k) && y--;
+                  h && z--;
                   S();
                   f = function()
                   {
@@ -1222,7 +1217,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
                   var l = function(d)
                   {
                     d.preventDefault();
-                    b.isScrolled() || (b.g_popup_instance.popupView.close(), "" !== a && (a += ":"), q = a += c, this.startStory(v(a)))
+                    b.isScrolled() || (b.g_popup_instance.popupView.close(), "" !== a && (a += ":"), q = a += c, this.startStory(w(a)))
                   }.bind(this);
                   new b.PopupClass(
                   {
@@ -1244,7 +1239,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
               }
             }.bind(this),
             h = null;
-          l && "" !== a && (h = f);
+          l && "" !== a && (h = g);
           new b.PopupClass(
           {
             title: "ストーリー解放",
@@ -1253,15 +1248,15 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             itemNum: t,
             exClass: "openStoryPopup",
             decideBtnText: "解放する",
-            decideBtnEvent: g,
+            decideBtnEvent: f,
             closeBtnText: "キャンセル"
           }, d, null, h)
         }
-        else g = "<span class='c_pink'>" + A + "</span>が<span class='c_pink'>１個</span>不足しています。",
-          l && (g += "<br><span class='c_red'>" + A + "で解放することで最後まで連続で再生できます。</span>"), h = null, l && "" !== a && (h = f), new b.PopupClass(
+        else f = "<span class='c_pink'>" + A + "</span>が<span class='c_pink'>１個</span>不足しています。",
+          l && (f += "<br><span class='c_red'>" + A + "で解放することで最後まで連続で再生できます。</span>"), h = null, l && "" !== a && (h = g), new b.PopupClass(
           {
             title: "ストーリー解放",
-            content: g,
+            content: f,
             itemNum: t,
             exClass: "openStoryPopup",
             decideBtnText: "ショップへ",
@@ -1271,7 +1266,6 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       startStory: function(a)
       {
-        console.log("startStory, storyIds", a);
         if (0 === a.length) new b.PopupClass(
         {
           title: "ストーリー確認",
@@ -1289,7 +1283,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
               $("#commandDiv").on("nativeCallback", function()
               {
                 $("#commandDiv").off();
-                w(a, d)
+                x(a, d)
               });
               h.downloadFileFullVoice(d);
               window.isBrowser && nativeCallback()
@@ -1297,7 +1291,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           }
           else c = function()
           {
-            w(a)
+            x(a)
           };
           b.preNativeFadeIn(c)
         }
@@ -1315,16 +1309,16 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     S = function()
     {
       var a = b.doc.getElementById("eventBatch");
-      0 < x ? (a.textContent = x, b.addClass(a, "on")) : b.removeClass(a, "on");
+      0 < y ? (a.textContent = y, b.addClass(a, "on")) : b.removeClass(a, "on");
       a = b.doc.getElementById("specialBatch");
-      0 < y ? (a.textContent = y, b.addClass(a, "on")) : b.removeClass(a, "on")
+      0 < z ? (a.textContent = z, b.addClass(a, "on")) : b.removeClass(a, "on")
     },
-    v = function(a)
+    w = function(a)
     {
       a = a.replace(/:/g, ",");
       a = "" !== a ? a.split(",") : [];
       var b = [];
-      g.each(a, function(a)
+      f.each(a, function(a)
       {
         a && b.push(a)
       });
@@ -1420,7 +1414,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       b.setStyle(V);
       k = D.getPageJson();
       l = "1" === localStorage.getItem("continuousPlayFlag");
-      y = x = 0;
+      z = y = 0;
       var a = b.storage.itemList.findWhere(
       {
         itemCode: "EVENTSTORY_OPEN_KEY"
@@ -1450,7 +1444,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     },
     remove: function(a)
     {
-      E = C = q = l = B = y = x = t = A = r = null;
+      E = C = q = l = B = z = y = t = A = r = null;
       F && F.remove();
       a()
     }

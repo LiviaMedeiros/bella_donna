@@ -760,6 +760,10 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             c.resultUrl = "/magica/index.html#/RegularEventAccomplishTop/" + e;
             c.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
             break;
+          case "WITCH":
+            c.resultUrl = "/magica/index.html#/QuestResult";
+            c.retireUrl = "/magica/index.html#/EventWitchTopPage";
+            break;
           default:
             c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/MainQuest"
         }
@@ -831,13 +835,13 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
   {
     "accomplish" === this.deckCatType && a.userRegularEventAccomplishCharaArr && a.storage.userCardListEx.each(function(a)
     {
-      var b = a.toJSON();
-      F(b);
+      var c = a.toJSON();
+      F(c);
       a.clear(
       {
         silent: !0
       });
-      a.set(b,
+      a.set(c,
       {
         silent: !0
       })
@@ -887,7 +891,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
           };
           a.currentArenaRankMatchDeckType = b.deckType;
           a.battleEnemy = c.opponentInfo.userId;
-          window.isBrowser ? (a.arenaJson = e, a.globalMenuView && a.globalMenuView.trigger("removeView"), h.sendCommand("ArenaStub," + JSON.stringify(e))) : u.ajaxPost(a.linkList.arenaStart, e, function(b)
+          window.isBrowser ? (a.arenaJson = e, a.globalMenuView && a.globalMenuView.trigger("removeView"), h.sendCommand("ArenaStub," + JSON.stringify(e))) : u.ajaxPost(a.linkList.arenaStart, e, function(c)
           {
             a.acpTimeCure && (clearInterval(a.acpTimeCure), a.acpTimeCure = null);
             $(a.ready.target).on("webkitAnimationEnd", function()
@@ -898,12 +902,12 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
               {
                 "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
               });
-              var c = {};
-              c.questId = b.userQuestBattleResultList[0].id;
-              c.replayId = b.userQuestBattleResultList[0].replayId;
-              c.resultUrl = "/magica/index.html#/RegularEventArenaRankMatchResult";
-              c.retireUrl = "/magica/index.html#/RegularEventArenaRankMatchTop";
-              c.tips = {
+              var b = {};
+              b.questId = c.userQuestBattleResultList[0].id;
+              b.replayId = c.userQuestBattleResultList[0].replayId;
+              b.resultUrl = "/magica/index.html#/RegularEventArenaRankMatchResult";
+              b.retireUrl = "/magica/index.html#/RegularEventArenaRankMatchTop";
+              b.tips = {
                 type: 2
               };
               a.globalMenuView && a.globalMenuView.trigger("removeView");
@@ -916,7 +920,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
                   c && c.webData && a.responseSetStorage(c.webData);
                   location.href = "#/QuestBackground"
                 });
-                h.startArena(c)
+                h.startArena(b)
               }, 500)
             });
             a.addClass(a.ready.target, "preNativeFadeIn")

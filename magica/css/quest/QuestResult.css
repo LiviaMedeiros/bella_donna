@@ -1396,7 +1396,8 @@
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap,
-#QuestResult #ResultWrap .ResultPopup .itemWrap
+#QuestResult #ResultWrap .ResultPopup .itemWrap,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap
 {
   width: 100%;
   height: 100%;
@@ -1407,7 +1408,8 @@
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .expWrapTitle,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle
+#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .expWrapTitle
 {
   width: 304px;
   height: 32px;
@@ -1418,21 +1420,75 @@
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .expWrapTitle.item,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle.item
+#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle.item,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .expWrapTitle.item
 {
   background: url("/magica/resource/image_web/page/questresult/header_item.png") left top no-repeat;
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .expWrapTitle.exp,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle.exp
+#QuestResult #ResultWrap .ResultPopup .itemWrap .expWrapTitle.exp,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .expWrapTitle.exp
 {
   background: url("/magica/resource/image_web/page/questresult/header_exp.png") left top no-repeat;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle
+{
+  width: 576px;
+  height: 58px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  z-index: 100;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle.eyesight,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle.eyesight,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle.eyesight
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/header_point_1.png") left top no-repeat;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle.hearing,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle.hearing,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle.hearing
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/header_point_2.png") left top no-repeat;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle.smell,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle.smell,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle.smell
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/header_point_3.png") left top no-repeat;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle.taste,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle.taste,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle.taste
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/header_point_5.png") left top no-repeat;
+}
+
+#QuestResult #ResultWrap .ResultPopup .expWrap .EventWitchTitle.touch,
+#QuestResult #ResultWrap .ResultPopup .itemWrap .EventWitchTitle.touch,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .EventWitchTitle.touch
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/header_point_4.png") left top no-repeat;
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .expMiniTitle,
 #QuestResult #ResultWrap .ResultPopup .expWrap .charaExMiniTitle,
 #QuestResult #ResultWrap .ResultPopup .itemWrap .expMiniTitle,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .charaExMiniTitle
+#QuestResult #ResultWrap .ResultPopup .itemWrap .charaExMiniTitle,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .expMiniTitle,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .charaExMiniTitle
 {
   width: 124px;
   height: 28px;
@@ -1448,19 +1504,22 @@
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .charaExMiniTitle,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .charaExMiniTitle
+#QuestResult #ResultWrap .ResultPopup .itemWrap .charaExMiniTitle,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .charaExMiniTitle
 {
   top: 121px;
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap.off,
-#QuestResult #ResultWrap .ResultPopup .itemWrap.off
+#QuestResult #ResultWrap .ResultPopup .itemWrap.off,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap.off
 {
   display: none;
 }
 
 #QuestResult #ResultWrap .ResultPopup .expWrap .hrWrap,
-#QuestResult #ResultWrap .ResultPopup .itemWrap .hrWrap
+#QuestResult #ResultWrap .ResultPopup .itemWrap .hrWrap,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .hrWrap
 {
   width: 758px;
   height: 18px;
@@ -2140,6 +2199,370 @@
   text-align: center;
   letter-spacing: 4px;
   text-shadow: none;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap
+{
+  text-align: center;
+  padding: 56px 0 0 0;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .charaListSec
+{
+  display: inline-block;
+  width: 570px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .charaListSec.chara7
+{
+  width: 680px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec
+{
+  display: inline-block;
+  margin: 10px 30px;
+  width: 110px;
+  height: 110px;
+  position: relative;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .charaImgSec
+{
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .charaImgSec .charaImg
+{
+  width: 82px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .bgframe1,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .bgframe2
+{
+  width: 110px;
+  height: 110px;
+  background-size: 110px 110px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_frame.png") left top no-repeat;
+  background-size: contain;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .bgframe2
+{
+  width: 86px;
+  height: 86px;
+  background-size: 86px 86px;
+  background: #403c3f;
+  top: 12px;
+  left: 12px;
+  border-radius: 50%;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle
+{
+  position: absolute;
+  width: 102px;
+  height: 102px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_normal.png") left top no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  top: 4px;
+  left: 4px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle .barR
+{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 51px;
+  width: 102px;
+  height: 102px;
+  background: #403c3f;
+  -webkit-transform-origin: left 51px;
+  -ms-transform-origin: left 51px;
+  transform-origin: left 51px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle .barL
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -51px;
+  width: 102px;
+  height: 102px;
+  background: #403c3f;
+  -webkit-transform-origin: right 51px;
+  -ms-transform-origin: right 51px;
+  transform-origin: right 51px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.animeMax
+{
+  -webkit-animation: changeMax 0.3s linear forwards;
+  animation: changeMax 0.3s linear forwards;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.animeMax .barL,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.animeMax .barR
+{
+  display: none;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.max
+{
+  background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_max.png") left top no-repeat;
+  background-size: contain;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.max .barL,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .circle.max .barR
+{
+  opacity: 0;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec
+{
+  display: none;
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 0px;
+  left: 0px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .upImg,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .upImg
+{
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg
+{
+  position: absolute;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg.up1,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg.max1,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg.up1,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg.max1
+{
+  width: 122px;
+  height: 122px;
+  top: -6px;
+  left: -6px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg.up2,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg.max3,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg.up2,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg.max3
+{
+  width: 146px;
+  height: 146px;
+  top: -18px;
+  left: -18px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec .decoImg.max2,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .decoImg.max2
+{
+  width: 186px;
+  height: 186px;
+  top: -38px;
+  left: -38px;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec.anime,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec.anime
+{
+  display: block;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec.anime .upImg,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec.anime .upImg
+{
+  -webkit-animation: upAnime 0.8s ease 0s 1 normal;
+  animation: upAnime 0.8s ease 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconUPSec.anime .decoImg,
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec.anime .decoImg
+{
+  -webkit-animation: decoAnime 0.8s ease 0s 1 normal;
+  animation: decoAnime 0.8s ease 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#QuestResult #ResultWrap .ResultPopup .gaugeWrap .IconCharaGaugeSec .iconMaxSec .upImg
+{
+  left: 18px;
+}
+
+@-webkit-keyframes upAnime
+{
+  0%
+  {
+    -webkit-transform: translateY(12px) translateZ(0);
+    transform: translateY(12px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px) translateZ(0);
+    transform: translateY(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes upAnime
+{
+  0%
+  {
+    -webkit-transform: translateY(12px) translateZ(0);
+    transform: translateY(12px) translateZ(0);
+    opacity: 0;
+  }
+
+  100%
+  {
+    -webkit-transform: translateY(0px) translateZ(0);
+    transform: translateY(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes decoAnime
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  40%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes decoAnime
+{
+  0%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  40%
+  {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100%
+  {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes changeMax
+{
+  0%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_normal.png") left top no-repeat;
+    background-size: contain;
+    opacity: 1;
+  }
+
+  49%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_normal.png") left top no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+
+  50%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_max.png") left top no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+
+  100%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_max.png") left top no-repeat;
+    background-size: contain;
+    opacity: 1;
+  }
+}
+
+@keyframes changeMax
+{
+  0%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_normal.png") left top no-repeat;
+    background-size: contain;
+    opacity: 1;
+  }
+
+  49%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_normal.png") left top no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+
+  50%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_max.png") left top no-repeat;
+    background-size: contain;
+    opacity: 0;
+  }
+
+  100%
+  {
+    background: url("/magica/resource/image_web/event/eventWitch/common/quest_result/gauge_texture_max.png") left top no-repeat;
+    background-size: contain;
+    opacity: 1;
+  }
 }
 
 #QuestResult #itemResult

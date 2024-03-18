@@ -213,7 +213,7 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
     0 < m.CHARA && (f.addClass(f.doc.querySelector("#questLinkBtnWrap .chara"), "batch"), f.doc.querySelector("#questLinkBtnWrap .chara span").textContent = m.CHARA);
     0 < m.EVENT && (f.addClass(f.doc.querySelector("#questLinkBtnWrap .event"), "batch"), f.doc.querySelector("#questLinkBtnWrap .event span").textContent = m.EVENT)
   };
-  var C = "TOWER DAILYTOWER BRANCH ARENAMISSION SINGLERAID STORYRAID TRAINING ACCOMPLISH DUNGEON RAID PUELLA_RAID".split(" "),
+  var C = "TOWER DAILYTOWER BRANCH ARENAMISSION SINGLERAID STORYRAID TRAINING ACCOMPLISH DUNGEON RAID PUELLA_RAID WITCH".split(" "),
     D = {
       TOWER: "#/EventTowerTop",
       DAILYTOWER: "#/EventDailyTowerTop",
@@ -225,7 +225,8 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
       ACCOMPLISH: "#/EventAccomplishTop",
       DUNGEON: "#/EventDungeonTop",
       RAID: "#/EventRaidTop",
-      PUELLA_RAID: "#/PuellaHistoriaRouter"
+      PUELLA_RAID: "#/PuellaHistoriaRouter",
+      WITCH: "#/EventWitchTopPage"
     },
     x = {
       TOWER: "tower",
@@ -238,7 +239,8 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
       ACCOMPLISH: "accomplish",
       DUNGEON: "dungeon",
       RAID: "raid",
-      PUELLA_RAID: "puellaRaid"
+      PUELLA_RAID: "puellaRaid",
+      WITCH: "eventWitch"
     };
   h.eventTabSwitch = function(a, c)
   {
