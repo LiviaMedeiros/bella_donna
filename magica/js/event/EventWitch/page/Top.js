@@ -1,15 +1,15 @@
-define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/event/EventWitch/page/Top.html text!css/event/EventWitch/Top.css js/event/EventWitch/Model js/event/EventWitch/Utility js/view/tutorial/TutorialPopupView js/event/EventWitch/parts/TopNativeMain js/event/EventWitch/parts/TopCharaList".split(" "), function(k, m, b, g, f, n, p, q, r, h, l, t, u)
+define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/event/EventWitch/page/Top.html text!css/event/EventWitch/Top.css js/event/EventWitch/Model js/event/EventWitch/Utility js/view/tutorial/TutorialPopupView js/event/EventWitch/parts/TopNativeMain js/event/EventWitch/parts/TopCharaList".split(" "), function(k, m, a, g, f, n, p, q, r, h, l, t, u)
 {
   var e = {},
     v = m.View.extend(
     {
       events: function()
       {
-        var a = {};
-        a[b.cgti + " #HelpBtn"] = this.tapHelpBtn;
-        a[b.cgti + " #scaleChangePlus"] = this.scaleUp;
-        a[b.cgti + " #scaleChangeMinus"] = this.scaleDown;
-        return a
+        var b = {};
+        b[a.cgti + " #HelpBtn"] = this.tapHelpBtn;
+        b[a.cgti + " #scaleChangePlus"] = this.scaleUp;
+        b[a.cgti + " #scaleChangeMinus"] = this.scaleDown;
+        return b
       },
       initialize: function(a)
       {
@@ -27,7 +27,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       createDom: function()
       {
-        b.content.append(this.render().el);
+        a.content.append(this.render().el);
         e.NativeMain = new t(
         {
           model: this.pageModel,
@@ -36,7 +36,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         $("#NativeMainSec").append(e.NativeMain.render().el);
         this.SCALE_MAX = 100;
         this.SCALE_MIN = 60;
-        b.eventSingleRaidScale = this.SCALE_MAX;
+        a.eventSingleRaidScale = this.SCALE_MAX;
         this.updateScale();
         e.CharaList = new u(
         {
@@ -44,38 +44,38 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           _views: e
         });
         $("#mainSec").append(e.CharaList.render().el);
-        b.ready.hide()
+        a.ready.hide()
       },
-      scaleUp: function(a)
+      scaleUp: function(b)
       {
-        a.preventDefault();
-        b.isScrolled() || a.currentTarget.classList.contains("off") || (b.eventSingleRaidScale = b.eventSingleRaidScale + 5 | 0, this.updateScale())
+        b.preventDefault();
+        a.isScrolled() || b.currentTarget.classList.contains("off") || (a.eventSingleRaidScale = a.eventSingleRaidScale + 5 | 0, this.updateScale())
       },
-      scaleDown: function(a)
+      scaleDown: function(b)
       {
-        a.preventDefault();
-        b.isScrolled() || a.currentTarget.classList.contains("off") || (b.eventSingleRaidScale = b.eventSingleRaidScale - 5 | 0, this.updateScale())
+        b.preventDefault();
+        a.isScrolled() || b.currentTarget.classList.contains("off") || (a.eventSingleRaidScale = a.eventSingleRaidScale - 5 | 0, this.updateScale())
       },
-      resetPosition: function(a)
+      resetPosition: function(b)
       {
-        a.preventDefault();
-        b.isScrolled() || (b.eventSingleRaidScale = this.SCALE_MAX, this.updateScale())
+        b.preventDefault();
+        a.isScrolled() || (a.eventSingleRaidScale = this.SCALE_MAX, this.updateScale())
       },
       updateScale: function()
       {
-        var a = $("#scaleChangePlus"),
+        var b = $("#scaleChangePlus"),
           c = $("#scaleChangeMinus");
-        b.eventSingleRaidScale >= this.SCALE_MAX ? (b.eventSingleRaidScale = this.SCALE_MAX, a.addClass("off"), c.removeClass("off")) : b.eventSingleRaidScale <= this.SCALE_MIN ? (b.eventSingleRaidScale = this.SCALE_MIN, a.removeClass("off"), c.addClass("off")) : (a.removeClass("off"), c.removeClass("off"));
-        f.scaleEventSingleRaid(b.eventSingleRaidScale)
+        a.eventSingleRaidScale >= this.SCALE_MAX ? (a.eventSingleRaidScale = this.SCALE_MAX, b.addClass("off"), c.removeClass("off")) : a.eventSingleRaidScale <= this.SCALE_MIN ? (a.eventSingleRaidScale = this.SCALE_MIN, b.removeClass("off"), c.addClass("off")) : (b.removeClass("off"), c.removeClass("off"));
+        f.scaleEventSingleRaid(a.eventSingleRaidScale)
       },
-      tapHelpBtn: function(a)
+      tapHelpBtn: function(b)
       {
-        a.preventDefault();
-        if (!b.isScrolled())
+        b.preventDefault();
+        if (!a.isScrolled())
         {
           var c = this,
             d;
-          new b.PopupClass(
+          new a.PopupClass(
           {
             popupType: "tutorial"
           }, null, function()
@@ -88,7 +88,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
               eventType: "eventWitch",
               eventId: c.pageModel.eventMaster.eventId
             });
-            b.doc.getElementsByClassName("popupInner")[0].appendChild(d.render().el)
+            a.doc.getElementsByClassName("popupInner")[0].appendChild(d.render().el)
           }, function()
           {
             d.removeView()
@@ -97,15 +97,16 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       removeView: function()
       {
+        a.noGetPurchaseStatus = null;
         this.off();
         this.remove()
       }
     }),
-    w = function(a)
+    w = function(b)
     {
-      var c = a.callback,
-        d = a.eventMaster;
-      b.playStory(
+      var c = b.callback,
+        d = b.eventMaster;
+      a.playStory(
       {
         cmd: f,
         ajaxControl: g,
@@ -116,18 +117,18 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           localStorage.setItem("WatchEventWitchOP", d.eventId);
           setTimeout(function()
           {
-            b.removeClass(b.ready.target, "fadeout")
+            a.removeClass(a.ready.target, "fadeout")
           }, 500)
         }
       });
       window.isBrowser && nativeCallback()
     },
-    x = function(a)
+    x = function(b)
     {
-      var c = a.pageModel;
-      b.EventWitchPrm = {
+      var c = b.pageModel;
+      a.EventWitchPrm = {
         sectionInfo: c.questInfo.sectionInfoList,
-        userQuestAdventureList: a.pageJson.userQuestAdventureList,
+        userQuestAdventureList: b.pageJson.userQuestAdventureList,
         beforeRatioList: h.getBeforeRatioList(
         {
           eventCharaInfo: c.eventCharaInfo
@@ -136,34 +137,35 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     },
     y = function()
     {
-      var a = g.getPageJson(),
+      var b = g.getPageJson(),
         c = h.getEventMaster(
         {
-          pageJson: a
+          pageJson: b
         }),
         d = function()
         {
-          b.setStyle(q);
+          a.setStyle(q);
           var d = r.getTopModel(
           {
-            pageJson: a
+            pageJson: b
           });
           x(
           {
             pageModel: d,
-            pageJson: a
+            pageJson: b
           });
           f.startBgm(c.viewParameterMap.BGM);
           f.changeBg("web_ev_1210_15121.ExportJson");
           d.terminalClass = "";
-          1024 !== b.displayWidth && (d.terminalClass = "iPhoneXOrMore");
-          b.ua.ipad && (d.terminalClass = "iPad");
+          1024 !== a.displayWidth && (d.terminalClass = "iPhoneXOrMore");
+          a.ua.ipad && (d.terminalClass = "iPad");
           e.pageView = new v(
           {
             pageModel: d
           });
-          n.supportPickUp(a);
-          b.setGlobalView();
+          n.supportPickUp(b);
+          a.setGlobalView();
+          a.noGetPurchaseStatus = !0;
           setTimeout(function()
           {
             h.openFirstNavi(
@@ -171,7 +173,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
               eventId: c.eventId,
               callback: function()
               {
-                d.isOpenChallengePopup && new b.PopupClass(
+                d.isOpenChallengePopup && new a.PopupClass(
                 {
                   popupType: "typeC",
                   title: "チャレンジクエスト解放",
