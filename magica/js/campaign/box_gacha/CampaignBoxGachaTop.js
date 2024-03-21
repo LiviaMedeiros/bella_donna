@@ -1060,7 +1060,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         f = d * b.gachaBoxRemainCount,
         b = b.userUseItem.quantity;
       a.btnModel.isAllGet = !1;
-      f < b ? (a.btnModel.needQuantity = f, a.btnModel.isAllGet = !0) : (a.btnModel.needQuantity = Math.floor(b / d) * d, d > b && (a.btnModel.needQuantity = d));
+      f <= b ? (a.btnModel.needQuantity = f, a.btnModel.isAllGet = !0) : (a.btnModel.needQuantity = Math.floor(b / d) * d, d > b && (a.btnModel.needQuantity = d));
       a.btnModel.gachaCount = Math.floor(a.btnModel.needQuantity / d);
       return a
     };

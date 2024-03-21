@@ -386,66 +386,6 @@
   z-index: 10;
 }
 
-#StoryCollection #listWrap.main #main
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.mainSecond #mainSecond
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.puellaHistoria #puellaHistoria
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.sub #sub
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.subSecond #subSecond
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.chara #chara
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.arena #arena
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.event #unlockItems
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.event #event
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.accomplish #accomplish
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.special #unlockItems
-{
-  display: block;
-}
-
-#StoryCollection #listWrap.special #special
-{
-  display: block;
-}
-
 #StoryCollection #listWrap #main,
 #StoryCollection #listWrap #mainSecond,
 #StoryCollection #listWrap #puellaHistoria,
@@ -516,6 +456,66 @@
   font-size: 20px;
   line-height: 30px;
   text-align: center;
+}
+
+#StoryCollection #listWrap.main #main
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.mainSecond #mainSecond
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.puellaHistoria #puellaHistoria
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.sub #sub
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.subSecond #subSecond
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.chara #chara
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.arena #arena
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.event #unlockItems
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.event #event
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.accomplish #accomplish
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.special #unlockItems
+{
+  display: block;
+}
+
+#StoryCollection #listWrap.special #special
+{
+  display: block;
 }
 
 #StoryCollection #listWrap .wrap
