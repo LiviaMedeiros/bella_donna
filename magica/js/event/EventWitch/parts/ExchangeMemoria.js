@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/event/EventWitch/parts/ExchangeMemoria.html js/event/EventWitch/Model js/event/EventWitch/Utility js/event/EventWitch/parts/MemoriaDetailPopup js/event/EventWitch/parts/IconCharaGauge".split(" "), function(c, d, b, g, m, h, n, p, k, l)
+define("underscore backbone backboneCommon ajaxControl command text!template/event/EventWitch/parts/ExchangeMemoria.html js/event/EventWitch/Model js/event/EventWitch/Utility js/event/EventWitch/parts/MemoriaDetailPopup js/event/EventWitch/parts/IconCharaGauge".split(" "), function(c, h, b, e, n, k, p, q, l, m)
 {
-  var e;
-  return d.View.extend(
+  var d;
+  return h.View.extend(
   {
     className: function(a)
     {
@@ -17,7 +17,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     initialize: function(a)
     {
       var b = a.appendSelector;
-      this.template = c.template(h);
+      this.template = c.template(k);
       this.model = a.model;
       this._views = a._views;
       this.viewModel = this.createModel(
@@ -49,7 +49,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     },
     createDom: function()
     {
-      this._views["ExchangeIconCharaGauge" + this.viewModel.charaId] = new l(
+      this._views["ExchangeIconCharaGauge" + this.viewModel.charaId] = new m(
       {
         model: this.viewModel,
         appendSelector: ".ExchangeMemoriaMain.charaId" + this.viewModel.charaId
@@ -62,8 +62,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
       {
         var f = this.viewModel.charaId,
           c = this.viewModel.rewardPieceId,
-          d = this.viewModel.storyId;
-        e = new b.PopupClass(
+          g = this.viewModel.storyId;
+        d = new b.PopupClass(
         {
           popupType: "typeC",
           title: "メモリア獲得",
@@ -72,16 +72,23 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
           decideBtnText: "獲得する",
           decideBtnEvent: function()
           {
-            g.ajaxPost(b.linkList.eventWitchMemoriaExchange,
+            e.ajaxPost(b.linkList.eventWitchMemoriaExchange,
             {
               charaId: f
             }, function(a)
             {
-              "error" !== a.resultCode && (b.responseSetStorage(a), b.EventWitchMemoriaExchangeAnimePrm = {
-                charaId: f,
-                rewardPieceId: c,
-                storyId: d
-              }, location.href = "#/EventWitchExchangeAnimePage")
+              "error" !== a.resultCode && (b.responseSetStorage(a), e.ajaxPost(b.linkList.userQuestAdventureRegist,
+              {
+                adventureId: String(g)
+              }, function()
+              {
+                b.EventWitchMemoriaExchangeAnimePrm = {
+                  charaId: f,
+                  rewardPieceId: c,
+                  storyId: g
+                };
+                location.href = "#/EventWitchExchangeAnimePage"
+              }))
             })
           }
         }, null, null, null)
@@ -90,14 +97,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     tapMemoriaDetailBtn: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (this._views.MemoriaDetailPopup = new k(
+      b.isScrolled() || (this._views.MemoriaDetailPopup = new l(
       {
         model: this.viewModel.rewardPieceInfo
       }))
     },
     removeView: function()
     {
-      e && e.remove();
+      d && d.remove();
       this.off();
       this.remove()
     }

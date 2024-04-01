@@ -1869,9 +1869,9 @@
 {
   width: 180px;
   height: 66px;
-  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_alina_request.png") left top no-repeat;
+  background: url("/magica/resource/image_web/event/eventWitch/common/box_gacha/btn_alina_request_a.png") left top no-repeat;
   position: absolute;
-  left: 40px;
+  left: 80px;
   bottom: 30px;
   z-index: 2;
 }

@@ -59,7 +59,7 @@
 <div id='CampaignBoxGachaTop'>
   <div id='helpBtn' class='se_decide TE sb_gold_02' data-cpid="<%= this.cpId %>">遊び方</div>
   <div class="live2dArea"></div>
-  <img class='titleImg' src="/magica/resource/image_web/campaign/box_gacha/<%= this.cpId %>/box_title.png" alt=""> <% if(outerLink){ %> <div class="outerLinkBtn linkBtn TE se_decide" data-href="#/<%= outerLink %>"></div> <% } %> <% if(model.eventWitchInfo && model.eventWitchInfo.isEventEnd){ %> <div id="ToExchangeTopBtn" class="linkBtn TE se_decide" data-href="#/EventWitchExchangePage"></div> <% } %>
+  <img class='titleImg' src="/magica/resource/image_web/campaign/box_gacha/<%= this.cpId %>/box_title.png" alt=""> <% if(outerLink){ %> <div class="outerLinkBtn linkBtn TE se_decide" data-href="#/<%= outerLink %>"></div> <% } %> <% if(model.isEventWitchEnd){ %> <div id="ToExchangeTopBtn" class="linkBtn TE se_decide" data-href="#/EventWitchExchangePage"></div> <% } %>
 </div>
 <!-- ガチャ -->
 <script type="text/template" id="GachaTemp"> <%="<% var model = this.model.toJSON(); %\>"%>

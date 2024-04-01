@@ -1,10 +1,10 @@
-define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/campaign/box_gacha/CampaignBoxGachaTop.html text!css/campaign/box_gacha/CampaignBoxGachaTop.css js/memoria/MemoriaPopup js/card/CardPopup js/view/item/ItemImgPartsView js/event/EventWitch/Utility".split(" "), function(e, q, b, p, g, G, H, I, J, K, A, L)
+define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/campaign/box_gacha/CampaignBoxGachaTop.html text!css/campaign/box_gacha/CampaignBoxGachaTop.css js/memoria/MemoriaPopup js/card/CardPopup js/view/item/ItemImgPartsView js/event/EventWitch/Utility".split(" "), function(f, q, b, p, g, H, I, J, K, L, B, M)
 {
-  var x = q.Model.extend(
+  var y = q.Model.extend(
     {}),
-    l = new x(
+    m = new y(
     {}),
-    k, m, t, r, y, n, N = q.View.extend(
+    h, l, u, r, z, n, N = q.View.extend(
     {
       events: function()
       {
@@ -16,16 +16,16 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       initialize: function(a)
       {
         this.l2dTouchCnt = 0;
-        B.prototype.parentView = this;
-        this.cpId = m.id;
-        this.template = e.template(H);
+        C.prototype.parentView = this;
+        this.cpId = l.id;
+        this.template = f.template(I);
         this.createDom()
       },
       render: function()
       {
         this.$el.html(this.template(
         {
-          model: m
+          model: l
         }));
         return this
       },
@@ -34,13 +34,13 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         b.setGlobalView();
         b.content.append(this.render().el);
         g.setWebView();
-        var a = new B(
+        var a = new C(
         {
-          model: l
+          model: m
         });
         b.doc.querySelector("#CampaignBoxGachaTop").appendChild(a.render().el);
         b.ready.hide();
-        u(!0)
+        v(!0)
       },
       touch: function(a)
       {
@@ -70,14 +70,14 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           b.tapBlock(!0);
           var c = this,
             d = 6E4 * ((new Date).getTime() / 6E4 | 0);
-          require(["js/view/system/AnnounceView", "text!template/user/AnnouncePopupTemp.html", "text!json/event_banner/event_banner.json?bust=" + d, "text!json/announcements/announcements.json?bust=" + d], function(d, h, e, v)
+          require(["js/view/system/AnnounceView", "text!template/user/AnnouncePopupTemp.html", "text!json/event_banner/event_banner.json?bust=" + d, "text!json/announcements/announcements.json?bust=" + d], function(d, k, f, t)
           {
             new b.PopupClass(
             {
               title: "お知らせ",
               exClass: "announcementPopup",
               announce: !0
-            }, h, function()
+            }, k, function()
             {
               setTimeout(function()
               {
@@ -89,15 +89,15 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             });
             c.announceView = new d(
             {
-              bannerJson: e,
-              announcementJson: v,
+              bannerJson: f,
+              announcementJson: t,
               targetCampaign: Number(a.currentTarget.dataset.cpid)
             })
           })
         }
       }
     }),
-    B = q.View.extend(
+    C = q.View.extend(
     {
       events: function()
       {
@@ -108,11 +108,11 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       },
       initialize: function(a)
       {
-        C.prototype.parentView = this;
-        z.prototype.parentView = this;
         D.prototype.parentView = this;
+        A.prototype.parentView = this;
         E.prototype.parentView = this;
-        this.template = e.template($("#GachaTemp").text());
+        F.prototype.parentView = this;
+        this.template = f.template($("#GachaTemp").text());
         this.boxGachaContentView = null;
         this.listenTo(this.model, "change", this.render);
         this.listenTo(this.parentView, "removeView", this.removeView)
@@ -129,25 +129,25 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       createGachaBtn: function()
       {
         var a = b.doc.createDocumentFragment(),
-          c = l.toJSON(),
+          c = m.toJSON(),
           d = O(
           {
             gachaModel: c
           }),
-          f = d.gachaModel.boxGachaNum,
-          h = "";
-        5 > f && (h = "btnType2");
-        var M = this.model.get("gachaSchedule");
-        e.each(M.gachaKindList, function(b)
+          e = d.gachaModel.boxGachaNum,
+          k = "";
+        5 > e && (k = "btnType2");
+        var x = this.model.get("gachaSchedule");
+        f.each(x.gachaKindList, function(b)
         {
-          b.btnClass = h;
-          b = new z(
+          b.btnClass = k;
+          b = new A(
           {
             model: b
           });
           a.appendChild(b.render().el)
         });
-        5 <= f && (d = new D(
+        5 <= e && (d = new E(
         {
           model: d.btnModel
         }), a.appendChild(d.render().el));
@@ -165,10 +165,10 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           exClass: "boxContentsPop"
         }, null, function()
         {
-          this.boxGachaContentView = new E(
+          this.boxGachaContentView = new F(
           {
-            model: new x(this.model.toJSON()),
-            gachaScheduleList: k.gachaScheduleList
+            model: new y(this.model.toJSON()),
+            gachaScheduleList: h.gachaScheduleList
           });
           b.doc.querySelector("#popupArea .popupTextArea").appendChild(this.boxGachaContentView.render().el);
           g.getBaseData(b.getNativeObj());
@@ -197,14 +197,14 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             {
               var a = function(a)
               {
-                k.gachaScheduleList = a.gachaScheduleList;
-                k.userGachaGroupList = a.userGachaGroupList;
+                h.gachaScheduleList = a.gachaScheduleList;
+                h.userGachaGroupList = a.userGachaGroupList;
                 a = w(a);
-                l.clear(
+                m.clear(
                 {
                   silent: !0
                 });
-                l.set(a);
+                m.set(a);
                 b.g_popup_instance.popupView.close()
               }.bind(this);
               p.ajaxSimpleGet(b.linkList.CampaignBoxGachaTopPage, "", a)
@@ -220,12 +220,12 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         this.remove()
       }
     }),
-    E = q.View.extend(
+    F = q.View.extend(
     {
       initialize: function(a)
       {
         this.gachaScheduleList = a.gachaScheduleList;
-        this.template = e.template($("#GachaContentTemp").text());
+        this.template = f.template($("#GachaContentTemp").text());
         this.count = 0;
         this.listenTo(this.model, "change", this.render);
         this.listenTo(this.parentView, "removeView", this.removeView)
@@ -252,7 +252,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         b.isScrolled() || (a.currentTarget.classList.contains("arrowRight") ? this.count < this.gachaScheduleList.length - 1 && this.count++ : 0 < this.count && this.count--, 0 === this.count ? (this.model.clear(
         {
           silent: !0
-        }), this.model.set(e.clone(this.parentView.model.toJSON())), g.getBaseData(b.getNativeObj()), b.scrollSet("popScrollOuter", "popScrollInner")) : p.ajaxPost(b.linkList.campaignBoxGachaGetList,
+        }), this.model.set(f.clone(this.parentView.model.toJSON())), g.getBaseData(b.getNativeObj()), b.scrollSet("popScrollOuter", "popScrollInner")) : p.ajaxPost(b.linkList.campaignBoxGachaGetList,
         {
           gachaScheduleId: this.gachaScheduleList[this.count].id
         }, function(a)
@@ -261,7 +261,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             gachaScheduleList: this.gachaScheduleList,
             userGachaBoxList: 0 === this.count ? this.model.toJSON().userGachaBoxList : a.gachaBoxSetList
           };
-          a = e.clone(w(a));
+          a = f.clone(w(a));
           0 < this.count && (a.gachaSchedule = this.gachaScheduleList[this.count]);
           this.model.clear(
           {
@@ -273,12 +273,12 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         }.bind(this)))
       }
     }),
-    z = q.View.extend(
+    A = q.View.extend(
     {
       className: function()
       {
         var a = "gachaBtn TE se_decide " + this.model.btnClass;
-        "CAMPAIGN_BOX10" === this.model.beanKind && 10 > l.toJSON().gachaBoxRemainCount && (a += " off");
+        "CAMPAIGN_BOX10" === this.model.beanKind && 10 > m.toJSON().gachaBoxRemainCount && (a += " off");
         return a
       },
       events: function()
@@ -290,7 +290,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       initialize: function(a)
       {
         this.drawFlg = !1;
-        this.template = e.template($("#GachaBtnTemp").text());
+        this.template = f.template($("#GachaBtnTemp").text());
         this.listenTo(this.parentView, "removeView", this.removeView)
       },
       render: function()
@@ -301,9 +301,9 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       gachaPopup: function(a)
       {
         a.preventDefault();
-        if (!b.isScrolled() && (y = a = this.model, !this.checkCapacity() && !this.checkGachaPoint()))
+        if (!b.isScrolled() && (z = a = this.model, !this.checkCapacity() && !this.checkGachaPoint()))
         {
-          var c = e.template($("#GachaStartPop").text())(
+          var c = f.template($("#GachaStartPop").text())(
           {
             model: a,
             gachaModel: this.parentView.model.toJSON()
@@ -343,7 +343,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         if (c > a)
         {
           var d = this.model,
-            a = e.template($("#GachaCautionPop").text())(
+            a = f.template($("#GachaCautionPop").text())(
             {
               model: d,
               gachaModel: this.parentView.model.toJSON(),
@@ -375,7 +375,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         this.remove()
       }
     }),
-    D = q.View.extend(
+    E = q.View.extend(
     {
       className: function()
       {
@@ -392,7 +392,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       initialize: function(a)
       {
         this.drawFlg = !1;
-        this.template = e.template($("#GachaBtnTemp").text());
+        this.template = f.template($("#GachaBtnTemp").text());
         this.listenTo(this.parentView, "removeView", this.removeView)
       },
       render: function()
@@ -405,7 +405,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         a.preventDefault();
         if (!b.isScrolled() && (a = this.model, !this.checkCapacity() && !this.checkGachaPoint()))
         {
-          var c = e.template($("#AllGachaStartPop").text())(
+          var c = f.template($("#AllGachaStartPop").text())(
           {
             model: a,
             gachaModel: this.parentView.model.toJSON()
@@ -445,7 +445,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         if (c > a)
         {
           var d = this.model,
-            a = e.template($("#GachaCautionPop").text())(
+            a = f.template($("#GachaCautionPop").text())(
             {
               model: d,
               gachaModel: this.parentView.model.toJSON(),
@@ -477,7 +477,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         this.remove()
       }
     }),
-    C = q.View.extend(
+    D = q.View.extend(
     {
       className: function()
       {
@@ -506,16 +506,16 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         this.getCharaIdArr = [];
         this.getStickerArr = [];
         this.bonusRewardCode = [];
-        e.each(this.model.gachaModel.userGachaBoxList, function(a)
+        f.each(this.model.gachaModel.userGachaBoxList, function(a)
         {
           a.gachaBoxSet.bonusFlg && this.bonusRewardCode.push(a.gachaBoxSet.rewardCode)
         }.bind(this));
-        e.each(this.model.drawItemList, function(a)
+        f.each(this.model.drawItemList, function(a)
         {
           if (-1 < a.rewardCode.indexOf("_STICKER_")) this.getStickerArr.push(a);
           else if (-1 !== this.bonusRewardCode.indexOf(a.rewardCode) && a.isNew && -1 !== a.rewardCode.indexOf("CARD_"))
           {
-            var b = e.clone(this.model.drawItemList),
+            var b = f.clone(this.model.drawItemList),
               b = b.filter(function(a)
               {
                 return -1 !== a.rewardCode.indexOf("CARD_")
@@ -523,7 +523,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             this.getCharaIdArr = function()
             {
               var a = [];
-              e.each(b, function(b)
+              f.each(b, function(b)
               {
                 a.push(b.rewardData.itemData.cardModel.card.charaNo)
               });
@@ -531,7 +531,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             }()
           }
         }.bind(this));
-        this.template = e.template($("#GachaResult").text());
+        this.template = f.template($("#GachaResult").text());
         this.listenTo(this.parentView, "removeView", this.removeView)
       },
       render: function()
@@ -550,7 +550,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               this.chestDrop = !0;
               var c = b.doc.querySelectorAll(".drawItemWrap .drawItem"),
                 d = 0,
-                f = c.length - 1;
+                e = c.length - 1;
               this.dropEndTimer = setTimeout(function()
               {
                 this.chestOpentimer = setInterval(function()
@@ -560,7 +560,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
                   {
                     g.startSe(1604)
                   }, 370);
-                  f == d ? (clearTimeout(this.dropEndTimer), clearInterval(this.chestOpentimer), this.chestOpentimer = this.dropEndTimer = null, this.stickerCheck(88 * (f + 8))) : d++
+                  e == d ? (clearTimeout(this.dropEndTimer), clearInterval(this.chestOpentimer), this.chestOpentimer = this.dropEndTimer = null, this.stickerCheck(88 * (e + 8))) : d++
                 }.bind(this), 160)
               }.bind(this), 80)
             }
@@ -584,15 +584,15 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               this.getStickerArr = []
             }.bind(this));
             var a = this.getStickerArr[0],
-              f = e.template($("#RainforceApperStickerTemp").text()),
-              h = b.doc.createElement("div");
-            h.className = "rainforcedStickerDom";
-            h.innerHTML = f(
+              e = f.template($("#RainforceApperStickerTemp").text()),
+              k = b.doc.createElement("div");
+            k.className = "rainforcedStickerDom";
+            k.innerHTML = e(
             {
               drawModel: a,
               bonus: this.bonusRewardCode
             });
-            c.appendChild(h);
+            c.appendChild(k);
             setTimeout(function()
             {
               g.startSe(1604)
@@ -639,7 +639,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               g.startBgm(b.bgm);
               g.changeBg(b.background);
               g.setWebView(!0);
-              u();
+              v();
               b.addClass(b.doc.querySelector(".boxRemainWrap"), "show");
               b.addClass(b.doc.querySelector(".resultBtnWrap"), "show");
               this.compFlg = !0
@@ -665,29 +665,29 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               b.addClass(c, "animSkip");
               b.addClass(c, "hide")
             },
-            f = function()
+            e = function()
             {
               b.removeClass(c, "hide")
             },
-            h = a.currentTarget.dataset.typeId.split("_");
-          if (-1 < h[0].indexOf("card"))
+            k = a.currentTarget.dataset.typeId.split("_");
+          if (-1 < k[0].indexOf("card"))
           {
-            var h = b.storage.userCardList.findWhere(
+            var k = b.storage.userCardList.findWhere(
               {
-                cardId: h[1] | 0
+                cardId: k[1] | 0
               }).toJSON(),
-              e = b.storage.userCharaList.findWhere(
+              f = b.storage.userCharaList.findWhere(
               {
-                charaId: h.card.charaNo
+                charaId: k.card.charaNo
               }).toJSON(),
-              h = G.addExStatus($.extend(h, e));
-            K.instantPopup(a, h, f);
+              k = H.addExStatus($.extend(k, f));
+            L.instantPopup(a, k, e);
             d()
           }
-          else - 1 < h[0].indexOf("memoria") && (h = b.storage.userPieceList.findWhere(
+          else - 1 < k[0].indexOf("memoria") && (k = b.storage.userPieceList.findWhere(
           {
-            id: h[1]
-          }).toJSON(), h.closeEvent = f, J.instantPopup(a, h), d())
+            id: k[1]
+          }).toJSON(), k.closeEvent = e, K.instantPopup(a, k), d())
         }
       },
       closeResult: function(a)
@@ -698,19 +698,19 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           var c = function(a)
           {
             a = w(a);
-            l.clear(
+            m.clear(
             {
               silent: !0
             });
-            l.set(a);
+            m.set(a);
             this.btnView.removeView();
             this.removeView();
             b.androidKeyStop = !1;
-            u(!0)
+            v(!0)
           }.bind(this);
           a = function(a)
           {
-            0 === this.model.gachaModel.gachaBoxRemainCount ? (k.gachaScheduleList = a.gachaScheduleList, k.userGachaGroupList = a.userGachaGroupList, c(a), new b.PopupClass(
+            0 === this.model.gachaModel.gachaBoxRemainCount ? (h.gachaScheduleList = a.gachaScheduleList, h.userGachaGroupList = a.userGachaGroupList, c(a), new b.PopupClass(
             {
               title: "ボックス内容の変更",
               content: "ボックス内のすべてのアイテムを獲得したため、<br>ボックス内容をリセットして、次のボックスに変更しました。",
@@ -734,7 +734,7 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       if (!this.drawFlg)
       {
         this.drawFlg = b.androidKeyStop = !0;
-        var a = e.clone(this.parentView.model.toJSON()),
+        var a = f.clone(this.parentView.model.toJSON()),
           c = {
             gachaBeanKind: this.model.beanKind,
             gachaScheduleId: this.model.gachaScheduleIds | 0
@@ -745,66 +745,66 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           b.isScrolled() || ($("#popupArea").off(), g.nativeReload("#/CampaignBoxGachaTop"))
         });
         b.g_popup_instance.popupView.close();
-        var d = function(d)
+        var d = function(e)
         {
-          b.responseSetStorage(d);
+          b.responseSetStorage(e);
           this.parentView.model.unset("userUseItem",
           {
             silent: !0
           });
-          this.parentView.model.set(e.clone(F()));
-          var h = [];
-          d.userPieceList && e.each(d.userPieceList, function(a, b)
+          this.parentView.model.set(f.clone(G()));
+          var d = [];
+          e.userPieceList && f.each(e.userPieceList, function(a, b)
           {
             b = {};
             b.id = a.id;
             b.pieceId = a.pieceId;
-            h.push(b)
+            d.push(b)
           });
-          d = d.gachaAnimation.gachaResultList;
-          var f = [],
-            v = d.length;
-          e.each(d, function(a)
+          e = e.gachaAnimation.gachaResultList;
+          var x = [],
+            t = e.length;
+          f.each(e, function(a)
           {
-            a = e.clone(a);
+            a = f.clone(a);
             var c = a.rewardCode;
             a.rewardData = {};
             if (-1 < c.indexOf("_STICKER_"))
             {
               a.rewardData.rewardType = "sticker";
               a.rewardData.itemData = {};
-              for (var d = c.split("_"), c = "", v = d.length - 1, g = 1; g < v; g++) "" !== c && (c += "_"), c += d[g];
+              for (var e = c.split("_"), c = "", k = e.length - 1, t = 1; t < k; t++) "" !== c && (c += "_"), c += e[t];
               a.rewardData.itemData = b.storage.itemList.findWhere(
               {
                 itemCode: c
               }).toJSON()
             }
             else a.rewardData.rewardType = -1 < c.indexOf("GIFT_") ? "gift" : -1 < c.indexOf("LIVE2D_") ? "live2d" : -1 < c.indexOf("DOPPEL_") ? "doppel" : -1 < c.indexOf("GEM_") ? "gem" : -1 < c.indexOf("CARD") ? "card" : -1 < c.indexOf("PIECE_") ? "memoria" : "main", a.rewardData.itemData = b.itemSet(c);
-            a.rewardData.itemData.rewardType && "ITEM" == a.rewardData.itemData.rewardType && (a.rewardData.rewardType = "main"); - 1 < c.indexOf("CARD") && a.itemId && -1 < a.itemId.indexOf("LIMIT_BREAK_CHARA") && (a.rewardData.isLimitBreak = !0); - 1 < c.indexOf("PIECE_") && a.rewardData.itemData.rewardType && "PIECE" == a.rewardData.itemData.rewardType ? (d = e.findWhere(h,
+            a.rewardData.itemData.rewardType && "ITEM" == a.rewardData.itemData.rewardType && (a.rewardData.rewardType = "main"); - 1 < c.indexOf("CARD") && a.itemId && -1 < a.itemId.indexOf("LIMIT_BREAK_CHARA") && (a.rewardData.isLimitBreak = !0); - 1 < c.indexOf("PIECE_") && a.rewardData.itemData.rewardType && "PIECE" == a.rewardData.itemData.rewardType ? (e = f.findWhere(d,
             {
               pieceId: c.split("_")[1] | 0
-            }), c = "memoria_" + d.id, h.splice(e.findIndex(h, d), 1)) : c = c.toLowerCase();
+            }), c = "memoria_" + e.id, d.splice(f.findIndex(d, e), 1)) : c = c.toLowerCase();
             a.rewardData.typeId = c;
-            f.push(a)
+            x.push(a)
           });
-          a.gachaBoxRemainCount -= v;
+          a.gachaBoxRemainCount -= t;
           a.name = this.model.name;
           this.parentView.model.set("gachaBoxRemainCount", a.gachaBoxRemainCount);
-          d = {
+          e = {
             gachaPrm: c,
-            drawItemList: f,
+            drawItemList: x,
             gachaModel: a
           };
           r && (r.btnView.removeView(), r.removeView(), r = null);
-          r = new C(
+          r = new D(
           {
-            model: d
+            model: e
           });
           b.doc.querySelector("#overlapContainer").appendChild(r.render().el);
           g.startSe(1603);
-          r.btnView = new z(
+          r.btnView = new A(
           {
-            model: y,
+            model: z,
             el: b.doc.querySelector("#resultOnceBtn")
           });
           g.getBaseData(b.getNativeObj());
@@ -836,9 +836,9 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
             {
               silent: !0
             });
-            this.parentView.model.set(e.clone(F()));
-            var d = [];
-            e.each(c.resultList, function(a, c, f)
+            this.parentView.model.set(f.clone(G()));
+            var e = [];
+            f.each(c.resultList, function(a, c, d)
             {
               a = b.getRewardInfoForBogetGacha(
               {
@@ -846,20 +846,20 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               });
               "CARD" == a.rewardType && (a.chara = a.charaModel.chara, a.card = a.cardModel.card);
               "GIFT" == a.rewardType && (a.genericId = a.giftModel.id);
-              d.push(a)
+              e.push(a)
             });
             R(
             {
               isAllGet: a.model.isAllGet,
-              rewardList: d
+              rewardList: e
             });
             g.startSe(1603);
             g.getBaseData(b.getNativeObj());
             this.drawFlg = !1
           }.bind(this),
-          f = b.linkList.campaignBoxGachaAllItemUseResult;
-        a.model.isAllGet && (f = b.linkList.campaignBoxGachaAllResult);
-        p.ajaxPost(f, c, d)
+          e = b.linkList.campaignBoxGachaAllItemUseResult;
+        a.model.isAllGet && (e = b.linkList.campaignBoxGachaAllResult);
+        p.ajaxPost(e, c, d)
       }
     },
     R = function(a)
@@ -875,11 +875,11 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         exClass: "popupDetail"
       }, null, function()
       {
-        A.prototype.rootView = this;
+        B.prototype.rootView = this;
         var a = b.doc.createDocumentFragment();
-        e.each(c, function(b)
+        f.each(c, function(b)
         {
-          b = new A(
+          b = new B(
           {
             model: b,
             type: b.rewardType
@@ -895,18 +895,18 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         var a = function(a)
           {
             a = w(a);
-            l.clear(
+            m.clear(
             {
               silent: !0
             });
-            l.set(a);
+            m.set(a);
             b.androidKeyStop = !1;
-            u(!0)
+            v(!0)
           },
           c = function()
           {
             var a = "";
-            e.each("itemList userItemList userStatusList userPieceList gameUser userCardList userCharaList userGiftList".split(" "), function(b, c, d)
+            f.each("itemList userItemList userStatusList userPieceList gameUser userCardList userCharaList userGiftList".split(" "), function(b, c, d)
             {
               a = a + "," + b
             });
@@ -915,9 +915,9 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
         p.ajaxSimpleGet(b.linkList.CampaignBoxGachaTopPage + "?value=" + c, "", function(c)
         {
           b.responseSetStorage(c);
-          k.itemList = c.itemList;
-          k.gachaScheduleList = c.gachaScheduleList;
-          k.userGachaGroupList = c.userGachaGroupList;
+          h.itemList = c.itemList;
+          h.gachaScheduleList = c.gachaScheduleList;
+          h.userGachaGroupList = c.userGachaGroupList;
           d ? (a(c), new b.PopupClass(
           {
             title: "ボックス内容の変更",
@@ -929,80 +929,80 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
     },
     w = function(a)
     {
-      k.gachaScheduleList = function()
+      h.gachaScheduleList = function()
       {
         var a = [],
           b = !1;
-        e.each(k.gachaScheduleList, function(c)
+        f.each(h.gachaScheduleList, function(c)
         {
           if (!b && c.enable || b) b = !0, a.push(c)
         });
         return a
       }();
-      var c = e.sortBy(a.userGachaBoxList, function(a)
+      var c = f.sortBy(a.userGachaBoxList, function(a)
       {
         return a.displayOrder || a.gachaBoxSet.displayOrder
       });
-      a = k.itemList;
+      a = h.itemList;
       var d = b.storage.userItemList.toJSON(),
-        f = {};
-      e.each(k.gachaScheduleList, function(a)
+        e = {};
+      f.each(h.gachaScheduleList, function(a)
       {
-        a.enable && (f.gachaSchedule = a)
+        a.enable && (e.gachaSchedule = a)
       });
       c = S(c);
-      f.gachaBoxMaxCount = c.gachaBoxMaxCount;
-      f.gachaBoxRemainCount = c.gachaBoxRemainCount;
-      f.userGachaBoxList = c.userGachaBoxList;
-      f.isBoxBonus = c.isBoxBonus;
-      f.useItem = e.findWhere(a,
+      e.gachaBoxMaxCount = c.gachaBoxMaxCount;
+      e.gachaBoxRemainCount = c.gachaBoxRemainCount;
+      e.userGachaBoxList = c.userGachaBoxList;
+      e.isBoxBonus = c.isBoxBonus;
+      e.useItem = f.findWhere(a,
       {
-        itemCode: m.parameterMap.CAMPAIGN_ITEM_ID
+        itemCode: l.parameterMap.CAMPAIGN_ITEM_ID
       });
-      f.userUseItem = e.findWhere(d,
+      e.userUseItem = f.findWhere(d,
       {
-        itemId: m.parameterMap.CAMPAIGN_ITEM_ID
+        itemId: l.parameterMap.CAMPAIGN_ITEM_ID
       }) ||
       {
         quantity: 0
       };
-      f.boxGachaNum = k.userGachaGroupList.length ? k.userGachaGroupList[0].resetCount + 1 : 1;
-      return f
+      e.boxGachaNum = h.userGachaGroupList.length ? h.userGachaGroupList[0].resetCount + 1 : 1;
+      return e
     },
     S = function(a)
     {
       var b = {},
         d = 0,
-        f = 0;
+        e = 0;
       b.isBoxBonus = !0;
       var g = !1,
-        k = 0;
-      e.each(a, function(a)
+        h = 0;
+      f.each(a, function(a)
       {
         d += a.gachaBoxSet ? a.gachaBoxSet.count : a.count;
-        f += a.gachaBoxSet ? a.gachaBoxSet.count - a.count : a.count;
-        a.gachaBoxSet && a.gachaBoxSet.bonusFlg && (g = !0, k += a.gachaBoxSet.count - a.count)
+        e += a.gachaBoxSet ? a.gachaBoxSet.count - a.count : a.count;
+        a.gachaBoxSet && a.gachaBoxSet.bonusFlg && (g = !0, h += a.gachaBoxSet.count - a.count)
       });
-      g && 0 == k && (b.isBoxBonus = !1);
+      g && 0 == h && (b.isBoxBonus = !1);
       b.gachaBoxMaxCount = d;
-      b.gachaBoxRemainCount = f;
+      b.gachaBoxRemainCount = e;
       b.userGachaBoxList = a;
       return b
     },
-    F = function()
+    G = function()
     {
       var a = {},
         c = b.storage.userItemList.toJSON();
-      a.userUseItem = e.findWhere(c,
+      a.userUseItem = f.findWhere(c,
       {
-        itemId: m.parameterMap.CAMPAIGN_ITEM_ID
+        itemId: l.parameterMap.CAMPAIGN_ITEM_ID
       }) ||
       {
         quantity: 0
       };
       return a
     },
-    u = function(a)
+    v = function(a)
     {
       g.endL2d();
       var c = {
@@ -1019,9 +1019,9 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           c.type = 0;
           a = "vo_char_" + d + "_" + n.substring(n.length - 2, n.length) + "_";
           var d = [],
-            f = Number(k.currentTime.split(" ")[1].split(":")[0]),
-            e = Number(k.currentTime.split(" ")[1].split(":")[1]);
-          6 <= f && 9 >= f && !(9 == f && 0 < e) ? d.push(24) : 11 <= f && 13 >= f && !(13 == f && 0 < e) ? d.push(25) : 17 <= f && 19 >= f && !(19 == f && 0 < e) ? d.push(26) : (22 <= f || 0 == f && !(0 == f && 0 < e)) && d.push(27);
+            e = Number(h.currentTime.split(" ")[1].split(":")[0]),
+            f = Number(h.currentTime.split(" ")[1].split(":")[1]);
+          6 <= e && 9 >= e && !(9 == e && 0 < f) ? d.push(24) : 11 <= e && 13 >= e && !(13 == e && 0 < f) ? d.push(25) : 17 <= e && 19 >= e && !(19 == e && 0 < f) ? d.push(26) : (22 <= e || 0 == e && !(0 == e && 0 < f)) && d.push(27);
           d.push(28);
           d.push(23);
           b.storage.userStatusList.findWhere(
@@ -1050,17 +1050,17 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       a = {
         gachaModel: b
       };
-      a.btnModel = JSON.parse(JSON.stringify(e.findWhere(b.gachaSchedule.gachaKindList,
+      a.btnModel = JSON.parse(JSON.stringify(f.findWhere(b.gachaSchedule.gachaKindList,
       {
         groupId: 1
       })));
       a.btnModel.name = "キャンペーンガチャ";
       a.btnModel.displayTitle = "全て引く";
       var d = a.btnModel.needQuantity,
-        f = d * b.gachaBoxRemainCount,
+        e = d * b.gachaBoxRemainCount,
         b = b.userUseItem.quantity;
       a.btnModel.isAllGet = !1;
-      f <= b ? (a.btnModel.needQuantity = f, a.btnModel.isAllGet = !0) : (a.btnModel.needQuantity = Math.floor(b / d) * d, d > b && (a.btnModel.needQuantity = d));
+      e <= b ? (a.btnModel.needQuantity = e, a.btnModel.isAllGet = !0) : (a.btnModel.needQuantity = Math.floor(b / d) * d, d > b && (a.btnModel.needQuantity = d));
       a.btnModel.gachaCount = Math.floor(a.btnModel.needQuantity / d);
       return a
     };
@@ -1132,47 +1132,42 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
     },
     init: function()
     {
-      k = p.getPageJson();
-      m = e.findWhere(k.campaignList,
+      h = p.getPageJson();
+      l = f.findWhere(h.campaignList,
       {
         campaignType: "BOX_GACHA"
       });
-      n = m.parameterMap.LIVE2D_ID;
-      if (m.parameterMap && m.parameterMap.BGM && m.parameterMap.BG_IMG)
+      n = l.parameterMap.LIVE2D_ID;
+      if (l.parameterMap && l.parameterMap.BGM && l.parameterMap.BG_IMG)
       {
-        var a = m.parameterMap.BGM;
-        g.changeBg(m.parameterMap.BG_IMG + ".ExportJson");
+        var a = l.parameterMap.BGM;
+        g.changeBg(l.parameterMap.BG_IMG + ".ExportJson");
         g.startBgm(a)
       }
       else g.changeBg("web_common.ExportJson"), g.startBgm("bgm01_anime07");
-      var a = m,
-        c = {
-          isEventEnd: !1
-        },
-        d = L.getEventMaster(
-        {
-          pageJson: k
-        });
-      d && "exchangeOnly" == d.termStatus && (c.isEventEnd = !0);
-      a.eventWitchInfo = c;
-      a = w(k);
-      l.set(a);
-      b.setStyle(I);
-      t = new N
+      l.isEventWitchEnd = M.getEventWitchCampaign(
+      {
+        pageJson: h,
+        campaignInfo: l
+      });
+      a = w(h);
+      m.set(a);
+      b.setStyle(J);
+      u = new N
     },
     beforeMovieStart: function()
     {
-      t && g.endL2d()
+      u && g.endL2d()
     },
     afterMovieEnd: function()
     {
-      t && u()
+      u && v()
     },
     remove: function(a)
     {
       g.endL2d();
-      t && (t.trigger("removeView"), t.remove(), l && (l.clear(), l = new x(
-      {})), y = null);
+      u && (u.trigger("removeView"), u.remove(), m && (m.clear(), m = new y(
+      {})), z = null);
       a()
     }
   }

@@ -1,49 +1,65 @@
-define("underscore backbone backboneCommon command ajaxControl QuestUtil memoriaUtil".split(" "), function(d, r, h, t, u, n, m)
+define("underscore backbone backboneCommon command ajaxControl QuestUtil memoriaUtil".split(" "), function(f, q, k, r, t, p, n)
 {
-  var k = {
+  var h = {
     pointTypeList: ["eyesight", "hearing", "smell", "taste", "touch"],
     getEventMaster: function(a)
     {
       var c = a.pageJson,
-        b;
-      d.each(c.eventList, function(a, f, d)
-      {
-        "WITCH" == a.eventType && (b = a, b.pageInfo = {
-          sectionList:
+        b, d = function(a)
+        {
+          var b = a.eventInfo;
+          a = a.currentTime;
+          var c;
+          b && "WITCH" == b.eventType && (c = b, c.pageInfo = {
+            sectionList:
+            {
+              normalSectionId: Number(b.parameterMap.NORMALSECTIONID),
+              subSectionId: Number(b.parameterMap.SUBSECTIONID),
+              challengeSectionId: Number(b.parameterMap.CHALLENGESECTIONID)
+            },
+            bgm: b.viewParameterMap.BGM,
+            subItemId: b.viewParameterMap.SUBITEMID
+          }, c.termStatus = "close", k.getStatusTargetTermInCurrentTime(
           {
-            normalSectionId: Number(a.parameterMap.NORMALSECTIONID),
-            subSectionId: Number(a.parameterMap.SUBSECTIONID),
-            challengeSectionId: Number(a.parameterMap.CHALLENGESECTIONID)
-          },
-          bgm: a.viewParameterMap.BGM,
-          subItemId: a.viewParameterMap.SUBITEMID
-        }, b.termStatus = "close", h.getStatusTargetTermInCurrentTime(
+            startAt: c.startAt,
+            endAt: c.endAt,
+            currentTime: a
+          }) ? c.termStatus = "canPlay" : k.getStatusTargetTermInCurrentTime(
+          {
+            startAt: c.endAt,
+            endAt: c.closeAt,
+            currentTime: a
+          }) && (c.termStatus = "exchangeOnly"), c.isOpen = !1, k.getStatusTargetTermInCurrentTime(
+          {
+            startAt: c.startAt,
+            endAt: c.closeAt,
+            currentTime: a
+          }) && (c.isOpen = !0));
+          return c
+        };
+      f.each(c.eventList, function(a, f, l)
+      {
+        b = d(
         {
-          startAt: b.startAt,
-          endAt: b.endAt,
+          eventInfo: a,
           currentTime: c.currentTime
-        }) ? b.termStatus = "canPlay" : h.getStatusTargetTermInCurrentTime(
-        {
-          startAt: b.endAt,
-          endAt: b.closeAt,
-          currentTime: c.currentTime
-        }) && (b.termStatus = "exchangeOnly"), b.isOpen = !1, h.getStatusTargetTermInCurrentTime(
-        {
-          startAt: b.startAt,
-          endAt: b.closeAt,
-          currentTime: c.currentTime
-        }) && (b.isOpen = !0))
+        })
       });
+      b || (b = d(
+      {
+        eventInfo: c.eventWitchMaster,
+        currentTime: c.currentTime
+      }));
       return b
     },
     IsEventWitchSection: function(a)
     {
       var c = a.section,
         b = !1;
-      (a = k.getEventMaster(
+      (a = h.getEventMaster(
       {
         pageJson: a.pageJson
-      })) && d.each(a.pageInfo.sectionList, function(a, f, d)
+      })) && f.each(a.pageInfo.sectionList, function(a, g, f)
       {
         a == c.sectionId && (b = !0)
       });
@@ -54,31 +70,31 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       var c = a.questBattle,
         b = c.sectionId;
       a = a.pageJson;
-      var g = {
+      var d = {
           isGaugeBattle: !1
         },
-        f = k.getEventMaster(
+        g = h.getEventMaster(
         {
           pageJson: a
         });
-      f && f.pageInfo.sectionList.normalSectionId == b && (g.isGaugeBattle = !0, g.pointType = k.getPointType(
+      g && g.pageInfo.sectionList.normalSectionId == b && (d.isGaugeBattle = !0, d.pointType = h.getPointType(
       {
         questBattle: c
-      }), g.factorItemIdList = k.getFactorItemIdList(
+      }), d.factorItemIdList = h.getFactorItemIdList(
       {
         eventWitch: a.eventWitch
       }));
-      return g
+      return d
     },
     getFactorItemIdList: function(a)
     {
       var c = a.eventWitch,
         b = [];
-      d.each(k.pointTypeList, function(a, f, e)
+      f.each(h.pointTypeList, function(a, g, e)
       {
-        d.each(c, function(c, p, f)
+        f.each(c, function(c, d, g)
         {
-          a + "ItemId" == p && b.push(c)
+          a + "ItemId" == d && b.push(c)
         })
       });
       return b
@@ -93,7 +109,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     getFactorInfo: function(a)
     {
       var c = [];
-      d.each(a.infoList, function(a, d, f)
+      f.each(a.infoList, function(a, d, g)
       {
         ~String(d).indexOf("Factor") && (a = {
           type: d.replace("Factor", ""),
@@ -107,19 +123,19 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       var c = a.questBattleModel,
         b = a.sectionModel,
         d = a.userQuestAdventureList;
-      h.questBattleModel = k.getCommonQuestBattleModel(
+      k.questBattleModel = h.getCommonQuestBattleModel(
       {
         questBattleModel: c,
         sectionModel: b,
         userQuestAdventureList: d,
         factorItemIdList: a.factorItemIdList
       });
-      k.isEnoughAP(
+      h.isEnoughAP(
       {
-        needAP: h.questBattleModel.ap
-      }) ? location.href = "#/SupportSelect" : h.globalMenuView.apPopup(null, "APが不足しています", function()
+        needAP: k.questBattleModel.ap
+      }) ? location.href = "#/SupportSelect" : k.globalMenuView.apPopup(null, "APが不足しています", function()
       {
-        k.startQuest(
+        h.startQuest(
         {
           questBattleModel: c,
           sectionModel: b,
@@ -131,15 +147,15 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     {
       var c = a.sectionModel,
         b = a.questBattleModel,
-        g = a.userQuestAdventureList,
-        f = a.factorItemIdList;
+        d = a.userQuestAdventureList,
+        g = a.factorItemIdList;
       b.missionRewardCode = {
         itemCode: "",
         rewardType: ""
       };
       b.chestColor = "bronze_close";
-      b.questBattle.missionRewardCode && (b.missionRewardCode = h.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
-      "NONE" == b.questBattle.questBattleType && d.each([1, 2, 3], function(a, c, d)
+      b.questBattle.missionRewardCode && (b.missionRewardCode = k.itemSet(b.questBattle.missionRewardCode), b.chestColor = b.missionRewardCode.chestColor);
+      "NONE" == b.questBattle.questBattleType && f.each([1, 2, 3], function(a, c, d)
       {
         b.questBattle["missionMaster" + a] = {
           description: ""
@@ -152,7 +168,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       b.genericIndex = e.genericIndex;
       b.title = e.title;
       b.battleTitle = "-";
-      b.userQuestAdventureList = g;
+      b.userQuestAdventureList = d;
       e.secret && (b.secret = e.secret);
       b.ap = function()
       {
@@ -164,16 +180,16 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       }();
       b.difficulty = e.difficulty ? e.difficulty : b.questBattle.difficulty;
       b.rewardCodeArr = [];
-      a = n.dropItemJson(b);
+      a = p.dropItemJson(b);
       var l = [];
-      d.each(a.list, function(a, b, c)
+      f.each(a.list, function(a, b, c)
       {
-        var g = !1;
-        d.each(f, function(b, c, d)
+        var d = !1;
+        f.each(g, function(b, c, g)
         {
-          ~a.indexOf(b.toLowerCase()) && (g = !0)
+          ~a.indexOf(b.toLowerCase()) && (d = !0)
         });
-        g || l.push(a)
+        d || l.push(a)
       });
       a.list = l;
       a.firstClearReward && (b.firstClearReward = a.firstClearReward);
@@ -190,7 +206,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     isEnoughAP: function(a)
     {
       a = a.needAP;
-      var c = h.globalMenuView.getUserStatus().ACP,
+      var c = k.globalMenuView.getUserStatus().ACP,
         b = !1;
       a && c >= a && (b = !0);
       0 == a && (b = !0);
@@ -200,19 +216,19 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     {
       var c = a.campaignData,
         b = a.sectionModel,
-        g = a.questBattleModel,
-        f = null,
+        d = a.questBattleModel,
+        g = null,
         e = !1;
-      c && (c.FREE_AT_NOT_CLEAR && (0 < c.FREE_AT_NOT_CLEAR.sectionIds.length && 0 <= c.FREE_AT_NOT_CLEAR.sectionIds.indexOf(String(b.sectionId)) ? e = !0 : 0 < c.FREE_AT_NOT_CLEAR.chapterIds.length && 0 <= c.FREE_AT_NOT_CLEAR.chapterIds.indexOf(String(b.section.genericId)) ? e = !0 : !e && c.FREE_AT_NOT_CLEAR.questType && d.each(c.FREE_AT_NOT_CLEAR.questType, function(a, c)
+      c && (c.FREE_AT_NOT_CLEAR && (0 < c.FREE_AT_NOT_CLEAR.sectionIds.length && 0 <= c.FREE_AT_NOT_CLEAR.sectionIds.indexOf(String(b.sectionId)) ? e = !0 : 0 < c.FREE_AT_NOT_CLEAR.chapterIds.length && 0 <= c.FREE_AT_NOT_CLEAR.chapterIds.indexOf(String(b.section.genericId)) ? e = !0 : !e && c.FREE_AT_NOT_CLEAR.questType && f.each(c.FREE_AT_NOT_CLEAR.questType, function(a, c)
       {
         if ("ALL" === a || a == b.section.questType) e = !0
-      })), c.HALF_AP && d.each(c.HALF_AP.questType, function(a, d)
+      })), c.HALF_AP && f.each(c.HALF_AP.questType, function(a, f)
       {
-        if ("MAIN" == a || "SUB" == a) a == b.section.questType && (0 <= c.HALF_AP.chapterIds.indexOf(String(b.section.genericId)) || 0 === c.HALF_AP.chapterIds.length) && (f = Math.ceil(b.section.ap / 2), g.questBattle.ap && (f = Math.ceil(g.questBattle.ap / 2)));
-        else if ("ALL" == a || a == b.section.questType) f = Math.ceil(b.section.ap / 2), g.questBattle.ap && (f = Math.ceil(g.questBattle.ap / 2))
+        if ("MAIN" == a || "SUB" == a) a == b.section.questType && (0 <= c.HALF_AP.chapterIds.indexOf(String(b.section.genericId)) || 0 === c.HALF_AP.chapterIds.length) && (g = Math.ceil(b.section.ap / 2), d.questBattle.ap && (g = Math.ceil(d.questBattle.ap / 2)));
+        else if ("ALL" == a || a == b.section.questType) g = Math.ceil(b.section.ap / 2), d.questBattle.ap && (g = Math.ceil(d.questBattle.ap / 2))
       }));
       a = {};
-      a.halfAp = f;
+      a.halfAp = g;
       a.freeAtNotClear = e;
       return a
     },
@@ -221,9 +237,9 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       var c = a.pageType;
       c || (c = "top");
       var b = a.eventWitch,
-        g = a.userItemList,
-        f = [];
-      d.each(a.eventWitchCharaList, function(a, e, v)
+        d = a.userItemList,
+        g = [];
+      f.each(a.eventWitchCharaList, function(a, e, u)
       {
         e = {
           charaId: a.charaId,
@@ -231,53 +247,53 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
           targetPoint: a.targetValue,
           rewardPieceId: a.rewardPieceId,
           storyId: a.storyId,
-          factorUpList: k.getFactorInfo(
+          factorUpList: h.getFactorInfo(
           {
             infoList: a
           })
         };
-        var q = k.pointTypeList,
-          l = 0;
-        d.each(b, function(b, c, f)
+        var l = h.pointTypeList,
+          m = 0;
+        f.each(b, function(b, c, g)
         {
-          d.each(g, function(f, e, g)
+          f.each(d, function(d, g, e)
           {
-            d.each(q, function(e, g, k)
+            f.each(l, function(g, e, h)
             {
-              b == f.itemId && c == e + "ItemId" && d.each(a, function(a, b, c)
+              b == d.itemId && c == g + "ItemId" && f.each(a, function(a, b, c)
               {
-                b == e + "Factor" && (l += f.quantity * a)
+                b == g + "Factor" && (m += d.quantity * a)
               })
             })
           })
         });
-        e.currentPoint = l;
-        e.currentRatio = Math.round(l / a.targetValue * 100);
+        e.currentPoint = m;
+        e.currentRatio = Math.floor(m / a.targetValue * 100);
         100 <= e.currentRatio && (e.currentRatio = 100);
         e.beforeRatio = 0;
-        h.EventWitchPrm && h.EventWitchPrm.beforeRatioList && h.EventWitchPrm.beforeRatioList["charaId" + a.charaId] && (e.beforeRatio = h.EventWitchPrm.beforeRatioList["charaId" + a.charaId]);
-        k.getRatioAngle(
+        k.EventWitchPrm && k.EventWitchPrm.beforeRatioList && k.EventWitchPrm.beforeRatioList["charaId" + a.charaId] && (e.beforeRatio = k.EventWitchPrm.beforeRatioList["charaId" + a.charaId]);
+        h.getRatioAngle(
         {
           ratioObj: e
         });
-        f.push(e)
+        g.push(e)
       });
-      var e = k.getEachTypeUpList(
+      var e = h.getEachTypeUpList(
       {
-        eventCharaInfo: f
+        eventCharaInfo: g
       });
-      d.each(f, function(a, b, c)
+      f.each(g, function(a, b, c)
       {
         a.factorUpList = [];
-        d.each(e, function(b, c, f)
+        f.each(e, function(b, c, d)
         {
-          d.each(b, function(b, c, d)
+          f.each(b, function(b, c, d)
           {
             b.charaId == a.charaId && a.factorUpList.push(b)
           })
         })
       });
-      return f
+      return g
     },
     getRatioAngle: function(a)
     {
@@ -293,7 +309,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
         b = a.isForceOpen,
         d = a.callback;
       localStorage.getItem("WatchEventWitchOpenFirstNavi") != c && (localStorage.setItem("WatchEventWitchOpenFirstNavi", c), b = !0);
-      b ? h.eventFirstNavi(["navi_01", "navi_02", "navi_03", "navi_04"], c, "eventWitch", function()
+      b ? k.eventFirstNavi(["navi_01", "navi_02", "navi_03", "navi_04"], c, "eventWitch", function()
       {
         d && d()
       }, null, "event") : d && d()
@@ -305,10 +321,10 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       var b = !1;
       if (c && a && a.userItemList)
       {
-        var g = c.viewParameterMap.SUBITEMID;
-        d.each(a.userItemList, function(a, c, d)
+        var d = c.viewParameterMap.SUBITEMID;
+        f.each(a.userItemList, function(a, c, f)
         {
-          a.itemId == g && (b = a)
+          a.itemId == d && (b = a)
         })
       }
       return b
@@ -316,7 +332,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     getBeforeRatioList: function(a)
     {
       var c = {};
-      d.each(a.eventCharaInfo, function(a, d, f)
+      f.each(a.eventCharaInfo, function(a, d, g)
       {
         c["charaId" + a.charaId] = a.currentRatio
       });
@@ -326,26 +342,26 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     {
       var c = a.eventCharaInfo,
         b = {};
-      d.each(k.pointTypeList, function(a, e, g)
+      f.each(h.pointTypeList, function(a, d, h)
       {
-        var f = [];
-        d.each(c, function(b, c, e)
+        var g = [];
+        f.each(c, function(b, c, d)
         {
-          d.each(b.factorUpList, function(c, d, e)
+          f.each(b.factorUpList, function(c, d, f)
           {
-            c.type == a && (c.charaId = b.charaId, f.push(c))
+            c.type == a && (c.charaId = b.charaId, g.push(c))
           })
         });
-        b[a] = f
+        b[a] = g
       });
-      d.each(b, function(a, b, c)
+      f.each(b, function(a, b, c)
       {
         a.sort(function(a, b)
         {
           return b.val - a.val
         })
       });
-      var g = {
+      var d = {
         1: "3",
         2: "2",
         3: "1",
@@ -357,17 +373,17 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
         9: "1",
         10: "1"
       };
-      d.each(b, function(a, b, c)
+      f.each(b, function(a, b, c)
       {
-        var e = 1,
-          f;
-        d.each(a, function(b, c, k)
+        var g = 1,
+          e;
+        f.each(a, function(b, c, h)
         {
-          var h = !1;
-          f || (f = b.val);
-          d.each(a, function(a, c, d)
+          var k = !1;
+          e || (e = b.val);
+          f.each(a, function(a, c, f)
           {
-            b.iconName || a.iconName || (b.val != a.val || h ? h = !0 : (f != b.val && (e += 1), b.iconName = "arrow_" + g[e], f = b.val))
+            b.iconName || a.iconName || (b.val != a.val || k ? k = !0 : (e != b.val && (g += 1), b.iconName = "arrow_" + d[g], e = b.val))
           })
         })
       });
@@ -376,12 +392,22 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
     getMemoriaMaxStatus: function(a)
     {
       a = a.memoriaInfo;
-      var c = m.getMaxLevel(a.rank, 4);
-      return m.getParam(
+      var c = n.getMaxLevel(a.rank, 4);
+      return n.getParam(
       {
         piece: a
       }, c)
+    },
+    getEventWitchCampaign: function(a)
+    {
+      var c = a.campaignInfo,
+        b = !1;
+      !h.getEventMaster(
+      {
+        pageJson: a.pageJson
+      }) && c.parameterMap && c.parameterMap.EVENTTYPE && "WITCH" == c.parameterMap.EVENTTYPE && (b = !0);
+      return b
     }
   };
-  return k
+  return h
 });

@@ -90,12 +90,12 @@ define("underscore backbone backboneCommon ajaxControl command js/event/EventWit
           status: "NEW",
           questClearList: function()
           {
-            var d = ["NO_CLEAR", "NO_CLEAR", "NO_CLEAR"];
-            e.each([1, 2, 3], function(a, c, t)
+            var a = ["NO_CLEAR", "NO_CLEAR", "NO_CLEAR"];
+            e.each([1, 2, 3], function(d, c, t)
             {
-              b["missionStatus" + a] && "CLEARED" == b["missionStatus" + a] && (d[c] = "CLEAR")
+              b["missionStatus" + d] && "CLEARED" == b["missionStatus" + d] && (a[c] = "CLEAR")
             });
-            return d
+            return a
           }()
         }, c.nativeModel.pointList.push(a))
       });
@@ -265,16 +265,16 @@ define("underscore backbone backboneCommon ajaxControl command js/event/EventWit
           })), h.subSectionId == d.questBattle.sectionId && (d.pointType = "sub_item"), h.challengeSectionId == d.questBattle.sectionId && (d.pointType = "challenge"), k[a].push(d))
         })
       });
-      e.each(k, function(b, a, c)
+      e.each(k, function(a, c, e)
       {
-        b.sort(function(b, a)
+        a.sort(function(a, b)
         {
-          return b.questBattleId - a.questBattleId
+          return a.questBattleId - b.questBattleId
         })
       });
-      e.each(k, function(b, a, c)
+      e.each(k, function(a, c, h)
       {
-        e.each(b, function(a, b, c)
+        e.each(a, function(a, b, c)
         {
           f.questInfoList.push(a)
         })
@@ -345,6 +345,8 @@ define("underscore backbone backboneCommon ajaxControl command js/event/EventWit
       {
         eventMaster: a.eventMaster,
         pageJson: c
+      }), a.subItemInfo || (a.subItemInfo = {
+        quantity: 0
       }));
       return a
     }
