@@ -1075,8 +1075,8 @@
 #SuppotSelect #friendWrap .wrap .charaName
 {
   top: 52px;
-  left: 123px;
-  font-size: 18px;
+  left: 118px;
+  font-size: 16px;
 }
 
 #SuppotSelect #friendWrap .wrap .charaTitle
@@ -1086,7 +1086,7 @@
   padding-left: 11px;
   background: -webkit-linear-gradient(left, #e8dbc8 0%, #e8dbc8 75%, rgba(232, 219, 200, 0) 100%);
   top: 75px;
-  left: 112px;
+  left: 107px;
   font-size: 14px;
   line-height: 20px;
 }

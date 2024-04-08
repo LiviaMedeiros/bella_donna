@@ -1,13 +1,10 @@
 .openConditionPopup .openConditionDl
 {
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -166,26 +163,7 @@
 #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .costumeTitle
 {
   color: #ffffff;
-  text-shadow: -1px -1px 1px #ff723a,
-    1px -1px 1px #ff723a,
-    -1px 1px 1px #ff723a,
-    1px 1px 1px #ff723a,
-    -1px -1px #ff723a,
-    1px -1px #ff723a,
-    -1px 1px #ff723a,
-    1px 1px #ff723a,
-    -1px -1px 2px #ff723a,
-    1px -1px 2px #ff723a,
-    -1px 1px 2px #ff723a,
-    1px 1px 2px #ff723a,
-    -1px -1px 2px #ff723a,
-    1px -1px 2px #ff723a,
-    -1px 1px 2px #ff723a,
-    1px 1px 2px #ff723a,
-    -1px -1px 3px #ff723a,
-    1px -1px 3px #ff723a,
-    -1px 1px 3px #ff723a,
-    1px 1px 3px #ff723a;
+  text-shadow: -1px -1px 1px #ff723a, 1px -1px 1px #ff723a, -1px 1px 1px #ff723a, 1px 1px 1px #ff723a, -1px -1px #ff723a, 1px -1px #ff723a, -1px 1px #ff723a, 1px 1px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 3px #ff723a, 1px -1px 3px #ff723a, -1px 1px 3px #ff723a, 1px 1px 3px #ff723a;
 }
 
 #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .costumeTitle
@@ -206,26 +184,7 @@
 #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .charaNameTitle
 {
   color: #ffffff;
-  text-shadow: -1px -1px 1px #ff723a,
-    1px -1px 1px #ff723a,
-    -1px 1px 1px #ff723a,
-    1px 1px 1px #ff723a,
-    -1px -1px #ff723a,
-    1px -1px #ff723a,
-    -1px 1px #ff723a,
-    1px 1px #ff723a,
-    -1px -1px 2px #ff723a,
-    1px -1px 2px #ff723a,
-    -1px 1px 2px #ff723a,
-    1px 1px 2px #ff723a,
-    -1px -1px 2px #ff723a,
-    1px -1px 2px #ff723a,
-    -1px 1px 2px #ff723a,
-    1px 1px 2px #ff723a,
-    -1px -1px 3px #ff723a,
-    1px -1px 3px #ff723a,
-    -1px 1px 3px #ff723a,
-    1px 1px 3px #ff723a;
+  text-shadow: -1px -1px 1px #ff723a, 1px -1px 1px #ff723a, -1px 1px 1px #ff723a, 1px 1px 1px #ff723a, -1px -1px #ff723a, 1px -1px #ff723a, -1px 1px #ff723a, 1px 1px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 3px #ff723a, 1px -1px 3px #ff723a, -1px 1px 3px #ff723a, 1px 1px 3px #ff723a;
 }
 
 #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).new
@@ -258,7 +217,6 @@
   height: 45px;
   top: 37px;
   right: 49px;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -412,28 +370,14 @@
 
 #CharaQuest #charaSection #animationWrap1 .animName
 {
-  width: 420px;
+  width: 500px;
   position: fixed;
   top: -webkit-calc(50% - 20px);
-  right: 110px;
+  right: 70px;
   color: #ffffff;
   font-size: 38px;
   text-align: center;
-  text-shadow: 4px 0 4px #ff4f9e,
-    -4px 0 4px #ff4f9e,
-    0 4px 4px #ff4f9e,
-    0 -4px 4px #ff4f9e,
-    4px 4px 4px #ff4f9e,
-    -4px 4px 4px #ff4f9e,
-    4px -4px 4px #ff4f9e,
-    -4px -4px 4px #ff4f9e, 4px 0 4px #ff4f9e,
-    -4px 0 4px #ff4f9e,
-    0 4px 4px #ff4f9e,
-    0 -4px 4px #ff4f9e,
-    4px 4px 4px #ff4f9e,
-    -4px 4px 4px #ff4f9e,
-    4px -4px 4px #ff4f9e,
-    -4px -4px 4px #ff4f9e;
+  text-shadow: 4px 0 4px #ff4f9e, -4px 0 4px #ff4f9e, 0 4px 4px #ff4f9e, 0 -4px 4px #ff4f9e, 4px 4px 4px #ff4f9e, -4px 4px 4px #ff4f9e, 4px -4px 4px #ff4f9e, -4px -4px 4px #ff4f9e, 4px 0 4px #ff4f9e, -4px 0 4px #ff4f9e, 0 4px 4px #ff4f9e, 0 -4px 4px #ff4f9e, 4px 4px 4px #ff4f9e, -4px 4px 4px #ff4f9e, 4px -4px 4px #ff4f9e, -4px -4px 4px #ff4f9e;
   z-index: 5;
 }
 
@@ -476,14 +420,7 @@
   font-size: 28px;
   text-align: center;
   white-space: nowrap;
-  text-shadow: 2px 0 2px #ffffff,
-    -2px 0 2px #ffffff,
-    0 2px 2px #ffffff,
-    0 -2px 2px #ffffff,
-    2px 2px 2px #ffffff,
-    -2px 2px 2px #ffffff,
-    2px -2px 2px #ffffff,
-    -2px -2px 2px #ffffff;
+  text-shadow: 2px 0 2px #ffffff, -2px 0 2px #ffffff, 0 2px 2px #ffffff, 0 -2px 2px #ffffff, 2px 2px 2px #ffffff, -2px 2px 2px #ffffff, 2px -2px 2px #ffffff, -2px -2px 2px #ffffff;
 }
 
 #CharaQuest #charaSection #animationWrap1 .twinkle1
@@ -603,15 +540,13 @@
 
 #CharaQuest #charaSection.show #animationWrap1 .twinkle1
 {
-  -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal,
-    twinkleSlideOne 2.5s linear 0s 1 normal;
+  -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal, twinkleSlideOne 2.5s linear 0s 1 normal;
   -webkit-animation-fill-mode: forwards;
 }
 
 #CharaQuest #charaSection.show #animationWrap1 .twinkle2
 {
-  -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal,
-    twinkleSlideTwo 2.5s linear 0s 1 normal;
+  -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal, twinkleSlideTwo 2.5s linear 0s 1 normal;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -626,8 +561,7 @@
 
 #CharaQuest #charaSection.show #animationWrap1 .charaNameLine
 {
-  -webkit-animation: nameLineScale .33s ease-in-out 0s 1 normal,
-    charaBgAndTextFade 2.6s ease-in-out 0s 1 normal;
+  -webkit-animation: nameLineScale .33s ease-in-out 0s 1 normal, charaBgAndTextFade 2.6s ease-in-out 0s 1 normal;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -676,7 +610,6 @@
   margin: 0 0 0;
   padding-left: 60px;
   background: url("/magica/resource/image_web/page/quest/chara/bg_chapter.png") left center no-repeat;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,26 +639,7 @@
   color: #ffffff;
   font-size: 24px;
   line-height: 114px;
-  text-shadow: -1px -1px 1px #ff5e7c,
-    1px -1px 1px #ff5e7c,
-    -1px 1px 1px #ff5e7c,
-    1px 1px 1px #ff5e7c,
-    -1px -1px #ff5e7c,
-    1px -1px #ff5e7c,
-    -1px 1px #ff5e7c,
-    1px 1px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 3px #ff5e7c,
-    1px -1px 3px #ff5e7c,
-    -1px 1px 3px #ff5e7c,
-    1px 1px 3px #ff5e7c;
+  text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c;
 }
 
 #CharaQuest #charaSection #charaName:after
@@ -779,21 +693,7 @@
   left: 0;
   color: #ffffff;
   font-size: 30px;
-  text-shadow: 4px 0 4px #ff4f9e,
-    -4px 0 4px #ff4f9e,
-    0 4px 4px #ff4f9e,
-    0 -4px 4px #ff4f9e,
-    4px 4px 4px #ff4f9e,
-    -4px 4px 4px #ff4f9e,
-    4px -4px 4px #ff4f9e,
-    -4px -4px 4px #ff4f9e, 4px 0 4px #ff4f9e,
-    -4px 0 4px #ff4f9e,
-    0 4px 4px #ff4f9e,
-    0 -4px 4px #ff4f9e,
-    4px 4px 4px #ff4f9e,
-    -4px 4px 4px #ff4f9e,
-    4px -4px 4px #ff4f9e,
-    -4px -4px 4px #ff4f9e;
+  text-shadow: 4px 0 4px #ff4f9e, -4px 0 4px #ff4f9e, 0 4px 4px #ff4f9e, 0 -4px 4px #ff4f9e, 4px 4px 4px #ff4f9e, -4px 4px 4px #ff4f9e, 4px -4px 4px #ff4f9e, -4px -4px 4px #ff4f9e, 4px 0 4px #ff4f9e, -4px 0 4px #ff4f9e, 0 4px 4px #ff4f9e, 0 -4px 4px #ff4f9e, 4px 4px 4px #ff4f9e, -4px 4px 4px #ff4f9e, 4px -4px 4px #ff4f9e, -4px -4px 4px #ff4f9e;
 }
 
 #CharaQuest #charaSection #questListWrap .sectionName .attribute
@@ -971,26 +871,7 @@
   left: 26px;
   color: #ffffff;
   text-align: center;
-  text-shadow: -1px -1px 1px #ff5e7c,
-    1px -1px 1px #ff5e7c,
-    -1px 1px 1px #ff5e7c,
-    1px 1px 1px #ff5e7c,
-    -1px -1px #ff5e7c,
-    1px -1px #ff5e7c,
-    -1px 1px #ff5e7c,
-    1px 1px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 3px #ff5e7c,
-    1px -1px 3px #ff5e7c,
-    -1px 1px 3px #ff5e7c,
-    1px 1px 3px #ff5e7c;
+  text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c;
 }
 
 #CharaQuest #charaSection #questListWrap #questList .section .sectionTitle
@@ -999,26 +880,7 @@
   display: inline-block;
   color: #ffffff;
   font-size: 21px;
-  text-shadow: -1px -1px 1px #ff5e7c,
-    1px -1px 1px #ff5e7c,
-    -1px 1px 1px #ff5e7c,
-    1px 1px 1px #ff5e7c,
-    -1px -1px #ff5e7c,
-    1px -1px #ff5e7c,
-    -1px 1px #ff5e7c,
-    1px 1px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 3px #ff5e7c,
-    1px -1px 3px #ff5e7c,
-    -1px 1px 3px #ff5e7c,
-    1px 1px 3px #ff5e7c;
+  text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c;
 }
 
 #CharaQuest #charaSection #questListWrap #questList .section .costumeTitle
@@ -1030,7 +892,6 @@
 {
   width: 160px;
   margin: 2px 0 0 205px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1038,11 +899,9 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-justify-content: flex-end;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-flex-direction: row;
 }
 
 #CharaQuest #charaSection #questListWrap #questList .section .questTip span
@@ -1097,18 +956,14 @@
   padding-top: 17px;
   padding-bottom: 80px;
   padding-left: 18px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: flex-start;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
 }
@@ -1190,26 +1045,7 @@
 #CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaNameTitle
 {
   color: #ffffff;
-  text-shadow: -1px -1px 1px #ff5e7c,
-    1px -1px 1px #ff5e7c,
-    -1px 1px 1px #ff5e7c,
-    1px 1px 1px #ff5e7c,
-    -1px -1px #ff5e7c,
-    1px -1px #ff5e7c,
-    -1px 1px #ff5e7c,
-    1px 1px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 2px #ff5e7c,
-    1px -1px 2px #ff5e7c,
-    -1px 1px 2px #ff5e7c,
-    1px 1px 2px #ff5e7c,
-    -1px -1px 3px #ff5e7c,
-    1px -1px 3px #ff5e7c,
-    -1px 1px 3px #ff5e7c,
-    1px 1px 3px #ff5e7c;
+  text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c;
 }
 
 #CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaImg
@@ -1248,14 +1084,12 @@
 #CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState
 {
   width: 219px;
-  display: -webkit-flex;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 45px;
   right: 40px;
-  -webkit-justify-content: flex-end;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
