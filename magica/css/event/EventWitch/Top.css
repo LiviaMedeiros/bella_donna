@@ -402,6 +402,41 @@
   background: url("/magica/resource/image_web/event/eventWitch/common/btn_alina_request.png") left top no-repeat;
 }
 
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7
+{
+  height: 380px;
+  background: url("/magica/resource/image_web/event/eventWitch/common/base_gauge_7.png") left top no-repeat;
+}
+
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain
+{
+  top: 48px;
+}
+
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec
+{
+  margin: 1px 62px 1px 7px;
+}
+
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec:nth-child(2),
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec:nth-child(4),
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec:nth-child(6)
+{
+  position: absolute;
+  top: 30px;
+  left: 70px;
+}
+
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec:nth-child(4)
+{
+  top: 96px;
+}
+
+#EventWitchTop .mainSec .CharaListSec .CharaListWrap.chara7 #CharaListMain .IconCharaGaugeSec:nth-child(6)
+{
+  top: 164px;
+}
+
 #EventWitchTop .mainSec .CharaListSec .subItemSec
 {
   position: relative;

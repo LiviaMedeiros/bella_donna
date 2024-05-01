@@ -51,7 +51,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     },
     createModel: function(a)
     {
-      return a.model
+      a = a.model;
+      a.listClass = "";
+      a.eventCharaInfo && a.eventCharaInfo.length && 7 == a.eventCharaInfo.length && (a.listClass = "chara7");
+      return a
     },
     tapToExchangeTopBtn: function(a)
     {

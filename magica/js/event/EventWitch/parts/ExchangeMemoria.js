@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/event/EventWitch/parts/ExchangeMemoria.html js/event/EventWitch/Model js/event/EventWitch/Utility js/event/EventWitch/parts/MemoriaDetailPopup js/event/EventWitch/parts/IconCharaGauge".split(" "), function(c, h, b, e, n, k, p, q, l, m)
+define("underscore backbone backboneCommon ajaxControl command text!template/event/EventWitch/parts/ExchangeMemoria.html js/event/EventWitch/Model js/event/EventWitch/Utility js/event/EventWitch/parts/MemoriaDetailPopup js/event/EventWitch/parts/IconCharaGauge".split(" "), function(d, k, b, f, p, l, q, r, m, n)
 {
-  var d;
-  return h.View.extend(
+  var e, c = !1;
+  return k.View.extend(
   {
     className: function(a)
     {
@@ -17,7 +17,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     initialize: function(a)
     {
       var b = a.appendSelector;
-      this.template = c.template(k);
+      this.template = d.template(l);
       this.model = a.model;
       this._views = a._views;
       this.viewModel = this.createModel(
@@ -49,7 +49,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     },
     createDom: function()
     {
-      this._views["ExchangeIconCharaGauge" + this.viewModel.charaId] = new m(
+      this._views["ExchangeIconCharaGauge" + this.viewModel.charaId] = new n(
       {
         model: this.viewModel,
         appendSelector: ".ExchangeMemoriaMain.charaId" + this.viewModel.charaId
@@ -60,10 +60,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
       a.preventDefault();
       if (!b.isScrolled() && "noChange" != this.viewModel.ExchangeBtnClass && !this.viewModel.rewardPieceInfo.isExchanged)
       {
-        var f = this.viewModel.charaId,
-          c = this.viewModel.rewardPieceId,
-          g = this.viewModel.storyId;
-        d = new b.PopupClass(
+        var g = this.viewModel.charaId,
+          d = this.viewModel.rewardPieceId,
+          h = this.viewModel.storyId;
+        e = new b.PopupClass(
         {
           popupType: "typeC",
           title: "メモリア獲得",
@@ -72,24 +72,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
           decideBtnText: "獲得する",
           decideBtnEvent: function()
           {
-            e.ajaxPost(b.linkList.eventWitchMemoriaExchange,
+            c || (c = !0, f.ajaxPost(b.linkList.eventWitchMemoriaExchange,
             {
-              charaId: f
+              charaId: g
             }, function(a)
             {
-              "error" !== a.resultCode && (b.responseSetStorage(a), e.ajaxPost(b.linkList.userQuestAdventureRegist,
+              "error" !== a.resultCode && (b.responseSetStorage(a), f.ajaxPost(b.linkList.userQuestAdventureRegist,
               {
-                adventureId: String(g)
+                adventureId: String(h)
               }, function()
               {
                 b.EventWitchMemoriaExchangeAnimePrm = {
-                  charaId: f,
-                  rewardPieceId: c,
-                  storyId: g
+                  charaId: g,
+                  rewardPieceId: d,
+                  storyId: h
                 };
+                c = !1;
                 location.href = "#/EventWitchExchangeAnimePage"
               }))
-            })
+            }))
           }
         }, null, null, null)
       }
@@ -97,14 +98,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/eve
     tapMemoriaDetailBtn: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (this._views.MemoriaDetailPopup = new l(
+      b.isScrolled() || (this._views.MemoriaDetailPopup = new m(
       {
         model: this.viewModel.rewardPieceInfo
       }))
     },
     removeView: function()
     {
-      d && d.remove();
+      e && e.remove();
+      c && (c = !1);
       this.off();
       this.remove()
     }

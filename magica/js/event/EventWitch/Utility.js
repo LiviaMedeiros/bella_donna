@@ -242,6 +242,7 @@ define("underscore backbone backboneCommon command ajaxControl QuestUtil memoria
       f.each(a.eventWitchCharaList, function(a, e, u)
       {
         e = {
+          eventId: a.eventId,
           charaId: a.charaId,
           pageType: c,
           targetPoint: a.targetValue,

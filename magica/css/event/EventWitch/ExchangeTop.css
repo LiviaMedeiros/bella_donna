@@ -547,11 +547,18 @@
 #EventWitchExchangeTop .mainSec #MemoriaListSec #MemoriaList.chara7
 {
   width: 100%;
+  margin: 0 0 0 6px;
+  text-align: center;
 }
 
-#EventWitchExchangeTop .mainSec #MemoriaListSec #MemoriaList.chara7 .ExchangeMemoriaMain:nth-of-type(4)
+#EventWitchExchangeTop .mainSec #MemoriaListSec #MemoriaList.chara7 .ExchangeMemoriaMain
 {
-  margin: 0 10px 0 0;
+  margin: 0 2px 0 0;
+}
+
+#EventWitchExchangeTop .mainSec #MemoriaListSec #MemoriaList.chara7 .ExchangeMemoriaMain:nth-of-type(5)
+{
+  margin: 0 2px 0 -10px;
 }
 
 .EventMemoriaDetailPopup.popupContent.typeA .popupInner .popupTextArea
