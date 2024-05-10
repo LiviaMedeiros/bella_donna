@@ -114,7 +114,8 @@ define(["underscore", "backbone", "backboneCommon", "js/view/chara/CharaDetailVi
             INFINITE: "インフィニット",
             MUGENDAI: "むげんだい",
             MYSTIC: "ミスティック",
-            DEVIL: "悪魔"
+            DEVIL: "悪魔",
+            LASTCONNECT: "ラストコネクト"
           } [b.chara.initialType];
           b.displayCardId = b.card.cardId;
           b.level = b.maxLevel;

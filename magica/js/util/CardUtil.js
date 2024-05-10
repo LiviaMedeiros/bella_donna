@@ -238,7 +238,8 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "memoriaUtil"
     INFINITE: "インフィニット",
     MUGENDAI: "むげんだい",
     MYSTIC: "ミスティック",
-    DEVIL: "悪魔"
+    DEVIL: "悪魔",
+    LASTCONNECT: "ラストコネクト"
   };
   d.addExStatus = function(a, b, c, k)
   {
