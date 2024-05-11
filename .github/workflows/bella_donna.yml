@@ -24,7 +24,7 @@ jobs:
           GIT_DATE="$(cat Last-Modified)"
           echo "GIT_AUTHOR_DATE=${GIT_DATE}" >> ${GITHUB_ENV}
           echo "GIT_COMMITTER_DATE=${GIT_DATE}" >> ${GITHUB_ENV}
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: upd
           commit_user_name: LiviaMedeiros
