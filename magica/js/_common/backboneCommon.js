@@ -2155,17 +2155,24 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
       {
         localStorage.setItem("checkConsentRulesTime", a.currentTime)
       },
-      isConsentRules: function()
+      isConsentRules: function(b)
       {
-        var b = !1,
-          d = localStorage.getItem("checkConsentRulesTime");
-        d && a.getStatusTargetTermInCurrentTime(
+        b = b.currentTime;
+        var c = !1,
+          e = localStorage.getItem("checkConsentRulesTime");
+        a.getStatusTargetTermInCurrentTime(
         {
-          startAt: "2023/06/26 15:10:00",
-          endAt: "2123/06/26 15:10:00",
-          currentTime: d
-        }) && (b = !0);
-        return b
+          startAt: "2020/01/01 00:00:00",
+          endAt: "2024/05/31 15:10:00",
+          currentTime: b
+        }) && (c = !0);
+        e && a.getStatusTargetTermInCurrentTime(
+        {
+          startAt: "2024/05/31 15:10:00",
+          endAt: "2200/01/01 00:00:00",
+          currentTime: e
+        }) && (c = !0);
+        return c
       }
     }
   };

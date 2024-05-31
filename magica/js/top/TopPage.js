@@ -283,10 +283,15 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
           popupType: "typeB"
         }, null, function()
         {
-          a.doc.getElementById("rulePolicyLink") && a.doc.getElementById("rulePolicyLink").addEventListener(a.cgti, function(c)
+          a.doc.getElementById("rulePolicyLink").addEventListener(a.cgti, function(c)
           {
             c.preventDefault();
             a.isScrolled() || a.isDoubleTouch() || b.browserOpen("http://www.aniplex.co.jp/help/privacy.html")
+          });
+          a.doc.getElementById("ruleLinkAdjust").addEventListener(a.cgti, function(c)
+          {
+            c.preventDefault();
+            a.isScrolled() || a.isDoubleTouch() || b.browserOpen("https://www.adjust.com/ja/terms/privacy-policy/")
           })
         }, c), a.scrollSet("rulesBase", "rulesPop"))
       }

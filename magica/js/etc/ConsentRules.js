@@ -1,4 +1,4 @@
-define(["underscore", "backbone", "backboneCommon", "text!template/etc/RulePopup.html", "text!template/etc/ConsentRulesPopup.html"], function(h, k, a, e, f)
+define("underscore backbone backboneCommon command text!template/etc/RulePopup.html text!template/etc/ConsentRulesPopup.html".split(" "), function(k, l, a, e, f, g)
 {
   var d = {
     init: function(a)
@@ -7,13 +7,13 @@ define(["underscore", "backbone", "backboneCommon", "text!template/etc/RulePopup
       this.endCallback = a.endCallback;
       return d
     },
-    consentPopup: function(d)
+    consentPopup: function(e)
     {
       var b = this,
-        g = new a.PopupClass(
+        h = new a.PopupClass(
         {
           title: "利用規約確認",
-          content: f,
+          content: g,
           canClose: !1,
           popupId: "ConsentRulesPopupSec"
         }, null, function()
@@ -32,7 +32,7 @@ define(["underscore", "backbone", "backboneCommon", "text!template/etc/RulePopup
             {}), b.pageJson.currentTime && c.setTime(
             {
               currentTime: b.pageJson.currentTime
-            }), g.remove(), b.endCallback())
+            }), h.remove(), b.endCallback())
           })
         })
     },
@@ -43,14 +43,19 @@ define(["underscore", "backbone", "backboneCommon", "text!template/etc/RulePopup
       a.isScrolled() || (new a.PopupClass(
       {
         title: "サービス利用規約",
-        content: e,
+        content: f,
         popupType: "typeB"
       }, null, function()
       {
-        a.doc.getElementById("rulePolicyLink") && a.doc.getElementById("rulePolicyLink").addEventListener(a.cgti, function(b)
+        a.doc.getElementById("rulePolicyLink").addEventListener(a.cgti, function(b)
         {
           b.preventDefault();
-          a.isScrolled() || a.isDoubleTouch() || cmd.browserOpen("http://www.aniplex.co.jp/help/privacy.html")
+          a.isScrolled() || a.isDoubleTouch() || e.browserOpen("http://www.aniplex.co.jp/help/privacy.html")
+        });
+        a.doc.getElementById("ruleLinkAdjust").addEventListener(a.cgti, function(b)
+        {
+          b.preventDefault();
+          a.isScrolled() || a.isDoubleTouch() || e.browserOpen("https://www.adjust.com/ja/terms/privacy-policy/")
         })
       }, function()
       {

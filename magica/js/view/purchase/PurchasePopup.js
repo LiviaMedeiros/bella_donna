@@ -1,24 +1,21 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/purchase/PurchasePop.html text!template/etc/LawPopup.html js/view/purchase/PurchasePopupPartView".split(" "), function(f, q, a, g, e, r, t, k)
+define("underscore backbone backboneCommon ajaxControl command text!template/purchase/PurchasePop.html text!template/etc/LawPopup.html js/view/purchase/PurchasePopupPartView".split(" "), function(h, q, a, k, f, r, t, w)
 {
-  var u = g.getPageJson(),
+  var u = k.getPageJson(),
     m = [],
     l = q.View.extend(
     {
       events: function()
       {
-        var c = {};
-        c[a.cgti + " .purchaseLawBtn"] = this.lawPopup;
-        return c
+        var b = {};
+        b[a.cgti + " .purchaseLawBtn"] = this.lawPopup;
+        return b
       },
-      initialize: function(c, b)
+      initialize: function(a, d)
       {
-        this.model = (window.isLocal ? JSON.parse(c) : c).userCommonMoneyList;
-        b && (this.nativeFlag = !0);
-        this.template = f.template(r);
-        a.ua.ios && !a.noGetPurchaseStatus ? this.getPurchaseStatus(
-        {
-          that: this
-        }) : this.createDom()
+        this.model = (window.isLocal ? JSON.parse(a) : a).userCommonMoneyList;
+        d && (this.nativeFlag = !0);
+        this.template = h.template(r);
+        this.createDom()
       },
       render: function()
       {
@@ -31,7 +28,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/pur
       },
       createDom: function()
       {
-        var c = this;
+        var b = this;
         new a.PopupClass(
         {
           title: "マギアストーン購入",
@@ -40,30 +37,17 @@ define("underscore backbone backboneCommon ajaxControl command text!template/pur
           exClass: "purchasePop"
         }, null, null, function()
         {
-          c.nativeFlag && e.setWebView(!1);
-          c.removeView()
+          b.nativeFlag && f.setWebView(!1);
+          b.removeView()
         });
-        a.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(this.render().el);
-        k.prototype.parentView = this;
-        k.prototype.template = f.template($("#purchaseParts").text());
-        var b = a.doc.createDocumentFragment(),
-          h = g.getPageJson().currentTime.substr(0, 10);
-        f.each(this.model, function(a, c)
-        {
-          "DAILY" === a.commonMoney.commonMoneyType && a.purchasedAt && a.purchasedAt.substr(0, 10) === h || (a.purchaseStatus = "", f.each(m, function(c, h, b)
-          {
-            -1 < c.indexOf(a.moneyCode) && ("ONCE" == a.commonMoney.commonMoneyType || "PASSPORT" == a.commonMoney.commonMoneyType) && (a.purchaseStatus = "hold")
-          }), c = new k(a), b.appendChild(c.render().el))
-        });
-        a.doc.getElementById("PurchaseListWrap").appendChild(b);
-        a.scrollSetX("purchaseScrollX", "purchaseScrollInner")
+        a.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(this.render().el)
       },
-      lawPopup: function(c)
+      lawPopup: function(b)
       {
-        c.preventDefault();
+        b.preventDefault();
         if (!a.isScrolled())
         {
-          var b = this;
+          var d = this;
           new a.PopupClass(
           {
             title: "特定商取引法・資金決済法に関して",
@@ -71,83 +55,83 @@ define("underscore backbone backboneCommon ajaxControl command text!template/pur
             popupType: "typeB"
           }, null, null, function()
           {
-            b.nativeFlag ? g.ajaxSimpleGet(a.linkList.moneyShopList, "", function(a)
+            d.nativeFlag ? k.ajaxSimpleGet(a.linkList.moneyShopList, "", function(a)
             {
-              b.removeView();
+              d.removeView();
               new l(a, !0)
-            }) : b.parentView.moneyPopup()
+            }) : d.parentView.moneyPopup()
           });
-          a.doc.getElementById("rulesBase").getElementsByClassName("ruleDisp")[0].addEventListener(a.cgti, function(c)
+          a.doc.getElementById("rulesBase").getElementsByClassName("ruleDisp")[0].addEventListener(a.cgti, function(b)
           {
-            c.preventDefault();
-            a.isScrolled() || c.currentTarget.classList.contains("current") || (a.doc.getElementById("rulesBase").className = "rule", a.scrollRefresh(), a.removeClass(a.doc.getElementById("rulesBase").getElementsByClassName("thirteenDisp")[0], "current"), a.addClass(c.currentTarget, "current"))
+            b.preventDefault();
+            a.isScrolled() || b.currentTarget.classList.contains("current") || (a.doc.getElementById("rulesBase").className = "rule", a.scrollRefresh(), a.removeClass(a.doc.getElementById("rulesBase").getElementsByClassName("thirteenDisp")[0], "current"), a.addClass(b.currentTarget, "current"))
           });
-          a.doc.getElementById("rulesBase").getElementsByClassName("thirteenDisp")[0].addEventListener(a.cgti, function(c)
+          a.doc.getElementById("rulesBase").getElementsByClassName("thirteenDisp")[0].addEventListener(a.cgti, function(b)
           {
-            c.preventDefault();
-            a.isScrolled() || c.currentTarget.classList.contains("current") || (a.doc.getElementById("rulesBase").className = "thirteen", a.scrollRefresh(), a.removeClass(a.doc.getElementById("rulesBase").getElementsByClassName("ruleDisp")[0], "current"), a.addClass(c.currentTarget, "current"))
+            b.preventDefault();
+            a.isScrolled() || b.currentTarget.classList.contains("current") || (a.doc.getElementById("rulesBase").className = "thirteen", a.scrollRefresh(), a.removeClass(a.doc.getElementById("rulesBase").getElementsByClassName("ruleDisp")[0], "current"), a.addClass(b.currentTarget, "current"))
           });
           a.scrollSet("rulesBase", "rulesPop")
         }
       },
       checkBirthDay: function()
       {
-        var c = this;
-        require(["text!template/purchase/PurchaseTemps.html?bust=" + (new Date).getTime], function(b)
+        var b = this;
+        require(["text!template/purchase/PurchaseTemps.html?bust=" + (new Date).getTime], function(d)
         {
-          b = f.template(b);
-          var h = a.doc.createElement("div");
-          h.innerHTML = b(
+          d = h.template(d);
+          var g = a.doc.createElement("div");
+          g.innerHTML = d(
           {
             platform: a.thisPlatform
           });
           var n = function()
             {
-              g.ajaxSimpleGet(a.linkList.moneyShopList, "", function(a)
+              k.ajaxSimpleGet(a.linkList.moneyShopList, "", function(a)
               {
-                c.nativeFlag ? new l(a, !0) : new l(a)
+                b.nativeFlag ? new l(a, !0) : new l(a)
               })
             },
-            k = function(b)
+            v = function(e)
             {
-              b.preventDefault();
-              a.isScrolled() || (a.tapBlock(!0), b = {
+              e.preventDefault();
+              a.isScrolled() || (a.tapBlock(!0), e = {
                 year: a.doc.getElementById("year").value,
                 month: a.doc.getElementById("day").value
-              }, g.ajaxPost(a.linkList.inputBirthDay, b, function(b)
+              }, k.ajaxPost(a.linkList.inputBirthDay, e, function(c)
               {
-                var d = function()
+                var e = function()
                 {
                   a.tapBlock(!0);
                   if (a.purchaseSaving)
                   {
-                    var b = function(b)
+                    var e = function(c)
                       {
-                        !b || b && !b.message ? (a.tapBlock(!1), c.nativeFlag && setTimeout(function()
+                        !c || c && !c.message ? (a.tapBlock(!1), b.nativeFlag && setTimeout(function()
                         {
-                          e.setWebView(!1)
-                        }, 1E3), c.removeView()) : (new a.PopupClass(
+                          f.setWebView(!1)
+                        }, 1E3), b.removeView()) : (new a.PopupClass(
                         {
-                          content: b.message,
+                          content: c.message,
                           closeBtnText: "OK",
                           exClass: "purchaseError",
                           popupType: "typeC"
                         }, null, null, function()
                         {
-                          c.nativeFlag && setTimeout(function()
+                          b.nativeFlag && setTimeout(function()
                           {
-                            e.setWebView(!1)
+                            f.setWebView(!1)
                           }, 1E3);
-                          c.removeView()
+                          b.removeView()
                         }), a.tapBlock(!1))
                       },
-                      d = a.storage.user.toJSON(),
-                      h = d.monthlyPurchase | 0,
-                      p = d.birthDay.split("/"),
-                      f = g.getPageJson().currentTime.split(" ")[0].split("/"),
-                      d = Number(f[0] - p[0]);
-                    Number(p[1]) > Number(f[1]) && d--;
-                    if (18 > d && (h += a.purchaseSaving.commonMoney.coin, 16 > d && 5E3 < h || 3E4 < h))
+                      c = a.storage.user.toJSON(),
+                      d = c.monthlyPurchase | 0,
+                      g = c.birthDay.split("/"),
+                      p = k.getPageJson().currentTime.split(" ")[0].split("/"),
+                      c = Number(p[0] - g[0]);
+                    Number(g[1]) > Number(p[1]) && c--;
+                    if (18 > c && (d += a.purchaseSaving.commonMoney.coin, 16 > c && 5E3 < d || 3E4 < d))
                     {
                       new a.PopupClass(
                       {
@@ -155,70 +139,70 @@ define("underscore backbone backboneCommon ajaxControl command text!template/pur
                         closeBtnText: "OK",
                         exClass: "purchaseError",
                         popupType: "typeC"
-                      }, null, null, b);
+                      }, null, null, e);
                       a.tapBlock(!1);
                       return
                     }
                     a.addClass(a.doc.getElementById("curtain"), "show");
-                    $("#commandDiv").on("purchaseCallback", function(c, d)
+                    $("#commandDiv").on("purchaseCallback", function(c, b)
                     {
                       $("#commandDiv").off("purchaseCallback");
-                      "error" !== d.resultCode ? (d && d.fox && (d.adjust ? e.setFoxData(d.fox, d.adjust) : e.setFoxData(d.fox)), a.responseSetStorage(d), a.globalMenuView && a.globalMenuView.itemChangeHandler(), a.removeClass(a.doc.getElementById("curtain"), "show"), b(d)) : (a.tapBlock(!1), a.removeClass(a.doc.getElementById("curtain"), "show"), new a.PopupClass(
+                      "error" !== b.resultCode ? (b && b.fox && (b.adjust ? f.setFoxData(b.fox, b.adjust) : f.setFoxData(b.fox)), a.responseSetStorage(b), a.globalMenuView && a.globalMenuView.itemChangeHandler(), a.removeClass(a.doc.getElementById("curtain"), "show"), e(b)) : (a.tapBlock(!1), a.removeClass(a.doc.getElementById("curtain"), "show"), new a.PopupClass(
                       {
-                        content: d.errorTxt,
+                        content: b.errorTxt,
                         closeBtnText: "OK",
                         exClass: "purchaseError",
                         popupType: "typeC"
-                      }, null, null, b))
+                      }, null, null, e))
                     });
-                    e.purchaseItem(a.purchaseSaving);
+                    f.purchaseItem(a.purchaseSaving);
                     a.purchaseSaving = null;
-                    window.isBrowser && (a.doc.getElementById("tapBlock").style.block = "", a.removeClass(a.doc.getElementById("curtain"), "show"), b())
+                    window.isBrowser && (a.doc.getElementById("tapBlock").style.block = "", a.removeClass(a.doc.getElementById("curtain"), "show"), e())
                   }
                 };
-                "error" !== b.resultCode && (a.responseSetStorage(b), a.tapBlock(!1), new a.PopupClass(
+                "error" !== c.resultCode && (a.responseSetStorage(c), a.tapBlock(!1), new a.PopupClass(
                 {
                   title: "年齢認証",
                   content: "ありがとうございます。<br>年齢認証が完了しました。<br>引き続きゲームをお楽しみください。",
                   closeBtnText: "OK",
                   exClass: "purchasePop"
-                }, null, null, d))
+                }, null, null, e))
               }))
             };
-          b = f.template(h.getElementsByClassName("birthCheckFirst")[0].innerText);
+          d = h.template(g.getElementsByClassName("birthCheckFirst")[0].innerText);
           new a.PopupClass(
           {
             title: "年齢認証が必要です",
-            content: b(),
+            content: d(),
             exClass: "purchasePop"
           }, null, null, n);
-          a.doc.getElementById("birthCheck").addEventListener(a.cgti, function(c)
+          a.doc.getElementById("birthCheck").addEventListener(a.cgti, function(b)
           {
-            c.preventDefault();
+            b.preventDefault();
             if (!a.isScrolled())
             {
-              c = f.template(h.getElementsByClassName("birthInputs")[0].innerText);
+              b = h.template(g.getElementsByClassName("birthInputs")[0].innerText);
               new a.PopupClass(
               {
                 title: "年齢認証",
-                content: c(),
+                content: b(),
                 exClass: "purchasePop"
               }, null, null, n);
-              a.doc.getElementById("birthDecide").addEventListener(a.cgti, k);
-              c = u.currentTime.substr(0, 4) | 0;
-              for (var b = c - 100, e = a.doc.createDocumentFragment(); b < c;)
+              a.doc.getElementById("birthDecide").addEventListener(a.cgti, v);
+              b = u.currentTime.substr(0, 4) | 0;
+              for (var c = b - 100, d = a.doc.createDocumentFragment(); c < b;)
               {
-                var g = a.doc.createElement("option");
-                g.value = b;
-                g.innerHTML = b;
-                1995 === b && (g.selected = "selected");
-                e.appendChild(g);
-                b = b + 1 | 0
+                var e = a.doc.createElement("option");
+                e.value = c;
+                e.innerHTML = c;
+                1995 === c && (e.selected = "selected");
+                d.appendChild(e);
+                c = c + 1 | 0
               }
-              a.doc.getElementById("year").appendChild(e);
-              c = a.doc.createDocumentFragment();
-              for (b = 1; 13 > b; b++) e = a.doc.createElement("option"), e.value = b, e.innerHTML = b, c.appendChild(e);
-              a.doc.getElementById("day").appendChild(c)
+              a.doc.getElementById("year").appendChild(d);
+              b = a.doc.createDocumentFragment();
+              for (c = 1; 13 > c; c++) d = a.doc.createElement("option"), d.value = c, d.innerHTML = c, b.appendChild(d);
+              a.doc.getElementById("day").appendChild(b)
             }
           })
         })
@@ -227,16 +211,16 @@ define("underscore backbone backboneCommon ajaxControl command text!template/pur
       {
         var b = a.that;
         m = [];
-        $("#commandDiv").on("nativeCallback", function(a, c)
+        $("#commandDiv").on("nativeCallback", function(a, d)
         {
           $("#commandDiv").off();
-          (a = c.product_ids) && 0 < a.length && f.each(a, function(a, b, c)
+          (a = d.product_ids) && 0 < a.length && h.each(a, function(a, b, c)
           {
             m.push(a)
           });
           b.createDom()
         });
-        e.getPurchaseStatus();
+        f.getPurchaseStatus();
         a = {
           product_ids: ["pack_aa1", "pack_bb1", "pack_bb"]
         };
