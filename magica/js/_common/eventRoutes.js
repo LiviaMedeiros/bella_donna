@@ -552,6 +552,42 @@ define(["underscore", "backbone", "backboneCommon"], function(e, f, b)
           a.fetch()
         })
       }
+    },
+    EventWalpurgisRaidTop:
+    {
+      url: "EventWalpurgisRaidTop",
+      pageInit: function()
+      {
+        require(["EventWalpurgisRaidTop"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
+    },
+    EventWalpurgisRaidQuestResultMainBoss:
+    {
+      url: "EventWalpurgisRaidQuestResultMainBoss",
+      pageInit: function()
+      {
+        require(["EventWalpurgisRaidQuestResultMainBoss"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
+    },
+    EventWalpurgisRaidQuestResultSubBoss:
+    {
+      url: "EventWalpurgisRaidQuestResultSubBoss",
+      pageInit: function()
+      {
+        require(["EventWalpurgisRaidQuestResultSubBoss"], function(a)
+        {
+          b.pageObj = a;
+          a.fetch()
+        })
+      }
     }
   }
 });

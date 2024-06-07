@@ -1,6 +1,6 @@
 define("underscore backbone backboneCommon ajaxControl command QuestUtil text!template/collection/StoryCollection.html text!css/collection/StoryCollection.css text!template/quest/OutlinePopup.html js/quest/puellaHistoria/CreateModel js/quest/puellaHistoria/lastBattle/Utility".split(" "), function(f, p, b, D, h, T, U, V, W, X, Y)
 {
-  var k, F, m, r, A, t, y, z, B, l, q, C, E, fa = p.View.extend(
+  var k, F, m, t, A, u, y, z, B, l, q, C, E, fa = p.View.extend(
     {
       initialize: function(a)
       {
@@ -41,20 +41,20 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       },
       createView: function()
       {
-        u("main", this.storyMainSub.mainStoryModels);
-        u("mainSecond", this.storyMainSub.mainStoryModels);
+        v("main", this.storyMainSub.mainStoryModels);
+        v("mainSecond", this.storyMainSub.mainStoryModels);
         ba(this.puellaHistoriaModel);
-        u("sub", this.storyMainSub.subStoryModels);
-        u("subSecond", this.storyMainSub.subStoryModels);
-        u("chara", ca());
-        u("arena", da());
-        u("accomplish", ea());
-        v.prototype.parentView = this;
-        v.prototype.templatePuellaHistoria = f.template($("#PuellaHistoriaTemp").text());
-        v.prototype.templateCommon = f.template($("#EventStoryTempCommon").text());
-        v.prototype.templateBranch = f.template($("#EventStoryTempBranch").text());
-        v.prototype.templateWitch = f.template($("#EventStoryTempWitch").text());
-        v.prototype.templateSpecial = f.template($("#SpecialStoryTemp").text());
+        v("sub", this.storyMainSub.subStoryModels);
+        v("subSecond", this.storyMainSub.subStoryModels);
+        v("chara", ca());
+        v("arena", da());
+        r.prototype.parentView = this;
+        r.prototype.templatePuellaHistoria = f.template($("#PuellaHistoriaTemp").text());
+        r.prototype.templateCommon = f.template($("#EventStoryTempCommon").text());
+        r.prototype.templateBranch = f.template($("#EventStoryTempBranch").text());
+        r.prototype.templateWitch = f.template($("#EventStoryTempWitch").text());
+        r.prototype.templateSpecial = f.template($("#SpecialStoryTemp").text());
+        r.prototype.templateAccomplish = f.template($("#AccomplishStoryTemp").text());
         var a = D.getPageJson();
         if (a.eventStoryList && 0 < a.eventStoryList.length)
         {
@@ -92,6 +92,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           O(a);
           !1 === a.isOpen && z++
         }), b.scrollSet("specialHiddenWrap", "scrollInner"));
+        v("accomplish", ea());
         (a = b.storage.userSectionList.findWhere(
         {
           sectionId: 102005
@@ -407,8 +408,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         var a = this.stillModelList[this.index];
         b.doc.getElementById("popupInfoDetailTitle").textContent = a.title;
         b.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(this.render().el);
-        for (var c = b.doc.getElementById("stillListWrap").getElementsByTagName("img"),
-            d = 0, a = 0; a < c.length; a++)
+        for (var c = b.doc.getElementById("stillListWrap").getElementsByTagName("img"), d = 0, a = 0; a < c.length; a++)
         {
           var e = new Image;
           e.onload = function()
@@ -649,7 +649,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         storyId: "513005-2_EVgh5"
       })
     },
-    u = function(a, c)
+    v = function(a, c)
     {
       var d = b.doc.getElementById(a),
         e;
@@ -1113,7 +1113,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       {
         var c = function(c)
         {
-          var d = new v(
+          var d = new r(
           {
             model: a
           });
@@ -1122,7 +1122,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         a.eventId || a.regularEventId ? c("eventHiddenWrap") : a.campaignId && c("specialHiddenWrap")
       }
     },
-    v = p.View.extend(
+    r = p.View.extend(
     {
       className: function()
       {
@@ -1141,7 +1141,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       initialize: function() {},
       render: function()
       {
-        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : "WITCH" === this.model.eventType ? this.templateWitch : this.templateCommon)(
+        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : "WITCH" === this.model.eventType ? this.templateWitch : "ACCOMPLISH" === this.model.eventType ? this.templateAccomplish : this.templateCommon)(
         {
           model: this.model
         }));
@@ -1190,7 +1190,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
               closeBtnText: "いいえ"
             })
           }.bind(this);
-        if (0 < t)
+        if (0 < u)
         {
           var f = function(f)
             {
@@ -1224,7 +1224,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
                     title: "ストーリー解放",
                     content: "下記ストーリーを解放しました。",
                     eventName: e,
-                    itemNum: t,
+                    itemNum: u,
                     exClass: "openStoryPopup",
                     decideBtnText: "すぐに読む",
                     decideBtnEvent: l,
@@ -1245,7 +1245,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
             title: "ストーリー解放",
             content: "<span class='c_pink'>" + A + "</span>を<span class='c_pink'>１個</span>消費してストーリーを解放します。<br>よろしいですか？",
             eventName: e,
-            itemNum: t,
+            itemNum: u,
             exClass: "openStoryPopup",
             decideBtnText: "解放する",
             decideBtnEvent: f,
@@ -1257,7 +1257,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
           {
             title: "ストーリー解放",
             content: f,
-            itemNum: t,
+            itemNum: u,
             exClass: "openStoryPopup",
             decideBtnText: "ショップへ",
             decideBtnLink: "#/ShopTop/2",
@@ -1303,8 +1303,8 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       {
         itemId: "EVENTSTORY_OPEN_KEY"
       });
-      t = a ? a.get("quantity") : 0;
-      b.doc.getElementById("unlockItemNum").innerText = t
+      u = a ? a.get("quantity") : 0;
+      b.doc.getElementById("unlockItemNum").innerText = u
     },
     S = function()
     {
@@ -1401,7 +1401,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     fetch: function(a)
     {
       D.pageModelGet(this.needModelIdObj);
-      r = a
+      t = a
     },
     init: function()
     {
@@ -1425,13 +1425,13 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       R();
       S();
       l && b.addClassId("continuousPlayBtn", "on");
-      if (r)
-        if ("accomplish" === r) a = b.doc.getElementById("tabBtn").getElementsByClassName("accomplish"), 0 < a.length && $(a[0]).trigger(b.cgti);
-        else if ("puellaHistoria" === r) a = b.doc.getElementById("tabBtn").getElementsByClassName("puellaHistoria"), 0 < a.length && $(a[0]).trigger(b.cgti);
+      if (t)
+        if ("accomplish" === t) a = b.doc.getElementById("tabBtn").getElementsByClassName("accomplish"), 0 < a.length && $(a[0]).trigger(b.cgti);
+        else if ("puellaHistoria" === t) a = b.doc.getElementById("tabBtn").getElementsByClassName("puellaHistoria"), 0 < a.length && $(a[0]).trigger(b.cgti);
       else
       {
-        b.forceScrollPreset("eventHiddenWrap", "scrollInner", r, !0);
-        var c = b.doc.getElementById("event").getElementsByClassName("chapterIdPanEvent" + r),
+        b.forceScrollPreset("eventHiddenWrap", "scrollInner", t, !0);
+        var c = b.doc.getElementById("event").getElementsByClassName("chapterIdPanEvent" + t),
           a = b.doc.getElementById("tabBtn").getElementsByClassName("event");
         0 < a.length && $(a[0]).trigger(b.cgti);
         0 < c.length && $(c[0]).trigger(b.cgti)
@@ -1444,7 +1444,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
     },
     remove: function(a)
     {
-      E = C = q = l = B = z = y = t = A = r = null;
+      E = C = q = l = B = z = y = u = A = t = null;
       F && F.remove();
       a()
     }

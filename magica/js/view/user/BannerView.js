@@ -38,6 +38,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/base/Mypage
         b.passport = -1 < e ? !1 : !0
       }
       else b.passport = !0;
+      b.passport = !1;
       d.startdashGachaExpiredAt ? (e = Math.floor(Date.parse(d.startdashGachaExpiredAt) - c), b.startDashGacha = 0 < e ? !0 : !1) : b.startDashGacha = !1;
       d.startdashMemoriaGachaExpiredAt ? (e = Math.floor(Date.parse(d.startdashMemoriaGachaExpiredAt) - c), b.startDashGachaMemoria = 0 < e ? !0 : !1) : b.startDashGachaMemoria = !1;
       c = g.sortBy(this.model, function(a)

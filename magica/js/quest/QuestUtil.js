@@ -213,7 +213,7 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
     0 < m.CHARA && (f.addClass(f.doc.querySelector("#questLinkBtnWrap .chara"), "batch"), f.doc.querySelector("#questLinkBtnWrap .chara span").textContent = m.CHARA);
     0 < m.EVENT && (f.addClass(f.doc.querySelector("#questLinkBtnWrap .event"), "batch"), f.doc.querySelector("#questLinkBtnWrap .event span").textContent = m.EVENT)
   };
-  var C = "TOWER DAILYTOWER BRANCH ARENAMISSION SINGLERAID STORYRAID TRAINING ACCOMPLISH DUNGEON RAID PUELLA_RAID WITCH".split(" "),
+  var C = "TOWER DAILYTOWER BRANCH ARENAMISSION SINGLERAID STORYRAID TRAINING ACCOMPLISH DUNGEON RAID PUELLA_RAID WITCH WALPURGIS".split(" "),
     D = {
       TOWER: "#/EventTowerTop",
       DAILYTOWER: "#/EventDailyTowerTop",
@@ -226,7 +226,8 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
       DUNGEON: "#/EventDungeonTop",
       RAID: "#/EventRaidTop",
       PUELLA_RAID: "#/PuellaHistoriaRouter",
-      WITCH: "#/EventWitchTopPage"
+      WITCH: "#/EventWitchTopPage",
+      WALPURGIS: "#/EventWalpurgisRaidTop"
     },
     x = {
       TOWER: "tower",
@@ -240,7 +241,8 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
       DUNGEON: "dungeon",
       RAID: "raid",
       PUELLA_RAID: "puellaRaid",
-      WITCH: "eventWitch"
+      WITCH: "eventWitch",
+      WALPURGIS: "eventWalpurgis"
     };
   h.eventTabSwitch = function(a, c)
   {
@@ -275,7 +277,7 @@ define(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], f
             b = 'url("/magica/resource/image_web/event/' + x[d.eventType] + "/" + d.eventId + '/tab_limited_quest_s.png")'
         }
         c.querySelector(".bg").style.background = b;
-        0 < m[d.eventType] && "BRANCH" !== d.eventType && "ACCOMPLISH" !== d.eventType && (f.addClass(c, "batch"), "PUELLA_RAID" !== d.eventType && (c.querySelector("span").textContent = m[d.eventType]));
+        0 < m[d.eventType] && "BRANCH" !== d.eventType && "ACCOMPLISH" !== d.eventType && (f.addClass(c, "batch"), "PUELLA_RAID" !== d.eventType || "WALPURGIS" !== d.eventType) && (c.querySelector("span").textContent = m[d.eventType]);
         a.appendChild(c)
       }
     }

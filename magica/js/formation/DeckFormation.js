@@ -1,21 +1,21 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/formation/DeckFormation.html text!css/formation/DeckFormation.css cardUtil memoriaUtil js/view/chara/CharaListView js/card/CardPopup js/memoria/MemoriaPopup QuestUtil DeckUtil js/event/EventArenaRankMatch/parts/SpRule js/event/EventArenaRankMatch/parts/OpponentPopup js/event/EventArenaRankMatch/parts/DeckEditCountDown js/event/EventArenaRankMatch/Utility js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(h, B, a, A, n, U, V, W, ia, X, C, J, Y, Z, aa, ba, ca, R, da, ea)
+define("underscore backbone backboneCommon ajaxControl command text!template/formation/DeckFormation.html text!css/formation/DeckFormation.css cardUtil memoriaUtil js/view/chara/CharaListView js/card/CardPopup js/memoria/MemoriaPopup QuestUtil DeckUtil js/event/EventArenaRankMatch/parts/SpRule js/event/EventArenaRankMatch/parts/OpponentPopup js/event/EventArenaRankMatch/parts/DeckEditCountDown js/event/EventArenaRankMatch/Utility js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility js/event/EventWalpurgis/Utility".split(" "), function(k, C, a, A, q, U, V, W, ja, X, D, J, Y, Z, aa, ba, ca, R, da, ea, fa)
 {
-  var M = B.Model.extend(),
-    S = B.Collection.extend(),
+  var M = C.Model.extend(),
+    S = C.Collection.extend(),
     K = null,
     d = null,
     y = null,
-    t = null,
+    u = null,
     f = null,
     L = null,
     x;
   a.switchNpcCompar = {};
   a.rentalPieceData = {};
-  var p, u, fa = B.View.extend(
+  var p, v, ga = C.View.extend(
     {
       initialize: function(b)
       {
-        this.template = h.template(U);
+        this.template = k.template(U);
         this.questLoopStatus = Y.getQuestLoopStatus(a.questBattleModel);
         this.createDom()
       },
@@ -44,8 +44,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           {
             b.prototype.recoverCallback = function()
             {
-              r.appendCharaStatus();
-              var b = r.deckDataCreate(f.model.toJSON());
+              t.appendCharaStatus();
+              var b = t.deckDataCreate(f.model.toJSON());
               f.model.clear(
               {
                 silent: !0
@@ -65,10 +65,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       createView: function()
       {
         N.prototype.parentView = this;
-        N.prototype.template = h.template($("#DeckViewTemp").text());
+        N.prototype.template = k.template($("#DeckViewTemp").text());
         var b = a.doc.createDocumentFragment(),
-          c = t;
-        a.copyDeckModel && (c = r.deckDataCreate(a.copyDeckModel), a.copyDeckModel = null);
+          c = u;
+        a.copyDeckModel && (c = t.deckDataCreate(a.copyDeckModel), a.copyDeckModel = null);
         f = new N(
         {
           model: new M(c)
@@ -77,15 +77,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.doc.querySelector("#DeckFormation").appendChild(b);
         a.doc.querySelector(".memoriaEquipMode") && a.addClass(a.doc.querySelector("#pieceEquipBtn"), "on");
         a.rentalPieceData && a.rentalPieceData.rentalFlag && ("exterminationCopy" === d && "secondPartLastCopy" === d || a.addClass(a.doc.querySelector("#pieceEquipBtn"), "rental"));
-        a.questBattleModel && (a.addClass(a.doc.querySelector(".attBox"), "enemyDetail"), h.each(a.questBattleModel.questBattle.waveEnemyAttributeIdList, function(b)
+        a.questBattleModel && (a.addClass(a.doc.querySelector(".attBox"), "enemyDetail"), k.each(a.questBattleModel.questBattle.waveEnemyAttributeIdList, function(b)
         {
           b = b.toLowerCase();
           a.addClass(a.doc.querySelector(".enemyDetail ." + b), "on")
         }), "group" === d && a.questBattleModel.isSimulate && a.addClassId("simulateBaloon", "on"));
-        n.getBaseData(a.getNativeObj());
-        z(f.model.toJSON(), t);
+        q.getBaseData(a.getNativeObj());
+        z(f.model.toJSON(), u);
         O.prototype.parentView = this;
-        O.prototype.template = h.template($("#UserFormationListTemp").text());
+        O.prototype.template = k.template($("#UserFormationListTemp").text());
         b = a.doc.createDocumentFragment();
         a.storage.userFormationSheetList.comparator = function(a)
         {
@@ -96,7 +96,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           var c = a.toJSON(),
             e = [];
-          h.each(c.formationSheet, function(a, b)
+          k.each(c.formationSheet, function(a, b)
           {
             -1 !== b.indexOf("placeSkill") && -1 === b.indexOf("placeSkillId") && e.push(b.split("placeSkill")[1])
           });
@@ -112,8 +112,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         });
         a.doc.querySelector(".formationSheetListInner").appendChild(b);
         P.prototype.parentView = this;
-        P.prototype.template = h.template($("#deckChangeModeTemp").text());
-        c = r.deckListDataCreate();
+        P.prototype.template = k.template($("#deckChangeModeTemp").text());
+        c = t.deckListDataCreate();
         b = a.doc.createDocumentFragment();
         this.deckChangeModeView = new P(
         {
@@ -152,38 +152,38 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         if (!a.isScrolled())
         {
           var c = f.model.toJSON(),
-            e = r.savePrmCreate(c);
+            e = t.savePrmCreate(c);
           e.deckType = a.copyDeckType;
           delete e.questPositionHelper;
           for (b = 0; b < e.userCardIds.length;)
           {
             var l = e.userCardIds[b],
               g = !1,
-              k = 70;
+              h = 70;
             "exterminationCopy" === d && (g = (g = a.storage.userCardListEx.findWhere(
             {
               id: l
             })) && 4 > g.get("cardId") % 10);
-            "secondPartLastCopy" === d && (k = 100);
+            "secondPartLastCopy" === d && (h = 100);
             if (!g)
-              for (var E = 1; 5 >= E;)
+              for (var n = 1; 5 >= n;)
               {
-                c = k + E;
-                if (c !== e.deckType && (c = h.findWhere(a.storage.userDeckList.toJSON(),
+                c = h + n;
+                if (c !== e.deckType && (c = k.findWhere(a.storage.userDeckList.toJSON(),
                   {
                     deckType: c
                   })))
-                  for (var q = 1; 9 >= q;)
+                  for (var r = 1; 9 >= r;)
                   {
-                    if (c["userCardId" + q] && c["userCardId" + q] === l)
+                    if (c["userCardId" + r] && c["userCardId" + r] === l)
                     {
                       g = !0;
                       break
                     }
-                    q = q + 1 | 0
+                    r = r + 1 | 0
                   }
                 if (g) break;
-                E = E + 1 | 0
+                n = n + 1 | 0
               }
             g && (l === e.episodeUserCardId && delete e.episodeUserCardId, e.questPositionIds.splice(b, 1), e.userCardIds.splice(b, 1), e.userPieceIdLists.splice(b, 1), b--);
             b = b + 1 | 0
@@ -224,13 +224,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           if (a.doc.getElementById("baseContainer").classList.contains("type03_2")) a.tutorialUtil[a.tutorialId]("save2");
           else a.tutorialUtil[a.tutorialId]("save");
         var e = f.model.toJSON(),
-          l = r.savePrmCreate(e);
+          l = t.savePrmCreate(e);
         l.switchNpcEventId = e.switchNpcEventId ? e.switchNpcEventId : a.switchNpcCompar.eventId;
         l.switchNpcFlagList = [];
         for (b = 1; 10 >= b; b++) void 0 == e["switchNpcFlag" + b] && (e["switchNpcFlag" + b] = null), l.switchNpcFlagList.push(e["switchNpcFlag" + b]);
         l.rentalPieceSetIdList = [];
         for (b = 1; 10 >= b; b++) void 0 != e["rentalPieceSetId" + b] ? l.rentalPieceSetIdList.push(e["rentalPieceSetId" + b]) : l.rentalPieceSetIdList.push(null);
-        if ("endless" === d && 3 > l.userCardIds.length) n.startSe(1002), new a.PopupClass(
+        if ("endless" === d && 3 > l.userCardIds.length) q.startSe(1002), new a.PopupClass(
         {
           title: "編成エラー",
           content: "バトル開始には、3人以上の魔法少女が<br>編成に含まれている必要があります。",
@@ -244,7 +244,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             var g = a.EventArenaRankMatchPrm.deckMaxNumList[d];
             if (b > l.userCardIds.length)
             {
-              n.startSe(1002);
+              q.startSe(1002);
               new a.PopupClass(
               {
                 title: "編成エラー",
@@ -256,7 +256,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             }
             if (l.userCardIds.length > g)
             {
-              n.startSe(1002);
+              q.startSe(1002);
               new a.PopupClass(
               {
                 title: "編成エラー",
@@ -288,13 +288,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               return
             }
           }
-          if ("arena" === d && !l.userCardIds.length || "arenaRankMatchAttack" === d && !l.userCardIds.length || "arenaRankMatchDefence" === d && !l.userCardIds.length || "group" === d && !l.userCardIds.length || "support" === d && !l.userCardIds.length) n.startSe(1002), new a.PopupClass(
+          if ("arena" === d && !l.userCardIds.length || "arenaRankMatchAttack" === d && !l.userCardIds.length || "arenaRankMatchDefence" === d && !l.userCardIds.length || "group" === d && !l.userCardIds.length || "support" === d && !l.userCardIds.length) q.startSe(1002), new a.PopupClass(
           {
             title: "編成エラー",
             content: "魔法少女を１体以上編成してください。",
             closeBtnText: "OK"
           }), a.androidKeyStop = !1;
-          else if ("dungeon" === d && !e.leaderPos || "dungeonInMap" === d && !e.leaderPos) n.startSe(1002), new a.PopupClass(
+          else if ("dungeon" === d && !e.leaderPos || "dungeonInMap" === d && !e.leaderPos) q.startSe(1002), new a.PopupClass(
           {
             title: "編成エラー",
             content: "メインメンバーに魔法少女を１体以上編成してください。",
@@ -303,72 +303,72 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           else if (e = function(b)
             {
               a.responseSetStorage(b);
-              n.getBaseData(a.getNativeObj());
+              q.getBaseData(a.getNativeObj());
               "secondPartLast" === d && a.SecondPartLastBattleConfirmModel && (a.SecondPartLastBattleConfirmModel.deckInfo = a.SecondPartLastBattleConfirmModel.getUserDeck(
               {
                 index: a.SecondPartLastBattleConfirmModel.index - 1
               }));
               a.holdDeck = null;
               a.removeUserCardIdArr = [];
-              var e = r.deckListDataCreate();
+              var e = t.deckListDataCreate();
               c.deckChangeModeView.model.clear(
               {
                 silent: !0
               });
               c.deckChangeModeView.model.set(e);
-              b.userDeckList ? (b = h.findWhere(b.userDeckList,
+              b.userDeckList ? (b = k.findWhere(b.userDeckList,
               {
                 deckType: l.deckType
-              })) ? (b.formationSheet || (b.formationSheet = h.findWhere(p.userFormationSheetList,
+              })) ? (b.formationSheet || (b.formationSheet = k.findWhere(p.userFormationSheetList,
               {
                 formationSheetId: b.formationSheetId
               }).formationSheet), e = f.model.toJSON(), b.userCardObj = e.userCardObj) : b = f.model.toJSON() : b = f.model.toJSON();
-              t = r.deckDataCreate(b);
+              u = t.deckDataCreate(b);
               f.model.clear(
               {
                 silent: !0
               });
-              f.model.set(t);
-              z(f.model.toJSON(), t)
-            }, n.startSe(1002), a.removeUserCardIdArr.length)
+              f.model.set(u);
+              z(f.model.toJSON(), u)
+            }, q.startSe(1002), a.removeUserCardIdArr.length)
           {
             g = {
               userDeckList: []
             };
             g.userDeckList.push(l);
-            var k, E, q;
+            var h, n, r;
             switch (d)
             {
               case "extermination":
-                k = 70;
-                E = 5;
-                q = a.linkList.exterminationBulkSave;
+                h = 70;
+                n = 5;
+                r = a.linkList.exterminationBulkSave;
                 break;
               case "secondPartLast":
-                k = 100;
-                E = 5;
-                q = a.linkList.userDeckBulkSave;
+                h = 100;
+                n = 5;
+                r = a.linkList.userDeckBulkSave;
                 break;
               default:
-                k = 10, E = 9, q = a.linkList.exterminationBulkSave
+                h = 10, n = 9, r = a.linkList.exterminationBulkSave
             }
-            for (b = 1; b <= E;)
+            for (b = 1; b <= n;)
             {
-              if (f.model.toJSON().deckType !== k + b)
+              if (f.model.toJSON().deckType !== h + b)
               {
                 var m = a.storage.userDeckList.findWhere(
                 {
-                  deckType: k + b
+                  deckType: h + b
                 });
                 if (m)
                 {
-                  for (var m = m.toJSON(), w = 1, u = !1; 9 >= w;) - 1 < a.removeUserCardIdArr.indexOf(m["userCardId" + w]) && (m.questEpisodeUserCardId === m["userCardId" + w] && delete m.questEpisodeUserCardId, delete m["userCardId" + w], u = !0), w = w + 1 | 0;
-                  u && (m = r.deckDataCreate(m), m = r.savePrmCreate(m), !m.episodeUserCardId && m.userCardIds[0] && (m.episodeUserCardId = m.userCardIds[0]), g.userDeckList.push(m))
+                  for (var m = m.toJSON(), B = 1, v = !1; 9 >= B;) - 1 < a.removeUserCardIdArr.indexOf(m["userCardId" + B]) && (m.questEpisodeUserCardId === m["userCardId" + B] && delete m.questEpisodeUserCardId, delete m["userCardId" + B], v = !0), B = B + 1 | 0;
+                  v && (m = t.deckDataCreate(m), m = t.savePrmCreate(m), !m.episodeUserCardId && m.userCardIds[0] && (m.episodeUserCardId = m.userCardIds[0]), g.userDeckList.push(m))
                 }
               }
               b = b + 1 | 0
             }
-            A.ajaxPost(q, g, e)
+            A.ajaxPost(r, g, e)
           }
           else a.switchNpcCompar.saveParty = l.deckType, A.ajaxPost(a.linkList.userDeckSave, l, e)
         }
@@ -380,25 +380,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           a.questBattleModel && (a.questBattleModel.isLoop = b.currentTarget.classList.contains("loop"));
           b = !1;
-          a.switchNpcCompar.saveParty && f.model.attributes.deckType != a.switchNpcCompar.saveParty && (u.deckSave(), b = !0);
+          a.switchNpcCompar.saveParty && f.model.attributes.deckType != a.switchNpcCompar.saveParty && (v.deckSave(), b = !0);
           if (!b)
           {
-            b = h.findWhere(p.userDeckList,
+            b = k.findWhere(p.userDeckList,
             {
               deckType: f.model.attributes.deckType
             });
             var c = [!1, !1];
-            h.each(b, function(a, b)
+            k.each(b, function(a, b)
             {
               -1 !== b.indexOf("switchNpcFlag") && 1 == b && (c[0] = !0)
             });
-            h.each(f.model.attributes, function(a, b)
+            k.each(f.model.attributes, function(a, b)
             {
               -1 !== b.indexOf("switchNpcFlag") && 1 == f.model.attributes[b] && (c[1] = !0)
             });
-            0 == c[0] && 1 == c[1] && u.deckSave()
+            0 == c[0] && 1 == c[1] && v.deckSave()
           }
-          r.nextPageFunc(f.model.toJSON())
+          t.nextPageFunc(f.model.toJSON())
         }
       },
       regularEventPopup: function(b)
@@ -459,7 +459,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               8: 3,
               9: 0
             };
-          h.each(f.model.toJSON().userCardObj, function(a, b)
+          k.each(f.model.toJSON().userCardObj, function(a, b)
           {
             if (a.card)
             {
@@ -475,7 +475,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           });
           setTimeout(function()
           {
-            n.formationPreview(c)
+            q.formationPreview(c)
           }, 100)
         }
       },
@@ -493,7 +493,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             $("#popupArea .decideBtn").on(a.cgti, function(b)
             {
               b = f.model.toJSON();
-              b = r.deckDataCreate(
+              b = t.deckDataCreate(
               {
                 deckType: b.deckType,
                 formationSheet: b.formationSheet,
@@ -527,8 +527,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                 silent: !0
               });
               f.model.set(b);
-              z(b, t);
-              n.getBaseData(a.getNativeObj());
+              z(b, u);
+              q.getBaseData(a.getNativeObj());
               e.remove()
             })
           })
@@ -546,7 +546,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           H() && a.removeClass(a.doc.querySelector("#menu"), "noneDisp")
         }, 0), setTimeout(function()
         {
-          n.formationPreviewRemove()
+          q.formationPreviewRemove()
         }, 20))
       },
       formationSheetClose: function(b)
@@ -572,14 +572,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             a.doc.getElementById("formationDetail").innerHTML = "";
           else
           {
-            var c = h.clone(f.model.toJSON()),
+            var c = k.clone(f.model.toJSON()),
               e = a.doc.getElementById("formationSheetListOuter").getElementsByClassName("select")[0],
               c = c.formationSheet = a.storage.userFormationSheetList.findWhere(
               {
                 formationSheetId: e.dataset.fsid | 0
               }).toJSON().formationSheet,
               d = a.doc.createElement("div"),
-              g = h.template($("#formationDetailTemp").text());
+              g = k.template($("#formationDetailTemp").text());
             d.innerHTML = g(
             {
               model: c
@@ -587,7 +587,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             a.doc.getElementById("formationDetail").appendChild(d);
             c = a.doc.getElementById("formationDetailScrollWrap").getElementsByClassName("detailMiniMap");
             for (d = 0; d < c.length; d++) g = e.getElementsByClassName("formationMiniMap")[0].cloneNode(!0), c[d].appendChild(g);
-            n.getBaseData(a.getNativeObj());
+            q.getBaseData(a.getNativeObj());
             a.addClassId("formationDetail", "disp");
             a.scrollSet("formationDetailScrollWrap", "fromationDetailScrollInner");
             a.addClass(a.doc.getElementById("formationSheetListOuter"), "hide");
@@ -610,19 +610,19 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           {
             var g = c / l / 10 | 0,
               b = a.doc.getElementById("deckPartsWrap").getElementsByClassName("mpGauge"),
-              k = b.length;
+              h = b.length;
             if (101 > g)
-              for (; 0 < k;) k = k - 1 | 0, b[k].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:" + g + "%;", b[k].getElementsByClassName("ts_brown")[0].textContent = g;
+              for (; 0 < h;) h = h - 1 | 0, b[h].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:" + g + "%;", b[h].getElementsByClassName("ts_brown")[0].textContent = g;
             else
             {
-              for (var f = 0, g = [], h = 0; h < k; h++) 5 === a.storage.userCardListEx.findWhere(
+              for (var f = 0, g = [], k = 0; k < h; k++) 5 === a.storage.userCardListEx.findWhere(
               {
-                charaId: e[h].dataset.charaid | 0
-              }).toJSON().magiaLevel && (f++, g.push(h));
+                charaId: e[k].dataset.charaid | 0
+              }).toJSON().magiaLevel && (f++, g.push(k));
               if (0 < f)
-                for (c = (c - 1E3 * l) / f / 10 | 0; 0 < k;) k = k - 1 | 0, b[k].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[k].getElementsByClassName("ts_brown")[0].textContent = "100", -1 < g.indexOf(k) && (50 <= c ? (b[k].getElementsByClassName("gaugeInner02")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[k].getElementsByClassName("ts_brown")[0].textContent = 150) : (b[k].getElementsByClassName("gaugeInner02")[0].getElementsByClassName("gaugeBg")[0].style = "width:" + c + "%;", b[k].getElementsByClassName("ts_brown")[0].textContent = c + 100));
+                for (c = (c - 1E3 * l) / f / 10 | 0; 0 < h;) h = h - 1 | 0, b[h].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[h].getElementsByClassName("ts_brown")[0].textContent = "100", -1 < g.indexOf(h) && (50 <= c ? (b[h].getElementsByClassName("gaugeInner02")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[h].getElementsByClassName("ts_brown")[0].textContent = 150) : (b[h].getElementsByClassName("gaugeInner02")[0].getElementsByClassName("gaugeBg")[0].style = "width:" + c + "%;", b[h].getElementsByClassName("ts_brown")[0].textContent = c + 100));
               else
-                for (; 0 < k;) k = k - 1 | 0, b[k].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[k].getElementsByClassName("ts_brown")[0].textContent = "100"
+                for (; 0 < h;) h = h - 1 | 0, b[h].getElementsByClassName("gaugeInner01")[0].getElementsByClassName("gaugeBg")[0].style = "width:100%;", b[h].getElementsByClassName("ts_brown")[0].textContent = "100"
             }
           }
         }
@@ -660,14 +660,14 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           model: a.EventArenaRankMatchPrm.opponentInfo,
           pageType: "DeckFormation"
-        }), a.doc.getElementById("overlapContainer").appendChild(this.EventArenaRankMatchOpponentPopup.render().el), n.getBaseData(a.getNativeObj()))
+        }), a.doc.getElementById("overlapContainer").appendChild(this.EventArenaRankMatchOpponentPopup.render().el), q.getBaseData(a.getNativeObj()))
       }
     }),
     H = function()
     {
       return !d || "support" == d || "arena" == d
     },
-    O = B.View.extend(
+    O = C.View.extend(
     {
       initialize: function(a)
       {
@@ -697,26 +697,26 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           a.removeClass(a.doc.querySelector(".list.select"), "select");
           a.addClass(this.el, "select");
           b = this.model.toJSON().formationSheetId;
-          var c = h.clone(f.model.toJSON());
+          var c = k.clone(f.model.toJSON());
           c.formationSheetId = b;
           c.formationSheet = a.storage.userFormationSheetList.findWhere(
           {
             formationSheetId: b
           }).toJSON().formationSheet;
           var e = [];
-          h.each(c.formationSheet, function(a, b)
+          k.each(c.formationSheet, function(a, b)
           {
             -1 !== b.indexOf("placeSkillId") && e.push(b.split("placeSkillId")[1])
           });
           "dungeon" !== d && "dungeonInMap" !== d || Array.prototype.push.apply(e, ["10", "11"]);
-          h.each(c, function(a, b)
+          k.each(c, function(a, b)
           {
             -1 !== b.indexOf("questPosition") && (a = c.posArr.indexOf(String(a)), c[b] = Number(e[a]))
           });
           c.posArr = e;
-          b = r.deckDataCreate(c);
+          b = t.deckDataCreate(c);
           f.model.set(b);
-          z(f.model.toJSON(), t)
+          z(f.model.toJSON(), u)
         }
       },
       removeView: function()
@@ -725,7 +725,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         this.remove()
       }
     }),
-    P = B.View.extend(
+    P = C.View.extend(
     {
       className: "deckSelectInner",
       events: function()
@@ -741,9 +741,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       },
       render: function()
       {
-        h.each(this.model.toJSON(), function(b, c)
+        k.each(this.model.toJSON(), function(b, c)
         {
-          c = h.findWhere(a.storage.userCardListEx.toJSON(),
+          c = k.findWhere(a.storage.userCardListEx.toJSON(),
           {
             userCardId: b.questEpisodeUserCardId
           });
@@ -767,7 +767,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         var c = {
           deckType: b,
           formationSheetId: 111,
-          formationSheet: h.findWhere(p.userFormationSheetList,
+          formationSheet: k.findWhere(p.userFormationSheetList,
           {
             formationSheetId: 111
           }).formationSheet,
@@ -802,16 +802,16 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           deckType: b
         }).toJSON() : c;
-        t = b = r.deckDataCreate(b);
-        y = t.deckType;
+        u = b = t.deckDataCreate(b);
+        y = u.deckType;
         f.model.clear(
         {
           silent: !0
         });
         f.model.set(b);
         f.bonusTextUpdate();
-        z(f.model.toJSON(), t);
-        n.getBaseData(a.getNativeObj());
+        z(f.model.toJSON(), u);
+        q.getBaseData(a.getNativeObj());
         setTimeout(function()
         {
           a.removeClass(a.doc.querySelector("#DeckFormation"), "deckChange");
@@ -826,7 +826,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         var c = {
           deckType: y,
           formationSheetId: 111,
-          formationSheet: h.findWhere(p.userFormationSheetList,
+          formationSheet: k.findWhere(p.userFormationSheetList,
           {
             formationSheetId: 111
           }).formationSheet,
@@ -861,23 +861,23 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           deckType: b
         }).toJSON() : c;
-        b = r.deckDataCreate(e);
+        b = t.deckDataCreate(e);
         b.deckType = y;
-        b.name = t.name;
+        b.name = u.name;
         f.model.clear(
         {
           silent: !0
         });
         f.model.set(b);
         f.bonusTextUpdate();
-        z(f.model.toJSON(), t);
-        n.getBaseData(a.getNativeObj());
+        z(f.model.toJSON(), u);
+        q.getBaseData(a.getNativeObj());
         setTimeout(function()
         {
           new a.PopupClass(
           {
             title: "編成コピー確認",
-            content: "<span class='c_pink'>" + e.name + "</span>を<span class='c_pink'>" + t.name + "</span>へコピーしました。<br><br><span class='c_red'>決定ボタンをタップすることで確定されます。</span>",
+            content: "<span class='c_pink'>" + e.name + "</span>を<span class='c_pink'>" + u.name + "</span>へコピーしました。<br><br><span class='c_red'>決定ボタンをタップすることで確定されます。</span>",
             closeBtnText: "OK",
             popupType: "typeC"
           });
@@ -893,7 +893,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         this.remove()
       }
     }),
-    N = B.View.extend(
+    N = C.View.extend(
     {
       className: function()
       {
@@ -904,7 +904,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       {
         this.selectPos = this.selectModel = null;
         b = a.holdDeck && a.holdDeck.deckType == y ? a.holdDeck : this.model.toJSON();
-        b = r.deckDataCreate(b);
+        b = t.deckDataCreate(b);
         this.model.clear(
         {
           silent: !0
@@ -956,9 +956,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             b.preventDefault();
             if (a.isScrolled()) return;
             e = b.currentTarget.dataset.posindex;
-            n.startSe(1002)
+            q.startSe(1002)
           }
-          var l = {
+          var f = {
             1: "ALL",
             2: "FIRE",
             3: "WATER",
@@ -966,34 +966,34 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             5: "LIGHT",
             6: "DARK"
           };
-          C.popupTimerStop();
-          var g = h.clone(this.model.toJSON()),
-            k = h.clone(g.userCardObj),
-            f = h.clone(g.userPieceObj),
-            q = e ? k["place" + e] : h.clone(c.model.toJSON());
+          D.popupTimerStop();
+          var g = k.clone(this.model.toJSON()),
+            h = k.clone(g.userCardObj),
+            n = k.clone(g.userPieceObj),
+            r = e ? h["place" + e] : k.clone(c.model.toJSON());
           if (this.selectModel || this.selectPos)
           {
-            if (e) k["place" + e] = this.selectModel, k["place" + this.selectPos] = q || null, c = b = null, f["place" + e] && (b = h.clone(f["place" + e])), f["place" + this.selectPos] && (c = h.clone(f["place" + this.selectPos])), c ? f["place" + e] = c : delete f["place" + e], b ? f["place" + this.selectPos] = b : delete f["place" + this.selectPos];
-            else if (this.selectModel && q.userCardId == this.selectModel.userCardId)
+            if (e) h["place" + e] = this.selectModel, h["place" + this.selectPos] = r || null, c = b = null, n["place" + e] && (b = k.clone(n["place" + e])), n["place" + this.selectPos] && (c = k.clone(n["place" + this.selectPos])), c ? n["place" + e] = c : delete n["place" + e], b ? n["place" + this.selectPos] = b : delete n["place" + this.selectPos];
+            else if (this.selectModel && r.userCardId == this.selectModel.userCardId)
             {
-              k["place" + this.selectPos] = null;
-              var m = a.removeUserCardIdArr.indexOf(q.userCardId); - 1 < m && a.removeUserCardIdArr.splice(m, 1)
+              h["place" + this.selectPos] = null;
+              var m = a.removeUserCardIdArr.indexOf(r.userCardId); - 1 < m && a.removeUserCardIdArr.splice(m, 1)
             }
             else
             {
-              var w = null;
-              h.each(k, function(a, b)
+              var B = null;
+              k.each(h, function(a, b)
               {
                 var c = !1;
-                a && a.userCardId == q.userCardId && (c = !0);
-                c && (k[b] = null, w = b)
+                a && a.userCardId == r.userCardId && (c = !0);
+                c && (h[b] = null, B = b)
               });
-              k["place" + this.selectPos] = q;
-              0 > a.removeUserCardIdArr.indexOf(q.userCardId) && c.el.classList.contains("exterminationSet") && a.removeUserCardIdArr.push(q.userCardId);
+              h["place" + this.selectPos] = r;
+              0 > a.removeUserCardIdArr.indexOf(r.userCardId) && c.el.classList.contains("exterminationSet") && a.removeUserCardIdArr.push(r.userCardId);
               this.selectModel && -1 < a.removeUserCardIdArr.indexOf(this.selectModel.userCardId) && (m = a.removeUserCardIdArr.indexOf(this.selectModel.userCardId), -1 < m && a.removeUserCardIdArr.splice(m, 1));
               e = null;
-              f[w] && (e = h.clone(f[w]));
-              e && (f["place" + this.selectPos] = e)
+              n[B] && (e = k.clone(n[B]));
+              e && (n["place" + this.selectPos] = e)
             }
             for (e = 0; 10 > e;) delete g["userCardId" + (e + 1)], delete g["questPositionId" + (e + 1)], e = e + 1 | 0;
             for (e = 0; 10 > e;)
@@ -1003,41 +1003,41 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               e = e + 1 | 0
             }
             e = [];
-            for (I in k) e.push(I);
+            for (I in h) e.push(I);
             e.sort(function(a, b)
             {
               return Number(a.split("place")[1]) < Number(b.split("place")[1]) ? -1 : Number(a.split("place")[1]) > Number(b.split("place")[1]) ? 1 : 0
             });
             m = 1;
-            h.each(e, function(a, b)
+            k.each(e, function(a, b)
             {
               b = a.split("place")[1];
-              if (k[a] && k[a].support && 20 !== g.deckType) g.questPositionHelper = Number(b);
-              else if (k[a] && !k[a].supportFlag)
+              if (h[a] && h[a].support && 20 !== g.deckType) g.questPositionHelper = Number(b);
+              else if (h[a] && !h[a].supportFlag)
               {
                 var c = "questPositionId" + m,
                   e = "userCardId" + m,
                   d = "userPieceId" + ("00" + m).slice(-2);
                 g[c] = Number(b);
-                g[e] = k[a].userCardId;
-                h.each(f[a], function(a, b)
+                g[e] = h[a].userCardId;
+                k.each(n[a], function(a, b)
                 {
                   a && a.id && (g[d + (b + 1)] = a.id)
                 });
                 m++
               }
             });
-            g.userCardObj = k;
-            g.userPieceObj = f;
+            g.userCardObj = h;
+            g.userPieceObj = n;
             20 !== g.deckType && (g = Q(g));
-            g = r.deckDataCreate(g);
+            g = t.deckDataCreate(g);
             this.model.clear(
             {
               silent: !0
             });
             this.model.set(g);
-            z(this.model.toJSON(), t);
-            n.getBaseData(a.getNativeObj());
+            z(this.model.toJSON(), u);
+            q.getBaseData(a.getNativeObj());
             this.selectModel = this.selectPos = null;
             a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
             "support" === d ? (a.doc.querySelector("#charaListWrap").className = "", a.removeClass(a.doc.querySelector(".deckPartsWrap"), "tapBlock")) : a.removeClass(a.doc.querySelector("#charaListWrap"), "open")
@@ -1048,25 +1048,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
             a.removeClass(a.doc.querySelector("#charaListWrap"), "open");
             this.selectPos = e;
-            this.selectModel = h.clone(q);
+            this.selectModel = k.clone(r);
             a.addClass(b.currentTarget, "select");
-            if (this.selectModel && !this.selectModel.support || !this.selectModel) u.charaListView.cardSort.multiSort(), ga(), 20 == this.model.toJSON().deckType && (a.addClass(a.doc.querySelector("#charaListWrap"), l[e]), a.addClass(a.doc.querySelector(".deckPartsWrap"), "tapBlock")), a.addClass(a.doc.querySelector("#charaListWrap"), "open"), a.scrollRefresh(null, null, !0, null)
+            if (this.selectModel && !this.selectModel.support || !this.selectModel) v.charaListView.cardSort.multiSort(), ha(), 20 == this.model.toJSON().deckType && (a.addClass(a.doc.querySelector("#charaListWrap"), f[e]), a.addClass(a.doc.querySelector(".deckPartsWrap"), "tapBlock")), a.addClass(a.doc.querySelector("#charaListWrap"), "open"), a.scrollRefresh(null, null, !0, null)
           }
         }
       },
       leaderSet: function(b)
       {
         b.preventDefault();
-        if (!a.isScrolled() && (b.stopPropagation(), C.popupTimerStop(), J.popupTimerStop(), "exterminationCopy" !== d && "secondPartLastCopy" !== d && (b = b.currentTarget, !b.classList.contains("on"))))
+        if (!a.isScrolled() && (b.stopPropagation(), D.popupTimerStop(), J.popupTimerStop(), "exterminationCopy" !== d && "secondPartLastCopy" !== d && (b = b.currentTarget, !b.classList.contains("on"))))
         {
-          n.startSe(1008);
-          var c = h.clone(this.model.toJSON());
+          q.startSe(1008);
+          var c = k.clone(this.model.toJSON());
           c.questEpisodeUserCardId = c.userCardObj["place" + Number(b.parentNode.dataset.posindex)].userCardId;
           c = Q(c);
-          c = r.deckDataCreate(c);
+          c = t.deckDataCreate(c);
           this.model.set(c);
-          z(this.model.toJSON(), t);
-          n.getBaseData(a.getNativeObj());
+          z(this.model.toJSON(), u);
+          q.getBaseData(a.getNativeObj());
           this.selectModel = this.selectPos = null;
           a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
           a.removeClass(a.doc.querySelector("#charaListWrap"), "open")
@@ -1075,17 +1075,17 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       eventEffectBtn: function(b)
       {
         b.preventDefault();
-        if (!a.isScrolled() && (b.stopPropagation(), C.popupTimerStop(), J.popupTimerStop(), "exterminationCopy" !== d && "secondPartLastCopy" !== d))
+        if (!a.isScrolled() && (b.stopPropagation(), D.popupTimerStop(), J.popupTimerStop(), "exterminationCopy" !== d && "secondPartLastCopy" !== d))
         {
           b = b.currentTarget;
-          var c = h.clone(this.model.toJSON()),
+          var c = k.clone(this.model.toJSON()),
             e = Number(b.parentNode.dataset.posindex);
           a.switchNpcValidList["set_" + b.parentNode.dataset.charaid] || (a.switchNpcValidList["set_" + b.parentNode.dataset.charaid] = !0);
-          b.classList.contains("on") ? (n.startSe(1003), c.userCardObj["place" + e].switchCharaFlag = !1, c["switchNpcFlag" + c.userCardObj["place" + e].switchNpcPos] = !1, a.switchNpcValidList[b.parentNode.dataset.charaid] = !1) : (n.startSe(1008), c.userCardObj["place" + e].switchCharaFlag = !0, c["switchNpcFlag" + c.userCardObj["place" + e].switchNpcPos] = !0, a.switchNpcValidList[b.parentNode.dataset.charaid] = !0);
+          b.classList.contains("on") ? (q.startSe(1003), c.userCardObj["place" + e].switchCharaFlag = !1, c["switchNpcFlag" + c.userCardObj["place" + e].switchNpcPos] = !1, a.switchNpcValidList[b.parentNode.dataset.charaid] = !1) : (q.startSe(1008), c.userCardObj["place" + e].switchCharaFlag = !0, c["switchNpcFlag" + c.userCardObj["place" + e].switchNpcPos] = !0, a.switchNpcValidList[b.parentNode.dataset.charaid] = !0);
           this.model.set(c);
           this.changeRender();
-          z(this.model.toJSON(), t);
-          n.getBaseData(a.getNativeObj());
+          z(this.model.toJSON(), u);
+          q.getBaseData(a.getNativeObj());
           this.selectModel = this.selectPos = null;
           a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
           a.removeClass(a.doc.querySelector("#charaListWrap"), "open")
@@ -1109,7 +1109,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               a.isScrolled() || (a.tapBlock(!0), c.model.set(
               {
                 name: a.doc.getElementById("commentInput").value
-              }), z(c.model.toJSON(), t), n.getBaseData(a.getNativeObj()), l.remove(), a.tapBlock(!1))
+              }), z(c.model.toJSON(), u), q.getBaseData(a.getNativeObj()), l.remove(), a.tapBlock(!1))
             })
           })
         }
@@ -1123,7 +1123,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           this.selectModel = this.selectPos = null;
           a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
           a.removeClass(a.doc.querySelector("#charaListWrap"), "open");
-          var c = t.deckType;
+          var c = u.deckType;
           b = b.currentTarget.classList.contains("arrowR") ? 1 : -1;
           var c = c + b,
             e = {
@@ -1136,20 +1136,22 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
               secondPartLast: "10",
               puellaHistoriaGroupRaid: String(da.getDeckType(
               {}) / 10),
+              EventWalpurgisRaid: String(fa.getDeckType(
+              {}) / 10),
               scene0Challenge: String(ea.getDeckType() / 10),
               arenaRankMatchAttack: String(R.getDeckType().attackBase / 10),
               accomplish: "8",
               exterminationCopy: "1",
               secondPartLastCopy: "1"
             };
-          b = "group" === d || "groupPrepare" === d ? Number(e[d || "quest"] + "4") : "endless" === d ? Number(e[d || "quest"] + "3") : "accomplish" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d ? Number(e[d || "quest"] + "5") : Number(e[d || "quest"] + "9");
+          b = "group" === d || "groupPrepare" === d ? Number(e[d || "quest"] + "4") : "endless" === d ? Number(e[d || "quest"] + "3") : "accomplish" === d || "puellaHistoriaGroupRaid" === d || "EventWalpurgisRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d ? Number(e[d || "quest"] + "5") : Number(e[d || "quest"] + "9");
           e = Number(e[d || "quest"] + "1");
           c = c > b ? e : c;
           c = c < e ? b : c;
           b = {
             deckType: c,
             formationSheetId: 111,
-            formationSheet: h.findWhere(p.userFormationSheetList,
+            formationSheet: k.findWhere(p.userFormationSheetList,
             {
               formationSheetId: 111
             }).formationSheet,
@@ -1185,7 +1187,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           {
             deckType: c
           }).toJSON() : b;
-          t = b = r.deckDataCreate(b);
+          u = b = t.deckDataCreate(b);
           y = c;
           this.model.clear(
           {
@@ -1197,7 +1199,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           f.bonusTextUpdate();
           a.removeClass(a.doc.querySelector(".deckViewWrap"), "memoriaEquipMode");
           a.removeClass(a.doc.querySelector("#pieceEquipBtn"), "on");
-          n.getBaseData(a.getNativeObj())
+          q.getBaseData(a.getNativeObj())
         }
       },
       deckChangeMode: function(b)
@@ -1218,7 +1220,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.removeClass(a.doc.querySelector(".deckParts.select"), "select");
         a.removeClass(a.doc.querySelector("#charaListWrap"), "open");
         (b = a.doc.getElementById("deckSelectWrap").getElementsByClassName("currentDeck")[0]) && a.removeClass(b, "currentDeck");
-        b = a.doc.getElementById("deckSelectWrap").getElementsByClassName("deck" + t.deckType)[0];
+        b = a.doc.getElementById("deckSelectWrap").getElementsByClassName("deck" + u.deckType)[0];
         a.addClass(b, "currentDeck");
         setTimeout(function()
         {
@@ -1247,6 +1249,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                 case "accomplish":
                 case "endless":
                 case "puellaHistoriaGroupRaid":
+                case "EventWalpurgisRaid":
                 case "scene0Challenge":
                   return 5;
                 case "dungeon":
@@ -1304,7 +1307,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                 "group" != d && "groupPrepare" != d || L.regularEventGroupBattle.recommendCharaAttributes.split(",");
                 if ("support" !== d && "group" !== d && "groupPrepare" !== d)
                 {
-                  var k = 0;
+                  var h = 0;
                   a.doc.getElementById("autoFilterAtt").classList.contains("on") ? (e = {
                     FIRE: !0,
                     WATER: !0,
@@ -1312,12 +1315,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                     LIGHT: !0,
                     DARK: !0,
                     VOID: !0
-                  }, k = 6) : (b = a.doc.querySelectorAll(".autoFormationPop .attribute.on"), h.each(b, function(a)
+                  }, h = 6) : (b = a.doc.querySelectorAll(".autoFormationPop .attribute.on"), k.each(b, function(a)
                   {
                     e[a.dataset.typeFilter] = !0;
-                    k++
+                    h++
                   }));
-                  if (0 === k)
+                  if (0 === h)
                   {
                     new a.PopupClass(
                     {
@@ -1337,33 +1340,33 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                   DARK: !0,
                   VOID: !0
                 };
-                var q, m = h.filter(a.storage.userCardListEx.toJSON(), function(a)
+                var r, m = k.filter(a.storage.userCardListEx.toJSON(), function(a)
                 {
                   switch (d)
                   {
                     case "accomplish":
-                      q = 40 <= a.level && !a.isRetired;
+                      r = 40 <= a.level && !a.isRetired;
                       break;
                     default:
-                      q = !0
+                      r = !0
                   }
-                  return e[a.chara.attributeId] && q
+                  return e[a.chara.attributeId] && r
                 });
-                a.questBattleModel && a.switchNpcList && h.each(m, function(b)
+                a.questBattleModel && a.switchNpcList && k.each(m, function(b)
                 {
-                  h.find(a.switchNpcList, function(a)
+                  k.find(a.switchNpcList, function(a)
                   {
                     return a.userCharaList[0].charaId == b.chara.id
                   }) && (b.switchCharaFlag = !0)
                 });
                 if (("arenaRankMatchAttack" === d || "arenaRankMatchDefence" === d) && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.spPlusList)
                 {
-                  var w = a.EventArenaRankMatchPrm.spPlusList;
-                  h.each(m, function(a, b, c)
+                  var B = a.EventArenaRankMatchPrm.spPlusList;
+                  k.each(m, function(a, b, c)
                   {
-                    h.each(w, function(b, c, e)
+                    k.each(B, function(b, c, e)
                     {
-                      c == a.card.attributeId && h.each(b, function(b, c, e)
+                      c == a.card.attributeId && k.each(b, function(b, c, e)
                       {
                         a[c] && (a[c] += b);
                         0 > a[c] && (a[c] = 0)
@@ -1379,7 +1382,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                 if ("support" == d)
                 {
                   b = [];
-                  var D = {
+                  var E = {
                     ALL: null,
                     FIRE: null,
                     WATER: null,
@@ -1387,17 +1390,17 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                     LIGHT: null,
                     DARK: null
                   };
-                  h.each(m, function(a, b)
+                  k.each(m, function(a, b)
                   {
                     b = a.chara.attributeId;
-                    D.ALL ? "VOID" === b || D[b] || (D[b] = a) : D.ALL = a
+                    E.ALL ? "VOID" === b || E[b] || (E[b] = a) : E.ALL = a
                   });
-                  b[0] = D.ALL;
-                  b[1] = D.FIRE;
-                  b[2] = D.WATER;
-                  b[3] = D.TIMBER;
-                  b[4] = D.LIGHT;
-                  b[5] = D.DARK;
+                  b[0] = E.ALL;
+                  b[1] = E.FIRE;
+                  b[2] = E.WATER;
+                  b[3] = E.TIMBER;
+                  b[4] = E.LIGHT;
+                  b[5] = E.DARK;
                   m = b
                 }
                 else if (0 === m.length)
@@ -1446,11 +1449,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                 b = a.storage.userPieceList.toJSON();
                 var y = [],
                   A = [],
-                  y = h.filter(b, function(a)
+                  y = k.filter(b, function(a)
                   {
                     return "SKILL" === a.piece.pieceType
                   }),
-                  A = h.filter(b, function(a)
+                  A = k.filter(b, function(a)
                   {
                     return "ABILITY" === a.piece.pieceType
                   });
@@ -1474,42 +1477,42 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                     SKILL: y,
                     ABILITY: A
                   },
-                  B = {},
+                  C = {},
                   H = {
                     SKILL: 0,
                     ABILITY: 0
                   },
-                  C = 0,
-                  v = 1;
-                h.each(F.posArr, function(a, b)
+                  D = 0,
+                  w = 1;
+                k.each(F.posArr, function(a, b)
                 {
                   b = Number(a);
                   if (F.questPositionHelper !== b)
                   {
-                    var c = "userCardId" + v,
-                      e = "questPositionId" + v;
-                    m[C] && (p.userCardObj["place" + a] = m[C], p[c] = m[C].userCardId, p[e] = b, v++);
-                    C++
+                    var c = "userCardId" + w,
+                      e = "questPositionId" + w;
+                    m[D] && (p.userCardObj["place" + a] = m[D], p[c] = m[D].userCardId, p[e] = b, w++);
+                    D++
                   }
                 });
-                for (var G = v = 0; 4 > v;) h.each(p.userCardObj, function(a, b)
+                for (var G = w = 0; 4 > w;) k.each(p.userCardObj, function(a, b)
                 {
                   if (a)
-                    if (a.revision >= v)
+                    if (a.revision >= w)
                     {
-                      if (x[l[v]][0])
+                      if (x[l[w]][0])
                       {
-                        var c = "userPieceId" + ("00" + (G + 1)).slice(-2) + (v + 1),
-                          e = "userPieceId" + ("00" + (G + 1)).slice(-2) + (v - 1),
+                        var c = "userPieceId" + ("00" + (G + 1)).slice(-2) + (w + 1),
+                          e = "userPieceId" + ("00" + (G + 1)).slice(-2) + (w - 1),
                           d = function(b)
                           {
-                            if (x[l[v]][b])
+                            if (x[l[w]][b])
                             {
-                              var g = x[l[v]][b].pieceId,
-                                f;
-                              f = x[l[v]][b].piece;
-                              f = f.charaIds ? -1 < f.charaIds.indexOf(a.charaId) ? !0 : !1 : !0;
-                              !f || B[e] && B[e] === g ? d(b + 1 | 0) : (p[c] = x[l[v]][b].id + "", B[c] = x[l[v]][b].pieceId, x[l[v]].splice(b, 1), H[l[v]]++, G = G + 1 | 0)
+                              var g = x[l[w]][b].pieceId,
+                                h;
+                              h = x[l[w]][b].piece;
+                              h = h.charaIds ? -1 < h.charaIds.indexOf(a.charaId) ? !0 : !1 : !0;
+                              !h || C[e] && C[e] === g ? d(b + 1 | 0) : (p[c] = x[l[w]][b].id + "", C[c] = x[l[w]][b].pieceId, x[l[w]].splice(b, 1), H[l[w]]++, G = G + 1 | 0)
                             }
                             else G = G + 1 | 0
                           };
@@ -1517,18 +1520,18 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
                       }
                     }
                   else G = G + 1 | 0
-                }), v = v + 1 | 0, G = 0;
+                }), w = w + 1 | 0, G = 0;
                 20 !== p.deckType && (p = Q(p));
-                p = r.deckDataCreate(p);
-                z(p, t);
+                p = t.deckDataCreate(p);
+                z(p, u);
                 f.model.clear(
                 {
                   silent: !0
                 });
                 f.model.set(p);
-                n.getBaseData(a.getNativeObj());
+                q.getBaseData(a.getNativeObj());
                 if (a.tutorialId) a.tutorialUtil[a.tutorialId]("autoPop");
-                "group" === d && u.deckMpCalculate();
+                "group" === d && v.deckMpCalculate();
                 a.g_popup_instance.remove()
               }
             })
@@ -1540,28 +1543,28 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         b.preventDefault();
         if (!(a.isScrolled() || (b.stopPropagation(), J.popupTimerStop(), a.detailPopup || b.currentTarget.parentNode.parentNode.classList.contains("boost") || b.currentTarget.parentNode.parentNode.classList.contains("support") && "quest" === d || this.model.attributes.userCardObj["place" + Number(b.currentTarget.parentNode.parentNode.dataset.posindex)] && this.model.attributes.userCardObj["place" + Number(b.currentTarget.parentNode.parentNode.dataset.posindex)].rentalFlag || !(b.currentTarget.classList.contains("canEquip") || b.currentTarget.classList.contains("equiped") || b.currentTarget.classList.contains("tapBlock")) || "dungeonInMap" === d || "exterminationCopy" === d || "secondPartLastCopy" === d)))
         {
-          n.startSe(1002);
+          q.startSe(1002);
           var c = Number(b.currentTarget.parentNode.parentNode.dataset.posindex),
             e = Number(b.currentTarget.dataset.pieceindex),
             f = Number(b.currentTarget.parentNode.parentNode.dataset.charaid),
             g = b.currentTarget.parentNode.parentNode.dataset.charaname;
           b = b.currentTarget.parentNode.parentNode.dataset.charaatt;
-          var k = this.model.toJSON().userPieceObj["place" + c] || [],
-            p = 0 < k.length ? k[e - 1] : null,
-            q = a.storage.userCardListEx.findWhere(
+          var h = this.model.toJSON().userPieceObj["place" + c] || [],
+            n = 0 < h.length ? h[e - 1] : null,
+            r = a.storage.userCardListEx.findWhere(
             {
               charaId: f
             }).toJSON().revision,
             m = {},
-            w = this;
-          h.each(this.model.toJSON().userPieceObj, function(a, b)
+            p = this;
+          k.each(this.model.toJSON().userPieceObj, function(a, b)
           {
-            h.each(a, function(a, c)
+            k.each(a, function(a, c)
             {
               a && a.id && (m[a.id] = {
-                name: w.model.toJSON().userCardObj[b].chara.name,
-                charaId: w.model.toJSON().userCardObj[b].card.miniCharaNo
-              }, w.model.toJSON().userCardObj[b].chara.title && (m[a.id].name += " " + w.model.toJSON().userCardObj[b].chara.title))
+                name: p.model.toJSON().userCardObj[b].chara.name,
+                charaId: p.model.toJSON().userCardObj[b].card.miniCharaNo
+              }, p.model.toJSON().userCardObj[b].chara.title && (m[a.id].name += " " + p.model.toJSON().userCardObj[b].chara.title))
             })
           });
           a.equipInfo = {
@@ -1570,11 +1573,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             charaAtt: b,
             posIndex: c,
             pieceIndex: e,
-            pieceArr: k,
-            pieceModel: p,
+            pieceArr: h,
+            pieceModel: n,
             allPiece: m,
-            selectPieceId: p ? p.id : null,
-            revision: q
+            selectPieceId: n ? n.id : null,
+            revision: r
           };
           a.holdDeck = this.model.toJSON();
           "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && (a.EventArenaRankMatchPrm.isDeckEditCountDownContinue = !0);
@@ -1591,20 +1594,20 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             f = b.currentTarget.parentNode.parentNode.dataset.charaname;
           b = b.currentTarget.parentNode.parentNode.dataset.charaatt;
           var g = this.model.toJSON().userPieceObj["place" + c] || [],
-            k = a.storage.userCardListEx.findWhere(
+            h = a.storage.userCardListEx.findWhere(
             {
               charaId: e
             }).toJSON().revision,
             n = {},
-            q = this;
-          h.each(this.model.toJSON().userPieceObj, function(a, b)
+            r = this;
+          k.each(this.model.toJSON().userPieceObj, function(a, b)
           {
-            h.each(a, function(a, c)
+            k.each(a, function(a, c)
             {
               a && a.id && (n[a.id] = {
-                name: q.model.toJSON().userCardObj[b].chara.name,
-                charaId: q.model.toJSON().userCardObj[b].card.miniCharaNo
-              }, q.model.toJSON().userCardObj[b].chara.title && (n[a.id].name += " " + q.model.toJSON().userCardObj[b].chara.title))
+                name: r.model.toJSON().userCardObj[b].chara.name,
+                charaId: r.model.toJSON().userCardObj[b].card.miniCharaNo
+              }, r.model.toJSON().userCardObj[b].chara.title && (n[a.id].name += " " + r.model.toJSON().userCardObj[b].chara.title))
             })
           });
           a.equipInfo = {
@@ -1617,7 +1620,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             pieceModel: null,
             allPiece: n,
             selectPieceId: null,
-            revision: k
+            revision: h
           };
           a.holdDeck = this.model.toJSON();
           "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && (a.EventArenaRankMatchPrm.isDeckEditCountDownContinue = !0);
@@ -1636,12 +1639,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
             g = null;
           a.rentalPieceData[e] = null;
           a.rentalSetFlag = !0;
-          for (var k = 1; 6 > k; k++) c["userCardId" + k] == e && (d = c["userCardId" + k], c.userCardObj["place" + b].rentalFlag = !1, g = k);
-          d && (c["rentalPieceSetId" + g] = null, c = r.deckDataCreate(c), f.model.clear(
+          for (var h = 1; 6 > h; h++) c["userCardId" + h] == e && (d = c["userCardId" + h], c.userCardObj["place" + b].rentalFlag = !1, g = h);
+          d && (c["rentalPieceSetId" + g] = null, c = t.deckDataCreate(c), f.model.clear(
           {
             silent: !0
-          }), f.model.set(c), z(f.model.toJSON(), t));
-          n.getBaseData(a.getNativeObj())
+          }), f.model.set(c), z(f.model.toJSON(), u));
+          q.getBaseData(a.getNativeObj())
         }
       },
       popupTimeStart: function(b)
@@ -1655,18 +1658,18 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           b.currentTarget.classList.contains("memoriaSkillWrap") && (e.initTabType = "memoria");
           a.holdDeck && (e.linkBlock = !0);
           e.deckFormationFlag = !0;
-          C.cardDetailPopup(b, e, function()
+          D.cardDetailPopup(b, e, function()
           {
             if (a.storage.userCardListEx)
             {
-              var b = r.deckDataCreate(c);
+              var b = t.deckDataCreate(c);
               f.model.clear(
               {
                 silent: !0
               });
               f.model.set(b);
-              "group" === d && u.deckMpCalculate();
-              n.getBaseData(a.getNativeObj())
+              "group" === d && v.deckMpCalculate();
+              q.getBaseData(a.getNativeObj())
             }
             f.selectModel = null;
             f.selectPos = null;
@@ -1680,9 +1683,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           e = b.currentTarget.parentNode.parentNode.classList.contains("boost"),
           f = b.currentTarget.parentNode.parentNode.dataset.posindex,
           g = b.currentTarget.dataset.pieceindex,
-          k = null;
-        c.userCardObj["place" + f].rentalFlag && (k = c.userCardObj["place" + f].rentalFlag);
-        e = e ? c.userCardObj["place" + f].switchCharaModel["equipPiece" + g] : k ? c.userCardObj["place" + f].rentalMemoriaModel["equipPiece" + g] : c.userPieceObj["place" + f][g - 1];
+          h = null;
+        c.userCardObj["place" + f].rentalFlag && (h = c.userCardObj["place" + f].rentalFlag);
+        e = e ? c.userCardObj["place" + f].switchCharaModel["equipPiece" + g] : h ? c.userCardObj["place" + f].rentalMemoriaModel["equipPiece" + g] : c.userPieceObj["place" + f][g - 1];
         !a.tutorialId && e && (c.userCardObj["place" + f].supportFlag && "support" !== d ? (e.supportFlag = !0, e.btnHide = !0) : (c = (c = a.storage.userPieceList.findWhere(
         {
           id: e.id
@@ -1693,10 +1696,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.doc.querySelector("#bonusTextWrap").innerHTML = "";
         var b = this.model.toJSON(),
           c = {};
-        h.each(b.userCardObj, function(a, b)
+        k.each(b.userCardObj, function(a, b)
         {
           a = a.switchCharaFlag ? a.switchCharaModel : a;
-          a.eventEffect && h.each(a.eventEffect, function(a, b)
+          a.eventEffect && k.each(a.eventEffect, function(a, b)
           {
             b in c || (c[b] = 0);
             c[b] += a | 0
@@ -1708,34 +1711,34 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           d = {
             DROPADD: "＋"
           },
-          f = {
+          g = {
             DROPADD: "個"
           };
-        0 !== Object.keys(c).length ? h.each(c, function(b, c)
+        0 !== Object.keys(c).length ? k.each(c, function(b, c)
         {
-          var g = c.split("_"),
-            k = g[0];
-          g.shift();
-          g = g.join("_").toLowerCase();
+          var f = c.split("_"),
+            h = f[0];
+          f.shift();
+          f = f.join("_").toLowerCase();
           if (!a.doc.querySelector("." + c))
           {
-            var h = document.createElement("span"),
+            var k = document.createElement("span"),
               l = document.createElement("span"),
               n = document.createElement("span"),
               p = document.createElement("span");
-            h.className = "bonusText " + c;
+            k.className = "bonusText " + c;
             l.className = "bonusIcon";
-            l.style.cssText = "background:url('/magica/resource/image_web/common/icon/event/icon_" + g + "_f.png') left top no-repeat; background-size:26px 26px;";
+            l.style.cssText = "background:url('/magica/resource/image_web/common/icon/event/icon_" + f + "_f.png') left top no-repeat; background-size:26px 26px;";
             n.className = "iconText ts_gold";
-            n.textContent = e[k];
+            n.textContent = e[h];
             p.className = "text ts_pink02";
-            h.appendChild(l);
-            h.appendChild(n);
-            h.appendChild(p);
-            a.doc.querySelector("#bonusTextWrap").appendChild(h)
+            k.appendChild(l);
+            k.appendChild(n);
+            k.appendChild(p);
+            a.doc.querySelector("#bonusTextWrap").appendChild(k)
           }
           b /= 1E3;
-          a.doc.querySelector("." + c + " .text").textContent = d[k] + b + f[k]
+          a.doc.querySelector("." + c + " .text").textContent = d[h] + b + g[h]
         }) : a.doc.querySelector("#bonusTextWrap").innerHTML = ""
       },
       removeView: function()
@@ -1744,19 +1747,19 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         this.remove()
       }
     }),
-    ga = function()
+    ha = function()
     {
       var b = !0;
       "dungeonInMap" === d ? (b = !1, a.addClass(a.doc.querySelector("#charaListWrap"), "dungeonInMap")) : "group" === d || "groupPrepare" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "groupWrap") : "extermination" === d || "secondPartLast" === d ? a.addClass(a.doc.querySelector("#charaListWrap"), "exterminationWrap") : "accomplish" === d && T();
       a.removeClass(a.doc.querySelector("#charaListElms .select"), "select");
       a.removeClass(a.doc.querySelector("#charaListElms .formationRemove"), "formationRemove");
-      h.each([].slice.call(a.doc.querySelectorAll("#charaListElms .formationCurrent")), function(b)
+      k.each([].slice.call(a.doc.querySelectorAll("#charaListElms .formationCurrent")), function(b)
       {
         a.removeClass(b, "exterminationSet");
         a.removeClass(b, "formationCurrent");
         a.removeClass(b, "conquered")
       });
-      h.each(f.model.toJSON().userCardObj, function(c, e)
+      k.each(f.model.toJSON().userCardObj, function(c, e)
       {
         c.card && (f.selectModel && f.selectModel.userCardId == c.userCardId ? (b ? a.addClass(a.doc.querySelector(".userCardId" + f.selectModel.userCardId), "formationRemove") : a.addClass(a.doc.querySelector(".userCardId" + c.userCardId), "formationCurrent"), a.addClass(a.doc.querySelector(".userCardId" + f.selectModel.userCardId), "select")) : a.addClass(a.doc.querySelector(".userCardId" + c.userCardId), "formationCurrent"))
       });
@@ -1768,19 +1771,19 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         for (var l = 1; 5 >= l;)
         {
           var g = c + l;
-          if (g !== f.model.get("deckType") && (g = h.findWhere(a.storage.userDeckList.toJSON(),
+          if (g !== f.model.get("deckType") && (g = k.findWhere(a.storage.userDeckList.toJSON(),
             {
               deckType: g
             })))
-            for (var k = 1; 9 >= k;)
+            for (var h = 1; 9 >= h;)
             {
-              if (g["userCardId" + k])
+              if (g["userCardId" + h])
               {
-                var n = a.doc.querySelector(".userCardId" + g["userCardId" + k]);
+                var n = a.doc.querySelector(".userCardId" + g["userCardId" + h]);
                 a.addClass(n, "exterminationSet");
                 "CONQUERED" === e["battle" + l + "Status"] && a.addClass(n, "conquered")
               }
-              k = k + 1 | 0
+              h = h + 1 | 0
             }
           l = l + 1 | 0
         }
@@ -1790,7 +1793,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     {
       a.storage.userCardListEx.each(function(b)
       {
-        var c = h.clone(b.toJSON()),
+        var c = k.clone(b.toJSON()),
           e = a.doc.querySelector(".userCardId" + c.userCardId);
         if (e)
         {
@@ -1802,7 +1805,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           {
             silent: !0
           })) : (f = a.doc.createElement("span"), f.className = "gauge", e.appendChild(f));
-          b = h.template($("#gaugeTemp").text());
+          b = k.template($("#gaugeTemp").text());
           $(f).html(b(
           {
             model: c,
@@ -1814,9 +1817,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     },
     Q = function(a)
     {
-      var b = h.clone(a),
+      var b = k.clone(a),
         e = !1;
-      h.each(b.userCardObj, function(a, c)
+      k.each(b.userCardObj, function(a, c)
       {
         c = Number(c.split("place")[1]);
         a && a.userCardId && a.userCardId == b.questEpisodeUserCardId && 9 >= c && (e = !0)
@@ -1824,7 +1827,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       if (!e)
       {
         var d = null;
-        h.each(b.userCardObj, function(a, b)
+        k.each(b.userCardObj, function(a, b)
         {
           b = Number(b.split("place")[1]);
           !d && a && a.card && !a.supportFlag && 9 >= b && (d = a.userCardId)
@@ -1836,11 +1839,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     z = function(b, c)
     {
       var e = !1;
-      h.each(b, function(a, d)
+      k.each(b, function(a, d)
       {
         if ("formationSheetId" == d || "name" == d || "questEpisodeUserCardId" == d || "questPositionHelper" == d || -1 !== d.indexOf("rentalPieceSetId") || -1 !== d.indexOf("switchNpcFlag") || -1 !== d.indexOf("questPositionId") || -1 !== d.indexOf("userCardId") || -1 !== d.indexOf("userPieceId")) e = b[d] !== c[d] ? !0 : e
       });
-      h.each(c, function(a, d)
+      k.each(c, function(a, d)
       {
         if ("formationSheetId" == d || "name" == d || "questEpisodeUserCardId" == d || "questPositionHelper" == d || -1 !== d.indexOf("rentalPieceSetId") || -1 !== d.indexOf("switchNpcFlag") || -1 !== d.indexOf("questPositionId") || -1 !== d.indexOf("userCardId") || -1 !== d.indexOf("userPieceId")) e = b[d] !== c[d] ? !0 : e
       });
@@ -1855,9 +1858,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         {
           a.addBackHandler(a.pageObj.deckChangeConf)
         }, 0);
-        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.addClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.addClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.removeClass(a.doc.querySelector("#mainBtn"), "noneDisp");
+        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "EventWalpurgisRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.addClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.addClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.removeClass(a.doc.querySelector("#mainBtn"), "noneDisp");
         a.removeClass(a.doc.querySelector("#mainBtn"), "off");
-        "group" === d && u.deckMpCalculate()
+        "group" === d && v.deckMpCalculate()
       }
       else
       {
@@ -1865,35 +1868,35 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         a.removeBackHandler();
         a.androidKeyStop = !1;
         a.holdDeck = null;
-        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.removeClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.removeClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.addClass(a.doc.querySelector("#mainBtn"), "noneDisp");
+        if ("quest" === d || "group" === d || "accomplish" === d || "dungeon" === d || "dungeonInMap" === d || "endless" === d || "puellaHistoriaGroupRaid" === d || "EventWalpurgisRaid" === d || "scene0Challenge" === d || "arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo) a.removeClass(a.doc.querySelector("#nextPageBtn"), "noneDisp"), a.removeClass(a.doc.querySelector("#nextPageBtnLoop"), "noneDisp"), a.addClass(a.doc.querySelector("#mainBtn"), "noneDisp");
         a.addClass(a.doc.querySelector("#mainBtn"), "off");
-        u && "group" === d && u.deckMpCalculate()
+        v && "group" === d && v.deckMpCalculate()
       }
       f.selectModel = null;
       f.selectPos = null;
       a.removeClass(a.doc.querySelector("#charaListWrap"), "open");
       return e
     },
-    r, ha = function()
+    t, ia = function()
     {
       a.switchNpcCompar = {};
       a.switchNpcCompar.eventId = a.questBattleModel && a.questBattleModel.questBattle.eventId ? a.questBattleModel.questBattle.eventId : null;
       W.createCardList();
       p = A.getPageJson();
       p.rentalPieceSetList && 0 < p.rentalPieceSetList.length ? a.rentalPieceData && (a.rentalPieceData.rentalFlag = !0, a.rentalPieceData.rentalPieceSetList = p.rentalPieceSetList) : a.rentalPieceData && (a.rentalPieceData.rentalFlag = !1, a.rentalPieceData = null);
-      if ("group" === d || "groupPrepare" === d) L = h.findWhere(p.regularEventList,
+      if ("group" === d || "groupPrepare" === d) L = k.findWhere(p.regularEventList,
       {
         regularEventType: "GROUPBATTLE"
       });
-      r = new Z(d);
-      r.appendCharaStatus();
-      var b = r.deckPrmInit();
+      t = new Z(d);
+      t.appendCharaStatus();
+      var b = t.deckPrmInit();
       y = b.currentDeckType;
-      t = b.currentDeckModel;
+      u = b.currentDeckModel;
       a.removeUserCardIdArr || (a.removeUserCardIdArr = []);
-      "accomplish" === d && n.changeBg("web_accomplish_page_01.ExportJson");
+      "accomplish" === d && q.changeBg("web_accomplish_page_01.ExportJson");
       a.setStyle(V);
-      u = new fa;
+      v = new ga;
       var c;
       "extermination" === d || "exterminationCopy" === d ? (c = new S, a.storage.userCardListEx.each(function(a)
       {
@@ -1902,7 +1905,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       {
         40 <= a.get("level") && c.add(a)
       })) : c = a.storage.userCardListEx;
-      "arenaRankMatchAttack" !== d && "arenaRankMatchDefence" !== d || !a.EventArenaRankMatchPrm || ("arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo && (u.DeckEditCountDown = ca.init(
+      "arenaRankMatchAttack" !== d && "arenaRankMatchDefence" !== d || !a.EventArenaRankMatchPrm || ("arenaRankMatchAttack" === d && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.opponentInfo && (v.DeckEditCountDown = ca.init(
       {
         model: a.EventArenaRankMatchPrm,
         pageJson: p
@@ -1910,15 +1913,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
       {
         date: new Date
       }), a.EventArenaRankMatchPrm.deckEditAccessTime = b.yr + "/" + b.mo + "/" + b.da + " " + b.ho + ":" + b.mi + ":" + b.se, a.EventArenaRankMatchPrm.deckEditPageJson = p);
-      u.charaListView = new X(
+      v.charaListView = new X(
       {
         model: new M,
         collection: c
       });
-      a.content.append(u.charaListView.render().el);
+      a.content.append(v.charaListView.render().el);
       "accomplish" === d && T();
       a.scrollSetX("charaListScrollWrap", "list");
-      n.getBaseData(a.getNativeObj())
+      q.getBaseData(a.getNativeObj())
     };
   return {
     needModelIdObj: [
@@ -1983,12 +1986,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
     init: function()
     {
       if ("TU560" == K)
-        if (a.tutorialId = K, a.tutorialUtil) a.tutorialUtil.tutorialIdRegist(a.tutorialId), a.tutorialUtil.tutorialAddClass(a.tutorialId);
+        if (a.tutorialId = K, a.tutorialUtil) a.tutorialUtil.tutorialIdRegist(a.tutorialId),
+          a.tutorialUtil.tutorialAddClass(a.tutorialId);
         else
         {
-          n.nativeReload("#/TopPage");
+          q.nativeReload("#/TopPage");
           return
-        } ha()
+        } ia()
     },
     charaSelect: function(b, c)
     {
@@ -2019,12 +2023,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
           {
             silent: !0
           });
-          f.model.set(r.deckDataCreate(t));
-          z(f.model.toJSON(), t);
+          f.model.set(t.deckDataCreate(u));
+          z(f.model.toJSON(), u);
           a.rentalReversFlag = !1;
           c.remove();
           a.holdDeck = null;
-          n.getBaseData(a.getNativeObj());
+          q.getBaseData(a.getNativeObj());
           f.selectModel = null;
           f.selectPos = null;
           a.doc.querySelector("#charaListWrap").className = "";
@@ -2034,31 +2038,31 @@ define("underscore backbone backboneCommon ajaxControl command text!template/for
         $("#popupArea .decideBtn").on(a.cgti, function()
         {
           $("#popupArea .decideBtn").off();
-          u.deckSave();
+          v.deckSave();
           c.remove();
           f.selectModel = null;
           f.selectPos = null;
           a.doc.querySelector("#charaListWrap").className = "";
           b && b()
         });
-        u.deckChangeFlag = !1
+        v.deckChangeFlag = !1
       })
     },
     remove: function(b)
     {
-      if (u)
+      if (v)
       {
         a.removeBackHandler();
-        C.popupTimerStop();
+        D.popupTimerStop();
         J.popupTimerStop();
-        d && "quest" !== d ? "group" === d || "groupPrepare" === d ? a.currentGroupDeckType = f.model.toJSON().deckType : "dungeon" === d ? a.currentDungeonDeckType = f.model.toJSON().deckType : "endless" === d ? a.currentEndlessDeckType = f.model.toJSON().deckType : "puellaHistoriaGroupRaid" === d ? a.currentPuellaHistoriaGroupRaidDeckType = f.model.toJSON().deckType : "scene0Challenge" === d ? a.currentScene0ChallengeDeckType = f.model.toJSON().deckType : "arenaRankMatchAttack" === d && (a.currentArenaRankMatchDeckType = f.model.toJSON().deckType) : a.currentDeckType = f.model.toJSON().deckType;
-        u.charaListView.trigger("remove");
-        u.charaListView.remove();
-        if ("arenaRankMatchAttack" == d || "arenaRankMatchDefence" == d) u.EventArenaRankMatchOpponentPopup && u.EventArenaRankMatchOpponentPopup.removeView(), u.DeckEditCountDown && u.DeckEditCountDown.removeView();
-        u.trigger("removeView");
-        u.remove()
+        d && "quest" !== d ? "group" === d || "groupPrepare" === d ? a.currentGroupDeckType = f.model.toJSON().deckType : "dungeon" === d ? a.currentDungeonDeckType = f.model.toJSON().deckType : "endless" === d ? a.currentEndlessDeckType = f.model.toJSON().deckType : "puellaHistoriaGroupRaid" === d ? a.currentPuellaHistoriaGroupRaidDeckType = f.model.toJSON().deckType : "EventWalpurgisRaid" === d ? a.currentEventWalpurgisRaidDeckType = f.model.toJSON().deckType : "scene0Challenge" === d ? a.currentScene0ChallengeDeckType = f.model.toJSON().deckType : "arenaRankMatchAttack" === d && (a.currentArenaRankMatchDeckType = f.model.toJSON().deckType) : a.currentDeckType = f.model.toJSON().deckType;
+        v.charaListView.trigger("remove");
+        v.charaListView.remove();
+        if ("arenaRankMatchAttack" == d || "arenaRankMatchDefence" == d) v.EventArenaRankMatchOpponentPopup && v.EventArenaRankMatchOpponentPopup.removeView(), v.DeckEditCountDown && v.DeckEditCountDown.removeView();
+        v.trigger("removeView");
+        v.remove()
       }
-      L = p = r = t = y = d = K = null;
+      L = p = t = u = y = d = K = null;
       x && x.removeView();
       x = null;
       a.switchNpcCompar && (a.switchNpcCompar = null);

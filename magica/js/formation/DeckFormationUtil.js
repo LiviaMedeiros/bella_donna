@@ -1,19 +1,19 @@
-define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/view/user/APPopup js/quest/puellaHistoria/CreateModel js/event/EventArenaRankMatch/Utility js/event/EventArenaRankMatch/parts/DeckEditCountDown js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility".split(" "), function(a, u, h, y, z, D, t, A, w, J, v, x)
+define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/view/user/APPopup js/quest/puellaHistoria/CreateModel js/event/EventArenaRankMatch/Utility js/event/EventArenaRankMatch/parts/DeckEditCountDown js/quest/puellaHistoria/lastBattle/Utility js/quest/scene0/Utility js/event/EventWalpurgis/Utility".split(" "), function(a, u, h, x, A, F, t, B, w, K, v, y, z)
 {
-  function E(b)
+  function G(c)
   {
-    if (b)
+    if (c)
     {
-      b = b.webData;
-      var c = b.userQuestBattleResultList[0].questBattle;
-      a.responseSetStorage(b);
-      if (b = (b = a.storage.userSectionList.findWhere(
+      c = c.webData;
+      var b = c.userQuestBattleResultList[0].questBattle;
+      a.responseSetStorage(c);
+      if (c = (c = a.storage.userSectionList.findWhere(
         {
-          sectionId: c.sectionId
-        })) ? b.toJSON() : null) c = (c = a.storage.userChapterList.findWhere(
+          sectionId: b.sectionId
+        })) ? c.toJSON() : null) b = (b = a.storage.userChapterList.findWhere(
       {
-        chapterId: b.section.genericId
-      })) ? c.toJSON() : null, a.playChapter = c, a.playSection = b
+        chapterId: c.section.genericId
+      })) ? b.toJSON() : null, a.playChapter = b, a.playSection = c
     }
   }
   t = function(a)
@@ -23,29 +23,30 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
   };
   t.prototype.setCurrentDeckType = function()
   {
-    var b = w.getDeckType(),
-      c = u.getPageJson(),
+    var c = w.getDeckType(),
+      b = u.getPageJson(),
       e = null;
-    this.deckCatType && "quest" !== this.deckCatType ? "support" == this.deckCatType ? e = 20 : "arena" == this.deckCatType ? e = 21 : "eventArena" == this.deckCatType ? e = 22 : "arenaRankMatchAttack" == this.deckCatType ? e = a.currentArenaRankMatchDeckType ? a.currentArenaRankMatchDeckType : b.attackBase + 1 : "arenaRankMatchDefence" == this.deckCatType ? e = b.defence : "dungeon" === this.deckCatType || "dungeonInMap" === this.deckCatType ? e = a.currentDungeonDeckType ? a.currentDungeonDeckType : a.userEventDungeon && a.userEventDungeon.selectedDeckType ? a.userEventDungeon.selectedDeckType : 41 : "group" == this.deckCatType || "groupPrepare" == this.deckCatType ? e = a.currentGroupDeckType ? a.currentGroupDeckType : a.groupDeckType ? a.groupDeckType : 51 : "endless" == this.deckCatType ? e = a.currentEndlessDeckType ? a.currentEndlessDeckType : 61 : "extermination" == this.deckCatType ? e = a.currentExterminationDeckType ? a.currentExterminationDeckType : 71 : "secondPartLast" == this.deckCatType ? e = a.currentSecondPartLastDeckType ? a.currentSecondPartLastDeckType : 101 : "accomplish" == this.deckCatType ? e = 81 : "puellaHistoriaGroupRaid" == this.deckCatType ? e = a.currentPuellaHistoriaGroupRaidDeckType ? a.currentPuellaHistoriaGroupRaidDeckType : v.getDeckType(
-    {}) + 1 : "scene0Challenge" == this.deckCatType && (e = a.currentScene0ChallengeDeckType ? a.currentScene0ChallengeDeckType : x.getDeckType() + 1) : e = a.currentDeckType ? a.currentDeckType : c.gameUser && c.gameUser.deckType && 20 > c.gameUser.deckType ? c.gameUser.deckType : 11;
+    this.deckCatType && "quest" !== this.deckCatType ? "support" == this.deckCatType ? e = 20 : "arena" == this.deckCatType ? e = 21 : "eventArena" == this.deckCatType ? e = 22 : "arenaRankMatchAttack" == this.deckCatType ? e = a.currentArenaRankMatchDeckType ? a.currentArenaRankMatchDeckType : c.attackBase + 1 : "arenaRankMatchDefence" == this.deckCatType ? e = c.defence : "dungeon" === this.deckCatType || "dungeonInMap" === this.deckCatType ? e = a.currentDungeonDeckType ? a.currentDungeonDeckType : a.userEventDungeon && a.userEventDungeon.selectedDeckType ? a.userEventDungeon.selectedDeckType : 41 : "group" == this.deckCatType || "groupPrepare" == this.deckCatType ? e = a.currentGroupDeckType ? a.currentGroupDeckType : a.groupDeckType ? a.groupDeckType : 51 : "endless" == this.deckCatType ? e = a.currentEndlessDeckType ? a.currentEndlessDeckType : 61 : "extermination" == this.deckCatType ? e = a.currentExterminationDeckType ? a.currentExterminationDeckType : 71 : "secondPartLast" == this.deckCatType ? e = a.currentSecondPartLastDeckType ? a.currentSecondPartLastDeckType : 101 : "accomplish" == this.deckCatType ? e = 81 : "puellaHistoriaGroupRaid" == this.deckCatType ? e = a.currentPuellaHistoriaGroupRaidDeckType ? a.currentPuellaHistoriaGroupRaidDeckType : v.getDeckType(
+    {}) + 1 : "EventWalpurgisRaid" == this.deckCatType ? e = a.currentEventWalpurgisRaidDeckType ? a.currentEventWalpurgisRaidDeckType : z.getDeckType(
+    {}) + 1 : "scene0Challenge" == this.deckCatType && (e = a.currentScene0ChallengeDeckType ? a.currentScene0ChallengeDeckType : y.getDeckType() + 1) : e = a.currentDeckType ? a.currentDeckType : b.gameUser && b.gameUser.deckType && 20 > b.gameUser.deckType ? b.gameUser.deckType : 11;
     return e || 11
   };
   t.prototype.deckPrmInit = function()
   {
-    var b = u.getPageJson(),
-      c = this.setCurrentDeckType(),
+    var c = u.getPageJson(),
+      b = this.setCurrentDeckType(),
       e = a.storage.userDeckList.findWhere(
       {
-        deckType: c
+        deckType: b
       });
-    e ? b = this.deckDataCreate(e.toJSON()) : (b = {
-      deckType: c,
+    e ? c = this.deckDataCreate(e.toJSON()) : (c = {
+      deckType: b,
       formationSheetId: 111,
-      formationSheet: _.findWhere(b.userFormationSheetList,
+      formationSheet: _.findWhere(c.userFormationSheetList,
       {
         formationSheetId: 111
       }).formationSheet,
-      name: "チーム" + String(c).slice(-1),
+      name: "チーム" + String(b).slice(-1),
       switchNpcEventId: null,
       switchNpcFlag1: null,
       switchNpcFlag2: null,
@@ -67,177 +68,176 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       rentalPieceSetId8: null,
       rentalPieceSetId9: null,
       rentalPieceSetId10: null
-    }, this.deckCatType && "quest" !== this.deckCatType || (b.questPositionHelper = 3), e = w.getDeckType(), c == e.attackBase + 1 && (b.name = "攻撃編成"), c == e.defence && (b.name = "防衛編成"), b = this.deckDataCreate(b));
+    }, this.deckCatType && "quest" !== this.deckCatType || (c.questPositionHelper = 3), e = w.getDeckType(), b == e.attackBase + 1 && (c.name = "攻撃編成"), b == e.defence && (c.name = "防衛編成"), c = this.deckDataCreate(c));
     return {
-      currentDeckType: c,
-      currentDeckModel: b
+      currentDeckType: b,
+      currentDeckModel: c
     }
   };
-  t.prototype.savePrmCreate = function(a, c)
+  t.prototype.savePrmCreate = function(a, b)
   {
-    for (var b = {
+    for (var c = {
         deckType: a.deckType,
         formationSheetId: a.formationSheetId,
         name: a.name,
         questPositionHelper: a.questPositionHelper,
         episodeUserCardId: a.questEpisodeUserCardId
-      }, d = [], k = [], l = [], g = 0; 10 > g;)
+      }, d = [], k = [], l = [], f = 0; 10 > f;)
     {
-      if (a["userCardId" + (g + 1)])
+      if (a["userCardId" + (f + 1)])
       {
-        d.push(a["userCardId" + (g + 1)]);
-        k.push(a["questPositionId" + (g + 1)]);
-        for (var q = "place" + a["questPositionId" + (g + 1)],
-            n = [], r = 0; 4 > r;)
+        d.push(a["userCardId" + (f + 1)]);
+        k.push(a["questPositionId" + (f + 1)]);
+        for (var q = "place" + a["questPositionId" + (f + 1)], m = [], r = 0; 4 > r;)
         {
           if (a.userPieceObj[q] && a.userPieceObj[q][r] && !a.userPieceObj[q][r].invalidFlag)
           {
-            var p = "userPieceId" + ("000" + (g + 1) + (r + 1)).slice(-3);
-            a[p] && n.push(a[p])
+            var p = "userPieceId" + ("000" + (f + 1) + (r + 1)).slice(-3);
+            a[p] && m.push(a[p])
           }
           r = r + 1 | 0
         }
-        l.push(n)
+        l.push(m)
       }
-      g = g + 1 | 0
+      f = f + 1 | 0
     }
-    if ("notRentalData" != c)
-      for (b.rentalPieceSetIdList = [], g = 1; 10 >= g; g++) void 0 != a["rentalPieceSetId" + g] ? b.rentalPieceSetIdList.push(a["rentalPieceSetId" + g]) : b.rentalPieceSetIdList.push(null);
-    b.userCardIds = d;
-    b.questPositionIds = k;
-    b.userPieceIdLists = l;
-    return b
+    if ("notRentalData" != b)
+      for (c.rentalPieceSetIdList = [], f = 1; 10 >= f; f++) void 0 != a["rentalPieceSetId" + f] ? c.rentalPieceSetIdList.push(a["rentalPieceSetId" + f]) : c.rentalPieceSetIdList.push(null);
+    c.userCardIds = d;
+    c.questPositionIds = k;
+    c.userPieceIdLists = l;
+    return c
   };
-  t.prototype.deckDataCreate = function(b)
+  t.prototype.deckDataCreate = function(c)
   {
-    var c = this;
-    a.storage.userCardListEx || z.createCardList();
+    var b = this;
+    a.storage.userCardListEx || A.createCardList();
     var e = u.getPageJson(),
-      d = _.clone(b);
+      d = _.clone(c);
     d.deckCatType = this.deckCatType;
     if ("RegularEventExterminationFormation" != a.location || "SecondPartLastFormation" != a.location) a.firstLoad = null != a.firstLoad ? a.firstLoad + 1 : 0;
     if (!d.name && !this.deckCatType || !d.name && "quest" === this.deckCatType || !d.name && "extermination" === this.deckCatType || !d.name && "secondPartLast" === this.deckCatType || !d.name && "dungeon" === this.deckCatType || !d.name && "dungeonInMap" === this.deckCatType)
     {
-      var k = "チーム" + String(b.deckType).slice(-1);
+      var k = "チーム" + String(c.deckType).slice(-1);
       d.name = k
     }
     var l = {},
-      g = [];
-    _.each(d.formationSheet, function(a, c)
+      f = [];
+    _.each(d.formationSheet, function(a, b)
     {
-      if (-1 !== c.indexOf("placeSkill") && -1 === c.indexOf("placeSkillId"))
+      if (-1 !== b.indexOf("placeSkill") && -1 === b.indexOf("placeSkillId"))
       {
-        g.push(c.split("placeSkill")[1]);
-        var b = null;
-        a.art1 && (b = [a.viewAttributeId]);
-        l[c] = b
+        f.push(b.split("placeSkill")[1]);
+        var c = null;
+        a.art1 && (c = [a.viewAttributeId]);
+        l[b] = c
       }
     });
-    "support" == this.deckCatType ? d.posArr = "123456".split("") : ("dungeon" != this.deckCatType && "dungeonInMap" != this.deckCatType || Array.prototype.push.apply(g, ["10", "11"]), d.placeEffect = l, d.posArr = g);
+    "support" == this.deckCatType ? d.posArr = "123456".split("") : ("dungeon" != this.deckCatType && "dungeonInMap" != this.deckCatType || Array.prototype.push.apply(f, ["10", "11"]), d.placeEffect = l, d.posArr = f);
     a.switchNpcValidList || (a.switchNpcValidList = []);
     var q = [];
     if (a.questBattleModel)
       for (k = 0; 5 > k; ++k)
       {
-        var n = a.questBattleModel.questBattle["switchCharaId" + (k + 1)];
-        n && (void 0 !== a.switchNpcValidList[n] ? (q[n] = a.switchNpcValidList[n], q["load_" + n] = a.switchNpcValidList["load_" + n]) : (q[n] = !0, q["load_" + n] = !1), a.switchNpcValidList["set_" + n] && (q["set_" + n] = a.switchNpcValidList["set_" + n]))
+        var m = a.questBattleModel.questBattle["switchCharaId" + (k + 1)];
+        m && (void 0 !== a.switchNpcValidList[m] ? (q[m] = a.switchNpcValidList[m], q["load_" + m] = a.switchNpcValidList["load_" + m]) : (q[m] = !0, q["load_" + m] = !1), a.switchNpcValidList["set_" + m] && (q["set_" + m] = a.switchNpcValidList["set_" + m]))
       }
     a.switchNpcValidList = q;
     var r = {};
     d.leaderPos = null;
-    _.each(d.posArr, function(c, e)
+    _.each(d.posArr, function(b, e)
     {
-      var m = "userCardId" + (e + 1),
+      var n = "userCardId" + (e + 1),
         k = "questPositionId" + (e + 1),
-        g = "switchNpcFlag" + (e + 1);
-      if (d[m])
+        f = "switchNpcFlag" + (e + 1);
+      if (d[n])
       {
-        var m = d[m],
-          f = _.findWhere(a.storage.userCardListEx.toJSON(),
+        var n = d[n],
+          g = _.findWhere(a.storage.userCardListEx.toJSON(),
           {
-            id: m
+            id: n
           });
-        f.switchNpcPos = e + 1;
-        f.userCardId == d.questEpisodeUserCardId && (d.leaderPos = Number(b[k]));
-        a.userRegularEventAccomplishCharaArr && F(f);
+        g.switchNpcPos = e + 1;
+        g.userCardId == d.questEpisodeUserCardId && (d.leaderPos = Number(c[k]));
+        a.userRegularEventAccomplishCharaArr && H(g);
         if (a.rentalPieceData && a.rentalPieceData.rentalPieceSetList && a.rentalPieceData.rentalFlag)
         {
-          2 > a.firstLoad && (a.rentalPieceData[m] = d["rentalPieceSetId" + (e + 1)] ? d["rentalPieceSetId" + (e + 1)] : null);
-          if (a.rentalPieceData[m])
+          2 > a.firstLoad && (a.rentalPieceData[n] = d["rentalPieceSetId" + (e + 1)] ? d["rentalPieceSetId" + (e + 1)] : null);
+          if (a.rentalPieceData[n])
           {
             var l = _.findWhere(a.rentalPieceData.rentalPieceSetList,
             {
-              pieceSetId: a.rentalPieceData[m]
+              pieceSetId: a.rentalPieceData[n]
             });
             if (void 0 == l || null == l) l = null;
-            a.rentalSetFlag || (a.rentalReversFlag ? a.rentalPieceData[m] = d["rentalPieceSetId" + (e + 1)] : d["rentalPieceSetId" + (e + 1)] = a.rentalPieceData[m]);
-            null != a.rentalPieceData[m] ? (f.rentalFlag = l, f.rentalID = a.rentalPieceData[m], f.rentalMemoriaUse = !0) : (f.rentalFlag = null, f.rentalID = null, f.rentalMemoriaUse = !1)
+            a.rentalSetFlag || (a.rentalReversFlag ? a.rentalPieceData[n] = d["rentalPieceSetId" + (e + 1)] : d["rentalPieceSetId" + (e + 1)] = a.rentalPieceData[n]);
+            null != a.rentalPieceData[n] ? (g.rentalFlag = l, g.rentalID = a.rentalPieceData[n], g.rentalMemoriaUse = !0) : (g.rentalFlag = null, g.rentalID = null, g.rentalMemoriaUse = !1)
           }
-          else a.rentalReversFlag ? (a.rentalPieceData[m] = d["rentalPieceSetId" + (e + 1)], l = _.findWhere(a.rentalPieceData.rentalPieceSetList,
+          else a.rentalReversFlag ? (a.rentalPieceData[n] = d["rentalPieceSetId" + (e + 1)], l = _.findWhere(a.rentalPieceData.rentalPieceSetList,
           {
-            pieceSetId: a.rentalPieceData[m]
-          }), null != a.rentalPieceData[m] ? (f.rentalFlag = l, f.rentalID = a.rentalPieceData[m], f.rentalMemoriaUse = !0) : (f.rentalFlag = null, f.rentalID = null, f.rentalMemoriaUse = !1)) : d["rentalPieceSetId" + (e + 1)] = null;
-          m = Object.assign(
-          {}, f);
-          m.supportFlag = !0;
-          m.isNpc = !0;
+            pieceSetId: a.rentalPieceData[n]
+          }), null != a.rentalPieceData[n] ? (g.rentalFlag = l, g.rentalID = a.rentalPieceData[n], g.rentalMemoriaUse = !0) : (g.rentalFlag = null, g.rentalID = null, g.rentalMemoriaUse = !1)) : d["rentalPieceSetId" + (e + 1)] = null;
+          n = Object.assign(
+          {}, g);
+          n.supportFlag = !0;
+          n.isNpc = !0;
           var p = [];
-          _.each(f.rentalFlag, function(a, c)
+          _.each(g.rentalFlag, function(a, b)
           {
-            "object" === typeof a && (c = c.slice(-1) - 0, p[c - 1] = {}, p[c - 1].level = f.rentalFlag["pieceLevel" + c], p[c - 1].pieceId = f.rentalFlag["pieceId" + c], p[c - 1].hp = f.rentalFlag["pieceHp" + c], p[c - 1].attack = f.rentalFlag["pieceAtk" + c], p[c - 1].defense = f.rentalFlag["pieceDef" + c], p[c - 1].lbCount = f.rentalFlag["pieceLbCount" + c], p[c - 1].piece = a, p[c - 1].rank = a.rank, p[c - 1].lockFlg = !0, p[c - 1].btnHide = !0)
+            "object" === typeof a && (b = b.slice(-1) - 0, p[b - 1] = {}, p[b - 1].level = g.rentalFlag["pieceLevel" + b], p[b - 1].pieceId = g.rentalFlag["pieceId" + b], p[b - 1].hp = g.rentalFlag["pieceHp" + b], p[b - 1].attack = g.rentalFlag["pieceAtk" + b], p[b - 1].defense = g.rentalFlag["pieceDef" + b], p[b - 1].lbCount = g.rentalFlag["pieceLbCount" + b], p[b - 1].piece = a, p[b - 1].rank = a.rank, p[b - 1].lockFlg = !0, p[b - 1].btnHide = !0)
           });
-          f.rentalMemoriaModel = z.addExStatus(m, p, m.userDoppelList, m.userDeck)
+          g.rentalMemoriaModel = A.addExStatus(n, p, n.userDoppelList, n.userDeck)
         }
-        else 2 > a.firstLoad ? d["rentalPieceSetId" + (e + 1)] ? (void 0 == a.rentalPieceData && (a.rentalPieceData = {}), a.rentalPieceData[m] = d["rentalPieceSetId" + (e + 1)]) : (void 0 == a.rentalPieceData && (a.rentalPieceData = {}), d["rentalPieceSetId" + (e + 1)] = null, a.rentalPieceData[m] = null) : (a.rentalPieceData && void 0 != a.rentalPieceData[m] && (d["rentalPieceSetId" + (e + 1)] = a.rentalPieceData[m]), f.rentalMemoriaUse = !1);
-        if (void 0 != a.switchNpcValidList[f.chara.id])
+        else 2 > a.firstLoad ? d["rentalPieceSetId" + (e + 1)] ? (void 0 == a.rentalPieceData && (a.rentalPieceData = {}), a.rentalPieceData[n] = d["rentalPieceSetId" + (e + 1)]) : (void 0 == a.rentalPieceData && (a.rentalPieceData = {}), d["rentalPieceSetId" + (e + 1)] = null, a.rentalPieceData[n] = null) : (a.rentalPieceData && void 0 != a.rentalPieceData[n] && (d["rentalPieceSetId" + (e + 1)] = a.rentalPieceData[n]), g.rentalMemoriaUse = !1);
+        if (void 0 != a.switchNpcValidList[g.chara.id])
         {
-          if (m = _.find(a.switchNpcList, function(a)
+          if (n = _.find(a.switchNpcList, function(a)
             {
-              return a.userCharaList[0].charaId == f.chara.id
-            })) 1 == a.switchNpcValidList["set_" + f.chara.id] && 1 == a.switchNpcCompar.setReturn ? a.switchNpcValidList[f.chara.id] = f.switchCharaFlag = d[g] : null != d.switchNpcEventId && a.switchNpcCompar.eventId == d.switchNpcEventId ? null == d[g] ? (f.switchCharaFlag = d[g] = a.switchNpcValidList[f.chara.id], a.switchNpcValidList["load_" + f.chara.id] = !0) : 1 == a.switchNpcValidList["load_" + f.chara.id] ? f.switchCharaFlag = d[g] = a.switchNpcValidList[f.chara.id] : (f.switchCharaFlag = a.switchNpcValidList[f.chara.id] = d[g], a.switchNpcValidList["load_" + f.chara.id] = !0) : void 0 != a.switchNpcCompar.eventId && a.switchNpcCompar.eventId != d.switchNpcEventId ? (d.switchNpcEventId = a.switchNpcCompar.eventId, void 0 == f.switchCharaFlag && (f.switchCharaFlag = d[g] = a.switchNpcValidList[f.chara.id])) : void 0 == f.switchCharaFlag && (f.switchCharaFlag = void 0 != d[g] ? a.switchNpcValidList[f.chara.id] = d[g] : d[g] = a.switchNpcValidList[f.chara.id]), d["switchNpcFlag" + (e + 1)] = f.switchCharaFlag, e = $.extend(m.userCardList[0], m.userCharaList[0]), e.supportFlag = !0, e.isNpc = !0, _.each(m.userPieceList, function(a)
+              return a.userCharaList[0].charaId == g.chara.id
+            })) 1 == a.switchNpcValidList["set_" + g.chara.id] && 1 == a.switchNpcCompar.setReturn ? a.switchNpcValidList[g.chara.id] = g.switchCharaFlag = d[f] : null != d.switchNpcEventId && a.switchNpcCompar.eventId == d.switchNpcEventId ? null == d[f] ? (g.switchCharaFlag = d[f] = a.switchNpcValidList[g.chara.id], a.switchNpcValidList["load_" + g.chara.id] = !0) : 1 == a.switchNpcValidList["load_" + g.chara.id] ? g.switchCharaFlag = d[f] = a.switchNpcValidList[g.chara.id] : (g.switchCharaFlag = a.switchNpcValidList[g.chara.id] = d[f], a.switchNpcValidList["load_" + g.chara.id] = !0) : void 0 != a.switchNpcCompar.eventId && a.switchNpcCompar.eventId != d.switchNpcEventId ? (d.switchNpcEventId = a.switchNpcCompar.eventId, void 0 == g.switchCharaFlag && (g.switchCharaFlag = d[f] = a.switchNpcValidList[g.chara.id])) : void 0 == g.switchCharaFlag && (g.switchCharaFlag = void 0 != d[f] ? a.switchNpcValidList[g.chara.id] = d[f] : d[f] = a.switchNpcValidList[g.chara.id]), d["switchNpcFlag" + (e + 1)] = g.switchCharaFlag, e = $.extend(n.userCardList[0], n.userCharaList[0]), e.supportFlag = !0, e.isNpc = !0, _.each(n.userPieceList, function(a)
           {
             a.lockFlg = !0;
             a.rank = a.piece.rank;
             a.btnHide = !0
-          }), f.switchCharaModel = z.addExStatus(e, m.userPieceList, m.userDoppelList, m.userDeck)
+          }), g.switchCharaModel = A.addExStatus(e, n.userPieceList, n.userDoppelList, n.userDeck)
         }
-        else void 0 !== a.switchNpcCompar && null !== a.switchNpcCompar && (void 0 !== a.switchNpcCompar[f.userCardId] ? null != a.switchNpcCompar[f.userCardId] ? d[g] = a.switchNpcCompar[f.userCardId] : void 0 != d[g] && null != d[g] && (d[g] = a.switchNpcCompar[f.userCardId]) : null != d[g] ? null == a.switchNpcCompar[f.userCardId] ? null != a.switchNpcCompar.eventId ? d[g] = null : a.switchNpcCompar[f.userCardId] = d[g] : a.switchNpcCompar[f.userCardId] = d[g] : a.switchNpcCompar[f.userCardId] = null);
-        r["place" + d[k]] = f
+        else void 0 !== a.switchNpcCompar && null !== a.switchNpcCompar && (void 0 !== a.switchNpcCompar[g.userCardId] ? null != a.switchNpcCompar[g.userCardId] ? d[f] = a.switchNpcCompar[g.userCardId] : void 0 != d[f] && null != d[f] && (d[f] = a.switchNpcCompar[g.userCardId]) : null != d[f] ? null == a.switchNpcCompar[g.userCardId] ? null != a.switchNpcCompar.eventId ? d[f] = null : a.switchNpcCompar[g.userCardId] = d[f] : a.switchNpcCompar[g.userCardId] = d[f] : a.switchNpcCompar[g.userCardId] = null);
+        r["place" + d[k]] = g
       }
-      else d[g] = null;
-      "support" !== this.deckCatType && d.questPositionHelper == c && (f = {}, "quest" === this.deckCatType && a.questSupportModel && (f = a.questSupportModel), f.support = !0, r["place" + c] = f)
+      else d[f] = null;
+      "support" !== this.deckCatType && d.questPositionHelper == b && (g = {}, "quest" === this.deckCatType && a.questSupportModel && (g = a.questSupportModel), g.support = !0, r["place" + b] = g)
     }.bind(this));
     d.userCardObj = r;
     var p = {};
-    _.each(d.posArr, function(c, e)
+    _.each(d.posArr, function(b, e)
     {
-      if (b["questPositionId" + (e + 1)])
+      if (c["questPositionId" + (e + 1)])
       {
-        c = "place" + b["questPositionId" + (e + 1)];
-        var m = "userPieceId" + ("00" + (e + 1)).slice(-2),
-          g = d.userCardObj[c],
-          k = g ? g.revision + 1 : 0;
+        b = "place" + c["questPositionId" + (e + 1)];
+        var n = "userPieceId" + ("00" + (e + 1)).slice(-2),
+          f = d.userCardObj[b],
+          k = f ? f.revision + 1 : 0;
         for (e = 0; 4 > e;)
         {
-          var f = m + (e + 1);
-          if (d[f])
+          var g = n + (e + 1);
+          if (d[g])
           {
-            0 == c in p && (p[c] = []);
-            var f = _.findWhere(a.storage.userPieceList.toJSON(),
+            0 == b in p && (p[b] = []);
+            var g = _.findWhere(a.storage.userPieceList.toJSON(),
               {
-                id: d[f]
+                id: d[g]
               }),
               l = !1;
             0 >= k && (l = "invalidRev");
-            f.piece.charaList && (_.findWhere(f.piece.charaList,
+            g.piece.charaList && (_.findWhere(g.piece.charaList,
             {
-              charaId: g.charaId | 0
+              charaId: f.charaId | 0
             }) || (l = "invalidChara"));
-            "ALL" !== f.piece.attributeId && f.piece.attributeId !== g.chara.attributeId && (l = "invalidAtt");
+            "ALL" !== g.piece.attributeId && g.piece.attributeId !== f.chara.attributeId && (l = "invalidAtt");
             k--;
-            f.maxLevel = D.getMaxLevel(f.piece.rank, f.lbCount);
-            f.invalidFlag = l;
-            p[c][e] = f
+            g.maxLevel = F.getMaxLevel(g.piece.rank, g.lbCount);
+            g.invalidFlag = l;
+            p[b][e] = g
           }
           else k--;
           e = e + 1 | 0
@@ -245,87 +245,91 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       }
     });
     if ("quest" === this.deckCatType && a.questSupportModel)
-      for (k = 0; 4 > k;) n = "equipPiece" + (k + 1), a.questSupportModel[n] && (q = "place" + b.questPositionHelper, 0 == q in p && (p[q] = []), n = a.questSupportModel[n], n.maxLevel = D.getMaxLevel(n.piece.rank, n.lbCount), p[q][k] = n), k = k + 1 | 0;
+      for (k = 0; 4 > k;) m = "equipPiece" + (k + 1), a.questSupportModel[m] && (q = "place" + c.questPositionHelper, 0 == q in p && (p[q] = []), m = a.questSupportModel[m], m.maxLevel = F.getMaxLevel(m.piece.rank, m.lbCount), p[q][k] = m), k = k + 1 | 0;
     d.userPieceObj = p;
-    _.each(d.userCardObj, function(a, c)
+    _.each(d.userCardObj, function(a, b)
     {
       a.switchCharaModel && (a.switchCharaModel.userPieceList = 0);
-      d.userPieceObj[c] && (_.each(d.userPieceObj[c], function(c, b)
+      d.userPieceObj[b] && (_.each(d.userPieceObj[b], function(b, c)
       {
-        c && (a["equipPiece" + (b + 1)] = c)
-      }), a = z.totalEventEffectSet(a))
+        b && (a["equipPiece" + (c + 1)] = b)
+      }), a = A.totalEventEffectSet(a))
     });
-    var h, t, B;
+    var h, t, C;
     if ("group" === this.deckCatType || "groupPrepare" === this.deckCatType)
       if (e = _.findWhere(e.regularEventList,
         {
           regularEventType: "GROUPBATTLE"
-        })) h = e.regularEventGroupBattle.recommendRatingPointRate / 1E3, t = (e.regularEventGroupBattle.atkRatingPointRate - 1E3) / 1E3, B = e.regularEventGroupBattle.recommendCharaAttributes.split(",");
+        })) h = e.regularEventGroupBattle.recommendRatingPointRate / 1E3, t = (e.regularEventGroupBattle.atkRatingPointRate - 1E3) / 1E3, C = e.regularEventGroupBattle.recommendCharaAttributes.split(",");
     d.teamStatus = 0;
-    _.each(d.userCardObj, function(b, e)
+    _.each(d.userCardObj, function(c, e)
     {
-      b.supportFlag || (b.rating = 1, b.appendPoint = 0, b.addHp = b.hp ? b.hp : 0, b.addAttack = b.attack ? b.attack : 0, b.addDefense = b.defense ? b.defense : 0, b.memoriaHp = 0, b.memoriaAttack = 0, b.memoriaDefense = 0, b.addAttribute = {
+      c.supportFlag || (c.rating = 1, c.appendPoint = 0, c.addHp = c.hp ? c.hp : 0, c.addAttack = c.attack ? c.attack : 0, c.addDefense = c.defense ? c.defense : 0, c.memoriaHp = 0, c.memoriaAttack = 0, c.memoriaDefense = 0, c.addAttribute = {
         hp: 0,
         attack: 0,
         defense: 0
-      }, b.composeAttribute && (b.addAttribute.hp = b.composeAttribute.composed.HP, b.addAttribute.attack = b.composeAttribute.composed.ATTACK, b.addAttribute.defense = b.composeAttribute.composed.DEFENSE), h && B && -1 < B.indexOf(b.chara.attributeId) && (b.rating *= h), t && (b.appendPoint += t * b.attack), d.userPieceObj[e] && _.each(d.userPieceObj[e], function(a)
+      }, c.composeAttribute && (c.addAttribute.hp = c.composeAttribute.composed.HP, c.addAttribute.attack = c.composeAttribute.composed.ATTACK, c.addAttribute.defense = c.composeAttribute.composed.DEFENSE), h && C && -1 < C.indexOf(c.chara.attributeId) && (c.rating *= h), t && (c.appendPoint += t * c.attack), d.userPieceObj[e] && _.each(d.userPieceObj[e], function(a)
       {
-        a && !a.invalidFlag && (b.addHp += a.hp, b.addAttack += a.attack, b.addDefense += a.defense, b.memoriaHp += a.hp, b.memoriaAttack += a.attack, b.memoriaDefense += a.defense)
-      }), b.isPHLBUseItem = null, "puellaHistoriaGroupRaid" == d.deckCatType && a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (b.isPHLBUseItem = a.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem), b.addEvent = {
+        a && !a.invalidFlag && (c.addHp += a.hp, c.addAttack += a.attack, c.addDefense += a.defense, c.memoriaHp += a.hp, c.memoriaAttack += a.attack, c.memoriaDefense += a.defense)
+      }), c.isPHLBUseItem = null, "puellaHistoriaGroupRaid" == d.deckCatType && a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (c.isPHLBUseItem = a.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem), c.isEventWalpurgisRaidUseItem = null, "EventWalpurgisRaid" == d.deckCatType && a.EventWalpurgisRaidPrm && "main" == a.EventWalpurgisRaidPrm.battleType && (c.isEventWalpurgisRaidUseItem = a.EventWalpurgisRaidPrm.isUseItem), c.addEvent = {
         hp: 0,
         attack: 0,
         defense: 0
-      }, ("arenaRankMatchAttack" === c.deckCatType || "arenaRankMatchDefence" === c.deckCatType) && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.spPlusList && _.each(a.EventArenaRankMatchPrm.spPlusList, function(a, c, d)
+      }, ("arenaRankMatchAttack" === b.deckCatType || "arenaRankMatchDefence" === b.deckCatType) && a.EventArenaRankMatchPrm && a.EventArenaRankMatchPrm.spPlusList && _.each(a.EventArenaRankMatchPrm.spPlusList, function(a, b, d)
       {
-        c == b.card.attributeId && _.each(a, function(a, c, d)
+        b == c.card.attributeId && _.each(a, function(a, b, d)
         {
-          b.addEvent[c] = a;
-          b.isArenaRankMatchPrmChange = "plus";
-          0 > a && (b.isArenaRankMatchPrmChange = "minus")
+          c.addEvent[b] = a;
+          c.isArenaRankMatchPrmChange = "plus";
+          0 > a && (c.isArenaRankMatchPrmChange = "minus")
         })
-      }), b.totalHp = b.addHp + b.addEvent.hp + b.addendHp + b.addAttribute.hp, b.totalAttack = b.addAttack + b.addEvent.attack + b.addendAttack + b.addAttribute.attack, b.totalDefense = b.addDefense + b.addEvent.defense + b.addendDefense + b.addAttribute.defense, 0 > b.totalHp && (b.totalHp = 0), 0 > b.totalAttack && (b.totalAttack = 0), 0 > b.totalDefense && (b.totalDefense = 0), d.teamStatus += (b.totalHp + b.totalAttack + b.totalDefense + b.appendPoint) * b.rating)
+      }), c.totalHp = c.addHp + c.addEvent.hp + c.addendHp + c.addAttribute.hp, c.totalAttack = c.addAttack + c.addEvent.attack + c.addendAttack + c.addAttribute.attack, c.totalDefense = c.addDefense + c.addEvent.defense + c.addendDefense + c.addAttribute.defense, 0 > c.totalHp && (c.totalHp = 0), 0 > c.totalAttack && (c.totalAttack = 0), 0 > c.totalDefense && (c.totalDefense = 0), d.teamStatus += (c.totalHp + c.totalAttack + c.totalDefense + c.appendPoint) * c.rating)
     });
-    20 == b.deckType && (d.name = "サポートチーム");
-    21 == b.deckType && (d.name = "ミラーズチーム");
-    22 == b.deckType && (d.name = "イベントミラーズチーム");
+    20 == c.deckType && (d.name = "サポートチーム");
+    21 == c.deckType && (d.name = "ミラーズチーム");
+    22 == c.deckType && (d.name = "イベントミラーズチーム");
     "arenaRankMatchAttack" == d.deckCatType && (d.name = "攻撃編成");
     e = w.getDeckType();
-    b.deckType == e.defence && (d.name = "防衛編成");
+    c.deckType == e.defence && (d.name = "防衛編成");
     return d
   };
-  var K = function(a, c)
+  var L = function(a, b)
     {
       switch (a)
       {
         case "quest":
-          return 11 <= c && 19 >= c;
+          return 11 <= b && 19 >= b;
         case "dungeon":
         case "dungeonInMap":
-          return 41 <= c && 49 >= c;
+          return 41 <= b && 49 >= b;
         case "group":
         case "groupPrepare":
-          return 51 <= c && 54 >= c;
+          return 51 <= b && 54 >= b;
         case "endless":
-          return 61 <= c && 63 >= c;
+          return 61 <= b && 63 >= b;
         case "extermination":
-          return 71 <= c && 75 >= c;
+          return 71 <= b && 75 >= b;
         case "secondPartLast":
-          return 101 <= c && 105 >= c;
+          return 101 <= b && 105 >= b;
         case "accomplish":
-          return 71 <= c && 75 >= c;
+          return 71 <= b && 75 >= b;
         case "puellaHistoriaGroupRaid":
-          return c >= v.getDeckType(
+          return b >= v.getDeckType(
           {}) + 1 && v.getDeckType(
-          {}) + 5 >= c;
+          {}) + 5 >= b;
+        case "EventWalpurgisRaid":
+          return b >= z.getDeckType(
+          {}) + 1 && z.getDeckType(
+          {}) + 5 >= b;
         case "scene0Challenge":
-          return c >= x.getDeckType() + 1 && x.getDeckType() + 5 >= c;
+          return b >= y.getDeckType() + 1 && y.getDeckType() + 5 >= b;
         case "arenaRankMatchAttack":
-          return c >= w.getDeckType().attackBase + 1 && w.getDeckType().attackBase + 5 >= c;
+          return b >= w.getDeckType().attackBase + 1 && w.getDeckType().attackBase + 5 >= b;
         default:
-          return 11 <= c && 19 >= c
+          return 11 <= b && 19 >= b
       }
     },
-    L = {
+    M = {
       quest: "1",
       dungeon: "4",
       dungeonInMap: "4",
@@ -337,48 +341,50 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       accomplish: "8",
       puellaHistoriaGroupRaid: String(v.getDeckType(
       {}) / 10),
-      scene0Challenge: String(x.getDeckType() / 10),
+      EventWalpurgisRaid: String(z.getDeckType(
+      {}) / 10),
+      scene0Challenge: String(y.getDeckType() / 10),
       arenaRankMatchAttack: String(w.getDeckType().attackBase / 10),
       exterminationCopy: "1",
       secondPartLastCopy: "1"
     };
   t.prototype.deckListDataCreate = function()
   {
-    var b = this.deckCatType || "quest",
-      c = [];
-    _.each(a.storage.userDeckList.toJSON(), function(a, b)
+    var c = this.deckCatType || "quest",
+      b = [];
+    _.each(a.storage.userDeckList.toJSON(), function(a, c)
     {
-      if (K(this.deckCatType, a.deckType))
+      if (L(this.deckCatType, a.deckType))
       {
         var d = [];
-        _.each(a.formationSheet, function(a, b)
+        _.each(a.formationSheet, function(a, c)
         {
-          -1 !== b.indexOf("placeSkillId") && d.push(b.split("placeSkillId")[1])
+          -1 !== c.indexOf("placeSkillId") && d.push(c.split("placeSkillId")[1])
         });
         a.posArr = d;
-        c.push(a)
+        b.push(a)
       }
     }.bind(this));
     var e = 0;
     a.rentalSetFlag = !1;
     var d = 9;
-    for ("group" === b || "groupPrepare" === b ? d = 4 : "endless" === b ? d = 3 : "accomplish" === b ? d = 1 : "puellaHistoriaGroupRaid" === b ? d = 5 : "scene0Challenge" === b ? d = 5 : "arenaRankMatchAttack" === b && (d = 5); e < d;)
+    for ("group" === c || "groupPrepare" === c ? d = 4 : "endless" === c ? d = 3 : "accomplish" === c ? d = 1 : "puellaHistoriaGroupRaid" === c ? d = 5 : "EventWalpurgisRaid" === c ? d = 5 : "scene0Challenge" === c ? d = 5 : "arenaRankMatchAttack" === c && (d = 5); e < d;)
     {
-      var k = L[b] + (e + 1);
-      _.findWhere(c,
+      var k = M[c] + (e + 1);
+      _.findWhere(b,
       {
         deckType: Number(k)
       }) || (k = {
         name: "チーム" + String(k).slice(-1),
         deckType: Number(k)
-      }, c.push(k));
+      }, b.push(k));
       e = e + 1 | 0
     }
-    c.sort(function(a, b)
+    b.sort(function(a, c)
     {
-      return a.deckType < b.deckType ? -1 : a.deckType > b.deckType ? 1 : 0
+      return a.deckType < c.deckType ? -1 : a.deckType > c.deckType ? 1 : 0
     });
-    return c
+    return b
   };
   t.prototype.nextPageFunc = function(a)
   {
@@ -397,6 +403,12 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
           deckModel: a
         });
         break;
+      case "EventWalpurgisRaid":
+        this.startEventWalpurgisRaidBattle(
+        {
+          deckModel: a
+        });
+        break;
       case "dungeon":
       case "dungeonInMap":
         this.dungeonMapStartFunc(a);
@@ -408,22 +420,22 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         })
     }
   };
-  t.prototype.questFunc = function(b)
+  t.prototype.questFunc = function(c)
   {
     if (!this.questDisableFlg)
     {
       a.androidKeyStop = !0;
-      var c = function()
+      var b = function()
       {
-        for (var a = [], c = 0; 10 > c;)
+        for (var a = [], b = 0; 10 > b;)
         {
-          var d = b["userCardId" + (c + 1)];
+          var d = c["userCardId" + (b + 1)];
           d && a.push(d);
-          c = c + 1 | 0
+          b = b + 1 | 0
         }
         return a
       }();
-      if ("endless" === b.deckCatType && 3 > c.length)
+      if ("endless" === c.deckCatType && 3 > b.length)
       {
         h.startSe(1002);
         var e = new a.PopupClass(
@@ -434,12 +446,12 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         });
         a.androidKeyStop = !1
       }
-      else if (c.length)
-        if ((a.questBattleModel && a.questBattleModel.questBattle.onlyCharaIds || a.questBattleModel && a.questBattleModel.questBattle.containCharaIds) && !y.charaConditionCheck(a.questBattleModel.questBattle, c)) c = y.charaConditionText(a.questBattleModel.questBattle), h.startSe(1002), e = new a.PopupClass(
+      else if (b.length)
+        if ((a.questBattleModel && a.questBattleModel.questBattle.onlyCharaIds || a.questBattleModel && a.questBattleModel.questBattle.containCharaIds) && !x.charaConditionCheck(a.questBattleModel.questBattle, b)) b = x.charaConditionText(a.questBattleModel.questBattle), h.startSe(1002), e = new a.PopupClass(
         {
           title: "クエスト開始条件",
           popupId: "charaConditionPopup",
-          content: c,
+          content: b,
           decideBtnText: "OK",
           canClose: !1
         }, null, function()
@@ -451,11 +463,11 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         });
         else
         {
-          if ("accomplish" === b.deckCatType)
+          if ("accomplish" === c.deckCatType)
           {
             var d = !1,
               k = !1;
-            _.each(b.userCardObj, function(a, b)
+            _.each(c.userCardObj, function(a, b)
             {
               a.isRetired && (k = !0);
               40 > a.level && (d = !0)
@@ -486,30 +498,30 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
           }
           var l = {};
           l.questBattleId = a.questBattleModel.questBattle.questBattleId;
-          l.deckType = b.deckType;
+          l.deckType = c.deckType;
           "RAID" === a.questBattleModel.questType ? l.raidId = a.questBattleModel.raidId : "GROUPBATTLE" === a.questBattleModel.questType && (l.groupId = a.questBattleModel.groupId);
-          _.each(b, function(a, b)
+          _.each(c, function(a, b)
           {
             if (-1 !== b.indexOf("questPositionId") || -1 !== b.indexOf("userCardId") || -1 !== b.indexOf("userPieceId")) l[b] = a
           });
-          for (var g = c = 0; 5 > c; ++c)
+          for (var f = b = 0; 5 > b; ++b)
           {
-            var q = b.userCardObj["place" + b.posArr[c]];
-            q && !0 === q.switchCharaFlag && (l["switchCharaId" + (g + 1)] = q.chara.id, g++);
-            !q || !0 !== q.rentalFlag && "extermination" !== b.deckCatType || (b["rentalPieceSetId" + (g + 1)] && (l["rentalPieceSetId" + (g + 1)] = b["rentalPieceSetId" + (g + 1)]), g++)
+            var q = c.userCardObj["place" + c.posArr[b]];
+            q && !0 === q.switchCharaFlag && (l["switchCharaId" + (f + 1)] = q.chara.id, f++);
+            !q || !0 !== q.rentalFlag && "extermination" !== c.deckCatType || (c["rentalPieceSetId" + (f + 1)] && (l["rentalPieceSetId" + (f + 1)] = c["rentalPieceSetId" + (f + 1)]), f++)
           }
-          a.questSupportModel && (a.questSupportModel.isNpc ? l.npcHelpId = a.questSupportModel.npcHelpId : (l.helperUserId = a.questSupportModel.userId, a.questHelperId = a.questSupportModel.userId, l.helperUserCardId = a.questSupportModel.userCardId), l.helpAttributeId = a.questSupportModel.supportTabAtt.toUpperCase(), l.helperPositionId = b.questPositionHelper);
-          var c = null,
-            g = a.questBattleModel.questBattle.startStory,
-            n = [];
+          a.questSupportModel && (a.questSupportModel.isNpc ? l.npcHelpId = a.questSupportModel.npcHelpId : (l.helperUserId = a.questSupportModel.userId, a.questHelperId = a.questSupportModel.userId, l.helperUserCardId = a.questSupportModel.userCardId), l.helpAttributeId = a.questSupportModel.supportTabAtt.toUpperCase(), l.helperPositionId = c.questPositionHelper);
+          var b = null,
+            f = a.questBattleModel.questBattle.startStory,
+            m = [];
           a.questBattleModel.questBattle.questStoryList && _.each(a.questBattleModel.questBattle.questStoryList, function(a)
           {
-            a && n.push(a)
+            a && m.push(a)
           });
-          a.questBattleModel.questBattle.endStory && n.push(a.questBattleModel.questBattle.endStory);
-          a.questBattleModel.secret && (c = a.questBattleModel.secret);
+          a.questBattleModel.questBattle.endStory && m.push(a.questBattleModel.questBattle.endStory);
+          a.questBattleModel.secret && (b = a.questBattleModel.secret);
           this.questDisableFlg = !0;
-          G(g, n, a.questBattleModel.userQuestAdventureList, l, c, b);
+          D(f, m, a.questBattleModel.userQuestAdventureList, l, b, c);
           h.startSe(1001)
         }
       else h.startSe(1002), e = new a.PopupClass(
@@ -520,7 +532,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       }), a.androidKeyStop = !1
     }
   };
-  var G = function(b, c, e, d, k, l)
+  var D = function(c, b, e, d, k, l)
     {
       $(a.ready.target).on("webkitAnimationEnd", function()
       {
@@ -530,54 +542,54 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         {
           "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
         });
-        var g = !0,
+        var f = !0,
           q = !0,
-          n = 0;
+          m = 0;
         if (!a.questBattleModel.storyForceStart)
         {
           _.each(e, function(a)
           {
-            b === a.adventureId && (g = !1); - 1 < c.indexOf(a.adventureId) && n++
+            c === a.adventureId && (f = !1); - 1 < b.indexOf(a.adventureId) && m++
           });
-          if (0 == c.length || 0 < c.length && c.length == n) q = !1;
-          "MAIN" != a.questBattleModel.questType && "SUB" != a.questBattleModel.questType && "CHARA" != a.questBattleModel.questType && "COSTUME" != a.questBattleModel.questType || a.storage.gameUser.toJSON().skipAdventure || (q = g = !0);
-          b || (g = !1);
-          0 == c.length && (q = !1)
+          if (0 == b.length || 0 < b.length && b.length == m) q = !1;
+          "MAIN" != a.questBattleModel.questType && "SUB" != a.questBattleModel.questType && "CHARA" != a.questBattleModel.questType && "COSTUME" != a.questBattleModel.questType || a.storage.gameUser.toJSON().skipAdventure || (q = f = !0);
+          c || (f = !1);
+          0 == b.length && (q = !1)
         }
-        a.questBattleModel.eventBranchData && !a.questBattleModel.eventBranchData.startStoryJson && (g = !1);
+        a.questBattleModel.eventBranchData && !a.questBattleModel.eventBranchData.startStoryJson && (f = !1);
         h.endL2d();
         var r = null;
         if (window.isBrowser) a.stubQuest = d, a.apiQuestPrm = d, h.sendCommand("QuestStub");
-        else if (a.apiQuestPrm = d, g)
+        else if (a.apiQuestPrm = d, f)
         {
-          var p = function(c)
+          var p = function(b)
             {
               var e = function()
               {
                 $("#commandDiv").on("nativeCallback", function(a, b)
                 {
                   $("#commandDiv").off();
-                  E(b);
+                  G(b);
                   location.href = "#/QuestBackground"
                 });
-                H(c)
+                I(b)
               };
-              $("#commandDiv").on("nativeCallback", function(c, g)
+              $("#commandDiv").on("nativeCallback", function(b, f)
               {
                 $("#commandDiv").off();
-                g && g.isSkipped && (c = {}, c.adventureId = String(b), u.ajaxPost(a.linkList.adventureSkip, c, function(b)
+                f && f.isSkipped && (b = {}, b.adventureId = String(c), u.ajaxPost(a.linkList.adventureSkip, b, function(b)
                 {
                   a.responseSetStorage(b)
                 }));
-                a.questBattleModel.eventBranchData && g && g.alternativeIdList && u.ajaxPost(a.linkList.branchAlternativeStart,
+                a.questBattleModel.eventBranchData && f && f.alternativeIdList && u.ajaxPost(a.linkList.branchAlternativeStart,
                 {
                   pointId: a.questBattleModel.eventBranchData.pointId,
-                  alternativeIdList: g.alternativeIdList
+                  alternativeIdList: f.alternativeIdList
                 });
-                I(
+                J(
                 {
                   questBattleId: d.questBattleId
-                }) ? C(
+                }) ? E(
                 {
                   deckModel: l,
                   callback: e
@@ -608,21 +620,21 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
               h.downloadFileFullVoice("section_event_" + a.questBattleModel.eventObj.event.eventId);
               window.isBrowser && $("#commandDiv").trigger("nativeCallback")
             },
-            r = function(c)
+            r = function(b)
             {
-              c.isLoop = a.questBattleModel.isLoop;
-              var d = String(b);
+              b.isLoop = a.questBattleModel.isLoop;
+              var d = String(c);
               k && (d += "_" + k);
               setTimeout(function()
               {
                 h.setWebView(!1);
-                a.questBattleModel.eventBranchData ? (p(c), h.startBranchStory(a.questBattleModel.eventBranchData.startStoryJson)) : A.getIsPuellaHistoriaInfo(
+                a.questBattleModel.eventBranchData ? (p(b), h.startBranchStory(a.questBattleModel.eventBranchData.startStoryJson)) : B.getIsPuellaHistoriaInfo(
                 {
                   sectionInfo: a.storage.userSectionList.findWhere(
                   {
                     sectionId: a.questBattleModel.questBattle.sectionId
                   }).toJSON()
-                }).isPuellaHistoria ? (p(c), h.startStory(d)) : "MAIN" == a.questBattleModel.questType || "SECONDPARTLAST" === a.questBattleModel.questType ? t(d, c) : a.questBattleModel.eventObj && a.questBattleModel.eventObj.event && a.questBattleModel.eventObj.event.existsVoice ? v(d, c) : (p(c), h.startStory(d), window.isBrowser && $("#commandDiv").trigger("nativeCallback"))
+                }).isPuellaHistoria ? (p(b), h.startStory(d)) : "MAIN" == a.questBattleModel.questType || "SECONDPARTLAST" === a.questBattleModel.questType ? t(d, b) : a.questBattleModel.eventObj && a.questBattleModel.eventObj.event && a.questBattleModel.eventObj.event.existsVoice ? v(d, b) : (p(b), h.startStory(d), window.isBrowser && $("#commandDiv").trigger("nativeCallback"))
               }, 500)
             };
           $("#popupArea").on(a.cgti, "#resultCodeError .popupCloseBtn", function(b)
@@ -640,15 +652,15 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             $("#commandDiv").on("nativeCallback", function(a, b)
             {
               $("#commandDiv").off();
-              E(b);
+              G(b);
               location.href = "#/QuestBackground"
             });
-            H(b)
+            I(b)
           };
-          I(
+          J(
           {
             questBattleId: d.questBattleId
-          }) ? C(
+          }) ? E(
           {
             deckModel: l,
             callback: c
@@ -662,7 +674,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             {
               var c = null;
               "MAIN" == a.questBattleModel.questType ? c = "section_" + a.questBattleModel.questBattle.sectionId : a.questBattleModel.eventObj && a.questBattleModel.eventObj.event && a.questBattleModel.eventObj.event.existsVoice && (c = "section_event_" + a.questBattleModel.eventObj.event.eventId);
-              A.getIsPuellaHistoriaInfo(
+              B.getIsPuellaHistoriaInfo(
               {
                 sectionInfo: a.storage.userSectionList.findWhere(
                 {
@@ -685,138 +697,144 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       });
       a.ready.target.classList.contains("preNativeFadeIn") ? $(a.ready.target).trigger("webkitAnimationEnd") : a.addClass(a.ready.target, "preNativeFadeIn")
     },
-    H = function(b)
+    I = function(c)
     {
       a.acpTimeCure && (clearInterval(a.acpTimeCure), a.acpTimeCure = null);
-      var c = null;
-      if (b.userQuestBattleResultList[0] && b.userQuestBattleResultList[0].questBattle && b.userQuestBattleResultList[0].questBattle.sectionId)
+      var b = null;
+      if (c.userQuestBattleResultList[0] && c.userQuestBattleResultList[0].questBattle && c.userQuestBattleResultList[0].questBattle.sectionId)
       {
-        var e = b.userQuestBattleResultList[0].questBattleId,
-          c = {},
+        var e = c.userQuestBattleResultList[0].questBattleId,
+          b = {},
           d = a.storage.userSectionList.findWhere(
           {
-            sectionId: b.userQuestBattleResultList[0].questBattle.sectionId
+            sectionId: c.userQuestBattleResultList[0].questBattle.sectionId
           });
-        if (a.searchQuestGiftId && "MAIN" == d.toJSON().section.questType || a.searchQuestGiftId && "SUB" == d.toJSON().section.questType || a.searchQuestGiftId && "CHARA" == d.toJSON().section.questType || a.searchQuestGiftId && "COSTUME" == d.toJSON().section.questType) c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/SearchQuest/" + e;
+        if (a.searchQuestGiftId && "MAIN" == d.toJSON().section.questType || a.searchQuestGiftId && "SUB" == d.toJSON().section.questType || a.searchQuestGiftId && "CHARA" == d.toJSON().section.questType || a.searchQuestGiftId && "COSTUME" == d.toJSON().section.questType) b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/SearchQuest/" + e;
         else switch (d.toJSON().section.questType)
         {
           case "SUB":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/SubQuest";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/SubQuest";
             break;
           case "CHARA":
           case "COSTUME":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/CharaQuest";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/CharaQuest";
             break;
           case "EVENT_S":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventTrainingTop";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventTrainingTop";
             break;
           case "COMPOSE":
           case "MATERIAL":
           case "ENHANCEMENT_AROUSAL":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventQuest";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventQuest";
             break;
           case "TOWER":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventTowerTop";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventTowerTop";
             break;
           case "DAILYTOWER":
             var k = d.toJSON().section.parameter.split("=")[1];
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventDailyTowerTop/" + k.toLowerCase() + "/" + e;
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventDailyTowerTop/" + k.toLowerCase() + "/" + e;
             break;
           case "BRANCH":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventBranchTop";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventBranchTop";
             break;
           case "SINGLERAID":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventSingleRaidTop/" + e;
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventSingleRaidTop/" + e;
             break;
           case "ACCOMPLISH":
-            c.resultUrl = "/magica/index.html#/RegularEventAccomplishTop/" + e;
-            c.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
+            b.resultUrl = "/magica/index.html#/RegularEventAccomplishTop/" + e;
+            b.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
             break;
           case "STORYRAID":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventStoryRaidTop/" + e;
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventStoryRaidTop/" + e;
             break;
           case "RAID":
-            c.resultUrl = "/magica/index.html#/EventRaidTop";
-            c.retireUrl = "/magica/index.html#/EventRaidTop";
+            b.resultUrl = "/magica/index.html#/EventRaidTop";
+            b.retireUrl = "/magica/index.html#/EventRaidTop";
             break;
           case "GROUPBATTLE":
-            c.resultUrl = "/magica/index.html#/RegularEventGroupBattleTop/" + e;
-            c.retireUrl = "/magica/index.html#/RegularEventGroupBattleTop/" + e;
+            b.resultUrl = "/magica/index.html#/RegularEventGroupBattleTop/" + e;
+            b.retireUrl = "/magica/index.html#/RegularEventGroupBattleTop/" + e;
             break;
           case "EXTERMINATION":
-            c.resultUrl = "/magica/index.html#/RegularEventExterminationBattleSelect/" + e;
-            c.retireUrl = "/magica/index.html#/RegularEventExterminationBattleSelect";
+            b.resultUrl = "/magica/index.html#/RegularEventExterminationBattleSelect/" + e;
+            b.retireUrl = "/magica/index.html#/RegularEventExterminationBattleSelect";
             break;
           case "REG_ACC":
-            c.resultUrl = "/magica/index.html#/RegularEventAccomplishTop/" + e;
-            c.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
+            b.resultUrl = "/magica/index.html#/RegularEventAccomplishTop/" + e;
+            b.retireUrl = "/magica/index.html#/RegularEventAccomplishTop";
             break;
           case "WITCH":
-            c.resultUrl = "/magica/index.html#/QuestResult";
-            c.retireUrl = "/magica/index.html#/EventWitchTopPage";
+            b.resultUrl = "/magica/index.html#/QuestResult";
+            b.retireUrl = "/magica/index.html#/EventWitchTopPage";
             break;
           default:
-            c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/MainQuest"
+            b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/MainQuest"
         }
-        "SECONDPARTLAST" === a.questBattleModel.questType && (c.resultUrl = "/magica/index.html#/SecondPartLastRouter/battleWin/" + e, c.retireUrl = "/magica/index.html#/SecondPartLastRouter");
-        1033044 === e && (c.resultUrl = "/magica/index.html#/SecondPartLastRouter/forceLoseBattle/" + e, c.retireUrl = "/magica/index.html#/MainQuest");
-        e = A.getIsPuellaHistoriaInfo(
+        "SECONDPARTLAST" === a.questBattleModel.questType && (b.resultUrl = "/magica/index.html#/SecondPartLastRouter/battleWin/" + e, b.retireUrl = "/magica/index.html#/SecondPartLastRouter");
+        1033044 === e && (b.resultUrl = "/magica/index.html#/SecondPartLastRouter/forceLoseBattle/" + e, b.retireUrl = "/magica/index.html#/MainQuest");
+        e = B.getIsPuellaHistoriaInfo(
         {
           sectionInfo: d.toJSON()
         });
-        e.isPuellaHistoria && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/PuellaHistoriaTop", e.num && e.num == v.getPuellaHistoriaLastBattleNum(
+        e.isPuellaHistoria && (b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/PuellaHistoriaTop", e.num && e.num == v.getPuellaHistoriaLastBattleNum(
         {
           type: "singleRaid"
-        }) && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"), e.num && e.num == v.getPuellaHistoriaLastBattleNum(
+        }) && (b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"), e.num && e.num == v.getPuellaHistoriaLastBattleNum(
         {
           type: "singleRaidLast"
-        }) && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"), e.num && e.num == v.getPuellaHistoriaLastBattleNum(
+        }) && (b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/PuellaHistoriaSingleRaid"), e.num && e.num == v.getPuellaHistoriaLastBattleNum(
         {
           type: "groupRaid"
-        }) && (c.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultSubBoss", c.retireUrl = "/magica/index.html#/EventPuellaRaidTop", a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (c.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultMainBoss")));
-        x.getIsScene0Info(
+        }) && (b.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultSubBoss", b.retireUrl = "/magica/index.html#/EventPuellaRaidTop", a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (b.resultUrl = "/magica/index.html#/PuellaHistoriaGroupRaidQuestResultMainBoss")));
+        y.getIsScene0Info(
         {
           section: d.toJSON()
-        }).isScene0 && (c.resultUrl = "/magica/index.html#/QuestResult", c.retireUrl = "/magica/index.html#/Scene0BattleSelect")
+        }).isScene0 && (b.resultUrl = "/magica/index.html#/QuestResult", b.retireUrl = "/magica/index.html#/Scene0BattleSelect");
+        d = z.getAfterBattleUrl(
+        {
+          section: d.toJSON(),
+          pageJson: u.getPageJson()
+        });
+        d.isOpen && (b.resultUrl = d.resultUrl, b.retireUrl = d.retireUrl)
       }
       h.setWebView(!1);
-      a.nativeQuestPrm = b;
-      a.nativeQuestPrm.urls = c;
-      h.startQuest(b.userQuestBattleResultList[0].id, c, b.isLoop);
+      a.nativeQuestPrm = c;
+      a.nativeQuestPrm.urls = b;
+      h.startQuest(c.userQuestBattleResultList[0].id, b, c.isLoop);
       window.isBrowser && $("#commandDiv").trigger("nativeCallback")
     };
-  t.prototype.dungeonMapStartFunc = function(b)
+  t.prototype.dungeonMapStartFunc = function(c)
   {
     if (!this.questDisableFlg)
       if (a.androidKeyStop = !0, function()
         {
-          for (var a = [], c = 0; 10 > c;)
+          for (var a = [], b = 0; 10 > b;)
           {
-            var k = b["userCardId" + (c + 1)];
+            var k = c["userCardId" + (b + 1)];
             k && a.push(k);
-            c = c + 1 | 0
+            b = b + 1 | 0
           }
           return a
-        }(), b.leaderPos)
+        }(), c.leaderPos)
       {
         if ("dungeon" === this.deckCatType)
         {
           h.startSe(1001);
-          var c = {
+          var b = {
             areaId: a.dungeonAreaModel.areaId,
-            deckType: b.deckType
+            deckType: c.deckType
           };
           this.questDisableFlg = !0;
-          u.ajaxPost(a.linkList.dungeonStart, c, function(b)
+          u.ajaxPost(a.linkList.dungeonStart, b, function(b)
           {
             a.responseSetStorage(b);
             location.href = "#/EventDungeonMap"
@@ -835,36 +853,36 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
   {
     "accomplish" === this.deckCatType && a.userRegularEventAccomplishCharaArr && a.storage.userCardListEx.each(function(a)
     {
-      var c = a.toJSON();
-      F(c);
+      var b = a.toJSON();
+      H(b);
       a.clear(
       {
         silent: !0
       });
-      a.set(c,
+      a.set(b,
       {
         silent: !0
       })
     })
   };
-  var F = function(b)
+  var H = function(c)
   {
-    var c = a.userRegularEventAccomplishCharaArr[b.charaId];
-    c ? (b.damage = c.damage, b.mp = c.mp, b.dp = 0, b.isRetired = c.isRetired, 0 < c.mp && (b.mp = Math.floor(c.mp / 10), 0 == b.mp && (b.mp = 1)), 100 < b.mp && (b.dp = b.mp - 100, b.mp = 100)) : (b.damage = 0, b.mp = 0, b.dp = 0, b.isRetired = null)
+    var b = a.userRegularEventAccomplishCharaArr[c.charaId];
+    b ? (c.damage = b.damage, c.mp = b.mp, c.dp = 0, c.isRetired = b.isRetired, 0 < b.mp && (c.mp = Math.floor(b.mp / 10), 0 == c.mp && (c.mp = 1)), 100 < c.mp && (c.dp = c.mp - 100, c.mp = 100)) : (c.damage = 0, c.mp = 0, c.dp = 0, c.isRetired = null)
   };
-  t.prototype.startEventArenaRankMatchBattle = function(b)
+  t.prototype.startEventArenaRankMatchBattle = function(c)
   {
-    b = b.currentDeckModel;
+    c = c.currentDeckModel;
     if (a.EventArenaRankMatchPrm)
     {
-      var c = u.getPageJson();
-      a.EventArenaRankMatchPrm.deckEditPageJson && (c = a.EventArenaRankMatchPrm.deckEditPageJson);
-      if (b.userCardId1)
-        if (a.EventArenaRankMatchPrm.isDeckEditTimeOver) J.openPopup(
+      var b = u.getPageJson();
+      a.EventArenaRankMatchPrm.deckEditPageJson && (b = a.EventArenaRankMatchPrm.deckEditPageJson);
+      if (c.userCardId1)
+        if (a.EventArenaRankMatchPrm.isDeckEditTimeOver) K.openPopup(
         {});
         else if (a.EventArenaRankMatchPrm.deckEditAccessTime && !w.isOpenEvent(
         {
-          pageJson: c,
+          pageJson: b,
           pageAccessLocalTime: a.EventArenaRankMatchPrm.deckEditAccessTime,
           rankMatchEventInfo: a.EventArenaRankMatchPrm.eventInfo
         })) new a.PopupClass(
@@ -880,18 +898,18 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
       });
       else
       {
-        if (c = a.EventArenaRankMatchPrm, !c.started)
+        if (b = a.EventArenaRankMatchPrm, !b.started)
         {
-          c.started = !0;
+          b.started = !0;
           var e = {
-            deckNum: b.deckType,
-            opponentUserId: c.opponentInfo.userId,
-            arenaBattleType: c.arenaBattleType,
-            matchId: c.matchId
+            deckNum: c.deckType,
+            opponentUserId: b.opponentInfo.userId,
+            arenaBattleType: b.arenaBattleType,
+            matchId: b.matchId
           };
-          a.currentArenaRankMatchDeckType = b.deckType;
-          a.battleEnemy = c.opponentInfo.userId;
-          window.isBrowser ? (a.arenaJson = e, a.globalMenuView && a.globalMenuView.trigger("removeView"), h.sendCommand("ArenaStub," + JSON.stringify(e))) : u.ajaxPost(a.linkList.arenaStart, e, function(c)
+          a.currentArenaRankMatchDeckType = c.deckType;
+          a.battleEnemy = b.opponentInfo.userId;
+          window.isBrowser ? (a.arenaJson = e, a.globalMenuView && a.globalMenuView.trigger("removeView"), h.sendCommand("ArenaStub," + JSON.stringify(e))) : u.ajaxPost(a.linkList.arenaStart, e, function(b)
           {
             a.acpTimeCure && (clearInterval(a.acpTimeCure), a.acpTimeCure = null);
             $(a.ready.target).on("webkitAnimationEnd", function()
@@ -902,12 +920,12 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
               {
                 "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
               });
-              var b = {};
-              b.questId = c.userQuestBattleResultList[0].id;
-              b.replayId = c.userQuestBattleResultList[0].replayId;
-              b.resultUrl = "/magica/index.html#/RegularEventArenaRankMatchResult";
-              b.retireUrl = "/magica/index.html#/RegularEventArenaRankMatchTop";
-              b.tips = {
+              var c = {};
+              c.questId = b.userQuestBattleResultList[0].id;
+              c.replayId = b.userQuestBattleResultList[0].replayId;
+              c.resultUrl = "/magica/index.html#/RegularEventArenaRankMatchResult";
+              c.retireUrl = "/magica/index.html#/RegularEventArenaRankMatchTop";
+              c.tips = {
                 type: 2
               };
               a.globalMenuView && a.globalMenuView.trigger("removeView");
@@ -920,7 +938,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
                   c && c.webData && a.responseSetStorage(c.webData);
                   location.href = "#/QuestBackground"
                 });
-                h.startArena(b)
+                h.startArena(c)
               }, 500)
             });
             a.addClass(a.ready.target, "preNativeFadeIn")
@@ -936,25 +954,25 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
     }
     else location.href = "#/ArenaTop"
   };
-  t.prototype.startPuellaHistoriaGroupRaidBattle = function(b)
+  t.prototype.startPuellaHistoriaGroupRaidBattle = function(c)
   {
-    var c = b.deckModel,
+    var b = c.deckModel,
       e = this;
     if (!e.questDisableFlg)
-      if (a.androidKeyStop = !0, b = function()
+      if (a.androidKeyStop = !0, c = function()
         {
-          for (var a = [], b = 0; 10 > b;)
+          for (var a = [], c = 0; 10 > c;)
           {
-            var d = c["userCardId" + (b + 1)];
+            var d = b["userCardId" + (c + 1)];
             d && a.push(d);
-            b = b + 1 | 0
+            c = c + 1 | 0
           }
           return a
-        }(), b.length)(a.questBattleModel && a.questBattleModel.questBattle.onlyCharaIds || a.questBattleModel && a.questBattleModel.questBattle.containCharaIds) && !y.charaConditionCheck(a.questBattleModel.questBattle, b) ? (b = y.charaConditionText(a.questBattleModel.questBattle), h.startSe(1002), d = new a.PopupClass(
+        }(), c.length)(a.questBattleModel && a.questBattleModel.questBattle.onlyCharaIds || a.questBattleModel && a.questBattleModel.questBattle.containCharaIds) && !x.charaConditionCheck(a.questBattleModel.questBattle, c) ? (c = x.charaConditionText(a.questBattleModel.questBattle), h.startSe(1002), d = new a.PopupClass(
       {
         title: "クエスト開始条件",
         popupId: "charaConditionPopup",
-        content: b,
+        content: c,
         decideBtnText: "OK",
         canClose: !1
       }, null, function()
@@ -963,37 +981,37 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         {
           d.remove()
         })
-      })) : (h.startSe(1001), b = function()
+      })) : (h.startSe(1001), c = function()
       {
-        var b = {};
-        b.questBattleId = a.questBattleModel.questBattle.questBattleId;
-        b.deckType = c.deckType;
-        "RAID" === a.questBattleModel.questType ? b.raidId = a.questBattleModel.raidId : "GROUPBATTLE" === a.questBattleModel.questType && (b.groupId = a.questBattleModel.groupId);
-        _.each(c, function(a, c)
+        var c = {};
+        c.questBattleId = a.questBattleModel.questBattle.questBattleId;
+        c.deckType = b.deckType;
+        "RAID" === a.questBattleModel.questType ? c.raidId = a.questBattleModel.raidId : "GROUPBATTLE" === a.questBattleModel.questType && (c.groupId = a.questBattleModel.groupId);
+        _.each(b, function(a, b)
         {
-          if (-1 !== c.indexOf("questPositionId") || -1 !== c.indexOf("userCardId") || -1 !== c.indexOf("userPieceId")) b[c] = a
+          if (-1 !== b.indexOf("questPositionId") || -1 !== b.indexOf("userCardId") || -1 !== b.indexOf("userPieceId")) c[b] = a
         });
-        for (var d = 0, g = 0; 5 > d; ++d)
+        for (var d = 0, f = 0; 5 > d; ++d)
         {
-          var h = c.userCardObj["place" + c.posArr[d]];
-          h && !0 === h.switchCharaFlag && (b["switchCharaId" + (g + 1)] = h.chara.id, g++);
-          !h || !0 !== h.rentalFlag && "extermination" !== c.deckCatType || (c["rentalPieceSetId" + (g + 1)] && (b["rentalPieceSetId" + (g + 1)] = c["rentalPieceSetId" + (g + 1)]), g++)
+          var h = b.userCardObj["place" + b.posArr[d]];
+          h && !0 === h.switchCharaFlag && (c["switchCharaId" + (f + 1)] = h.chara.id, f++);
+          !h || !0 !== h.rentalFlag && "extermination" !== b.deckCatType || (b["rentalPieceSetId" + (f + 1)] && (c["rentalPieceSetId" + (f + 1)] = b["rentalPieceSetId" + (f + 1)]), f++)
         }
         var d = null,
-          n = [];
+          m = [];
         a.questBattleModel.questBattle.questStoryList && _.each(a.questBattleModel.questBattle.questStoryList, function(a)
         {
-          a && n.push(a)
+          a && m.push(a)
         });
-        a.questBattleModel.questBattle.endStory && n.push(a.questBattleModel.questBattle.endStory);
+        a.questBattleModel.questBattle.endStory && m.push(a.questBattleModel.questBattle.endStory);
         a.questBattleModel.secret && (d = a.questBattleModel.secret);
         e.questDisableFlg = !0;
-        a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (b.isPuellaRaidBreakItemUse = a.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem);
-        G(null, n, a.questBattleModel.userQuestAdventureList, b, d, c)
-      }, a.PuellaHistoriaLastBattleGroupRaidPrm && "sub" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType ? b() : C(
+        a.PuellaHistoriaLastBattleGroupRaidPrm && "main" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType && (c.isPuellaRaidBreakItemUse = a.PuellaHistoriaLastBattleGroupRaidPrm.isUseItem);
+        D(null, m, a.questBattleModel.userQuestAdventureList, c, d, b)
+      }, a.PuellaHistoriaLastBattleGroupRaidPrm && "sub" == a.PuellaHistoriaLastBattleGroupRaidPrm.battleType ? c() : E(
       {
-        deckModel: c,
-        callback: b
+        deckModel: b,
+        callback: c
       }));
       else
       {
@@ -1007,13 +1025,13 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         a.androidKeyStop = !1
       }
   };
-  var C = function(b)
+  var E = function(c)
     {
-      var c = b.deckModel,
-        e = b.callback,
+      var b = c.deckModel,
+        e = c.callback,
         d = v.getStoryIdList(),
         k = [];
-      _.each(c.userCardObj, function(a, b, c)
+      _.each(b.userCardObj, function(a, b, c)
       {
         _.each(d.special, function(b, c, d)
         {
@@ -1021,7 +1039,7 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
         })
       });
       var l = 0,
-        g = function()
+        f = function()
         {
           l >= k.length ? e() : a.playStory(
           {
@@ -1031,17 +1049,84 @@ define("backboneCommon ajaxControl command QuestUtil cardUtil memoriaUtil js/vie
             callback: function()
             {
               l++;
-              g()
+              f()
             }
           })
         };
-      g()
+      f()
     },
-    I = function(a)
+    J = function(a)
     {
       var b = !1;
       1041021 == a.questBattleId && (b = !0);
       return b
     };
+  t.prototype.startEventWalpurgisRaidBattle = function(c)
+  {
+    var b = c.deckModel,
+      e = this;
+    if (!e.questDisableFlg)
+      if (a.androidKeyStop = !0, c = function()
+        {
+          for (var a = [], c = 0; 10 > c;)
+          {
+            var d = b["userCardId" + (c + 1)];
+            d && a.push(d);
+            c = c + 1 | 0
+          }
+          return a
+        }(), c.length)(a.questBattleModel && a.questBattleModel.questBattle.onlyCharaIds || a.questBattleModel && a.questBattleModel.questBattle.containCharaIds) && !x.charaConditionCheck(a.questBattleModel.questBattle, c) ? (c = x.charaConditionText(a.questBattleModel.questBattle), h.startSe(1002), d = new a.PopupClass(
+      {
+        title: "クエスト開始条件",
+        popupId: "charaConditionPopup",
+        content: c,
+        decideBtnText: "OK",
+        canClose: !1
+      }, null, function()
+      {
+        $("#charaConditionPopup .decideBtn").on(a.cgti, function(a)
+        {
+          d.remove()
+        })
+      })) : (h.startSe(1001), function()
+      {
+        var c = {};
+        c.questBattleId = a.questBattleModel.questBattle.questBattleId;
+        c.deckType = b.deckType;
+        "RAID" === a.questBattleModel.questType ? c.raidId = a.questBattleModel.raidId : "GROUPBATTLE" === a.questBattleModel.questType && (c.groupId = a.questBattleModel.groupId);
+        _.each(b, function(a, b)
+        {
+          if (-1 !== b.indexOf("questPositionId") || -1 !== b.indexOf("userCardId") || -1 !== b.indexOf("userPieceId")) c[b] = a
+        });
+        for (var d = 0, f = 0; 5 > d; ++d)
+        {
+          var h = b.userCardObj["place" + b.posArr[d]];
+          h && !0 === h.switchCharaFlag && (c["switchCharaId" + (f + 1)] = h.chara.id, f++);
+          !h || !0 !== h.rentalFlag && "extermination" !== b.deckCatType || (b["rentalPieceSetId" + (f + 1)] && (c["rentalPieceSetId" + (f + 1)] = b["rentalPieceSetId" + (f + 1)]), f++)
+        }
+        var d = null,
+          m = [];
+        a.questBattleModel.questBattle.questStoryList && _.each(a.questBattleModel.questBattle.questStoryList, function(a)
+        {
+          a && m.push(a)
+        });
+        a.questBattleModel.questBattle.endStory && m.push(a.questBattleModel.questBattle.endStory);
+        a.questBattleModel.secret && (d = a.questBattleModel.secret);
+        e.questDisableFlg = !0;
+        a.EventWalpurgisRaidPrm && "main" == a.EventWalpurgisRaidPrm.battleType && (c.isBreakItemUse = a.EventWalpurgisRaidPrm.isUseItem);
+        D(null, m, a.questBattleModel.userQuestAdventureList, c, d, b)
+      }());
+      else
+      {
+        h.startSe(1002);
+        var d = new a.PopupClass(
+        {
+          title: "編成エラー",
+          content: "魔法少女を１体以上編成してください。",
+          closeBtnText: "OK"
+        });
+        a.androidKeyStop = !1
+      }
+  };
   return t
 });

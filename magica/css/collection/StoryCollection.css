@@ -717,22 +717,6 @@
   left: 20px;
 }
 
-#StoryCollection #listWrap #accomplish .chapterTitleWrap
-{
-  background: url("/magica/resource/image_web/page/collection/storyCollection/bg_accomplish_title.png") left top no-repeat;
-}
-
-#StoryCollection #listWrap #accomplish .chapterTitleWrap .faceImg img
-{
-  left: 48px;
-  -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(20%, black), color-stop(80%, black), to(rgba(0, 0, 0, 0)));
-}
-
-#StoryCollection #listWrap #accomplish .chapterTitleWrap .chapterTitle
-{
-  left: 132px;
-}
-
 #StoryCollection #listWrap #puellaHistoria .sectionListWrap,
 #StoryCollection #listWrap #event .sectionListWrap,
 #StoryCollection #listWrap #special .sectionListWrap
@@ -957,4 +941,21 @@
   height: 27px;
   background-size: 21px 27px;
   z-index: 5;
+}
+
+#StoryCollection #listWrap #accomplish .chapterTitleWrap
+{
+  background: url("/magica/resource/image_web/page/collection/storyCollection/bg_accomplish_title.png") left top no-repeat;
+}
+
+#StoryCollection #listWrap #accomplish .chapterTitleWrap .faceImg img
+{
+  left: 48px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(20%, black), color-stop(80%, black), to(rgba(0, 0, 0, 0)));
+}
+
+#StoryCollection #listWrap #accomplish .chapterTitleWrap .chapterTitle
+{
+  top: 12px;
+  left: 132px;
 }
