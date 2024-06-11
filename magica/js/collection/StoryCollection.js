@@ -1141,7 +1141,7 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
       initialize: function() {},
       render: function()
       {
-        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : "WITCH" === this.model.eventType ? this.templateWitch : "ACCOMPLISH" === this.model.eventType ? this.templateAccomplish : this.templateCommon)(
+        this.$el.html((this.model.campaignId ? this.templateSpecial : "BRANCH" === this.model.eventType ? this.templateBranch : "WITCH" === this.model.eventType ? this.templateWitch : this.templateCommon)(
         {
           model: this.model
         }));
