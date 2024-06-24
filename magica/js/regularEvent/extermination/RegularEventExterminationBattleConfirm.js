@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/regularEvent/extermination/RegularEventExterminationBattleConfirm.html text!css/regularEvent/extermination/RegularEventExterminationBattleConfirm.css js/regularEvent/extermination/view/RegularEventExterminationDifficultyPopupView DeckUtil cardUtil".split(" "), function(l, m, b, r, n, v, w, x, y, z)
+define("underscore backbone backboneCommon ajaxControl command text!template/regularEvent/extermination/RegularEventExterminationBattleConfirm.html text!css/regularEvent/extermination/RegularEventExterminationBattleConfirm.css js/regularEvent/extermination/view/RegularEventExterminationDifficultyPopupView DeckUtil cardUtil".split(" "), function(h, l, b, r, n, v, w, x, y, z)
 {
-  var f, p, q, t, d, B = m.View.extend(
+  var f, p, q, t, c, B = l.View.extend(
     {
       events: function()
       {
@@ -16,7 +16,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
       initialize: function(a)
       {
         this.listenTo(this, "remove", this.removeView);
-        this.template = l.template(v);
+        this.template = h.template(v);
         this.createDom()
       },
       render: function()
@@ -33,9 +33,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
       createView: function()
       {
         u.prototype.parentView = this;
-        d.deckIndex = d.predeckIndex = f.eventMaster.RegularEventExterminationBattleConfirm.index - 1;
-        b.currentExterminationDeckType && (d.deckIndex = b.currentExterminationDeckType - 71);
-        var a = this.makeDeckList(d.deckIndex);
+        c.deckIndex = c.predeckIndex = f.eventMaster.RegularEventExterminationBattleConfirm.index - 1;
+        b.currentExterminationDeckType && (c.deckIndex = b.currentExterminationDeckType - 71);
+        var a = this.makeDeckList(c.deckIndex);
         t = new u(
         {
           model: a.toJSON()
@@ -45,47 +45,47 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
       },
       makeDeckList: function(a)
       {
-        var g = m.Model.extend(),
-          c = a - 1;
-        void 0 == d.deckModelArr[c] ? (g = new g(d.userDeckList[a]), d.deckModelArr[c] = g) : g = d.deckModelArr[c];
-        var f = 0;
+        var g = l.Model.extend(),
+          d = a - 1;
+        void 0 == c.deckModelArr[d] ? (g = new g(c.userDeckList[a]), c.deckModelArr[d] = g) : g = c.deckModelArr[d];
+        var m = 0;
         if (void 0 != g.get("cardList"))
-          for (var c = g.get("cardList"), h = c.length, e = 0; e < h; e++)
+          for (var d = g.get("cardList"), f = d.length, e = 0; e < f; e++)
           {
-            var k = c[e],
+            var k = d[e],
               A = b.getTargetComposeAttribute(
               {
                 attributeId: k.chara.attributeId
               });
-            if ("" != c[e] || void 0 != c[e]) f += (k.attack || 0) + (k.defense || 0) + (k.hp || 0) + (k.addendAttack || 0) + (k.addendDefense || 0) + (k.addendHp || 0), l.each(A.composed, function(a, b, e)
+            if ("" != d[e] || void 0 != d[e]) m += (k.attack || 0) + (k.defense || 0) + (k.hp || 0) + (k.addendAttack || 0) + (k.addendDefense || 0) + (k.addendHp || 0), h.each(A.composed, function(a, b, e)
             {
-              f += a
+              m += a
             })
           }
         if (void 0 != g.get("memoriaList"))
-          for (c = g.get("memoriaList").memoriaData, h = c.length, e = 0; e < h; e++)
-            if (k = c[e], "" != c[e] || void 0 != c[e]) f += (k.attack || 0) + (k.defense || 0) + (k.hp || 0);
+          for (d = g.get("memoriaList").memoriaData, f = d.length, e = 0; e < f; e++)
+            if (k = d[e], "" != d[e] || void 0 != d[e]) m += (k.attack || 0) + (k.defense || 0) + (k.hp || 0);
         g.set(
         {
           index: a + 1
         });
         g.set(
         {
-          recommendedStrength: f
+          recommendedStrength: m
         });
         a = "battle" + (a + 1) + "Status";
-        0 == f ? (b.doc.getElementById("deckListArea").className = "nonDeck se_decide TE", b.doc.getElementById("linkBattleBtn").className = "off") : "CONQUERED" == b.userRegularEventExterminationDifficulty[a] ? (b.doc.getElementById("deckListArea").className = "off", b.doc.getElementById("linkBattleBtn").className = "off") : (b.doc.getElementById("deckListArea").className = "se_decide TE", b.doc.getElementById("linkBattleBtn").className = "se_decide TE");
+        0 == m ? (b.doc.getElementById("deckListArea").className = "nonDeck se_decide TE", b.doc.getElementById("linkBattleBtn").className = "off") : "CONQUERED" == b.userRegularEventExterminationDifficulty[a] ? (b.doc.getElementById("deckListArea").className = "off", b.doc.getElementById("linkBattleBtn").className = "off") : (b.doc.getElementById("deckListArea").className = "se_decide TE", b.doc.getElementById("linkBattleBtn").className = "se_decide TE");
         return g
       },
       linkFormationtFunc: function(a)
       {
         a.preventDefault();
-        b.isScrolled() || (b.currentExterminationDeckType = void 0 != d.userDeckList[d.deckIndex].userDeck ? d.userDeckList[d.deckIndex].userDeck.deckType : d.deckIndex + 71, location.href = "#/RegularEventExterminationFormation")
+        b.isScrolled() || (b.currentExterminationDeckType = void 0 != c.userDeckList[c.deckIndex].userDeck ? c.userDeckList[c.deckIndex].userDeck.deckType : c.deckIndex + 71, location.href = "#/RegularEventExterminationFormation")
       },
       formationBtn: function(a)
       {
         a.preventDefault();
-        b.isScrolled() || a.currentTarget.classList.contains("off") || (b.currentExterminationDeckType = d.deckIndex + 71, location.href = "#/DeckFormation/extermination")
+        b.isScrolled() || a.currentTarget.classList.contains("off") || (b.currentExterminationDeckType = c.deckIndex + 71, location.href = "#/DeckFormation/extermination")
       },
       battleStart: function(a)
       {
@@ -93,19 +93,19 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
         if (!b.isScrolled())
         {
           var g = this,
-            c = new y("extermination");
-          a = m.Model.extend();
-          if (d.deckIndex == d.predeckIndex) a = new a(d.userDeckList[d.deckIndex].userDeck), a = c.deckDataCreate(a.toJSON()), g.battleClrearDataFunc(), c.questFunc(a);
+            d = new y("extermination");
+          a = l.Model.extend();
+          if (c.deckIndex == c.predeckIndex) a = new a(c.userDeckList[c.deckIndex].userDeck), a = d.deckDataCreate(a.toJSON()), g.battleClrearDataFunc(), d.questFunc(a);
           else
           {
-            var f = new a(d.userDeckList[d.deckIndex].userDeck),
-              h = c.deckDataCreate(f.toJSON());
-            a = new a(d.userDeckList[d.predeckIndex].userDeck);
-            f = c.deckDataCreate(a.toJSON());
-            f.deckType = d.deckIndex + 71;
-            h.deckType = d.predeckIndex + 71;
-            a = c.savePrmCreate(h);
-            f = c.savePrmCreate(f);
+            var f = new a(c.userDeckList[c.deckIndex].userDeck),
+              h = d.deckDataCreate(f.toJSON());
+            a = new a(c.userDeckList[c.predeckIndex].userDeck);
+            f = d.deckDataCreate(a.toJSON());
+            f.deckType = c.deckIndex + 71;
+            h.deckType = c.predeckIndex + 71;
+            a = d.savePrmCreate(h);
+            f = d.savePrmCreate(f);
             a = {
               userDeckList: [a, f]
             };
@@ -115,7 +115,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
               b.responseSetStorage(a);
               console.log(a);
               g.battleClrearDataFunc();
-              c.questFunc(h)
+              d.questFunc(h)
             })
           }
         }
@@ -123,13 +123,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
       battleClrearDataFunc: function()
       {
         var a = b.questBattleModel.questBattle.questBattleId,
-          d = l.findWhere(f.userQuestBattleList,
+          c = h.findWhere(f.userQuestBattleList,
           {
             questBattleId: a
           }).cleared;
         b.exterminationClearData = {
           questBattleId: a,
-          cleared: d
+          cleared: c
         }
       },
       info: function(a)
@@ -138,12 +138,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
         if (!b.isScrolled())
         {
           a = b.userRegularEventExterminationDifficulty;
-          var d = f.eventMaster.RegularEventExterminationBattleConfirm.index,
-            c = l.findWhere(f.eventMaster.regularEventExtermination.difficultyList,
+          var c = f.eventMaster.RegularEventExterminationBattleConfirm.index,
+            d = h.findWhere(f.eventMaster.regularEventExtermination.difficultyList,
             {
               difficultyId: f.eventMaster.RegularEventExterminationBattleConfirm.difficultyId
             });
-          x.detailPop(c, a, d)
+          x.detailPop(d, a, c)
         }
       },
       openKekkai: function(a)
@@ -156,7 +156,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
         b.isScrolled() || b.eventFirstNavi(["navi_01", "navi_02", "navi_03"], q.regularEventId, "extermination", null, !0, "regularEvent")
       }
     }),
-    u = m.View.extend(
+    u = l.View.extend(
     {
       tagName: "div",
       className: "deckArea",
@@ -166,7 +166,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
       },
       initialize: function(a)
       {
-        this.template = l.template($("#unitListTemp").text());
+        this.template = h.template($("#unitListTemp").text());
         this.createDom()
       },
       render: function()
@@ -263,25 +263,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
     {
       function a(a)
       {
-        for (var d = [], e, c = 0; 5 > c; c++) e = "userCardId" + (c + 1), e = a[e], e = l.findWhere(b.storage.userCardListEx.toJSON(),
+        for (var c = [], e, d = 0; 5 > d; d++) e = "userCardId" + (d + 1), e = a[e], e = h.findWhere(b.storage.userCardListEx.toJSON(),
         {
           id: e
-        }), void 0 != e && (e.id == a.questEpisodeUserCardId ? d.unshift(e) : d.push(e));
-        return d
+        }), void 0 != e && (e.id == a.questEpisodeUserCardId ? c.unshift(e) : c.push(e));
+        return c
       }
 
       function g(a)
       {
-        for (var b = [], d = 1; 6 > d; d++)
+        for (var b = [], c = 1; 6 > c; c++)
           for (var e = 1; 5 > e; e++)
           {
-            var c = "userPieceId0" + d + e;
-            void 0 != a[c] || void 0 != a[c] ? b.push(a[c]) : b.push("")
+            var d = "userPieceId0" + c + e;
+            void 0 != a[d] || void 0 != a[d] ? b.push(a[d]) : b.push("")
           }
         a = [];
-        d = b.length;
-        for (e = 0; e < d; e++)
-          if (a[e] = l.findWhere(f.userPieceList,
+        c = b.length;
+        for (e = 0; e < c; e++)
+          if (a[e] = h.findWhere(f.userPieceList,
             {
               id: b[e]
             }), void 0 == a[e] || void 0 == a[e]) a[e] = "";
@@ -291,78 +291,73 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
         }
       }
       z.createCardList();
-      d = d ||
+      c = c ||
       {};
-      d.deckModelArr = [];
+      c.deckModelArr = [];
       b.historyArr = ["MyPage", "RegularEventExterminationBattleSelect", "RegularEventExterminationBattleConfirm"];
       b.clearSectionModel = null;
       b.clearChapterModel = null;
       f = r.getPageJson();
-      q = l.findWhere(f.regularEventList,
+      q = h.findWhere(f.regularEventList,
       {
         regularEventType: "EXTERMINATION"
       });
       q || (location.href = "#/MyPage");
       f.eventMaster = q;
       b.RegularEventExterminationBattleConfirm && (f.eventMaster.RegularEventExterminationBattleConfirm = b.RegularEventExterminationBattleConfirm.model.toJSON());
-      for (var c = !0, m = b.userRegularEventExterminationDifficulty, h = 1; 5 > h; h++)
-        if ("CONQUERED" != m["battle" + h + "Status"])
+      for (var d = !0, m = b.userRegularEventExterminationDifficulty, l = 1; 5 > l; l++)
+        if ("CONQUERED" != m["battle" + l + "Status"])
         {
-          c = !1;
+          d = !1;
           break
-        } 5 == b.RegularEventExterminationBattleConfirm.model.attributes.index && 0 == c && (location.href = "#/RegularEventExterminationBattleSelect");
-      c = f.eventMaster.regularEventExtermination;
-      c = l.findWhere(c.difficultyList,
+        } 5 == b.RegularEventExterminationBattleConfirm.model.attributes.index && 0 == d && (location.href = "#/RegularEventExterminationBattleSelect");
+      f.difficultyId = b.userRegularEventExterminationDifficulty.difficultyId;
+      c.userDeckList = ["", "", "", "", ""];
+      h.each(b.storage.userDeckList.toJSON(), function(b)
       {
-        difficultyId: c.difficultyGroupId
-      });
-      f.difficultyId = c.difficultyId;
-      d.userDeckList = ["", "", "", "", ""];
-      l.each(b.storage.userDeckList.toJSON(), function(b)
-      {
-        var c, e;
+        var d, e;
         switch (b.deckType)
         {
           case 71:
-            c = a(b);
+            d = a(b);
             e = g(b);
-            d.userDeckList[0] = {
+            c.userDeckList[0] = {
               userDeck: b,
-              cardList: c,
+              cardList: d,
               memoriaList: e
             };
             break;
           case 72:
-            c = a(b);
+            d = a(b);
             e = g(b);
-            d.userDeckList[1] = {
+            c.userDeckList[1] = {
               userDeck: b,
-              cardList: c,
+              cardList: d,
               memoriaList: e
             };
             break;
           case 73:
-            c = a(b);
+            d = a(b);
             e = g(b);
-            d.userDeckList[2] = {
+            c.userDeckList[2] = {
               userDeck: b,
-              cardList: c,
+              cardList: d,
               memoriaList: e
             };
             break;
           case 74:
-            c = a(b);
+            d = a(b);
             e = g(b);
-            d.userDeckList[3] = {
+            c.userDeckList[3] = {
               userDeck: b,
-              cardList: c,
+              cardList: d,
               memoriaList: e
             };
             break;
           case 75:
-            c = a(b), e = g(b), d.userDeckList[4] = {
+            d = a(b), e = g(b), c.userDeckList[4] = {
               userDeck: b,
-              cardList: c,
+              cardList: d,
               memoriaList: e
             }
         }
@@ -375,7 +370,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/reg
     {
       p && (p.trigger("removeView"), p.remove());
       t && t.remove();
-      d && (d = void 0);
+      c && (c = void 0);
       a()
     }
   }

@@ -6068,15 +6068,6 @@ textarea:focus
   top: 14px;
   left: 24px;
   overflow: hidden;
-  text-align: center;
-  padding: 120px 0 0 0;
-}
-
-.purchasePop #PurchaseTop .purchaseScrollOuter .cautionText
-{
-  display: inline-block;
-  text-align: left;
-  margin: 12px 0 0 0;
 }
 
 .purchasePop #PurchaseTop #PurchaseListWrap
@@ -14364,7 +14355,7 @@ textarea:focus
   text-align: left;
 }
 
-#rulesBase .rulesPop .linkText
+#rulesBase .rulesPop #rulePolicyLink
 {
   color: #0645ad;
   text-decoration: underline;
