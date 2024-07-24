@@ -786,13 +786,20 @@ define("underscore backbone backboneCommon ajaxControl command QuestUtil text!te
         e >= g && (d.chapterId = d.arenaBattleFreeRankClass, d.title = d.className, d.questType = "ARENA", d.sectionList = [], e = {}, e.sectionId = d.openConditionSectionId, e.sectionNo = d.className, e.title = d.className, b.storage.userQuestAdventureList.findWhere(
         {
           adventureId: d.storyId
-        }) && (e.canPlay = !0, e.cleared = !0, B.push(d.storyId), e.storyArr = [d.storyId], d.sectionList.push(e), c.push(d)));
-        B.join(",")
+        }) && (e.canPlay = !0, e.cleared = !0, e.storyArr = [d.storyId], d.sectionList.push(e), c.push(d)))
       });
       c.sort(function(a, b)
       {
         return a.sortKey > b.sortKey ? -1 : a.sortKey < b.sortKey ? 1 : 0
       });
+      f.each(c, function(a, c, g)
+      {
+        b.storage.userQuestAdventureList.findWhere(
+        {
+          adventureId: a.storyId
+        }) && B.push(a.storyId)
+      });
+      B.join(",");
       return c
     },
     ca = function()
