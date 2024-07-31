@@ -6,9 +6,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       {
         var b = {};
         b[a.cgti + " #sizeChange"] = this.sizeChange;
+        b[a.cgti + " #globalBackBtn"] = this.tapGlobalBackBtn;
         return b
       },
-      initialize: function(a)
+      tapGlobalBackBtn: function(b)
+      {
+        b.preventDefault();
+        a.isScrolled() || (location.href = "#/CollectionTop")
+      },
+      initialize: function(b)
       {
         this.template = e.template(n);
         this.createDom()
@@ -21,7 +27,6 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       createDom: function()
       {
         this.model = d.getPageJson();
-        a.setGlobalView();
         a.content.append(this.render().el);
         this.createView()
       },
@@ -129,34 +134,29 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       id: "gameUser"
     },
     {
-      id: "itemList"
-    },
-    {
       id: "pieceList"
-    },
-    {
-      id: "userItemList"
     },
     {
       id: "userStatusList"
     },
     {
-      id: "userPieceArchiveList"
-    },
-    {
       id: "userPieceList"
     },
     {
-      id: "userPatrolList"
+      id: "userPieceCollectionList"
+    },
+    {
+      id: "userPieceArchiveList"
     }],
     fetch: function()
     {
-      d.pageModelGet(this.needModelIdObj)
+      d.pageModelGet(this.needModelIdObj, null, "noConnect")
     },
     init: function()
     {
       a.setStyle(p);
-      g = new r
+      g = new r;
+      a.historyArr = ["TopPage", "CollectionTop", "CollectionTop"]
     },
     startCommand: function()
     {

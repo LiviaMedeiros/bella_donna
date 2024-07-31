@@ -89,11 +89,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/memoria/Mem
         b.id = "memoriaDetailWrap";
         b.appendChild(this.render().el);
         k.startSe(1002);
-        var c, e;
-        h.getMaxLevel(d.piece.rank, d.lbCount) > d.level ? (c = d.experience, e = h.parExArr[d.level] - d.experience || 0, c = Math.round(c / h.parExArr[d.level] * 100) || 0) : (e = "MAX", c = 100);
-        b.getElementsByClassName("exp")[0].style.width = c + "%";
-        b.getElementsByClassName("expNum")[0].textContent = c + "%";
-        b.getElementsByClassName("nextExp")[0].textContent = e;
+        h.getMaxLevel(d.piece.rank, d.lbCount);
         a.doc.getElementById("baseContainer").appendChild(b);
         k.getBaseData(a.getNativeObj());
         a.scrollSet("memoriaPopScroll", "infoWrap");

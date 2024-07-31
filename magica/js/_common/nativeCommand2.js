@@ -122,7 +122,7 @@ define(["underscore", "backbone", "backboneCommon"], function(k, l, e)
       sendCommand: function(a)
       {
         var b = String(a);
-        window.isDebug && (a = "scheme://" + b.split(",")[0], "" !== b.replace(/\d*,?/, "") && (a += "?command=" + b.replace(/\d*,?/, "")), console.log("native:command: " + a));
+        window.isDebug && (b.split(","), "" !== b.replace(/\d*,?/, "") && b.replace(/\d*,?/, ""));
         window.isBrowser || (a = "scheme://" + b.split(",")[0], "" !== b.replace(/\d*,?/, "") && (a += "?command=" + b.replace(/\d*,?/, "")), b = e.doc.createElement("object"), b.setAttribute("display", "none"), b.setAttribute("data", a), e.doc.documentElement.appendChild(b), b.parentNode.removeChild(b))
       }
     },

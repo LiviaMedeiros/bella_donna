@@ -1,20 +1,18 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/chara/CharaData.html js/card/CardPopup CharaCommon".split(" "), function(f, g, a, n, h, k, l, p)
+define("underscore backbone backboneCommon ajaxControl command text!template/chara/CharaData.html js/card/CardPopup CharaCommon".split(" "), function(c, d, a, f, g, e, h, k)
 {
-  return g.View.extend(
+  return d.View.extend(
   {
     id: "charaData",
     events: function()
     {
-      var d = {};
-      d[a.cgti + " #detailBtn"] = this.detailPopup;
-      return d
+      return {}
     },
-    initialize: function(a)
+    initialize: function(b)
     {
       this.listenTo(this.rootView, "remove", this.removeView);
       this.listenTo(this.model, "change", this.render);
       this.listenTo(this.model, "change", this.flag);
-      this.template = f.template(k)
+      this.template = c.template(e)
     },
     render: function()
     {
@@ -33,49 +31,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
     },
     flag: function()
     {
-      var a = this.model.toJSON(),
-        e = a.level,
-        c = a.maxLevel,
-        b = a.maxRare,
-        m = a.card.rank.split("RANK_")[1];
-      this.lvMaxFlag = e == c ? !0 : !1;
-      this.rareMaxFlag = m == b ? !0 : !1;
-      this.episodeLvMaxFlag = 5 == a.episodeLevel ? !0 : !1;
+      var b = this.model.toJSON(),
+        a = b.level,
+        c = b.maxLevel,
+        d = b.maxRare,
+        e = b.card.rank.split("RANK_")[1];
+      this.lvMaxFlag = a == c ? !0 : !1;
+      this.rareMaxFlag = e == d ? !0 : !1;
+      this.episodeLvMaxFlag = 5 == b.episodeLevel ? !0 : !1;
       this.conditionIconSet()
-    },
-    detailPopup: function(d)
-    {
-      d.preventDefault();
-      if (!a.isScrolled())
-      {
-        var e = null;
-        if ("CharaListTop" == a.location || "CharaListCompose" == a.location || "CharaListCustomize" == a.location || "CharaListComposeMagia" == a.location || "CharaListEquip" == a.location || "CharaListComposeAttribute" == a.location) var c = this,
-          e = function()
-          {
-            c.ccommon.showMiniChara(c.model.toJSON().card.miniCharaNo, !0);
-            if (c.ccommon.charaImgView)
-            {
-              var b = a.storage.userCardListEx.findWhere(
-                {
-                  id: c.model.toJSON().id
-                }),
-                b = b ? b.toJSON() :
-                {};
-              c.ccommon.charaImgView.model.set(
-              {
-                displayCardId: b.displayCardId
-              });
-              h.getBaseData(a.getNativeObj())
-            }
-          };
-        var b = a.storage.userCardListEx.findWhere(
-          {
-            id: this.model.toJSON().id
-          }),
-          b = b ? b.toJSON() :
-          {};
-        l.instantPopup(d, b, e)
-      }
     },
     removeView: function()
     {

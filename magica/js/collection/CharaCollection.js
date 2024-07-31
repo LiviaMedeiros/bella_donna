@@ -1,39 +1,44 @@
-define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/collection/CharaCollection.html text!css/collection/CharaCollection.css js/view/collection/CollectionDetailView".split(" "), function(g, f, a, k, e, n, r, t, p)
+define("underscore backbone backboneCommon ajaxControl command cardUtil text!template/collection/CharaCollection.html text!css/collection/CharaCollection.css js/view/collection/CollectionDetailView".split(" "), function(e, g, a, h, d, m, q, r, n)
 {
-  var u = f.Model.extend(),
-    l, q, v = f.View.extend(
+  var t = g.Model.extend(),
+    k, p, u = g.View.extend(
     {
       initialize: function(a)
       {
-        this.template = g.template(r);
+        this.template = e.template(q);
         this.createDom()
       },
       events: function()
       {
         var b = {};
         b[a.cgti + " .tabBtns li"] = this.tabFunc;
+        b[a.cgti + " #globalBackBtn"] = this.tapGlobalBackBtn;
         return b
+      },
+      tapGlobalBackBtn: function(b)
+      {
+        b.preventDefault();
+        a.isScrolled() || (location.href = "#/CollectionTop")
       },
       render: function()
       {
-        this.$el.html(this.template(k.getPageJson()));
+        this.$el.html(this.template(h.getPageJson()));
         return this
       },
       createDom: function()
       {
-        a.setGlobalView();
         a.content.append(this.render().el);
-        p.prototype.parentView = this;
-        m.prototype.parentView = this;
-        m.prototype.template = g.template($("#CharaTemp").text());
+        n.prototype.parentView = this;
+        l.prototype.parentView = this;
+        l.prototype.template = e.template($("#CharaTemp").text());
         var b = a.doc.createDocumentFragment();
-        g.each(q.charaList, function(c, d)
+        e.each(p.charaList, function(c, d)
         {
           c.chara || (c.chara = a.storage.userCharaList.findWhere(
           {
             charaId: c.charaId
           }).toJSON().chara);
-          c.chara.enemyFlg || (c.charaOpenFlag = !1, g.each(c.cardList, function(b, d)
+          c.chara.enemyFlg || (c.charaOpenFlag = !1, e.each(c.cardList, function(b, d)
           {
             a.storage.userCardList.findWhere(
             {
@@ -46,13 +51,13 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
               id: b.userCardId
             }), c.currentCard = b ? b.toJSON() :
             {}, c.charaOpenFlag = !0) : (b.rankNum = Number(b.card.rank.split("_")[1]), b.openFlag = !1)
-          }), d = new m(
+          }), d = new l(
           {
             model: c
           }), b.appendChild(d.render().el))
         });
         a.doc.querySelector("#charaWrapInner").appendChild(b);
-        e.getBaseData(a.getNativeObj());
+        d.getBaseData(a.getNativeObj());
         a.scrollSet("charaHiddenWrap", "charaWrapInner");
         a.ready.hide()
       },
@@ -66,11 +71,11 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
           a.removeClass(a.doc.querySelector(".tabBtns .current"), "current");
           a.addClass(b.currentTarget, "current");
           a.scrollRefresh(null, null, !0);
-          e.stopVoice()
+          d.stopVoice()
         }
       }
     }),
-    m = f.View.extend(
+    l = g.View.extend(
     {
       className: function()
       {
@@ -93,41 +98,39 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       tapFunc: function(b)
       {
         b.preventDefault();
-        !a.isScrolled() && this.model.charaOpenFlag && (a.detailView && (a.detailView = null), this.model.maxStatus = n.getAfterParam(this.model.currentCard.cardId, this.model.currentCard.chara, this.model.currentCard.maxRevision, this.model.currentCard.maxLevel), a.detailView = new p(
+        if (!a.isScrolled() && this.model.charaOpenFlag)
         {
-          model: new u(this.model)
-        }), a.doc.querySelector("#baseContainer").appendChild(a.detailView.render().el), a.addClass(a.doc.querySelector("#mainContent"), "hide"), a.addClass(a.doc.querySelector("#globalMenuContainer"), "hide"), w(this.model), e.getBaseData(a.getNativeObj()), a.scrollSet("hiddenWrap", "scrollInner"))
+          a.detailView && (a.detailView = null);
+          this.model.maxStatus = m.getAfterParam(this.model.currentCard.cardId, this.model.currentCard.chara, this.model.currentCard.maxRevision, this.model.currentCard.maxLevel);
+          a.detailView = new n(
+          {
+            model: new t(this.model)
+          });
+          a.doc.querySelector("#baseContainer").appendChild(a.detailView.render().el);
+          a.addClass(a.doc.querySelector("#mainContent"), "hide");
+          a.addClass(a.doc.querySelector("#globalMenuContainer"), "hide");
+          var c = this.model.currentCard;
+          b = c.episodeLevel;
+          var e = c.magiaLevel,
+            f = Number(c.card.rank.split("_")[1]) || 0,
+            c = c.revision;
+          2 <= b && (a.removeClass(a.doc.querySelector('[data-voice="15"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="37"]'), "off"));
+          3 <= b && a.removeClass(a.doc.querySelector('[data-voice="38"]'), "off");
+          4 <= b && a.removeClass(a.doc.querySelector('[data-voice="39"]'), "off");
+          5 <= b && a.removeClass(a.doc.querySelector('[data-voice="40"]'), "off");
+          3 <= f && a.removeClass(a.doc.querySelector('[data-voice="20"]'), "off");
+          4 <= f && (a.removeClass(a.doc.querySelector('[data-voice="21"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="44"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="64"]'), "off"));
+          5 <= f && (a.removeClass(a.doc.querySelector('[data-voice="22"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="45"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="65"]'), "off"));
+          6 <= f && (a.removeClass(a.doc.querySelector('[data-voice="23"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="46"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="66"]'), "off"));
+          2 <= e && a.removeClass(a.doc.querySelector('[data-voice="19"]'), "off");
+          1 <= c && a.removeClass(a.doc.querySelector('[data-voice="16"]'), "off");
+          2 <= c && a.removeClass(a.doc.querySelector('[data-voice="17"]'), "off");
+          3 <= c && a.removeClass(a.doc.querySelector('[data-voice="18"]'), "off");
+          d.getBaseData(a.getNativeObj());
+          a.scrollSet("hiddenWrap", "scrollInner")
+        }
       }
-    }),
-    w = function(b)
-    {
-      var c = b.currentCard,
-        d = c.episodeLevel,
-        e = c.magiaLevel,
-        h = Number(c.card.rank.split("_")[1]) || 0,
-        c = c.revision,
-        f = [];
-      g.each(a.storage.userSectionList.toJSON(), function(a)
-      {
-        b.charaId == a.section.genericId && f.push(a)
-      });
-      f.sort(function(a, b)
-      {
-        return a.section.genericIndex < b.section.genericIndex ? -1 : a.section.genericIndex > b.section.genericIndex ? 1 : 0
-      });
-      2 <= d && (a.removeClass(a.doc.querySelector('[data-voice="15"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="37"]'), "off"));
-      3 <= d && a.removeClass(a.doc.querySelector('[data-voice="38"]'), "off");
-      4 <= d && a.removeClass(a.doc.querySelector('[data-voice="39"]'), "off");
-      5 <= d && a.removeClass(a.doc.querySelector('[data-voice="40"]'), "off");
-      3 <= h && a.removeClass(a.doc.querySelector('[data-voice="20"]'), "off");
-      4 <= h && (a.removeClass(a.doc.querySelector('[data-voice="21"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="44"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="64"]'), "off"));
-      5 <= h && (a.removeClass(a.doc.querySelector('[data-voice="22"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="45"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="65"]'), "off"));
-      6 <= h && (a.removeClass(a.doc.querySelector('[data-voice="23"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="46"]'), "off"), a.removeClass(a.doc.querySelector('[data-voice="66"]'), "off"));
-      2 <= e && a.removeClass(a.doc.querySelector('[data-voice="19"]'), "off");
-      1 <= c && a.removeClass(a.doc.querySelector('[data-voice="16"]'), "off");
-      2 <= c && a.removeClass(a.doc.querySelector('[data-voice="17"]'), "off");
-      3 <= c && a.removeClass(a.doc.querySelector('[data-voice="18"]'), "off")
-    };
+    });
   return {
     needModelIdObj: [
     {
@@ -137,16 +140,10 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
       id: "gameUser"
     },
     {
-      id: "itemList"
+      id: "charaList"
     },
     {
       id: "userDeckList"
-    },
-    {
-      id: "userItemList"
-    },
-    {
-      id: "userStatusList"
     },
     {
       id: "userCharaList"
@@ -165,33 +162,28 @@ define("underscore backbone backboneCommon ajaxControl command cardUtil text!tem
     },
     {
       id: "userPieceSetList"
-    },
-    {
-      id: "userSectionList"
-    },
-    {
-      id: "userPatrolList"
     }],
     fetch: function()
     {
-      k.pageModelGet(this.needModelIdObj)
+      h.pageModelGet(this.needModelIdObj, null, "noConnect")
     },
     init: function()
     {
-      n.createCardList();
-      a.setStyle(t);
-      q = k.getPageJson();
-      l = new v
+      m.createCardList();
+      a.setStyle(r);
+      p = h.getPageJson();
+      k = new u;
+      a.historyArr = ["TopPage", "CollectionTop", "CollectionTop"]
     },
     startCommand: function()
     {
-      e.changeBg("web_0015.ExportJson")
+      d.changeBg("web_0015.ExportJson")
     },
     remove: function(b)
     {
-      e.stopVoice();
+      d.stopVoice();
       a.detailView && (a.detailView = null);
-      l && l.remove();
+      k && k.remove();
       b()
     }
   }

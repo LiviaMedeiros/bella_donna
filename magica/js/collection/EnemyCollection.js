@@ -1,7 +1,7 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/collection/EnemyCollection.html text!css/collection/EnemyCollection.css".split(" "), function(e, f, a, h, d, p, q)
+define("underscore backbone backboneCommon ajaxControl command text!template/collection/EnemyCollection.html text!css/collection/EnemyCollection.css".split(" "), function(d, e, a, h, f, p, q)
 {
-  var k, r = f.Model.extend(),
-    g, t = f.View.extend(
+  var k, r = e.Model.extend(),
+    g, t = e.View.extend(
     {
       events: function()
       {
@@ -11,7 +11,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       },
       initialize: function(a)
       {
-        this.template = e.template(p);
+        this.template = d.template(p);
         this.createDom()
       },
       render: function()
@@ -23,11 +23,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       {
         a.content.append(this.render().el);
         l.prototype.parentView = this;
-        l.prototype.template = e.template($("#EnemyPartsTemp").text());
+        l.prototype.template = d.template($("#EnemyPartsTemp").text());
         m.prototype.parentView = this;
-        m.prototype.template = e.template($("#EnemyDetailTemp").text());
+        m.prototype.template = d.template($("#EnemyDetailTemp").text());
         var b = a.doc.createDocumentFragment();
-        e.each(k.enemyList, function(a, c)
+        d.each(k.enemyList, function(a, c)
         {
           c = k.userEnemyList.filter(function(b)
           {
@@ -48,13 +48,13 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
         a.doc.querySelector(".enemyListInner").appendChild(b);
         a.scrollSet("enemyList", "enemyListInner");
         a.scrollRefresh();
-        d.getBaseData(a.getNativeObj());
+        f.getBaseData(a.getNativeObj());
         a.ready.hide()
       },
       backLinkHandler: function(b)
       {
         b.preventDefault();
-        a.isScrolled() || (d.startSe(1003), "true" === b.currentTarget.getAttribute("data-noLink") ? (b.currentTarget.setAttribute("data-noLink", ""), a.doc.querySelector("#enemyListWrap").className = "show", a.doc.querySelector("h1").className = "show", a.doc.querySelector("#enemyDetailWrap").className = "hide", n.remove()) : a.backLinkHandler())
+        a.isScrolled() || ("true" === b.currentTarget.getAttribute("data-noLink") ? (b.currentTarget.setAttribute("data-noLink", ""), a.doc.querySelector("#enemyListWrap").className = "show", a.doc.querySelector("h1").className = "show", a.doc.querySelector("#enemyDetailWrap").className = "hide", n.remove()) : location.href = "#/CollectionTop")
       }
     }),
     u = {
@@ -62,7 +62,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       2: "satellite",
       3: "rumor"
     },
-    l = f.View.extend(
+    l = e.View.extend(
     {
       className: function()
       {
@@ -90,10 +90,10 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
         a.isScrolled() || this.model.toJSON().isClose || (a.doc.querySelector("#enemyBackBtn").setAttribute("data-noLink", !0), a.doc.querySelector("#enemyListWrap").className = "hide", a.doc.querySelector("h1").className = "hide", a.doc.querySelector("#enemyDetailWrap").className = "show", n = new m(
         {
           model: this.model
-        }), a.doc.querySelector("#enemyDetailWrap").appendChild(n.render().el), d.getBaseData(a.getNativeObj()))
+        }), a.doc.querySelector("#enemyDetailWrap").appendChild(n.render().el), f.getBaseData(a.getNativeObj()))
       }
     }),
-    n, m = f.View.extend(
+    n, m = e.View.extend(
     {
       render: function()
       {
@@ -113,32 +113,30 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       id: "gameUser"
     },
     {
-      id: "itemList"
-    },
-    {
-      id: "userItemList"
-    },
-    {
       id: "userStatusList"
     },
     {
-      id: "userPatrolList"
+      id: "enemyList"
+    },
+    {
+      id: "userEnemyList"
     }],
     fetch: function()
     {
-      h.pageModelGet(this.needModelIdObj)
+      h.pageModelGet(this.needModelIdObj, null, "noConnect")
     },
     init: function()
     {
       k = h.getPageJson();
       a.setStyle(q);
       a.globalMenuView && (a.globalMenuView.remove(), a.globalMenuView = null);
-      g = new t
+      g = new t;
+      a.historyArr = ["TopPage", "CollectionTop", "CollectionTop"]
     },
     startCommand: function()
     {
-      d.changeBg("web_0010.jpg");
-      d.startBgm("bgm03_story14")
+      f.changeBg("web_0010.jpg");
+      f.startBgm("bgm03_story14")
     },
     remove: function(a)
     {

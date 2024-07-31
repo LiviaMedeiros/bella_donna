@@ -1,4 +1,4 @@
-define("underscore backbone backboneCommon ajaxControl js/card/CardPopup command".split(" "), function(h, d, b, k, f, e)
+define("underscore backbone backboneCommon ajaxControl js/card/CardPopup command".split(" "), function(f, d, b, g, e, c)
 {
   return d.View.extend(
   {
@@ -32,46 +32,19 @@ define("underscore backbone backboneCommon ajaxControl js/card/CardPopup command
       {
         model: this.model.toJSON()
       }));
-      "init" !== a && e.getBaseData(b.getNativeObj());
+      "init" !== a && c.getBaseData(b.getNativeObj());
       return this
     },
     charaObjKeyUpdate: function()
     {
       this.userCardId !== this.model.toJSON().userCardId && this.parentView.charaViews[this.userCardId] && (this.parentView.charaViews[this.model.toJSON().userCardId] = this.parentView.charaViews[this.userCardId], delete this.parentView.charaViews[this.userCardId], this.parentView.selectCardId = this.model.toJSON().userCardId, this.userCardId = this.model.toJSON().userCardId)
     },
-    popupTimeStart: function(a)
-    {
-      if (!b.patrolDeckList)
-      {
-        var g = null;
-        if ("CharaListTop" == b.location || "CharaListCompose" == b.location || "CharaListLimitBreak" == b.location || "CharaListCustomize" == b.location || "CharaListComposeMagia" == b.location || "CharaListEquip" == b.location || "CharaListComposeAttribute" == b.location) var c = b.pageObj.charaCommon(),
-          d = this,
-          g = function()
-          {
-            c.showMiniChara(d.model.toJSON().card.miniCharaNo, !0);
-            if (c.charaImgView)
-            {
-              var a = b.storage.userCardListEx.findWhere(
-                {
-                  id: c.charaImgView.model.toJSON().id
-                }),
-                a = a ? a.toJSON() :
-                {};
-              c.charaImgView.model.set(
-              {
-                displayCardId: a.displayCardId
-              });
-              e.getBaseData(b.getNativeObj())
-            }
-          };
-        f.cardDetailPopup(a, this.model.toJSON(), g)
-      }
-    },
+    popupTimeStart: function(a) {},
     charaSelect: function(a)
     {
       a.preventDefault();
-      f.popupTimerStop(a);
-      b.isScrolled() || b.content.hasClass("hide") || (e.startSe("1002"), this.charaSelectFunc())
+      e.popupTimerStop(a);
+      b.isScrolled() || b.content.hasClass("hide") || (c.startSe("1002"), this.charaSelectFunc())
     },
     charaSelectFunc: function(a)
     {

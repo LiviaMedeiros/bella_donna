@@ -1,215 +1,205 @@
-define("underscore backbone backboneCommon ajaxControl command TutorialUtil text!template/top/TopPage.html text!template/etc/RulePopup.html text!template/etc/GameStartPopup.html text!css/top/Top.css".split(" "), function(l, n, a, g, b, B, t, u, v, w)
+define("underscore backbone backboneCommon ajaxControl command text!template/top/TopPage.html text!css/top/Top.css js/top/RefundPoup text!template/announce/tempTakeover.html text!template/announce/tempNotice01.html text!template/announce/tempNotice02.html".split(" "), function(k, q, a, g, c, r, t, u, v, w, x)
 {
-  var h, e, p = !1,
-    q = !1,
-    z = function()
+  var m, d, n;
+  a.displayedTop = !1;
+  a.isSetUserData = !1;
+  var z = function()
     {
-      x();
-      b.noticeOffWeekly('["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]');
-      var c = function()
+      var b = function()
         {
-          $("#configCallback").on("configCallback", function(b, c)
-          {
-            $("#configCallback").off();
-            a.noticeAp = 1 === c.ap ? !0 : !1
-          });
-          b.noticeApConfig("configCallback");
-          "TopPage" !== a.location ? b.setWebView() : ($("#commandDiv").on("saveDataCallback", function(c, d)
+          "TopPage" !== a.location ? c.setWebView() : ($("#commandDiv").on("saveDataCallback", function(b, f)
           {
             $("#commandDiv").off();
-            d ? (a.resumeData = d, a.responseSetStorage(d), y(d), a.questHelperId = d.userQuestBattleResultList[0].helpUserId, d.userQuestBattleResultList[0].questBattle.questBattleType && "HARD" == d.userQuestBattleResultList[0].questBattle.questBattleType && (a.mainQuestMode = "HARD"), location.href = "#/QuestBackground") : ($("#commandDiv").on("nativeCallback", function(a, c)
+            a.displayedTop ? l() : ($("#commandDiv").on("nativeCallback", function(a, b)
             {
               $("#commandDiv").off();
-              m();
-              b.noticeRegist()
-            }), b.startTop())
-          }), b.checkQuestStored())
+              l()
+            }), c.startTop())
+          }), c.checkQuestStored())
         },
-        d = function()
+        f = function()
         {
-          $("#commandDiv").on("nativeCallback", function(b, d)
+          $("#commandDiv").on("nativeCallback", function(c, f)
           {
             $("#commandDiv").off();
             a.nativeDownload = !1;
-            c()
-          })
+            b()
+          });
+          a.displayedTop && b()
         };
       a.nativeDownload = !0;
       if (162 < (window.app_ver.split(".").join("") | 0))
-      {
-        var f = 0;
-        $("#configCallback").on("configCallback", function(k, e)
+        if (a.displayedTop) f();
+        else
         {
-          $("#configCallback").off();
-          f = e.movie ? e.movie : 0;
-          $("#commandDiv").on("nativeCallback", function(k, C)
+          var e = 0;
+          $("#configCallback").on("configCallback", function(d, h)
           {
-            $("#commandDiv").off();
-            0 !== f ? (d(), b.downloadFile("movie",
+            $("#configCallback").off();
+            a.nativeDownload = !1;
+            e = h.movie ? h.movie : 0;
+            $("#commandDiv").on("nativeCallback", function(d, h)
             {
-              isVisibleCancel: !0,
-              description: !0,
-              note: !0
-            })) : (a.nativeDownload = !1, c())
+              $("#commandDiv").off();
+              0 !== e ? (f(), c.downloadFile("movie",
+              {
+                isVisibleCancel: !0,
+                description: !0,
+                note: !0
+              })) : (a.nativeDownload = !1, b())
+            });
+            c.downloadFile("common")
           });
-          b.downloadFile("common");
-          b.awakePurchase()
-        });
-        b.getDownloadConfig("configCallback")
-      }
-      else d(), b.downloadFile("common"), b.awakePurchase()
+          c.getDownloadConfig("configCallback")
+        }
+      else f(), a.displayedTop || c.downloadFile("common")
     },
-    m = function()
+    l = function()
     {
-      e = g.getPageJson();
-      a.setStyle(w);
+      d = g.getPageJson();
+      a.setStyle(t);
       a.forceTapBlock(
       {
         isBlock: !1
       });
-      console.log("common.tutorialId", a.tutorialId);
-      console.log("common.tutorialUtil", a.tutorialUtil);
-      l.has(e.user, "id") || g.ajaxPost(a.linkList.createUser, null, function(c)
+      var b = function()
       {
-        n.Model.extend(
-        {});
-        a.responseSetStorage(c);
-        b.noticeApFullTurnOn();
-        a.noticeAp = !0;
-        b.noticeTurnOn(
+        c.endTop();
+        c.changeBg("web_common.ExportJson");
+        c.setWebView();
+        m = new A;
+        a.globalMenuView && a.globalMenuView.removeView();
+        a.displayedTop = !0
+      };
+      k.has(d.user, "id") ? b() : g.ajaxPost(a.linkList.createUser, null, function(f)
+      {
+        a.responseSetStorage(f);
+        localStorage.clear();
+        $("#commandDiv").on("nativeCallback", function(a)
         {
-          tag1: 0,
-          tag2: 0,
-          tag3: 0
-        })
-      });
-      b.setWebView();
-      h = new A;
-      a.globalMenuView && a.globalMenuView.removeView()
+          $("#commandDiv").off();
+          b()
+        });
+        c.configDataInitilize();
+        window.isBrowser && nativeCallback()
+      })
     },
-    A = n.View.extend(
+    A = q.View.extend(
     {
       events: function()
       {
         var b = {};
-        b[a.cgti + " #touchScreen"] = this.touchScreen;
-        b[a.cgti + " #clearBtn"] = this.cacheClear;
-        b[a.cgti + " #opMovieBtn"] = this.opMovie;
         b[a.cgti + " #transferBtn"] = this.transferPop;
-        b[a.cgti + " #terms"] = this.rulePopup;
+        b[a.cgti + " #CharaListTopBtn"] = this.tapCharaListTopBtn;
+        b[a.cgti + " #ArchiveBtn"] = this.tapArchiveBtn;
+        b[a.cgti + " #TakeoverBtn"] = this.tapTakeoverBtn;
+        b[a.cgti + " #RefundBtn"] = this.tapRefundBtn;
+        b[a.cgti + " .noticeText"] = this.tapNoticeText;
         return b
       },
       initialize: function(a)
       {
-        this.template = l.template(t);
+        this.template = k.template(r);
+        d.isServerActive = !0;
         this.createDom()
       },
       render: function()
       {
-        window.isDebug && l.findWhere(e.eventList,
+        window.isDebug && k.findWhere(d.eventList,
         {
           eventType: "AJ2018"
-        }) && (e.aj2018 = !0);
+        }) && (d.aj2018 = !0);
         this.$el.html(this.template(
         {
-          model: e
+          model: d
         }));
         return this
-      },
-      touchScreen: function(b)
-      {
-        b.preventDefault();
-        a.isScrolled() || ("undefined" !== typeof e.gameUser ? "TU997" !== a.storage.user.get("tutorialId") && "TU999" !== a.storage.user.get("tutorialId") ? (a.tapBlock(!0), require(["js/util/TutorialUtil.js"], function(b)
-        {
-          a.tutorialUtil = b;
-          a.tutorialId = a.tutorialUtil.getResumeId();
-          b.tutorialResume()
-        })) : ($(a.ready.target).on("webkitAnimationEnd", function()
-        {
-          $(a.ready.target).off();
-          $(a.ready.target).on("webkitAnimationEnd", function(b)
-          {
-            "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
-          });
-          a.tutorialUtil = null;
-          a.tutorialId = null;
-          location.href = "#/MyPage"
-        }), a.addClass(a.ready.target, "gameStartFadeIn")) : r())
-      },
-      cacheClear: function(c)
-      {
-        c && c.preventDefault();
-        a.isScrolled() || p || (b.clearWebCache(!0), new a.PopupClass(
-        {
-          title: "キャッシュクリア",
-          content: "キャッシュクリアしました。",
-          closeBtnText: "閉じる"
-        }), p = !0)
-      },
-      opMovie: function(c)
-      {
-        c && c.preventDefault();
-        a.isScrolled() || (b.changeBg("web_black.jpg"), b.stopVoice(), a.androidKeyStop = !0, $(a.ready.target).on("webkitAnimationEnd", function()
-        {
-          $(a.ready.target).off();
-          $(a.ready.target).on("webkitAnimationEnd", function(b)
-          {
-            "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
-          });
-          b.endTop();
-          setTimeout(function()
-          {
-            b.setWebView(!1);
-            a.ready.show();
-            b.stopBgm();
-            $("#commandDiv").on("nativeCallback", function(c, f)
-            {
-              $("#commandDiv").off();
-              a.ready.target.className = "";
-              b.startTop();
-              $("#commandDiv").on("nativeCallback", function(c, d)
-              {
-                $("#commandDiv").off();
-                a.androidKeyStop = !1;
-                b.setWebView();
-                a.ready.hide()
-              })
-            });
-            b.playMovie("resource/movie/other/op_movie2.usm")
-          }, 500)
-        }), a.addClass(a.ready.target, "preNativeFadeIn"))
       },
       createDom: function()
       {
         a.content.append(this.render().el);
-        a.doc.querySelector("#app_ver span").textContent = window.app_ver;
-        window.isDebug && require(["text!/magica/resource/image_web/debug/selectedBranch.json"], function(b)
+        a.ready.hide();
+        d && d.gameUser && !a.isSetUserData && (B(
         {
-          b = JSON.parse(b);
-          var c = a.doc.querySelector("#TopPage"),
-            f = a.doc.createElement("div");
-          f.innerHTML = '<p id="web_res_ver" class="c_purple" style="line-height: 1.1;margin: 10px;">web res：<span class="c_purple">' + b.webBranch + "</span></p>";
-          c.appendChild(f)
-        }, function(a)
-        {
-          console.log(a)
-        });
-        a.ready.hide()
+          pageJson: d,
+          userData: n
+        }), a.isSetUserData = !0)
       },
-      transferPop: function()
+      tapCharaListTopBtn: function(b)
       {
+        b.preventDefault();
+        a.isScrolled() || (location.href = "#/CharaListTop")
+      },
+      tapArchiveBtn: function(b)
+      {
+        b.preventDefault();
+        a.isScrolled() || (location.href = "#/CollectionTop")
+      },
+      tapTakeoverBtn: function(b)
+      {
+        b.preventDefault();
+        a.isScrolled() || a.targetAnnounceOpen(
+        {
+          announceData:
+          {
+            subject: "『魔法少女まどか☆マギカMagia Exedra』連携コードのご案内",
+            startAt: "2024-7-31 00:00:00",
+            text: v
+          },
+          dispCallback: function()
+          {
+            var b = "";
+            d.user && d.user.personalId && (b = d.user.personalId, $(".codeSec").removeClass("noDisp"), $("#takeOverCode").html(b), setTimeout(function()
+            {
+              a.scrollRefresh("scrollTextWrap", "newsField", !0)
+            }, 50))
+          }
+        })
+      },
+      tapNoticeText: function(b)
+      {
+        b.preventDefault();
         if (!a.isScrolled())
         {
-          var b, d, f = this,
-            k = function()
+          var c = {
+            Notice01: w,
+            Notice02: x
+          } [b.currentTarget.dataset.id];
+          b = $(b.currentTarget).text();
+          a.targetAnnounceOpen(
+          {
+            announceData:
             {
-              f.transferPop()
+              subject: b,
+              startAt: "2024-7-31 00:00:00",
+              text: c
+            }
+          })
+        }
+      },
+      tapRefundBtn: function(b)
+      {
+        b.preventDefault();
+        a.isScrolled() || u.checkIsRegistedRepaymentMail(
+        {
+          pageJson: d
+        })
+      },
+      transferPop: function(b)
+      {
+        b && b.preventDefault();
+        if (!a.isScrolled())
+        {
+          var c, e, d = this,
+            h = function()
+            {
+              d.transferPop()
             },
-            e = !1,
-            g = function(c)
+            g = !1,
+            y = function(b)
             {
-              c.preventDefault();
-              a.isScrolled() || e || (e = !0, f.transferSubmit(b, d))
+              b.preventDefault();
+              a.isScrolled() || g || (g = !0, d.transferSubmit(c, e))
             };
           new a.PopupClass(
           {
@@ -222,16 +212,16 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
           });
           a.nativeKeyBoard("transferId", 15, 1);
           a.nativeKeyBoard("transferPassword", 15, 1);
-          a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, function(c)
+          a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, function(b)
           {
-            c.preventDefault();
-            a.isScrolled() || (b = a.doc.getElementById("transferPopup").getElementsByClassName("personalId")[0].value, d = a.doc.getElementById("transferPopup").getElementsByClassName("password")[0].value, 8 > d.length || 15 < d.length ? new a.PopupClass(
+            b && b.preventDefault();
+            a.isScrolled() || (c = a.doc.getElementById("transferPopup").getElementsByClassName("personalId")[0].value, e = a.doc.getElementById("transferPopup").getElementsByClassName("password")[0].value, 8 > e.length || 15 < e.length ? new a.PopupClass(
             {
               title: "引き継ぎ・連携",
               content: "パスワードは8文字以上15文字以内です。",
               popupType: "typeC",
               closeBtnText: "OK"
-            }, null, null, k) : (new a.PopupClass(
+            }, null, null, h) : (new a.PopupClass(
             {
               title: "引き継ぎ・連携",
               content: "引き継ぎ・連携を行います。<br>よろしいですか？",
@@ -239,19 +229,19 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
               closeBtnText: "キャンセル",
               decideBtnText: "OK",
               exClass: "transferCheck"
-            }, null, null, k), a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, g)))
+            }, null, null, h), a.doc.getElementById("popupArea").getElementsByClassName("decideBtn")[0].addEventListener(a.cgti, y)))
           }, !1)
         }
       },
-      transferSubmit: function(c, d)
+      transferSubmit: function(b, f)
       {
         g.ajaxPost(a.linkList.userTransfer,
         {
-          personalId: c,
-          password: d
-        }, function(c)
+          personalId: b,
+          password: f
+        }, function(b)
         {
-          "error" !== c.resultCode && (localStorage.setItem("MainQuestSelectPart", JSON.stringify(
+          "error" !== b.resultCode && (localStorage.setItem("MainQuestSelectPart", JSON.stringify(
           {
             selectPart: 1
           })), localStorage.setItem("SubQuestSelectPart", JSON.stringify(
@@ -265,287 +255,232 @@ define("underscore backbone backboneCommon ajaxControl command TutorialUtil text
             popupType: "typeC"
           }, null, null, function()
           {
-            b.endTop();
-            b.nativeReload("#/TopPage")
+            a.displayedTop = !1;
+            c.setUserJson("");
+            a.refreshStorage();
+            c.endTop();
+            c.nativeReload("#/TopPage");
+            window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
           }))
         })
-      },
-      rulePopup: function(c, d)
-      {
-        c.preventDefault();
-        a.isScrolled() || (c = null, d && (c = function()
-        {
-          r()
-        }), new a.PopupClass(
-        {
-          title: "サービス利用規約",
-          content: u,
-          popupType: "typeB"
-        }, null, function()
-        {
-          a.doc.getElementById("rulePolicyLink").addEventListener(a.cgti, function(c)
-          {
-            c.preventDefault();
-            a.isScrolled() || a.isDoubleTouch() || b.browserOpen("http://www.aniplex.co.jp/help/privacy.html")
-          });
-          a.doc.getElementById("ruleLinkAdjust").addEventListener(a.cgti, function(c)
-          {
-            c.preventDefault();
-            a.isScrolled() || a.isDoubleTouch() || b.browserOpen("https://www.adjust.com/ja/terms/privacy-policy/")
-          })
-        }, c), a.scrollSet("rulesBase", "rulesPop"))
       }
     }),
-    r = function()
+    C = function(b)
     {
-      function c()
+      var f = b.callback,
+        e = !1;
+      $("#commandDiv").on("nativeCallback", function(a, b)
       {
-        function c(c)
-        {
-          function d()
+        $("#commandDiv").off();
+        e = b;
+        "undefined" === e && (e = !1);
+        f(e)
+      });
+      window.isBrowser && nativeCallback("");
+      b = window.app_ver.split(".").join("") | 0;
+      a.ua.ios && 320 > b ? (e = !1, f(e)) : a.ua.android && 321 > b ? (e = !1, f(e)) : c.getUserJson()
+    },
+    D = function(b)
+    {
+      var c = b.callback,
+        e = 0;
+      if (a.hasModel("charaList")) c();
+      else
+      {
+        var d = ["CharaCollection", "PieceCollection", "DoppelCollection", "EnemyCollection"],
+          h = function(a)
           {
-            var c = function(c)
+            a = a.apiNum;
+            return window.isLocal ? "/magica/json/page/" + d[a] + ".json" : "/magica/api/page/" + d[a]
+          },
+          p = function(b)
+          {
+            g.ajaxSimpleGet(h(
+            {
+              apiNum: b.apiNum
+            }), "", function(b)
+            {
+              a.responseSetStorage(b);
+              e++;
+              e == d.length ? c() : p(
               {
-                b.awakePurchase();
-                var d = function(c)
-                {
-                  a.responseSetStorage(c);
-                  a.tapBlock(!0);
-                  require(["js/util/TutorialUtil.js"], function(c)
-                  {
-                    a.tutorialUtil = c;
-                    a.tutorialId = a.tutorialUtil.getResumeId();
-                    c.tutorialResume();
-                    setTimeout(function()
-                    {
-                      a.ready.target.className = "tutorialStart";
-                      b.setWebView(!0)
-                    }, 200)
-                  })
-                };
-                window.isBrowser && window.isDebug && !e.gameUser ? g.ajaxPost(a.linkList.prologueRegister,
-                {
-                  tutorialId: "TU999"
-                }, function()
-                {
-                  location.href = "#/MyPage"
-                }) : (d(c), a.sfml = {})
-              },
-              d = {
-                userName: "？？？？？"
-              };
-            q || (q = !0, g.ajaxPost(a.linkList.createGameUser, d, c))
-          }
-          c && a.responseSetStorage(c);
-          window.isBrowser ? (f && f.remove(), d()) : (f && f.remove(), $(a.ready.target).on("webkitAnimationEnd", function()
-          {
-            b.endTop();
-            $(a.ready.target).off();
-            $(a.ready.target).on("webkitAnimationEnd", function(b)
-            {
-              "readyFadeOut" == b.originalEvent.animationName && (a.ready.target.className = "")
-            });
-            $("#commandDiv").on("nativeCallback", function(b, c)
-            {
-              c && "string" === typeof c && (b = {
-                tutorialId: c
-              }, "prologue" !== c ? g.ajaxPost(a.linkList.prologueRegister, b) : ($("#commandDiv").off(), d()))
-            });
-            setTimeout(function()
-            {
-              var c = a.storage.user.get("tutorialId");
-              "OP010" === c && (c = "OP020");
-              "prologue" !== c ? b.startPrologue(c) : d();
-              b.setWebView(!1)
-            }, 500)
-          }), a.addClass(a.ready.target, "preNativeFadeIn"))
-        }
-        "OP000" == a.storage.user.get("tutorialId") ? g.ajaxPost(a.linkList.prologueRegister,
+                apiNum: e
+              })
+            })
+          };
+        p(
         {
-          tutorialId: "OP010"
-        }, c) : c()
-      }
-      var d = function()
-      {
-        $(a.doc.querySelector("#rulePopupBtn")).on(a.cgti, function(a)
-        {
-          h.rulePopup(a, !0)
-        });
-        $(a.doc.querySelector("#gameStartBtn")).on(a.cgti, function(d)
-        {
-          d && d.preventDefault();
-          a.isScrolled() || ($(a.doc.querySelector("#gameStartBtn")).off(), localStorage.clear(), d = a.consentRulesFunctions(
-          {}), e.currentTime && d.setTime(
-          {
-            currentTime: e.currentTime
-          }), $("#commandDiv").on("nativeCallback", function(d)
-          {
-            $("#commandDiv").off();
-            b.noticeApFullTurnOn();
-            a.noticeAp = !0;
-            c()
-          }), b.configDataInitilize(), window.isBrowser && nativeCallback())
+          apiNum: e
         })
-      };
-      if ("OP000" == a.storage.user.get("tutorialId")) var f = new a.PopupClass(
-      {
-        title: "ゲーム開始",
-        content: v
-      }, null, d);
-      else c()
-    },
-    x = function()
-    {
-      var c = a.storage.user.toJSON(),
-        d = a.storage.gameUser.toJSON();
-      b.noticeRegist(
-      {
-        tag1: c.purchaseTag,
-        tag2: d.levelTag,
-        tag3: d.progressTag
-      })
-    },
-    y = function(b)
-    {
-      if (b)
-      {
-        var c = b.userQuestBattleResultList[0].questBattle;
-        a.responseSetStorage(b);
-        if (b = (b = a.storage.userSectionList.findWhere(
-          {
-            sectionId: c.sectionId
-          })) ? b.toJSON() : null) c = (c = a.storage.userChapterList.findWhere(
-        {
-          chapterId: b.section.genericId
-        })) ? c.toJSON() : null, a.playChapter = c, a.playSection = b
       }
+    },
+    B = function(b)
+    {
+      var d = b.pageJson;
+      b.userData || (k.each(["charaList", "userPieceCollectionList", "doppelList", "enemyList", "userEnemyList"], function(b, c, f)
+      {
+        d[b] = a.storage[b].toJSON()
+      }), c.setUserJson(d))
     };
   return {
     needModelIdObj: [
     {
-      id: "user",
-      refresh: !0
+      id: "user"
     },
     {
-      id: "gameUser",
-      refresh: !0
+      id: "gameUser"
     },
     {
-      id: "itemList"
+      id: "userItemList"
     },
     {
-      id: "giftList"
+      id: "userStatusList"
+    },
+    {
+      id: "userCharaList"
+    },
+    {
+      id: "userCardList"
     },
     {
       id: "pieceList"
     },
     {
-      id: "titleList"
+      id: "userPieceList"
     },
     {
-      id: "userQuestAdventureList"
+      id: "userPieceSetList"
+    },
+    {
+      id: "userPieceArchiveList"
+    },
+    {
+      id: "userDeckList"
+    },
+    {
+      id: "userLive2dList"
+    },
+    {
+      id: "userDoppelList"
+    },
+    {
+      id: "userCharaEnhancementCellList"
     }],
     fetch: function()
     {
-      var c = this;
-      b.setWebView(!1);
-      b.stopMemoriaTop();
-      b.endQuest();
-      b.endArena();
-      b.endL2d();
-      b.hideMiniChara();
-      b.hideMultiMiniChara();
-      b.popEventBranch();
-      b.hideSubQuestBg();
-      b.popEventSingleRaid();
-      b.deleteEventWitchExchangeAnime();
-      b.popEventStoryRaid();
-      b.callTouchesClear();
-      b.weekQuestTopUnset();
-      b.stopComposeEffect();
-      b.turnOffCamera();
-      b.stopNormalGachaMemoria();
-      b.formationPreviewRemove();
-      b.enemyFormationPreviewRemove();
-      b.endGachaAnimation();
-      b.endPlayMovie();
-      b.hideEventDungeon();
-      b.hideEventRaid();
-      b.popEmotionBoard();
-      b.deletePuellaHistoriaObject();
-      b.deleteScene0StorySelectObject();
-      b.deleteScene0StoryListObject();
-      if (window.g_sns && window.app_ver || window.isBrowser) g.pageModelGet(c.needModelIdObj);
-      else
+      var b = this;
+      a.displayedTop || c.setWebView(!1);
+      c.stopMemoriaTop();
+      c.endQuest();
+      c.endArena();
+      c.endL2d();
+      c.hideMiniChara();
+      c.hideMultiMiniChara();
+      c.popEventBranch();
+      c.hideSubQuestBg();
+      c.popEventSingleRaid();
+      c.deleteEventWitchExchangeAnime();
+      c.popEventStoryRaid();
+      c.callTouchesClear();
+      c.weekQuestTopUnset();
+      c.stopComposeEffect();
+      c.turnOffCamera();
+      c.stopNormalGachaMemoria();
+      c.formationPreviewRemove();
+      c.enemyFormationPreviewRemove();
+      c.endGachaAnimation();
+      c.endPlayMovie();
+      c.hideEventDungeon();
+      c.hideEventRaid();
+      c.popEmotionBoard();
+      c.deletePuellaHistoriaObject();
+      c.deleteScene0StorySelectObject();
+      c.deleteScene0StoryListObject();
+      var d = function(d)
       {
-        var d = 0,
-          f = function()
-          {
-            d++;
-            3 < d ? (a.androidKeyStop = !0, b.setWebView(), new a.PopupClass(
+        if (n = d) g.ApiPageAccessCallback(n);
+        else if (console.log("サーバー通信可能"), window.g_sns && window.app_ver || window.isBrowser) g.pageModelGet(b.needModelIdObj);
+        else
+        {
+          var e = 0,
+            f = function()
             {
-              title: "通信エラー",
-              popupId: "resultCodeError",
-              content: "通信環境の良い所で再度お試しください。",
-              decideBtnText: "リロード",
-              canClose: !1
-            }, null, function()
-            {
-              a.tapBlock(!1);
-              a.forceTapBlock(
+              e++;
+              3 < e ? (a.androidKeyStop = !0, c.setWebView(), new a.PopupClass(
               {
-                isBlock: !1
-              });
-              a.loading.hide();
-              $("#resultCodeError .decideBtn").on(a.cgti, function(a)
+                title: "通信エラー",
+                popupId: "resultCodeError",
+                content: "通信環境の良い所で再度お試しください。",
+                decideBtnText: "リロード",
+                canClose: !1
+              }, null, function()
               {
-                $("#resultCodeError .decideBtn").off();
-                b.nativeReload("#/TopPage");
-                window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
-              })
-            })) : window.g_sns && window.app_ver ? g.pageModelGet(c.needModelIdObj) : setTimeout(f, 500)
-          };
-        setTimeout(f, 500)
-      }
+                a.tapBlock(!1);
+                a.forceTapBlock(
+                {
+                  isBlock: !1
+                });
+                a.loading.hide();
+                $("#resultCodeError .decideBtn").on(a.cgti, function(a)
+                {
+                  $("#resultCodeError .decideBtn").off();
+                  c.nativeReload("#/TopPage");
+                  window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
+                })
+              })) : window.g_sns && window.app_ver ? g.pageModelGet(b.needModelIdObj) : setTimeout(f, 500)
+            };
+          setTimeout(f, 500)
+        }
+      };
+      a.hasModel("gameUser") ? g.pageModelGet(this.needModelIdObj, null, "noConnect") : C(
+      {
+        callback: d
+      })
     },
     init: function()
     {
-      e = g.getPageJson();
-      "undefined" !== typeof e.gameUser && b.setUserId(e.gameUser.userId);
-      var a = window.deleteAssetArr(),
-        d = function()
-        {
-          "undefined" !== typeof e.gameUser ? z() : ($("#commandDiv").on("nativeCallback", function(a, c)
+      d = g.getPageJson();
+      var b = function()
+      {
+        "undefined" !== typeof d.gameUser && c.setUserId(d.gameUser.userId);
+        var b = window.deleteAssetArr(),
+          e = function()
           {
-            $("#commandDiv").off();
-            m();
-            b.noticeRegist()
-          }), b.startTop(), b.changeBg("web_black.jpg"))
-        },
-        f = function()
-        {
-          $("#commandDiv").on("nativeCallback", function(c, e)
-          {
-            $("#commandDiv").off();
-            e.isExist ? ($("#commandDiv").on("nativeCallback", function(b, c)
+            "undefined" !== typeof d.gameUser ? z() : ($("#commandDiv").on("nativeCallback", function(b, a)
             {
               $("#commandDiv").off();
-              a.shift();
-              0 < a.length ? f() : d()
-            }), c = 6E4 * ((new Date).getTime() / 6E4 | 0), require(["text!" + a[0].jsonFilePath + "?bust=" + c], function(a)
+              l()
+            }), c.startTop())
+          },
+          g = function()
+          {
+            $("#commandDiv").on("nativeCallback", function(a, d)
             {
-              a = JSON.parse(a);
-              b.removeFile(a.list)
-            })) : (a.shift(), 0 < a.length ? f() : d())
-          });
-          b.existFile(a[0].confirmFileNames)
-        };
-      window.isBrowser ? m() : 0 < a.length ? f() : d()
+              $("#commandDiv").off();
+              d.isExist ? ($("#commandDiv").on("nativeCallback", function(a, c)
+              {
+                $("#commandDiv").off();
+                b.shift();
+                0 < b.length ? g() : e()
+              }), a = 6E4 * ((new Date).getTime() / 6E4 | 0), require(["text!" + b[0].jsonFilePath + "?bust=" + a], function(a)
+              {
+                a = JSON.parse(a);
+                c.removeFile(a.list)
+              })) : (b.shift(), 0 < b.length ? g() : e())
+            });
+            c.existFile(b[0].confirmFileNames)
+          };
+        window.isBrowser ? l() : 0 < b.length && !a.displayedTop ? g() : e()
+      };
+      d && d.gameUser ? D(
+      {
+        callback: b
+      }) : b()
     },
     remove: function(a)
     {
-      h && h.remove();
-      b.endTop();
+      m && m.remove();
+      c.endTop();
       a()
     }
   }

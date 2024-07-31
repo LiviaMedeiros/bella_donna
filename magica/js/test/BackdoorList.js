@@ -36,6 +36,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
       a[b.cgti + " #getPurchaseStatus"] = this.getPurchaseStatus;
       a[b.cgti + " #mailSendTest"] = this.mailSendTest;
       a[b.cgti + " #ToEventWitchExchangeTest"] = this.ToEventWitchExchangeTest;
+      a[b.cgti + " .ToMemorialApply"] = this.ToMemorialApply;
       return a
     },
     initialize: function(b)
@@ -584,6 +585,11 @@ define("underscore backbone backboneCommon ajaxControl command text!template/tes
         rewardPieceId: 2016,
         storyId: "501301-0"
       }, location.href = "#/EventWitchExchangeAnimePage")
+    },
+    ToMemorialApply: function(a)
+    {
+      a.preventDefault();
+      b.isScrolled() || (location.href = "/magica/template/memorialApply/index.html")
     }
   })
 });

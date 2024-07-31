@@ -339,6 +339,53 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
       })
     })
   };
+  a.targetAnnounceOpen = function(b)
+  {
+    var c = b.announceData,
+      d = function() {};
+    b.dispCallback && (d = b.dispCallback);
+    a.tapBlock(!0);
+    b = 6E4 * ((new Date).getTime() / 6E4 | 0);
+    var e;
+    require(["js/view/system/AnnounceView", "text!template/user/AnnouncePopupTemp.html", "text!json/announcements/announcements.json?bust=" + b], function(b, k, h)
+    {
+      new a.PopupClass(
+      {
+        title: "お知らせ",
+        exClass: "announcementPopup",
+        announce: !0
+      }, k, function()
+      {
+        setTimeout(function()
+        {
+          a.tapBlock(!1);
+          d()
+        }, 500)
+      }, function()
+      {
+        e && e.trigger("removeView")
+      });
+      e = new b(
+      {
+        bannerJson: JSON.stringify([
+        {
+          bannerId: 1,
+          description: "",
+          bannerText: "",
+          startAt: "2017-10-06 00:00:00",
+          endAt: "2017-10-10 23:59:59",
+          sortKey: 1,
+          showAnnounce: !0,
+          showMypage: !1,
+          imagePath: "",
+          bannerLink: "#/TopPage",
+          outerBannerLink: ""
+        }]),
+        announcementJson: h,
+        announceData: c
+      })
+    })
+  };
   a.campaignParse = function(a)
   {
     var b = {};
@@ -598,7 +645,12 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
     patrolAreaList: "collection",
     userPatrolList: "collection",
     userEventPuellaRaid: "model",
-    userGachaKindList: "collection"
+    userGachaKindList: "collection",
+    charaList: "collection",
+    doppelList: "collection",
+    enemyList: "collection",
+    userEnemyList: "collection",
+    userPieceCollectionList: "collection"
   };
   a.checkStorageType = function(b)
   {
@@ -1124,11 +1176,11 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
           -1 < c.indexOf(a) && c.split("/")[1] == a && (e = !0)
         });
         a.scrollBarControl("destroy");
-        if (e) a.historyArr = [], location.href = "#/MyPage";
+        if (e) a.historyArr = [], location.href = "#/TopPage";
         else
         {
           var g = "";
-          b ? (a.locationPrev = a.historyArr[a.historyArr.length - 1], a.historyArr.splice(a.historyArr.length - 1, 1), 1 < a.historyArr.length ? (a.doc.getElementById("sideMenu") && (a.doc.querySelector("#sideMenu").className = ""), a.tapBlock(!0), -1 === location.hash.indexOf("PresentHistory") ? location.href = "#/" + a.historyArr[a.historyArr.length - 1] : -1 < a.historyArr[a.historyArr.length - 1].indexOf("GachaTop") ? (a.gachaDisp && (g = "/" + a.gachaDisp), location.href = "#/GachaTop" + g) : location.href = "#/" + a.historyArr[a.historyArr.length - 1]) : location.href = "#/MyPage") : a.historyArr[a.historyArr.length - 1] ? (a.doc.getElementById("sideMenu") && (a.doc.querySelector("#sideMenu").className = ""), a.tapBlock(!0), -1 !== location.hash.indexOf("GachaResult") ? (a.gachaDisp && (g = "/" + a.gachaDisp), location.href = "#/GachaTop" + g) : location.href = "#/" + a.historyArr[a.historyArr.length - 1]) : location.href = "#/MyPage"
+          b ? (a.locationPrev = a.historyArr[a.historyArr.length - 1], a.historyArr.splice(a.historyArr.length - 1, 1), 1 < a.historyArr.length ? (a.doc.getElementById("sideMenu") && (a.doc.querySelector("#sideMenu").className = ""), a.tapBlock(!0), -1 === location.hash.indexOf("PresentHistory") ? location.href = "#/" + a.historyArr[a.historyArr.length - 1] : -1 < a.historyArr[a.historyArr.length - 1].indexOf("GachaTop") ? (a.gachaDisp && (g = "/" + a.gachaDisp), location.href = "#/GachaTop" + g) : location.href = "#/" + a.historyArr[a.historyArr.length - 1]) : location.href = "#/TopPage") : a.historyArr[a.historyArr.length - 1] ? (a.doc.getElementById("sideMenu") && (a.doc.querySelector("#sideMenu").className = ""), a.tapBlock(!0), -1 !== location.hash.indexOf("GachaResult") ? (a.gachaDisp && (g = "/" + a.gachaDisp), location.href = "#/GachaTop" + g) : location.href = "#/" + a.historyArr[a.historyArr.length - 1]) : location.href = "#/TopPage"
         }
       }
     }
@@ -1225,8 +1277,7 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
     }
     if ("MISS" != b)
     {
-      var d,
-        e = {};
+      var d, e = {};
       q.each("RICHE_ CARD_ PIECE_ MAXPIECE_ GIFT_ EVENTITEM_ GACHAEVENTITEM_ GEM_ LIVE2D_ DOPPEL_ FORMATIONSHEET_ EVENTEFFECT_ ITEM_".split(" "), function(a)
       {
         -1 !== b.indexOf(a) && (d = a.split("_")[0])
@@ -1386,13 +1437,14 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
       var e = ["MemoriaList", "PieceArchive", "RegularEventGroupBattleTop"],
         g, k, h, f = !1;
       if (a.ua.ios || 0 > e.indexOf(a.location)) g = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a)
-      {
-        f = window.setInterval(a, 17)
-      }, k = window.cancelAnimationFrame || window.mozCancelAnimationFrame || function(a)
-      {
-        window.clearInterval(f);
-        f = !1
-      };
+        {
+          f = window.setInterval(a, 17)
+        },
+        k = window.cancelAnimationFrame || window.mozCancelAnimationFrame || function(a)
+        {
+          window.clearInterval(f);
+          f = !1
+        };
       a.scrollArr[b + c + d].touchStartNum = 0;
       var m = a.scrollArr[b + c + d].scrollCount = 0,
         n = 0,
@@ -1565,7 +1617,8 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
         f = a.doc.getElementById(b),
         m = a.doc.getElementById(b).getElementsByClassName(c)[0];
       a.scrollArrX[b + c].scrollDomWidth = f.offsetWidth;
-      for (var n = m.childNodes, w = n.length, l = n[w - 1], p = l.offsetLeft; 0 < w;) w = w - 1 | 0, n[w].offsetLeft > p && (l = n[w], p = l.offsetLeft);
+      for (var n = m.childNodes,
+          w = n.length, l = n[w - 1], p = l.offsetLeft; 0 < w;) w = w - 1 | 0, n[w].offsetLeft > p && (l = n[w], p = l.offsetLeft);
       a.scrollArrX[b + c].lastDom = l;
       a.scrollArrX[b + c].lastDomOffLeft = p;
       a.scrollArrX[b + c].limit = a.scrollArrX[b + c].lastDomOffLeft + l.offsetWidth + 10;
@@ -1681,8 +1734,7 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
             g = !1;
             a.scrollArrX[b + c].scrollDomWidth > a.scrollArrX[b + c].lastDomOffLeft + m.offsetWidth && (g = !0, l = 0);
             a.scrollArrX[b + c].scrollBarWidth > a.scrollArrX[b + c].scrollDomWidth && (a.scrollArrX[b + c].scrollBarWidth = a.scrollArrX[b + c].scrollDomWidth);
-            if (a.scrollArrX[b + c].limit <= a.scrollArrX[b + c].scrollDomWidth || d || g) m = f.style.cssText,
-              f.style.cssText = m + k(0), a.scrollArrX[b + c].scrollCount = 0, a.scrollArrX[b + c].touchStartNum = 0;
+            if (a.scrollArrX[b + c].limit <= a.scrollArrX[b + c].scrollDomWidth || d || g) m = f.style.cssText, f.style.cssText = m + k(0), a.scrollArrX[b + c].scrollCount = 0, a.scrollArrX[b + c].touchStartNum = 0;
             l + a.scrollArrX[b + c].scrollBarWidth >= a.scrollArrX[b + c].scrollDomWidth && !d && (m = f.style.cssText, f.style.cssText = m + k(-1 * (a.scrollArrX[b + c].limit - a.scrollArrX[b + c].scrollDomWidth)), a.scrollArrX[b + c].scrollCount = -1 * (a.scrollArrX[b + c].limit - a.scrollArrX[b + c].scrollDomWidth));
             n && (n.style.cssText = a.ua.ios ? "width:" + a.scrollArrX[b + c].scrollBarWidth + "px;-webkit-transform:translateX(" + l + "px);" : "width:" + a.scrollArrX[b + c].scrollBarWidth + "px;-webkit-transform:translate3d(" + l + "px,0,0);");
             e && a.forceScrollXArr && a.forceScrollXArr[b + c] && (d = a.forceScrollXArr[b + c].split(","), a.forceScrollX(b, c, d[0], d[1]), a.forceScrollXArr[b + c] = void 0)
@@ -1786,7 +1838,8 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
             if (a.scrollArr[b + c + h])
             {
               var f = g.getElementsByClassName("scrollIndicatorInner")[0],
-                m, n;
+                m,
+                n;
               a.ua.ios ? (m = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a)
               {
                 window.setTimeout(a, 10)
@@ -1817,8 +1870,7 @@ define(["jquery", "underscore", "backbone"], function(l, q, x)
                     3 > d || q && q < d ? (a.scrollArr[b + c + h].scrollCount = t, a.scrollArr[b + c + h].touchStartNum = t, k.style.cssText = a.scrollArr[b + c + h].defaultCss + v(a.scrollArr[b + c + h].touchStartNum), a.removeClass(f, "onScroll"), p = !1, a.forceScrollFlag = !1, a.removeClass(k, "scrollForce")) : (F = m(r), q = d)
                   }
                   else a.forceScrollFlag = !1, a.removeClass(k, "scrollForce");
-                  else n(F), a.forceScrollFlag = !1,
-                    a.removeClass(k, "scrollForce")
+                  else n(F), a.forceScrollFlag = !1, a.removeClass(k, "scrollForce")
                 },
                 v = function(d)
                 {

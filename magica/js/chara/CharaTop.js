@@ -1,29 +1,26 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/chara/CharaTop.html text!css/chara/CharaTop.css text!css/chara/CharaCommon.css cardUtil CharaCommon".split(" "), function(q, r, b, h, d, t, u, v, w, c)
+define("underscore backbone backboneCommon ajaxControl command text!template/chara/CharaTop.html text!css/chara/CharaTop.css text!css/chara/CharaCommon.css cardUtil CharaCommon".split(" "), function(p, q, b, f, d, r, t, u, v, c)
 {
-  var e, f, k, l = null,
-    g, x = r.View.extend(
+  var g, h, k, l = null,
+    e, w = q.View.extend(
     {
       events: function()
       {
         var a = {};
         a[b.cgti] = this.touch;
-        a[b.cgti + " #leaderChangeBtn"] = this.confCharaChange;
-        a[b.cgti + " #helperChangeBtn"] = this.confCharaChange;
         a[b.cgti + " #poseChangeBtn"] = this.standPoseChange;
         a[b.cgti + " .miniCharaWrap"] = this.miniCharaMotion;
-        a[b.cgti + " .enhanceLink"] = this.enhanceLink;
+        a[b.cgti + " #globalBackBtn"] = this.tapGlobalBackBtn;
         return a
+      },
+      tapGlobalBackBtn: function(a)
+      {
+        a.preventDefault();
+        b.isScrolled() || (location.href = "#/TopPage")
       },
       miniCharaMotion: function(a)
       {
         a.preventDefault();
         b.isScrolled() || (a = {}, a.id = String(c.charaDataView.model.toJSON().card.miniCharaNo), a.x = 1024 === b.displayWidth ? 400 : 440, a.y = 1024 === b.displayWidth ? Math.floor(b.doc.getElementsByTagName("body")[0].offsetHeight / 2) + 95 : Math.ceil(b.shortSize / 2) + 135, a.fade = .3, a.animeList = ["reaction", b.miniCharaStandPose], d.showMiniChara(a))
-      },
-      enhanceLink: function(a)
-      {
-        a.preventDefault();
-        a.stopPropagation();
-        b.isScrolled() || (location.href = "#/CharaEnhancementTree/" + c.charaDataView.model.toJSON().userCardId)
       },
       standPoseChange: function(a)
       {
@@ -32,12 +29,12 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
       },
       initialize: function(a)
       {
-        this.template = q.template(t);
+        this.template = p.template(r);
         this.createDom()
       },
       render: function()
       {
-        this.$el.html(this.template(h.getPageJson()));
+        this.$el.html(this.template(f.getPageJson()));
         return this
       },
       createDom: function()
@@ -47,36 +44,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
       },
       createView: function()
       {
-        w.createCardList();
-        b.setGlobalView();
-        b.firstNaviCheck(e);
+        v.createCardList();
         b.tapBlock(!1);
         b.ready.hide()
-      },
-      confCharaChange: function(a)
-      {
-        a.preventDefault();
-        if (!b.isScrolled())
-        {
-          a = a.currentTarget.getAttribute("data-type");
-          var d = "";
-          "changeLeader" == a && (d = "お気に入り");
-          var e = c.charaDataView.model.toJSON(),
-            g = e.card.cardName,
-            f = {};
-          f.userCardId = e.userCardId;
-          h.ajaxPost(b.linkList[a], f, function(a)
-          {
-            b.responseSetStorage(a);
-            n(e);
-            new b.PopupClass(
-            {
-              title: "変更完了",
-              content: g + "を" + d + "に設定しました。",
-              closeBtnText: "閉じる"
-            })
-          })
-        }
       },
       touch: function(a)
       {
@@ -84,13 +54,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
         b.isScrolled()
       }
     }),
-    n = function(a)
-    {
-      var c = b.doc.querySelector("#leaderChangeBtn");
-      b.storage.gameUser.toJSON().leaderId == a.userCardId ? b.addClass(c, "off") : b.removeClass(c, "off")
-    },
     m = "",
-    p = function(a)
+    n = function(a)
     {
       a = a.attributeId.toLowerCase();
       m && $(".composeAttribute").removeClass(m);
@@ -104,67 +69,15 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
     },
     {
       id: "gameUser"
-    },
-    {
-      id: "userStatusList"
-    },
-    {
-      id: "itemList"
-    },
-    {
-      id: "userItemList"
-    },
-    {
-      id: "userCharaList"
-    },
-    {
-      id: "userCardList"
-    },
-    {
-      id: "userCharaEnhancementCellList"
-    },
-    {
-      id: "userCharaAtbEnhancementCellList"
-    },
-    {
-      id: "userDoppelList"
-    },
-    {
-      id: "userLive2dList"
-    },
-    {
-      id: "userGiftList"
-    },
-    {
-      id: "pieceList"
-    },
-    {
-      id: "userPieceList"
-    },
-    {
-      id: "userPieceSetList"
-    },
-    {
-      id: "userDeckList"
-    },
-    {
-      id: "userChapterList"
-    },
-    {
-      id: "userSectionList"
-    },
-    {
-      id: "userQuestBattleList"
-    },
-    {
-      id: "userPatrolList"
     }],
     charaSelect: function(a)
     {
       c.charaSelect(a);
-      n(a.model.toJSON());
+      var d = a.model.toJSON(),
+        e = b.doc.querySelector("#leaderChangeBtn");
+      b.storage.gameUser.toJSON().leaderId == d.userCardId ? b.addClass(e, "off") : b.removeClass(e, "off");
       c.showMiniChara(a.model.toJSON().card.miniCharaNo);
-      p(
+      n(
       {
         attributeId: a.model.attributes.chara.attributeId
       })
@@ -172,29 +85,30 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
     fetch: function(a)
     {
       l = a ? a : null;
-      h.pageModelGet(this.needModelIdObj)
+      f.pageModelGet(this.needModelIdObj, null, "noConnect")
     },
     init: function()
     {
       b.questBattleModel = null;
-      e = h.getPageJson();
-      b.setStyle(u + v);
-      g = new x;
+      g = f.getPageJson();
+      b.setStyle(t + u);
+      e = new w;
       c.charaViewInit(l);
-      k = f = 1;
-      if (e.campaignList)
+      k = h = 1;
+      if (g.campaignList)
       {
-        var a = b.campaignParse(e.campaignList);
-        a.POINT_UP && a.POINT_UP.CARD_COMPOSE && (a.POINT_UP.CARD_COMPOSE.EXCELLENT || a.POINT_UP.CARD_COMPOSE.GREAT) && (f = a.POINT_UP.CARD_COMPOSE.EXCELLENT || 1, k = a.POINT_UP.CARD_COMPOSE.GREAT || 1)
+        var a = b.campaignParse(g.campaignList);
+        a.POINT_UP && a.POINT_UP.CARD_COMPOSE && (a.POINT_UP.CARD_COMPOSE.EXCELLENT || a.POINT_UP.CARD_COMPOSE.GREAT) && (h = a.POINT_UP.CARD_COMPOSE.EXCELLENT || 1, k = a.POINT_UP.CARD_COMPOSE.GREAT || 1)
       }
-      1 === f && 1 === k || b.addClass(b.doc.querySelector("#btnArea"), "campaignIcon");
+      1 === h && 1 === k || b.addClass(b.doc.querySelector("#btnArea"), "campaignIcon");
       a = c.charaDataView.model.toJSON().card.miniCharaNo;
       c.showMiniChara(a);
-      p(
+      n(
       {
         attributeId: c.charaDataView.model.attributes.chara.attributeId
       });
-      b.tapBlock(!1)
+      b.tapBlock(!1);
+      b.historyArr = ["TopPage"]
     },
     startCommand: function()
     {
@@ -203,7 +117,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/cha
     },
     remove: function(a)
     {
-      g && (l = null, c.charaViewRemove(), g.trigger("remove"), g.remove());
+      e && (l = null, c.charaViewRemove(), e.trigger("remove"), e.remove());
       a()
     },
     charaCommon: function()

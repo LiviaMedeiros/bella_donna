@@ -37,6 +37,8 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
       DATA_SET_TD_LOGIN: 82,
       DATA_OPEN_EDIT_BOX: 90,
       DATA_GET_QUEST_REPLAY_VERSION: 97,
+      DATA_GET_USER_JSON: 98,
+      DATA_SET_USER_JSON: 99,
       SOUND_BGM_PLAY: 100,
       SOUND_BGM_STOP: 101,
       SOUND_BGM_RESUME: 102,
@@ -182,7 +184,7 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
       sendCommand: function(a)
       {
         a = String(a);
-        window.isDebug && console.log("native:command: " + a);
+        window.isDebug && ("99" == a.split(",")[0] ? console.log("native:command: 99 json続く") : "98" == a.split(",")[0] ? console.log("native:command: 98 json続く") : console.log("native:command: " + a));
         window.isBrowser || (a = "game:" + a, e.ua.android ? !window.app_ver || g && 158 > g ? alert(a) : g && 157 < g ? androidCommand.jsCallback(a) : (g = window.app_ver.split(".").join("") | 0, 158 > g ? alert(a) : androidCommand.jsCallback(a)) : l && webkit.messageHandlers.gameCommand.postMessage(a))
       },
       tipsObj: [
@@ -1440,6 +1442,15 @@ define(["underscore", "backbone", "backboneCommon"], function(h, m, e)
   b.captureCamera = function()
   {
     this.sendCommand(b.SCENE_CAPTURE_CAMERA)
+  };
+  b.getUserJson = function()
+  {
+    this.sendCommand(b.DATA_GET_USER_JSON)
+  };
+  b.setUserJson = function(a)
+  {
+    a = JSON.stringify(a);
+    this.sendCommand(b.DATA_SET_USER_JSON + "," + a)
   };
   return b
 });

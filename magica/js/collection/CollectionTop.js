@@ -1,9 +1,21 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/collection/CollectionTop.html text!css/collection/CollectionTop.css".split(" "), function(f, l, c, g, d, m, n)
+define("underscore backbone backboneCommon ajaxControl command text!template/collection/CollectionTop.html text!css/collection/CollectionTop.css".split(" "), function(f, l, b, g, d, m, n)
 {
   var k = {},
     h, p = l.View.extend(
     {
-      initialize: function(b)
+      events: function()
+      {
+        var a = {};
+        a[b.cgti] = this.touch;
+        a[b.cgti + " #globalBackBtn"] = this.tapGlobalBackBtn;
+        return a
+      },
+      tapGlobalBackBtn: function(a)
+      {
+        a.preventDefault();
+        b.isScrolled() || (location.href = "#/TopPage")
+      },
+      initialize: function(a)
       {
         this.template = f.template(m);
         this.createDom()
@@ -15,9 +27,8 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       },
       createDom: function()
       {
-        c.setGlobalView();
-        c.content.append(this.render().el);
-        c.ready.hide()
+        b.content.append(this.render().el);
+        b.ready.hide()
       }
     });
   return {
@@ -29,48 +40,37 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       id: "gameUser"
     },
     {
-      id: "itemList"
-    },
-    {
-      id: "userItemList"
-    },
-    {
-      id: "userStatusList"
-    },
-    {
       id: "userCharaList"
-    },
-    {
-      id: "userPatrolList"
     }],
     fetch: function()
     {
-      g.pageModelGet(this.needModelIdObj)
+      g.pageModelGet(this.needModelIdObj, null, "noConnect")
     },
     init: function()
     {
       k = g.getPageJson();
-      c.setStyle(n);
+      b.setStyle(n);
       h = new p;
-      var b = k.userCharaList,
-        e = b[Math.floor(Math.random() * b.length)],
-        b = e.chara.doubleUnitFlg,
+      var a = k.userCharaList,
+        e = a[Math.floor(Math.random() * a.length)],
+        a = e.chara.doubleUnitFlg,
         f = e.chara.doubleUnitLive2dDetail,
         e = e.charaId + "00";
       d.endL2d();
-      var a = {};
-      a.id = e;
-      a.x = b ? 480 : 320;
-      a.y = 1024 === c.displayWidth ? Math.floor(c.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(c.shortSize / 2);
-      b && (a.subId = f, a.subX = -100, a.subY = 0);
-      a.type = 1;
-      a.key = "idle";
-      d.startL2d(a)
+      var c = {};
+      c.id = e;
+      c.x = a ? 480 : 320;
+      c.y = 1024 === b.displayWidth ? Math.floor(b.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(b.shortSize / 2);
+      a && (c.subId = f, c.subX = -100, c.subY = 0);
+      c.type = 1;
+      c.key = "idle";
+      d.startL2d(c);
+      b.historyArr = ["TopPage"]
     },
-    remove: function(b)
+    remove: function(a)
     {
       h && h.remove();
-      b()
+      a()
     },
     startCommand: function()
     {

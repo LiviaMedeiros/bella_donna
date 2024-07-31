@@ -3,7 +3,7 @@ window.onerror = function(a, e, f, l, b)
 {
   if (!window.isBrowser)
   {
-    var h = a + " " + e + ":" + f;
+    var h = a + "<br>" + e + "<br>:" + f;
     require(["underscore", "backbone", "backboneCommon", "ajaxControl", "command"], function(a, b, d, e, c)
     {
       c.setWebView(!0);
@@ -15,7 +15,7 @@ window.onerror = function(a, e, f, l, b)
       {
         title: "エラー",
         popupId: "resultCodeError",
-        content: "エラーが発生しました。トップページに遷移します。",
+        content: "エラーが発生しました。トップページに遷移します。<br>" + h,
         decideBtnText: "トップページへ",
         canClose: !1
       }, null, function()

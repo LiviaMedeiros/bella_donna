@@ -1,9 +1,9 @@
-define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
+define(["jquery", "backbone", "backboneCommon", "command"], function(f, v, c, d)
 {
   function F(a, b)
   {
     var e = a.id;
-    a = (new(r.Model.extend(
+    a = (new(v.Model.extend(
     {
       url: b,
       parse: function(b)
@@ -15,8 +15,8 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       success: function(b, a)
       {
         c.setStorage(b, e);
-        p[e] = a[e];
-        v(a)
+        h[e] = a[e];
+        u(a)
       }
     });
     g.push(a)
@@ -25,7 +25,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
   function G(a, b)
   {
     var e = a.id;
-    a = (new(r.Collection.extend(
+    a = (new(v.Collection.extend(
     {
       url: b,
       parse: function(b)
@@ -37,14 +37,14 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       success: function(b, a)
       {
         c.setStorage(b, e);
-        p[e] = a[e];
-        v(a)
+        h[e] = a[e];
+        u(a)
       }
     });
     g.push(a)
   }
 
-  function D(a, b)
+  function E(a, b)
   {
     a = f.ajax(
     {
@@ -54,18 +54,18 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     }).done(function(b)
     {
       console.log("fetch", b);
-      for (var a in b) u.push(a), p[a] = b[a];
-      v(b)
+      for (var a in b) q.push(a), h[a] = b[a];
+      u(b)
     });
     g.push(a)
   }
 
-  function v(a)
+  function u(a)
   {
     "undefined" !== typeof a.resultCode && "error" == a.resultCode && x();
-    f.extend(t, a);
+    f.extend(r, a);
     y += 1;
-    y == z + 1 && f(n).trigger("complete", t)
+    y == z + 1 && (c.responseJson = r, f(p).trigger("complete", r))
   }
 
   function x()
@@ -73,7 +73,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     for (var a = g.length, b = 0; b < a; b++) 4 != g[b].readyState && g[b].abort()
   }
 
-  function q()
+  function t()
   {
     d.startBgm("bgm00_system01");
     d.changeBg("web_common.ExportJson");
@@ -107,43 +107,43 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     c.loading.hide()
   }
 
-  function E(a, b)
+  function B(a, b)
   {
     var e = 0;
-    _.each(a, function(a, k, g)
+    _.each(a, function(a, l, g)
     {
-      var m = c.storageType[k] || null;
-      u.push(k);
-      p[k] = g[k];
-      switch (m)
+      var n = c.storageType[l] || null;
+      q.push(l);
+      h[l] = g[l];
+      switch (n)
       {
         case "model":
-          var m = {},
-            B = r.Model.extend(
+          var n = {},
+            C = v.Model.extend(
             {
-              url: c.linkList[k]
+              url: c.linkList[l]
             });
-          c.hasModel(k) ? (m[k] = a, c.responseSetStorage(m)) : (m = new B(a), c.setStorage(m, k));
+          c.hasModel(l) ? (n[l] = a, c.responseSetStorage(n)) : (n = new C(a), c.setStorage(n, l));
           break;
         case "collection":
-          m = {}, B = r.Collection.extend(
+          n = {}, C = v.Collection.extend(
           {
-            url: c.linkList[k]
-          }), c.hasModel(k) ? (m[k] = a, c.responseSetStorage(m)) : (a = new B(a), c.setStorage(a, k))
+            url: c.linkList[l]
+          }), c.hasModel(l) ? (n[l] = a, c.responseSetStorage(n)) : (a = new C(a), c.setStorage(a, l))
       }
       if (Object.keys(g).length - 1 == e)
       {
-        if (n.interruptCheck(g, b)) return;
+        if (p.interruptCheck(g, b)) return;
         a:
         {
           if ("undefined" !== typeof g.resultCode && ("error" == g.resultCode && x(), "maintenance" == g.resultCode))
           {
-            if (l) break a;
-            l = !0;
-            160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance");
+            if (m) break a;
+            m = !0;
+            160 > (window.app_ver.split(".").join("") | 0) ? (t(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance");
             break a
           }
-          f(n).trigger("complete", g)
+          c.responseJson = g;f(p).trigger("complete", g)
         }
       }
       e = e + 1 || 0
@@ -152,7 +152,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
 
   function w(a, b, e)
   {
-    if (b.responseJSON && "maintenance" == b.responseJSON.resultCode) l || (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance") : d.nativeReload("#/Maintenance"));
+    if (b.responseJSON && "maintenance" == b.responseJSON.resultCode) m || (m = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (t(), location.href = "#/Maintenance") : d.nativeReload("#/Maintenance"));
     else if (0 == b.status) c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
     {
       title: "通信エラー",
@@ -186,13 +186,13 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       })
     })
   }
-  var C, y = 0,
+  var D, y = 0,
     z = 0,
-    t = {},
-    p = {},
-    u = {},
+    r = {},
+    h = {},
+    q = {},
     g = [],
-    l = !1;
+    m = !1;
   f(document).ajaxSend(function(a, b, c)
   {
     window.g_sns ? (b.setRequestHeader("USER-ID-FBA9X88MAE", window.g_sns), window.isDebug && window.g_token && b.setRequestHeader("F4-Access-Token", window.g_token), window.app_ver && b.setRequestHeader("F4S-CLIENT-VER", window.app_ver), window.sendHostName || (window.sendHostName = location.hostname), b.setRequestHeader("X-Platform-Host", window.sendHostName), window.modelName && b.setRequestHeader("CLIENT-MODEL-NAME", window.modelName), window.osVersion && b.setRequestHeader("CLIENT-OS-VER", window.osVersion), window.bootCount && b.setRequestHeader("CLIENT-SESSION-ID", window.bootCount), window.webInitTime && b.setRequestHeader("WEBVIEW-SESSION-ID", window.webInitTime)) : window.isDebug || window.isBrowser || x()
@@ -201,9 +201,9 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
   {
     c.loading.show()
   });
-  f(document).ajaxError(function(a, b, e, m)
+  f(document).ajaxError(function(a, b, e, n)
   {
-    "timeout" == m ? (c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
+    "timeout" == n ? (c.tapBlock(!1), c.loading.hide(), c.androidKeyStop = !0, new c.PopupClass(
     {
       title: "通信エラー",
       popupId: "resultCodeError",
@@ -218,7 +218,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         d.nativeReload("#/TopPage");
         window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
       })
-    })) : "abort" == m ? (c.tapBlock(!1), c.loading.hide()) : b.responseJSON && "maintenance" == b.responseJSON.resultCode && !l && (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance"))
+    })) : "abort" == n ? (c.tapBlock(!1), c.loading.hide()) : b.responseJSON && "maintenance" == b.responseJSON.resultCode && !m && (m = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (t(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance"))
   });
   f(document).ajaxComplete(function(a, b)
   {
@@ -237,7 +237,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       });
       window.webInitTime = e
     }
-    400 == b.status ? c.loading.hide() : b.responseJSON && "maintenance" == b.responseJSON.resultCode ? l || (l = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (q(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance")) : 200 !== b.status && 429 !== b.status && 502 !== b.status && 503 !== b.status ? (a = b.status ? b.status : "-", window.isBrowser && 404 == b.status || (C = function()
+    400 == b.status ? c.loading.hide() : b.responseJSON && "maintenance" == b.responseJSON.resultCode ? m || (m = !0, 160 > (window.app_ver.split(".").join("") | 0) ? (t(), location.href = "#/Maintenance", location.reload()) : d.nativeReload("#/Maintenance")) : 200 !== b.status && 429 !== b.status && 502 !== b.status && 503 !== b.status ? (a = b.status ? b.status : "-", window.isBrowser && 404 == b.status || (D = function()
     {
       c.tapBlock(!1);
       c.loading.hide();
@@ -254,14 +254,14 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       content: "通信環境の良い所で再度お試しください。",
       decideBtnText: "リロード",
       canClose: !1
-    }, null, C) : new c.PopupClass(
+    }, null, D) : new c.PopupClass(
     {
       title: "予期せぬエラー",
       popupId: "resultCodeError",
       content: "予期せぬエラーが発生しました。<br />ご迷惑をおかけし、申し訳ございません。[" + a + "]",
       decideBtnText: "トップページへ",
       canClose: !1
-    }, null, C))) : b.responseJSON && "error" == b.responseJSON.resultCode && (c.tapBlock(!1), c.loading.hide(), new c.PopupClass(
+    }, null, D))) : b.responseJSON && "error" == b.responseJSON.resultCode && (c.tapBlock(!1), c.loading.hide(), new c.PopupClass(
     {
       title: b.responseJSON.title,
       popupId: "resultCodeError",
@@ -273,7 +273,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
   {
     timeout: 2E4
   });
-  var n = {
+  var p = {
     interruptCheck: function(a, b)
     {
       a.forceClearCache && d.clearWebCache();
@@ -295,7 +295,25 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
           window.isDebug && window.isBrowser && (location.href = "#/TopPage", location.reload())
         })
       }), !0;
-      a.interrupt && !b && (-1 == a.interrupt.page.indexOf(c.location) && (c.interrupt = a.interrupt.page), location.href = a.interrupt.page, b = window.app_ver.split(".").join("") | 0, "#/TopPage" == a.interrupt.page ? 160 > b || window.isDebug && window.isBrowser ? (q(), location.href = "#/TopPage", location.reload()) : d.nativeReload("#/TopPage") : "#/NewVersionRecommend" == a.interrupt.page ? 160 > b || window.isDebug && window.isBrowser ? (q(), location.href = "#/NewVersionRecommend", location.reload()) : d.nativeReload("#/NewVersionRecommend") : "#/Ban" == a.interrupt.page && (160 > b || window.isDebug && window.isBrowser ? (q(), location.href = "#/Ban", location.reload()) : d.nativeReload("#/Ban")));
+      if (a.interrupt && !b)
+      {
+        -1 == a.interrupt.page.indexOf(c.location) && (c.interrupt = a.interrupt.page);
+        var e = function()
+        {
+          location.href = a.interrupt.page;
+          var b = window.app_ver.split(".").join("") | 0;
+          "#/TopPage" == a.interrupt.page ? 160 > b || window.isDebug && window.isBrowser ? (t(), location.href = "#/TopPage", location.reload()) : d.nativeReload("#/TopPage") : "#/NewVersionRecommend" == a.interrupt.page ? 160 > b || window.isDebug && window.isBrowser ? (t(), location.href = "#/NewVersionRecommend", location.reload()) : d.nativeReload("#/NewVersionRecommend") : "#/Ban" == a.interrupt.page && (160 > b || window.isDebug && window.isBrowser ? (t(), location.href = "#/Ban", location.reload()) : d.nativeReload("#/Ban"))
+        };
+        "#/TopPage" == a.interrupt.page ? (f("#commandDiv").on("nativeCallback", function(a, b)
+        {
+          f("#commandDiv").off();
+          b ? (f("#commandDiv").on("nativeCallback", function(a)
+          {
+            f("#commandDiv").off();
+            e()
+          }), d.userDataInitilize(), d.setUserJson()) : e()
+        }), d.getUserJson()) : e()
+      }
       return !1
     },
     ajaxPost: function(a, b, c)
@@ -315,7 +333,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         },
         success: function(a)
         {
-          n.interruptCheck(a, !1) || A(a, c)
+          p.interruptCheck(a, !1) || A(a, c)
         }
       });
       g.push(a)
@@ -336,7 +354,7 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
         },
         success: function(a)
         {
-          n.interruptCheck(a, !1) || A(a, c)
+          p.interruptCheck(a, !1) || A(a, c)
         }
       });
       g.push(a)
@@ -358,9 +376,9 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
           {
             a = JSON.parse(a)
           }
-          catch (k)
+          catch (l)
           {}
-          n.interruptCheck(a, !1) || A(a, c)
+          p.interruptCheck(a, !1) || A(a, c)
         }
       });
       g.push(a)
@@ -380,20 +398,24 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
     },
     eachGet: function(a, b, d)
     {
-      p = null;
-      p = {};
+      h = null;
+      h = {};
       y = 0;
       g = [];
-      u = null;
-      u = [];
-      window.isLocal && "noConnect" != d && D(
+      q = null;
+      q = [];
+      window.isLocal && "noConnect" != d && E(
       {
         id: c.location
       }, "/magica/json/page/" + c.location + ".json");
       b = 0;
-      t = {};
+      r = {};
       z = a.length;
-      if ("noConnect" == d) f(n).trigger("complete", t);
+      if ("noConnect" == d)
+      {
+        for (; b < a.length;) console.log("jsonIdArray[i].id", a[b].id), h[a[b].id] = c.storage[a[b].id].toJSON(), b = b + 1 | 0;
+        f(p).trigger("complete", r)
+      }
       else
         for (; b < z;)
         {
@@ -408,34 +430,34 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
               G(a[b], e);
               break;
             case null:
-              D(a[b], e)
+              E(a[b], e)
           }
-          else p[a[b].id] = c.storage[a[b].id].toJSON(), v(c.storage[a[b].id].toJSON());
+          else h[a[b].id] = c.storage[a[b].id].toJSON(), u(c.storage[a[b].id].toJSON());
           b = b + 1 | 0
         }
     },
     onceGet: function(a, b, d)
     {
       var e = d ? "POST" : "GET";
-      p = null;
-      p = {};
-      u = null;
-      u = [];
-      for (var g = b ? !0 : !1, n = b = "", h = 0, l = 0; h < a.length;)
+      h = null;
+      h = {};
+      q = null;
+      q = [];
+      for (var g = b ? !0 : !1, p = b = "", k = 0, m = 0; k < a.length;)
       {
-        var q = c.storageType[a[h].id] || null,
-          r = c.hasModel(a[h].id),
-          v = a[h].refresh;
-        !r || r && v ? ("collection" === q && r && c.storage[a[h].id].reset(), delete c.storage[a[h].id], "GET" == e ? b += 0 === l ? "value=" + a[h].id : "," + a[h].id : "POST" == e && (n += 0 === l ? "" + a[h].id : "," + a[h].id), l = l + 1 | 0) : p[a[h].id] = c.storage[a[h].id].toJSON();
-        h = h + 1 | 0
+        var t = c.storageType[a[k].id] || null,
+          r = c.hasModel(a[k].id),
+          v = a[k].refresh;
+        !r || r && v ? ("collection" === t && r && c.storage[a[k].id].reset(), delete c.storage[a[k].id], "GET" == e ? b += 0 === m ? "value=" + a[k].id : "," + a[k].id : "POST" == e && (p += 0 === m ? "" + a[k].id : "," + a[k].id), m = m + 1 | 0) : h[a[k].id] = c.storage[a[k].id].toJSON();
+        k = k + 1 | 0
       }
-      var t;
-      "GET" == e ? t = b = -1 != b.indexOf("value=") ? b + ("&timeStamp=" + (new Date).getTime()) : b + ("timeStamp=" + (new Date).getTime()) : "POST" == e && ("" !== n && (d.value = n), t = JSON.stringify(d));
+      var u;
+      "GET" == e ? u = b = -1 != b.indexOf("value=") ? b + ("&timeStamp=" + (new Date).getTime()) : b + ("timeStamp=" + (new Date).getTime()) : "POST" == e && ("" !== p && (d.value = p), u = JSON.stringify(d));
       a = {
         url: "/magica/api/page/" + c.location,
         type: e,
         dataType: "json",
-        data: t
+        data: u
       };
       "POST" == e && (a.contentType = "application/JSON");
       a.error = function(a)
@@ -444,21 +466,29 @@ define(["jquery", "backbone", "backboneCommon", "command"], function(f, r, c, d)
       };
       a.success = function(a)
       {
-        E(a, g)
+        B(a, g)
       };
-      "noConnect" == d ? E(
+      "noConnect" == d ? B(
       {
         dummy: ""
       }, g) : f.ajax(a)
     },
     getPageJson: function()
     {
-      return p
+      return h
     },
     getPagePureJsons: function()
     {
-      return u
+      return q
+    },
+    ApiPageAccessCallback: function(a, b)
+    {
+      h = null;
+      h = {};
+      q = null;
+      q = [];
+      return B(a, b)
     }
   };
-  return n
+  return p
 });

@@ -33,66 +33,23 @@
 
 #CollectionTop .collectionBtn.memoriaBtn
 {
-  top: 88px;
   left: -34px;
+  top: 116px;
   background: url("/magica/resource/image_web/page/collection/btn_collection_memoria.png") left top no-repeat;
 }
 
 #CollectionTop .collectionBtn.doppelBtn
 {
-  left: 26px;
-  bottom: -34px;
+  left: 117px;
+  top: 260px;
   background: url("/magica/resource/image_web/page/collection/btn_collection_doppel.png") left top no-repeat;
-}
-
-#CollectionTop .collectionBtn.doppelBtn.limited
-{
-  pointer-events: none;
-  background: url("/magica/resource/image_web/page/collection/btn_collection_doppel_gray.png") left top no-repeat;
-}
-
-#CollectionTop .collectionBtn.doppelBtn.limited:before
-{
-  width: 90px;
-  height: 40px;
-  background: url("/magica/resource/image_web/common/closed/condition_03.png");
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  display: block;
-  content: "";
-}
-
-#CollectionTop .collectionBtn.storyBtn
-{
-  top: 88px;
-  right: -34px;
-  background: url("/magica/resource/image_web/page/collection/btn_collection_story.png") left top no-repeat;
 }
 
 #CollectionTop .collectionBtn.witchBtn
 {
-  right: 26px;
-  bottom: -34px;
+  right: -34px;
+  top: 116px;
   background: url("/magica/resource/image_web/page/collection/btn_collection_witch.png") left top no-repeat;
-}
-
-#CollectionTop .collectionBtn.witchBtn.limited
-{
-  pointer-events: none;
-  background: url("/magica/resource/image_web/page/collection/btn_collection_witch_gray.png") left top no-repeat;
-}
-
-#CollectionTop .collectionBtn.witchBtn.limited:before
-{
-  width: 90px;
-  height: 40px;
-  background: url("/magica/resource/image_web/common/closed/condition_03.png");
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  display: block;
-  content: "";
 }
 
 #CollectionTop .collectionBtn.touch:before

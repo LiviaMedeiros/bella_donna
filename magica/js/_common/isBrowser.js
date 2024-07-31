@@ -37,7 +37,7 @@ define("underscore backbone backboneCommon ajaxControl command text!css/test/isB
       });
       $("#baseReceive").trigger("getBaseDataBrowser", c)
     }
-    else a.split(","), "241" == a.split(",")[0] && $("#commandDiv").trigger("nativeCallback"), "320" == a.split(",")[0] && $("#commandDiv").trigger("nativeCallback"), console.log("native:command: " + a)
+    else a.split(","), "241" == a.split(",")[0] && $("#commandDiv").trigger("nativeCallback"), "320" == a.split(",")[0] && $("#commandDiv").trigger("nativeCallback"), "99" == a.split(",")[0] ? console.log("native:command: 99 json続く") : "98" == a.split(",")[0] ? console.log("native:command: 98 json続く") : console.log("native:command: " + a)
   };
   $("#baseReceive").on("getBaseDataBrowser", function(b, a)
   {

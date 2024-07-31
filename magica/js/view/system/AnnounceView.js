@@ -1,6 +1,6 @@
-define("underscore backbone backboneCommon ajaxControl text!template/user/AnnounceTemp.html text!template/user/AnnounceTempMainte.html command".split(" "), function(k, r, b, l, t, u, p)
+define("underscore backbone backboneCommon ajaxControl text!template/user/AnnounceTemp.html text!template/user/AnnounceTempMainte.html command text!template/announce/tempNotice01.html text!template/announce/tempNotice02.html".split(" "), function(k, r, b, l, t, u, p, v, w)
 {
-  var n, h, q;
+  var m, g, q;
   return r.View.extend(
   {
     events: function()
@@ -19,6 +19,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       a[b.cgti + " .announceTextLink"] = this.announceTextLink;
       a[b.cgti + " .announceOuterLink"] = this.outerLink;
       a[b.cgti + " .separateOuterLink"] = this.separateOuterLink;
+      a[b.cgti + " .noticeText"] = this.tapNoticeText;
       return a
     },
     initialize: function(a)
@@ -27,7 +28,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       this.model = JSON.parse(a.announcementJson);
       this.bannerModel = JSON.parse(a.bannerJson);
       this.currentCategory = "NEW";
-      if ("Maintenance" !== b.historyArr[b.historyArr.length - 1]) this.readDay = b.storage.gameUser.get("announcementViewAt") ? Date.parse(b.storage.gameUser.get("announcementViewAt")) : -1, this.template = k.template(t), this.currentTime = l.getPageJson().currentTime;
+      if ("Maintenance" !== b.historyArr[b.historyArr.length - 1] && b.storage.gameUser) this.readDay = b.storage.gameUser.get("announcementViewAt") ? Date.parse(b.storage.gameUser.get("announcementViewAt")) : -1, this.template = k.template(t), this.currentTime = l.getPageJson().currentTime;
       else
       {
         this.readDay = Infinity;
@@ -55,7 +56,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       "Maintenance" !== b.historyArr[b.historyArr.length - 1] && b.scrollSet("announceBannerArea", "scrollBar");
       a.firstViewNews && this.openTextFirst(a.firstViewNews);
       a.targetEvent && this.openTextEvent(a.targetEvent);
-      a.targetCampaign && this.openTextCampaign(a.targetCampaign)
+      a.targetCampaign && this.openTextCampaign(a.targetCampaign);
+      a.announceData && this.openTargetAnnounce(a.announceData)
     },
     render: function()
     {
@@ -69,24 +71,23 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         }),
         c = [],
         d = b.thisPlatform ? b.thisPlatform : b.ua.android ? "ANDROID" : b.ua.ios ? "IOS" : window.isDebug ? "IOS" : "DMM";
-      console.log("platForm", d);
       this.platForm = d;
       if ("Maintenance" !== b.historyArr[b.historyArr.length - 1])
       {
-        for (var f = this.newestList.length, e = 0, g = Date.parse(l.getPageJson().currentTime); e < f;)
+        for (var f = this.newestList.length, e = 0, h = Date.parse(l.getPageJson().currentTime); e < f;)
         {
-          var m = this.newestList[e].startAt.replace(/-/g, "/"),
+          var n = this.newestList[e].startAt.replace(/-/g, "/"),
             p = this.newestList[e].endAt.replace(/-/g, "/");
-          g >= Date.parse(m) && Date.parse(m) > this.readDay && Date.parse(p) > g && (0 > c.indexOf(this.newestList[e].category) && (this.newestList[e].displayOs && "ALL" === this.newestList[e].displayOs ? c.push(this.newestList[e].category) : this.newestList[e].displayOs && this.newestList[e].displayOs === d && c.push(this.newestList[e].category)), 3 === c.length && (e = f));
+          h >= Date.parse(n) && Date.parse(n) > this.readDay && Date.parse(p) > h && (0 > c.indexOf(this.newestList[e].category) && (this.newestList[e].displayOs && "ALL" === this.newestList[e].displayOs ? c.push(this.newestList[e].category) : this.newestList[e].displayOs && this.newestList[e].displayOs === d && c.push(this.newestList[e].category)), 3 === c.length && (e = f));
           e++
         }
         0 < c.length && (-1 < c.indexOf("NEW") ? this.currentCategory = "NEW" : -1 < c.indexOf("MNT") ? this.currentCategory = "MNT" : -1 < c.indexOf("UPD") && (this.currentCategory = "UPD"))
       }
       f = {};
-      "Maintenance" !== b.location && (e = Date.parse(l.getPageJson().currentTime), g = (new Date(e)).getDay(), f.week = g, g = b.storage.gameUser ? b.storage.gameUser.toJSON() : l.getPageJson().gameUser, g.passportExpiredAt ? (m = Math.floor((Date.parse(g.passportExpiredAt) - e) / 1E3 / 60 / 60 / 24), f.passport = -1 < m ? !1 : !0) : f.passport = !0, f.passport = !1, g.startdashGachaExpiredAt ? (m = Math.floor(Date.parse(g.startdashGachaExpiredAt) - e), f.startDashGacha = 0 < m ? !0 : !1) : f.startDashGacha = !1, g.startdashMemoriaGachaExpiredAt ? (m = Math.floor(Date.parse(g.startdashMemoriaGachaExpiredAt) - e), f.startDashGachaMemoria = 0 < m ? !0 : !1) : f.startDashGachaMemoria = !1, f.startDashCampaign = !1, g.startdashCampaignExpiredAt && (g = new Date(g.startdashCampaignExpiredAt), m = Math.floor(g.getTime() - e), 0 < m && (e = k.findWhere(l.getPageJson().campaignList,
+      "Maintenance" !== b.location && (e = Date.parse(l.getPageJson().currentTime), h = (new Date(e)).getDay(), f.week = h, (h = b.storage.gameUser ? b.storage.gameUser.toJSON() : l.getPageJson().gameUser) || (h = {}), h.passportExpiredAt ? (n = Math.floor((Date.parse(h.passportExpiredAt) - e) / 1E3 / 60 / 60 / 24), f.passport = -1 < n ? !1 : !0) : f.passport = !0, f.passport = !1, h.startdashGachaExpiredAt ? (n = Math.floor(Date.parse(h.startdashGachaExpiredAt) - e), f.startDashGacha = 0 < n ? !0 : !1) : f.startDashGacha = !1, h.startdashMemoriaGachaExpiredAt ? (n = Math.floor(Date.parse(h.startdashMemoriaGachaExpiredAt) - e), f.startDashGachaMemoria = 0 < n ? !0 : !1) : f.startDashGachaMemoria = !1, f.startDashCampaign = !1, h.startdashCampaignExpiredAt && (h = new Date(h.startdashCampaignExpiredAt), n = Math.floor(h.getTime() - e), 0 < n && (e = k.findWhere(l.getPageJson().campaignList,
       {
         campaignType: "STARTDASH"
-      })))) && (f.startDashCampaign = !0, f.startDashCampaignContent = {}, f.startDashCampaignContent.campaignId = e.id, f.startDashCampaignContent.endDate = g.getMonth() + 1 + "/" + g.getDate() + " " + g.getHours() + ":" + g.getMinutes(), e = k.findWhere(this.model,
+      })))) && (f.startDashCampaign = !0, f.startDashCampaignContent = {}, f.startDashCampaignContent.campaignId = e.id, f.startDashCampaignContent.endDate = h.getMonth() + 1 + "/" + h.getDate() + " " + h.getHours() + ":" + h.getMinutes(), e = k.findWhere(this.model,
       {
         campaignId: e.id | 0
       })) && (f.startDashCampaignContent.campaignNewsId = e.id);
@@ -104,11 +105,11 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       this.el.style.height = "100%";
       this.el.style.position = "relative";
       b.doc.getElementById("popupArea").getElementsByClassName("popupTextArea")[0].appendChild(this.el);
-      n = b.doc.getElementById("popupArea").getElementsByClassName("announceTitle")[0];
-      h = b.doc.getElementById("popupArea").getElementsByClassName("newsField")[0];
+      m = b.doc.getElementById("popupArea").getElementsByClassName("announceTitle")[0];
+      g = b.doc.getElementById("popupArea").getElementsByClassName("newsField")[0];
       q = b.doc.getElementById("announceTab");
       b.addClass(q.getElementsByClassName(this.currentCategory)[0], "current");
-      n.classList.add(this.currentCategory);
+      m.classList.add(this.currentCategory);
       if ("Maintenance" !== b.historyArr[b.historyArr.length - 1])
       {
         a = this.model.length;
@@ -116,6 +117,27 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         for (d = Date.parse(l.getPageJson().currentTime); 0 < a;) a--, f = this.model[a].startAt.replace(/-/g, "/"), e = this.model[a].endAt.replace(/-/g, "/"), d >= Date.parse(f) && Date.parse(f) > this.readDay && Date.parse(e) > d && (c = this.model[a].id, a = 0); - 1 < c && !window.isLocal && l.ajaxSimpleGet(b.linkList.readAnnounce, "", function(a)
         {
           b.responseSetStorage(a)
+        })
+      }
+    },
+    tapNoticeText: function(a)
+    {
+      a.preventDefault();
+      if (!b.isScrolled())
+      {
+        var c = {
+          Notice01: v,
+          Notice02: w
+        } [a.currentTarget.dataset.id];
+        a = $(a.currentTarget).text();
+        b.targetAnnounceOpen(
+        {
+          announceData:
+          {
+            subject: a,
+            startAt: "2024-7-31 00:00:00",
+            text: c
+          }
         })
       }
     },
@@ -180,12 +202,11 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       {
         var c = "";
         a.imgPath && (c = '<div class="newsImage announceImg"><img src="' + resDir + a.imgPath + '"></div>');
-        h.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
-        if ("DMM" === this.platForm && h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
-          for (var c = h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
+        g.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
+        if ("DMM" === this.platForm && g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
+          for (var c = g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
         p.getBaseData(b.getNativeObj());
-        for (var f = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"),
-            e = 0, c = 0; c < f.length; c++) d = new Image, d.onload = function()
+        for (var f = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), e = 0, c = 0; c < f.length; c++) d = new Image, d.onload = function()
         {
           e++;
           e >= f.length && b.scrollRefresh("scrollTextWrap", "newsField", !0)
@@ -211,8 +232,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         b.doc.getElementById("innerDate").innerText = Number(c[1]) + "/" + Number(c[2].split(" ")[0]);
         b.doc.getElementsByClassName("announceList")[0].classList.add("none");
         b.doc.getElementsByClassName("announceText")[0].classList.remove("none");
-        h.classList.add("on");
-        n.classList.add("off");
+        g.classList.add("on");
+        m.classList.add("off");
         a = b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0];
         a.classList.add("on");
         a.addEventListener(b.cgti, this.closeText, !1);
@@ -233,15 +254,14 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         {
           c = "";
           a.imgPath && (c = '<div class="newsImage announceImg"><img src="' + resDir + a.imgPath + '"></div>');
-          h.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
-          if ("DMM" === this.platForm && h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
-            for (c = h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"),
-              d = d + 1 | 0;
+          g.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
+          if ("DMM" === this.platForm && g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
+            for (c = g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
           p.getBaseData(b.getNativeObj());
-          for (var e = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), g = 0, c = 0; c < e.length; c++) d = new Image, d.onload = function()
+          for (var e = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), h = 0, c = 0; c < e.length; c++) d = new Image, d.onload = function()
           {
-            g++;
-            g >= e.length && b.scrollRefresh("scrollTextWrap", "newsField", !0)
+            h++;
+            h >= e.length && b.scrollRefresh("scrollTextWrap", "newsField", !0)
           }, d.src = e[c].src;
           c = a.startAt.split("-");
           d = a.subject.replace(/(<br>|<br \/>|<br\/>)/gi, "");
@@ -264,8 +284,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
           b.doc.getElementById("innerDate").innerText = Number(c[1]) + "/" + Number(c[2].split(" ")[0]);
           b.doc.getElementsByClassName("announceList")[0].classList.add("none");
           b.doc.getElementsByClassName("announceText")[0].classList.remove("none");
-          h.classList.add("on");
-          n.classList.add("off");
+          g.classList.add("on");
+          m.classList.add("off");
           a = b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0];
           a.classList.add("on");
           a.addEventListener(b.cgti, this.closeText, !1);
@@ -283,9 +303,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         Date.parse(l.getPageJson().currentTime);
         var c = "";
         a.imgPath && (c = '<div class="newsImage announceImg"><img src="' + resDir + a.imgPath + '"></div>');
-        h.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
-        if ("DMM" === this.platForm && h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
-          for (var c = h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"),
+        g.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
+        if ("DMM" === this.platForm && g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
+          for (var c = g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"),
               d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
         p.getBaseData(b.getNativeObj());
         for (var f = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), e = 0, c = 0; c < f.length; c++) d = new Image, d.onload = function()
@@ -314,8 +334,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         b.doc.getElementById("innerDate").innerText = Number(c[1]) + "/" + Number(c[2].split(" ")[0]);
         b.doc.getElementsByClassName("announceList")[0].classList.add("none");
         b.doc.getElementsByClassName("announceText")[0].classList.remove("none");
-        h.classList.add("on");
-        n.classList.add("off");
+        g.classList.add("on");
+        m.classList.add("off");
         c = b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0];
         c.classList.add("on");
         a = function()
@@ -340,9 +360,9 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       {
         var c = "";
         a.imgPath && (c = '<div class="newsImage announceImg"><img src="' + resDir + a.imgPath + '"></div>');
-        h.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
-        if ("DMM" === this.platForm && h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
-          for (var c = h.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
+        g.getElementsByClassName("newsTextField")[0].innerHTML = c + a.text;
+        if ("DMM" === this.platForm && g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
+          for (var c = g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
         p.getBaseData(b.getNativeObj());
         for (var f = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), e = 0, c = 0; c < f.length; c++) d = new Image, d.onload = function()
         {
@@ -370,8 +390,8 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
         b.doc.getElementById("innerDate").innerText = Number(c[1]) + "/" + Number(c[2].split(" ")[0]);
         b.doc.getElementsByClassName("announceList")[0].classList.add("none");
         b.doc.getElementsByClassName("announceText")[0].classList.remove("none");
-        h.classList.add("on");
-        n.classList.add("off");
+        g.classList.add("on");
+        m.classList.add("off");
         c = b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0];
         c.classList.add("on");
         a = function()
@@ -390,7 +410,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
     closeText: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || (b.doc.getElementsByClassName("announceList")[0].classList.remove("none"), b.doc.getElementsByClassName("announceText")[0].classList.add("none"), h.classList.remove("on"), n.classList.remove("off"), h.getElementsByClassName("newsTextField")[0].innerHTML = "", b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0].classList.remove("on"), window.isLocal || "Maintenance" === b.historyArr[b.historyArr.length - 1] || b.scrollRefresh("announceBannerArea", "scrollBar"), b.scrollRefresh("newsScrollWarp", "announceTitle"))
+      b.isScrolled() || (b.doc.getElementsByClassName("announceList")[0].classList.remove("none"), b.doc.getElementsByClassName("announceText")[0].classList.add("none"), g.classList.remove("on"), m.classList.remove("off"), g.getElementsByClassName("newsTextField")[0].innerHTML = "", b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0].classList.remove("on"), window.isLocal || "Maintenance" === b.historyArr[b.historyArr.length - 1] || b.scrollRefresh("announceBannerArea", "scrollBar"), b.scrollRefresh("newsScrollWarp", "announceTitle"))
     },
     bannerLink: function(a)
     {
@@ -403,7 +423,7 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
     categoryToggle: function(a)
     {
       a.preventDefault();
-      b.isScrolled() || this.currentCategory === a.currentTarget.getAttribute("data-category") || (a = a.currentTarget.getAttribute("data-category"), b.removeClass(q.getElementsByClassName(this.currentCategory)[0], "current"), n.classList.remove(this.currentCategory), b.addClass(q.getElementsByClassName(a)[0], "current"), n.classList.add(a), this.currentCategory = a, b.scrollRefresh("newsScrollWarp", "announceTitle", !0))
+      b.isScrolled() || this.currentCategory === a.currentTarget.getAttribute("data-category") || (a = a.currentTarget.getAttribute("data-category"), b.removeClass(q.getElementsByClassName(this.currentCategory)[0], "current"), m.classList.remove(this.currentCategory), b.addClass(q.getElementsByClassName(a)[0], "current"), m.classList.add(a), this.currentCategory = a, b.scrollRefresh("newsScrollWarp", "announceTitle", !0))
     },
     andMore: function(a)
     {
@@ -432,6 +452,43 @@ define("underscore backbone backboneCommon ajaxControl text!template/user/Announ
       {
         var c = a.currentTarget.dataset.href;
         c && (-1 < location.hash.indexOf(a.currentTarget.dataset.href) ? b.g_popup_instance.popupView.close() : location.href = c)
+      }
+    },
+    openTargetAnnounce: function(a)
+    {
+      if (a)
+      {
+        g.getElementsByClassName("newsTextField")[0].innerHTML = a.text;
+        if ("DMM" === this.platForm && g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"))
+          for (var c = g.getElementsByClassName("newsTextField")[0].getElementsByClassName("notDMM"), d = 0; c[d];) b.addClass(c[d], "hide"), d = d + 1 | 0;
+        p.getBaseData(b.getNativeObj());
+        for (var f = b.doc.getElementById("scrollTextWrap").getElementsByClassName("announceImg"), e = 0, c = 0; c < f.length; c++) d = new Image, d.onload = function()
+        {
+          e++;
+          e >= f.length && b.scrollRefresh("scrollTextWrap", "newsField", !0)
+        }, d.src = f[c].src;
+        c = a.startAt.split("-");
+        a = a.subject.replace(/(<br>|<br \/>|<br\/>)/gi, "");
+        b.doc.getElementById("announceTitle").getElementsByClassName("announceMultiLine")[0].innerHTML = a;
+        b.doc.getElementById("categoryBanner").innerText = "お知らせ";
+        b.doc.getElementById("innerDate").innerText = Number(c[1]) + "/" + Number(c[2].split(" ")[0]);
+        b.doc.getElementsByClassName("announceList")[0].classList.add("none");
+        b.doc.getElementsByClassName("announceText")[0].classList.remove("none");
+        g.classList.add("on");
+        m.classList.add("off");
+        c = b.doc.getElementById("popupArea").getElementsByClassName("newsCloseMini")[0];
+        c.classList.add("on");
+        a = function()
+        {
+          b.g_popup_instance.popupView.close()
+        };
+        c.addEventListener(b.cgti, a, !1);
+        c = b.doc.getElementsByClassName("newsClose")[0];
+        c.innerText = "閉じる";
+        b.addClass(c, "eventClose");
+        b.removeClass(c, "newsClose");
+        c.addEventListener(b.cgti, a, !1);
+        b.scrollRefresh("scrollTextWrap", "newsField", !0)
       }
     },
     removeView: function()

@@ -1,24 +1,24 @@
-define("underscore backbone backboneCommon ajaxControl command text!template/collection/CharaCollectionDetail.html".split(" "), function(h, m, a, p, d, n)
+define("underscore backbone backboneCommon ajaxControl command text!template/collection/CharaCollectionDetail.html".split(" "), function(k, l, a, p, d, m)
 {
-  var k = function(b, e, f)
+  var h = function(b, f, e)
     {
       var c = {};
-      c.id = String(b.charaId + (f || "00"));
-      c.x = !b.chara.doubleUnitFlg || b.chara.doubleUnitFlg && f && "00" !== f ? 250 : 400;
+      c.id = String(b.charaId + (e || "00"));
+      c.x = !b.chara.doubleUnitFlg || b.chara.doubleUnitFlg && e && "00" !== e ? 250 : 400;
       c.y = 1024 === a.displayWidth ? Math.floor(a.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(a.shortSize / 2);
-      !b.chara.doubleUnitFlg || f && "00" !== f || (c.subId = b.chara.doubleUnitLive2dDetail, c.subX = -80, c.subY = 0);
-      e ? (c.voice = e, c.key = e, d.storyMotionL2dVoice(c)) : (c.type = 1, c.key = "idle", d.endL2d(), c.txtVisible = !0, d.startL2d(c))
+      !b.chara.doubleUnitFlg || e && "00" !== e || (c.subId = b.chara.doubleUnitLive2dDetail, c.subX = -80, c.subY = 0);
+      f ? (c.voice = f, c.key = f, d.storyMotionL2dVoice(c)) : (c.type = 1, c.key = "idle", d.endL2d(), c.txtVisible = !0, d.startL2d(c))
     },
-    l = function(a, d)
+    n = function(b, a)
     {
-      var b;
-      d.live2dList.filter(function(c, d)
+      var e;
+      a.live2dList.filter(function(a, d)
       {
-        0 <= c.live2dId.indexOf(a) && (b = c)
+        0 <= a.live2dId.indexOf(b) && (e = a)
       });
-      return b
+      return e
     };
-  return m.View.extend(
+  return l.View.extend(
   {
     id: "cardDetail",
     events: function()
@@ -43,9 +43,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
     {
       a.androidKeyStop = !0;
       this.live2dId = "00";
-      this.template = h.template(n);
+      this.template = k.template(m);
       b = this.model.toJSON().currentCard;
-      if (b = l(this.live2dId, b)) this.voicePrefixNo = b.voicePrefixNo, this.voiceFullScreen = !1
+      if (b = n(this.live2dId, b)) this.voicePrefixNo = b.voicePrefixNo, this.voiceFullScreen = !1
     },
     render: function()
     {
@@ -62,9 +62,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
     },
     tabChange: function(b)
     {
-      var e = b.currentTarget.dataset.type;
-      a.doc.querySelector("#cardDetailWrap").className = e;
-      "voice" == e ? (k(this.model.toJSON(), null, this.live2dId), a.addClass(a.doc.querySelector("#detailCardImage"), "hide")) : (d.endL2d(), a.removeClass(a.doc.querySelector(".voiceBtn.current"), "current"), a.removeClass(a.doc.querySelector("#detailCardImage"), "hide"));
+      var f = b.currentTarget.dataset.type;
+      a.doc.querySelector("#cardDetailWrap").className = f;
+      "illust" == f ? (h(this.model.toJSON(), null, this.live2dId), a.addClass(a.doc.querySelector("#detailCardImage"), "hide")) : (d.endL2d(), a.removeClass(a.doc.querySelector(".voiceBtn.current"), "current"), a.removeClass(a.doc.querySelector("#detailCardImage"), "hide"));
       a.removeClass(b.currentTarget.parentNode.querySelector(".current"), "current");
       a.addClass(b.currentTarget, "current");
       a.scrollRefresh(null, null, !0)
@@ -85,25 +85,25 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       b.preventDefault();
       if (!a.isScrolled())
       {
-        var e = this.model.toJSON().charaId,
-          f = "vo_char_" + e + "_" + this.voicePrefixNo + "_" + b.currentTarget.dataset.voice;
+        var f = this.model.toJSON().charaId,
+          e = "vo_char_" + f + "_" + this.voicePrefixNo + "_" + b.currentTarget.dataset.voice;
         d.stopVoice();
         var c = !1;
         this.model.toJSON().chara.doubleUnitFlg && "00" == this.live2dId && (c = !0);
         var g = this.model.toJSON().chara.doubleUnitFlg && "88" == this.live2dId;
-        this.voiceFullScreen ? (a.doc.getElementById("charaVoice").getElementsByClassName("current")[0] && a.removeClass(a.doc.getElementById("charaVoice").getElementsByClassName("current")[0]), a.addClass(a.doc.getElementById("cardDetail"), "showLive2dFullscreen"), a.tapBlock(!0), a.androidKeyStop = !0, b = {}, b.id = String(e + this.live2dId), b.key = g ? "idle" : f, b.type = g ? 1 : 0, b.x = c ? Math.floor(a.doc.getElementsByTagName("body")[0].offsetWidth / 2) + 180 : Math.floor(a.doc.getElementsByTagName("body")[0].offsetWidth / 2), b.y = 1024 === a.displayWidth ? Math.floor(a.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(a.shortSize / 2), c && (b.subId = this.model.toJSON().chara.doubleUnitLive2dDetail, b.subX = -60, b.subY = 0), b.txtVisible = !0, d.startL2d(b), g && setTimeout(function()
+        this.voiceFullScreen ? (a.doc.getElementById("charaVoice").getElementsByClassName("current")[0] && a.removeClass(a.doc.getElementById("charaVoice").getElementsByClassName("current")[0]), a.addClass(a.doc.getElementById("cardDetail"), "showLive2dFullscreen"), a.tapBlock(!0), a.androidKeyStop = !0, b = {}, b.id = String(f + this.live2dId), b.key = g ? "idle" : e, b.type = g ? 1 : 0, b.x = c ? Math.floor(a.doc.getElementsByTagName("body")[0].offsetWidth / 2) + 180 : Math.floor(a.doc.getElementsByTagName("body")[0].offsetWidth / 2), b.y = 1024 === a.displayWidth ? Math.floor(a.doc.getElementsByTagName("body")[0].offsetHeight / 2) : Math.ceil(a.shortSize / 2), c && (b.subId = this.model.toJSON().chara.doubleUnitLive2dDetail, b.subX = -60, b.subY = 0), b.txtVisible = !0, d.startL2d(b), g && setTimeout(function()
         {
-          d.startVoice(f)
+          d.startVoice(e)
         }, 200), setTimeout(function()
         {
           a.tapBlock(!1)
-        }, 500)) : (a.removeClass(a.doc.querySelector(".voiceBtn.current"), "current"), a.addClass(b.currentTarget, "current"), g ? d.startVoice(f) : (c = {}, c.id = String(e + this.live2dId), c.voice = f, d.storyMotionL2dVoice(c)))
+        }, 500)) : (a.removeClass(a.doc.querySelector(".voiceBtn.current"), "current"), a.addClass(b.currentTarget, "current"), g ? d.startVoice(e) : (c = {}, c.id = String(f + this.live2dId), c.voice = e, d.storyMotionL2dVoice(c)))
       }
     },
     finishFullScreen: function(b)
     {
       b.preventDefault();
-      a.isScrolled() || (a.removeClass(a.doc.getElementById("cardDetail"), "showLive2dFullscreen"), a.androidKeyStop = !1, k(this.model.toJSON(), null, this.live2dId))
+      a.isScrolled() || (a.removeClass(a.doc.getElementById("cardDetail"), "showLive2dFullscreen"), a.androidKeyStop = !1, h(this.model.toJSON(), null, this.live2dId))
     },
     voiceCheck: function(b)
     {
@@ -118,16 +118,16 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
         a.removeClass(a.doc.querySelector(".cardIllustWrap .selected"), "selected");
         a.addClass(b, "selected");
         b = this.model.get("cardList")[b.dataset.cardarrindex];
-        var e = a.doc.querySelector("#detailCardImage .cardImg"),
-          f = a.doc.querySelector("#detailCardImage .cardFrame"),
+        var f = a.doc.querySelector("#detailCardImage .cardImg"),
+          e = a.doc.querySelector("#detailCardImage .cardFrame"),
           c = a.doc.querySelector("#detailCardImage .zoomImg img"),
           g = "frame_" + b.card.attributeId.toLowerCase() + "_" + b.card.rank.toLowerCase();
-        e.dataset.nativeimgkey = "card_" + b.cardId + "_c";
-        e.dataset.src = "resource/image_native/card/image/card_" + b.cardId + "_c.png";
+        f.dataset.nativeimgkey = "card_" + b.cardId + "_c";
+        f.dataset.src = "resource/image_native/card/image/card_" + b.cardId + "_c.png";
         c.dataset.nativeimgkey = "card_" + b.cardId + "_c";
         c.dataset.src = "resource/image_native/card/image/card_" + b.cardId + "_c.png";
-        f.dataset.nativebgkey = g;
-        f.dataset.src = "resource/image_native/card/frame/" + g + ".png";
+        e.dataset.nativebgkey = g;
+        e.dataset.src = "resource/image_native/card/frame/" + g + ".png";
         d.getBaseData(a.getNativeObj());
         a.doc.querySelector(".illustrator").textContent = b.card.illustrator;
         a.doc.querySelector(".illustTitle").textContent = "★" + b.rankNum + "イラスト"
@@ -135,18 +135,18 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
     },
     visualChangeCommand: function(b)
     {
-      var e, f;
+      var f, e;
       b.preventDefault();
-      a.isScrolled() || (b = b.currentTarget, b.classList.contains("off") || b.classList.contains("selected") || (a.removeClass(a.doc.querySelector(".miniCharaBtn .selected"), "selected"), a.addClass(b, "selected"), "chara" == b.dataset.commandtype ? (e = "mini/image/", f = "mini_" + this.model.toJSON().currentCard.card.miniCharaNo + "_d", this.model.toJSON()) : (e = "card/image/", f = "card_" + this.model.get("cardList")[b.dataset.cardarrindex].cardId + "_d", this.model.get("cardList")), b = a.doc.querySelectorAll(".discPreview .discWrap img"), h.each(b, function(a)
+      a.isScrolled() || (b = b.currentTarget, b.classList.contains("off") || b.classList.contains("selected") || (a.removeClass(a.doc.querySelector(".miniCharaBtn .selected"), "selected"), a.addClass(b, "selected"), "chara" == b.dataset.commandtype ? (f = "mini/image/", e = "mini_" + this.model.toJSON().currentCard.card.miniCharaNo + "_d", this.model.toJSON()) : (f = "card/image/", e = "card_" + this.model.get("cardList")[b.dataset.cardarrindex].cardId + "_d", this.model.get("cardList")), b = a.doc.querySelectorAll(".discPreview .discWrap img"), k.each(b, function(a)
       {
-        a.dataset.nativeimgkey = f;
-        a.dataset.src = "resource/image_native/" + e + f + ".png"
+        a.dataset.nativeimgkey = e;
+        a.dataset.src = "resource/image_native/" + f + e + ".png"
       }), d.getBaseData(a.getNativeObj())))
     },
     live2dChange: function(b)
     {
       b.preventDefault();
-      a.isScrolled() || (a.removeClass(a.doc.querySelector(".live2dBtns .current"), "current"), a.addClass(b.currentTarget, "current"), this.live2dId = b.currentTarget.dataset.live2did, b = this.model.toJSON().currentCard, this.voicePrefixNo = l(this.live2dId, b).voicePrefixNo, "00" !== this.voicePrefixNo ? (a.addClass(a.doc.querySelector("#charaVoice .chara"), "hide"), a.addClass(a.doc.querySelector("#charaVoice .compose"), "hide"), a.addClass(a.doc.querySelector("#charaVoice .quest"), "hide")) : (a.removeClass(a.doc.querySelector("#charaVoice .chara"), "hide"), a.removeClass(a.doc.querySelector("#charaVoice .compose"), "hide"), a.removeClass(a.doc.querySelector("#charaVoice .quest"), "hide")))
+      a.isScrolled() || (a.removeClass(a.doc.querySelector(".live2dBtns .current"), "current"), a.addClass(b.currentTarget, "current"), this.live2dId = b.currentTarget.dataset.live2did, h(this.model.toJSON(), null, this.live2dId))
     },
     charaMoviewPlay: function(b)
     {
@@ -155,7 +155,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
       {
         a.androidKeyStop = !0;
         d.stopVoice();
-        var e = this.model.toJSON().charaId;
+        var f = this.model.toJSON().charaId;
         $(a.ready.target).on("webkitAnimationEnd", function()
         {
           d.changeBg("web_black.jpg");
@@ -177,7 +177,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/col
           {
             d.setWebView(!1);
             d.stopBgm();
-            d.playCharaMovie(e)
+            d.playCharaMovie(f)
           }, 500)
         });
         a.addClass(a.ready.target, "preNativeFadeIn")

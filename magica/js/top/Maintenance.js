@@ -49,7 +49,9 @@ define("underscore backbone backboneCommon ajaxControl command text!template/top
     {
       b.content.append(this.render().el);
       b.ready.hide();
-      a.setWebView()
+      a.setWebView();
+      b.tapBlock(!1);
+      b.loading.hide()
     },
     reloadFunc: function(c)
     {
