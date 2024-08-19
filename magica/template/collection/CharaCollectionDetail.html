@@ -22,6 +22,7 @@
 <ul id="detailTab" class="common_tab t_gold">
   <li data-type="status" class="TE se_tabs current"><span>ステータス</span></li>
   <li data-type="skill" class='TE se_tabs'><span>スキル</span></li>
+  <li data-type="card" class='TE se_tabs'><span>イラスト</span></li>
   <li data-type="illust" class='TE se_tabs'><span>衣装</span></li>
 </ul>
 <div id="cardDetailWrap" class="status">
@@ -147,12 +148,12 @@
               <p class="detail"><%= model.currentCard.card.cardSkill.shortDescription %></p>
             </div>
           </div>
-        </div> <% } %> <% if(model.currentCard.card.cardMagia) { %> <div class="commonFrame3 magia">
+        </div> <% } %> <% if(model.currentCard.card.cardMagia) { %> <% var MagiaLevelMax = 5;%> <div class="commonFrame3 magia">
           <p class="common_title_frame">マギア</p>
           <div class="border"></div>
           <p class="common_title_frame">マギア</p>
-          <div class="flexBox magiaLevel"> マギアLv<span class="c_red"><%= model.currentCard.magiaLevel %></span>
-            <ul class="flexBox magiaLvIcon"> <% i = 0;%> <% var MagiaLevelMax = 5;%> <% onNum = model.currentCard.magiaLevel;%> <% var offNum = model.currentCard.episodeLevel - model.currentCard.magiaLevel;%> <% noneNum = MagiaLevelMax - (onNum + offNum);%> <% while(i < onNum) {%>
+          <div class="flexBox magiaLevel"> マギアLv<span class="c_red"><%= MagiaLevelMax %></span>
+            <ul class="flexBox magiaLvIcon"> <% i = 0;%> <% var MagiaLevelMax = 5;%> <% onNum = MagiaLevelMax;%> <% var offNum = 0;%> <% noneNum = 0;%> <% while(i < onNum) {%>
               <li class="on" /> <% i=(i+1)|0; %> <% } %> <% i = 0;%> <% while(i < offNum) {%>
               <li class="off" /> <% i=(i+1)|0; %> <% } %> <% i = 0;%> <% while(i < noneNum) {%>
               <li class="none" /> <% i=(i+1)|0; %> <% } %>
@@ -189,6 +190,22 @@
             </div>
           </div> <% } %>
         </div> <% } %>
+      </div>
+      <div id="charaCard">
+        <div class="commonFrame3">
+          <p class="common_title_frame">魔法少女</p>
+          <div class="flexBox"> <% _.forEach(model.cardList,function(txt,index){ %> <% if(!txt.openFlag) { %> <div class="cardIllustWrap off">
+              <div class="offIcon"></div>
+              <p class="mb_pink off">★<%= txt.rankNum %></p>
+            </div> <% } else { %> <div class="cardIllustWrap">
+              <div class="userCharaIcon <%= txt.rank %> <%= txt.attributeId %>"> <% att = "att_" + txt.card.attributeId.toLowerCase() %> <% star = "star_" + txt.card.rank.toLowerCase() %> <% frame = "frame_" + txt.card.rank.toLowerCase() %> <% bg = "bg_" + txt.card.attributeId.toLowerCase() %> <span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+                <span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+                <span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+                <img data-nativeimgkey="card_<%= txt.cardId %>_f" data-src='resource/image_native/card/image/card_<%= txt.cardId %>_f.png'>
+                <span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+              </div> <% btnClass = (model.currentCard.cardId == txt.cardId) ? 'selected' : '' %> <p data-cardarrindex="<%= index %>" class="mb_pink se_decide <%= btnClass %>">★<%= txt.rankNum %></p>
+            </div> <% } %> <% }) %> </div>
+        </div>
       </div>
       <div id="charaIllust">
         <div class="commonFrame3">

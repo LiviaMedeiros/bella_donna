@@ -276,9 +276,7 @@ define("underscore backbone backboneCommon ajaxControl command text!template/top
         "undefined" === e && (e = !1);
         f(e)
       });
-      window.isBrowser && nativeCallback("");
-      b = window.app_ver.split(".").join("") | 0;
-      a.ua.ios && 320 > b ? (e = !1, f(e)) : a.ua.android && 321 > b ? (e = !1, f(e)) : c.getUserJson()
+      window.isBrowser ? nativeCallback("") : (b = window.app_ver.split(".").join("") | 0, a.ua.ios && 320 > b ? (e = !1, f(e)) : a.ua.android && 321 > b ? (e = !1, f(e)) : c.getUserJson())
     },
     D = function(b)
     {
